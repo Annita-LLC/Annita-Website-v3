@@ -3,13 +3,13 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { motion, AnimatePresence } from 'framer-motion'
-import { 
-  Menu, 
-  X, 
-  ShoppingCart, 
-  CreditCard, 
-  Truck, 
-  MessageSquare, 
+import {
+  Menu,
+  X,
+  ShoppingCart,
+  CreditCard,
+  Truck,
+  MessageSquare,
   BarChart3,
   Globe,
   Users,
@@ -18,7 +18,7 @@ import {
   ChevronDown,
   Code,
   Building2,
-  Handshake,
+  UserPlus,
   DollarSign
 } from 'lucide-react'
 
@@ -54,7 +54,7 @@ const Navigation = () => {
       href: '#',
       dropdown: [
         { name: 'Enterprise', href: '/enterprise', icon: Building2, description: 'Large organization solutions' },
-        { name: 'Partners', href: '/partners', icon: Handshake, description: 'Partnership opportunities' },
+                          { name: 'Partners', href: '/partners', icon: UserPlus, description: 'Partnership opportunities' },
         { name: 'Pricing', href: '/pricing', icon: DollarSign, description: 'Plans & pricing' },
       ]
     },
