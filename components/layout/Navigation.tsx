@@ -187,9 +187,6 @@ const Navigation = () => {
 
             {/* CTA Buttons */}
             <div className="hidden lg:flex items-center space-x-4">
-              <Link href="/login" className="btn-ghost">
-                Sign In
-              </Link>
               <Link href="/download" className="btn-primary">
                 <Download className="w-4 h-4 mr-2" />
                 Download App
@@ -292,13 +289,6 @@ const Navigation = () => {
                 </div>
 
                 <div className="p-6 border-t border-gray-200 space-y-4">
-                  <Link
-                    href="/login"
-                    className="block w-full text-center py-3 px-4 border border-gray-300 rounded-lg font-medium hover:bg-gray-50 transition-colors duration-200"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    Sign In
-                  </Link>
                   <Link
                     href="/download"
                     className="block w-full text-center py-3 px-4 bg-primary-600 text-white rounded-lg font-medium hover:bg-primary-700 transition-colors duration-200"
