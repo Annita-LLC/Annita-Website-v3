@@ -1,7 +1,6 @@
 'use client'
 
 import { useState } from 'react'
-import { Metadata } from 'next'
 import { 
   Download, 
   Smartphone, 
@@ -20,11 +19,6 @@ import {
   ArrowLeft
 } from 'lucide-react'
 import Button from '@/components/ui/Button'
-
-export const metadata: Metadata = {
-  title: 'Download Annita App - Get Started Today',
-  description: 'Download the Annita mobile app for iOS and Android. Access all our services on the go with our powerful mobile application.',
-}
 
 const DownloadPage = () => {
   const [showAuth, setShowAuth] = useState(false)
