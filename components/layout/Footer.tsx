@@ -11,8 +11,6 @@ import {
   Phone,
   MapPin,
   Globe,
-  Download,
-  ArrowRight,
   Heart
 } from 'lucide-react'
 
@@ -160,30 +158,7 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* CTA Section */}
-      <div className="border-t border-gray-800">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <div className="text-center">
-            <h3 className="text-2xl font-bold text-white mb-4">
-              Ready to Transform Your Business?
-            </h3>
-            <p className="text-gray-400 mb-6 max-w-2xl mx-auto">
-              Join thousands of MSMEs already using Annita to grow their business. 
-              Download our app and start your digital transformation today.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="btn-primary group">
-                <Download className="w-4 h-4 mr-2" />
-                Download App
-                <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-              </button>
-              <button className="btn-outline border-gray-600 text-gray-300 hover:border-primary-500 hover:text-primary-500">
-                Watch Demo
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
+
 
       {/* Bottom Footer */}
       <div className="border-t border-gray-800">
