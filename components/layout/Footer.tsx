@@ -10,7 +10,6 @@ import {
   Mail,
   Phone,
   MapPin,
-  Globe,
   Heart
 } from 'lucide-react'
 
@@ -70,8 +69,7 @@ const Footer = () => {
   const contactInfo = [
     { icon: Mail, label: 'Email', value: 'contact@annita.com', href: 'mailto:contact@annita.com' },
     { icon: Phone, label: 'Phone', value: '+234 123 456 7890', href: 'tel:+2341234567890' },
-    { icon: MapPin, label: 'Address', value: 'Monrovia, Liberia', href: '#' },
-    { icon: Globe, label: 'Website', value: 'www.annita.com', href: 'https://annita.com' }
+    { icon: MapPin, label: 'Address', value: 'Monrovia, Liberia', href: '#' }
   ]
 
   return (
