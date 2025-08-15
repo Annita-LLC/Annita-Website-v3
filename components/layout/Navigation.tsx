@@ -129,28 +129,28 @@ const Navigation = () => {
       <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled 
           ? 'bg-white/95 dark:bg-gray-900/95 backdrop-blur-md shadow-medium border-b border-gray-200 dark:border-gray-700' 
-          : 'bg-white/80 dark:bg-gray-900/80 backdrop-blur-md'
+          : 'bg-white/90 dark:bg-gray-900/90 backdrop-blur-md'
       }`}>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16 lg:h-20">
+          <div className="flex justify-between items-center h-14 sm:h-16 lg:h-20">
             {/* Logo */}
-            <Link href="/" className="flex items-center space-x-3">
-              <div className="relative">
-                <div className="w-12 h-12 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-                  <img 
-                    src="/images/blog/Annita's Logo.png" 
-                    alt="Annita Logo" 
-                    className="w-8 h-8 rounded-full object-cover"
-                  />
+                          <Link href="/" className="flex items-center space-x-2 sm:space-x-3">
+                <div className="relative">
+                  <div className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+                    <img 
+                      src="/images/blog/Annita's Logo.png" 
+                      alt="Annita Logo" 
+                      className="w-5 h-5 sm:w-6 sm:h-6 lg:w-8 lg:h-8 rounded-full object-cover"
+                    />
+                  </div>
+                  <div className="absolute -inset-1 bg-gradient-to-r from-primary-400 to-secondary-400 rounded-full blur opacity-20 group-hover:opacity-30 transition-opacity duration-300"></div>
                 </div>
-                <div className="absolute -inset-1 bg-gradient-to-r from-primary-400 to-secondary-400 rounded-full blur opacity-20 group-hover:opacity-30 transition-opacity duration-300"></div>
-              </div>
-              <span className="text-2xl font-bold bg-gradient-to-r from-primary-500 to-secondary-500 bg-clip-text text-transparent dark:text-white">Annita</span>
-            </Link>
+                <span className="text-lg sm:text-xl lg:text-2xl font-bold bg-gradient-to-r from-primary-500 to-secondary-500 bg-clip-text text-transparent dark:text-white">Annita</span>
+              </Link>
 
             {/* Desktop Navigation */}
-            <div className="hidden lg:flex items-center space-x-8">
-              <div className="flex items-center space-x-6">
+            <div className="hidden lg:flex items-center space-x-6 xl:space-x-8">
+              <div className="flex items-center space-x-4 xl:space-x-6">
               {navItems.map((item) => (
                 <div key={item.name} className="relative">
                   {item.dropdown ? (
@@ -203,7 +203,7 @@ const Navigation = () => {
             </div>
 
             {/* CTA Buttons */}
-            <div className="hidden lg:flex items-center space-x-4">
+            <div className="hidden lg:flex items-center space-x-3 xl:space-x-4">
               {/* Dark Mode Toggle */}
               <button
                 onClick={toggleDarkMode}
@@ -228,7 +228,7 @@ const Navigation = () => {
               onClick={() => setIsOpen(!isOpen)}
               className="lg:hidden p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200"
             >
-              {isOpen ? <X className="w-6 h-6 dark:text-white" /> : <Menu className="w-6 h-6 dark:text-white" />}
+              {isOpen ? <X className="w-5 h-5 sm:w-6 sm:h-6 dark:text-white" /> : <Menu className="w-5 h-5 sm:w-6 sm:h-6 dark:text-white" />}
             </button>
           </div>
         </div>
@@ -245,16 +245,16 @@ const Navigation = () => {
             className="fixed inset-0 z-50 lg:hidden"
           >
             <div className="absolute inset-0 bg-black/20" onClick={() => setIsOpen(false)} />
-            <div className="absolute right-0 top-0 h-full w-80 bg-white dark:bg-gray-900 shadow-2xl">
+            <div className="absolute right-0 top-0 h-full w-72 sm:w-80 bg-white dark:bg-gray-900 shadow-2xl">
               <div className="flex flex-col h-full">
                 <div className="flex items-center justify-between p-6 border-b border-gray-200 dark:border-gray-700">
                   <Link href="/" className="flex items-center space-x-2" onClick={() => setIsOpen(false)}>
                     <img 
                       src="/images/blog/Annita's Logo.png" 
                       alt="Annita Logo" 
-                      className="w-8 h-8"
+                      className="w-6 h-6 sm:w-8 sm:h-8"
                     />
-                    <span className="text-xl font-bold bg-gradient-to-r from-primary-500 to-secondary-500 bg-clip-text text-transparent">Annita</span>
+                    <span className="text-lg sm:text-xl font-bold bg-gradient-to-r from-primary-500 to-secondary-500 bg-clip-text text-transparent">Annita</span>
                   </Link>
                   <div className="flex items-center space-x-2">
                     {/* Dark Mode Toggle */}
