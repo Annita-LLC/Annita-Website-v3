@@ -16,12 +16,44 @@ import {
   CreditCard,
   Truck,
   MessageSquare,
-  ShoppingCart
+  ShoppingCart,
+  Bell,
+  Settings,
+  Search,
+  Heart,
+  BarChart3,
+  Camera,
+  Wifi,
+  Battery,
+  Signal,
+  Clock,
+  MapPin,
+  Calendar,
+  FileText,
+  Video,
+  Music,
+  Gamepad2,
+  Sparkles,
+  Target,
+  Award,
+  Crown,
+  Rocket,
+  Brain,
+  Palette,
+  Globe2,
+  Smartphone,
+  Tablet,
+  Monitor,
+  Watch
 } from 'lucide-react'
 import Button from '@/components/ui/Button'
 
 const HeroSection = () => {
   const [currentFeature, setCurrentFeature] = useState(0)
+  const [currentApp, setCurrentApp] = useState(0)
+  const [showNotification, setShowNotification] = useState(false)
+  const [batteryLevel, setBatteryLevel] = useState(87)
+  const [signalStrength, setSignalStrength] = useState(4)
 
   const features = [
     { icon: Globe, text: 'Pan-African Reach' },
@@ -30,12 +62,42 @@ const HeroSection = () => {
     { icon: Shield, text: 'Secure & Trusted' },
   ]
 
+  const apps = [
+    { icon: ShoppingCart, name: 'Marketplace', color: 'from-blue-500 to-cyan-500', notifications: 3 },
+    { icon: CreditCard, name: 'AnnitaPay', color: 'from-green-500 to-emerald-500', notifications: 1 },
+    { icon: Truck, name: 'Logistics', color: 'from-orange-500 to-red-500', notifications: 0 },
+    { icon: MessageSquare, name: 'Connect', color: 'from-purple-500 to-pink-500', notifications: 5 },
+    { icon: BarChart3, name: 'Analytics', color: 'from-indigo-500 to-purple-500', notifications: 2 },
+    { icon: Brain, name: 'AI Assistant', color: 'from-teal-500 to-cyan-500', notifications: 0 },
+  ]
+
+  const notifications = [
+    { type: 'success', message: 'Payment received from Customer #1234', time: '2m ago', icon: CheckCircle },
+    { type: 'info', message: 'New order #5678 ready for pickup', time: '5m ago', icon: Bell },
+    { type: 'warning', message: 'Low inventory alert for Product X', time: '10m ago', icon: Shield },
+  ]
+
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentFeature((prev) => (prev + 1) % features.length)
     }, 2000)
     return () => clearInterval(interval)
   }, [features.length])
+
+  useEffect(() => {
+    const appInterval = setInterval(() => {
+      setCurrentApp((prev) => (prev + 1) % apps.length)
+    }, 3000)
+    return () => clearInterval(appInterval)
+  }, [apps.length])
+
+  useEffect(() => {
+    const notificationInterval = setInterval(() => {
+      setShowNotification(true)
+      setTimeout(() => setShowNotification(false), 3000)
+    }, 5000)
+    return () => clearInterval(notificationInterval)
+  }, [])
 
   return (
     <div className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -183,141 +245,278 @@ const HeroSection = () => {
               </motion.div>
             </motion.div>
 
-            {/* Right Column - Phone Mockup */}
+            {/* Right Column - Advanced Phone Mockup */}
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
               className="relative"
             >
-              {/* Phone Frame */}
-              <div className="relative mx-auto w-80 h-[600px] bg-gradient-to-b from-gray-900 to-gray-800 rounded-[3rem] p-2 shadow-2xl">
-                <div className="w-full h-full bg-black rounded-[2.5rem] overflow-hidden relative">
-                  {/* Screen Content */}
-                  <div className="w-full h-full bg-gradient-to-br from-primary-900 via-primary-800 to-secondary-800 relative overflow-hidden">
-                    {/* Status Bar */}
-                    <div className="flex justify-between items-center px-6 py-3 text-white text-sm">
-                      <span>9:41</span>
-                      <div className="flex items-center space-x-1">
-                        <div className="w-6 h-3 border border-white rounded-sm">
-                          <div className="w-4 h-1 bg-white rounded-sm m-0.5" />
+              {/* Phone Frame with Advanced Design */}
+              <div className="relative mx-auto w-80 h-[700px] bg-gradient-to-b from-gray-900 via-gray-800 to-black rounded-[3rem] p-3 shadow-2xl">
+                {/* Phone Bezel */}
+                <div className="absolute inset-0 bg-gradient-to-br from-gray-800 to-gray-900 rounded-[3rem] p-1">
+                  <div className="w-full h-full bg-black rounded-[2.5rem] overflow-hidden relative">
+                    
+                    {/* Dynamic Status Bar */}
+                    <div className="flex justify-between items-center px-6 py-3 text-white text-sm bg-black/20 backdrop-blur-sm">
+                      <div className="flex items-center space-x-2">
+                        <Clock className="w-4 h-4" />
+                        <span className="font-medium">9:41</span>
+                      </div>
+                      <div className="flex items-center space-x-2">
+                        <div className="flex space-x-1">
+                          {[...Array(4)].map((_, i) => (
+                            <div key={i} className={`w-1 h-3 rounded-full ${i < signalStrength ? 'bg-white' : 'bg-white/30'}`} />
+                          ))}
                         </div>
-                        <div className="w-1 h-3 bg-white rounded-full" />
+                        <Wifi className="w-4 h-4" />
+                        <div className="flex items-center space-x-1">
+                          <div className="w-6 h-2 border border-white rounded-sm">
+                            <motion.div 
+                              className="h-full bg-white rounded-sm"
+                              style={{ width: `${batteryLevel}%` }}
+                            />
+                          </div>
+                          <span className="text-xs">{batteryLevel}%</span>
+                        </div>
                       </div>
                     </div>
 
-                    {/* App Header */}
-                    <div className="px-6 py-4">
-                      <div className="flex items-center justify-between">
-                        <div>
-                          <h3 className="text-white font-bold text-lg">Annita</h3>
-                          <p className="text-white/60 text-sm">Your Business Hub</p>
+                    {/* Dynamic App Screen */}
+                    <div className="w-full h-full bg-gradient-to-br from-primary-900 via-primary-800 to-secondary-800 relative overflow-hidden">
+                      
+                      {/* App Grid */}
+                      <div className="p-6">
+                        <div className="flex items-center justify-between mb-6">
+                          <div>
+                            <h3 className="text-white font-bold text-xl">Annita Hub</h3>
+                            <p className="text-white/60 text-sm">All-in-One Platform</p>
+                          </div>
+                          <div className="flex items-center space-x-2">
+                            <motion.button
+                              whileHover={{ scale: 1.1 }}
+                              whileTap={{ scale: 0.9 }}
+                              className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center"
+                            >
+                              <Search className="w-5 h-5 text-white" />
+                            </motion.button>
+                            <motion.button
+                              whileHover={{ scale: 1.1 }}
+                              whileTap={{ scale: 0.9 }}
+                              className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center relative"
+                            >
+                              <Bell className="w-5 h-5 text-white" />
+                              {showNotification && (
+                                <motion.div
+                                  initial={{ scale: 0 }}
+                                  animate={{ scale: 1 }}
+                                  className="absolute -top-1 -right-1 w-3 h-3 bg-red-500 rounded-full"
+                                />
+                              )}
+                            </motion.button>
+                          </div>
                         </div>
-                        <div className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center">
-                          <Users className="w-5 h-5 text-white" />
-                        </div>
-                      </div>
-                    </div>
 
-                    {/* Quick Actions */}
-                    <div className="px-6 mb-6">
-                      <div className="grid grid-cols-4 gap-3">
-                        <motion.div
-                          animate={{ scale: [1, 1.05, 1] }}
-                          transition={{ duration: 2, repeat: -1, delay: 0 }}
-                          className="bg-white/20 rounded-xl p-4 text-center"
-                        >
-                          <ShoppingCart className="w-6 h-6 text-white mx-auto mb-2" />
-                          <span className="text-white text-sm font-medium">Shop</span>
-                        </motion.div>
-                        <motion.div
-                          animate={{ scale: [1, 1.05, 1] }}
-                          transition={{ duration: 2, repeat: -1, delay: 0.5 }}
-                          className="bg-white/20 rounded-xl p-4 text-center"
-                        >
-                          <CreditCard className="w-6 h-6 text-white mx-auto mb-2" />
-                          <span className="text-white text-sm font-medium">Pay</span>
-                        </motion.div>
-                        <motion.div
-                          animate={{ scale: [1, 1.05, 1] }}
-                          transition={{ duration: 2, repeat: -1, delay: 1 }}
-                          className="bg-white/20 rounded-xl p-4 text-center"
-                        >
-                          <Truck className="w-6 h-6 text-white mx-auto mb-2" />
-                          <span className="text-white text-sm font-medium">Ship</span>
-                        </motion.div>
-                        <motion.div
-                          animate={{ scale: [1, 1.05, 1] }}
-                          transition={{ duration: 2, repeat: -1, delay: 1.5 }}
-                          className="bg-white/20 rounded-xl p-4 text-center"
-                        >
-                          <MessageSquare className="w-6 h-6 text-white mx-auto mb-2" />
-                          <span className="text-white text-sm font-medium">Connect</span>
-                        </motion.div>
-                      </div>
+                        {/* App Grid */}
+                        <div className="grid grid-cols-3 gap-4 mb-6">
+                          {apps.map((app, index) => (
+                            <motion.div
+                              key={app.name}
+                              initial={{ opacity: 0, scale: 0.8 }}
+                              animate={{ opacity: 1, scale: 1 }}
+                              transition={{ delay: index * 0.1 }}
+                              whileHover={{ scale: 1.05 }}
+                              whileTap={{ scale: 0.95 }}
+                              className={`relative p-4 rounded-2xl bg-gradient-to-br ${app.color} cursor-pointer`}
+                              onClick={() => setCurrentApp(index)}
+                            >
+                              <div className="flex flex-col items-center text-center">
+                                <app.icon className="w-8 h-8 text-white mb-2" />
+                                <span className="text-white text-xs font-medium">{app.name}</span>
+                                {app.notifications > 0 && (
+                                  <div className="absolute -top-1 -right-1 w-5 h-5 bg-red-500 rounded-full flex items-center justify-center">
+                                    <span className="text-white text-xs font-bold">{app.notifications}</span>
+                                  </div>
+                                )}
+                              </div>
+                            </motion.div>
+                          ))}
+                        </div>
 
-                      {/* Stats */}
-                      <div className="bg-white/10 rounded-xl p-4 mb-4">
-                        <div className="flex items-center justify-between text-white mb-3">
-                          <span className="font-medium">Today's Sales</span>
-                          <span className="text-2xl font-bold">$2,847</span>
-                        </div>
-                        <div className="w-full bg-white/20 rounded-full h-2">
-                          <motion.div
-                            animate={{ width: ['0%', '75%'] }}
-                            transition={{ duration: 2, delay: 1 }}
-                            className="h-full bg-gradient-to-r from-green-400 to-blue-400 rounded-full"
-                          />
-                        </div>
-                      </div>
+                        {/* Active App Content */}
+                        <motion.div
+                          key={currentApp}
+                          initial={{ opacity: 0, y: 20 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 0.5 }}
+                          className="bg-white/10 rounded-2xl p-4 mb-4 backdrop-blur-sm"
+                        >
+                          <div className="flex items-center justify-between mb-3">
+                            <div className="flex items-center space-x-3">
+                              <div className={`w-10 h-10 bg-gradient-to-br ${apps[currentApp].color} rounded-xl flex items-center justify-center`}>
+                                <apps[currentApp].icon className="w-5 h-5 text-white" />
+                              </div>
+                              <div>
+                                <h4 className="text-white font-bold">{apps[currentApp].name}</h4>
+                                <p className="text-white/60 text-sm">Active Session</p>
+                              </div>
+                            </div>
+                            <motion.button
+                              whileHover={{ scale: 1.1 }}
+                              whileTap={{ scale: 0.9 }}
+                              className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center"
+                            >
+                              <Settings className="w-4 h-4 text-white" />
+                            </motion.button>
+                          </div>
+                          
+                          {/* Dynamic Content Based on App */}
+                          {currentApp === 0 && (
+                            <div className="space-y-3">
+                              <div className="flex items-center justify-between text-white">
+                                <span className="text-sm">Today's Orders</span>
+                                <span className="text-lg font-bold">24</span>
+                              </div>
+                              <div className="w-full bg-white/20 rounded-full h-2">
+                                <motion.div
+                                  animate={{ width: ['0%', '85%'] }}
+                                  transition={{ duration: 2 }}
+                                  className="h-full bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full"
+                                />
+                              </div>
+                            </div>
+                          )}
+                          
+                          {currentApp === 1 && (
+                            <div className="space-y-3">
+                              <div className="flex items-center justify-between text-white">
+                                <span className="text-sm">Total Revenue</span>
+                                <span className="text-lg font-bold">$12,847</span>
+                              </div>
+                              <div className="w-full bg-white/20 rounded-full h-2">
+                                <motion.div
+                                  animate={{ width: ['0%', '92%'] }}
+                                  transition={{ duration: 2 }}
+                                  className="h-full bg-gradient-to-r from-green-400 to-emerald-400 rounded-full"
+                                />
+                              </div>
+                            </div>
+                          )}
+                          
+                          {currentApp === 2 && (
+                            <div className="space-y-3">
+                              <div className="flex items-center justify-between text-white">
+                                <span className="text-sm">Active Deliveries</span>
+                                <span className="text-lg font-bold">8</span>
+                              </div>
+                              <div className="w-full bg-white/20 rounded-full h-2">
+                                <motion.div
+                                  animate={{ width: ['0%', '67%'] }}
+                                  transition={{ duration: 2 }}
+                                  className="h-full bg-gradient-to-r from-orange-400 to-red-400 rounded-full"
+                                />
+                              </div>
+                            </div>
+                          )}
+                        </motion.div>
 
-                      {/* Recent Activity */}
-                      <div className="space-y-3">
-                        <div className="flex items-center space-x-3 text-white">
-                          <div className="w-8 h-8 bg-green-400 rounded-full flex items-center justify-center">
-                            <CheckCircle className="w-4 h-4 text-white" />
-                          </div>
-                          <div className="flex-1">
-                            <p className="text-sm font-medium">Order #1234 Delivered</p>
-                            <p className="text-xs text-white/60">2 minutes ago</p>
-                          </div>
-                        </div>
-                        <div className="flex items-center space-x-3 text-white">
-                          <div className="w-8 h-8 bg-blue-400 rounded-full flex items-center justify-center">
-                            <CreditCard className="w-4 h-4 text-white" />
-                          </div>
-                          <div className="flex-1">
-                            <p className="text-sm font-medium">Payment Received</p>
-                            <p className="text-xs text-white/60">5 minutes ago</p>
-                          </div>
+                        {/* Live Notifications */}
+                        <div className="space-y-2">
+                          {notifications.map((notification, index) => (
+                            <motion.div
+                              key={index}
+                              initial={{ opacity: 0, x: -20 }}
+                              animate={{ opacity: 1, x: 0 }}
+                              transition={{ delay: index * 0.2 }}
+                              className="flex items-center space-x-3 p-3 bg-white/10 rounded-xl backdrop-blur-sm"
+                            >
+                              <div className={`w-8 h-8 rounded-full flex items-center justify-center ${
+                                notification.type === 'success' ? 'bg-green-400' :
+                                notification.type === 'warning' ? 'bg-yellow-400' : 'bg-blue-400'
+                              }`}>
+                                <notification.icon className="w-4 h-4 text-white" />
+                              </div>
+                              <div className="flex-1">
+                                <p className="text-white text-sm font-medium">{notification.message}</p>
+                                <p className="text-white/60 text-xs">{notification.time}</p>
+                              </div>
+                            </motion.div>
+                          ))}
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
 
-                {/* Floating Elements */}
+                {/* Advanced Floating Elements */}
                 <motion.div
                   animate={{ 
-                    y: [0, -20, 0],
-                    rotate: [0, 5, 0]
+                    y: [0, -30, 0],
+                    rotate: [0, 10, 0],
+                    scale: [1, 1.1, 1]
                   }}
-                  transition={{ duration: 3, repeat: -1, ease: "easeInOut" }}
-                  className="absolute -top-4 -right-4 w-16 h-16 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-2xl shadow-lg flex items-center justify-center"
+                  transition={{ duration: 4, repeat: -1, ease: "easeInOut" }}
+                  className="absolute -top-6 -right-6 w-20 h-20 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-3xl shadow-2xl flex items-center justify-center"
                 >
-                  <TrendingUp className="w-8 h-8 text-white" />
+                  <Crown className="w-10 h-10 text-white" />
                 </motion.div>
 
                 <motion.div
                   animate={{ 
-                    y: [0, 20, 0],
-                    rotate: [0, -5, 0]
+                    y: [0, 30, 0],
+                    rotate: [0, -10, 0],
+                    scale: [1, 1.05, 1]
                   }}
-                  transition={{ duration: 4, repeat: -1, ease: "easeInOut", delay: 1 }}
-                  className="absolute -bottom-4 -left-4 w-12 h-12 bg-gradient-to-br from-green-400 to-blue-500 rounded-xl shadow-lg flex items-center justify-center"
+                  transition={{ duration: 5, repeat: -1, ease: "easeInOut", delay: 1 }}
+                  className="absolute -bottom-6 -left-6 w-16 h-16 bg-gradient-to-br from-green-400 to-blue-500 rounded-2xl shadow-2xl flex items-center justify-center"
                 >
-                  <Shield className="w-6 h-6 text-white" />
+                  <Rocket className="w-8 h-8 text-white" />
                 </motion.div>
+
+                <motion.div
+                  animate={{ 
+                    y: [0, -20, 0],
+                    x: [0, 10, 0],
+                    rotate: [0, 5, 0]
+                  }}
+                  transition={{ duration: 6, repeat: -1, ease: "easeInOut", delay: 2 }}
+                  className="absolute top-1/2 -right-8 w-14 h-14 bg-gradient-to-br from-purple-400 to-pink-500 rounded-2xl shadow-2xl flex items-center justify-center"
+                >
+                  <Sparkles className="w-7 h-7 text-white" />
+                </motion.div>
+
+                {/* Device Ecosystem Icons */}
+                <div className="absolute -top-12 left-1/2 transform -translate-x-1/2 flex space-x-4">
+                  <motion.div
+                    animate={{ y: [0, -10, 0] }}
+                    transition={{ duration: 3, repeat: -1, delay: 0 }}
+                    className="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center backdrop-blur-sm"
+                  >
+                    <Smartphone className="w-4 h-4 text-white" />
+                  </motion.div>
+                  <motion.div
+                    animate={{ y: [0, -10, 0] }}
+                    transition={{ duration: 3, repeat: -1, delay: 0.5 }}
+                    className="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center backdrop-blur-sm"
+                  >
+                    <Tablet className="w-4 h-4 text-white" />
+                  </motion.div>
+                  <motion.div
+                    animate={{ y: [0, -10, 0] }}
+                    transition={{ duration: 3, repeat: -1, delay: 1 }}
+                    className="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center backdrop-blur-sm"
+                  >
+                    <Monitor className="w-4 h-4 text-white" />
+                  </motion.div>
+                  <motion.div
+                    animate={{ y: [0, -10, 0] }}
+                    transition={{ duration: 3, repeat: -1, delay: 1.5 }}
+                    className="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center backdrop-blur-sm"
+                  >
+                    <Watch className="w-4 h-4 text-white" />
+                  </motion.div>
+                </div>
               </div>
             </motion.div>
           </div>
