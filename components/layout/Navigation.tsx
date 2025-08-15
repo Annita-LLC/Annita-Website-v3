@@ -132,7 +132,7 @@ const Navigation = () => {
                 alt="Annita Logo" 
                 className="w-10 h-10"
               />
-              <span className="text-2xl font-bold bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent">Annita</span>
+              <span className="text-2xl font-bold bg-gradient-to-r from-primary-500 to-secondary-500 bg-clip-text text-transparent">Annita</span>
             </Link>
 
             {/* Desktop Navigation */}
@@ -226,7 +226,7 @@ const Navigation = () => {
                       alt="Annita Logo" 
                       className="w-8 h-8"
                     />
-                    <span className="text-xl font-bold bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent">Annita</span>
+                    <span className="text-xl font-bold bg-gradient-to-r from-primary-500 to-secondary-500 bg-clip-text text-transparent">Annita</span>
                   </Link>
                   <button
                     onClick={() => setIsOpen(false)}

@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Inter, Poppins } from 'next/font/google'
+import { Zen_Dots, Lora } from 'next/font/google'
 import './globals.css'
 import { Analytics } from '@vercel/analytics/react'
 import { Toaster } from 'react-hot-toast'
@@ -9,16 +9,17 @@ import CookieConsent from '@/components/ui/CookieConsent'
 import LiveActivity from '@/components/ui/LiveActivity'
 import FloatingNotification from '@/components/ui/FloatingNotification'
 
-const inter = Inter({ 
+const zenDots = Zen_Dots({ 
   subsets: ['latin'],
-  variable: '--font-inter',
+  weight: ['400'],
+  variable: '--font-zen-dots',
   display: 'swap',
 })
 
-const poppins = Poppins({ 
+const lora = Lora({ 
   subsets: ['latin'],
-  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
-  variable: '--font-poppins',
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-lora',
   display: 'swap',
 })
 
@@ -133,7 +134,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${poppins.variable}`}>
+    <html lang="en" className={`${zenDots.variable} ${lora.variable}`}>
       <head>
         <link rel="icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />

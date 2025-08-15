@@ -30,13 +30,13 @@ const TrustedPartnersSection = () => {
   ]
 
   return (
-    <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
+    <section className="py-20 bg-gradient-to-br from-neutral-50 to-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+                      <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-neutral-800 mb-6">
             Trusted & Backed By
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                      <p className="text-xl text-neutral-600 max-w-3xl mx-auto">
             Annita is supported by leading organizations and institutions across Africa and Europe.
           </p>
         </div>
@@ -53,8 +53,8 @@ const TrustedPartnersSection = () => {
                   className="w-full h-full object-contain"
                 />
               </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">{partner.name}</h3>
-              <p className="text-sm text-gray-600">{partner.description}</p>
+                              <h3 className="text-lg font-semibold text-neutral-800 mb-2">{partner.name}</h3>
+                <p className="text-sm text-neutral-600">{partner.description}</p>
             </div>
           ))}
         </div>

@@ -132,7 +132,7 @@ const AIPage = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white">
       {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-to-r from-blue-600 to-cyan-600 text-white">
+      <section className="relative py-20 bg-gradient-to-r from-primary-500 to-secondary-500 text-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <div className="w-20 h-20 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-6">
@@ -305,13 +305,13 @@ const AIPage = () => {
       </section>
 
       {/* AI Capabilities */}
-      <section className="py-20 bg-gradient-to-br from-blue-50 to-cyan-50">
+      <section className="py-20 bg-gradient-to-br from-neutral-50 to-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-neutral-800 mb-6">
               AI Capabilities
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-neutral-600 max-w-3xl mx-auto">
               Our AI systems are designed to help you with every aspect of your digital life.
             </p>
           </div>

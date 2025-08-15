@@ -32,14 +32,14 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     const baseClasses = "inline-flex items-center justify-center font-semibold transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none relative overflow-hidden"
     
     const variants = {
-      primary: "bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 text-white shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 focus:ring-primary-500",
-      secondary: "bg-gradient-to-r from-secondary-600 to-secondary-700 hover:from-secondary-700 hover:to-secondary-800 text-white shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 focus:ring-secondary-500",
-      accent: "bg-gradient-to-r from-accent-600 to-accent-700 hover:from-accent-700 hover:to-accent-800 text-white shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 focus:ring-accent-500",
-      outline: "border-2 border-primary-600 text-primary-600 hover:bg-primary-600 hover:text-white focus:ring-primary-500 shadow-md hover:shadow-lg transform hover:-translate-y-0.5",
-      ghost: "text-gray-700 hover:bg-gray-100 focus:ring-gray-500 hover:shadow-md transform hover:-translate-y-0.5",
-      gradient: "bg-gradient-to-r from-primary-600 via-secondary-600 to-accent-600 hover:from-primary-700 hover:via-secondary-700 hover:to-accent-700 text-white shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 focus:ring-primary-500",
+      primary: "bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 text-white shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 focus:ring-primary-500",
+      secondary: "bg-gradient-to-r from-secondary-500 to-secondary-600 hover:from-secondary-600 hover:to-secondary-700 text-white shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 focus:ring-secondary-500",
+      accent: "bg-gradient-to-r from-accent-500 to-accent-600 hover:from-accent-600 hover:to-accent-700 text-white shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 focus:ring-accent-500",
+      outline: "border-2 border-primary-500 text-primary-500 hover:bg-primary-500 hover:text-white focus:ring-primary-500 shadow-md hover:shadow-lg transform hover:-translate-y-0.5",
+      ghost: "text-neutral-700 hover:bg-neutral-100 focus:ring-neutral-500 hover:shadow-md transform hover:-translate-y-0.5",
+      gradient: "bg-gradient-to-r from-primary-500 via-secondary-500 to-accent-500 hover:from-primary-600 hover:via-secondary-600 hover:to-accent-600 text-white shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 focus:ring-primary-500",
       glass: "bg-white/10 backdrop-blur-sm border border-white/20 text-white hover:bg-white/20 focus:ring-white/50 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5",
-      white: "bg-white text-gray-900 hover:bg-gray-100 focus:ring-gray-500 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
+      white: "bg-white text-neutral-800 hover:bg-neutral-100 focus:ring-neutral-500 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
     }
     
     const sizes = {

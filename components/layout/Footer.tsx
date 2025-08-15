@@ -90,7 +90,7 @@ const Footer = () => {
                 alt="Annita Logo" 
                 className="w-10 h-10"
               />
-              <span className="text-2xl font-bold gradient-text">Annita</span>
+              <span className="text-2xl font-bold bg-gradient-to-r from-primary-500 to-secondary-500 bg-clip-text text-transparent">Annita</span>
             </Link>
             <p className="text-gray-400 mb-6 leading-relaxed">
               Africa's first all-in-one digital platform, empowering MSMEs with integrated 
