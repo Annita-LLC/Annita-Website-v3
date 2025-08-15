@@ -13,10 +13,7 @@ import {
   Users,
   TrendingUp,
   Shield,
-  CheckCircle,
-  Star,
-  Award,
-  Heart
+  CheckCircle
 } from 'lucide-react'
 import Button from '@/components/ui/Button'
 
@@ -199,38 +196,7 @@ const CTASection = () => {
           </div>
         </motion.div>
 
-        {/* Final CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 1.4 }}
-          className="text-center mt-16"
-        >
-          <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-8 border border-white/20">
-            <Heart className="w-12 h-12 text-white mx-auto mb-4" />
-            <h3 className="text-2xl font-bold text-white mb-4">
-              Join Africa's Digital Revolution
-            </h3>
-            <p className="text-white/90 mb-6 max-w-2xl mx-auto">
-              Be part of the transformation that's empowering millions of African businesses 
-              to thrive in the global digital economy.
-            </p>
-            <div className="flex flex-wrap justify-center gap-4 text-sm text-white/80">
-              <div className="flex items-center space-x-2">
-                <Star className="w-4 h-4 text-yellow-400" />
-                <span>#1 Digital Platform in Africa</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <Award className="w-4 h-4 text-yellow-400" />
-                <span>Orange Social Venture Prize Winner</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <TrendingUp className="w-4 h-4 text-green-400" />
-                <span>300% Average Revenue Growth</span>
-              </div>
-            </div>
-          </div>
-        </motion.div>
+
       </div>
     </section>
   )
