@@ -19,7 +19,7 @@ import {
   Package,
   Tag
 } from 'lucide-react'
-// import Button from '@/components/ui/Button'
+import Button from '@/components/ui/Button'
 
 export const metadata: Metadata = {
   title: 'Marketplace - Annita',
@@ -111,14 +111,22 @@ const MarketplacePage = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-gradient-to-r from-primary-600 via-secondary-600 to-accent-600 hover:from-primary-700 hover:via-secondary-700 hover:to-accent-700 text-white px-8 py-4 text-lg rounded-xl font-bold shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 flex items-center gap-2">
-                <ShoppingCart className="w-5 h-5" />
+              <Button
+                variant="gradient"
+                size="lg"
+                icon={ShoppingCart}
+                className="text-lg font-bold"
+              >
                 Start Selling
-              </button>
-              <button className="bg-white/10 backdrop-blur-sm border border-white/20 text-white hover:bg-white/20 px-8 py-4 text-lg rounded-xl font-bold shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 flex items-center gap-2">
-                <Search className="w-5 h-5" />
+              </Button>
+              <Button
+                variant="glass"
+                size="lg"
+                icon={Search}
+                className="text-lg font-bold"
+              >
                 Browse Products
-              </button>
+              </Button>
             </div>
           </div>
         </div>
@@ -231,14 +239,23 @@ const MarketplacePage = () => {
               No setup fees, no monthly charges.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-gradient-to-r from-primary-600 via-secondary-600 to-accent-600 hover:from-primary-700 hover:via-secondary-700 hover:to-accent-700 text-white px-8 py-4 text-lg rounded-xl font-bold shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 flex items-center gap-2">
+              <Button
+                variant="gradient"
+                size="lg"
+                icon={ArrowRight}
+                iconPosition="right"
+                className="text-lg font-bold"
+              >
                 Start Selling Now
-                <ArrowRight className="w-5 h-5" />
-              </button>
-              <button className="bg-white/10 backdrop-blur-sm border border-white/20 text-white hover:bg-white/20 px-8 py-4 text-lg rounded-xl font-bold shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 flex items-center gap-2">
-                <Users className="w-5 h-5" />
+              </Button>
+              <Button
+                variant="glass"
+                size="lg"
+                icon={Users}
+                className="text-lg font-bold"
+              >
                 Learn More
-              </button>
+              </Button>
             </div>
           </div>
         </div>

@@ -1,5 +1,4 @@
 import React from 'react'
-import { motion } from 'framer-motion'
 import { LucideIcon } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
@@ -9,11 +8,11 @@ interface ButtonProps {
   icon?: LucideIcon
   iconPosition?: 'left' | 'right'
   loading?: boolean
-  animated?: boolean
   children: React.ReactNode
   className?: string
   onClick?: () => void
   disabled?: boolean
+  type?: 'button' | 'submit' | 'reset'
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
@@ -24,10 +23,10 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     icon: Icon,
     iconPosition = 'left',
     loading = false,
-    animated = true,
     children, 
     onClick,
     disabled,
+    type = 'button',
     ...props 
   }, ref) => {
     const baseClasses = "inline-flex items-center justify-center font-semibold transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none relative overflow-hidden"
@@ -49,41 +48,6 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       xl: "px-10 py-5 text-xl rounded-2xl"
     }
 
-    const buttonContent = (
-      <>
-        {loading && (
-          <motion.div
-            className="absolute inset-0 flex items-center justify-center bg-inherit rounded-inherit"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-          >
-            <motion.div
-              className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full"
-              animate={{ rotate: 360 }}
-              transition={{ duration: 1, repeat: -1, ease: "linear" }}
-            />
-          </motion.div>
-        )}
-        
-        <span className={cn("flex items-center gap-2", loading && "opacity-0")}>
-          {Icon && iconPosition === 'left' && <Icon className="w-4 h-4" />}
-          {children}
-          {Icon && iconPosition === 'right' && <Icon className="w-4 h-4" />}
-        </span>
-        
-        {/* Gradient overlay for gradient variant */}
-        {variant === 'gradient' && (
-          <motion.div
-            className="absolute inset-0 bg-gradient-to-r from-primary-600/20 via-secondary-600/20 to-accent-600/20 rounded-inherit"
-            initial={{ opacity: 0 }}
-            whileHover={{ opacity: 1 }}
-            transition={{ duration: 0.3 }}
-          />
-        )}
-      </>
-    )
-
     const buttonClasses = cn(
       baseClasses,
       variants[variant],
@@ -92,17 +56,26 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     )
 
     return (
-      <motion.button
+      <button
         ref={ref}
+        type={type}
         className={buttonClasses}
         onClick={onClick}
         disabled={disabled || loading}
-        whileHover={animated ? { scale: 1.02 } : undefined}
-        whileTap={animated ? { scale: 0.98 } : undefined}
         {...props}
       >
-        {buttonContent}
-      </motion.button>
+        {loading && (
+          <div className="absolute inset-0 flex items-center justify-center bg-inherit rounded-inherit">
+            <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+          </div>
+        )}
+        
+        <span className={cn("flex items-center gap-2", loading && "opacity-0")}>
+          {Icon && iconPosition === 'left' && <Icon className="w-4 h-4" />}
+          {children}
+          {Icon && iconPosition === 'right' && <Icon className="w-4 h-4" />}
+        </span>
+      </button>
     )
   }
 )
