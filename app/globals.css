@@ -54,9 +54,9 @@
   }
 
   body {
-    @apply bg-neutral-100 text-neutral-800 font-sans;
-    font-feature-settings: "rlig" 1, "calt" 1;
-  }
+  @apply bg-neutral-100 dark:bg-gray-900 text-neutral-800 dark:text-white font-sans;
+  font-feature-settings: "rlig" 1, "calt" 1;
+}
 
   html {
     scroll-behavior: smooth;
@@ -68,24 +68,24 @@
   }
 
   ::-webkit-scrollbar-track {
-    @apply bg-gray-100;
+    @apply bg-gray-100 dark:bg-gray-800;
   }
 
   ::-webkit-scrollbar-thumb {
-    @apply bg-primary-500 rounded-full;
+    @apply bg-primary-500 dark:bg-primary-400 rounded-full;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    @apply bg-primary-600;
+    @apply bg-primary-600 dark:bg-primary-300;
   }
 
   /* Selection styles */
   ::selection {
-    @apply bg-primary-100 text-primary-900;
+    @apply bg-primary-100 dark:bg-primary-900 text-primary-900 dark:text-primary-100;
   }
 
   ::-moz-selection {
-    @apply bg-primary-100 text-primary-900;
+    @apply bg-primary-100 dark:bg-primary-900 text-primary-900 dark:text-primary-100;
   }
 }
 
@@ -115,7 +115,7 @@
   }
 
   .btn-ghost {
-    @apply btn text-gray-700 hover:bg-gray-100 focus:ring-gray-500;
+    @apply btn text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 focus:ring-gray-500;
   }
 
   .btn-sm {
@@ -127,7 +127,7 @@
   }
 
   .card {
-    @apply bg-white rounded-xl shadow-soft border border-gray-200 overflow-hidden;
+    @apply bg-white dark:bg-gray-800 rounded-xl shadow-soft border border-gray-200 dark:border-gray-700 overflow-hidden;
   }
 
   .card-hover {
