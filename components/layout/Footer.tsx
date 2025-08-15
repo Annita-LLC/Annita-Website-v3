@@ -33,7 +33,7 @@ const Footer = () => {
       links: [
         { name: 'Global Market', href: '/services/global-market' },
         { name: 'AnnitaPay Business', href: '/services/annitapay-business' },
-        { name: 'Annita AI', href: '/services/annita-ai' },
+        { name: 'Annita AI', href: '/services/ai' },
         { name: 'Logistics', href: '/services/logistics' },
         { name: 'Ads', href: '/services/ads' },
         { name: 'ERP System', href: '/services/erp' }
