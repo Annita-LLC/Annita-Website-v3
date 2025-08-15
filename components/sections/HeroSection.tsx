@@ -38,9 +38,9 @@ const HeroSection = () => {
   }, [features.length])
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <div className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background */}
-      <div className="absolute inset-0 hero-gradient" />
+      <div className="absolute inset-0 bg-gradient-to-br from-primary-900 via-primary-800 to-secondary-800" />
       <div className="absolute inset-0 bg-gradient-to-b from-black/20 to-black/40" />
       
       {/* Animated Background Elements */}
@@ -333,7 +333,7 @@ const HeroSection = () => {
           />
         </motion.div>
       </motion.div>
-    </section>
+    </div>
   )
 }
 
