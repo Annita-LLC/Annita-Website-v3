@@ -18,6 +18,28 @@ const Footer = () => {
 
   const footerSections = [
     {
+      title: 'Personal Services',
+      links: [
+        { name: 'AnnitaPay', href: '/services/annitapay' },
+        { name: 'Shopping', href: '/services/shopping' },
+        { name: 'Entertainment', href: '/services/entertainment' },
+        { name: 'Health', href: '/services/health' },
+        { name: 'Education', href: '/services/education' },
+        { name: 'Social', href: '/services/social' }
+      ]
+    },
+    {
+      title: 'Business Services',
+      links: [
+        { name: 'Global Market', href: '/services/global-market' },
+        { name: 'AnnitaPay Business', href: '/services/annitapay-business' },
+        { name: 'Annita AI', href: '/services/annita-ai' },
+        { name: 'Logistics', href: '/services/logistics' },
+        { name: 'Ads', href: '/services/ads' },
+        { name: 'ERP System', href: '/services/erp' }
+      ]
+    },
+    {
       title: 'Platform',
       links: [
         { name: 'Annita Marketplace', href: '/marketplace' },
@@ -29,31 +51,14 @@ const Footer = () => {
       ]
     },
     {
-      title: 'Solutions',
-      links: [
-        { name: 'Enterprise', href: '/enterprise' },
-        { name: 'Partners', href: '/partners' },
-        { name: 'Pricing', href: '/pricing' },
-        { name: 'Dashboard', href: '/dashboard' }
-      ]
-    },
-    {
       title: 'Resources',
       links: [
-        { name: 'Support', href: '/support' },
+        { name: 'Help Center', href: '/support/help-center' },
+        { name: 'Documentation', href: '/support/documentation' },
+        { name: 'Status', href: '/support/status' },
         { name: 'Blog', href: '/blog' },
         { name: 'Careers', href: '/careers' },
-        { name: 'About', href: '/about' },
-        { name: 'Awards & Recognition', href: '/awards' }
-      ]
-    },
-    {
-      title: 'Company',
-      links: [
-        { name: 'Contact', href: '/contact' },
-        { name: 'Privacy Policy', href: '/privacy' },
-        { name: 'Terms of Service', href: '/terms' },
-        { name: 'Security', href: '/security' }
+        { name: 'About', href: '/about' }
       ]
     }
   ]

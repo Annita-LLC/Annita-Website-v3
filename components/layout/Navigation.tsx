@@ -25,7 +25,16 @@ import {
   Briefcase,
   FileText,
   HelpCircle,
-  Mail
+  Mail,
+  User,
+  Building,
+  Heart,
+  GraduationCap,
+  MessageCircle,
+  Play,
+  Zap,
+  Target,
+  Database
 } from 'lucide-react'
 
 const Navigation = () => {
@@ -44,6 +53,30 @@ const Navigation = () => {
   const navItems = [
     { name: 'Home', href: '/' },
     { 
+      name: 'Personal Services', 
+      href: '#',
+      dropdown: [
+        { name: 'AnnitaPay', href: '/services/annitapay', icon: CreditCard, description: 'Secure digital payments' },
+        { name: 'Shopping', href: '/services/shopping', icon: ShoppingCart, description: 'E-commerce platform' },
+        { name: 'Entertainment', href: '/services/entertainment', icon: Play, description: 'Entertainment & media' },
+        { name: 'Health', href: '/services/health', icon: Heart, description: 'Health & wellness services' },
+        { name: 'Education', href: '/services/education', icon: GraduationCap, description: 'Educational resources' },
+        { name: 'Social', href: '/services/social', icon: MessageCircle, description: 'Social networking' },
+      ]
+    },
+    { 
+      name: 'Business Services', 
+      href: '#',
+      dropdown: [
+        { name: 'Global Market', href: '/services/global-market', icon: Globe, description: 'International marketplace' },
+        { name: 'AnnitaPay Business', href: '/services/annitapay-business', icon: Building, description: 'Business payment solutions' },
+        { name: 'Annita AI', href: '/services/annita-ai', icon: Zap, description: 'AI-powered business tools' },
+        { name: 'Logistics', href: '/services/logistics', icon: Truck, description: 'Supply chain & delivery' },
+        { name: 'Ads', href: '/services/ads', icon: Target, description: 'Advertising platform' },
+        { name: 'ERP System', href: '/services/erp', icon: Database, description: 'Enterprise resource planning' },
+      ]
+    },
+    { 
       name: 'Platform', 
       href: '#',
       dropdown: [
@@ -53,15 +86,6 @@ const Navigation = () => {
         { name: 'Annita Connect', href: '/connect', icon: MessageSquare, description: 'Communication & marketing suite' },
         { name: 'Analytics & AI', href: '/analytics', icon: BarChart3, description: 'AI-driven business insights' },
         { name: 'API & Integrations', href: '/api', icon: Code, description: 'Developer platform & integrations' },
-      ]
-    },
-    { 
-      name: 'Solutions', 
-      href: '#',
-      dropdown: [
-        { name: 'Enterprise', href: '/enterprise', icon: Building2, description: 'Large organization solutions' },
-        { name: 'Partners', href: '/partners', icon: UserPlus, description: 'Partnership opportunities' },
-        { name: 'Pricing', href: '/pricing', icon: DollarSign, description: 'Plans & pricing' },
       ]
     },
     { 
@@ -78,10 +102,12 @@ const Navigation = () => {
       name: 'Support', 
       href: '#',
       dropdown: [
-        { name: 'Help Center', href: '/support', icon: HelpCircle, description: 'Get help and support' },
-        { name: 'Contact Us', href: '/contact', icon: Mail, description: 'Get in touch with us' },
+        { name: 'Help Center', href: '/support/help-center', icon: HelpCircle, description: 'Get help and support' },
+        { name: 'Documentation', href: '/support/documentation', icon: FileText, description: 'Developer documentation' },
+        { name: 'Status', href: '/support/status', icon: BarChart3, description: 'System status' },
+        { name: 'Report Issues', href: '/support/report-issues', icon: HelpCircle, description: 'Report bugs and issues' },
+        { name: 'Contact Support', href: '/support/contact-support', icon: Mail, description: 'Get in touch with us' },
         { name: 'Contact Sales', href: '/contact-sales', icon: Phone, description: 'Talk to our business development team' },
-        { name: 'Partner Apply', href: '/partners/apply', icon: UserPlus, description: 'Apply to become a partner' },
       ]
     },
   ]
