@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { 
   Play, 
@@ -38,7 +38,7 @@ const HeroSection = () => {
   }, [features.length])
 
   return (
-    <React.Fragment>
+    <>
       <div className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary-900 via-primary-800 to-secondary-800" />
@@ -335,7 +335,7 @@ const HeroSection = () => {
         </motion.div>
       </motion.div>
       </div>
-    </React.Fragment>
+    </>
   )
 }
 
