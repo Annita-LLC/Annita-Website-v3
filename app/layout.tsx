@@ -193,7 +193,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${inter.className} antialiased`}>
+      <body className={`${zenDots.variable} ${lora.variable} antialiased`}>
         <div className="min-h-screen flex flex-col">
           <Navigation />
           <main className="flex-1">
