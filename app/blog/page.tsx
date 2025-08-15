@@ -24,7 +24,7 @@ const BlogPage = () => {
       date: 'December 15, 2024',
       readTime: '5 min read',
       category: 'E-commerce',
-      image: '/images/blog/blog-1.svg',
+      image: '/images/blog/Annita is now on Mansa.jpg',
       featured: true
     },
     {
@@ -34,7 +34,7 @@ const BlogPage = () => {
       date: 'December 12, 2024',
       readTime: '4 min read',
       category: 'Fintech',
-      image: '/images/blog/blog-2.svg'
+      image: '/images/blog/490462987_3858604724452239_358892522577591280_n.jpg'
     },
     {
       title: 'Building Trust in African Digital Marketplaces',
@@ -43,7 +43,7 @@ const BlogPage = () => {
       date: 'December 10, 2024',
       readTime: '6 min read',
       category: 'Business',
-      image: '/images/blog/blog-3.svg'
+      image: '/images/blog/491356901_3863347220644656_7471010603430010476_n.jpg'
     }
   ]
 
@@ -55,7 +55,7 @@ const BlogPage = () => {
       date: 'December 8, 2024',
       readTime: '7 min read',
       category: 'Trade',
-      image: '/images/blog/blog-4.svg'
+      image: '/images/blog/501399670_3906271166352261_372809238330330623_n.jpg'
     },
     {
       title: 'Mobile-First Marketing Strategies for African Businesses',
@@ -64,7 +64,7 @@ const BlogPage = () => {
       date: 'December 5, 2024',
       readTime: '4 min read',
       category: 'Marketing',
-      image: '/images/blog/blog-5.svg'
+      image: '/images/blog/market1.jpg'
     },
     {
       title: 'Logistics Solutions for Rural Business Growth',
@@ -73,7 +73,7 @@ const BlogPage = () => {
       date: 'December 3, 2024',
       readTime: '5 min read',
       category: 'Logistics',
-      image: '/images/blog/blog-6.svg'
+      image: '/images/blog/market2.jpg'
     },
     {
       title: 'AI-Powered Analytics for African MSMEs',
@@ -82,7 +82,7 @@ const BlogPage = () => {
       date: 'November 30, 2024',
       readTime: '6 min read',
       category: 'Technology',
-      image: '/images/blog/blog-7.svg'
+      image: '/images/blog/istockphoto-2154161272-612x612.jpg'
     },
     {
       title: 'Financial Inclusion: Bridging the Gap in Africa',
@@ -91,7 +91,7 @@ const BlogPage = () => {
       date: 'November 28, 2024',
       readTime: '5 min read',
       category: 'Fintech',
-      image: '/images/blog/blog-8.svg'
+      image: '/images/blog/Cross boarder pauyment.jpeg'
     },
     {
       title: 'Digital Transformation Success Stories from Africa',
@@ -100,7 +100,7 @@ const BlogPage = () => {
       date: 'November 25, 2024',
       readTime: '8 min read',
       category: 'Success Stories',
-      image: '/images/blog/blog-1.svg'
+      image: '/images/blog/group-diverse-colleagues-collaborating-project-conference-room_126745-3893.avif'
     }
   ]
 

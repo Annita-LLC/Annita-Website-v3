@@ -4,6 +4,7 @@ import FeaturesSection from '@/components/sections/FeaturesSection'
 import StatsSection from '@/components/sections/StatsSection'
 // import AboutSection from '@/components/sections/AboutSection'
 import ServicesSection from '@/components/sections/ServicesSection'
+import TrustedPartnersSection from '@/components/sections/TrustedPartnersSection'
 import TestimonialsSection from '@/components/sections/TestimonialsSection'
 import CTASection from '@/components/sections/CTASection'
 import LoadingSpinner from '@/components/ui/LoadingSpinner'
@@ -27,6 +28,10 @@ export default function HomePage() {
       
       <Suspense fallback={<LoadingSpinner />}>
         <ServicesSection />
+      </Suspense>
+      
+      <Suspense fallback={<LoadingSpinner />}>
+        <TrustedPartnersSection />
       </Suspense>
       
       <Suspense fallback={<LoadingSpinner />}>

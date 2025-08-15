@@ -128,7 +128,7 @@ const Navigation = () => {
             {/* Logo */}
             <Link href="/" className="flex items-center space-x-2">
               <img 
-                src="/images/logo/annita-icon.svg" 
+                src="/images/blog/Annita's Logo.png" 
                 alt="Annita Logo" 
                 className="w-10 h-10"
               />
@@ -222,7 +222,7 @@ const Navigation = () => {
                 <div className="flex items-center justify-between p-6 border-b border-gray-200">
                   <Link href="/" className="flex items-center space-x-2" onClick={() => setIsOpen(false)}>
                     <img 
-                      src="/images/logo/annita-icon.svg" 
+                      src="/images/blog/Annita's Logo.png" 
                       alt="Annita Logo" 
                       className="w-8 h-8"
                     />

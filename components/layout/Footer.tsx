@@ -85,9 +85,11 @@ const Footer = () => {
           {/* Company Info */}
           <div className="xl:col-span-2">
             <Link href="/" className="flex items-center space-x-2 mb-6">
-              <div className="w-10 h-10 bg-gradient-to-br from-primary-600 to-secondary-600 rounded-xl flex items-center justify-center">
-                <span className="text-white font-bold text-xl">A</span>
-              </div>
+              <img 
+                src="/images/blog/Annita's Logo.png" 
+                alt="Annita Logo" 
+                className="w-10 h-10"
+              />
               <span className="text-2xl font-bold gradient-text">Annita</span>
             </Link>
             <p className="text-gray-400 mb-6 leading-relaxed">

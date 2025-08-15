@@ -89,8 +89,11 @@ const DownloadPage = () => {
                       className="flex items-center justify-center"
                       onClick={() => setShowAuth(true)}
                     >
-                      <Globe className="w-5 h-5 mr-2" />
-                      Download for iOS
+                      <img 
+                        src="/images/Icons/Download_on_the_App_Store_Badge.svg.webp" 
+                        alt="Download on App Store" 
+                        className="h-8"
+                      />
                     </Button>
                     <Button 
                       variant="white" 
@@ -98,8 +101,11 @@ const DownloadPage = () => {
                       className="flex items-center justify-center"
                       onClick={() => setShowAuth(true)}
                     >
-                      <Globe className="w-5 h-5 mr-2" />
-                      Download for Android
+                      <img 
+                        src="/images/Icons/google-play-badge-en.webp" 
+                        alt="Get it on Google Play" 
+                        className="h-8"
+                      />
                     </Button>
                   </div>
                   <p className="text-sm text-white/70">
@@ -334,7 +340,11 @@ const DownloadPage = () => {
                   className="w-full"
                   onClick={() => setShowAuth(true)}
                 >
-                  Download for iOS
+                  <img 
+                    src="/images/Icons/Download_on_the_App_Store_Badge.svg.webp" 
+                    alt="Download on App Store" 
+                    className="h-6"
+                  />
                 </Button>
                 <p className="text-xs text-gray-500">
                   Requires iOS 13.0 or later
@@ -364,7 +374,11 @@ const DownloadPage = () => {
                   className="w-full"
                   onClick={() => setShowAuth(true)}
                 >
-                  Download for Android
+                  <img 
+                    src="/images/Icons/google-play-badge-en.webp" 
+                    alt="Get it on Google Play" 
+                    className="h-6"
+                  />
                 </Button>
                 <p className="text-xs text-gray-500">
                   Requires Android 8.0 or later
