@@ -231,12 +231,12 @@ const CTASection = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="btn-lg bg-white text-primary-600 hover:bg-gray-100 group">
+              <button className="px-8 py-4 bg-white text-primary-600 rounded-xl font-bold text-lg shadow-2xl hover:shadow-white/25 transform hover:-translate-y-1 transition-all duration-300 flex items-center justify-center group">
                 <Download className="w-5 h-5 mr-2" />
                 Download App
                 <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
               </button>
-              <button className="btn-lg border-2 border-white text-white hover:bg-white hover:text-primary-600 group">
+              <button className="px-8 py-4 border-2 border-white text-white rounded-xl font-bold text-lg backdrop-blur-xl shadow-2xl hover:shadow-white/10 hover:bg-white hover:text-primary-600 transform hover:-translate-y-1 transition-all duration-300 flex items-center justify-center group">
                 <Phone className="w-5 h-5 mr-2" />
                 Schedule Demo
               </button>

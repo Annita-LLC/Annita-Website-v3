@@ -218,29 +218,18 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Awards & Recognition */}
+      {/* Awards & Recognition Link */}
       <div className="bg-gray-800">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="text-center">
-            <h4 className="text-lg font-semibold text-white mb-6">Awards & Recognition</h4>
-            <div className="flex flex-wrap justify-center items-center gap-8 text-gray-400">
-              <div className="flex items-center space-x-2">
-                <span className="text-yellow-400">🏆</span>
-                <span>Orange Social Venture Prize 2023</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <span className="text-blue-400">⭐</span>
-                <span>Top 50 Businesses in Africa 2024</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <span className="text-green-400">🌍</span>
-                <span>AfCFTA Partner</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <span className="text-purple-400">💎</span>
-                <span>Afreximbank MANSA Platform</span>
-              </div>
-            </div>
+            <Link 
+              href="/awards" 
+              className="inline-flex items-center space-x-2 text-gray-400 hover:text-white transition-colors duration-200"
+            >
+              <span>🏆</span>
+              <span className="font-medium">View Our Awards & Recognition</span>
+              <ArrowRight className="w-4 h-4" />
+            </Link>
           </div>
         </div>
       </div>

@@ -59,6 +59,7 @@ const Navigation = () => {
       ]
     },
     { name: 'About', href: '/about' },
+    { name: 'Awards', href: '/awards' },
     { name: 'Blog', href: '/blog' },
     { name: 'Careers', href: '/careers' },
     { name: 'Contact', href: '/contact' },
@@ -79,10 +80,10 @@ const Navigation = () => {
           <div className="flex justify-between items-center h-16 lg:h-20">
             {/* Logo */}
             <Link href="/" className="flex items-center space-x-2">
-              <div className="w-10 h-10 bg-gradient-to-br from-primary-600 to-secondary-600 rounded-xl flex items-center justify-center">
+              <div className="w-10 h-10 bg-gradient-to-br from-primary-600 to-secondary-600 rounded-xl flex items-center justify-center shadow-lg">
                 <span className="text-white font-bold text-xl">A</span>
               </div>
-              <span className="text-2xl font-bold gradient-text">Annita</span>
+              <span className="text-2xl font-bold bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent">Annita</span>
             </Link>
 
             {/* Desktop Navigation */}
@@ -174,10 +175,10 @@ const Navigation = () => {
               <div className="flex flex-col h-full">
                 <div className="flex items-center justify-between p-6 border-b border-gray-200">
                   <Link href="/" className="flex items-center space-x-2" onClick={() => setIsOpen(false)}>
-                    <div className="w-8 h-8 bg-gradient-to-br from-primary-600 to-secondary-600 rounded-lg flex items-center justify-center">
+                    <div className="w-8 h-8 bg-gradient-to-br from-primary-600 to-secondary-600 rounded-lg flex items-center justify-center shadow-lg">
                       <span className="text-white font-bold">A</span>
                     </div>
-                    <span className="text-xl font-bold gradient-text">Annita</span>
+                    <span className="text-xl font-bold bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent">Annita</span>
                   </Link>
                   <button
                     onClick={() => setIsOpen(false)}

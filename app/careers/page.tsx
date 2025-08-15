@@ -1,4 +1,5 @@
 import { Metadata } from 'next'
+import Link from 'next/link'
 import { 
   Users, 
   Heart, 
@@ -297,9 +298,11 @@ const CareersPage = () => {
                     <h3 className="text-xl font-bold text-gray-900 mb-2">{position.title}</h3>
                     <p className="text-blue-600 font-medium">{position.department}</p>
                   </div>
-                  <button className="btn-sm bg-blue-600 text-white hover:bg-blue-700">
-                    Apply Now
-                  </button>
+                  <Link href="/careers/apply">
+                    <button className="btn-sm bg-blue-600 text-white hover:bg-blue-700">
+                      Apply Now
+                    </button>
+                  </Link>
                 </div>
                 
                 <div className="flex items-center space-x-4 mb-4 text-sm text-gray-600">
@@ -397,10 +400,12 @@ const CareersPage = () => {
                 View All Positions
                 <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
               </button>
-              <button className="btn-lg border-2 border-white text-white hover:bg-white hover:text-blue-600">
-                <Heart className="w-5 h-5 mr-2" />
-                Send Resume
-              </button>
+              <Link href="/careers/apply">
+                <button className="btn-lg border-2 border-white text-white hover:bg-white hover:text-blue-600">
+                  <Heart className="w-5 h-5 mr-2" />
+                  Send Resume
+                </button>
+              </Link>
             </div>
           </div>
         </div>

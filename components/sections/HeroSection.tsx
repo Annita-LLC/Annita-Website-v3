@@ -145,17 +145,17 @@ const HeroSection = () => {
               >
                 <Button
                   variant="gradient"
-                  size="lg"
+                  size="xl"
                   icon={Play}
-                  className="text-lg font-bold"
+                  className="text-lg font-bold shadow-2xl hover:shadow-primary-500/25 transform hover:-translate-y-1 transition-all duration-300"
                 >
                   Get Started Free
                 </Button>
                 <Button
                   variant="glass"
-                  size="lg"
+                  size="xl"
                   icon={Download}
-                  className="text-lg font-bold"
+                  className="text-lg font-bold backdrop-blur-xl shadow-2xl hover:shadow-white/10 transform hover:-translate-y-1 transition-all duration-300"
                 >
                   Download App
                 </Button>
