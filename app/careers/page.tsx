@@ -12,8 +12,11 @@ import {
   Clock,
   DollarSign,
   Briefcase,
-  GraduationCap
+  GraduationCap,
+  Play,
+  Download
 } from 'lucide-react'
+import Button from '@/components/ui/Button'
 
 export const metadata: Metadata = {
   title: 'Careers - Join Annita\'s Mission',
@@ -189,15 +192,22 @@ const CareersPage = () => {
               Be part of something bigger than yourself.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="btn-lg bg-blue-600 text-white hover:bg-blue-700 group">
-                <Briefcase className="w-5 h-5 mr-2" />
-                View Open Positions
-                <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-              </button>
-              <button className="btn-lg border-2 border-white text-white hover:bg-white hover:text-gray-900">
-                <Heart className="w-5 h-5 mr-2" />
-                Learn About Culture
-              </button>
+              <Button
+                variant="gradient"
+                size="xl"
+                icon={Play}
+                className="text-lg font-bold shadow-2xl hover:shadow-blue-500/25 transform hover:-translate-y-1 transition-all duration-300"
+              >
+                Get Started Free
+              </Button>
+              <Button
+                variant="glass"
+                size="xl"
+                icon={Download}
+                className="text-lg font-bold backdrop-blur-xl shadow-2xl hover:shadow-white/10 transform hover:-translate-y-1 transition-all duration-300"
+              >
+                Download App
+              </Button>
             </div>
           </div>
         </div>
@@ -395,17 +405,22 @@ const CareersPage = () => {
               Send us your resume and tell us how you can contribute to our mission.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="btn-lg bg-white text-blue-600 hover:bg-gray-100 group">
-                <Briefcase className="w-5 h-5 mr-2" />
-                View All Positions
-                <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-              </button>
-              <Link href="/careers/apply">
-                <button className="btn-lg border-2 border-white text-white hover:bg-white hover:text-blue-600">
-                  <Heart className="w-5 h-5 mr-2" />
-                  Send Resume
-                </button>
-              </Link>
+              <Button
+                variant="gradient"
+                size="xl"
+                icon={Play}
+                className="text-lg font-bold shadow-2xl hover:shadow-blue-500/25 transform hover:-translate-y-1 transition-all duration-300"
+              >
+                Get Started Free
+              </Button>
+              <Button
+                variant="glass"
+                size="xl"
+                icon={Download}
+                className="text-lg font-bold backdrop-blur-xl shadow-2xl hover:shadow-white/10 transform hover:-translate-y-1 transition-all duration-300"
+              >
+                Download App
+              </Button>
             </div>
           </div>
         </div>

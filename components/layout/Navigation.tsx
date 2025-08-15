@@ -19,7 +19,13 @@ import {
   Code,
   Building2,
   UserPlus,
-  DollarSign
+  DollarSign,
+  Phone,
+  Award,
+  Briefcase,
+  FileText,
+  HelpCircle,
+  Mail
 } from 'lucide-react'
 
 const Navigation = () => {
@@ -54,15 +60,30 @@ const Navigation = () => {
       href: '#',
       dropdown: [
         { name: 'Enterprise', href: '/enterprise', icon: Building2, description: 'Large organization solutions' },
-                          { name: 'Partners', href: '/partners', icon: UserPlus, description: 'Partnership opportunities' },
+        { name: 'Partners', href: '/partners', icon: UserPlus, description: 'Partnership opportunities' },
         { name: 'Pricing', href: '/pricing', icon: DollarSign, description: 'Plans & pricing' },
+        { name: 'Contact Sales', href: '/contact-sales', icon: Phone, description: 'Talk to our sales team' },
       ]
     },
-    { name: 'About', href: '/about' },
-    { name: 'Awards', href: '/awards' },
-    { name: 'Blog', href: '/blog' },
-    { name: 'Careers', href: '/careers' },
-    { name: 'Contact', href: '/contact' },
+    { 
+      name: 'Company', 
+      href: '#',
+      dropdown: [
+        { name: 'About Us', href: '/about', icon: Users, description: 'Our story and mission' },
+        { name: 'Awards & Recognition', href: '/awards', icon: Award, description: 'Our achievements and recognition' },
+        { name: 'Careers', href: '/careers', icon: Briefcase, description: 'Join our team' },
+        { name: 'Blog', href: '/blog', icon: FileText, description: 'Latest news and insights' },
+      ]
+    },
+    { 
+      name: 'Support', 
+      href: '#',
+      dropdown: [
+        { name: 'Help Center', href: '/support', icon: HelpCircle, description: 'Get help and support' },
+        { name: 'Contact Us', href: '/contact', icon: Mail, description: 'Get in touch with us' },
+        { name: 'Partner Apply', href: '/partners/apply', icon: UserPlus, description: 'Apply to become a partner' },
+      ]
+    },
   ]
 
   const toggleDropdown = (name: string) => {

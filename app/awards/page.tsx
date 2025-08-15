@@ -11,7 +11,9 @@ import {
   Globe,
   Zap,
   Shield,
-  Heart
+  Heart,
+  Play,
+  Download
 } from 'lucide-react'
 import Button from '@/components/ui/Button'
 
@@ -148,19 +150,19 @@ const AwardsPage = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
                 variant="gradient"
-                size="lg"
-                icon={Star}
-                className="text-lg font-bold"
+                size="xl"
+                icon={Play}
+                className="text-lg font-bold shadow-2xl hover:shadow-primary-500/25 transform hover:-translate-y-1 transition-all duration-300"
               >
-                View Our Story
+                Get Started Free
               </Button>
               <Button
                 variant="glass"
-                size="lg"
-                icon={TrendingUp}
-                className="text-lg font-bold"
+                size="xl"
+                icon={Download}
+                className="text-lg font-bold backdrop-blur-xl shadow-2xl hover:shadow-white/10 transform hover:-translate-y-1 transition-all duration-300"
               >
-                See Impact
+                Download App
               </Button>
             </div>
           </div>
@@ -269,19 +271,19 @@ const AwardsPage = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
                 variant="gradient"
-                size="lg"
-                icon={Heart}
-                className="text-lg font-bold"
+                size="xl"
+                icon={Play}
+                className="text-lg font-bold shadow-2xl hover:shadow-primary-500/25 transform hover:-translate-y-1 transition-all duration-300"
               >
-                Get Started Today
+                Get Started Free
               </Button>
               <Button
                 variant="glass"
-                size="lg"
-                icon={Shield}
-                className="text-lg font-bold"
+                size="xl"
+                icon={Download}
+                className="text-lg font-bold backdrop-blur-xl shadow-2xl hover:shadow-white/10 transform hover:-translate-y-1 transition-all duration-300"
               >
-                Learn More
+                Download App
               </Button>
             </div>
           </div>

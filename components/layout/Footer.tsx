@@ -126,6 +126,17 @@ const Footer = () => {
                 </a>
               ))}
             </div>
+            
+            {/* Awards Link */}
+            <div className="mt-4">
+              <Link 
+                href="/awards" 
+                className="inline-flex items-center space-x-2 text-gray-400 hover:text-white transition-colors duration-200 text-sm"
+              >
+                <span>🏆</span>
+                <span>Awards & Recognition</span>
+              </Link>
+            </div>
           </div>
 
           {/* Footer Links */}
@@ -218,21 +229,7 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Awards & Recognition Link */}
-      <div className="bg-gray-800">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          <div className="text-center">
-            <Link 
-              href="/awards" 
-              className="inline-flex items-center space-x-2 text-gray-400 hover:text-white transition-colors duration-200"
-            >
-              <span>🏆</span>
-              <span className="font-medium">View Our Awards & Recognition</span>
-              <ArrowRight className="w-4 h-4" />
-            </Link>
-          </div>
-        </div>
-      </div>
+
     </footer>
   )
 }
