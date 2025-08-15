@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 import { LucideIcon } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
-interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+interface ButtonProps {
   variant?: 'primary' | 'secondary' | 'accent' | 'outline' | 'ghost' | 'gradient' | 'glass'
   size?: 'sm' | 'md' | 'lg' | 'xl'
   icon?: LucideIcon
@@ -11,6 +11,9 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   loading?: boolean
   animated?: boolean
   children: React.ReactNode
+  className?: string
+  onClick?: () => void
+  disabled?: boolean
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
@@ -23,6 +26,8 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     loading = false,
     animated = true,
     children, 
+    onClick,
+    disabled,
     ...props 
   }, ref) => {
     const baseClasses = "inline-flex items-center justify-center font-semibold transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none relative overflow-hidden"
@@ -56,7 +61,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
             <motion.div
               className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full"
               animate={{ rotate: 360 }}
-              transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
+              transition={{ duration: 1, repeat: -1, ease: "linear" }}
             />
           </motion.div>
         )}
@@ -86,28 +91,18 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       className
     )
 
-    if (animated) {
-      return (
-        <motion.button
-          ref={ref}
-          className={buttonClasses}
-          whileHover={{ scale: 1.02 }}
-          whileTap={{ scale: 0.98 }}
-          {...props}
-        >
-          {buttonContent}
-        </motion.button>
-      )
-    }
-
     return (
-      <button
+      <motion.button
         ref={ref}
         className={buttonClasses}
+        onClick={onClick}
+        disabled={disabled || loading}
+        whileHover={animated ? { scale: 1.02 } : undefined}
+        whileTap={animated ? { scale: 0.98 } : undefined}
         {...props}
       >
         {buttonContent}
-      </button>
+      </motion.button>
     )
   }
 )
