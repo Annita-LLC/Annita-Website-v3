@@ -124,6 +124,11 @@ const AIPage = () => {
 
   const selectedAIService = aiServices.find(s => s.id === selectedAI)
 
+  const renderIcon = (icon: any, className: string) => {
+    const IconComponent = icon
+    return <IconComponent className={className} />
+  }
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white">
       {/* Hero Section */}
@@ -157,7 +162,7 @@ const AIPage = () => {
                     : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                 }`}
               >
-                <service.icon className="w-5 h-5" />
+                {renderIcon(service.icon, "w-5 h-5")}
                 <span className="font-medium">{service.name}</span>
               </button>
             ))}
@@ -175,7 +180,7 @@ const AIPage = () => {
                 <div className="flex items-center justify-between">
                   <div className="flex items-center space-x-4">
                     <div className={`w-12 h-12 bg-gradient-to-br ${selectedAIService?.color} rounded-xl flex items-center justify-center`}>
-                      <selectedAIService?.icon className="w-6 h-6 text-white" />
+                      {selectedAIService && renderIcon(selectedAIService.icon, "w-6 h-6 text-white")}
                     </div>
                     <div>
                       <h2 className="text-xl font-bold text-gray-900">{selectedAIService?.name}</h2>
@@ -315,7 +320,7 @@ const AIPage = () => {
             {aiServices.map((service) => (
               <div key={service.id} className="bg-white rounded-3xl p-8 shadow-soft hover:shadow-medium transition-all duration-300">
                 <div className={`w-16 h-16 bg-gradient-to-br ${service.color} rounded-2xl flex items-center justify-center mb-6`}>
-                  <service.icon className="w-8 h-8 text-white" />
+                  {renderIcon(service.icon, "w-8 h-8 text-white")}
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">{service.name}</h3>
                 <p className="text-gray-600 mb-4">{service.description}</p>
