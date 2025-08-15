@@ -44,7 +44,8 @@ const Footer = () => {
         { name: 'Support', href: '/support' },
         { name: 'Blog', href: '/blog' },
         { name: 'Careers', href: '/careers' },
-        { name: 'About', href: '/about' }
+        { name: 'About', href: '/about' },
+        { name: 'Awards & Recognition', href: '/awards' }
       ]
     },
     {
@@ -123,17 +124,6 @@ const Footer = () => {
                   <social.icon className="w-5 h-5 text-gray-400 group-hover:text-white transition-colors duration-200" />
                 </a>
               ))}
-            </div>
-            
-            {/* Awards Link */}
-            <div className="mt-4">
-              <Link 
-                href="/awards" 
-                className="inline-flex items-center space-x-2 text-gray-400 hover:text-white transition-colors duration-200 text-sm"
-              >
-                <span>🏆</span>
-                <span>Awards & Recognition</span>
-              </Link>
             </div>
           </div>
 
