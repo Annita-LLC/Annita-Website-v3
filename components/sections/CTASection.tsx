@@ -47,29 +47,7 @@ const CTASection = () => {
     }
   ]
 
-  const nextSteps = [
-    {
-      icon: Download,
-      title: 'Download App',
-      description: 'Get started with our mobile app',
-      action: 'Download Now',
-      color: 'from-primary-500 to-secondary-500'
-    },
-    {
-      icon: Play,
-      title: 'Watch Demo',
-      description: 'See how Annita works in action',
-      action: 'Watch Demo',
-      color: 'from-accent-500 to-warning-500'
-    },
-    {
-      icon: MessageSquare,
-      title: 'Contact Sales',
-      description: 'Talk to our business development team',
-      action: 'Get in Touch',
-      color: 'from-green-500 to-emerald-500'
-    }
-  ]
+
 
   return (
     <section className="py-20 bg-gradient-to-br from-primary-600 via-secondary-600 to-accent-600 relative overflow-hidden">
@@ -158,38 +136,7 @@ const CTASection = () => {
           ))}
         </motion.div>
 
-        {/* Next Steps */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          className="mb-16"
-        >
-          <h3 className="text-2xl lg:text-3xl font-bold text-white text-center mb-12">
-            Get Started Today
-          </h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {nextSteps.map((step, index) => (
-              <motion.div
-                key={step.title}
-                initial={{ opacity: 0, y: 30 }}
-                animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6, delay: 0.8 + index * 0.1 }}
-                className="bg-white/10 backdrop-blur-sm rounded-3xl p-8 border border-white/20 hover:bg-white/20 transition-all duration-300 group"
-              >
-                <div className={`w-16 h-16 bg-gradient-to-br ${step.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                  <step.icon className="w-8 h-8 text-white" />
-                </div>
-                <h4 className="text-xl font-semibold text-white mb-2">{step.title}</h4>
-                <p className="text-white/80 mb-6">{step.description}</p>
-                <button className={`w-full btn-lg bg-gradient-to-r ${step.color} text-white hover:shadow-lg transition-all duration-300 group`}>
-                  {step.action}
-                  <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                </button>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
+
 
         {/* Contact Information */}
         <motion.div
