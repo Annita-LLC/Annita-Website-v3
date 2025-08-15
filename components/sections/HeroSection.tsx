@@ -99,6 +99,11 @@ const HeroSection = () => {
     return () => clearInterval(notificationInterval)
   }, [])
 
+  const renderIcon = (icon: any, className: string) => {
+    const IconComponent = icon
+    return <IconComponent className={className} />
+  }
+
   return (
     <div className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background */}
@@ -332,7 +337,7 @@ const HeroSection = () => {
                               onClick={() => setCurrentApp(index)}
                             >
                               <div className="flex flex-col items-center text-center">
-                                <app.icon className="w-8 h-8 text-white mb-2" />
+                                {renderIcon(app.icon, "w-8 h-8 text-white mb-2")}
                                 <span className="text-white text-xs font-medium">{app.name}</span>
                                 {app.notifications > 0 && (
                                   <div className="absolute -top-1 -right-1 w-5 h-5 bg-red-500 rounded-full flex items-center justify-center">
@@ -355,7 +360,7 @@ const HeroSection = () => {
                           <div className="flex items-center justify-between mb-3">
                             <div className="flex items-center space-x-3">
                               <div className={`w-10 h-10 bg-gradient-to-br ${apps[currentApp].color} rounded-xl flex items-center justify-center`}>
-                                <apps[currentApp].icon className="w-5 h-5 text-white" />
+                                {renderIcon(apps[currentApp].icon, "w-5 h-5 text-white")}
                               </div>
                               <div>
                                 <h4 className="text-white font-bold">{apps[currentApp].name}</h4>
@@ -435,7 +440,7 @@ const HeroSection = () => {
                                 notification.type === 'success' ? 'bg-green-400' :
                                 notification.type === 'warning' ? 'bg-yellow-400' : 'bg-blue-400'
                               }`}>
-                                <notification.icon className="w-4 h-4 text-white" />
+                                {renderIcon(notification.icon, "w-4 h-4 text-white")}
                               </div>
                               <div className="flex-1">
                                 <p className="text-white text-sm font-medium">{notification.message}</p>
