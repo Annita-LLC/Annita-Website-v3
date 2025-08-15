@@ -62,7 +62,6 @@ const Navigation = () => {
         { name: 'Enterprise', href: '/enterprise', icon: Building2, description: 'Large organization solutions' },
         { name: 'Partners', href: '/partners', icon: UserPlus, description: 'Partnership opportunities' },
         { name: 'Pricing', href: '/pricing', icon: DollarSign, description: 'Plans & pricing' },
-        { name: 'Contact Sales', href: '/contact-sales', icon: Phone, description: 'Talk to our sales team' },
       ]
     },
     { 
@@ -81,6 +80,7 @@ const Navigation = () => {
       dropdown: [
         { name: 'Help Center', href: '/support', icon: HelpCircle, description: 'Get help and support' },
         { name: 'Contact Us', href: '/contact', icon: Mail, description: 'Get in touch with us' },
+        { name: 'Contact Sales', href: '/contact-sales', icon: Phone, description: 'Talk to our business development team' },
         { name: 'Partner Apply', href: '/partners/apply', icon: UserPlus, description: 'Apply to become a partner' },
       ]
     },
