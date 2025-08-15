@@ -6,24 +6,38 @@ import AboutSection from '@/components/sections/AboutSection'
 import ServicesSection from '@/components/sections/ServicesSection'
 import TestimonialsSection from '@/components/sections/TestimonialsSection'
 import CTASection from '@/components/sections/CTASection'
-import Footer from '@/components/layout/Footer'
 import LoadingSpinner from '@/components/ui/LoadingSpinner'
 
 export default function HomePage() {
   return (
     <>
-      <main className="min-h-screen">
-        <Suspense fallback={<LoadingSpinner />}>
-          <HeroSection />
-          <StatsSection />
-          <AboutSection />
-          <FeaturesSection />
-          <ServicesSection />
-          <TestimonialsSection />
-          <CTASection />
-        </Suspense>
-      </main>
-      <Footer />
+      <Suspense fallback={<LoadingSpinner />}>
+        <HeroSection />
+      </Suspense>
+      
+      <Suspense fallback={<LoadingSpinner />}>
+        <FeaturesSection />
+      </Suspense>
+      
+      <Suspense fallback={<LoadingSpinner />}>
+        <StatsSection />
+      </Suspense>
+      
+      <Suspense fallback={<LoadingSpinner />}>
+        <AboutSection />
+      </Suspense>
+      
+      <Suspense fallback={<LoadingSpinner />}>
+        <ServicesSection />
+      </Suspense>
+      
+      <Suspense fallback={<LoadingSpinner />}>
+        <TestimonialsSection />
+      </Suspense>
+      
+      <Suspense fallback={<LoadingSpinner />}>
+        <CTASection />
+      </Suspense>
     </>
   )
 }

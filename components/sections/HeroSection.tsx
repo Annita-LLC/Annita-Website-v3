@@ -18,7 +18,7 @@ import {
   MessageSquare,
   ShoppingCart
 } from 'lucide-react'
-import Navigation from '@/components/layout/Navigation'
+import Button from '@/components/ui/Button'
 
 const HeroSection = () => {
   const [currentFeature, setCurrentFeature] = useState(0)
@@ -71,8 +71,7 @@ const HeroSection = () => {
         />
       </div>
 
-      {/* Navigation */}
-      <Navigation />
+      {/* Hero Content */}
 
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-16">
@@ -144,14 +143,22 @@ const HeroSection = () => {
                 transition={{ duration: 0.8, delay: 0.6 }}
                 className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
               >
-                <button className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-                  <Play className="w-5 h-5 mr-2" />
+                <Button
+                  variant="gradient"
+                  size="lg"
+                  icon={Play}
+                  className="text-lg font-bold"
+                >
                   Get Started Free
-                </button>
-                <button className="inline-flex items-center px-8 py-4 bg-white/10 backdrop-blur-sm border border-white/20 text-white font-semibold rounded-xl hover:bg-white/20 transition-all duration-300">
-                  <Download className="w-5 h-5 mr-2" />
+                </Button>
+                <Button
+                  variant="glass"
+                  size="lg"
+                  icon={Download}
+                  className="text-lg font-bold"
+                >
                   Download App
-                </button>
+                </Button>
               </motion.div>
 
               {/* Trust Indicators */}

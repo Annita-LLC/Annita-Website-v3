@@ -1,111 +1,210 @@
 import { Metadata } from 'next'
+import { motion } from 'framer-motion'
 import { 
   ShoppingCart, 
-  Users, 
-  Globe, 
+  Search, 
+  Filter, 
+  Star, 
+  Heart, 
+  Share2, 
+  Truck, 
   Shield, 
+  Zap, 
+  Users, 
   TrendingUp,
+  Award,
   CheckCircle,
   ArrowRight,
-  Star,
-  Award,
-  Zap
+  Globe,
+  CreditCard,
+  Package,
+  Tag
 } from 'lucide-react'
+import Button from '@/components/ui/Button'
 
 export const metadata: Metadata = {
-  title: 'Annita Marketplace - Africa\'s Premier E-commerce Platform',
-  description: 'Discover Annita Marketplace, Africa\'s simplest multivendor e-commerce platform for MSMEs. Easy onboarding, secure payments, and cross-border trade.',
+  title: 'Marketplace - Annita',
+  description: 'Discover Africa\'s largest multivendor marketplace. Buy and sell with confidence using our secure escrow system and integrated logistics.',
 }
 
 const MarketplacePage = () => {
+  const stats = [
+    { number: '3,000+', label: 'Active Vendors', icon: Users },
+    { number: '50,000+', label: 'Products Listed', icon: Package },
+    { number: '99.9%', label: 'Secure Transactions', icon: Shield },
+    { number: '24/7', label: 'Customer Support', icon: Zap }
+  ]
+
   const features = [
     {
-      icon: ShoppingCart,
-      title: 'Easy Onboarding',
-      description: 'Get your store online in minutes with our simplified vendor registration process'
+      icon: Shield,
+      title: 'Secure Escrow Payments',
+      description: 'Your money is protected until you receive your order. No more payment scams.',
+      color: 'from-green-500 to-emerald-500'
     },
     {
-      icon: Users,
-      title: 'Multivendor Support',
-      description: 'Host thousands of vendors on a single platform with individual storefronts'
+      icon: Truck,
+      title: 'Integrated Logistics',
+      description: 'Same-day and next-day delivery across Africa with real-time tracking.',
+      color: 'from-blue-500 to-cyan-500'
+    },
+    {
+      icon: Search,
+      title: 'Smart Search & Filters',
+      description: 'Find exactly what you need with AI-powered search and advanced filters.',
+      color: 'from-purple-500 to-pink-500'
     },
     {
       icon: Globe,
       title: 'Pan-African Reach',
-      description: 'Access customers across 54 African countries through AfCFTA integration'
-    },
-    {
-      icon: Shield,
-      title: 'Secure Transactions',
-      description: 'Bank-level security with escrow protection for all transactions'
-    },
-    {
-      icon: TrendingUp,
-      title: 'AI-Powered Analytics',
-      description: 'Intelligent insights to optimize your product listings and sales'
-    },
-    {
-      icon: Zap,
-      title: 'Mobile-First Design',
-      description: 'Optimized for basic smartphones with low-data mode for rural users'
+      description: 'Buy from vendors across Africa. Cross-border trade made simple.',
+      color: 'from-orange-500 to-red-500'
     }
   ]
 
   const benefits = [
-    'Instant digital presence for offline businesses',
-    'Product catalog management with bulk upload',
-    'Advanced search and filtering capabilities',
-    'Customer reviews and ratings system',
-    'Inventory tracking and management',
-    'Order fulfillment and tracking',
-    'Multi-language support',
-    'Cross-border payment processing'
+    {
+      icon: CreditCard,
+      title: 'Multiple Payment Options',
+      description: 'Pay with mobile money, cards, or bank transfers. All secure and instant.'
+    },
+    {
+      icon: Award,
+      title: 'Quality Guarantee',
+      description: 'All products are verified and quality-checked before listing.'
+    },
+    {
+      icon: TrendingUp,
+      title: 'Best Prices',
+      description: 'Compare prices across vendors and get the best deals.'
+    },
+    {
+      icon: CheckCircle,
+      title: 'Easy Returns',
+      description: '30-day return policy with hassle-free refunds.'
+    }
   ]
 
-  const stats = [
-    { number: '3,000+', label: 'Active Vendors' },
-    { number: '50,000+', label: 'Products Listed' },
-    { number: '54', label: 'African Countries' },
-    { number: '99.9%', label: 'Uptime Guarantee' }
+  const categories = [
+    { name: 'Electronics', icon: Zap, count: '5,234', color: 'from-blue-500 to-cyan-500' },
+    { name: 'Fashion', icon: Tag, count: '12,456', color: 'from-pink-500 to-rose-500' },
+    { name: 'Home & Garden', icon: Package, count: '8,901', color: 'from-green-500 to-emerald-500' },
+    { name: 'Sports', icon: TrendingUp, count: '3,567', color: 'from-orange-500 to-red-500' },
+    { name: 'Books', icon: Award, count: '2,345', color: 'from-purple-500 to-indigo-500' },
+    { name: 'Beauty', icon: Star, count: '6,789', color: 'from-yellow-500 to-amber-500' }
   ]
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white">
+    <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-to-r from-blue-600 to-cyan-600 text-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative bg-gradient-to-br from-primary-900 via-primary-800 to-secondary-800 text-white overflow-hidden">
+        {/* Background Elements */}
+        <div className="absolute inset-0">
+          <motion.div
+            animate={{
+              scale: [1, 1.2, 1],
+              rotate: [0, 180, 360],
+            }}
+            transition={{
+              duration: 20,
+              repeat: -1,
+              ease: "linear"
+            }}
+            className="absolute -top-40 -right-40 w-80 h-80 bg-white/10 rounded-full blur-3xl"
+          />
+          <motion.div
+            animate={{
+              scale: [1.2, 1, 1.2],
+              rotate: [360, 180, 0],
+            }}
+            transition={{
+              duration: 25,
+              repeat: -1,
+              ease: "linear"
+            }}
+            className="absolute -bottom-40 -left-40 w-96 h-96 bg-white/10 rounded-full blur-3xl"
+          />
+        </div>
+
+        <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-20">
           <div className="max-w-4xl mx-auto text-center">
-            <div className="w-20 h-20 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-6">
-              <ShoppingCart className="w-10 h-10" />
-            </div>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
-              Annita Marketplace
-            </h1>
-            <p className="text-xl sm:text-2xl text-white/90 mb-8">
-              Africa's simplest multivendor e-commerce platform, empowering MSMEs to reach customers across the continent
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="btn-lg bg-white text-blue-600 hover:bg-gray-100 group">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="inline-flex items-center px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white text-sm font-medium mb-6"
+            >
+              <ShoppingCart className="w-4 h-4 mr-2" />
+              Africa's Largest Marketplace
+            </motion.div>
+
+            <motion.h1
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6"
+            >
+              Buy & Sell with{' '}
+              <span className="gradient-text bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
+                Confidence
+              </span>
+            </motion.h1>
+
+            <motion.p
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="text-xl sm:text-2xl text-gray-200 mb-8 leading-relaxed"
+            >
+              Join 3,000+ vendors and millions of buyers in Africa's most trusted marketplace. 
+              Secure payments, integrated logistics, and 24/7 support.
+            </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+              className="flex flex-col sm:flex-row gap-4 justify-center"
+            >
+              <Button
+                variant="gradient"
+                size="lg"
+                icon={ShoppingCart}
+                className="text-lg font-bold"
+              >
                 Start Selling
-                <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-              </button>
-              <button className="btn-lg border-2 border-white text-white hover:bg-white hover:text-blue-600">
-                Watch Demo
-              </button>
-            </div>
+              </Button>
+              <Button
+                variant="glass"
+                size="lg"
+                icon={Search}
+                className="text-lg font-bold"
+              >
+                Browse Products
+              </Button>
+            </motion.div>
           </div>
         </div>
       </section>
 
       {/* Stats Section */}
-      <section className="py-16">
+      <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
-              <div key={index} className="text-center">
-                <div className="text-3xl lg:text-4xl font-bold gradient-text mb-2">{stat.number}</div>
+              <motion.div
+                key={stat.label}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="text-center"
+              >
+                <div className="w-16 h-16 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                  <stat.icon className="w-8 h-8 text-white" />
+                </div>
+                <div className="text-3xl font-bold text-gray-900 mb-2">{stat.number}</div>
                 <div className="text-gray-600">{stat.label}</div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
@@ -114,107 +213,160 @@ const MarketplacePage = () => {
       {/* Features Section */}
       <section className="py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
               Why Choose Annita Marketplace?
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Built specifically for Africa's unique challenges and opportunities, 
-              our platform makes e-commerce accessible to businesses of all sizes.
+              We've built the most comprehensive marketplace platform specifically for African businesses and consumers.
             </p>
-          </div>
+          </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {features.map((feature, index) => (
-              <div key={index} className="feature-card group">
-                <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+              <motion.div
+                key={feature.title}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="bg-white rounded-2xl p-8 shadow-soft hover:shadow-large transition-all duration-300 transform hover:-translate-y-2"
+              >
+                <div className={`w-16 h-16 bg-gradient-to-br ${feature.color} rounded-2xl flex items-center justify-center mb-6`}>
                   <feature.icon className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">{feature.title}</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-4">{feature.title}</h3>
                 <p className="text-gray-600">{feature.description}</p>
-              </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Categories Section */}
+      <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
+              Popular Categories
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Discover millions of products across all categories
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+            {categories.map((category, index) => (
+              <motion.div
+                key={category.name}
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                whileHover={{ scale: 1.05 }}
+                className="bg-white rounded-2xl p-6 text-center shadow-soft hover:shadow-large transition-all duration-300 cursor-pointer group"
+              >
+                <div className={`w-16 h-16 bg-gradient-to-br ${category.color} rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300`}>
+                  <category.icon className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="font-bold text-gray-900 mb-2">{category.name}</h3>
+                <p className="text-sm text-gray-600">{category.count} products</p>
+              </motion.div>
             ))}
           </div>
         </div>
       </section>
 
       {/* Benefits Section */}
-      <section className="py-20 bg-gradient-to-br from-blue-50 to-cyan-50">
+      <section className="py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
-                Everything You Need to Succeed Online
-              </h2>
-              <p className="text-lg text-gray-600 mb-8">
-                From product listing to order fulfillment, Annita Marketplace provides 
-                all the tools you need to build a successful online business.
-              </p>
-              <div className="space-y-4">
-                {benefits.map((benefit, index) => (
-                  <div key={index} className="flex items-center space-x-3">
-                    <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
-                    <span className="text-gray-700">{benefit}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div className="bg-white rounded-3xl p-8 shadow-soft">
-              <div className="space-y-6">
-                <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
-                    <Star className="w-6 h-6 text-blue-600" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-900">Easy Setup</h4>
-                    <p className="text-sm text-gray-600">Get started in under 10 minutes</p>
-                  </div>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
+              Shop with Confidence
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Every purchase is protected by our comprehensive buyer protection program
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {benefits.map((benefit, index) => (
+              <motion.div
+                key={benefit.title}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="text-center"
+              >
+                <div className="w-16 h-16 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                  <benefit.icon className="w-8 h-8 text-white" />
                 </div>
-                <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center">
-                    <Shield className="w-6 h-6 text-green-600" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-900">Secure Payments</h4>
-                    <p className="text-sm text-gray-600">Escrow protection for all transactions</p>
-                  </div>
-                </div>
-                <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center">
-                    <Globe className="w-6 h-6 text-purple-600" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-900">Global Reach</h4>
-                    <p className="text-sm text-gray-600">Access customers across Africa</p>
-                  </div>
-                </div>
-              </div>
-            </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-4">{benefit.title}</h3>
+                <p className="text-gray-600">{benefit.description}</p>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-20">
+      <section className="py-20 bg-gradient-to-br from-primary-900 via-primary-800 to-secondary-800 text-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-gradient-to-r from-blue-600 to-cyan-600 rounded-3xl p-8 lg:p-12 text-white text-center">
-            <h2 className="text-3xl sm:text-4xl font-bold mb-6">
-              Ready to Start Selling Online?
-            </h2>
-            <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-              Join thousands of successful vendors who have transformed their businesses 
-              with Annita Marketplace.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="btn-lg bg-white text-blue-600 hover:bg-gray-100 group">
-                <ShoppingCart className="w-5 h-5 mr-2" />
-                Start Your Store
-                <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-              </button>
-              <button className="btn-lg border-2 border-white text-white hover:bg-white hover:text-blue-600">
-                Contact Sales
-              </button>
-            </div>
+          <div className="max-w-4xl mx-auto text-center">
+            <motion.h2
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="text-3xl sm:text-4xl font-bold mb-6"
+            >
+              Ready to Start Your Business?
+            </motion.h2>
+            <motion.p
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="text-xl text-gray-200 mb-8"
+            >
+              Join thousands of successful vendors and start selling today. 
+              No setup fees, no monthly charges.
+            </motion.p>
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="flex flex-col sm:flex-row gap-4 justify-center"
+            >
+              <Button
+                variant="gradient"
+                size="lg"
+                icon={ArrowRight}
+                iconPosition="right"
+                className="text-lg font-bold"
+              >
+                Start Selling Now
+              </Button>
+              <Button
+                variant="glass"
+                size="lg"
+                icon={Users}
+                className="text-lg font-bold"
+              >
+                Learn More
+              </Button>
+            </motion.div>
           </div>
         </div>
       </section>
