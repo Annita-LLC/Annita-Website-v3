@@ -38,8 +38,7 @@ const HeroSection = () => {
   }, [features.length])
 
   return (
-    <>
-      <div className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <div className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary-900 via-primary-800 to-secondary-800" />
       <div className="absolute inset-0 bg-gradient-to-b from-black/20 to-black/40" />
@@ -130,7 +129,10 @@ const HeroSection = () => {
                 className="flex items-center justify-center lg:justify-start space-x-4 mb-8"
               >
                 <div className="flex items-center space-x-2 text-white">
-                  <features[currentFeature].icon className="w-5 h-5 text-primary-300" />
+                  {(() => {
+                    const IconComponent = features[currentFeature].icon;
+                    return <IconComponent className="w-5 h-5 text-primary-300" />;
+                  })()}
                   <span className="font-medium">{features[currentFeature].text}</span>
                 </div>
               </motion.div>
@@ -334,8 +336,7 @@ const HeroSection = () => {
           />
         </motion.div>
       </motion.div>
-      </div>
-    </>
+    </div>
   )
 }
 
