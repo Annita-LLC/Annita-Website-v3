@@ -27,10 +27,9 @@ const PricingPage = () => {
       name: 'Growth',
       price: '$5',
       period: '/month',
-      description: 'Perfect for small businesses getting started',
+      description: 'Perfect for small businesses starting their digital journey',
       features: [
         'Basic marketplace access',
-        'Up to 100 products',
         'Standard payment processing',
         'Email support',
         'Basic analytics',
@@ -41,35 +40,31 @@ const PricingPage = () => {
     },
     {
       name: 'Pro',
-      price: '$15',
+      price: '$12',
       period: '/month',
-      description: 'Most popular choice for growing businesses',
+      description: 'Advanced features for growing businesses',
       features: [
-        'Everything in Growth',
-        'Unlimited products',
-        'Advanced payment features',
-        'Priority support',
+        'All Growth features',
         'Advanced analytics',
-        'Marketing tools',
-        'Logistics integration',
-        'API access'
+        'Priority support',
+        'Custom branding',
+        'API access',
+        'Advanced marketing tools'
       ],
       popular: true,
       color: 'from-green-500 to-emerald-500'
     },
     {
       name: 'Premium',
-      price: '$30',
+      price: '$20',
       period: '/month',
-      description: 'For established businesses with advanced needs',
+      description: 'Complete solution for established businesses',
       features: [
-        'Everything in Pro',
-        'Custom integrations',
+        'All Pro features',
         'Dedicated account manager',
+        'Custom integrations',
+        'Advanced logistics',
         'White-label options',
-        'Advanced AI features',
-        'Cross-border capabilities',
-        'Custom reporting',
         '24/7 phone support'
       ],
       popular: false,
@@ -186,10 +181,9 @@ const PricingPage = () => {
                 <Button
                   variant="gradient"
                   size="xl"
-                  icon={Play}
                   className="w-full text-lg font-bold shadow-2xl hover:shadow-blue-500/25 transform hover:-translate-y-1 transition-all duration-300"
                 >
-                  Get Started Free
+                  Get Started
                 </Button>
               </div>
             ))}
