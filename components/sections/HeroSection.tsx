@@ -139,16 +139,15 @@ const HeroSection = () => {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.6 }}
-                className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8"
+                className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
               >
-                <button className="btn-lg bg-gradient-to-r from-primary-500 to-secondary-500 text-white hover:from-primary-600 hover:to-secondary-600 group">
+                <button className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+                  <Play className="w-5 h-5 mr-2" />
+                  Get Started Free
+                </button>
+                <button className="inline-flex items-center px-8 py-4 bg-white/10 backdrop-blur-sm border border-white/20 text-white font-semibold rounded-xl hover:bg-white/20 transition-all duration-300">
                   <Download className="w-5 h-5 mr-2" />
                   Download App
-                  <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                </button>
-                <button className="btn-lg border-2 border-white text-white hover:bg-white hover:text-gray-900 group">
-                  <Play className="w-5 h-5 mr-2" />
-                  Watch Demo
                 </button>
               </motion.div>
 
@@ -157,15 +156,19 @@ const HeroSection = () => {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.7 }}
-                className="flex items-center justify-center lg:justify-start space-x-6 text-white/80 text-sm"
+                className="mt-8 flex items-center justify-center lg:justify-start space-x-6 text-white/60 text-sm"
               >
                 <div className="flex items-center space-x-2">
                   <CheckCircle className="w-4 h-4 text-green-400" />
-                  <span>3,000+ Active Vendors</span>
+                  <span>3,000+ Vendors</span>
                 </div>
                 <div className="flex items-center space-x-2">
-                  <CheckCircle className="w-4 h-4 text-green-400" />
-                  <span>99.9% Uptime</span>
+                  <Shield className="w-4 h-4 text-blue-400" />
+                  <span>Secure Payments</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <Zap className="w-4 h-4 text-yellow-400" />
+                  <span>24/7 Support</span>
                 </div>
               </motion.div>
             </motion.div>
@@ -175,44 +178,47 @@ const HeroSection = () => {
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="relative flex justify-center lg:justify-end"
+              className="relative"
             >
-              <div className="relative">
-                {/* Phone Frame */}
-                <div className="relative w-80 h-[600px] bg-gray-900 rounded-[3rem] p-2 shadow-2xl">
-                  <div className="w-full h-full bg-gradient-to-br from-blue-600 to-cyan-600 rounded-[2.5rem] overflow-hidden relative">
+              {/* Phone Frame */}
+              <div className="relative mx-auto w-80 h-[600px] bg-gradient-to-b from-gray-900 to-gray-800 rounded-[3rem] p-2 shadow-2xl">
+                <div className="w-full h-full bg-black rounded-[2.5rem] overflow-hidden relative">
+                  {/* Screen Content */}
+                  <div className="w-full h-full bg-gradient-to-br from-primary-900 via-primary-800 to-secondary-800 relative overflow-hidden">
                     {/* Status Bar */}
-                    <div className="absolute top-0 left-0 right-0 h-8 bg-black/20 flex items-center justify-between px-6 text-white text-xs">
+                    <div className="flex justify-between items-center px-6 py-3 text-white text-sm">
                       <span>9:41</span>
                       <div className="flex items-center space-x-1">
-                        <div className="w-1 h-3 bg-white rounded-full"></div>
-                        <div className="w-1 h-5 bg-white rounded-full"></div>
-                        <div className="w-1 h-7 bg-white rounded-full"></div>
+                        <div className="w-6 h-3 border border-white rounded-sm">
+                          <div className="w-4 h-1 bg-white rounded-sm m-0.5" />
+                        </div>
+                        <div className="w-1 h-3 bg-white rounded-full" />
                       </div>
                     </div>
 
-                    {/* App Content */}
-                    <div className="pt-12 px-4 pb-4 h-full">
-                      {/* Header */}
-                      <div className="flex items-center justify-between mb-6">
-                        <div className="text-white">
-                          <h3 className="font-bold text-lg">Annita</h3>
-                          <p className="text-white/80 text-sm">Your Digital Hub</p>
+                    {/* App Header */}
+                    <div className="px-6 py-4">
+                      <div className="flex items-center justify-between">
+                        <div>
+                          <h3 className="text-white font-bold text-lg">Annita</h3>
+                          <p className="text-white/60 text-sm">Your Business Hub</p>
                         </div>
                         <div className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center">
                           <Users className="w-5 h-5 text-white" />
                         </div>
                       </div>
+                    </div>
 
-                      {/* Quick Actions */}
-                      <div className="grid grid-cols-2 gap-3 mb-6">
+                    {/* Quick Actions */}
+                    <div className="px-6 mb-6">
+                      <div className="grid grid-cols-4 gap-3">
                         <motion.div
                           animate={{ scale: [1, 1.05, 1] }}
                           transition={{ duration: 2, repeat: -1, delay: 0 }}
                           className="bg-white/20 rounded-xl p-4 text-center"
                         >
                           <ShoppingCart className="w-6 h-6 text-white mx-auto mb-2" />
-                          <span className="text-white text-sm font-medium">Marketplace</span>
+                          <span className="text-white text-sm font-medium">Shop</span>
                         </motion.div>
                         <motion.div
                           animate={{ scale: [1, 1.05, 1] }}
@@ -220,7 +226,7 @@ const HeroSection = () => {
                           className="bg-white/20 rounded-xl p-4 text-center"
                         >
                           <CreditCard className="w-6 h-6 text-white mx-auto mb-2" />
-                          <span className="text-white text-sm font-medium">Payments</span>
+                          <span className="text-white text-sm font-medium">Pay</span>
                         </motion.div>
                         <motion.div
                           animate={{ scale: [1, 1.05, 1] }}
@@ -228,7 +234,7 @@ const HeroSection = () => {
                           className="bg-white/20 rounded-xl p-4 text-center"
                         >
                           <Truck className="w-6 h-6 text-white mx-auto mb-2" />
-                          <span className="text-white text-sm font-medium">Logistics</span>
+                          <span className="text-white text-sm font-medium">Ship</span>
                         </motion.div>
                         <motion.div
                           animate={{ scale: [1, 1.05, 1] }}
