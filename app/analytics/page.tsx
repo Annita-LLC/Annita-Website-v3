@@ -31,9 +31,9 @@ const AnalyticsPage = () => {
   ]
 
   const trafficSources = [
-    { source: 'Direct', percentage: 45, users: 4,021, color: 'bg-blue-500' },
-    { source: 'Organic Search', percentage: 32, users: 2,859, color: 'bg-green-500' },
-    { source: 'Social Media', percentage: 15, users: 1,340, color: 'bg-purple-500' },
+    { source: 'Direct', percentage: 45, users: 4021, color: 'bg-blue-500' },
+    { source: 'Organic Search', percentage: 32, users: 2859, color: 'bg-green-500' },
+    { source: 'Social Media', percentage: 15, users: 1340, color: 'bg-purple-500' },
     { source: 'Referral', percentage: 8, users: 714, color: 'bg-orange-500' }
   ]
 
@@ -46,9 +46,9 @@ const AnalyticsPage = () => {
   ]
 
   const customerSegments = [
-    { segment: 'New Customers', count: 2,847, percentage: 32, color: 'bg-blue-500' },
-    { segment: 'Returning Customers', count: 4,123, percentage: 46, color: 'bg-green-500' },
-    { segment: 'VIP Customers', count: 1,964, percentage: 22, color: 'bg-purple-500' }
+    { segment: 'New Customers', count: 2847, percentage: 32, color: 'bg-blue-500' },
+    { segment: 'Returning Customers', count: 4123, percentage: 46, color: 'bg-green-500' },
+    { segment: 'VIP Customers', count: 1964, percentage: 22, color: 'bg-purple-500' }
   ]
 
   return (
@@ -183,7 +183,7 @@ const AnalyticsPage = () => {
                     <div className={`w-3 h-3 rounded-full ${segment.color}`}></div>
                     <div>
                       <p className="font-medium text-gray-900">{segment.segment}</p>
-                      <p className="text-sm text-gray-600">{segment.count.toLocaleString()} customers</p>
+                      <p className="text-sm text-gray-600">{segment.count} customers</p>
                     </div>
                   </div>
                   <div className="text-right">

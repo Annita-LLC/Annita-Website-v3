@@ -24,7 +24,7 @@ const CareersPage = () => {
     {
       icon: Heart,
       title: 'Passion for Impact',
-      description: 'We're driven by the mission to empower millions of African businesses'
+      description: 'We are driven by the mission to empower millions of African businesses'
     },
     {
       icon: Users,
