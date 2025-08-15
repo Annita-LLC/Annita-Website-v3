@@ -240,6 +240,41 @@ const ContactPage = () => {
         </div>
       </section>
 
+      {/* Newsletter Subscription Section */}
+      <section className="py-20 bg-gradient-to-br from-blue-50 to-cyan-50">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto text-center">
+            <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center mx-auto mb-6">
+              <Mail className="w-10 h-10 text-white" />
+            </div>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+              Stay Updated with Annita
+            </h2>
+            <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+              Get the latest updates on new features, success stories, tips for growing your business, 
+              and exclusive insights into Africa's digital economy.
+            </p>
+            
+            <div className="bg-white rounded-3xl p-8 shadow-soft max-w-2xl mx-auto">
+              <div className="flex flex-col sm:flex-row gap-4">
+                <input
+                  type="email"
+                  placeholder="Enter your email address"
+                  className="flex-1 bg-gray-50 border border-gray-200 rounded-xl px-6 py-4 text-gray-900 placeholder-gray-500 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all duration-200"
+                />
+                <button className="btn-lg bg-gradient-to-r from-blue-600 to-cyan-600 text-white hover:from-blue-700 hover:to-cyan-700 group whitespace-nowrap">
+                  Subscribe
+                  <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                </button>
+              </div>
+              <p className="text-sm text-gray-500 mt-4">
+                We respect your privacy. Unsubscribe at any time. No spam, ever.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Office Locations Section */}
       <section className="py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">

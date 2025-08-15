@@ -160,44 +160,26 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Newsletter & CTA */}
+      {/* CTA Section */}
       <div className="border-t border-gray-800">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <div className="grid lg:grid-cols-2 gap-8 items-center">
-            <div>
-              <h3 className="text-2xl font-bold text-white mb-4">
-                Stay Updated with Annita
-              </h3>
-              <p className="text-gray-400 mb-6">
-                Get the latest updates on new features, success stories, and tips for growing your business.
-              </p>
-              <div className="flex space-x-4">
-                <button className="btn-primary group">
-                  <Download className="w-4 h-4 mr-2" />
-                  Download App
-                  <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                </button>
-                <button className="btn-outline border-gray-600 text-gray-300 hover:border-primary-500 hover:text-primary-500">
-                  Watch Demo
-                </button>
-              </div>
-            </div>
-            
-            <div className="bg-gray-800 rounded-2xl p-6">
-              <h4 className="text-lg font-semibold text-white mb-4">Subscribe to Newsletter</h4>
-              <div className="flex space-x-3">
-                <input
-                  type="email"
-                  placeholder="Enter your email"
-                  className="flex-1 bg-gray-700 border border-gray-600 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-primary-500 transition-colors duration-200"
-                />
-                <button className="btn-primary">
-                  Subscribe
-                </button>
-              </div>
-              <p className="text-xs text-gray-400 mt-3">
-                We respect your privacy. Unsubscribe at any time.
-              </p>
+          <div className="text-center">
+            <h3 className="text-2xl font-bold text-white mb-4">
+              Ready to Transform Your Business?
+            </h3>
+            <p className="text-gray-400 mb-6 max-w-2xl mx-auto">
+              Join thousands of MSMEs already using Annita to grow their business. 
+              Download our app and start your digital transformation today.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <button className="btn-primary group">
+                <Download className="w-4 h-4 mr-2" />
+                Download App
+                <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+              </button>
+              <button className="btn-outline border-gray-600 text-gray-300 hover:border-primary-500 hover:text-primary-500">
+                Watch Demo
+              </button>
             </div>
           </div>
         </div>
