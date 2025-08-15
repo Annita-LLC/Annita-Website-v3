@@ -14,6 +14,7 @@ import {
   Download
 } from 'lucide-react'
 import Button from '@/components/ui/Button'
+import FAQSection from '@/components/sections/FAQSection'
 
 export const metadata: Metadata = {
   title: 'Annita Pricing - Affordable Plans for African Businesses',
@@ -251,37 +252,7 @@ const PricingPage = () => {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-              Frequently Asked Questions
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Get answers to common questions about our pricing and plans.
-            </p>
-          </div>
-
-          <div className="max-w-4xl mx-auto space-y-6">
-            <div className="bg-white rounded-2xl p-6 shadow-soft">
-              <h3 className="text-lg font-semibold text-gray-900 mb-3">Can I change my plan anytime?</h3>
-              <p className="text-gray-600">Yes, you can upgrade or downgrade your plan at any time. Changes take effect immediately.</p>
-            </div>
-            <div className="bg-white rounded-2xl p-6 shadow-soft">
-              <h3 className="text-lg font-semibold text-gray-900 mb-3">Is there a free trial?</h3>
-              <p className="text-gray-600">Yes, we offer a 14-day free trial on all plans. No credit card required to start.</p>
-            </div>
-            <div className="bg-white rounded-2xl p-6 shadow-soft">
-              <h3 className="text-lg font-semibold text-gray-900 mb-3">What payment methods do you accept?</h3>
-              <p className="text-gray-600">We accept all major credit cards, mobile money, and bank transfers across Africa.</p>
-            </div>
-            <div className="bg-white rounded-2xl p-6 shadow-soft">
-              <h3 className="text-lg font-semibold text-gray-900 mb-3">Do you offer discounts for nonprofits?</h3>
-              <p className="text-gray-600">Yes, we offer special pricing for registered nonprofits and educational institutions.</p>
-            </div>
-          </div>
-        </div>
-      </section>
+      <FAQSection />
 
       {/* CTA Section */}
       <section className="py-20">

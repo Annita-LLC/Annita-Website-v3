@@ -15,6 +15,7 @@ import {
   Play,
   Headphones
 } from 'lucide-react'
+import FAQSection from '@/components/sections/FAQSection'
 
 export const metadata: Metadata = {
   title: 'Support - Get Help with Annita',
@@ -305,27 +306,7 @@ const SupportPage = () => {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-              Frequently Asked Questions
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Find quick answers to the most common questions about Annita.
-            </p>
-          </div>
-
-          <div className="max-w-4xl mx-auto space-y-6">
-            {faqs.map((faq, index) => (
-              <div key={index} className="bg-white rounded-2xl p-6 shadow-soft">
-                <h3 className="text-lg font-semibold text-gray-900 mb-3">{faq.question}</h3>
-                <p className="text-gray-600">{faq.answer}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <FAQSection />
 
       {/* CTA Section */}
       <section className="py-20">

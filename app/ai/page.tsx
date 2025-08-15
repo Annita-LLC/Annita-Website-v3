@@ -19,6 +19,7 @@ import {
   Download
 } from 'lucide-react'
 import Button from '@/components/ui/Button'
+import FAQSection from '@/components/sections/FAQSection'
 
 export const metadata: Metadata = {
   title: 'AI & Analytics - Annita',
@@ -294,6 +295,9 @@ const AIPage = () => {
           </div>
         </div>
       </section>
+
+      {/* FAQ Section */}
+      <FAQSection />
 
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 text-white">
