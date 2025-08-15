@@ -53,7 +53,7 @@ const Navigation = () => {
   const navItems = [
     { name: 'Home', href: '/' },
     { 
-      name: 'Personal Services', 
+      name: 'Personal', 
       href: '#',
       dropdown: [
         { name: 'AnnitaPay', href: '/services/annitapay', icon: CreditCard, description: 'Secure digital payments' },
@@ -65,7 +65,7 @@ const Navigation = () => {
       ]
     },
     { 
-      name: 'Business Services', 
+      name: 'Business', 
       href: '#',
       dropdown: [
         { name: 'Global Market', href: '/services/global-market', icon: Globe, description: 'International marketplace' },

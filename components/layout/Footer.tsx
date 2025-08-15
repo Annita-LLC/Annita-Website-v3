@@ -18,7 +18,7 @@ const Footer = () => {
 
   const footerSections = [
     {
-      title: 'Personal Services',
+      title: 'Personal',
       links: [
         { name: 'AnnitaPay', href: '/services/annitapay' },
         { name: 'Shopping', href: '/services/shopping' },
@@ -29,7 +29,7 @@ const Footer = () => {
       ]
     },
     {
-      title: 'Business Services',
+      title: 'Business',
       links: [
         { name: 'Global Market', href: '/services/global-market' },
         { name: 'AnnitaPay Business', href: '/services/annitapay-business' },
