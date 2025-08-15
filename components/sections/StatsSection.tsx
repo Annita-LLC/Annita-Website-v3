@@ -140,11 +140,11 @@ const StatsSection = () => {
               <div className="stat-number">
                 {isInView ? (
                   <motion.span
-                    initial={{ number: 0 }}
-                    animate={{ number: stat.number }}
-                    transition={{ duration: 2, delay: index * 0.1 }}
+                    initial={{ opacity: 0, scale: 0.5 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.6, delay: index * 0.1 }}
                   >
-                    {Math.round(stat.number)}
+                    {stat.number}
                   </motion.span>
                 ) : (
                   stat.number
