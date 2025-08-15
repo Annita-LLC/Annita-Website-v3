@@ -199,6 +199,7 @@ const Navigation = () => {
                   )}
                 </div>
               ))}
+              </div>
             </div>
 
             {/* CTA Buttons */}
