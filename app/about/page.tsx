@@ -116,7 +116,7 @@ const AboutPage = () => {
       role: 'CEO & Founder',
       achievement: 'Led MVP launch and awards wins',
       description: 'Visionary leader with experience in African startups',
-      image: '/team/christopher-fallah.jpg',
+      image: '/images/team/christopher-fallah.svg',
       fallback: 'CF',
       social: {
         linkedin: 'https://linkedin.com/in/christopher-fallah',
@@ -132,7 +132,7 @@ const AboutPage = () => {
       role: 'CTO',
       achievement: 'Expert in scalable platforms',
       description: 'Oversees tech architecture for low-connectivity environments',
-      image: '/team/emmanuel-weh.jpg',
+      image: '/images/team/emmanuel-weh.svg',
       fallback: 'EW',
       social: {
         linkedin: 'https://linkedin.com/in/emmanuel-weh',
@@ -148,7 +148,7 @@ const AboutPage = () => {
       role: 'CMO',
       achievement: 'Drives marketing strategies',
       description: 'Focused on MSME engagement and growth',
-      image: '/team/siah-fallah.jpg',
+      image: '/images/team/siah-fallah.svg',
       fallback: 'SF',
       social: {
         linkedin: 'https://linkedin.com/in/siah-fallah',
@@ -164,7 +164,7 @@ const AboutPage = () => {
       role: 'Senior Frontend Engineer',
       achievement: 'Builds user-friendly interfaces',
       description: 'Ensures mobile-first design excellence',
-      image: '/team/victor-coleman.jpg',
+      image: '/images/team/victor-coleman.svg',
       fallback: 'VC',
       social: {
         linkedin: 'https://linkedin.com/in/victor-coleman',
@@ -180,7 +180,7 @@ const AboutPage = () => {
       role: 'Senior Backend Engineer',
       achievement: 'Handles secure integrations',
       description: 'Manages payments and logistics systems',
-      image: '/team/lamber-kpukuyou.jpg',
+      image: '/images/team/lamber-kpukuyou.svg',
       fallback: 'LK',
       social: {
         linkedin: 'https://linkedin.com/in/lamber-kpukuyou',

@@ -24,7 +24,7 @@ const BlogPage = () => {
       date: 'December 15, 2024',
       readTime: '5 min read',
       category: 'E-commerce',
-      image: '/api/placeholder/400/250',
+      image: '/images/blog/blog-1.svg',
       featured: true
     },
     {
@@ -34,7 +34,7 @@ const BlogPage = () => {
       date: 'December 12, 2024',
       readTime: '4 min read',
       category: 'Fintech',
-      image: '/api/placeholder/400/250'
+      image: '/images/blog/blog-2.svg'
     },
     {
       title: 'Building Trust in African Digital Marketplaces',
@@ -43,7 +43,7 @@ const BlogPage = () => {
       date: 'December 10, 2024',
       readTime: '6 min read',
       category: 'Business',
-      image: '/api/placeholder/400/250'
+      image: '/images/blog/blog-3.svg'
     }
   ]
 
@@ -55,7 +55,7 @@ const BlogPage = () => {
       date: 'December 8, 2024',
       readTime: '7 min read',
       category: 'Trade',
-      image: '/api/placeholder/300/200'
+      image: '/images/blog/blog-4.svg'
     },
     {
       title: 'Mobile-First Marketing Strategies for African Businesses',
@@ -64,7 +64,7 @@ const BlogPage = () => {
       date: 'December 5, 2024',
       readTime: '4 min read',
       category: 'Marketing',
-      image: '/api/placeholder/300/200'
+      image: '/images/blog/blog-5.svg'
     },
     {
       title: 'Logistics Solutions for Rural Business Growth',
@@ -73,7 +73,7 @@ const BlogPage = () => {
       date: 'December 3, 2024',
       readTime: '5 min read',
       category: 'Logistics',
-      image: '/api/placeholder/300/200'
+      image: '/images/blog/blog-6.svg'
     },
     {
       title: 'AI-Powered Analytics for African MSMEs',
@@ -82,7 +82,7 @@ const BlogPage = () => {
       date: 'November 30, 2024',
       readTime: '6 min read',
       category: 'Technology',
-      image: '/api/placeholder/300/200'
+      image: '/images/blog/blog-7.svg'
     },
     {
       title: 'Financial Inclusion: Bridging the Gap in Africa',
@@ -91,7 +91,7 @@ const BlogPage = () => {
       date: 'November 28, 2024',
       readTime: '5 min read',
       category: 'Fintech',
-      image: '/api/placeholder/300/200'
+      image: '/images/blog/blog-8.svg'
     },
     {
       title: 'Digital Transformation Success Stories from Africa',
@@ -100,7 +100,7 @@ const BlogPage = () => {
       date: 'November 25, 2024',
       readTime: '8 min read',
       category: 'Success Stories',
-      image: '/api/placeholder/300/200'
+      image: '/images/blog/blog-1.svg'
     }
   ]
 
