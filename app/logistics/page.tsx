@@ -11,8 +11,11 @@ import {
   Award,
   Package,
   Users,
-  Zap
+  Zap,
+  Play,
+  Download
 } from 'lucide-react'
+import Button from '@/components/ui/Button'
 
 export const metadata: Metadata = {
   title: 'Annita Logistics - On-Demand Delivery Network',
@@ -95,13 +98,22 @@ const LogisticsPage = () => {
               same-day delivery, and cross-border shipping capabilities
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="btn-lg bg-white text-orange-600 hover:bg-gray-100 group">
-                Get Started
-                <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-              </button>
-              <button className="btn-lg border-2 border-white text-white hover:bg-white hover:text-orange-600">
-                Track Package
-              </button>
+              <Button
+                variant="gradient"
+                size="xl"
+                icon={Play}
+                className="text-lg font-bold shadow-2xl hover:shadow-orange-500/25 transform hover:-translate-y-1 transition-all duration-300"
+              >
+                Get Started Free
+              </Button>
+              <Button
+                variant="glass"
+                size="xl"
+                icon={Download}
+                className="text-lg font-bold backdrop-blur-xl shadow-2xl hover:shadow-white/10 transform hover:-translate-y-1 transition-all duration-300"
+              >
+                Download App
+              </Button>
             </div>
           </div>
         </div>
@@ -243,14 +255,22 @@ const LogisticsPage = () => {
               their delivery operations and improve customer satisfaction.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="btn-lg bg-white text-orange-600 hover:bg-gray-100 group">
-                <Truck className="w-5 h-5 mr-2" />
-                Start Shipping
-                <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-              </button>
-              <button className="btn-lg border-2 border-white text-white hover:bg-white hover:text-orange-600">
-                Contact Sales
-              </button>
+              <Button
+                variant="gradient"
+                size="xl"
+                icon={Play}
+                className="text-lg font-bold shadow-2xl hover:shadow-orange-500/25 transform hover:-translate-y-1 transition-all duration-300"
+              >
+                Get Started Free
+              </Button>
+              <Button
+                variant="glass"
+                size="xl"
+                icon={Download}
+                className="text-lg font-bold backdrop-blur-xl shadow-2xl hover:shadow-white/10 transform hover:-translate-y-1 transition-all duration-300"
+              >
+                Download App
+              </Button>
             </div>
           </div>
         </div>

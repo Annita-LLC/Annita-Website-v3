@@ -11,8 +11,10 @@ import {
   Building2,
   Zap,
   Star,
-  TrendingUp
+  TrendingUp,
+  Play
 } from 'lucide-react'
+import Button from '@/components/ui/Button'
 
 export const metadata: Metadata = {
   title: 'Partners - Join Annita\'s Ecosystem',
@@ -161,15 +163,22 @@ const PartnersPage = () => {
               transform how businesses operate across the continent.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="btn-lg bg-blue-600 text-white hover:bg-blue-700 group">
-                <MessageSquare className="w-5 h-5 mr-2" />
-                Become a Partner
-                <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-              </button>
-              <button className="btn-lg border-2 border-white text-white hover:bg-white hover:text-gray-900">
-                <Download className="w-5 h-5 mr-2" />
-                Partner Kit
-              </button>
+              <Button
+                variant="gradient"
+                size="xl"
+                icon={Play}
+                className="text-lg font-bold shadow-2xl hover:shadow-blue-500/25 transform hover:-translate-y-1 transition-all duration-300"
+              >
+                Get Started Free
+              </Button>
+              <Button
+                variant="glass"
+                size="xl"
+                icon={Download}
+                className="text-lg font-bold backdrop-blur-xl shadow-2xl hover:shadow-white/10 transform hover:-translate-y-1 transition-all duration-300"
+              >
+                Download App
+              </Button>
             </div>
           </div>
         </div>
@@ -369,15 +378,22 @@ const PartnersPage = () => {
               with Africa's leading digital platform.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="btn-lg bg-white text-blue-600 hover:bg-gray-100 group">
-                <MessageSquare className="w-5 h-5 mr-2" />
-                Apply Now
-                <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-              </button>
-              <button className="btn-lg border-2 border-white text-white hover:bg-white hover:text-blue-600">
-                <Download className="w-5 h-5 mr-2" />
-                Download Partner Kit
-              </button>
+              <Button
+                variant="gradient"
+                size="xl"
+                icon={Play}
+                className="text-lg font-bold shadow-2xl hover:shadow-blue-500/25 transform hover:-translate-y-1 transition-all duration-300"
+              >
+                Get Started Free
+              </Button>
+              <Button
+                variant="glass"
+                size="xl"
+                icon={Download}
+                className="text-lg font-bold backdrop-blur-xl shadow-2xl hover:shadow-white/10 transform hover:-translate-y-1 transition-all duration-300"
+              >
+                Download App
+              </Button>
             </div>
           </div>
         </div>

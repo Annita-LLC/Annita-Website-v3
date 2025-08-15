@@ -22,6 +22,7 @@ import {
   Play,
   Download
 } from 'lucide-react'
+import Button from '@/components/ui/Button'
 
 const FeaturesSection = () => {
   const ref = useRef(null)
@@ -393,15 +394,22 @@ const FeaturesSection = () => {
               and reach new customers across Africa.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="btn-lg bg-white text-primary-600 hover:bg-gray-100 group">
-                <Download className="w-5 h-5 mr-2" />
+              <Button
+                variant="gradient"
+                size="xl"
+                icon={Play}
+                className="text-lg font-bold shadow-2xl hover:shadow-primary-500/25 transform hover:-translate-y-1 transition-all duration-300"
+              >
+                Get Started Free
+              </Button>
+              <Button
+                variant="glass"
+                size="xl"
+                icon={Download}
+                className="text-lg font-bold backdrop-blur-xl shadow-2xl hover:shadow-white/10 transform hover:-translate-y-1 transition-all duration-300"
+              >
                 Download App
-                <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-              </button>
-              <button className="btn-lg border-2 border-white text-white hover:bg-white hover:text-primary-600 group">
-                <Play className="w-5 h-5 mr-2" />
-                Watch Demo
-              </button>
+              </Button>
             </div>
           </div>
         </motion.div>
