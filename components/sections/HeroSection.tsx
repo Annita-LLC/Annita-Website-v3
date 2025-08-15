@@ -52,7 +52,7 @@ const HeroSection = () => {
           }}
           transition={{
             duration: 20,
-            repeat: Infinity,
+            repeat: -1,
             ease: "linear"
           }}
           className="absolute -top-40 -right-40 w-80 h-80 bg-primary-400/20 rounded-full blur-3xl"
@@ -64,7 +64,7 @@ const HeroSection = () => {
           }}
           transition={{
             duration: 25,
-            repeat: Infinity,
+            repeat: -1,
             ease: "linear"
           }}
           className="absolute -bottom-40 -left-40 w-96 h-96 bg-secondary-400/20 rounded-full blur-3xl"
@@ -208,7 +208,7 @@ const HeroSection = () => {
                       <div className="grid grid-cols-2 gap-3 mb-6">
                         <motion.div
                           animate={{ scale: [1, 1.05, 1] }}
-                          transition={{ duration: 2, repeat: Infinity, delay: 0 }}
+                          transition={{ duration: 2, repeat: -1, delay: 0 }}
                           className="bg-white/20 rounded-xl p-4 text-center"
                         >
                           <ShoppingCart className="w-6 h-6 text-white mx-auto mb-2" />
@@ -216,7 +216,7 @@ const HeroSection = () => {
                         </motion.div>
                         <motion.div
                           animate={{ scale: [1, 1.05, 1] }}
-                          transition={{ duration: 2, repeat: Infinity, delay: 0.5 }}
+                          transition={{ duration: 2, repeat: -1, delay: 0.5 }}
                           className="bg-white/20 rounded-xl p-4 text-center"
                         >
                           <CreditCard className="w-6 h-6 text-white mx-auto mb-2" />
@@ -224,7 +224,7 @@ const HeroSection = () => {
                         </motion.div>
                         <motion.div
                           animate={{ scale: [1, 1.05, 1] }}
-                          transition={{ duration: 2, repeat: Infinity, delay: 1 }}
+                          transition={{ duration: 2, repeat: -1, delay: 1 }}
                           className="bg-white/20 rounded-xl p-4 text-center"
                         >
                           <Truck className="w-6 h-6 text-white mx-auto mb-2" />
@@ -232,7 +232,7 @@ const HeroSection = () => {
                         </motion.div>
                         <motion.div
                           animate={{ scale: [1, 1.05, 1] }}
-                          transition={{ duration: 2, repeat: Infinity, delay: 1.5 }}
+                          transition={{ duration: 2, repeat: -1, delay: 1.5 }}
                           className="bg-white/20 rounded-xl p-4 text-center"
                         >
                           <MessageSquare className="w-6 h-6 text-white mx-auto mb-2" />
@@ -286,7 +286,7 @@ const HeroSection = () => {
                     y: [0, -20, 0],
                     rotate: [0, 5, 0]
                   }}
-                  transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                  transition={{ duration: 3, repeat: -1, ease: "easeInOut" }}
                   className="absolute -top-4 -right-4 w-16 h-16 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-2xl shadow-lg flex items-center justify-center"
                 >
                   <TrendingUp className="w-8 h-8 text-white" />
@@ -297,7 +297,7 @@ const HeroSection = () => {
                     y: [0, 20, 0],
                     rotate: [0, -5, 0]
                   }}
-                  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+                  transition={{ duration: 4, repeat: -1, ease: "easeInOut", delay: 1 }}
                   className="absolute -bottom-4 -left-4 w-12 h-12 bg-gradient-to-br from-green-400 to-blue-500 rounded-xl shadow-lg flex items-center justify-center"
                 >
                   <Shield className="w-6 h-6 text-white" />
@@ -317,12 +317,12 @@ const HeroSection = () => {
       >
         <motion.div
           animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 2, repeat: Infinity }}
+          transition={{ duration: 2, repeat: -1 }}
           className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center"
         >
           <motion.div
             animate={{ y: [0, 12, 0] }}
-            transition={{ duration: 2, repeat: Infinity }}
+            transition={{ duration: 2, repeat: -1 }}
             className="w-1 h-3 bg-white/60 rounded-full mt-2"
           />
         </motion.div>
