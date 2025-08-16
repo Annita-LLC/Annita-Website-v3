@@ -88,6 +88,7 @@ const Navigation = () => {
         { name: 'Annita Logistics', href: '/logistics', icon: Truck, description: 'On-demand delivery network' },
         { name: 'Annita Connect', href: '/connect', icon: MessageSquare, description: 'Communication & marketing suite' },
         { name: 'Analytics & AI', href: '/analytics', icon: BarChart3, description: 'AI-driven business insights' },
+        { name: 'Live Activity', href: '/live-activity', icon: Activity, description: 'Real-time platform activity feed' },
         { name: 'API & Integrations', href: '/api', icon: Code, description: 'Developer platform & integrations' },
       ]
     },

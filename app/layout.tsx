@@ -6,7 +6,6 @@ import { Toaster } from 'react-hot-toast'
 import Navigation from '@/components/layout/Navigation'
 import Footer from '@/components/layout/Footer'
 import CookieConsent from '@/components/ui/CookieConsent'
-import LiveActivity from '@/components/ui/LiveActivity'
 import FloatingNotification from '@/components/ui/FloatingNotification'
 
 const zenDots = Zen_Dots({ 
@@ -203,7 +202,6 @@ export default function RootLayout({
         </div>
         <Analytics />
         <CookieConsent />
-        <LiveActivity />
         <FloatingNotification />
         <Toaster
           position="top-right"
