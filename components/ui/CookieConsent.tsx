@@ -57,8 +57,8 @@ const CookieConsent = () => {
       />
       
       {/* Cookie Popup */}
-      <div className="fixed bottom-0 left-0 right-0 sm:bottom-4 sm:left-4 sm:right-4 lg:left-8 lg:right-8 lg:bottom-8 z-50">
-        <div className="bg-white dark:bg-gray-800 rounded-t-2xl sm:rounded-2xl lg:rounded-3xl shadow-2xl border border-gray-200 dark:border-gray-700 max-w-2xl mx-auto">
+      <div className="fixed inset-0 flex items-center justify-center p-4 z-50">
+        <div className="bg-white dark:bg-gray-800 rounded-2xl sm:rounded-3xl shadow-2xl border border-gray-200 dark:border-gray-700 max-w-md sm:max-w-lg lg:max-w-2xl w-full mx-auto">
           {/* Header */}
           <div className="flex items-start justify-between p-3 sm:p-4 lg:p-6 border-b border-gray-100 dark:border-gray-700">
             <div className="flex items-center space-x-2 sm:space-x-3">
