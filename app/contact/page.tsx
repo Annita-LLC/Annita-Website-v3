@@ -80,16 +80,16 @@ const ContactPage = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white">
       {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-to-r from-blue-600 to-cyan-600 text-white">
+      <section className="relative py-16 sm:py-20 bg-gradient-to-r from-blue-600 to-cyan-600 text-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
-            <div className="w-20 h-20 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-6">
-              <MessageSquare className="w-10 h-10" />
+            <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white/20 rounded-xl sm:rounded-2xl flex items-center justify-center mx-auto mb-4 sm:mb-6">
+              <MessageSquare className="w-8 h-8 sm:w-10 sm:h-10" />
             </div>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 sm:mb-6">
               Contact Us
             </h1>
-            <p className="text-xl sm:text-2xl text-white/90 mb-8">
+            <p className="text-lg sm:text-xl lg:text-2xl text-white/90 mb-6 sm:mb-8">
               We're here to help you succeed. Get in touch with our team for support, 
               sales inquiries, or partnership opportunities.
             </p>
@@ -98,28 +98,28 @@ const ContactPage = () => {
       </section>
 
       {/* Contact Methods Section */}
-      <section className="py-20">
+      <section className="py-16 sm:py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+          <div className="text-center mb-12 sm:mb-16">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">
               How Can We Help?
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
               Choose the best way to reach us based on your needs. Our team is ready 
               to assist you with any questions or concerns.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {contactMethods.map((method, index) => (
-              <div key={index} className="bg-white rounded-3xl p-8 shadow-soft text-center">
-                <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                  <method.icon className="w-8 h-8 text-white" />
+              <div key={index} className="bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-soft text-center">
+                <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl sm:rounded-2xl flex items-center justify-center mx-auto mb-4 sm:mb-6">
+                  <method.icon className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">{method.title}</h3>
-                <p className="text-gray-600 mb-4">{method.description}</p>
-                <div className="text-lg font-semibold text-blue-600 mb-2">{method.contact}</div>
-                <div className="text-sm text-gray-500">{method.response}</div>
+                <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2 sm:mb-3">{method.title}</h3>
+                <p className="text-sm sm:text-base text-gray-600 mb-3 sm:mb-4">{method.description}</p>
+                <div className="text-base sm:text-lg font-semibold text-blue-600 mb-1 sm:mb-2">{method.contact}</div>
+                <div className="text-xs sm:text-sm text-gray-500">{method.response}</div>
               </div>
             ))}
           </div>
@@ -127,50 +127,50 @@ const ContactPage = () => {
       </section>
 
       {/* Contact Form Section */}
-      <section className="py-20 bg-gradient-to-br from-blue-50 to-cyan-50">
+      <section className="py-16 sm:py-20 bg-gradient-to-br from-blue-50 to-cyan-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-start">
+          <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 items-start">
             <div>
-              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 sm:mb-6">
                 Send Us a Message
               </h2>
-              <p className="text-lg text-gray-600 mb-8">
+              <p className="text-base sm:text-lg text-gray-600 mb-6 sm:mb-8">
                 Fill out the form below and we'll get back to you as soon as possible. 
                 We're committed to providing excellent customer service.
               </p>
               
-              <div className="space-y-6">
-                <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
-                    <Clock className="w-6 h-6 text-blue-600" />
+              <div className="space-y-4 sm:space-y-6">
+                <div className="flex items-center space-x-3 sm:space-x-4">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-blue-100 rounded-lg sm:rounded-xl flex items-center justify-center">
+                    <Clock className="w-5 h-5 sm:w-6 sm:h-6 text-blue-600" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-gray-900">Response Time</h4>
-                    <p className="text-sm text-gray-600">We typically respond within 24 hours</p>
+                    <h4 className="font-semibold text-gray-900 text-sm sm:text-base">Response Time</h4>
+                    <p className="text-xs sm:text-sm text-gray-600">We typically respond within 24 hours</p>
                   </div>
                 </div>
-                <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center">
-                    <CheckCircle className="w-6 h-6 text-green-600" />
+                <div className="flex items-center space-x-3 sm:space-x-4">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-green-100 rounded-lg sm:rounded-xl flex items-center justify-center">
+                    <CheckCircle className="w-5 h-5 sm:w-6 sm:h-6 text-green-600" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-gray-900">Expert Support</h4>
-                    <p className="text-sm text-gray-600">Our team has deep knowledge of African markets</p>
+                    <h4 className="font-semibold text-gray-900 text-sm sm:text-base">Expert Support</h4>
+                    <p className="text-xs sm:text-sm text-gray-600">Our team has deep knowledge of African markets</p>
                   </div>
                 </div>
-                <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center">
-                    <Globe className="w-6 h-6 text-purple-600" />
+                <div className="flex items-center space-x-3 sm:space-x-4">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-purple-100 rounded-lg sm:rounded-xl flex items-center justify-center">
+                    <Globe className="w-5 h-5 sm:w-6 sm:h-6 text-purple-600" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-gray-900">Local Presence</h4>
-                    <p className="text-sm text-gray-600">We understand local business needs</p>
+                    <h4 className="font-semibold text-gray-900 text-sm sm:text-base">Local Presence</h4>
+                    <p className="text-xs sm:text-sm text-gray-600">We understand local business needs</p>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div className="bg-white rounded-3xl p-8 shadow-soft">
+            <div className="bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-soft">
               <form className="space-y-6">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div>
