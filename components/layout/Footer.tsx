@@ -106,7 +106,7 @@ const Footer = () => {
                 </div>
                 <div className="absolute -inset-1 bg-gradient-to-r from-primary-400 to-secondary-400 rounded-full blur opacity-20 group-hover:opacity-30 transition-opacity duration-300"></div>
               </div>
-              <span className="text-lg sm:text-xl lg:text-2xl font-bold bg-gradient-to-r from-primary-500 to-secondary-500 bg-clip-text text-transparent dark:text-white">Annita</span>
+                              <span className="text-lg sm:text-xl lg:text-2xl font-bold text-orange-500 dark:text-orange-400">Annita</span>
             </Link>
             <p className="text-gray-400 mb-4 sm:mb-6 leading-relaxed text-sm sm:text-base">
               Africa's first all-in-one digital platform, empowering MSMEs with integrated 
@@ -151,7 +151,7 @@ const Footer = () => {
           {/* Footer Links */}
           {footerSections.map((section) => (
             <div key={section.title}>
-              <h3 className="text-base sm:text-lg font-semibold text-white mb-3 sm:mb-4">{section.title}</h3>
+              <h3 className="text-base sm:text-lg font-semibold text-orange-500 dark:text-orange-400 mb-3 sm:mb-4">{section.title}</h3>
               <ul className="space-y-2 sm:space-y-3">
                 {section.links.map((link) => (
                   <li key={link.name}>
