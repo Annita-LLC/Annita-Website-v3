@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 import { 
-  Brain, 
+  Brain,
   Users, 
   Briefcase, 
   Smartphone, 
@@ -164,9 +164,9 @@ const AILandingPage = () => {
                       <div className="font-semibold text-gray-900 text-sm sm:text-base">{feature.title}</div>
                       <div className="text-xs sm:text-sm text-gray-600">{feature.description}</div>
                     </div>
-                  </div>
-                ))}
               </div>
+            ))}
+          </div>
 
               <Link href="/ai/personal">
                 <Button
@@ -178,7 +178,7 @@ const AILandingPage = () => {
                   Explore Personal AI
                 </Button>
               </Link>
-            </div>
+          </div>
 
             {/* Business AI Card */}
             <div className="bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-soft hover:shadow-large transition-all duration-300 border-2 border-transparent hover:border-orange-200">
@@ -201,9 +201,9 @@ const AILandingPage = () => {
                     <div>
                       <div className="font-semibold text-gray-900 text-sm sm:text-base">{feature.title}</div>
                       <div className="text-xs sm:text-sm text-gray-600">{feature.description}</div>
-                    </div>
-                  </div>
-                ))}
+                </div>
+              </div>
+            ))}
               </div>
 
               <Link href="/ai/business">
@@ -228,20 +228,20 @@ const AILandingPage = () => {
             <div className="text-center mb-12 sm:mb-16">
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-orange-600 mb-4 sm:mb-6">
                 Why Choose Annita AI?
-              </h2>
+            </h2>
               <p className="text-lg sm:text-xl text-gray-600">
                 Both our Personal and Business AI solutions share these powerful features
-              </p>
-            </div>
+            </p>
+          </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
               {benefits.map((benefit, index) => (
                 <div key={index} className="flex items-center space-x-2 sm:space-x-3">
                   <CheckCircle className="w-5 h-5 sm:w-6 sm:h-6 text-green-600 flex-shrink-0" />
                   <span className="text-sm sm:text-base text-gray-700">{benefit}</span>
+                    </div>
+                  ))}
                 </div>
-              ))}
-            </div>
           </div>
         </div>
       </section>
