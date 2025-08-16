@@ -270,7 +270,7 @@ const AboutPage = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white" ref={ref}>
       {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-600 text-white overflow-hidden">
+      <section className="relative py-16 sm:py-20 bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-600 text-white overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-cyan-600/20"></div>
         <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-10"></div>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
@@ -280,30 +280,30 @@ const AboutPage = () => {
             transition={{ duration: 0.8 }}
             className="max-w-4xl mx-auto text-center"
           >
-            <div className="w-20 h-20 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center mx-auto mb-6">
-              <Heart className="w-10 h-10" />
+            <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white/20 backdrop-blur-sm rounded-xl sm:rounded-2xl flex items-center justify-center mx-auto mb-4 sm:mb-6">
+              <Heart className="w-8 h-8 sm:w-10 sm:h-10" />
             </div>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 sm:mb-6">
               About <span className="text-orange-500">Annita</span>
             </h1>
-            <p className="text-xl sm:text-2xl text-white/90 mb-8">
+            <p className="text-lg sm:text-xl lg:text-2xl text-white/90 mb-6 sm:mb-8">
               Africa's digital heartbeat, empowering MSMEs to thrive in the digital era 
               and catalyzing global economic growth across the continent
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
               <Button
                 variant="gradient"
-                size="xl"
+                size="lg"
                 icon={Play}
-                className="text-lg font-bold shadow-2xl hover:shadow-blue-500/25 transform hover:-translate-y-1 transition-all duration-300"
+                className="text-base sm:text-lg font-bold shadow-2xl hover:shadow-blue-500/25 transform hover:-translate-y-1 transition-all duration-300"
               >
                 Watch Our Story
               </Button>
               <Button
                 variant="glass"
-                size="xl"
+                size="lg"
                 icon={Download}
-                className="text-lg font-bold backdrop-blur-xl shadow-2xl hover:shadow-white/10 transform hover:-translate-y-1 transition-all duration-300"
+                className="text-base sm:text-lg font-bold backdrop-blur-xl shadow-2xl hover:shadow-white/10 transform hover:-translate-y-1 transition-all duration-300"
               >
                 Download App
               </Button>
@@ -313,38 +313,38 @@ const AboutPage = () => {
       </section>
 
       {/* Mission & Vision Section */}
-      <section className="py-20">
+      <section className="py-16 sm:py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="grid lg:grid-cols-2 gap-12"
+            className="grid lg:grid-cols-2 gap-8 sm:gap-12"
           >
-            <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-3xl p-8 lg:p-12 hover:shadow-large transition-all duration-300">
-              <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center mb-6">
-                <Target className="w-8 h-8 text-white" />
+            <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-12 hover:shadow-large transition-all duration-300">
+              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl sm:rounded-2xl flex items-center justify-center mb-4 sm:mb-6">
+                <Target className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
               </div>
-              <h2 className="text-3xl font-bold text-orange-600 mb-4">Our Mission</h2>
-              <p className="text-lg text-gray-700 mb-6">
+              <h2 className="text-2xl sm:text-3xl font-bold text-orange-600 mb-3 sm:mb-4">Our Mission</h2>
+              <p className="text-base sm:text-lg text-gray-700 mb-4 sm:mb-6">
                 To deliver Africa's first all-in-one platform, seamlessly integrating e-commerce, 
                 fintech, AI-driven tools, communication, marketing, logistics, and lifestyle services.
               </p>
-              <p className="text-gray-600">
+              <p className="text-sm sm:text-base text-gray-600">
                 We empower businesses and individuals with accessible, affordable, and innovative 
                 solutions, providing connectivity and convenience to drive growth and success.
               </p>
             </div>
-            <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-3xl p-8 lg:p-12 hover:shadow-large transition-all duration-300">
-              <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-500 rounded-2xl flex items-center justify-center mb-6">
-                <Globe className="w-8 h-8 text-white" />
+            <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-12 hover:shadow-large transition-all duration-300">
+              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-green-500 to-emerald-500 rounded-xl sm:rounded-2xl flex items-center justify-center mb-4 sm:mb-6">
+                <Globe className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
               </div>
-              <h2 className="text-3xl font-bold text-orange-600 mb-4">Our Vision</h2>
-              <p className="text-lg text-gray-700 mb-6">
+              <h2 className="text-2xl sm:text-3xl font-bold text-orange-600 mb-3 sm:mb-4">Our Vision</h2>
+              <p className="text-base sm:text-lg text-gray-700 mb-4 sm:mb-6">
                 To empower 5 million Micro, Small, and Medium Enterprises (MSMEs) across Africa 
                 and beyond by 2029, catalyzing global economic growth and job creation.
               </p>
-              <p className="text-gray-600">
+              <p className="text-sm sm:text-base text-gray-600">
                 With a special focus on underserved communities, including rural and women-led 
                 businesses, we aim to transform Africa's economic landscape through digital innovation.
               </p>
@@ -354,37 +354,37 @@ const AboutPage = () => {
       </section>
 
       {/* Values Section */}
-      <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
+      <section className="py-16 sm:py-20 bg-gradient-to-br from-gray-50 to-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-center mb-16"
+            className="text-center mb-12 sm:mb-16"
           >
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-orange-600 mb-6">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-orange-600 mb-4 sm:mb-6">
               Our Core Values
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
               These values guide everything we do, from product development to customer service, 
               ensuring we stay true to our mission of empowering Africa's MSMEs.
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
             {values.map((value, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 30 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: 0.6 + index * 0.1 }}
-                className={`${value.gradient} rounded-3xl p-8 text-center group hover:shadow-large transition-all duration-300 transform hover:-translate-y-2`}
+                className={`${value.gradient} rounded-2xl sm:rounded-3xl p-6 sm:p-8 text-center group hover:shadow-large transition-all duration-300 transform hover:-translate-y-2`}
               >
-                <div className={`w-16 h-16 bg-gradient-to-br ${value.color} rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                  <value.icon className="w-8 h-8 text-white" />
+                <div className={`w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br ${value.color} rounded-xl sm:rounded-2xl flex items-center justify-center mx-auto mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                  <value.icon className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
                 </div>
-                <h3 className="text-xl font-semibold text-orange-600 mb-3">{value.title}</h3>
-                <p className="text-gray-600">{value.description}</p>
+                <h3 className="text-lg sm:text-xl font-semibold text-orange-600 mb-2 sm:mb-3">{value.title}</h3>
+                <p className="text-sm sm:text-base text-gray-600">{value.description}</p>
               </motion.div>
             ))}
           </div>
@@ -392,44 +392,44 @@ const AboutPage = () => {
       </section>
 
       {/* Journey Section */}
-      <section className="py-20">
+      <section className="py-16 sm:py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="text-center mb-16"
+            className="text-center mb-12 sm:mb-16"
           >
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-orange-600 mb-6">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-orange-600 mb-4 sm:mb-6">
               Our Journey
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
               From a simple idea to Africa's leading all-in-one digital platform, 
               here's how we've grown and evolved over the years.
             </p>
           </motion.div>
 
-          <div className="space-y-8">
+          <div className="space-y-6 sm:space-y-8">
             {milestones.map((milestone, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
                 animate={isInView ? { opacity: 1, x: 0 } : {}}
                 transition={{ duration: 0.8, delay: 0.8 + index * 0.2 }}
-                className="flex flex-col lg:flex-row items-center gap-8 bg-white rounded-3xl p-8 shadow-soft hover:shadow-large transition-all duration-300"
+                className="flex flex-col lg:flex-row items-center gap-6 sm:gap-8 bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-soft hover:shadow-large transition-all duration-300"
               >
                 <div className="lg:w-1/4 text-center lg:text-left">
-                  <div className={`w-16 h-16 bg-gradient-to-br ${milestone.color} rounded-2xl flex items-center justify-center mx-auto lg:mx-0 mb-4`}>
-                    <milestone.icon className="w-8 h-8 text-white" />
+                  <div className={`w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br ${milestone.color} rounded-xl sm:rounded-2xl flex items-center justify-center mx-auto lg:mx-0 mb-3 sm:mb-4`}>
+                    <milestone.icon className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
                   </div>
-                  <div className="text-4xl font-bold text-orange-500 mb-2">{milestone.year}</div>
-                  <div className="text-lg font-semibold text-gray-900 mb-2">{milestone.title}</div>
-                  <div className="text-sm text-gray-500 bg-gray-100 px-3 py-1 rounded-full inline-block">
+                  <div className="text-3xl sm:text-4xl font-bold text-orange-500 mb-1 sm:mb-2">{milestone.year}</div>
+                  <div className="text-base sm:text-lg font-semibold text-gray-900 mb-1 sm:mb-2">{milestone.title}</div>
+                  <div className="text-xs sm:text-sm text-gray-500 bg-gray-100 px-2 sm:px-3 py-1 rounded-full inline-block">
                     {milestone.achievement}
                   </div>
                 </div>
                 <div className="lg:w-3/4">
-                  <p className="text-lg text-gray-700">{milestone.description}</p>
+                  <p className="text-base sm:text-lg text-gray-700">{milestone.description}</p>
                 </div>
               </motion.div>
             ))}
@@ -438,44 +438,44 @@ const AboutPage = () => {
       </section>
 
       {/* Team Section */}
-      <section className="py-20 bg-gradient-to-br from-blue-50 to-cyan-50">
+      <section className="py-16 sm:py-20 bg-gradient-to-br from-blue-50 to-cyan-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.8 }}
-            className="text-center mb-16"
+            className="text-center mb-12 sm:mb-16"
           >
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-orange-600 mb-6">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-orange-600 mb-4 sm:mb-6">
               Meet Our Team
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
               Our diverse team combines tech expertise, market knowledge, and entrepreneurial 
               vision to drive Africa's digital transformation.
             </p>
           </motion.div>
 
           {/* Team Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-8 sm:mb-12">
             {team.map((member, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 30 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: 1.0 + index * 0.1 }}
-                className="bg-white rounded-3xl p-8 shadow-soft hover:shadow-large transition-all duration-300 cursor-pointer group"
+                className="bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-soft hover:shadow-large transition-all duration-300 cursor-pointer group"
               >
-                <div className="relative mb-6">
-                  <div className="w-24 h-24 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center mx-auto group-hover:scale-110 transition-transform duration-300">
-                    <span className="text-white text-2xl font-bold">{member.fallback}</span>
+                <div className="relative mb-4 sm:mb-6">
+                  <div className="w-20 h-20 sm:w-24 sm:h-24 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl sm:rounded-2xl flex items-center justify-center mx-auto group-hover:scale-110 transition-transform duration-300">
+                    <span className="text-white text-xl sm:text-2xl font-bold">{member.fallback}</span>
                   </div>
-                  <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-green-500 rounded-full flex items-center justify-center">
-                    <div className="w-3 h-3 bg-white rounded-full"></div>
+                  <div className="absolute -bottom-1 sm:-bottom-2 -right-1 sm:-right-2 w-6 h-6 sm:w-8 sm:h-8 bg-green-500 rounded-full flex items-center justify-center">
+                    <div className="w-2 h-2 sm:w-3 sm:h-3 bg-white rounded-full"></div>
                   </div>
                 </div>
-                <h3 className="text-xl font-semibold text-orange-600 mb-2 text-center">{member.name}</h3>
-                <div className="text-blue-600 font-medium mb-3 text-center">{member.role}</div>
-                <p className="text-gray-600 mb-4 text-center">{member.description}</p>
+                <h3 className="text-lg sm:text-xl font-semibold text-orange-600 mb-1 sm:mb-2 text-center">{member.name}</h3>
+                <div className="text-blue-600 font-medium mb-2 sm:mb-3 text-center text-sm sm:text-base">{member.role}</div>
+                <p className="text-gray-600 mb-3 sm:mb-4 text-center text-sm sm:text-base">{member.description}</p>
                 <div className="flex justify-center space-x-3">
                   {member.social.linkedin && (
                     <a href={member.social.linkedin} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-blue-600 transition-colors">
@@ -504,43 +504,43 @@ const AboutPage = () => {
             transition={{ duration: 0.8, delay: 1.2 }}
             className="max-w-4xl mx-auto"
           >
-            <div className="bg-white rounded-3xl p-8 shadow-soft">
-                              <h3 className="text-2xl font-bold text-orange-600 mb-6 text-center">Team Gallery</h3>
+            <div className="bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-soft">
+              <h3 className="text-xl sm:text-2xl font-bold text-orange-600 mb-4 sm:mb-6 text-center">Team Gallery</h3>
               <div className="relative">
-                <div className="flex items-center justify-center mb-6">
+                <div className="flex items-center justify-center mb-4 sm:mb-6">
                   <button
                     onClick={prevImage}
-                    className="p-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors mr-4"
+                    className="p-1.5 sm:p-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors mr-3 sm:mr-4"
                   >
-                    <ChevronLeft className="w-6 h-6" />
+                    <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
                   </button>
-                  <div className="w-32 h-32 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center">
-                    <span className="text-white text-3xl font-bold">{team[currentImageIndex].fallback}</span>
+                  <div className="w-24 h-24 sm:w-32 sm:h-32 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl sm:rounded-2xl flex items-center justify-center">
+                    <span className="text-white text-2xl sm:text-3xl font-bold">{team[currentImageIndex].fallback}</span>
                   </div>
                   <button
                     onClick={nextImage}
-                    className="p-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors ml-4"
+                    className="p-1.5 sm:p-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors ml-3 sm:ml-4"
                   >
-                    <ChevronRight className="w-6 h-6" />
+                    <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
                   </button>
                 </div>
                 <div className="text-center">
-                  <h4 className="text-lg font-semibold text-orange-600 mb-2">{team[currentImageIndex].name}</h4>
-                  <p className="text-blue-600 font-medium mb-4">{team[currentImageIndex].role}</p>
-                  <div className="flex flex-wrap justify-center gap-2 mb-4">
+                  <h4 className="text-base sm:text-lg font-semibold text-orange-600 mb-1 sm:mb-2">{team[currentImageIndex].name}</h4>
+                  <p className="text-blue-600 font-medium mb-3 sm:mb-4 text-sm sm:text-base">{team[currentImageIndex].role}</p>
+                  <div className="flex flex-wrap justify-center gap-1.5 sm:gap-2 mb-3 sm:mb-4">
                     {team[currentImageIndex].expertise.map((skill, skillIndex) => (
-                      <span key={skillIndex} className="px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-full">
+                      <span key={skillIndex} className="px-2 sm:px-3 py-1 bg-gray-100 text-gray-700 text-xs sm:text-sm rounded-full">
                         {skill}
                       </span>
                     ))}
                   </div>
-                  <div className="flex items-center justify-center space-x-4 text-sm text-gray-500">
+                  <div className="flex items-center justify-center space-x-3 sm:space-x-4 text-xs sm:text-sm text-gray-500">
                     <div className="flex items-center space-x-1">
-                      <MapPin className="w-4 h-4" />
+                      <MapPin className="w-3 h-3 sm:w-4 sm:h-4" />
                       <span>{team[currentImageIndex].location}</span>
                     </div>
                     <div className="flex items-center space-x-1">
-                      <Calendar className="w-4 h-4" />
+                      <Calendar className="w-3 h-3 sm:w-4 sm:h-4" />
                       <span>Joined {team[currentImageIndex].joined}</span>
                     </div>
                   </div>
@@ -552,37 +552,37 @@ const AboutPage = () => {
       </section>
 
       {/* Technology Section */}
-      <section className="py-20">
+      <section className="py-16 sm:py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 1.0 }}
-            className="text-center mb-16"
+            className="text-center mb-12 sm:mb-16"
           >
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">
               Powered by Advanced Technology
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
               Our platform leverages cutting-edge technologies to deliver exceptional 
               experiences across Africa's diverse digital landscape.
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {technologies.map((tech, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 30 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: 1.2 + index * 0.1 }}
-                className="bg-white rounded-3xl p-8 shadow-soft hover:shadow-large transition-all duration-300 group"
+                className="bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-soft hover:shadow-large transition-all duration-300 group"
               >
-                <div className={`w-16 h-16 bg-gradient-to-br ${tech.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                  <tech.icon className="w-8 h-8 text-white" />
+                <div className={`w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br ${tech.color} rounded-xl sm:rounded-2xl flex items-center justify-center mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                  <tech.icon className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
                 </div>
-                <h3 className="text-xl font-semibold text-orange-600 mb-3">{tech.title}</h3>
-                <p className="text-gray-600">{tech.description}</p>
+                <h3 className="text-lg sm:text-xl font-semibold text-orange-600 mb-2 sm:mb-3">{tech.title}</h3>
+                <p className="text-sm sm:text-base text-gray-600">{tech.description}</p>
               </motion.div>
             ))}
           </div>
@@ -590,24 +590,24 @@ const AboutPage = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
+      <section className="py-16 sm:py-20 bg-gradient-to-br from-gray-50 to-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 1.4 }}
-            className="text-center mb-16"
+            className="text-center mb-12 sm:mb-16"
           >
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-orange-600 mb-6">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-orange-600 mb-4 sm:mb-6">
               Our Impact
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
               These numbers represent the real impact we're making in empowering 
               African businesses and driving economic growth.
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
             {achievements.map((achievement, index) => (
               <motion.div
                 key={index}
@@ -616,11 +616,11 @@ const AboutPage = () => {
                 transition={{ duration: 0.6, delay: 1.6 + index * 0.1 }}
                 className="text-center"
               >
-                <div className={`w-16 h-16 bg-gradient-to-br ${achievement.color} rounded-2xl flex items-center justify-center mx-auto mb-4`}>
-                  <achievement.icon className="w-8 h-8 text-white" />
+                <div className={`w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br ${achievement.color} rounded-xl sm:rounded-2xl flex items-center justify-center mx-auto mb-3 sm:mb-4`}>
+                  <achievement.icon className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
                 </div>
-                <div className="text-3xl lg:text-4xl font-bold text-orange-500 mb-2">{achievement.number}</div>
-                <div className="text-gray-600">{achievement.label}</div>
+                <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-orange-500 mb-1 sm:mb-2">{achievement.number}</div>
+                <div className="text-sm sm:text-base text-gray-600">{achievement.label}</div>
               </motion.div>
             ))}
           </div>
@@ -628,35 +628,35 @@ const AboutPage = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20">
+      <section className="py-16 sm:py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 1.8 }}
-            className="bg-gradient-to-r from-blue-600 to-cyan-600 rounded-3xl p-8 lg:p-12 text-white text-center"
+            className="bg-gradient-to-r from-blue-600 to-cyan-600 rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-12 text-white text-center"
           >
-            <h2 className="text-3xl sm:text-4xl font-bold text-orange-400 mb-6">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-orange-400 mb-4 sm:mb-6">
               Join Africa's Digital Revolution
             </h2>
-            <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+            <p className="text-lg sm:text-xl text-white/90 mb-6 sm:mb-8 max-w-2xl mx-auto">
               Be part of the movement that's transforming Africa's economic landscape 
               and empowering millions of businesses across the continent.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
               <Button
                 variant="gradient"
-                size="xl"
+                size="lg"
                 icon={Play}
-                className="text-lg font-bold shadow-2xl hover:shadow-blue-500/25 transform hover:-translate-y-1 transition-all duration-300"
+                className="text-base sm:text-lg font-bold shadow-2xl hover:shadow-blue-500/25 transform hover:-translate-y-1 transition-all duration-300"
               >
                 Get Started Free
               </Button>
               <Button
                 variant="glass"
-                size="xl"
+                size="lg"
                 icon={Download}
-                className="text-lg font-bold backdrop-blur-xl shadow-2xl hover:shadow-white/10 transform hover:-translate-y-1 transition-all duration-300"
+                className="text-base sm:text-lg font-bold backdrop-blur-xl shadow-2xl hover:shadow-white/10 transform hover:-translate-y-1 transition-all duration-300"
               >
                 Download App
               </Button>
