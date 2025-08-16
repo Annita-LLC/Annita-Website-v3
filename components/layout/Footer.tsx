@@ -81,7 +81,7 @@ const Footer = () => {
   ]
 
   const contactInfo = [
-    { icon: Mail, label: 'Email', value: 'contact@annita.com', href: 'mailto:contact@annita.com' },
+    { icon: Mail, label: 'Email', value: 'annitallc@gmail.com', href: 'mailto:annitallc@gmail.com' },
     { icon: Phone, label: 'Phone', value: '+234 123 456 7890', href: 'tel:+2341234567890' },
     { icon: MapPin, label: 'Address', value: 'Monrovia, Liberia', href: '#' }
   ]
