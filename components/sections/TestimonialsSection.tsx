@@ -201,10 +201,10 @@ const TestimonialsSection = () => {
                 transition={{ duration: 0.5 }}
                 className="testimonial-card"
               >
-                <div className="flex items-start space-x-6">
+                <div className="flex flex-col sm:flex-row sm:items-start space-y-4 sm:space-y-0 sm:space-x-6">
                   {/* Avatar */}
-                  <div className="w-20 h-20 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-2xl flex items-center justify-center flex-shrink-0">
-                    <span className="text-white font-bold text-xl">
+                  <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-xl sm:rounded-2xl flex items-center justify-center flex-shrink-0 mx-auto sm:mx-0">
+                    <span className="text-white font-bold text-lg sm:text-xl">
                       {testimonials[currentTestimonial].avatar}
                     </span>
                   </div>
@@ -212,49 +212,49 @@ const TestimonialsSection = () => {
                   {/* Content */}
                   <div className="flex-1">
                     {/* Rating */}
-                    <div className="flex items-center space-x-1 mb-4">
+                    <div className="flex items-center justify-center sm:justify-start space-x-1 mb-3 sm:mb-4">
                       {[...Array(testimonials[currentTestimonial].rating)].map((_, i) => (
-                        <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
+                        <Star key={i} className="w-4 h-4 sm:w-5 sm:h-5 text-yellow-400 fill-current" />
                       ))}
                     </div>
 
                     {/* Quote */}
-                    <blockquote className="text-lg text-gray-700 mb-6 leading-relaxed">
+                    <blockquote className="text-base sm:text-lg text-gray-700 mb-4 sm:mb-6 leading-relaxed text-center sm:text-left">
                       "{testimonials[currentTestimonial].content}"
                     </blockquote>
 
                     {/* Author Info */}
-                    <div className="flex items-center justify-between">
-                      <div>
-                        <div className="font-semibold text-gray-900 text-lg">
+                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between space-y-4 sm:space-y-0">
+                      <div className="text-center sm:text-left">
+                        <div className="font-semibold text-gray-900 text-base sm:text-lg">
                           {testimonials[currentTestimonial].name}
                         </div>
-                        <div className="text-primary-600 font-medium">
+                        <div className="text-primary-600 font-medium text-sm sm:text-base">
                           {testimonials[currentTestimonial].role}
                         </div>
-                        <div className="flex items-center space-x-2 text-sm text-gray-500 mt-1">
-                          <MapPin className="w-4 h-4" />
+                        <div className="flex items-center justify-center sm:justify-start space-x-2 text-xs sm:text-sm text-gray-500 mt-1">
+                          <MapPin className="w-3 h-3 sm:w-4 sm:h-4" />
                           <span>{testimonials[currentTestimonial].location}</span>
                         </div>
                       </div>
 
                       {/* Metrics */}
-                      <div className="text-right">
-                        <div className="grid grid-cols-3 gap-4 text-center">
+                      <div className="text-center sm:text-right">
+                        <div className="grid grid-cols-3 gap-2 sm:gap-4 text-center">
                           <div>
-                            <div className="text-2xl font-bold text-primary-600">
+                            <div className="text-xl sm:text-2xl font-bold text-primary-600">
                               {testimonials[currentTestimonial].metrics.revenue}
                             </div>
                             <div className="text-xs text-gray-500">Revenue</div>
                           </div>
                           <div>
-                            <div className="text-2xl font-bold text-primary-600">
+                            <div className="text-xl sm:text-2xl font-bold text-primary-600">
                               {testimonials[currentTestimonial].metrics.customers}
                             </div>
                             <div className="text-xs text-gray-500">Customers</div>
                           </div>
                           <div>
-                            <div className="text-2xl font-bold text-primary-600">
+                            <div className="text-xl sm:text-2xl font-bold text-primary-600">
                               {testimonials[currentTestimonial].metrics.time}
                             </div>
                             <div className="text-xs text-gray-500">Time</div>
@@ -264,16 +264,16 @@ const TestimonialsSection = () => {
                     </div>
 
                     {/* Business Type */}
-                    <div className="flex items-center space-x-4 mt-4 pt-4 border-t border-gray-200">
-                      <div className="flex items-center space-x-2">
-                        <Building className="w-4 h-4 text-gray-400" />
-                        <span className="text-sm text-gray-600">
+                    <div className="flex flex-col sm:flex-row sm:items-center justify-center sm:justify-start space-y-2 sm:space-y-0 sm:space-x-4 mt-4 pt-4 border-t border-gray-200">
+                      <div className="flex items-center justify-center sm:justify-start space-x-2">
+                        <Building className="w-3 h-3 sm:w-4 sm:h-4 text-gray-400" />
+                        <span className="text-xs sm:text-sm text-gray-600">
                           {testimonials[currentTestimonial].business}
                         </span>
                       </div>
-                      <div className="flex items-center space-x-2">
-                        <Globe className="w-4 h-4 text-gray-400" />
-                        <span className="text-sm text-gray-600">
+                      <div className="flex items-center justify-center sm:justify-start space-x-2">
+                        <Globe className="w-3 h-3 sm:w-4 sm:h-4 text-gray-400" />
+                        <span className="text-xs sm:text-sm text-gray-600">
                           {testimonials[currentTestimonial].country}
                         </span>
                       </div>
@@ -283,12 +283,12 @@ const TestimonialsSection = () => {
               </motion.div>
 
               {/* Navigation */}
-              <div className="flex items-center justify-center space-x-4 mt-8">
+              <div className="flex items-center justify-center space-x-3 sm:space-x-4 mt-6 sm:mt-8">
                 <button
                   onClick={prevTestimonial}
-                  className="w-12 h-12 bg-white rounded-full shadow-soft border border-gray-200 flex items-center justify-center hover:shadow-medium transition-all duration-200 group"
+                  className="w-10 h-10 sm:w-12 sm:h-12 bg-white rounded-full shadow-soft border border-gray-200 flex items-center justify-center hover:shadow-medium transition-all duration-200 group"
                 >
-                  <ArrowLeft className="w-5 h-5 text-gray-600 group-hover:text-primary-600 transition-colors" />
+                  <ArrowLeft className="w-4 h-4 sm:w-5 sm:h-5 text-gray-600 group-hover:text-primary-600 transition-colors" />
                 </button>
                 
                 {/* Dots */}
@@ -308,9 +308,9 @@ const TestimonialsSection = () => {
 
                 <button
                   onClick={nextTestimonial}
-                  className="w-12 h-12 bg-white rounded-full shadow-soft border border-gray-200 flex items-center justify-center hover:shadow-medium transition-all duration-200 group"
+                  className="w-10 h-10 sm:w-12 sm:h-12 bg-white rounded-full shadow-soft border border-gray-200 flex items-center justify-center hover:shadow-medium transition-all duration-200 group"
                 >
-                  <ArrowRight className="w-5 h-5 text-gray-600 group-hover:text-primary-600 transition-colors" />
+                  <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 text-gray-600 group-hover:text-primary-600 transition-colors" />
                 </button>
               </div>
             </div>

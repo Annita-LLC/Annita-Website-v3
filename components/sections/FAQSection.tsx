@@ -207,22 +207,22 @@ const FAQSection = () => {
                   >
                     <button
                       onClick={() => toggleExpanded(faq.id)}
-                      className="w-full px-6 py-5 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200"
+                      className="w-full px-4 sm:px-6 py-4 sm:py-5 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200"
                     >
                       <div className="flex-1">
-                        <h3 className="text-lg font-semibold text-orange-600 mb-2">{faq.question}</h3>
-                        <div className="flex items-center space-x-4 text-sm text-gray-500">
+                        <h3 className="text-base sm:text-lg font-semibold text-orange-600 mb-1 sm:mb-2">{faq.question}</h3>
+                        <div className="flex flex-col sm:flex-row sm:items-center space-y-1 sm:space-y-0 sm:space-x-4 text-xs sm:text-sm text-gray-500">
                           <span className="inline-flex items-center px-2 py-1 rounded-full bg-blue-100 text-blue-700">
                             {faq.category}
                           </span>
                           <span>{faq.tags.slice(0, 2).join(', ')}</span>
                         </div>
                       </div>
-                      <div className="ml-4">
+                      <div className="ml-2 sm:ml-4">
                         {expandedItems.includes(faq.id) ? (
-                          <ChevronUp className="w-5 h-5 text-gray-400" />
+                          <ChevronUp className="w-4 h-4 sm:w-5 sm:h-5 text-gray-400" />
                         ) : (
-                          <ChevronDown className="w-5 h-5 text-gray-400" />
+                          <ChevronDown className="w-4 h-4 sm:w-5 sm:h-5 text-gray-400" />
                         )}
                       </div>
                     </button>
@@ -236,14 +236,14 @@ const FAQSection = () => {
                           transition={{ duration: 0.3 }}
                           className="overflow-hidden"
                         >
-                          <div className="px-6 pb-5">
-                            <p className="text-gray-600 leading-relaxed mb-4">{faq.answer}</p>
-                            <div className="flex items-center justify-between pt-4 border-t border-gray-100">
-                              <div className="flex items-center space-x-2 text-sm text-gray-500">
-                                <CheckCircle className="w-4 h-4" />
+                          <div className="px-4 sm:px-6 pb-4 sm:pb-5">
+                            <p className="text-sm sm:text-base text-gray-600 leading-relaxed mb-3 sm:mb-4">{faq.answer}</p>
+                            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between space-y-3 sm:space-y-0 pt-3 sm:pt-4 border-t border-gray-100">
+                              <div className="flex items-center justify-center sm:justify-start space-x-2 text-xs sm:text-sm text-gray-500">
+                                <CheckCircle className="w-3 h-3 sm:w-4 sm:h-4" />
                                 <span>Was this helpful?</span>
                               </div>
-                              <div className="flex items-center space-x-2">
+                              <div className="flex items-center justify-center sm:justify-end space-x-2">
                                 {faq.tags.map((tag, tagIndex) => (
                                   <span
                                     key={tagIndex}
@@ -265,11 +265,11 @@ const FAQSection = () => {
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                className="text-center py-12"
+                className="text-center py-8 sm:py-12"
               >
-                <HelpCircle className="w-16 h-16 text-gray-300 mx-auto mb-4" />
-                <h3 className="text-xl font-semibold text-orange-600 mb-2">No questions found</h3>
-                <p className="text-gray-600 mb-6">
+                <HelpCircle className="w-12 h-12 sm:w-16 sm:h-16 text-gray-300 mx-auto mb-3 sm:mb-4" />
+                <h3 className="text-lg sm:text-xl font-semibold text-orange-600 mb-2">No questions found</h3>
+                <p className="text-sm sm:text-base text-gray-600 mb-4 sm:mb-6">
                   Try adjusting your search terms or browse all categories
                 </p>
                 <button
@@ -292,10 +292,10 @@ const FAQSection = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="mt-16"
+          className="mt-12 sm:mt-16"
         >
-          <div className="bg-gradient-to-r from-blue-600 to-cyan-600 rounded-3xl p-8 lg:p-12 text-white text-center">
-            <h3 className="text-2xl lg:text-3xl font-bold text-orange-600 mb-4">
+          <div className="bg-gradient-to-r from-blue-600 to-cyan-600 rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-12 text-white text-center">
+            <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-orange-600 mb-3 sm:mb-4">
               Still Need Help?
             </h3>
             <p className="text-lg text-white/90 max-w-3xl mx-auto mb-8">

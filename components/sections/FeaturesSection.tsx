@@ -198,41 +198,41 @@ const FeaturesSection = () => {
               <div className={`${index % 2 === 1 ? 'lg:col-start-1' : ''}`}>
                 <div className={`${feature.gradient} rounded-3xl p-8 lg:p-12 relative overflow-hidden`}>
                   {/* Mockup Interface */}
-                  <div className="bg-white rounded-2xl p-6 shadow-soft border border-gray-200">
-                    <div className="flex items-center justify-between mb-6">
-                      <div className="flex items-center space-x-3">
-                        <div className={`w-10 h-10 bg-gradient-to-br ${feature.color} rounded-xl flex items-center justify-center`}>
-                          <feature.icon className="w-5 h-5 text-white" />
+                  <div className="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 shadow-soft border border-gray-200">
+                    <div className="flex items-center justify-between mb-4 sm:mb-6">
+                      <div className="flex items-center space-x-2 sm:space-x-3">
+                        <div className={`w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br ${feature.color} rounded-lg sm:rounded-xl flex items-center justify-center`}>
+                          <feature.icon className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
                         </div>
                         <div>
-                          <div className="font-semibold text-gray-900">{feature.title}</div>
-                          <div className="text-sm text-gray-500">{feature.subtitle}</div>
+                          <div className="font-semibold text-gray-900 text-sm sm:text-base">{feature.title}</div>
+                          <div className="text-xs sm:text-sm text-gray-500">{feature.subtitle}</div>
                         </div>
                       </div>
-                      <div className="flex space-x-2">
-                        <div className="w-3 h-3 bg-red-400 rounded-full"></div>
-                        <div className="w-3 h-3 bg-yellow-400 rounded-full"></div>
-                        <div className="w-3 h-3 bg-green-400 rounded-full"></div>
+                      <div className="flex space-x-1.5 sm:space-x-2">
+                        <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 bg-red-400 rounded-full"></div>
+                        <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 bg-yellow-400 rounded-full"></div>
+                        <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 bg-green-400 rounded-full"></div>
                       </div>
                     </div>
                     
                     {/* Feature-specific content */}
-                    <div className="space-y-4">
+                    <div className="space-y-3 sm:space-y-4">
                       {feature.title === 'Annita Marketplace' && (
                         <>
-                          <div className="grid grid-cols-2 gap-4">
-                            <div className="bg-gray-100 rounded-lg p-3">
-                              <div className="w-full h-20 bg-gray-200 rounded mb-2"></div>
-                              <div className="h-3 bg-gray-200 rounded w-3/4 mb-1"></div>
-                              <div className="h-2 bg-gray-200 rounded w-1/2"></div>
+                          <div className="grid grid-cols-2 gap-3 sm:gap-4">
+                            <div className="bg-gray-100 rounded-lg p-2 sm:p-3">
+                              <div className="w-full h-16 sm:h-20 bg-gray-200 rounded mb-1.5 sm:mb-2"></div>
+                              <div className="h-2.5 sm:h-3 bg-gray-200 rounded w-3/4 mb-1"></div>
+                              <div className="h-1.5 sm:h-2 bg-gray-200 rounded w-1/2"></div>
                             </div>
-                            <div className="bg-gray-100 rounded-lg p-3">
-                              <div className="w-full h-20 bg-gray-200 rounded mb-2"></div>
-                              <div className="h-3 bg-gray-200 rounded w-3/4 mb-1"></div>
-                              <div className="h-2 bg-gray-200 rounded w-1/2"></div>
+                            <div className="bg-gray-100 rounded-lg p-2 sm:p-3">
+                              <div className="w-full h-16 sm:h-20 bg-gray-200 rounded mb-1.5 sm:mb-2"></div>
+                              <div className="h-2.5 sm:h-3 bg-gray-200 rounded w-3/4 mb-1"></div>
+                              <div className="h-1.5 sm:h-2 bg-gray-200 rounded w-1/2"></div>
                             </div>
                           </div>
-                          <div className="flex items-center justify-between text-sm">
+                          <div className="flex items-center justify-between text-xs sm:text-sm">
                             <span className="text-gray-500">3,000+ Products</span>
                             <span className="text-primary-600 font-medium">View All</span>
                           </div>

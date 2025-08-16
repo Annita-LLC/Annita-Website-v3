@@ -83,19 +83,19 @@ const AnnitaPayPage = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white">
       {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-to-r from-blue-600 to-cyan-600 text-white">
+      <section className="relative py-16 sm:py-20 bg-gradient-to-r from-blue-600 to-cyan-600 text-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
-            <div className="w-20 h-20 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-6">
-              <CreditCard className="w-10 h-10" />
+            <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white/20 rounded-xl sm:rounded-2xl flex items-center justify-center mx-auto mb-4 sm:mb-6">
+              <CreditCard className="w-8 h-8 sm:w-10 sm:h-10" />
             </div>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 sm:mb-6">
               <span className="text-orange-500">AnnitaPay</span>
             </h1>
-            <p className="text-xl sm:text-2xl text-white/90 mb-8">
+            <p className="text-lg sm:text-xl lg:text-2xl text-white/90 mb-6 sm:mb-8">
               Africa's most trusted digital payment platform
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
               <Button variant="white" size="lg">
                 Get Started Free
               </Button>

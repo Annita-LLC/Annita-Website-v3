@@ -166,16 +166,16 @@ const StatsSection = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="mb-20"
+          className="mb-16 sm:mb-20"
         >
-          <h3 className="text-2xl font-bold text-orange-600 text-center mb-12">
+          <h3 className="text-xl sm:text-2xl font-bold text-orange-600 text-center mb-8 sm:mb-12">
             Our Growth Journey
           </h3>
           <div className="relative">
             {/* Timeline Line */}
             <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-primary-500 to-secondary-500" />
             
-            <div className="space-y-12">
+            <div className="space-y-8 sm:space-y-12">
               {[
                 { year: '2021', title: 'Platform Launch', metric: '$500', description: 'Initial revenue generation' },
                 { year: '2022', title: 'Market Expansion', metric: '$2.5K', description: '400% revenue growth' },
@@ -190,21 +190,21 @@ const StatsSection = () => {
                   transition={{ duration: 0.6, delay: 0.8 + index * 0.1 }}
                   className={`flex items-center ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'}`}
                 >
-                  <div className="w-1/2 px-8">
-                    <div className={`bg-white rounded-2xl p-6 shadow-soft border border-gray-200 ${index % 2 === 0 ? 'text-right' : 'text-left'}`}>
-                      <div className="text-3xl font-bold text-orange-500 mb-2">{item.year}</div>
-                      <div className="text-xl font-semibold text-orange-600 mb-2">{item.title}</div>
-                      <div className="text-2xl font-bold text-primary-600 mb-1">{item.metric}</div>
-                      <div className="text-gray-600">{item.description}</div>
+                  <div className="w-1/2 px-4 sm:px-8">
+                    <div className={`bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 shadow-soft border border-gray-200 ${index % 2 === 0 ? 'text-right' : 'text-left'}`}>
+                      <div className="text-2xl sm:text-3xl font-bold text-orange-500 mb-1 sm:mb-2">{item.year}</div>
+                      <div className="text-lg sm:text-xl font-semibold text-orange-600 mb-1 sm:mb-2">{item.title}</div>
+                      <div className="text-xl sm:text-2xl font-bold text-primary-600 mb-1">{item.metric}</div>
+                      <div className="text-sm sm:text-base text-gray-600">{item.description}</div>
                     </div>
                   </div>
                   
                   {/* Timeline Dot */}
                   <div className="relative z-10">
-                    <div className="w-6 h-6 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-full shadow-lg border-4 border-white" />
+                    <div className="w-5 h-5 sm:w-6 sm:h-6 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-full shadow-lg border-3 sm:border-4 border-white" />
                   </div>
                   
-                  <div className="w-1/2 px-8" />
+                  <div className="w-1/2 px-4 sm:px-8" />
                 </motion.div>
               ))}
             </div>
@@ -217,10 +217,10 @@ const StatsSection = () => {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 1.2 }}
         >
-          <h3 className="text-2xl font-bold text-orange-600 text-center mb-12">
+          <h3 className="text-xl sm:text-2xl font-bold text-orange-600 text-center mb-8 sm:mb-12">
             Platform Performance Metrics
           </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {features.map((feature, index) => (
               <motion.div
                 key={feature.title}
@@ -229,14 +229,14 @@ const StatsSection = () => {
                 transition={{ duration: 0.6, delay: 1.4 + index * 0.1 }}
                 className="feature-card group"
               >
-                <div className="w-12 h-12 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                  <feature.icon className="w-6 h-6 text-white" />
+                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-lg sm:rounded-xl flex items-center justify-center mb-3 sm:mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <feature.icon className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                 </div>
-                <h4 className="text-lg font-semibold text-orange-600 mb-2">{feature.title}</h4>
-                <p className="text-gray-600 text-sm mb-4">{feature.description}</p>
+                <h4 className="text-base sm:text-lg font-semibold text-orange-600 mb-1 sm:mb-2">{feature.title}</h4>
+                <p className="text-xs sm:text-sm text-gray-600 mb-3 sm:mb-4">{feature.description}</p>
                 <div className="flex items-baseline space-x-2">
-                  <span className="text-2xl font-bold text-orange-500">{feature.metric}</span>
-                  <span className="text-sm text-gray-500">{feature.metricLabel}</span>
+                  <span className="text-xl sm:text-2xl font-bold text-orange-500">{feature.metric}</span>
+                  <span className="text-xs sm:text-sm text-gray-500">{feature.metricLabel}</span>
                 </div>
               </motion.div>
             ))}

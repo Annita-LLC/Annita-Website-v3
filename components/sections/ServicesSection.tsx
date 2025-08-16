@@ -217,35 +217,35 @@ const ServicesSection = () => {
         </motion.div>
 
         {/* Main Services */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 mb-16 sm:mb-20">
           {services.map((service, index) => (
             <motion.div
               key={service.title}
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className={`${service.gradient} rounded-3xl p-8 border border-gray-200 hover:shadow-medium transition-all duration-300 group`}
+              className={`${service.gradient} rounded-2xl sm:rounded-3xl p-6 sm:p-8 border border-gray-200 hover:shadow-medium transition-all duration-300 group`}
             >
-              <div className={`w-16 h-16 bg-gradient-to-br ${service.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                <service.icon className="w-8 h-8 text-white" />
+              <div className={`w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br ${service.color} rounded-xl sm:rounded-2xl flex items-center justify-center mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                <service.icon className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
               </div>
-                              <h3 className="text-2xl font-bold text-orange-600 mb-2">{service.title}</h3>
-              <p className="text-gray-600 mb-6">{service.description}</p>
+                              <h3 className="text-xl sm:text-2xl font-bold text-orange-600 mb-2">{service.title}</h3>
+              <p className="text-sm sm:text-base text-gray-600 mb-4 sm:mb-6">{service.description}</p>
               
-              <div className="space-y-3 mb-6">
+              <div className="space-y-2 sm:space-y-3 mb-4 sm:mb-6">
                 {service.features.map((feature, idx) => (
-                  <div key={idx} className="flex items-center space-x-3">
-                    <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
-                    <span className="text-gray-700">{feature}</span>
+                  <div key={idx} className="flex items-center space-x-2 sm:space-x-3">
+                    <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-500 flex-shrink-0" />
+                    <span className="text-sm sm:text-base text-gray-700">{feature}</span>
                   </div>
                 ))}
               </div>
               
-              <div className="flex items-center justify-between">
-                <div className="text-sm text-gray-500">
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between space-y-3 sm:space-y-0">
+                <div className="text-xs sm:text-sm text-gray-500 text-center sm:text-left">
                   Starting at <span className="font-semibold text-gray-900">{service.pricing}</span>
                 </div>
-                <button className="btn-primary btn-sm group">
+                <button className="btn-primary btn-sm group w-full sm:w-auto">
                   Learn More
                   <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                 </button>
@@ -259,12 +259,12 @@ const ServicesSection = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="mb-20"
+          className="mb-16 sm:mb-20"
         >
-          <h3 className="text-2xl lg:text-3xl font-bold text-orange-600 text-center mb-12">
+          <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-orange-600 text-center mb-8 sm:mb-12">
             Choose Your Plan
           </h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
             {subscriptionPlans.map((plan, index) => (
               <motion.div
                 key={plan.name}
@@ -274,27 +274,27 @@ const ServicesSection = () => {
                 className={`relative ${plan.popular ? 'scale-105' : ''}`}
               >
                 {plan.popular && (
-                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                    <div className="bg-gradient-to-r from-primary-500 to-secondary-500 text-white px-4 py-1 rounded-full text-sm font-medium">
+                  <div className="absolute -top-3 sm:-top-4 left-1/2 transform -translate-x-1/2">
+                    <div className="bg-gradient-to-r from-primary-500 to-secondary-500 text-white px-3 sm:px-4 py-1 rounded-full text-xs sm:text-sm font-medium">
                       Most Popular
                     </div>
                   </div>
                 )}
-                <div className={`${plan.popular ? 'ring-2 ring-primary-500' : ''} bg-white rounded-3xl p-8 shadow-soft border border-gray-200 hover:shadow-medium transition-all duration-300`}>
-                  <div className="text-center mb-8">
-                    <h4 className="text-xl font-bold text-orange-600 mb-2">{plan.name}</h4>
+                <div className={`${plan.popular ? 'ring-2 ring-primary-500' : ''} bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-soft border border-gray-200 hover:shadow-medium transition-all duration-300`}>
+                  <div className="text-center mb-6 sm:mb-8">
+                    <h4 className="text-lg sm:text-xl font-bold text-orange-600 mb-2">{plan.name}</h4>
                     <div className="flex items-baseline justify-center mb-2">
-                      <span className="text-4xl font-bold text-orange-500">{plan.price}</span>
-                      <span className="text-gray-500 ml-1">{plan.period}</span>
+                      <span className="text-3xl sm:text-4xl font-bold text-orange-500">{plan.price}</span>
+                      <span className="text-gray-500 ml-1 text-sm sm:text-base">{plan.period}</span>
                     </div>
-                    <p className="text-gray-600 text-sm">{plan.description}</p>
+                    <p className="text-gray-600 text-xs sm:text-sm">{plan.description}</p>
                   </div>
                   
-                  <div className="space-y-3 mb-8">
+                  <div className="space-y-2 sm:space-y-3 mb-6 sm:mb-8">
                     {plan.features.map((feature, idx) => (
-                      <div key={idx} className="flex items-center space-x-3">
-                        <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
-                        <span className="text-gray-700 text-sm">{feature}</span>
+                      <div key={idx} className="flex items-center space-x-2 sm:space-x-3">
+                        <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-500 flex-shrink-0" />
+                        <span className="text-gray-700 text-xs sm:text-sm">{feature}</span>
                       </div>
                     ))}
                   </div>
