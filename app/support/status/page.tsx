@@ -191,18 +191,18 @@ const StatusPage = () => {
               const StatusIcon = getStatusIcon(service.status)
               return (
                 <div key={index} className="bg-white rounded-3xl p-8 shadow-soft">
-                  <div className="flex items-start justify-between mb-6">
-                    <div className="flex items-center space-x-4">
-                      <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center">
-                        <service.icon className="w-6 h-6 text-white" />
+                  <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-6">
+                    <div className="flex items-center space-x-3 sm:space-x-4 mb-3 sm:mb-0">
+                      <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <service.icon className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                       </div>
-                      <div>
-                        <h3 className="text-xl font-bold text-gray-900">{service.name}</h3>
-                        <p className="text-sm text-gray-600">{service.description}</p>
+                      <div className="min-w-0 flex-1">
+                        <h3 className="text-lg sm:text-xl font-bold text-gray-900">{service.name}</h3>
+                        <p className="text-xs sm:text-sm text-gray-600">{service.description}</p>
                       </div>
                     </div>
-                    <div className={`px-3 py-1 rounded-full text-sm font-medium flex items-center space-x-2 ${getStatusColor(service.status)}`}>
-                      <StatusIcon className="w-4 h-4" />
+                    <div className={`px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-medium flex items-center space-x-1 sm:space-x-2 ${getStatusColor(service.status)} flex-shrink-0`}>
+                      <StatusIcon className="w-3 h-3 sm:w-4 sm:h-4" />
                       <span className="capitalize">{service.status}</span>
                     </div>
                   </div>
@@ -242,20 +242,20 @@ const StatusPage = () => {
                 const StatusIcon = getStatusIcon(incident.status)
                 return (
                   <div key={index} className="bg-white rounded-3xl p-8 shadow-soft">
-                    <div className="flex items-start justify-between mb-4">
-                      <div className="flex items-center space-x-3">
-                        <div className={`p-2 rounded-lg ${getStatusColor(incident.status)}`}>
-                          <StatusIcon className="w-5 h-5" />
-                        </div>
-                        <div>
-                          <h3 className="text-lg font-bold text-gray-900">{incident.title}</h3>
-                          <p className="text-sm text-gray-500">{incident.time}</p>
-                        </div>
+                                      <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-4">
+                    <div className="flex items-center space-x-3 mb-3 sm:mb-0">
+                      <div className={`p-2 rounded-lg ${getStatusColor(incident.status)} flex-shrink-0`}>
+                        <StatusIcon className="w-4 h-4 sm:w-5 sm:h-5" />
                       </div>
-                      <span className={`px-3 py-1 rounded-full text-sm font-medium capitalize ${getStatusColor(incident.status)}`}>
-                        {incident.status}
-                      </span>
+                      <div className="min-w-0 flex-1">
+                        <h3 className="text-base sm:text-lg font-bold text-gray-900">{incident.title}</h3>
+                        <p className="text-xs sm:text-sm text-gray-500">{incident.time}</p>
+                      </div>
                     </div>
+                    <span className={`px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-medium capitalize ${getStatusColor(incident.status)} flex-shrink-0 self-start sm:self-auto`}>
+                      {incident.status}
+                    </span>
+                  </div>
                     <p className="text-gray-600">{incident.description}</p>
                   </div>
                 )
@@ -268,22 +268,48 @@ const StatusPage = () => {
       {/* Subscribe to Updates */}
       <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
-              Stay Updated
-            </h2>
-            <p className="text-xl text-gray-600 mb-8">
-              Get notified about service updates, maintenance, and incidents.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="flex-1 px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-              />
-              <button className="px-6 py-3 bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition-colors">
-                Subscribe
-              </button>
+          <div className="max-w-4xl mx-auto">
+            <div className="bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-600 rounded-3xl p-8 lg:p-12 text-white relative overflow-hidden">
+              {/* Background Pattern */}
+              <div className="absolute inset-0 bg-black/10"></div>
+              <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -translate-y-32 translate-x-32"></div>
+              <div className="absolute bottom-0 left-0 w-48 h-48 bg-white/10 rounded-full translate-y-24 -translate-x-24"></div>
+              
+              <div className="relative z-10 text-center">
+                <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                  <Zap className="w-8 h-8" />
+                </div>
+                <h2 className="text-3xl sm:text-4xl font-bold mb-4">
+                  Stay Updated
+                </h2>
+                <p className="text-lg sm:text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+                  Get real-time notifications about service updates, maintenance schedules, and incident reports.
+                </p>
+                
+                <div className="max-w-md mx-auto">
+                  <div className="flex flex-col sm:flex-row gap-3 bg-white/10 backdrop-blur-sm rounded-2xl p-2">
+                    <input
+                      type="email"
+                      placeholder="Enter your email address"
+                      className="flex-1 px-4 py-3 bg-white/20 border border-white/30 rounded-xl text-white placeholder-blue-200 focus:outline-none focus:ring-2 focus:ring-white/50 focus:border-white/50 transition-all duration-200"
+                    />
+                    <button className="px-6 py-3 bg-white text-blue-600 font-semibold rounded-xl hover:bg-blue-50 transition-all duration-200 transform hover:scale-105 shadow-lg">
+                      Subscribe
+                    </button>
+                  </div>
+                  
+                  <div className="mt-4 flex items-center justify-center space-x-6 text-sm text-blue-200">
+                    <div className="flex items-center space-x-2">
+                      <CheckCircle className="w-4 h-4" />
+                      <span>Instant notifications</span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <Shield className="w-4 h-4" />
+                      <span>Privacy protected</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
