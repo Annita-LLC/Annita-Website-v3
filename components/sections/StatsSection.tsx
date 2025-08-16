@@ -125,7 +125,7 @@ const StatsSection = () => {
         </motion.div>
 
         {/* Main Stats Grid */}
-        <div className="grid grid-cols-2 lg:grid-cols-3 gap-6 mb-20">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-20">
           {stats.map((stat, index) => (
             <motion.div
               key={stat.label}
@@ -188,9 +188,9 @@ const StatsSection = () => {
                   initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
                   animate={isInView ? { opacity: 1, x: 0 } : {}}
                   transition={{ duration: 0.6, delay: 0.8 + index * 0.1 }}
-                  className={`flex items-center ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'}`}
+                  className={`flex flex-col sm:flex-row items-center ${index % 2 === 0 ? 'sm:flex-row' : 'sm:flex-row-reverse'}`}
                 >
-                  <div className="w-1/2 px-4 sm:px-8">
+                  <div className="w-full sm:w-1/2 px-4 sm:px-8 mb-4 sm:mb-0">
                     <div className={`bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 shadow-soft border border-gray-200 ${index % 2 === 0 ? 'text-right' : 'text-left'}`}>
                       <div className="text-2xl sm:text-3xl font-bold text-orange-500 mb-1 sm:mb-2">{item.year}</div>
                       <div className="text-lg sm:text-xl font-semibold text-orange-600 mb-1 sm:mb-2">{item.title}</div>
@@ -204,7 +204,7 @@ const StatsSection = () => {
                     <div className="w-5 h-5 sm:w-6 sm:h-6 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-full shadow-lg border-3 sm:border-4 border-white" />
                   </div>
                   
-                  <div className="w-1/2 px-4 sm:px-8" />
+                  <div className="w-full sm:w-1/2 px-4 sm:px-8" />
                 </motion.div>
               ))}
             </div>

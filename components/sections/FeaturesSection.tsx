@@ -164,7 +164,7 @@ const FeaturesSection = () => {
               initial={{ opacity: 0, y: 50 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: index * 0.2 }}
-              className={`grid lg:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''}`}
+              className={`grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center ${index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''}`}
             >
               {/* Content */}
               <div className={`${index % 2 === 1 ? 'lg:col-start-2' : ''}`}>
@@ -329,7 +329,7 @@ const FeaturesSection = () => {
           <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 text-center mb-12">
             Platform Capabilities
           </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {platformFeatures.map((feature, index) => (
               <motion.div
                 key={feature.title}
@@ -359,7 +359,7 @@ const FeaturesSection = () => {
                           <h3 className="text-2xl lg:text-3xl font-bold text-orange-600 text-center mb-12">
                   Why Choose Annita?
                 </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {benefits.map((benefit, index) => (
               <motion.div
                 key={benefit.title}

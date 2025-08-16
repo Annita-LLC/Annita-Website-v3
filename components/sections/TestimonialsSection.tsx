@@ -159,7 +159,7 @@ const TestimonialsSection = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-20"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-20"
         >
           {stats.map((stat, index) => (
             <motion.div
@@ -327,7 +327,7 @@ const TestimonialsSection = () => {
           <h3 className="text-2xl lg:text-3xl font-bold text-orange-600 text-center mb-12">
             Customer Success Metrics
           </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {[
               { metric: '300%', label: 'Average Revenue Growth', description: 'For active vendors' },
               { metric: '24h', label: 'Average Delivery Time', description: 'Same-day delivery' },
@@ -360,7 +360,7 @@ const TestimonialsSection = () => {
             <h3 className="text-2xl lg:text-3xl font-bold text-orange-600 mb-6">
               Trusted by Thousands of African Businesses
             </h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-8 mb-8">
               <div className="text-center">
                 <div className="text-4xl font-bold text-orange-500 mb-2">3,000+</div>
                 <div className="text-gray-600">Active Vendors</div>
