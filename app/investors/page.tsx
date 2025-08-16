@@ -22,7 +22,8 @@ import {
   CreditCard,
   Truck,
   MessageSquare,
-  Database
+  Database,
+  Mail
 } from 'lucide-react'
 import Button from '@/components/ui/Button'
 
