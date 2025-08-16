@@ -3,6 +3,8 @@
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { Activity, CreditCard, ShoppingCart, Truck, Users, Zap, Clock, MapPin, DollarSign } from 'lucide-react'
+import FloatingNotification from '@/components/ui/FloatingNotification'
+import LiveActivity from '@/components/ui/LiveActivity'
 
 const LiveActivityPage = () => {
   const [activities, setActivities] = useState<any[]>([])
@@ -264,6 +266,12 @@ const LiveActivityPage = () => {
           </div>
         </div>
       </section>
+      
+      {/* Floating Notifications - Only on Live Activity Page */}
+      <FloatingNotification />
+      
+      {/* Live Activity Widget - Only on Live Activity Page */}
+      <LiveActivity />
     </div>
   )
 }
