@@ -18,7 +18,9 @@ import {
   PieChart,
   Activity,
   BookOpen,
-  Terminal
+  Terminal,
+  ShoppingBag,
+  Package
 } from 'lucide-react'
 import Button from '@/components/ui/Button'
 import FAQSection from '@/components/sections/FAQSection'
