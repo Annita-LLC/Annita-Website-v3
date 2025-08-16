@@ -2,6 +2,7 @@
 
 import { useRef, useState } from 'react'
 import { motion, useInView } from 'framer-motion'
+import SEOHead from '@/components/seo/SEOHead'
 import { 
   Heart, 
   Globe, 
@@ -267,8 +268,97 @@ const AboutPage = () => {
     setCurrentImageIndex((prev) => (prev - 1 + team.length) % team.length)
   }
 
+  const aboutStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Annita",
+    "description": "Africa's first all-in-one digital platform empowering MSMEs with innovative solutions for e-commerce, fintech, AI, communication, marketing, and logistics.",
+    "url": "https://annita.com",
+    "logo": "https://annita.com/logo.png",
+    "foundingDate": "2021",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "Liberia",
+      "addressRegion": "West Africa"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "customer service",
+      "email": "contact@annita.com"
+    },
+    "sameAs": [
+      "https://twitter.com/annita_africa",
+      "https://facebook.com/annita.africa",
+      "https://linkedin.com/company/annita-africa",
+      "https://instagram.com/annita_africa"
+    ],
+    "award": [
+      "Orange Social Venture Prize (1st Place)",
+      "African Innovation Award"
+    ],
+    "employee": [
+      {
+        "@type": "Person",
+        "name": "Annita Team",
+        "jobTitle": "Development Team",
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Annita"
+        }
+      }
+    ]
+  }
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white" ref={ref}>
+    <>
+      <SEOHead
+        title="About Annita - Africa's Digital Platform"
+        description="Learn about Annita, Africa's first all-in-one digital platform empowering MSMEs. Discover our mission, values, milestones, and commitment to digital transformation across Africa. Founded in 2021, we've achieved 400% growth and won prestigious awards."
+        keywords={[
+          'about Annita',
+          'Annita company',
+          'Annita mission',
+          'Annita values',
+          'Annita history',
+          'Annita milestones',
+          'Annita team',
+          'Annita achievements',
+          'Africa digital platform',
+          'MSME empowerment',
+          'African business platform',
+          'digital transformation Africa',
+          'e-commerce platform Africa',
+          'fintech solutions Africa',
+          'AI services Africa',
+          'logistics Africa',
+          'marketing Africa',
+          'communication Africa',
+          'African innovation',
+          'Liberia technology',
+          'West Africa digital',
+          'African startups',
+          'business growth Africa',
+          'economic development Africa',
+          'financial inclusion Africa',
+          'rural development Africa',
+          'women empowerment Africa',
+          'sustainable development Africa',
+          'job creation Africa',
+          'African entrepreneurship',
+          'technology innovation Africa',
+          'digital economy Africa',
+          'African Continental Free Trade Area',
+          'AfCFTA',
+          'Orange Social Venture Prize',
+          'African Innovation Award',
+          'business solutions Africa',
+          'digital services Africa'
+        ]}
+        canonical="/about"
+        ogImage="/about-og-image.jpg"
+        structuredData={aboutStructuredData}
+      />
+      <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white" ref={ref}>
       {/* Hero Section */}
       <section className="relative py-16 sm:py-20 bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-600 text-white overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-cyan-600/20"></div>
@@ -664,7 +754,8 @@ const AboutPage = () => {
           </motion.div>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   )
 }
 

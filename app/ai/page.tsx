@@ -1,5 +1,7 @@
-import { Metadata } from 'next'
+"use client"
+
 import Link from 'next/link'
+import SEOHead from '@/components/seo/SEOHead'
 import { 
   Brain,
   Users, 
@@ -24,10 +26,7 @@ import {
 } from 'lucide-react'
 import Button from '@/components/ui/Button'
 
-export const metadata: Metadata = {
-  title: 'AI Solutions - Personal & Business - Annita',
-  description: 'Choose between Annita\'s Personal AI Assistant for daily life or Business AI for enterprise solutions. Transform your life or business with cutting-edge AI technology.',
-}
+
 
 const AILandingPage = () => {
   const personalFeatures = [
@@ -87,8 +86,94 @@ const AILandingPage = () => {
     'Easy integration'
   ]
 
+  const aiStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Annita AI Solutions",
+    "description": "Choose between Annita's Personal AI Assistant for daily life or Business AI for enterprise solutions. Transform your life or business with cutting-edge AI technology.",
+    "url": "https://annita.com/ai",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web, iOS, Android",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "provider": {
+      "@type": "Organization",
+      "name": "Annita",
+      "url": "https://annita.com"
+    },
+    "featureList": [
+      "Personal AI Assistant",
+      "Business AI Solutions",
+      "Predictive Analytics",
+      "Customer Intelligence",
+      "Smart Automation",
+      "Real-time Analytics",
+      "Advanced AI algorithms",
+      "Real-time processing",
+      "Secure and private",
+      "Mobile-optimized",
+      "24/7 availability",
+      "Continuous learning",
+      "Multi-language support",
+      "Easy integration"
+    ]
+  }
+
   return (
-    <div className="min-h-screen">
+    <>
+      <SEOHead
+        title="AI Solutions - Personal & Business"
+        description="Choose between Annita's Personal AI Assistant for daily life or Business AI for enterprise solutions. Transform your life or business with cutting-edge AI technology. Advanced AI algorithms, real-time processing, and secure automation for personal and business needs."
+        keywords={[
+          'Annita AI',
+          'AI solutions',
+          'personal AI assistant',
+          'business AI',
+          'artificial intelligence',
+          'AI technology',
+          'predictive analytics',
+          'customer intelligence',
+          'smart automation',
+          'real-time analytics',
+          'AI algorithms',
+          'machine learning',
+          'deep learning',
+          'natural language processing',
+          'computer vision',
+          'AI automation',
+          'business intelligence',
+          'data analytics',
+          'AI-powered solutions',
+          'enterprise AI',
+          'personal AI',
+          'AI assistant',
+          'virtual assistant',
+          'chatbot',
+          'AI platform',
+          'African AI',
+          'AI innovation',
+          'digital transformation AI',
+          'AI business tools',
+          'AI productivity',
+          'AI efficiency',
+          'AI optimization',
+          'AI insights',
+          'AI decision making',
+          'AI forecasting',
+          'AI trends',
+          'AI development',
+          'AI integration',
+          'AI security',
+          'AI privacy'
+        ]}
+        canonical="/ai"
+        ogImage="/ai-og-image.jpg"
+        structuredData={aiStructuredData}
+      />
+      <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 text-white overflow-hidden">
         <div className="absolute inset-0 bg-black/20"></div>
@@ -392,7 +477,8 @@ const AILandingPage = () => {
           </div>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   )
 }
 

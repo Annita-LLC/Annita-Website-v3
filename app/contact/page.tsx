@@ -21,6 +21,7 @@ import {
   Minus
 } from 'lucide-react'
 import { useState } from 'react'
+import SEOHead from '@/components/seo/SEOHead'
 
 const ContactPage = () => {
   const contactMethods = [
@@ -107,8 +108,79 @@ const ContactPage = () => {
     }
   ]
 
+  const contactStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "name": "Contact Annita - Get in Touch",
+    "description": "Contact Annita for support, sales inquiries, or partnership opportunities. We're here to help you succeed with Africa's leading digital platform.",
+    "url": "https://annita.com/contact",
+    "mainEntity": {
+      "@type": "Organization",
+      "name": "Annita",
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "contactType": "customer service",
+          "email": "support@annita.com",
+          "availableLanguage": ["English", "French", "Portuguese"]
+        },
+        {
+          "@type": "ContactPoint",
+          "contactType": "sales",
+          "telephone": "+231 123 456 789",
+          "areaServed": "Liberia",
+          "availableLanguage": ["English"]
+        },
+        {
+          "@type": "ContactPoint",
+          "contactType": "technical support",
+          "email": "tech@annita.com",
+          "availableLanguage": ["English"]
+        }
+      ]
+    }
+  }
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white">
+    <>
+      <SEOHead
+        title="Contact Annita - Get in Touch"
+        description="Contact Annita for support, sales inquiries, or partnership opportunities. We're here to help you succeed with Africa's leading digital platform. Get expert assistance with technical support, account management, and business development."
+        keywords={[
+          'contact Annita',
+          'Annita support',
+          'customer service',
+          'technical support',
+          'business inquiry',
+          'partnership opportunities',
+          'Africa digital platform support',
+          'MSME support',
+          'e-commerce support',
+          'fintech support',
+          'AI services support',
+          'logistics support',
+          'marketing support',
+          'Liberia business support',
+          'West Africa digital platform',
+          'African business solutions',
+          'digital transformation support',
+          'payment gateway support',
+          'escrow services support',
+          'digital wallet support',
+          'on-demand delivery support',
+          'multivendor marketplace support',
+          'financial inclusion support',
+          'rural development support',
+          'women empowerment support',
+          'sustainable development support',
+          'job creation support',
+          'economic growth support'
+        ]}
+        canonical="/contact"
+        ogImage="/contact-og-image.jpg"
+        structuredData={contactStructuredData}
+      />
+      <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white">
       {/* Hero Section */}
       <section className="relative py-16 sm:py-20 bg-gradient-to-r from-orange-500 to-orange-600 text-white overflow-hidden">
         <div className="absolute inset-0 bg-black/10"></div>
@@ -538,7 +610,8 @@ const ContactPage = () => {
           </div>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   )
 }
 
