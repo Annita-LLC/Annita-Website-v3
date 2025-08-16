@@ -82,18 +82,18 @@ const CTASection = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="text-center mb-12 sm:mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-orange-400 mb-6">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-orange-400 mb-4 sm:mb-6">
             Ready to Transform Your Business?
           </h2>
-          <p className="text-xl text-white/90 max-w-4xl mx-auto mb-8">
+          <p className="text-lg sm:text-xl text-white/90 max-w-4xl mx-auto mb-6 sm:mb-8">
             Join thousands of MSMEs already using Annita to grow their revenue, 
             reach new customers, and streamline their operations across Africa.
           </p>
           
           {/* Trust Indicators */}
-          <div className="flex flex-wrap justify-center gap-6 text-sm text-white/80 mb-8">
+          <div className="flex flex-wrap justify-center gap-4 sm:gap-6 text-sm text-white/80 mb-6 sm:mb-8">
             <div className="flex items-center space-x-2">
               <CheckCircle className="w-4 h-4 text-green-400" />
               <span>3,000+ Active Vendors</span>
@@ -114,7 +114,7 @@ const CTASection = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-12 sm:mb-16"
         >
           {benefits.map((benefit, index) => (
             <motion.div
@@ -124,11 +124,11 @@ const CTASection = () => {
               transition={{ duration: 0.6, delay: 0.4 + index * 0.1 }}
               className="text-center group"
             >
-              <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                <benefit.icon className="w-8 h-8 text-white" />
+              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-white/20 backdrop-blur-sm rounded-xl sm:rounded-2xl flex items-center justify-center mx-auto mb-3 sm:mb-4 group-hover:scale-110 transition-transform duration-300">
+                <benefit.icon className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
               </div>
-                              <h4 className="text-lg font-semibold text-orange-400 mb-2">{benefit.title}</h4>
-              <p className="text-white/80 text-sm">{benefit.description}</p>
+              <h4 className="text-base sm:text-lg font-semibold text-orange-400 mb-1 sm:mb-2">{benefit.title}</h4>
+              <p className="text-white/80 text-xs sm:text-sm">{benefit.description}</p>
             </motion.div>
           ))}
         </motion.div>
@@ -142,16 +142,16 @@ const CTASection = () => {
           transition={{ duration: 0.8, delay: 1.0 }}
           className="text-center"
         >
-          <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-8 lg:p-12 border border-white/20">
-            <h3 className="text-2xl lg:text-3xl font-bold text-orange-400 mb-6">
+          <div className="bg-white/10 backdrop-blur-sm rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-12 border border-white/20">
+            <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-orange-400 mb-4 sm:mb-6">
               Need Help Getting Started?
             </h3>
-            <p className="text-lg text-white/90 max-w-3xl mx-auto mb-8">
+            <p className="text-base sm:text-lg text-white/90 max-w-3xl mx-auto mb-6 sm:mb-8">
               Our team is here to help you every step of the way. 
               Contact us for personalized assistance and expert guidance.
             </p>
             
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 mb-6 sm:mb-8">
               <div className="flex items-center justify-center space-x-3">
                 <Phone className="w-6 h-6 text-white" />
                 <div className="text-left">
@@ -175,20 +175,20 @@ const CTASection = () => {
               </div>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
               <Button
                 variant="gradient"
-                size="xl"
+                size="lg"
                 icon={Download}
-                className="text-lg font-bold shadow-2xl hover:shadow-primary-500/25 transform hover:-translate-y-1 transition-all duration-300"
+                className="text-base sm:text-lg font-bold shadow-2xl hover:shadow-primary-500/25 transform hover:-translate-y-1 transition-all duration-300"
               >
                 Download App
               </Button>
               <Button
                 variant="glass"
-                size="xl"
+                size="lg"
                 icon={Play}
-                className="text-lg font-bold backdrop-blur-xl shadow-2xl hover:shadow-white/10 transform hover:-translate-y-1 transition-all duration-300"
+                className="text-base sm:text-lg font-bold backdrop-blur-xl shadow-2xl hover:shadow-white/10 transform hover:-translate-y-1 transition-all duration-300"
               >
                 Get Started Free
               </Button>

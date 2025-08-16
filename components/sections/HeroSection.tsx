@@ -141,9 +141,9 @@ const HeroSection = () => {
       {/* Hero Content */}
 
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 pt-20 sm:pt-24 lg:pt-32 pb-8 sm:pb-12 lg:pb-16">
+      <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 pt-16 sm:pt-20 lg:pt-24 xl:pt-32 pb-8 sm:pb-12 lg:pb-16">
         <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
             {/* Left Column - Text Content */}
             <motion.div
               initial={{ opacity: 0, x: -50 }}
@@ -156,9 +156,9 @@ const HeroSection = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="inline-flex items-center px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white text-sm font-medium mb-6"
+                className="inline-flex items-center px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white text-xs sm:text-sm font-medium mb-4 sm:mb-6"
               >
-                <Star className="w-4 h-4 mr-2 text-yellow-400" />
+                <Star className="w-3 h-3 sm:w-4 sm:h-4 mr-1.5 sm:mr-2 text-yellow-400" />
                 #1 Digital Platform in Africa
               </motion.div>
 
@@ -167,7 +167,7 @@ const HeroSection = () => {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.3 }}
-                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-4 sm:mb-6 leading-tight"
+                className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-bold text-white mb-3 sm:mb-4 lg:mb-6 leading-tight"
               >
                 Africa's First{' '}
                 <span className="text-orange-500">
@@ -181,7 +181,7 @@ const HeroSection = () => {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
-                className="text-lg sm:text-xl lg:text-2xl text-gray-200 mb-6 sm:mb-8 leading-relaxed"
+                className="text-base sm:text-lg lg:text-xl xl:text-2xl text-gray-200 mb-4 sm:mb-6 lg:mb-8 leading-relaxed"
               >
                 Empowering 450M+ MSMEs with integrated e-commerce, fintech, AI, 
                 communication, marketing, and logistics solutions.
@@ -192,14 +192,14 @@ const HeroSection = () => {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.5 }}
-                className="flex items-center justify-center lg:justify-start space-x-4 mb-8"
+                className="flex items-center justify-center lg:justify-start space-x-3 sm:space-x-4 mb-6 sm:mb-8"
               >
-                <div className="flex items-center space-x-2 text-white">
+                <div className="flex items-center space-x-1.5 sm:space-x-2 text-white">
                   {(() => {
                     const IconComponent = features[currentFeature].icon;
-                    return <IconComponent className="w-5 h-5 text-primary-300" />;
+                    return <IconComponent className="w-4 h-4 sm:w-5 sm:h-5 text-primary-300" />;
                   })()}
-                  <span className="font-medium">{features[currentFeature].text}</span>
+                  <span className="font-medium text-sm sm:text-base">{features[currentFeature].text}</span>
                 </div>
               </motion.div>
 
@@ -212,17 +212,17 @@ const HeroSection = () => {
               >
                 <Button
                   variant="gradient"
-                  size="xl"
+                  size="lg"
                   icon={Play}
-                  className="text-lg font-bold shadow-2xl hover:shadow-primary-500/25 transform hover:-translate-y-1 transition-all duration-300"
+                  className="text-base sm:text-lg font-bold shadow-2xl hover:shadow-primary-500/25 transform hover:-translate-y-1 transition-all duration-300"
                 >
                   Get Started Free
                 </Button>
                 <Button
                   variant="glass"
-                  size="xl"
+                  size="lg"
                   icon={Download}
-                  className="text-lg font-bold backdrop-blur-xl shadow-2xl hover:shadow-white/10 transform hover:-translate-y-1 transition-all duration-300"
+                  className="text-base sm:text-lg font-bold backdrop-blur-xl shadow-2xl hover:shadow-white/10 transform hover:-translate-y-1 transition-all duration-300"
                 >
                   Download App
                 </Button>
@@ -233,7 +233,7 @@ const HeroSection = () => {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.7 }}
-                className="mt-6 sm:mt-8 flex flex-wrap items-center justify-center lg:justify-start gap-4 sm:gap-6 text-white/60 text-xs sm:text-sm"
+                className="mt-4 sm:mt-6 lg:mt-8 flex flex-wrap items-center justify-center lg:justify-start gap-3 sm:gap-4 lg:gap-6 text-white/60 text-xs sm:text-sm"
               >
                 <div className="flex items-center space-x-2">
                   <CheckCircle className="w-4 h-4 text-green-400" />
@@ -258,13 +258,13 @@ const HeroSection = () => {
               className="relative"
             >
               {/* Phone Frame with Advanced Design */}
-              <div className="relative mx-auto w-64 sm:w-72 md:w-80 h-[560px] sm:h-[630px] md:h-[700px] bg-gradient-to-b from-gray-900 via-gray-800 to-black rounded-[2rem] sm:rounded-[2.5rem] md:rounded-[3rem] p-2 sm:p-2.5 md:p-3 shadow-2xl">
+              <div className="relative mx-auto w-56 sm:w-64 md:w-72 lg:w-80 h-[500px] sm:h-[560px] md:h-[630px] lg:h-[700px] bg-gradient-to-b from-gray-900 via-gray-800 to-black rounded-[1.5rem] sm:rounded-[2rem] md:rounded-[2.5rem] lg:rounded-[3rem] p-1.5 sm:p-2 md:p-2.5 lg:p-3 shadow-2xl">
                 {/* Phone Bezel */}
-                                  <div className="absolute inset-0 bg-gradient-to-br from-gray-800 to-gray-900 rounded-[2rem] sm:rounded-[2.5rem] md:rounded-[3rem] p-1">
-                    <div className="w-full h-full bg-black rounded-[1.5rem] sm:rounded-[2rem] md:rounded-[2.5rem] overflow-hidden relative">
+                <div className="absolute inset-0 bg-gradient-to-br from-gray-800 to-gray-900 rounded-[1.5rem] sm:rounded-[2rem] md:rounded-[2.5rem] lg:rounded-[3rem] p-1">
+                  <div className="w-full h-full bg-black rounded-[1rem] sm:rounded-[1.5rem] md:rounded-[2rem] lg:rounded-[2.5rem] overflow-hidden relative">
                     
                     {/* Dynamic Status Bar */}
-                    <div className="flex justify-between items-center px-6 py-3 text-white text-sm bg-black/20 backdrop-blur-sm">
+                    <div className="flex justify-between items-center px-4 sm:px-6 py-2 sm:py-3 text-white text-xs sm:text-sm bg-black/20 backdrop-blur-sm">
                       <div className="flex items-center space-x-2">
                         <Clock className="w-4 h-4" />
                         <span className="font-medium">9:41</span>
@@ -292,8 +292,8 @@ const HeroSection = () => {
                     <div className="w-full h-full bg-gradient-to-br from-primary-900 via-primary-800 to-secondary-800 relative overflow-hidden">
                       
                       {/* App Grid */}
-                      <div className="p-4 sm:p-5 md:p-6">
-                        <div className="flex items-center justify-between mb-4 sm:mb-6">
+                      <div className="p-3 sm:p-4 md:p-5 lg:p-6">
+                        <div className="flex items-center justify-between mb-3 sm:mb-4 lg:mb-6">
                           <div>
                             <h3 className="text-white font-bold text-lg sm:text-xl">Annita Hub</h3>
                             <p className="text-white/60 text-xs sm:text-sm">All-in-One Platform</p>
@@ -324,7 +324,7 @@ const HeroSection = () => {
                         </div>
 
                         {/* App Grid */}
-                        <div className="grid grid-cols-3 gap-2 sm:gap-3 md:gap-4 mb-4 sm:mb-6">
+                        <div className="grid grid-cols-3 gap-1.5 sm:gap-2 md:gap-3 lg:gap-4 mb-3 sm:mb-4 lg:mb-6">
                           {apps.map((app, index) => (
                             <motion.div
                               key={app.name}
