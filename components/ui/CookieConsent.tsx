@@ -54,13 +54,14 @@ const CookieConsent = () => {
     <>
       {/* Backdrop */}
       <div 
-        className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50"
+        className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40"
         onClick={() => setIsVisible(false)}
       />
       
       {/* Cookie Popup */}
-      <div className="fixed inset-0 flex items-center justify-center p-4 z-50">
-        <div className="bg-white dark:bg-gray-900 rounded-3xl shadow-2xl border border-gray-100 dark:border-gray-800 w-full max-w-md mx-4 overflow-hidden">
+      <div className="fixed inset-0 flex items-center justify-center p-4 z-50 pointer-events-none">
+        <div className="pointer-events-auto">
+        <div className="bg-white dark:bg-gray-900 rounded-3xl shadow-2xl border border-gray-100 dark:border-gray-800 w-full max-w-sm sm:max-w-md mx-4 max-h-[90vh] overflow-hidden">
           {/* Header */}
           <div className="px-6 py-5 border-b border-gray-100 dark:border-gray-800">
             <div className="flex items-center justify-between">
@@ -83,7 +84,7 @@ const CookieConsent = () => {
           </div>
 
           {/* Content */}
-          <div className="px-6 py-5">
+          <div className="px-6 py-5 overflow-y-auto max-h-[calc(90vh-120px)]">
             <p className="text-sm text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
               We use cookies to provide you with a better experience, analyze site traffic, and personalize content. 
               You can choose which types of cookies to allow below.
@@ -168,6 +169,7 @@ const CookieConsent = () => {
               </div>
             </div>
           </div>
+        </div>
         </div>
       </div>
     </>
