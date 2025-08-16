@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import { 
   Facebook, 
-  Twitter, 
+  MessageCircle, 
   Instagram, 
   Linkedin, 
   Youtube,
@@ -74,7 +74,7 @@ const Footer = () => {
 
   const socialLinks = [
     { name: 'Facebook', icon: Facebook, href: 'https://facebook.com/annita.africa' },
-    { name: 'Twitter', icon: Twitter, href: 'https://twitter.com/annita_africa' },
+    { name: 'WhatsApp', icon: MessageCircle, href: 'https://wa.me/231775057227' },
     { name: 'Instagram', icon: Instagram, href: 'https://instagram.com/annita_africa' },
     { name: 'LinkedIn', icon: Linkedin, href: 'https://linkedin.com/company/annita-africa' },
     { name: 'YouTube', icon: Youtube, href: 'https://youtube.com/@annita-africa' }
