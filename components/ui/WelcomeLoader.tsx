@@ -25,21 +25,23 @@ const WelcomeLoader = ({ onComplete }: WelcomeLoaderProps) => {
       setShowWelcome(true)
     }, 500)
 
-    // Simulate loading progress over 12 seconds
+    // Simulate loading progress over 8 seconds to reach 1000%
     const progressInterval = setInterval(() => {
       setProgress(prev => {
-        if (prev >= 100) {
+        if (prev >= 1000) {
           clearInterval(progressInterval)
-          return 100
+          // Trigger completion immediately when reaching 1000%
+          onComplete()
+          return 1000
         }
-        return prev + Math.random() * 8 + 2 // Slower progress
+        return prev + Math.random() * 15 + 5 // Faster progress to reach 1000%
       })
-    }, 200)
+    }, 100)
 
-    // Complete loading after 12 seconds
+    // Fallback completion after 8 seconds
     const timer = setTimeout(() => {
       onComplete()
-    }, 12000) // 12 seconds total
+    }, 8000) // 8 seconds total
 
     return () => {
       clearTimeout(timer)
@@ -119,9 +121,9 @@ const WelcomeLoader = ({ onComplete }: WelcomeLoaderProps) => {
               type: "spring",
               stiffness: 100
             }}
-            className="mb-12"
+            className="mb-8 sm:mb-12"
           >
-            <div className="relative mx-auto w-32 h-32 sm:w-40 sm:h-40">
+            <div className="relative mx-auto w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40">
               {/* Outer Ring */}
               <motion.div
                 className="absolute inset-0 border-4 border-orange-500/30 rounded-full"
@@ -148,7 +150,7 @@ const WelcomeLoader = ({ onComplete }: WelcomeLoaderProps) => {
                 <img 
                   src="/images/blog/Annita's Logo.png" 
                   alt="Annita Logo" 
-                  className="w-16 h-16 sm:w-20 sm:h-20 rounded-full object-cover"
+                  className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-full object-cover"
                 />
               </div>
               
@@ -173,10 +175,10 @@ const WelcomeLoader = ({ onComplete }: WelcomeLoaderProps) => {
             initial={{ y: 50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 1, delay: 0.5 }}
-            className="mb-8"
+            className="mb-6 sm:mb-8 px-4"
           >
             <motion.h1
-              className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-3 sm:mb-4"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.8 }}
@@ -187,7 +189,7 @@ const WelcomeLoader = ({ onComplete }: WelcomeLoaderProps) => {
             </motion.h1>
 
             <motion.p
-              className="text-xl sm:text-2xl text-gray-300 max-w-2xl mx-auto leading-relaxed"
+              className="text-lg sm:text-xl md:text-2xl text-gray-300 max-w-2xl mx-auto leading-relaxed px-2"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 1 }}
@@ -201,7 +203,7 @@ const WelcomeLoader = ({ onComplete }: WelcomeLoaderProps) => {
             initial={{ width: 0, opacity: 0 }}
             animate={{ width: "100%", opacity: 1 }}
             transition={{ duration: 0.8, delay: 1.2 }}
-            className="max-w-md mx-auto mb-8"
+            className="max-w-md mx-auto mb-6 sm:mb-8 px-4"
           >
             <div className="relative">
               {/* Background Track */}
@@ -210,7 +212,7 @@ const WelcomeLoader = ({ onComplete }: WelcomeLoaderProps) => {
                 <motion.div
                   className="h-full bg-gradient-to-r from-orange-500 via-red-500 to-purple-600 rounded-full relative"
                   initial={{ width: 0 }}
-                  animate={{ width: `${progress}%` }}
+                  animate={{ width: `${Math.min(progress, 100)}%` }}
                   transition={{ duration: 0.3 }}
                 >
                   {/* Shimmer Effect */}
@@ -236,45 +238,15 @@ const WelcomeLoader = ({ onComplete }: WelcomeLoaderProps) => {
             </div>
           </motion.div>
 
-          {/* Floating Action Indicators */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1.5 }}
-            className="flex justify-center space-x-8"
-          >
-            {[
-              { icon: "🚀", label: "Fast" },
-              { icon: "🔒", label: "Secure" },
-              { icon: "🤖", label: "AI-Powered" },
-              { icon: "🌍", label: "Global" }
-            ].map((item, index) => (
-              <motion.div
-                key={item.label}
-                className="text-center"
-                initial={{ opacity: 0, scale: 0 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ 
-                  duration: 0.5, 
-                  delay: 1.8 + index * 0.1,
-                  type: "spring",
-                  stiffness: 200
-                }}
-                whileHover={{ scale: 1.1 }}
-              >
-                <div className="text-2xl mb-2">{item.icon}</div>
-                <div className="text-xs text-gray-400 font-medium">{item.label}</div>
-              </motion.div>
-            ))}
-          </motion.div>
+
         </div>
       </div>
 
       {/* Bottom Decorative Line */}
       <motion.div
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+        className="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2"
         initial={{ width: 0 }}
-        animate={{ width: "200px" }}
+        animate={{ width: "150px sm:200px" }}
         transition={{ duration: 1, delay: 2 }}
       >
         <div className="h-px bg-gradient-to-r from-transparent via-orange-500 to-transparent" />
