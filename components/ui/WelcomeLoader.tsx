@@ -10,8 +10,15 @@ interface WelcomeLoaderProps {
 const WelcomeLoader = ({ onComplete }: WelcomeLoaderProps) => {
   const [isLoading, setIsLoading] = useState(true)
   const [progress, setProgress] = useState(0)
+  const [isClient, setIsClient] = useState(false)
 
   useEffect(() => {
+    setIsClient(true)
+  }, [])
+
+  useEffect(() => {
+    if (!isClient) return
+
     // Check if user has seen the welcome screen before
     const hasSeenWelcome = localStorage.getItem('annita-welcome-seen')
     
@@ -42,7 +49,11 @@ const WelcomeLoader = ({ onComplete }: WelcomeLoaderProps) => {
       clearTimeout(timer)
       clearInterval(progressInterval)
     }
-  }, [onComplete])
+  }, [onComplete, isClient])
+
+  if (!isClient) {
+    return null
+  }
 
   return (
     <div className="fixed inset-0 z-[70] bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 overflow-hidden">
@@ -53,12 +64,12 @@ const WelcomeLoader = ({ onComplete }: WelcomeLoaderProps) => {
             key={i}
             className="absolute w-2 h-2 bg-orange-500/30 rounded-full"
             initial={{
-              x: Math.random() * window.innerWidth,
-              y: Math.random() * window.innerHeight,
+              x: isClient ? Math.random() * window.innerWidth : 0,
+              y: isClient ? Math.random() * window.innerHeight : 0,
             }}
             animate={{
-              x: Math.random() * window.innerWidth,
-              y: Math.random() * window.innerHeight,
+              x: isClient ? Math.random() * window.innerWidth : 0,
+              y: isClient ? Math.random() * window.innerHeight : 0,
             }}
             transition={{
               duration: Math.random() * 10 + 10,
