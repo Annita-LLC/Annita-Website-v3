@@ -99,6 +99,7 @@ const Navigation = () => {
       href: '#',
       dropdown: [
         { name: 'About Us', href: '/about', icon: Users, description: 'Our story and mission' },
+        { name: 'Investors', href: '/investors', icon: DollarSign, description: 'Investment opportunities and company info' },
         { name: 'Awards & Recognition', href: '/awards', icon: Award, description: 'Our achievements and recognition' },
         { name: 'Careers', href: '/careers', icon: Briefcase, description: 'Join our team' },
         { name: 'Blog', href: '/blog', icon: FileText, description: 'Latest news and insights' },
