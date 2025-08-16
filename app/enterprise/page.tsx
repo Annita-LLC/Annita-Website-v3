@@ -1,4 +1,5 @@
-import { Metadata } from 'next'
+"use client"
+
 import { 
   Building2, 
   Shield, 
@@ -17,11 +18,7 @@ import {
   Play
 } from 'lucide-react'
 import Button from '@/components/ui/Button'
-
-export const metadata: Metadata = {
-  title: 'Enterprise Solutions - Annita for Large Organizations',
-  description: 'Enterprise-grade solutions for corporations, government agencies, and large organizations. Custom integrations, dedicated support, and compliance.',
-}
+import SEOHead from '@/components/seo/SEOHead'
 
 const EnterprisePage = () => {
   const enterpriseFeatures = [
@@ -154,8 +151,96 @@ const EnterprisePage = () => {
     }
   ]
 
+  const enterpriseStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Annita Enterprise Solutions",
+    "description": "Enterprise-grade solutions for corporations, government agencies, and large organizations",
+    "url": "https://annita.com/enterprise",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web, iOS, Android",
+    "offers": {
+      "@type": "Offer",
+      "description": "Enterprise solutions with custom pricing",
+      "priceCurrency": "USD"
+    },
+    "provider": {
+      "@type": "Organization",
+      "name": "Annita",
+      "url": "https://annita.com"
+    },
+    "featureList": [
+      "Enterprise Security",
+      "Dedicated Support",
+      "Global Infrastructure",
+      "Advanced Analytics",
+      "Custom Integrations",
+      "Compliance",
+      "Multi-factor Authentication",
+      "Role-based Access Control"
+    ]
+  }
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white">
+    <>
+      <SEOHead
+        title="Enterprise Solutions - Annita for Large Organizations"
+        description="Enterprise-grade solutions for corporations, government agencies, and large organizations. SOC 2 Type II certified, GDPR compliant, custom integrations, dedicated support, and 99.99% uptime SLA. Transform your business with Annita's enterprise platform."
+        keywords={[
+          'enterprise solutions',
+          'enterprise software',
+          'corporate solutions',
+          'government agencies',
+          'large organizations',
+          'enterprise security',
+          'SOC 2 Type II',
+          'GDPR compliant',
+          'bank-level encryption',
+          'multi-factor authentication',
+          'role-based access control',
+          'audit trails',
+          'data encryption',
+          'dedicated support',
+          '24/7 support',
+          'account management',
+          'technical support',
+          'custom training',
+          'on-site implementation',
+          'global infrastructure',
+          'multi-region deployment',
+          '99.99% uptime',
+          'SLA',
+          'global CDN',
+          'auto-scaling',
+          'disaster recovery',
+          'geographic redundancy',
+          'advanced analytics',
+          'custom reporting',
+          'business intelligence',
+          'custom dashboards',
+          'real-time reporting',
+          'predictive analytics',
+          'data export APIs',
+          'custom integrations',
+          'compliance',
+          'enterprise platform',
+          'digital transformation',
+          'business solutions',
+          'African enterprise',
+          'enterprise software Africa',
+          'corporate platform',
+          'government solutions',
+          'financial institutions',
+          'retail chains',
+          'manufacturing',
+          'supply chain',
+          'logistics optimization'
+        ]}
+        canonical="/enterprise"
+        ogImage="/enterprise-og-image.jpg"
+        structuredData={enterpriseStructuredData}
+      />
+      <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white">
       {/* Hero Section */}
       <section className="relative py-20 bg-gradient-to-r from-gray-900 to-gray-800 text-white overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-cyan-600/20"></div>
@@ -378,7 +463,8 @@ const EnterprisePage = () => {
           </div>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   )
 }
 

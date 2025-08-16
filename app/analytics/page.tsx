@@ -1,4 +1,5 @@
-import { Metadata } from 'next'
+"use client"
+
 import { 
   BarChart3, 
   TrendingUp, 
@@ -16,11 +17,7 @@ import {
   PieChart,
   Activity
 } from 'lucide-react'
-
-export const metadata: Metadata = {
-  title: 'Analytics - Business Intelligence & Insights',
-  description: 'Advanced analytics and business intelligence for your Annita business. Track performance, customer behavior, and growth metrics.',
-}
+import SEOHead from '@/components/seo/SEOHead'
 
 const AnalyticsPage = () => {
   const overviewStats = [
@@ -51,8 +48,87 @@ const AnalyticsPage = () => {
     { segment: 'VIP Customers', count: 1964, percentage: 22, color: 'bg-purple-500' }
   ]
 
+  const analyticsStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Annita Analytics",
+    "description": "Advanced analytics and business intelligence for tracking performance, customer behavior, and growth metrics",
+    "url": "https://annita.com/analytics",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web, iOS, Android",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "provider": {
+      "@type": "Organization",
+      "name": "Annita",
+      "url": "https://annita.com"
+    },
+    "featureList": [
+      "Business Intelligence",
+      "Performance Tracking",
+      "Customer Behavior Analysis",
+      "Growth Metrics",
+      "Real-time Analytics",
+      "Custom Dashboards",
+      "Data Export",
+      "Predictive Analytics"
+    ]
+  }
+
   return (
-    <div className="min-h-screen bg-gray-50">
+    <>
+      <SEOHead
+        title="Analytics - Business Intelligence & Insights"
+        description="Advanced analytics and business intelligence for your Annita business. Track performance, customer behavior, and growth metrics with real-time dashboards, custom reports, and predictive analytics. Monitor revenue, orders, users, and conversion rates."
+        keywords={[
+          'analytics',
+          'business intelligence',
+          'data analytics',
+          'performance tracking',
+          'customer behavior',
+          'growth metrics',
+          'business insights',
+          'real-time analytics',
+          'custom dashboards',
+          'data visualization',
+          'predictive analytics',
+          'business metrics',
+          'revenue tracking',
+          'order analytics',
+          'user analytics',
+          'conversion tracking',
+          'traffic sources',
+          'customer segments',
+          'product performance',
+          'sales analytics',
+          'marketing analytics',
+          'e-commerce analytics',
+          'business reporting',
+          'data export',
+          'business dashboard',
+          'performance monitoring',
+          'key performance indicators',
+          'KPI tracking',
+          'business metrics',
+          'analytics platform',
+          'data analysis',
+          'business intelligence platform',
+          'African business analytics',
+          'MSME analytics',
+          'small business analytics',
+          'digital analytics',
+          'web analytics',
+          'mobile analytics',
+          'cross-platform analytics'
+        ]}
+        canonical="/analytics"
+        ogImage="/analytics-og-image.jpg"
+        structuredData={analyticsStructuredData}
+      />
+      <div className="min-h-screen bg-gray-50">
       {/* Header */}
       <header className="bg-white shadow-sm border-b border-gray-200">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -325,7 +401,8 @@ const AnalyticsPage = () => {
           </div>
         </div>
       </div>
-    </div>
+      </div>
+    </>
   )
 }
 

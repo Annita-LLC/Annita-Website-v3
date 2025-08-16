@@ -1,5 +1,7 @@
-import { Metadata } from 'next'
+"use client"
+
 import Link from 'next/link'
+import SEOHead from '@/components/seo/SEOHead'
 import { 
   Users, 
   Heart, 
@@ -18,10 +20,7 @@ import {
 } from 'lucide-react'
 import Button from '@/components/ui/Button'
 
-export const metadata: Metadata = {
-  title: 'Careers - Join Annita\'s Mission',
-  description: 'Join Annita\'s mission to empower Africa\'s MSMEs. Explore career opportunities in technology, business, and innovation.',
-}
+
 
 const CareersPage = () => {
   const values = [
@@ -174,8 +173,101 @@ const CareersPage = () => {
     { number: '95%', label: 'Employee Satisfaction' }
   ]
 
+  const careersStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "JobPosting",
+    "title": "Careers at Annita",
+    "description": "Join Annita's mission to empower Africa's MSMEs. Explore career opportunities in technology, business, and innovation.",
+    "url": "https://annita.com/careers",
+    "hiringOrganization": {
+      "@type": "Organization",
+      "name": "Annita",
+      "url": "https://annita.com",
+      "logo": "https://annita.com/logo.png"
+    },
+    "jobLocation": {
+      "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "Liberia",
+        "addressRegion": "West Africa"
+      }
+    },
+    "employmentType": "Full-time",
+    "workHours": "40 hours per week",
+    "benefits": [
+      "Competitive Salary",
+      "Health & Wellness",
+      "Learning & Growth",
+      "Remote Work",
+      "Recognition",
+      "Team Events"
+    ]
+  }
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white">
+    <>
+      <SEOHead
+        title="Careers - Join Annita's Mission"
+        description="Join Annita's mission to empower Africa's MSMEs. Explore career opportunities in technology, business, and innovation. Competitive salary, health benefits, remote work, and continuous learning opportunities. Build the future of African digital commerce."
+        keywords={[
+          'careers at Annita',
+          'Annita jobs',
+          'job opportunities',
+          'career opportunities',
+          'work at Annita',
+          'join Annita',
+          'employment',
+          'hiring',
+          'job openings',
+          'remote work',
+          'technology jobs',
+          'business jobs',
+          'innovation jobs',
+          'African tech jobs',
+          'Liberia jobs',
+          'West Africa jobs',
+          'engineering jobs',
+          'frontend engineer',
+          'backend engineer',
+          'full-stack developer',
+          'product manager',
+          'data scientist',
+          'marketing manager',
+          'sales representative',
+          'customer success',
+          'business development',
+          'competitive salary',
+          'health benefits',
+          'equity options',
+          'learning opportunities',
+          'career development',
+          'team collaboration',
+          'global perspective',
+          'passion for impact',
+          'innovation culture',
+          'diverse teams',
+          'African business',
+          'digital transformation',
+          'fintech careers',
+          'e-commerce careers',
+          'AI careers',
+          'logistics careers',
+          'marketing careers',
+          'sales careers',
+          'customer service careers',
+          'business careers',
+          'startup careers',
+          'tech startup jobs',
+          'African startup',
+          'MSME empowerment',
+          'social impact jobs'
+        ]}
+        canonical="/careers"
+        ogImage="/careers-og-image.jpg"
+        structuredData={careersStructuredData}
+      />
+      <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white">
       {/* Hero Section */}
       <section className="relative py-16 sm:py-20 bg-gradient-to-r from-gray-900 to-gray-800 text-white overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-cyan-600/20"></div>
@@ -425,7 +517,8 @@ const CareersPage = () => {
           </div>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   )
 }
 

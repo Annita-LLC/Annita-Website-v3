@@ -1,4 +1,5 @@
-import { Metadata } from 'next'
+"use client"
+
 import { 
   Code, 
   Zap, 
@@ -13,11 +14,7 @@ import {
   Database,
   Lock
 } from 'lucide-react'
-
-export const metadata: Metadata = {
-  title: 'Annita API - Developer Platform & Integrations',
-  description: 'Access Annita\'s powerful APIs for marketplace, payments, logistics, and analytics. Build custom integrations and scale your business.',
-}
+import SEOHead from '@/components/seo/SEOHead'
 
 const APIPage = () => {
   const apiEndpoints = [
@@ -99,8 +96,103 @@ const APIPage = () => {
     }
   ]
 
+  const apiStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Annita API",
+    "description": "Developer platform and APIs for marketplace, payments, logistics, and analytics integrations",
+    "url": "https://annita.com/api",
+    "applicationCategory": "DeveloperApplication",
+    "operatingSystem": "Web, iOS, Android",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "provider": {
+      "@type": "Organization",
+      "name": "Annita",
+      "url": "https://annita.com"
+    },
+    "featureList": [
+      "Marketplace API",
+      "Payments API",
+      "Logistics API",
+      "Analytics API",
+      "Lightning Fast",
+      "Enterprise Security",
+      "Global CDN",
+      "Real-time Data",
+      "WebSocket Support",
+      "OAuth 2.0 Authentication"
+    ]
+  }
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white">
+    <>
+      <SEOHead
+        title="Annita API - Developer Platform & Integrations"
+        description="Access Annita's powerful APIs for marketplace, payments, logistics, and analytics. Build custom integrations and scale your business with 99.9% uptime, sub-100ms response times, and enterprise security. Support for JavaScript, Python, PHP, Java, Go, and Ruby."
+        keywords={[
+          'Annita API',
+          'developer platform',
+          'API integrations',
+          'marketplace API',
+          'payments API',
+          'logistics API',
+          'analytics API',
+          'custom integrations',
+          'business scaling',
+          'API documentation',
+          'SDK',
+          'JavaScript SDK',
+          'Python SDK',
+          'PHP SDK',
+          'Java SDK',
+          'Go SDK',
+          'Ruby SDK',
+          'Node.js',
+          'webhook support',
+          'OAuth 2.0',
+          'authentication',
+          'bank-level encryption',
+          'enterprise security',
+          'global CDN',
+          'real-time data',
+          'WebSocket support',
+          'sub-100ms response',
+          '99.9% uptime',
+          'API endpoints',
+          'REST API',
+          'GraphQL',
+          'developer tools',
+          'integration platform',
+          'business automation',
+          'third-party integrations',
+          'API management',
+          'developer resources',
+          'technical documentation',
+          'code examples',
+          'API testing',
+          'sandbox environment',
+          'production API',
+          'rate limiting',
+          'error handling',
+          'API versioning',
+          'webhook notifications',
+          'data synchronization',
+          'business intelligence API',
+          'e-commerce API',
+          'fintech API',
+          'logistics API',
+          'African API platform',
+          'MSME API solutions'
+        ]}
+        canonical="/api"
+        ogImage="/api-og-image.jpg"
+        structuredData={apiStructuredData}
+      />
+      <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white">
       {/* Hero Section */}
       <section className="relative py-20 bg-gradient-to-r from-gray-900 to-gray-800 text-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -338,7 +430,8 @@ const payment = await api.payments.create({
           </div>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   )
 }
 

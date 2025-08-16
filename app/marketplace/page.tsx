@@ -1,4 +1,5 @@
-import { Metadata } from 'next'
+"use client"
+
 import { 
   ShoppingCart, 
   Search, 
@@ -20,11 +21,7 @@ import {
   Tag
 } from 'lucide-react'
 import Button from '@/components/ui/Button'
-
-export const metadata: Metadata = {
-  title: 'Marketplace - Annita',
-  description: 'Discover Africa\'s largest multivendor marketplace. Buy and sell with confidence using our secure escrow system and integrated logistics.',
-}
+import SEOHead from '@/components/seo/SEOHead'
 
 const MarketplacePage = () => {
   const stats = [
@@ -93,8 +90,81 @@ const MarketplacePage = () => {
     { name: 'Beauty', icon: Star, count: '6,789', color: 'from-yellow-500 to-amber-500' }
   ]
 
+  const marketplaceStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Annita Marketplace",
+    "description": "Africa's largest multivendor marketplace with secure escrow payments and integrated logistics",
+    "url": "https://annita.com/marketplace",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://annita.com/marketplace/search?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    },
+    "offers": {
+      "@type": "Offer",
+      "description": "Multivendor marketplace with secure payments",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "provider": {
+      "@type": "Organization",
+      "name": "Annita",
+      "url": "https://annita.com"
+    }
+  }
+
   return (
-    <div className="min-h-screen">
+    <>
+      <SEOHead
+        title="Marketplace - Africa's Largest Multivendor Platform"
+        description="Discover Africa's largest multivendor marketplace with 3,000+ vendors and 50,000+ products. Buy and sell with confidence using our secure escrow system, integrated logistics, and AI-powered search. Pan-African reach with same-day delivery."
+        keywords={[
+          'Annita marketplace',
+          'Africa marketplace',
+          'multivendor marketplace',
+          'e-commerce platform',
+          'online shopping Africa',
+          'secure escrow payments',
+          'integrated logistics',
+          'cross-border trade',
+          'African vendors',
+          'online marketplace',
+          'secure transactions',
+          'same-day delivery',
+          'next-day delivery',
+          'real-time tracking',
+          'AI-powered search',
+          'smart filters',
+          'mobile money payments',
+          'quality guarantee',
+          'easy returns',
+          'best prices',
+          'pan-African reach',
+          'African e-commerce',
+          'digital marketplace',
+          'secure payments',
+          'escrow system',
+          'logistics integration',
+          'vendor platform',
+          'buyer protection',
+          'seller platform',
+          'African products',
+          'local vendors',
+          'international shipping',
+          'payment security',
+          'transaction protection',
+          'marketplace security',
+          'African business platform',
+          'digital commerce',
+          'online retail',
+          'e-commerce solutions'
+        ]}
+        canonical="/marketplace"
+        ogImage="/marketplace-og-image.jpg"
+        structuredData={marketplaceStructuredData}
+      />
+      <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-primary-900 via-primary-800 to-secondary-800 text-white overflow-hidden">
         <div className="absolute inset-0 bg-black/20"></div>
@@ -260,7 +330,8 @@ const MarketplacePage = () => {
           </div>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   )
 }
 

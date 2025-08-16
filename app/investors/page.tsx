@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { motion } from 'framer-motion'
+import SEOHead from '@/components/seo/SEOHead'
 import { 
   Download, 
   FileText, 
@@ -151,8 +152,101 @@ const InvestorsPage = () => {
     alert(`Download started for ${title}`)
   }
 
+  const investorsStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Annita",
+    "description": "Africa's first all-in-one digital platform empowering MSMEs with innovative solutions",
+    "url": "https://annita.com",
+    "foundingDate": "2021",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "Liberia",
+      "addressRegion": "West Africa"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "investor relations",
+      "email": "investors@annita.com"
+    },
+    "award": [
+      "Orange Social Venture Prize (1st Place)",
+      "African Innovation Award"
+    ],
+    "funding": {
+      "@type": "MonetaryAmount",
+      "currency": "USD",
+      "value": "2500000"
+    }
+  }
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 dark:from-slate-900 dark:to-slate-800">
+    <>
+      <SEOHead
+        title="Investors - Annita Investment Opportunities"
+        description="Explore investment opportunities in Annita, Africa's first all-in-one digital platform. 300% revenue growth, 50K+ users, 15+ countries. Seed round completed, Series A in progress. Download pitch deck, business plan, and financial model."
+        keywords={[
+          'Annita investors',
+          'investment opportunities',
+          'venture capital',
+          'startup funding',
+          'African startup',
+          'fintech investment',
+          'e-commerce investment',
+          'digital platform investment',
+          'Series A funding',
+          'seed round',
+          'pitch deck',
+          'business plan',
+          'financial model',
+          'market analysis',
+          'cap table',
+          'funding rounds',
+          'revenue growth',
+          'market opportunity',
+          'African market',
+          'MSME market',
+          'digital transformation',
+          'financial projections',
+          'unit economics',
+          'growth strategy',
+          'competitive advantage',
+          'market size',
+          'TAM SAM SOM',
+          'customer acquisition',
+          'lifetime value',
+          'burn rate',
+          'runway',
+          'valuation',
+          'exit strategy',
+          'IPO',
+          'acquisition',
+          'strategic investors',
+          'angel investors',
+          'venture capitalists',
+          'private equity',
+          'investment thesis',
+          'due diligence',
+          'term sheet',
+          'investment deck',
+          'financial metrics',
+          'KPIs',
+          'business metrics',
+          'African Continental Free Trade Area',
+          'AfCFTA',
+          'Liberia investment',
+          'West Africa investment',
+          'emerging markets',
+          'frontier markets',
+          'impact investment',
+          'social impact',
+          'sustainable development'
+        ]}
+        canonical="/investors"
+        ogImage="/investors-og-image.jpg"
+        structuredData={investorsStructuredData}
+      />
+      <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 dark:from-slate-900 dark:to-slate-800">
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-to-r from-orange-500 via-red-500 to-purple-600 text-white">
         <div className="absolute inset-0 bg-black/20"></div>
@@ -658,7 +752,8 @@ const InvestorsPage = () => {
           </motion.div>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   )
 }
 

@@ -1,4 +1,5 @@
-import { Metadata } from 'next'
+"use client"
+
 import { 
   CreditCard, 
   Shield, 
@@ -16,11 +17,7 @@ import {
   Download
 } from 'lucide-react'
 import Button from '@/components/ui/Button'
-
-export const metadata: Metadata = {
-  title: 'AnnitaPay - Secure Payment Gateway & Digital Wallet',
-  description: 'AnnitaPay offers secure payment processing, escrow services, and digital wallet solutions for African businesses. Multi-currency support and fraud protection.',
-}
+import SEOHead from '@/components/seo/SEOHead'
 
 const PaymentsPage = () => {
   const features = [
@@ -81,8 +78,87 @@ const PaymentsPage = () => {
     { name: 'Digital Wallet', icon: Shield, color: 'from-orange-500 to-red-500' }
   ]
 
+  const paymentsStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "AnnitaPay",
+    "description": "Secure payment gateway with escrow services and digital wallet solutions for African businesses",
+    "url": "https://annita.com/payments",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Web, iOS, Android",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "provider": {
+      "@type": "Organization",
+      "name": "Annita",
+      "url": "https://annita.com"
+    },
+    "featureList": [
+      "Escrow Protection",
+      "Multi-Currency Support",
+      "Mobile Money Integration",
+      "Bank-Level Security",
+      "Instant Transfers",
+      "Business Accounts",
+      "Fraud Detection",
+      "Real-time Tracking"
+    ]
+  }
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white">
+    <>
+      <SEOHead
+        title="AnnitaPay - Secure Payment Gateway & Digital Wallet"
+        description="AnnitaPay offers secure payment processing, escrow services, and digital wallet solutions for African businesses. Multi-currency support, fraud protection, and 99.9% security rate. Accept payments from anywhere in Africa with 50+ currencies supported."
+        keywords={[
+          'AnnitaPay',
+          'payment gateway',
+          'digital wallet',
+          'escrow services',
+          'secure payments',
+          'African payments',
+          'mobile money',
+          'bank transfers',
+          'credit card payments',
+          'fraud protection',
+          'multi-currency',
+          'instant transfers',
+          'business payments',
+          'payment processing',
+          'financial services',
+          'digital payments',
+          'online payments',
+          'secure transactions',
+          'payment security',
+          'African fintech',
+          'payment solutions',
+          'escrow protection',
+          'transaction fees',
+          'real-time tracking',
+          'API integration',
+          'compliance',
+          'bank-level security',
+          '256-bit encryption',
+          'automated reconciliation',
+          'customer support',
+          'local regulations',
+          'cross-border payments',
+          'international payments',
+          'payment methods',
+          'financial inclusion',
+          'digital banking',
+          'mobile banking',
+          'e-commerce payments',
+          'marketplace payments'
+        ]}
+        canonical="/payments"
+        ogImage="/payments-og-image.jpg"
+        structuredData={paymentsStructuredData}
+      />
+      <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white">
       {/* Hero Section */}
       <section className="relative py-20 bg-gradient-to-r from-green-600 to-emerald-600 text-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -275,7 +351,8 @@ const PaymentsPage = () => {
           </div>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   )
 }
 
