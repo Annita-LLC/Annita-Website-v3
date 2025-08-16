@@ -61,6 +61,14 @@ const Footer = () => {
         { name: 'Careers', href: '/careers' },
         { name: 'About', href: '/about' }
       ]
+    },
+    {
+      title: 'Legal',
+      links: [
+        { name: 'Privacy Policy', href: '/privacy' },
+        { name: 'Terms of Service', href: '/terms' },
+        { name: 'Cookie Policy', href: '/cookies' }
+      ]
     }
   ]
 
@@ -82,7 +90,7 @@ const Footer = () => {
     <footer className="bg-gray-900 text-white">
       {/* Main Footer */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-6 gap-6 sm:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-6 sm:gap-8">
           {/* Company Info */}
           <div className="xl:col-span-2">
             <Link href="/" className="flex items-center space-x-2 sm:space-x-3 mb-4 sm:mb-6">
@@ -165,18 +173,9 @@ const Footer = () => {
       <div className="border-t border-gray-800">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-3 md:space-y-0">
-            <div className="flex items-center space-x-4 sm:space-x-6 text-xs sm:text-sm text-gray-400">
-              <span>&copy; {currentYear} Annita. All rights reserved.</span>
-              <Link href="/privacy" className="hover:text-white transition-colors duration-200">
-                Privacy Policy
-              </Link>
-              <Link href="/terms" className="hover:text-white transition-colors duration-200">
-                Terms of Service
-              </Link>
-              <Link href="/cookies" className="hover:text-white transition-colors duration-200">
-                Cookie Policy
-              </Link>
-            </div>
+                      <div className="flex items-center space-x-4 sm:space-x-6 text-xs sm:text-sm text-gray-400">
+            <span>&copy; {currentYear} Annita. All rights reserved.</span>
+          </div>
             
             <div className="flex items-center space-x-2 text-sm text-gray-400">
               <span>Made with</span>
