@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion } from 'framer-motion'
 
 interface WelcomeLoaderProps {
   onComplete: () => void
@@ -11,6 +11,7 @@ const WelcomeLoader = ({ onComplete }: WelcomeLoaderProps) => {
   const [isLoading, setIsLoading] = useState(true)
   const [progress, setProgress] = useState(0)
   const [isClient, setIsClient] = useState(false)
+  const [showWelcome, setShowWelcome] = useState(false)
 
   useEffect(() => {
     setIsClient(true)
@@ -28,30 +29,36 @@ const WelcomeLoader = ({ onComplete }: WelcomeLoaderProps) => {
       return
     }
 
-    // Simulate loading progress
+    // Show welcome screen after a short delay
+    const showTimer = setTimeout(() => {
+      setShowWelcome(true)
+    }, 500)
+
+    // Simulate loading progress over 12 seconds
     const progressInterval = setInterval(() => {
       setProgress(prev => {
         if (prev >= 100) {
           clearInterval(progressInterval)
           return 100
         }
-        return prev + Math.random() * 15 + 5
+        return prev + Math.random() * 8 + 2 // Slower progress
       })
     }, 200)
 
-    // Complete loading after 3 seconds
+    // Complete loading after 12 seconds
     const timer = setTimeout(() => {
       localStorage.setItem('annita-welcome-seen', 'true')
       onComplete()
-    }, 3000)
+    }, 12000) // 12 seconds total
 
     return () => {
       clearTimeout(timer)
+      clearTimeout(showTimer)
       clearInterval(progressInterval)
     }
   }, [onComplete, isClient])
 
-  if (!isClient) {
+  if (!isClient || !showWelcome) {
     return null
   }
 
