@@ -92,35 +92,35 @@ const AILandingPage = () => {
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 text-white overflow-hidden">
         <div className="absolute inset-0 bg-black/20"></div>
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
-            <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white text-sm font-medium mb-6">
-              <Brain className="w-4 h-4 mr-2" />
+            <div className="inline-flex items-center px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white text-xs sm:text-sm font-medium mb-4 sm:mb-6">
+              <Brain className="w-3 h-3 sm:w-4 sm:h-4 mr-1.5 sm:mr-2" />
               AI-Powered Solutions
             </div>
             
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 sm:mb-6">
               Choose Your <span className="text-orange-500">AI Experience</span>
             </h1>
-            <p className="text-xl text-gray-200 mb-8 max-w-2xl mx-auto">
+            <p className="text-lg sm:text-xl text-gray-200 mb-6 sm:mb-8 max-w-2xl mx-auto">
               Whether you're looking to enhance your personal life or transform your business, 
               Annita's AI solutions are designed to meet your specific needs.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
               <Button
                 variant="gradient"
-                size="xl"
+                size="lg"
                 icon={Play}
-                className="text-lg font-bold shadow-2xl hover:shadow-purple-500/25 transform hover:-translate-y-1 transition-all duration-300"
+                className="text-base sm:text-lg font-bold shadow-2xl hover:shadow-purple-500/25 transform hover:-translate-y-1 transition-all duration-300"
               >
                 Get Started Free
               </Button>
               <Button
                 variant="glass"
-                size="xl"
+                size="lg"
                 icon={Download}
-                className="text-lg font-bold backdrop-blur-xl shadow-2xl hover:shadow-white/10 transform hover:-translate-y-1 transition-all duration-300"
+                className="text-base sm:text-lg font-bold backdrop-blur-xl shadow-2xl hover:shadow-white/10 transform hover:-translate-y-1 transition-all duration-300"
               >
                 Download App
               </Button>
@@ -130,39 +130,39 @@ const AILandingPage = () => {
       </section>
 
       {/* AI Options Section */}
-      <section className="py-20">
+      <section className="py-16 sm:py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-orange-600 mb-6">
+          <div className="text-center mb-12 sm:mb-16">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-orange-600 mb-4 sm:mb-6">
               Two Powerful AI Solutions
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
               Select the AI experience that's right for you
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 max-w-6xl mx-auto">
             {/* Personal AI Card */}
-            <div className="bg-white rounded-3xl p-8 shadow-soft hover:shadow-large transition-all duration-300 border-2 border-transparent hover:border-orange-200">
-              <div className="text-center mb-8">
-                <div className="w-20 h-20 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                  <Users className="w-10 h-10 text-white" />
+            <div className="bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-soft hover:shadow-large transition-all duration-300 border-2 border-transparent hover:border-orange-200">
+              <div className="text-center mb-6 sm:mb-8">
+                <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl sm:rounded-2xl flex items-center justify-center mx-auto mb-4 sm:mb-6">
+                  <Users className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
                 </div>
-                <h3 className="text-2xl font-bold text-orange-600 mb-4">Personal AI Assistant</h3>
-                <p className="text-gray-600 mb-6">
+                <h3 className="text-xl sm:text-2xl font-bold text-orange-600 mb-3 sm:mb-4">Personal AI Assistant</h3>
+                <p className="text-sm sm:text-base text-gray-600 mb-4 sm:mb-6">
                   Transform your daily life with AI-powered personal assistance. From health and fitness to productivity and creativity.
                 </p>
               </div>
 
-              <div className="space-y-4 mb-8">
+              <div className="space-y-3 sm:space-y-4 mb-6 sm:mb-8">
                 {personalFeatures.map((feature, index) => (
-                  <div key={index} className="flex items-center space-x-3">
-                    <div className="w-8 h-8 bg-orange-100 rounded-lg flex items-center justify-center">
-                      <feature.icon className="w-4 h-4 text-orange-600" />
+                  <div key={index} className="flex items-center space-x-2 sm:space-x-3">
+                    <div className="w-6 h-6 sm:w-8 sm:h-8 bg-orange-100 rounded-lg flex items-center justify-center">
+                      <feature.icon className="w-3 h-3 sm:w-4 sm:h-4 text-orange-600" />
                     </div>
                     <div>
-                      <div className="font-semibold text-gray-900">{feature.title}</div>
-                      <div className="text-sm text-gray-600">{feature.description}</div>
+                      <div className="font-semibold text-gray-900 text-sm sm:text-base">{feature.title}</div>
+                      <div className="text-xs sm:text-sm text-gray-600">{feature.description}</div>
                     </div>
                   </div>
                 ))}
@@ -181,26 +181,26 @@ const AILandingPage = () => {
             </div>
 
             {/* Business AI Card */}
-            <div className="bg-white rounded-3xl p-8 shadow-soft hover:shadow-large transition-all duration-300 border-2 border-transparent hover:border-orange-200">
-              <div className="text-center mb-8">
-                <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                  <Briefcase className="w-10 h-10 text-white" />
+            <div className="bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-soft hover:shadow-large transition-all duration-300 border-2 border-transparent hover:border-orange-200">
+              <div className="text-center mb-6 sm:mb-8">
+                <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl sm:rounded-2xl flex items-center justify-center mx-auto mb-4 sm:mb-6">
+                  <Briefcase className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
                 </div>
-                <h3 className="text-2xl font-bold text-orange-600 mb-4">Business AI Intelligence</h3>
-                <p className="text-gray-600 mb-6">
+                <h3 className="text-xl sm:text-2xl font-bold text-orange-600 mb-3 sm:mb-4">Business AI Intelligence</h3>
+                <p className="text-sm sm:text-base text-gray-600 mb-4 sm:mb-6">
                   Leverage AI to make data-driven decisions, optimize operations, and grow your business with unprecedented precision.
                 </p>
               </div>
 
-              <div className="space-y-4 mb-8">
+              <div className="space-y-3 sm:space-y-4 mb-6 sm:mb-8">
                 {businessFeatures.map((feature, index) => (
-                  <div key={index} className="flex items-center space-x-3">
-                    <div className="w-8 h-8 bg-orange-100 rounded-lg flex items-center justify-center">
-                      <feature.icon className="w-4 h-4 text-orange-600" />
+                  <div key={index} className="flex items-center space-x-2 sm:space-x-3">
+                    <div className="w-6 h-6 sm:w-8 sm:h-8 bg-orange-100 rounded-lg flex items-center justify-center">
+                      <feature.icon className="w-3 h-3 sm:w-4 sm:h-4 text-orange-600" />
                     </div>
                     <div>
-                      <div className="font-semibold text-gray-900">{feature.title}</div>
-                      <div className="text-sm text-gray-600">{feature.description}</div>
+                      <div className="font-semibold text-gray-900 text-sm sm:text-base">{feature.title}</div>
+                      <div className="text-xs sm:text-sm text-gray-600">{feature.description}</div>
                     </div>
                   </div>
                 ))}
@@ -222,23 +222,23 @@ const AILandingPage = () => {
       </section>
 
       {/* Benefits Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-16 sm:py-20 bg-gray-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl sm:text-4xl font-bold text-orange-600 mb-6">
+            <div className="text-center mb-12 sm:mb-16">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-orange-600 mb-4 sm:mb-6">
                 Why Choose Annita AI?
               </h2>
-              <p className="text-xl text-gray-600">
+              <p className="text-lg sm:text-xl text-gray-600">
                 Both our Personal and Business AI solutions share these powerful features
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
               {benefits.map((benefit, index) => (
-                <div key={index} className="flex items-center space-x-3">
-                  <CheckCircle className="w-6 h-6 text-green-600 flex-shrink-0" />
-                  <span className="text-gray-700">{benefit}</span>
+                <div key={index} className="flex items-center space-x-2 sm:space-x-3">
+                  <CheckCircle className="w-5 h-5 sm:w-6 sm:h-6 text-green-600 flex-shrink-0" />
+                  <span className="text-sm sm:text-base text-gray-700">{benefit}</span>
                 </div>
               ))}
             </div>
@@ -247,25 +247,25 @@ const AILandingPage = () => {
       </section>
 
       {/* Comparison Section */}
-      <section className="py-20">
+      <section className="py-16 sm:py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-orange-600 mb-6">
+          <div className="text-center mb-12 sm:mb-16">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-orange-600 mb-4 sm:mb-6">
               Which AI Solution is Right for You?
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
               Compare our AI solutions to find the perfect fit for your needs
             </p>
           </div>
 
           <div className="max-w-4xl mx-auto">
-            <div className="bg-white rounded-3xl shadow-soft overflow-hidden">
+            <div className="bg-white rounded-2xl sm:rounded-3xl shadow-soft overflow-hidden">
               <div className="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-gray-200">
                 {/* Personal AI Column */}
-                <div className="p-8">
-                  <div className="text-center mb-8">
-                    <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                      <Users className="w-8 h-8 text-white" />
+                <div className="p-6 sm:p-8">
+                  <div className="text-center mb-6 sm:mb-8">
+                    <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl sm:rounded-2xl flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                      <Users className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
                     </div>
                     <h3 className="text-xl font-bold text-orange-600 mb-2">Personal AI</h3>
                     <p className="text-gray-600">Perfect for individuals</p>
@@ -309,35 +309,35 @@ const AILandingPage = () => {
                 </div>
 
                 {/* Business AI Column */}
-                <div className="p-8">
-                  <div className="text-center mb-8">
-                    <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                      <Briefcase className="w-8 h-8 text-white" />
+                <div className="p-6 sm:p-8">
+                  <div className="text-center mb-6 sm:mb-8">
+                    <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl sm:rounded-2xl flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                      <Briefcase className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
                     </div>
-                    <h3 className="text-xl font-bold text-orange-600 mb-2">Business AI</h3>
-                    <p className="text-gray-600">Perfect for organizations</p>
+                    <h3 className="text-lg sm:text-xl font-bold text-orange-600 mb-2">Business AI</h3>
+                    <p className="text-sm sm:text-base text-gray-600">Perfect for organizations</p>
                   </div>
 
-                  <div className="space-y-4">
-                    <div className="flex items-center space-x-3">
-                      <CheckCircle className="w-5 h-5 text-green-500" />
-                      <span className="text-gray-700">Predictive analytics</span>
+                  <div className="space-y-3 sm:space-y-4">
+                    <div className="flex items-center space-x-2 sm:space-x-3">
+                      <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-500" />
+                      <span className="text-sm sm:text-base text-gray-700">Predictive analytics</span>
                     </div>
-                    <div className="flex items-center space-x-3">
-                      <CheckCircle className="w-5 h-5 text-green-500" />
-                      <span className="text-gray-700">Customer intelligence</span>
+                    <div className="flex items-center space-x-2 sm:space-x-3">
+                      <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-500" />
+                      <span className="text-sm sm:text-base text-gray-700">Customer intelligence</span>
                     </div>
-                    <div className="flex items-center space-x-3">
-                      <CheckCircle className="w-5 h-5 text-green-500" />
-                      <span className="text-gray-700">Process automation</span>
+                    <div className="flex items-center space-x-2 sm:space-x-3">
+                      <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-500" />
+                      <span className="text-sm sm:text-base text-gray-700">Process automation</span>
                     </div>
-                    <div className="flex items-center space-x-3">
-                      <CheckCircle className="w-5 h-5 text-green-500" />
-                      <span className="text-gray-700">Real-time analytics</span>
+                    <div className="flex items-center space-x-2 sm:space-x-3">
+                      <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-500" />
+                      <span className="text-sm sm:text-base text-gray-700">Real-time analytics</span>
                     </div>
-                    <div className="flex items-center space-x-3">
-                      <CheckCircle className="w-5 h-5 text-green-500" />
-                      <span className="text-gray-700">Fraud detection</span>
+                    <div className="flex items-center space-x-2 sm:space-x-3">
+                      <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-500" />
+                      <span className="text-sm sm:text-base text-gray-700">Fraud detection</span>
                     </div>
                   </div>
 
@@ -361,30 +361,30 @@ const AILandingPage = () => {
       </section>
 
       {/* Download CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-orange-600 to-red-600 text-white">
+      <section className="py-16 sm:py-20 bg-gradient-to-r from-orange-600 to-red-600 text-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl sm:text-4xl font-bold text-orange-400 mb-6">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-orange-400 mb-4 sm:mb-6">
               Ready to Experience AI?
             </h2>
-            <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+            <p className="text-lg sm:text-xl text-white/90 mb-6 sm:mb-8 max-w-2xl mx-auto">
               Download the Annita app to access both Personal and Business AI features. 
               Transform your life and business with the power of artificial intelligence.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
               <Button
                 variant="white"
-                size="xl"
+                size="lg"
                 icon={Download}
-                className="text-lg font-bold shadow-2xl hover:shadow-white/25 transform hover:-translate-y-1 transition-all duration-300"
+                className="text-base sm:text-lg font-bold shadow-2xl hover:shadow-white/25 transform hover:-translate-y-1 transition-all duration-300"
               >
                 Download App Now
               </Button>
               <Button
                 variant="outline"
-                size="xl"
+                size="lg"
                 icon={Play}
-                className="text-lg font-bold border-white text-white hover:bg-white hover:text-orange-600"
+                className="text-base sm:text-lg font-bold border-white text-white hover:bg-white hover:text-orange-600"
               >
                 Learn More
               </Button>
