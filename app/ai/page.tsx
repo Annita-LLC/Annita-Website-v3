@@ -173,7 +173,7 @@ const AILandingPage = () => {
         ogImage="/ai-og-image.jpg"
         structuredData={aiStructuredData}
       />
-      <div className="min-h-screen">
+    <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 text-white overflow-hidden">
         <div className="absolute inset-0 bg-black/20"></div>
@@ -477,7 +477,7 @@ const AILandingPage = () => {
           </div>
         </div>
       </section>
-      </div>
+    </div>
     </>
   )
 }
