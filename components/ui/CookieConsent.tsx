@@ -8,7 +8,9 @@ import {
   Settings, 
   CheckCircle,
   Info,
-  ArrowRight
+  ArrowRight,
+  BarChart3,
+  Target
 } from 'lucide-react'
 import Button from '@/components/ui/Button'
 
