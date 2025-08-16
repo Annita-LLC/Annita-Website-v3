@@ -60,7 +60,7 @@ const SEOHead = ({
     'economic growth'
   ]
 
-  const allKeywords = [...new Set([...defaultKeywords, ...keywords])].join(', ')
+  const allKeywords = Array.from(new Set([...defaultKeywords, ...keywords])).join(', ')
 
   return (
     <Head>
