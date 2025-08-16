@@ -36,7 +36,8 @@ import {
   Target,
   Database,
   Sun,
-  Moon
+  Moon,
+  Activity
 } from 'lucide-react'
 
 const Navigation = () => {
