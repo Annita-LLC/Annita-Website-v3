@@ -1,4 +1,5 @@
-import { Metadata } from 'next'
+"use client"
+
 import { 
   Mail, 
   Phone, 
@@ -20,11 +21,6 @@ import {
   Minus
 } from 'lucide-react'
 import { useState } from 'react'
-
-export const metadata: Metadata = {
-  title: 'Contact Annita - Get in Touch',
-  description: 'Contact Annita for support, sales inquiries, or partnership opportunities. We\'re here to help you succeed with Africa\'s leading digital platform.',
-}
 
 const ContactPage = () => {
   const contactMethods = [
