@@ -84,7 +84,7 @@ const CTASection = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-orange-400 mb-6">
             Ready to Transform Your Business?
           </h2>
           <p className="text-xl text-white/90 max-w-4xl mx-auto mb-8">
@@ -127,7 +127,7 @@ const CTASection = () => {
               <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                 <benefit.icon className="w-8 h-8 text-white" />
               </div>
-              <h4 className="text-lg font-semibold text-white mb-2">{benefit.title}</h4>
+                              <h4 className="text-lg font-semibold text-orange-400 mb-2">{benefit.title}</h4>
               <p className="text-white/80 text-sm">{benefit.description}</p>
             </motion.div>
           ))}
@@ -143,7 +143,7 @@ const CTASection = () => {
           className="text-center"
         >
           <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-8 lg:p-12 border border-white/20">
-            <h3 className="text-2xl lg:text-3xl font-bold text-white mb-6">
+            <h3 className="text-2xl lg:text-3xl font-bold text-orange-400 mb-6">
               Need Help Getting Started?
             </h3>
             <p className="text-lg text-white/90 max-w-3xl mx-auto mb-8">

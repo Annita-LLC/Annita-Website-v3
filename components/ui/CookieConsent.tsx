@@ -66,7 +66,7 @@ const CookieConsent = () => {
                 <Cookie className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
               </div>
               <div>
-                <h3 className="text-base sm:text-lg font-bold text-gray-900 dark:text-white">We Value Your Privacy</h3>
+                <h3 className="text-base sm:text-lg font-bold text-orange-600 dark:text-orange-400">We Value Your Privacy</h3>
                 <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">Help us improve your experience</p>
               </div>
             </div>

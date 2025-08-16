@@ -54,7 +54,6 @@ const Footer = () => {
     {
       title: 'Resources',
       links: [
-        { name: 'Welcome', href: '/welcome' },
         { name: 'Help Center', href: '/support/help-center' },
         { name: 'Documentation', href: '/support/documentation' },
         { name: 'Status', href: '/support/status' },

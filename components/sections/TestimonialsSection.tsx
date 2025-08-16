@@ -145,8 +145,8 @@ const TestimonialsSection = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-            Success <span className="gradient-text">Stories</span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-orange-600 mb-6">
+            Success <span className="text-orange-500">Stories</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto">
             Hear from real MSMEs across Africa who have transformed their businesses 
@@ -324,7 +324,7 @@ const TestimonialsSection = () => {
           transition={{ duration: 0.8, delay: 1.0 }}
           className="mb-20"
         >
-          <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 text-center mb-12">
+          <h3 className="text-2xl lg:text-3xl font-bold text-orange-600 text-center mb-12">
             Customer Success Metrics
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -341,8 +341,8 @@ const TestimonialsSection = () => {
                 transition={{ duration: 0.6, delay: 1.2 + index * 0.1 }}
                 className="feature-card text-center group"
               >
-                <div className="text-3xl font-bold gradient-text mb-2">{item.metric}</div>
-                <div className="text-lg font-semibold text-gray-900 mb-2">{item.label}</div>
+                <div className="text-3xl font-bold text-orange-500 mb-2">{item.metric}</div>
+                <div className="text-lg font-semibold text-orange-600 mb-2">{item.label}</div>
                 <div className="text-sm text-gray-600">{item.description}</div>
               </motion.div>
             ))}
@@ -357,20 +357,20 @@ const TestimonialsSection = () => {
           className="text-center"
         >
           <div className="bg-gradient-to-r from-primary-50 to-secondary-50 rounded-3xl p-8 lg:p-12">
-            <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-6">
+            <h3 className="text-2xl lg:text-3xl font-bold text-orange-600 mb-6">
               Trusted by Thousands of African Businesses
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
               <div className="text-center">
-                <div className="text-4xl font-bold gradient-text mb-2">3,000+</div>
+                <div className="text-4xl font-bold text-orange-500 mb-2">3,000+</div>
                 <div className="text-gray-600">Active Vendors</div>
               </div>
               <div className="text-center">
-                <div className="text-4xl font-bold gradient-text mb-2">1,500+</div>
+                <div className="text-4xl font-bold text-orange-500 mb-2">1,500+</div>
                 <div className="text-gray-600">Happy Customers</div>
               </div>
               <div className="text-center">
-                <div className="text-4xl font-bold gradient-text mb-2">90%</div>
+                <div className="text-4xl font-bold text-orange-500 mb-2">90%</div>
                 <div className="text-gray-600">Satisfaction Rate</div>
               </div>
             </div>

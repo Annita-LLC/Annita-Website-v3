@@ -147,8 +147,8 @@ const FeaturesSection = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-            Complete <span className="gradient-text">Digital Ecosystem</span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-orange-600 mb-6">
+            Complete <span className="text-orange-500">Digital Ecosystem</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto">
             Everything MSMEs need to succeed in the digital economy, integrated into one powerful platform 
@@ -171,7 +171,7 @@ const FeaturesSection = () => {
                 <div className={`w-16 h-16 bg-gradient-to-br ${feature.color} rounded-2xl flex items-center justify-center mb-6`}>
                   <feature.icon className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-2">
+                <h3 className="text-2xl lg:text-3xl font-bold text-orange-600 mb-2">
                   {feature.title}
                 </h3>
                 <div className="text-lg font-medium text-primary-600 mb-4">
@@ -343,7 +343,7 @@ const FeaturesSection = () => {
                 </div>
                 <h4 className="text-lg font-semibold text-gray-900 mb-2">{feature.title}</h4>
                 <p className="text-gray-600 text-sm mb-4">{feature.description}</p>
-                <div className="text-2xl font-bold gradient-text">{feature.metric}</div>
+                <div className="text-2xl font-bold text-orange-500">{feature.metric}</div>
               </motion.div>
             ))}
           </div>
@@ -356,9 +356,9 @@ const FeaturesSection = () => {
           transition={{ duration: 0.8, delay: 1.6 }}
           className="mb-20"
         >
-          <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 text-center mb-12">
-            Why Choose Annita?
-          </h3>
+                          <h3 className="text-2xl lg:text-3xl font-bold text-orange-600 text-center mb-12">
+                  Why Choose Annita?
+                </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {benefits.map((benefit, index) => (
               <motion.div
@@ -371,7 +371,7 @@ const FeaturesSection = () => {
                 <div className="w-12 h-12 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
                   <benefit.icon className="w-6 h-6 text-white" />
                 </div>
-                <h4 className="text-lg font-semibold text-gray-900 mb-2">{benefit.title}</h4>
+                <h4 className="text-lg font-semibold text-orange-600 mb-2">{benefit.title}</h4>
                 <p className="text-gray-600 text-sm">{benefit.description}</p>
               </motion.div>
             ))}
@@ -386,7 +386,7 @@ const FeaturesSection = () => {
           className="text-center"
         >
           <div className="bg-gradient-to-r from-primary-600 to-secondary-600 rounded-3xl p-8 lg:p-12 text-white">
-            <h3 className="text-2xl lg:text-3xl font-bold mb-4">
+            <h3 className="text-2xl lg:text-3xl font-bold text-orange-600 mb-4">
               Ready to Transform Your Business?
             </h3>
             <p className="text-lg text-white/90 max-w-3xl mx-auto mb-8">

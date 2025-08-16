@@ -163,7 +163,7 @@ const FloatingNotification = () => {
                   <notification.icon className="w-4 h-4" />
                 </div>
                 <div className="flex-1 min-w-0">
-                  <h4 className={`font-semibold text-sm ${styles.title}`}>
+                  <h4 className={`font-semibold text-sm text-orange-600 ${styles.title}`}>
                     {notification.title}
                   </h4>
                   <p className={`text-sm ${styles.message} mt-1`}>

@@ -118,8 +118,8 @@ const AboutSection = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-            About <span className="gradient-text">Annita</span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-orange-600 mb-6">
+            About <span className="text-orange-500">Annita</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto">
             Africa's digital heartbeat, empowering over 450 million Micro, Small, and Medium Enterprises 
@@ -136,7 +136,7 @@ const AboutSection = () => {
             className="bg-gradient-to-br from-primary-50 to-secondary-50 rounded-3xl p-8 lg:p-12"
           >
             <Target className="w-12 h-12 text-primary-600 mb-6" />
-            <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-4">Our Mission</h3>
+                          <h3 className="text-2xl lg:text-3xl font-bold text-orange-600 mb-4">Our Mission</h3>
             <p className="text-lg text-gray-600 mb-6">
               To deliver Africa's first all-in-one platform, seamlessly integrating e-commerce, fintech, 
               AI-driven tools, communication, marketing, logistics, and lifestyle services. We empower 
@@ -165,7 +165,7 @@ const AboutSection = () => {
             className="bg-gradient-to-br from-accent-50 to-warning-50 rounded-3xl p-8 lg:p-12"
           >
             <Lightbulb className="w-12 h-12 text-accent-600 mb-6" />
-            <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-4">Our Vision</h3>
+                          <h3 className="text-2xl lg:text-3xl font-bold text-orange-600 mb-4">Our Vision</h3>
             <p className="text-lg text-gray-600 mb-6">
               To empower 5 million Micro, Small, and Medium Enterprises across Africa and beyond by 2029, 
               catalyzing global economic growth and job creation through innovative digital solutions.
@@ -194,9 +194,9 @@ const AboutSection = () => {
           transition={{ duration: 0.8, delay: 0.6 }}
           className="mb-20"
         >
-          <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 text-center mb-12">
-            Our Core Values
-          </h3>
+                      <h3 className="text-2xl lg:text-3xl font-bold text-orange-600 text-center mb-12">
+              Our Core Values
+            </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {values.map((value, index) => (
               <motion.div
@@ -209,7 +209,7 @@ const AboutSection = () => {
                 <div className={`w-16 h-16 bg-gradient-to-br ${value.color} rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300`}>
                   <value.icon className="w-8 h-8 text-white" />
                 </div>
-                <h4 className="text-lg font-semibold text-gray-900 mb-2">{value.title}</h4>
+                <h4 className="text-lg font-semibold text-orange-600 mb-2">{value.title}</h4>
                 <p className="text-gray-600">{value.description}</p>
               </motion.div>
             ))}
@@ -223,9 +223,9 @@ const AboutSection = () => {
           transition={{ duration: 0.8, delay: 1.0 }}
           className="mb-20"
         >
-          <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 text-center mb-12">
-            Key Achievements
-          </h3>
+                      <h3 className="text-2xl lg:text-3xl font-bold text-orange-600 text-center mb-12">
+              Key Achievements
+            </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {achievements.map((achievement, index) => (
               <motion.div
@@ -239,7 +239,7 @@ const AboutSection = () => {
                   <achievement.icon className="w-6 h-6 text-white" />
                 </div>
                 <div className="text-sm font-medium text-primary-600 mb-2">{achievement.year}</div>
-                <h4 className="text-lg font-semibold text-gray-900 mb-2">{achievement.title}</h4>
+                <h4 className="text-lg font-semibold text-orange-600 mb-2">{achievement.title}</h4>
                 <p className="text-gray-600 text-sm">{achievement.description}</p>
               </motion.div>
             ))}
@@ -252,7 +252,7 @@ const AboutSection = () => {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 1.4 }}
         >
-          <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 text-center mb-12">
+          <h3 className="text-2xl lg:text-3xl font-bold text-orange-600 text-center mb-12">
             Meet Our Leadership Team
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -269,7 +269,7 @@ const AboutSection = () => {
                     {member.name.split(' ').map(n => n[0]).join('')}
                   </span>
                 </div>
-                <h4 className="text-lg font-semibold text-gray-900 mb-1">{member.name}</h4>
+                <h4 className="text-lg font-semibold text-orange-600 mb-1">{member.name}</h4>
                 <div className="text-primary-600 font-medium mb-3">{member.role}</div>
                 <p className="text-gray-600 text-sm mb-3">{member.description}</p>
                 <div className="text-xs text-gray-500 bg-gray-50 rounded-lg p-2">
@@ -288,7 +288,7 @@ const AboutSection = () => {
           className="mt-20 text-center"
         >
           <div className="bg-gradient-to-r from-primary-600 to-secondary-600 rounded-3xl p-8 lg:p-12 text-white">
-            <h3 className="text-2xl lg:text-3xl font-bold mb-4">
+            <h3 className="text-2xl lg:text-3xl font-bold text-orange-600 mb-4">
               Join Africa's Digital Revolution
             </h3>
             <p className="text-lg text-white/90 max-w-3xl mx-auto mb-8">

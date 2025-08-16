@@ -174,7 +174,7 @@ const SupportPage = () => {
               <HelpCircle className="w-10 h-10" />
             </div>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
-              How Can We Help?
+              <span className="text-orange-500">How Can We Help?</span>
             </h1>
             <p className="text-xl sm:text-2xl text-gray-300 mb-8">
               Get the support you need to succeed with Annita. We're here to help 24/7.
@@ -202,7 +202,7 @@ const SupportPage = () => {
       <section className="py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-orange-600 mb-6">
               Get in Touch
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -216,7 +216,7 @@ const SupportPage = () => {
                 <div className={`w-16 h-16 bg-gradient-to-br ${method.color} rounded-2xl flex items-center justify-center mx-auto mb-6`}>
                   <method.icon className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">{method.title}</h3>
+                <h3 className="text-xl font-bold text-orange-600 mb-3">{method.title}</h3>
                 <p className="text-gray-600 mb-4">{method.description}</p>
                 <div className="flex items-center justify-center space-x-2 text-sm text-gray-500 mb-6">
                   <Clock className="w-4 h-4" />
@@ -235,7 +235,7 @@ const SupportPage = () => {
       <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-orange-600 mb-6">
               Help Center
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -249,7 +249,7 @@ const SupportPage = () => {
                 <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center mb-6">
                   <category.icon className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-3">{category.title}</h3>
+                <h3 className="text-2xl font-bold text-orange-600 mb-3">{category.title}</h3>
                 <p className="text-gray-600 mb-6">{category.description}</p>
                 <ul className="space-y-3">
                   {category.articles.map((article, articleIndex) => (
@@ -272,7 +272,7 @@ const SupportPage = () => {
       <section className="py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-orange-600 mb-6">
               Video Tutorials
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">

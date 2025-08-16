@@ -32,14 +32,14 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     const baseClasses = "inline-flex items-center justify-center font-semibold transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none relative overflow-hidden"
     
     const variants = {
-      primary: "bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 text-white shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 focus:ring-primary-500",
-      secondary: "bg-gradient-to-r from-secondary-500 to-secondary-600 hover:from-secondary-600 hover:to-secondary-700 text-white shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 focus:ring-secondary-500",
-      accent: "bg-gradient-to-r from-accent-500 to-accent-600 hover:from-accent-600 hover:to-accent-700 text-white shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 focus:ring-accent-500",
-      outline: "border-2 border-primary-500 text-primary-500 hover:bg-primary-500 hover:text-white focus:ring-primary-500 shadow-md hover:shadow-lg transform hover:-translate-y-0.5",
-      ghost: "text-neutral-700 hover:bg-neutral-100 focus:ring-neutral-500 hover:shadow-md transform hover:-translate-y-0.5",
-      gradient: "bg-gradient-to-r from-primary-500 via-secondary-500 to-accent-500 hover:from-primary-600 hover:via-secondary-600 hover:to-accent-600 text-white shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 focus:ring-primary-500",
-      glass: "bg-white/10 backdrop-blur-sm border border-white/20 text-white hover:bg-white/20 focus:ring-white/50 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5",
-      white: "bg-white text-neutral-800 hover:bg-neutral-100 focus:ring-neutral-500 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
+      primary: "bg-orange-500 hover:bg-orange-600 text-white shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 focus:ring-orange-500",
+      secondary: "bg-orange-400 hover:bg-orange-500 text-white shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 focus:ring-orange-400",
+      accent: "bg-orange-500 hover:bg-orange-600 text-white shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 focus:ring-orange-500",
+      outline: "border-2 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white focus:ring-orange-500 shadow-md hover:shadow-lg transform hover:-translate-y-0.5",
+      ghost: "text-orange-700 hover:bg-orange-100 focus:ring-orange-500 hover:shadow-md transform hover:-translate-y-0.5",
+      gradient: "bg-orange-500 hover:bg-orange-600 text-white shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 focus:ring-orange-500",
+      glass: "bg-orange-500/10 backdrop-blur-sm border border-orange-500/20 text-orange-700 hover:bg-orange-500/20 focus:ring-orange-500/50 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5",
+      white: "bg-white text-orange-600 hover:bg-orange-50 focus:ring-orange-500 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
     }
     
     const sizes = {

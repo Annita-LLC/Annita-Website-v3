@@ -124,7 +124,7 @@ const LiveActivity = () => {
                   <Activity className="w-4 h-4 text-white" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-gray-900">Live Activity</h3>
+                  <h3 className="font-semibold text-orange-600">Live Activity</h3>
                   <p className="text-xs text-gray-500">Real-time updates</p>
                 </div>
               </div>

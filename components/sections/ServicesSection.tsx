@@ -207,8 +207,8 @@ const ServicesSection = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-            Comprehensive <span className="gradient-text">Service Solutions</span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-orange-600 mb-6">
+            Comprehensive <span className="text-orange-500">Service Solutions</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto">
             From e-commerce to logistics, payments to marketing - we provide everything MSMEs need 
@@ -229,7 +229,7 @@ const ServicesSection = () => {
               <div className={`w-16 h-16 bg-gradient-to-br ${service.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
                 <service.icon className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-2">{service.title}</h3>
+                              <h3 className="text-2xl font-bold text-orange-600 mb-2">{service.title}</h3>
               <p className="text-gray-600 mb-6">{service.description}</p>
               
               <div className="space-y-3 mb-6">
@@ -261,7 +261,7 @@ const ServicesSection = () => {
           transition={{ duration: 0.8, delay: 0.6 }}
           className="mb-20"
         >
-          <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 text-center mb-12">
+          <h3 className="text-2xl lg:text-3xl font-bold text-orange-600 text-center mb-12">
             Choose Your Plan
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -282,9 +282,9 @@ const ServicesSection = () => {
                 )}
                 <div className={`${plan.popular ? 'ring-2 ring-primary-500' : ''} bg-white rounded-3xl p-8 shadow-soft border border-gray-200 hover:shadow-medium transition-all duration-300`}>
                   <div className="text-center mb-8">
-                    <h4 className="text-xl font-bold text-gray-900 mb-2">{plan.name}</h4>
+                    <h4 className="text-xl font-bold text-orange-600 mb-2">{plan.name}</h4>
                     <div className="flex items-baseline justify-center mb-2">
-                      <span className="text-4xl font-bold gradient-text">{plan.price}</span>
+                      <span className="text-4xl font-bold text-orange-500">{plan.price}</span>
                       <span className="text-gray-500 ml-1">{plan.period}</span>
                     </div>
                     <p className="text-gray-600 text-sm">{plan.description}</p>
@@ -316,7 +316,7 @@ const ServicesSection = () => {
           transition={{ duration: 0.8, delay: 1.2 }}
           className="mb-20"
         >
-          <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 text-center mb-12">
+          <h3 className="text-2xl lg:text-3xl font-bold text-orange-600 text-center mb-12">
             World-Class Support
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -331,7 +331,7 @@ const ServicesSection = () => {
                 <div className="w-12 h-12 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
                   <service.icon className="w-6 h-6 text-white" />
                 </div>
-                <h4 className="text-lg font-semibold text-gray-900 mb-2">{service.title}</h4>
+                <h4 className="text-lg font-semibold text-orange-600 mb-2">{service.title}</h4>
                 <p className="text-gray-600 text-sm mb-3">{service.description}</p>
                 <div className="text-xs text-primary-600 font-medium">{service.availability}</div>
               </motion.div>
@@ -346,7 +346,7 @@ const ServicesSection = () => {
           transition={{ duration: 0.8, delay: 1.8 }}
           className="mb-20"
         >
-          <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 text-center mb-12">
+          <h3 className="text-2xl lg:text-3xl font-bold text-orange-600 text-center mb-12">
             Solutions for Every Business Type
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -366,7 +366,7 @@ const ServicesSection = () => {
                 <div className="w-16 h-16 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                   <solution.icon className="w-8 h-8 text-white" />
                 </div>
-                <h4 className="text-lg font-semibold text-gray-900 mb-2">{solution.title}</h4>
+                <h4 className="text-lg font-semibold text-orange-600 mb-2">{solution.title}</h4>
                 <p className="text-gray-600 text-sm">{solution.description}</p>
               </motion.div>
             ))}
@@ -381,7 +381,7 @@ const ServicesSection = () => {
           className="text-center"
         >
           <div className="bg-gradient-to-r from-primary-600 to-secondary-600 rounded-3xl p-8 lg:p-12 text-white">
-            <h3 className="text-2xl lg:text-3xl font-bold mb-4">
+            <h3 className="text-2xl lg:text-3xl font-bold text-orange-600 mb-4">
               Ready to Get Started?
             </h3>
             <p className="text-lg text-white/90 max-w-3xl mx-auto mb-8">

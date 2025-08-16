@@ -124,7 +124,7 @@ const FAQSection = () => {
             <HelpCircle className="w-4 h-4 mr-2" />
             Help Center
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-orange-600 mb-6">
             Frequently Asked Questions
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -210,7 +210,7 @@ const FAQSection = () => {
                       className="w-full px-6 py-5 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200"
                     >
                       <div className="flex-1">
-                        <h3 className="text-lg font-semibold text-gray-900 mb-2">{faq.question}</h3>
+                        <h3 className="text-lg font-semibold text-orange-600 mb-2">{faq.question}</h3>
                         <div className="flex items-center space-x-4 text-sm text-gray-500">
                           <span className="inline-flex items-center px-2 py-1 rounded-full bg-blue-100 text-blue-700">
                             {faq.category}
@@ -268,7 +268,7 @@ const FAQSection = () => {
                 className="text-center py-12"
               >
                 <HelpCircle className="w-16 h-16 text-gray-300 mx-auto mb-4" />
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">No questions found</h3>
+                <h3 className="text-xl font-semibold text-orange-600 mb-2">No questions found</h3>
                 <p className="text-gray-600 mb-6">
                   Try adjusting your search terms or browse all categories
                 </p>
@@ -295,7 +295,7 @@ const FAQSection = () => {
           className="mt-16"
         >
           <div className="bg-gradient-to-r from-blue-600 to-cyan-600 rounded-3xl p-8 lg:p-12 text-white text-center">
-            <h3 className="text-2xl lg:text-3xl font-bold mb-4">
+            <h3 className="text-2xl lg:text-3xl font-bold text-orange-600 mb-4">
               Still Need Help?
             </h3>
             <p className="text-lg text-white/90 max-w-3xl mx-auto mb-8">
@@ -312,7 +312,7 @@ const FAQSection = () => {
                 <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center mx-auto mb-4">
                   <MessageSquare className="w-6 h-6 text-white" />
                 </div>
-                <h4 className="text-lg font-semibold mb-2">Live Chat</h4>
+                <h4 className="text-lg font-semibold text-orange-600 mb-2">Live Chat</h4>
                 <p className="text-white/80 text-sm mb-4">Get instant help</p>
                 <Button
                   variant="glass"
@@ -333,7 +333,7 @@ const FAQSection = () => {
                 <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-emerald-500 rounded-xl flex items-center justify-center mx-auto mb-4">
                   <Phone className="w-6 h-6 text-white" />
                 </div>
-                <h4 className="text-lg font-semibold mb-2">Phone Support</h4>
+                <h4 className="text-lg font-semibold text-orange-600 mb-2">Phone Support</h4>
                 <p className="text-white/80 text-sm mb-4">Speak with an expert</p>
                 <Button
                   variant="glass"
@@ -354,7 +354,7 @@ const FAQSection = () => {
                 <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl flex items-center justify-center mx-auto mb-4">
                   <Mail className="w-6 h-6 text-white" />
                 </div>
-                <h4 className="text-lg font-semibold mb-2">Email Support</h4>
+                <h4 className="text-lg font-semibold text-orange-600 mb-2">Email Support</h4>
                 <p className="text-white/80 text-sm mb-4">Send us a message</p>
                 <Button
                   variant="glass"

@@ -114,9 +114,9 @@ const StatsSection = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-orange-600 mb-6">
             Transforming Africa's{' '}
-            <span className="gradient-text">Digital Economy</span>
+            <span className="text-orange-500">Digital Economy</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Our platform is driving unprecedented growth and innovation across Africa, 
@@ -168,7 +168,7 @@ const StatsSection = () => {
           transition={{ duration: 0.8, delay: 0.6 }}
           className="mb-20"
         >
-          <h3 className="text-2xl font-bold text-gray-900 text-center mb-12">
+          <h3 className="text-2xl font-bold text-orange-600 text-center mb-12">
             Our Growth Journey
           </h3>
           <div className="relative">
@@ -192,8 +192,8 @@ const StatsSection = () => {
                 >
                   <div className="w-1/2 px-8">
                     <div className={`bg-white rounded-2xl p-6 shadow-soft border border-gray-200 ${index % 2 === 0 ? 'text-right' : 'text-left'}`}>
-                      <div className="text-3xl font-bold gradient-text mb-2">{item.year}</div>
-                      <div className="text-xl font-semibold text-gray-900 mb-2">{item.title}</div>
+                      <div className="text-3xl font-bold text-orange-500 mb-2">{item.year}</div>
+                      <div className="text-xl font-semibold text-orange-600 mb-2">{item.title}</div>
                       <div className="text-2xl font-bold text-primary-600 mb-1">{item.metric}</div>
                       <div className="text-gray-600">{item.description}</div>
                     </div>
@@ -217,7 +217,7 @@ const StatsSection = () => {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 1.2 }}
         >
-          <h3 className="text-2xl font-bold text-gray-900 text-center mb-12">
+          <h3 className="text-2xl font-bold text-orange-600 text-center mb-12">
             Platform Performance Metrics
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -232,10 +232,10 @@ const StatsSection = () => {
                 <div className="w-12 h-12 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
                   <feature.icon className="w-6 h-6 text-white" />
                 </div>
-                <h4 className="text-lg font-semibold text-gray-900 mb-2">{feature.title}</h4>
+                <h4 className="text-lg font-semibold text-orange-600 mb-2">{feature.title}</h4>
                 <p className="text-gray-600 text-sm mb-4">{feature.description}</p>
                 <div className="flex items-baseline space-x-2">
-                  <span className="text-2xl font-bold gradient-text">{feature.metric}</span>
+                  <span className="text-2xl font-bold text-orange-500">{feature.metric}</span>
                   <span className="text-sm text-gray-500">{feature.metricLabel}</span>
                 </div>
               </motion.div>
@@ -252,7 +252,7 @@ const StatsSection = () => {
         >
           <div className="bg-gradient-to-r from-primary-50 to-secondary-50 rounded-3xl p-8 lg:p-12">
             <Heart className="w-12 h-12 text-primary-600 mx-auto mb-6" />
-            <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-4">
+            <h3 className="text-2xl lg:text-3xl font-bold text-orange-600 mb-4">
               Empowering Africa's Future
             </h3>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto mb-6">

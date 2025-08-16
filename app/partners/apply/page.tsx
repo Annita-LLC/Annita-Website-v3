@@ -108,7 +108,7 @@ const PartnerApplyPage = () => {
             </div>
             
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
-              Join Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">Partner Network</span>
+              Join Our <span className="text-orange-500">Partner Network</span>
             </h1>
             <p className="text-xl text-gray-200 mb-8 max-w-2xl mx-auto">
               Grow your business with Annita's comprehensive e-commerce platform. 

@@ -58,7 +58,7 @@ const AnalyticsPage = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center space-x-4">
-              <h1 className="text-2xl font-bold text-gray-900">Analytics</h1>
+              <h1 className="text-2xl font-bold text-orange-600">Analytics</h1>
               <div className="hidden sm:flex items-center space-x-2 text-sm text-gray-500">
                 <span>Business Intelligence & Insights</span>
               </div>
@@ -104,7 +104,7 @@ const AnalyticsPage = () => {
           {/* Revenue Chart */}
           <div className="lg:col-span-2 bg-white rounded-2xl p-6 shadow-soft">
             <div className="flex items-center justify-between mb-6">
-              <h2 className="text-lg font-semibold text-gray-900">Revenue Trends</h2>
+                              <h2 className="text-lg font-semibold text-orange-600">Revenue Trends</h2>
               <div className="flex items-center space-x-2">
                 <button className="text-sm text-gray-600 hover:text-gray-900">Daily</button>
                 <button className="text-sm text-blue-600 font-medium">Weekly</button>
@@ -122,7 +122,7 @@ const AnalyticsPage = () => {
 
           {/* Traffic Sources */}
           <div className="bg-white rounded-2xl p-6 shadow-soft">
-            <h2 className="text-lg font-semibold text-gray-900 mb-6">Traffic Sources</h2>
+                            <h2 className="text-lg font-semibold text-orange-600 mb-6">Traffic Sources</h2>
             <div className="space-y-4">
               {trafficSources.map((source, index) => (
                 <div key={index} className="flex items-center justify-between">
@@ -152,7 +152,7 @@ const AnalyticsPage = () => {
           {/* Top Products Performance */}
           <div className="bg-white rounded-2xl p-6 shadow-soft">
             <div className="flex items-center justify-between mb-6">
-              <h2 className="text-lg font-semibold text-gray-900">Top Products Performance</h2>
+                              <h2 className="text-lg font-semibold text-orange-600">Top Products Performance</h2>
               <button className="text-blue-600 hover:text-blue-700 text-sm font-medium">
                 View all
               </button>
@@ -175,7 +175,7 @@ const AnalyticsPage = () => {
 
           {/* Customer Segments */}
           <div className="bg-white rounded-2xl p-6 shadow-soft">
-            <h2 className="text-lg font-semibold text-gray-900 mb-6">Customer Segments</h2>
+                            <h2 className="text-lg font-semibold text-orange-600 mb-6">Customer Segments</h2>
             <div className="space-y-4">
               {customerSegments.map((segment, index) => (
                 <div key={index} className="flex items-center justify-between">
@@ -206,7 +206,7 @@ const AnalyticsPage = () => {
           {/* Geographic Distribution */}
           <div className="bg-white rounded-2xl p-6 shadow-soft">
             <div className="flex items-center justify-between mb-4">
-              <h3 className="font-semibold text-gray-900">Geographic Distribution</h3>
+                              <h3 className="font-semibold text-orange-600">Geographic Distribution</h3>
               <Globe className="w-5 h-5 text-gray-400" />
             </div>
             <div className="space-y-3">
@@ -232,7 +232,7 @@ const AnalyticsPage = () => {
           {/* Device Usage */}
           <div className="bg-white rounded-2xl p-6 shadow-soft">
             <div className="flex items-center justify-between mb-4">
-              <h3 className="font-semibold text-gray-900">Device Usage</h3>
+                              <h3 className="font-semibold text-orange-600">Device Usage</h3>
               <Smartphone className="w-5 h-5 text-gray-400" />
             </div>
             <div className="space-y-3">
@@ -254,7 +254,7 @@ const AnalyticsPage = () => {
           {/* Conversion Funnel */}
           <div className="bg-white rounded-2xl p-6 shadow-soft">
             <div className="flex items-center justify-between mb-4">
-              <h3 className="font-semibold text-gray-900">Conversion Funnel</h3>
+                              <h3 className="font-semibold text-orange-600">Conversion Funnel</h3>
               <Target className="w-5 h-5 text-gray-400" />
             </div>
             <div className="space-y-3">
@@ -284,7 +284,7 @@ const AnalyticsPage = () => {
             <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center mb-4">
               <BarChart3 className="w-6 h-6" />
             </div>
-            <h3 className="font-semibold mb-2">Custom Reports</h3>
+                            <h3 className="font-semibold text-orange-600 mb-2">Custom Reports</h3>
             <p className="text-blue-100 text-sm mb-4">Create detailed custom reports</p>
             <button className="text-white hover:text-blue-100 text-sm font-medium">
               Create Report →
@@ -295,7 +295,7 @@ const AnalyticsPage = () => {
             <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center mb-4">
               <Activity className="w-6 h-6" />
             </div>
-            <h3 className="font-semibold mb-2">Real-time Monitoring</h3>
+                            <h3 className="font-semibold text-orange-600 mb-2">Real-time Monitoring</h3>
             <p className="text-green-100 text-sm mb-4">Monitor live performance</p>
             <button className="text-white hover:text-green-100 text-sm font-medium">
               View Live Data →
@@ -306,7 +306,7 @@ const AnalyticsPage = () => {
             <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center mb-4">
               <PieChart className="w-6 h-6" />
             </div>
-            <h3 className="font-semibold mb-2">Advanced Analytics</h3>
+                            <h3 className="font-semibold text-orange-600 mb-2">Advanced Analytics</h3>
             <p className="text-purple-100 text-sm mb-4">Deep dive into data</p>
             <button className="text-white hover:text-purple-100 text-sm font-medium">
               Explore Data →
@@ -317,7 +317,7 @@ const AnalyticsPage = () => {
             <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center mb-4">
               <Download className="w-6 h-6" />
             </div>
-            <h3 className="font-semibold mb-2">Export Data</h3>
+                            <h3 className="font-semibold text-orange-600 mb-2">Export Data</h3>
             <p className="text-orange-100 text-sm mb-4">Download reports & data</p>
             <button className="text-white hover:text-orange-100 text-sm font-medium">
               Export Now →

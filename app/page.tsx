@@ -1,3 +1,6 @@
+'use client'
+
+import { useState } from 'react'
 import { Suspense } from 'react'
 import HeroSection from '@/components/sections/HeroSection'
 import FeaturesSection from '@/components/sections/FeaturesSection'
@@ -8,8 +11,19 @@ import TrustedPartnersSection from '@/components/sections/TrustedPartnersSection
 import TestimonialsSection from '@/components/sections/TestimonialsSection'
 import CTASection from '@/components/sections/CTASection'
 import LoadingSpinner from '@/components/ui/LoadingSpinner'
+import WelcomeLoader from '@/components/ui/WelcomeLoader'
 
 export default function HomePage() {
+  const [showWelcome, setShowWelcome] = useState(true)
+
+  const handleWelcomeComplete = () => {
+    setShowWelcome(false)
+  }
+
+  if (showWelcome) {
+    return <WelcomeLoader onComplete={handleWelcomeComplete} />
+  }
+
   return (
     <>
       <Suspense fallback={<LoadingSpinner />}>

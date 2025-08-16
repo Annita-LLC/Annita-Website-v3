@@ -284,7 +284,7 @@ const AboutPage = () => {
               <Heart className="w-10 h-10" />
             </div>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
-              About Annita
+              About <span className="text-orange-500">Annita</span>
             </h1>
             <p className="text-xl sm:text-2xl text-white/90 mb-8">
               Africa's digital heartbeat, empowering MSMEs to thrive in the digital era 
@@ -325,7 +325,7 @@ const AboutPage = () => {
               <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center mb-6">
                 <Target className="w-8 h-8 text-white" />
               </div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Mission</h2>
+              <h2 className="text-3xl font-bold text-orange-600 mb-4">Our Mission</h2>
               <p className="text-lg text-gray-700 mb-6">
                 To deliver Africa's first all-in-one platform, seamlessly integrating e-commerce, 
                 fintech, AI-driven tools, communication, marketing, logistics, and lifestyle services.
@@ -339,7 +339,7 @@ const AboutPage = () => {
               <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-500 rounded-2xl flex items-center justify-center mb-6">
                 <Globe className="w-8 h-8 text-white" />
               </div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Vision</h2>
+              <h2 className="text-3xl font-bold text-orange-600 mb-4">Our Vision</h2>
               <p className="text-lg text-gray-700 mb-6">
                 To empower 5 million Micro, Small, and Medium Enterprises (MSMEs) across Africa 
                 and beyond by 2029, catalyzing global economic growth and job creation.
@@ -362,7 +362,7 @@ const AboutPage = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-orange-600 mb-6">
               Our Core Values
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -383,7 +383,7 @@ const AboutPage = () => {
                 <div className={`w-16 h-16 bg-gradient-to-br ${value.color} rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300`}>
                   <value.icon className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">{value.title}</h3>
+                <h3 className="text-xl font-semibold text-orange-600 mb-3">{value.title}</h3>
                 <p className="text-gray-600">{value.description}</p>
               </motion.div>
             ))}
@@ -400,7 +400,7 @@ const AboutPage = () => {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-orange-600 mb-6">
               Our Journey
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -422,7 +422,7 @@ const AboutPage = () => {
                   <div className={`w-16 h-16 bg-gradient-to-br ${milestone.color} rounded-2xl flex items-center justify-center mx-auto lg:mx-0 mb-4`}>
                     <milestone.icon className="w-8 h-8 text-white" />
                   </div>
-                  <div className="text-4xl font-bold gradient-text mb-2">{milestone.year}</div>
+                  <div className="text-4xl font-bold text-orange-500 mb-2">{milestone.year}</div>
                   <div className="text-lg font-semibold text-gray-900 mb-2">{milestone.title}</div>
                   <div className="text-sm text-gray-500 bg-gray-100 px-3 py-1 rounded-full inline-block">
                     {milestone.achievement}
@@ -446,7 +446,7 @@ const AboutPage = () => {
             transition={{ duration: 0.8, delay: 0.8 }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-orange-600 mb-6">
               Meet Our Team
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -473,7 +473,7 @@ const AboutPage = () => {
                     <div className="w-3 h-3 bg-white rounded-full"></div>
                   </div>
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-2 text-center">{member.name}</h3>
+                <h3 className="text-xl font-semibold text-orange-600 mb-2 text-center">{member.name}</h3>
                 <div className="text-blue-600 font-medium mb-3 text-center">{member.role}</div>
                 <p className="text-gray-600 mb-4 text-center">{member.description}</p>
                 <div className="flex justify-center space-x-3">
@@ -505,7 +505,7 @@ const AboutPage = () => {
             className="max-w-4xl mx-auto"
           >
             <div className="bg-white rounded-3xl p-8 shadow-soft">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">Team Gallery</h3>
+                              <h3 className="text-2xl font-bold text-orange-600 mb-6 text-center">Team Gallery</h3>
               <div className="relative">
                 <div className="flex items-center justify-center mb-6">
                   <button
@@ -525,7 +525,7 @@ const AboutPage = () => {
                   </button>
                 </div>
                 <div className="text-center">
-                  <h4 className="text-lg font-semibold text-gray-900 mb-2">{team[currentImageIndex].name}</h4>
+                  <h4 className="text-lg font-semibold text-orange-600 mb-2">{team[currentImageIndex].name}</h4>
                   <p className="text-blue-600 font-medium mb-4">{team[currentImageIndex].role}</p>
                   <div className="flex flex-wrap justify-center gap-2 mb-4">
                     {team[currentImageIndex].expertise.map((skill, skillIndex) => (
@@ -581,7 +581,7 @@ const AboutPage = () => {
                 <div className={`w-16 h-16 bg-gradient-to-br ${tech.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
                   <tech.icon className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">{tech.title}</h3>
+                <h3 className="text-xl font-semibold text-orange-600 mb-3">{tech.title}</h3>
                 <p className="text-gray-600">{tech.description}</p>
               </motion.div>
             ))}
@@ -598,7 +598,7 @@ const AboutPage = () => {
             transition={{ duration: 0.8, delay: 1.4 }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-orange-600 mb-6">
               Our Impact
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -619,7 +619,7 @@ const AboutPage = () => {
                 <div className={`w-16 h-16 bg-gradient-to-br ${achievement.color} rounded-2xl flex items-center justify-center mx-auto mb-4`}>
                   <achievement.icon className="w-8 h-8 text-white" />
                 </div>
-                <div className="text-3xl lg:text-4xl font-bold gradient-text mb-2">{achievement.number}</div>
+                <div className="text-3xl lg:text-4xl font-bold text-orange-500 mb-2">{achievement.number}</div>
                 <div className="text-gray-600">{achievement.label}</div>
               </motion.div>
             ))}
@@ -636,7 +636,7 @@ const AboutPage = () => {
             transition={{ duration: 0.8, delay: 1.8 }}
             className="bg-gradient-to-r from-blue-600 to-cyan-600 rounded-3xl p-8 lg:p-12 text-white text-center"
           >
-            <h2 className="text-3xl sm:text-4xl font-bold mb-6">
+            <h2 className="text-3xl sm:text-4xl font-bold text-orange-400 mb-6">
               Join Africa's Digital Revolution
             </h2>
             <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">

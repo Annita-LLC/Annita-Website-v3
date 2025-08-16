@@ -91,7 +91,7 @@ const ConnectPage = () => {
               <MessageSquare className="w-10 h-10" />
             </div>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
-              Annita Connect
+              <span className="text-orange-500">Annita Connect</span>
             </h1>
             <p className="text-xl sm:text-2xl text-white/90 mb-8">
               AI-driven marketing and communication suite designed to help African businesses 
@@ -125,7 +125,7 @@ const ConnectPage = () => {
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
               <div key={index} className="text-center">
-                <div className="text-3xl lg:text-4xl font-bold gradient-text mb-2">{stat.number}</div>
+                <div className="text-3xl lg:text-4xl font-bold text-orange-500 mb-2">{stat.number}</div>
                 <div className="text-gray-600">{stat.label}</div>
               </div>
             ))}
@@ -137,7 +137,7 @@ const ConnectPage = () => {
       <section className="py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-orange-600 mb-6">
               Why Choose Annita Connect?
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -152,7 +152,7 @@ const ConnectPage = () => {
                 <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                   <feature.icon className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">{feature.title}</h3>
+                <h3 className="text-xl font-semibold text-orange-600 mb-3">{feature.title}</h3>
                 <p className="text-gray-600">{feature.description}</p>
               </div>
             ))}
@@ -164,7 +164,7 @@ const ConnectPage = () => {
       <section className="py-20 bg-gradient-to-br from-purple-50 to-pink-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
+            <h2 className="text-3xl sm:text-4xl font-bold text-orange-600 mb-6">
               Powerful Marketing Tools
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -179,7 +179,7 @@ const ConnectPage = () => {
                 <div className={`w-16 h-16 bg-gradient-to-br ${tool.color} rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300`}>
                   <tool.icon className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">{tool.name}</h3>
+                <h3 className="text-lg font-semibold text-orange-600 mb-2">{tool.name}</h3>
                 <p className="text-sm text-gray-600">{tool.description}</p>
               </div>
             ))}
@@ -192,7 +192,7 @@ const ConnectPage = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
+              <h2 className="text-3xl sm:text-4xl font-bold text-orange-600 mb-6">
                 Grow Your Business with Smart Marketing
               </h2>
               <p className="text-lg text-gray-600 mb-8">
@@ -215,7 +215,7 @@ const ConnectPage = () => {
                     <Target className="w-6 h-6 text-purple-600" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-gray-900">Smart Targeting</h4>
+                    <h4 className="font-semibold text-orange-600">Smart Targeting</h4>
                     <p className="text-sm text-gray-600">AI-powered audience targeting</p>
                   </div>
                 </div>
@@ -224,7 +224,7 @@ const ConnectPage = () => {
                     <BarChart3 className="w-6 h-6 text-blue-600" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-gray-900">Analytics</h4>
+                    <h4 className="font-semibold text-orange-600">Analytics</h4>
                     <p className="text-sm text-gray-600">Real-time performance insights</p>
                   </div>
                 </div>
@@ -233,7 +233,7 @@ const ConnectPage = () => {
                     <Zap className="w-6 h-6 text-green-600" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-gray-900">Automation</h4>
+                    <h4 className="font-semibold text-orange-600">Automation</h4>
                     <p className="text-sm text-gray-600">24/7 marketing automation</p>
                   </div>
                 </div>
@@ -247,7 +247,7 @@ const ConnectPage = () => {
       <section className="py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-gradient-to-r from-purple-600 to-pink-600 rounded-3xl p-8 lg:p-12 text-white text-center">
-            <h2 className="text-3xl sm:text-4xl font-bold mb-6">
+            <h2 className="text-3xl sm:text-4xl font-bold text-orange-600 mb-6">
               Ready to Transform Your Marketing?
             </h2>
             <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">

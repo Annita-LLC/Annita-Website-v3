@@ -82,7 +82,7 @@ const PressPage = () => {
               <Newspaper className="w-10 h-10" />
             </div>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
-              Press & Media
+              <span className="text-orange-500">Press & Media</span>
             </h1>
             <p className="text-xl sm:text-2xl text-white/90 mb-8">
               Resources and information for journalists and media professionals
@@ -95,7 +95,7 @@ const PressPage = () => {
       <section className="py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-orange-600 mb-6">
               Latest Press Releases
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -108,7 +108,7 @@ const PressPage = () => {
               <div key={index} className="bg-white rounded-3xl p-8 shadow-soft hover:shadow-medium transition-all duration-300 cursor-pointer group">
                 <div className="flex items-start justify-between mb-4">
                   <div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
+                    <h3 className="text-xl font-bold text-orange-600 mb-2 group-hover:text-orange-700 transition-colors">
                       {release.title}
                     </h3>
                     <p className="text-gray-600 mb-4">{release.excerpt}</p>
@@ -134,7 +134,7 @@ const PressPage = () => {
       <section className="py-20 bg-gradient-to-br from-blue-50 to-cyan-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-orange-600 mb-6">
               Media Resources
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -150,7 +150,7 @@ const PressPage = () => {
                     <resource.icon className="w-6 h-6 text-white" />
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-lg font-bold text-gray-900 mb-2">{resource.title}</h3>
+                    <h3 className="text-lg font-bold text-orange-600 mb-2">{resource.title}</h3>
                     <p className="text-gray-600 mb-4">{resource.description}</p>
                     <div className="flex items-center justify-between">
                       <span className="text-sm text-gray-500">{resource.downloads} downloads</span>
@@ -172,7 +172,7 @@ const PressPage = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
             <div className="bg-white rounded-3xl p-8 lg:p-12 shadow-soft">
-              <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
+              <h2 className="text-3xl font-bold text-orange-600 mb-8 text-center">
                 Media Contact
               </h2>
               
@@ -181,7 +181,7 @@ const PressPage = () => {
                   <div className="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
                     <Mail className="w-8 h-8 text-blue-600" />
                   </div>
-                  <h3 className="text-lg font-bold text-gray-900 mb-2">Email</h3>
+                  <h3 className="text-lg font-bold text-orange-600 mb-2">Email</h3>
                   <p className="text-gray-600">{contactInfo.email}</p>
                 </div>
                 
@@ -189,7 +189,7 @@ const PressPage = () => {
                   <div className="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
                     <Phone className="w-8 h-8 text-green-600" />
                   </div>
-                  <h3 className="text-lg font-bold text-gray-900 mb-2">Phone</h3>
+                  <h3 className="text-lg font-bold text-orange-600 mb-2">Phone</h3>
                   <p className="text-gray-600">{contactInfo.phone}</p>
                 </div>
                 
@@ -197,7 +197,7 @@ const PressPage = () => {
                   <div className="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
                     <Calendar className="w-8 h-8 text-purple-600" />
                   </div>
-                  <h3 className="text-lg font-bold text-gray-900 mb-2">Location</h3>
+                  <h3 className="text-lg font-bold text-orange-600 mb-2">Location</h3>
                   <p className="text-gray-600">{contactInfo.address}</p>
                 </div>
               </div>

@@ -109,7 +109,7 @@ const APIPage = () => {
               <Code className="w-10 h-10" />
             </div>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
-              Annita API
+              <span className="text-orange-500">Annita API</span>
             </h1>
             <p className="text-xl sm:text-2xl text-gray-300 mb-8">
               Powerful APIs to integrate marketplace, payments, logistics, and analytics 

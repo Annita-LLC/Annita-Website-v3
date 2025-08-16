@@ -90,7 +90,7 @@ const AnnitaPayPage = () => {
               <CreditCard className="w-10 h-10" />
             </div>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
-              AnnitaPay
+              <span className="text-orange-500">AnnitaPay</span>
             </h1>
             <p className="text-xl sm:text-2xl text-white/90 mb-8">
               Africa's most trusted digital payment platform
@@ -111,7 +111,7 @@ const AnnitaPayPage = () => {
       <section className="py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-orange-600 mb-6">
               Why Choose AnnitaPay?
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -125,7 +125,7 @@ const AnnitaPayPage = () => {
                 <div className={`w-16 h-16 bg-gradient-to-br ${feature.color} rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300`}>
                   <feature.icon className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">{feature.title}</h3>
+                <h3 className="text-xl font-bold text-orange-600 mb-3">{feature.title}</h3>
                 <p className="text-gray-600">{feature.description}</p>
               </div>
             ))}
@@ -138,7 +138,7 @@ const AnnitaPayPage = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-16">
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-orange-600 mb-6">
                 Everything You Need
               </h2>
               <p className="text-xl text-gray-600">
@@ -162,7 +162,7 @@ const AnnitaPayPage = () => {
       <section className="py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-orange-600 mb-6">
               Perfect for Every Business
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -176,7 +176,7 @@ const AnnitaPayPage = () => {
                 <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
                   <useCase.icon className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">{useCase.title}</h3>
+                <h3 className="text-xl font-bold text-orange-600 mb-3">{useCase.title}</h3>
                 <p className="text-gray-600 mb-4">{useCase.description}</p>
                 <div className="flex items-center justify-center text-blue-600 font-medium group-hover:translate-x-1 transition-transform">
                   <span>Learn More</span>

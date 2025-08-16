@@ -165,7 +165,7 @@ const EnterprisePage = () => {
               <Building2 className="w-10 h-10" />
             </div>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
-              Enterprise Solutions
+              <span className="text-orange-500">Enterprise Solutions</span>
             </h1>
             <p className="text-xl sm:text-2xl text-gray-300 mb-8">
               Transform your organization with Annita's enterprise-grade platform. 

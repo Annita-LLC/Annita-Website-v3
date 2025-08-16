@@ -3,7 +3,6 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { 
-  Sparkles, 
   Globe, 
   Users, 
   Zap, 
@@ -47,12 +46,25 @@ const tips = [
   }
 ]
 
-const WelcomePage = () => {
+interface WelcomeLoaderProps {
+  onComplete: () => void
+}
+
+const WelcomeLoader = ({ onComplete }: WelcomeLoaderProps) => {
   const [isLoading, setIsLoading] = useState(true)
   const [currentTip, setCurrentTip] = useState(0)
   const [showContent, setShowContent] = useState(false)
 
   useEffect(() => {
+    // Check if user has seen the welcome screen before
+    const hasSeenWelcome = localStorage.getItem('annita-welcome-seen')
+    
+    if (hasSeenWelcome) {
+      // Skip welcome screen if user has seen it before
+      onComplete()
+      return
+    }
+
     // Simulate loading time
     const timer = setTimeout(() => {
       setIsLoading(false)
@@ -60,7 +72,7 @@ const WelcomePage = () => {
     }, 3000)
 
     return () => clearTimeout(timer)
-  }, [])
+  }, [onComplete])
 
   useEffect(() => {
     if (!isLoading) {
@@ -72,6 +84,11 @@ const WelcomePage = () => {
     }
   }, [isLoading])
 
+  const handleContinue = () => {
+    localStorage.setItem('annita-welcome-seen', 'true')
+    onComplete()
+  }
+
   const renderIcon = (icon: any, className: string) => {
     const IconComponent = icon
     return <IconComponent className={className} />
@@ -79,7 +96,7 @@ const WelcomePage = () => {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-primary-500 via-secondary-500 to-accent-500 flex items-center justify-center">
+      <div className="fixed inset-0 z-[70] bg-gradient-to-br from-primary-500 via-secondary-500 to-accent-500 flex items-center justify-center">
         <div className="text-center">
           {/* Logo */}
           <motion.div
@@ -148,7 +165,7 @@ const WelcomePage = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
-          className="min-h-screen bg-gradient-to-br from-gray-50 to-white dark:bg-gray-900"
+          className="fixed inset-0 z-[70] bg-gradient-to-br from-gray-50 to-white dark:bg-gray-900 overflow-y-auto"
         >
           {/* Header */}
           <div className="bg-gradient-to-r from-primary-500 to-secondary-500 text-white py-8 sm:py-12">
@@ -198,7 +215,7 @@ const WelcomePage = () => {
                 transition={{ duration: 0.6, delay: 0.6 }}
                 className="text-center mb-12"
               >
-                <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-4">
+                <h2 className="text-2xl sm:text-3xl font-bold text-orange-600 dark:text-orange-400 mb-4">
                   Why Choose Annita?
                 </h2>
                 <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
@@ -218,7 +235,7 @@ const WelcomePage = () => {
                     <div className={`w-12 h-12 bg-gradient-to-br ${tip.color} rounded-xl flex items-center justify-center mb-4`}>
                       {renderIcon(tip.icon, "w-6 h-6 text-white")}
                     </div>
-                    <h3 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-2">
+                    <h3 className="text-lg sm:text-xl font-bold text-orange-600 dark:text-orange-400 mb-2">
                       {tip.title}
                     </h3>
                     <p className="text-gray-600 dark:text-gray-400">
@@ -239,7 +256,7 @@ const WelcomePage = () => {
                 transition={{ duration: 0.6, delay: 1.2 }}
                 className="max-w-3xl mx-auto"
               >
-                <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-4">
+                <h2 className="text-2xl sm:text-3xl font-bold text-orange-600 dark:text-orange-400 mb-4">
                   Ready to Get Started?
                 </h2>
                 <p className="text-gray-600 dark:text-gray-400 mb-8 text-lg">
@@ -247,13 +264,13 @@ const WelcomePage = () => {
                 </p>
                 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Link
-                    href="/"
+                  <button
+                    onClick={handleContinue}
                     className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-primary-500 to-secondary-500 text-white font-semibold rounded-xl hover:from-primary-600 hover:to-secondary-600 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
                   >
-                    <span>Explore Platform</span>
+                    <span>Enter Platform</span>
                     <ArrowRight className="w-5 h-5 ml-2" />
-                  </Link>
+                  </button>
                   
                   <Link
                     href="/download"
@@ -272,4 +289,4 @@ const WelcomePage = () => {
   )
 }
 
-export default WelcomePage
+export default WelcomeLoader

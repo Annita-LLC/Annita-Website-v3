@@ -91,7 +91,7 @@ const PaymentsPage = () => {
               <CreditCard className="w-10 h-10" />
             </div>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
-              AnnitaPay
+              <span className="text-orange-500">AnnitaPay</span>
             </h1>
             <p className="text-xl sm:text-2xl text-white/90 mb-8">
               Secure payment gateway with escrow services and digital wallet solutions 
@@ -125,7 +125,7 @@ const PaymentsPage = () => {
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
               <div key={index} className="text-center">
-                <div className="text-3xl lg:text-4xl font-bold gradient-text mb-2">{stat.number}</div>
+                <div className="text-3xl lg:text-4xl font-bold text-orange-500 mb-2">{stat.number}</div>
                 <div className="text-gray-600">{stat.label}</div>
               </div>
             ))}

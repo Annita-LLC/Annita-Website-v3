@@ -102,7 +102,7 @@ const MarketplacePage = () => {
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
               Africa's Largest
-              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-accent-400 to-secondary-400">
+              <span className="block text-orange-500">
                 Multivendor Marketplace
               </span>
             </h1>

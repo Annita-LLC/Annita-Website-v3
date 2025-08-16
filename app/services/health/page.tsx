@@ -66,7 +66,7 @@ const HealthPage = () => {
               <Heart className="w-10 h-10" />
             </div>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
-              Health & Wellness
+              <span className="text-orange-500">Health & Wellness</span>
             </h1>
             <p className="text-xl sm:text-2xl text-white/90 mb-8">
               Your journey to better health starts here
