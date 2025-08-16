@@ -54,6 +54,7 @@ const Footer = () => {
     {
       title: 'Resources',
       links: [
+        { name: 'Welcome', href: '/welcome' },
         { name: 'Help Center', href: '/support/help-center' },
         { name: 'Documentation', href: '/support/documentation' },
         { name: 'Status', href: '/support/status' },
@@ -85,13 +86,18 @@ const Footer = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-6 gap-6 sm:gap-8">
           {/* Company Info */}
           <div className="xl:col-span-2">
-            <Link href="/" className="flex items-center space-x-2 mb-4 sm:mb-6">
-              <img 
-                src="/images/blog/Annita's Logo.png" 
-                alt="Annita Logo" 
-                className="w-8 h-8 sm:w-10 sm:h-10"
-              />
-              <span className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-primary-500 to-secondary-500 bg-clip-text text-transparent">Annita</span>
+            <Link href="/" className="flex items-center space-x-2 sm:space-x-3 mb-4 sm:mb-6">
+              <div className="relative">
+                <div className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+                  <img 
+                    src="/images/blog/Annita's Logo.png" 
+                    alt="Annita Logo" 
+                    className="w-5 h-5 sm:w-6 sm:h-6 lg:w-8 lg:h-8 rounded-full object-cover"
+                  />
+                </div>
+                <div className="absolute -inset-1 bg-gradient-to-r from-primary-400 to-secondary-400 rounded-full blur opacity-20 group-hover:opacity-30 transition-opacity duration-300"></div>
+              </div>
+              <span className="text-lg sm:text-xl lg:text-2xl font-bold bg-gradient-to-r from-primary-500 to-secondary-500 bg-clip-text text-transparent dark:text-white">Annita</span>
             </Link>
             <p className="text-gray-400 mb-4 sm:mb-6 leading-relaxed text-sm sm:text-base">
               Africa's first all-in-one digital platform, empowering MSMEs with integrated 
