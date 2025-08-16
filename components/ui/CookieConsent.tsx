@@ -57,37 +57,37 @@ const CookieConsent = () => {
       />
       
       {/* Cookie Popup */}
-      <div className="fixed bottom-2 left-2 right-2 sm:bottom-4 sm:left-4 sm:right-4 lg:left-8 lg:right-8 lg:bottom-8 z-50">
-        <div className="bg-white dark:bg-gray-800 rounded-2xl sm:rounded-3xl shadow-2xl border border-gray-200 dark:border-gray-700 max-w-2xl mx-auto">
+      <div className="fixed bottom-0 left-0 right-0 sm:bottom-4 sm:left-4 sm:right-4 lg:left-8 lg:right-8 lg:bottom-8 z-50">
+        <div className="bg-white dark:bg-gray-800 rounded-t-2xl sm:rounded-2xl lg:rounded-3xl shadow-2xl border border-gray-200 dark:border-gray-700 max-w-2xl mx-auto">
           {/* Header */}
-          <div className="flex items-start justify-between p-4 sm:p-6 border-b border-gray-100 dark:border-gray-700">
+          <div className="flex items-start justify-between p-3 sm:p-4 lg:p-6 border-b border-gray-100 dark:border-gray-700">
             <div className="flex items-center space-x-2 sm:space-x-3">
-              <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center">
-                <Cookie className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
+              <div className="w-6 h-6 sm:w-8 sm:h-8 lg:w-10 lg:h-10 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-lg sm:rounded-xl flex items-center justify-center">
+                <Cookie className="w-3 h-3 sm:w-4 sm:h-4 lg:w-5 lg:h-5 text-white" />
               </div>
               <div>
-                <h3 className="text-base sm:text-lg font-bold text-orange-600 dark:text-orange-400">We Value Your Privacy</h3>
-                <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">Help us improve your experience</p>
+                <h3 className="text-sm sm:text-base lg:text-lg font-bold text-orange-600 dark:text-orange-400">We Value Your Privacy</h3>
+                <p className="text-xs text-gray-600 dark:text-gray-400">Help us improve your experience</p>
               </div>
             </div>
-            <button
-              onClick={() => setIsVisible(false)}
-              className="p-1.5 sm:p-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition-colors duration-200"
-            >
-              <X className="w-4 h-4 sm:w-5 sm:h-5 text-gray-500 dark:text-gray-400" />
-            </button>
+                          <button
+                onClick={() => setIsVisible(false)}
+                className="p-1 sm:p-1.5 lg:p-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition-colors duration-200"
+              >
+                <X className="w-3 h-3 sm:w-4 sm:h-4 lg:w-5 lg:h-5 text-gray-500 dark:text-gray-400" />
+              </button>
           </div>
 
           {/* Content */}
-          <div className="p-4 sm:p-6">
-            <p className="text-sm sm:text-base text-gray-700 dark:text-gray-300 mb-4">
+          <div className="p-3 sm:p-4 lg:p-6">
+            <p className="text-xs sm:text-sm lg:text-base text-gray-700 dark:text-gray-300 mb-3 sm:mb-4">
               We use cookies and similar technologies to provide you with the best possible experience 
               on our website. This includes essential cookies for functionality, analytics cookies to 
               understand how you use our site, and marketing cookies to show you relevant content.
             </p>
 
             {/* Cookie Categories */}
-            <div className="space-y-2 sm:space-y-3 mb-4 sm:mb-6">
+            <div className="space-y-2 sm:space-y-3 mb-3 sm:mb-4 lg:mb-6">
               <div className="flex items-center justify-between p-2 sm:p-3 bg-blue-50 dark:bg-blue-900/20 rounded-lg">
                 <div className="flex items-center space-x-2 sm:space-x-3">
                   <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-blue-600 dark:text-blue-400" />
@@ -123,7 +123,7 @@ const CookieConsent = () => {
             </div>
 
             {/* Learn More Link */}
-            <div className="mb-4 sm:mb-6">
+            <div className="mb-3 sm:mb-4 lg:mb-6">
               <Link 
                 href="/cookies" 
                 className="inline-flex items-center space-x-2 text-blue-600 hover:text-blue-700 font-medium text-xs sm:text-sm"
@@ -134,7 +134,7 @@ const CookieConsent = () => {
             </div>
 
             {/* Action Buttons */}
-            <div className="flex flex-col sm:flex-row gap-2 sm:gap-3">
+            <div className="flex flex-col gap-2 sm:flex-row sm:gap-3">
               <Button
                 variant="gradient"
                 size="md"
@@ -162,7 +162,7 @@ const CookieConsent = () => {
             </div>
 
             {/* Additional Info */}
-            <div className="mt-3 sm:mt-4 text-xs text-gray-500 dark:text-gray-400 text-center">
+            <div className="mt-2 sm:mt-3 lg:mt-4 text-xs text-gray-500 dark:text-gray-400 text-center">
               By clicking "Accept All Cookies", you consent to our use of cookies as described in our{' '}
               <Link href="/cookies" className="text-blue-600 hover:underline">
                 Cookie Policy

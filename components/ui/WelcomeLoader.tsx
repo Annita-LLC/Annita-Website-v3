@@ -20,15 +20,6 @@ const WelcomeLoader = ({ onComplete }: WelcomeLoaderProps) => {
   useEffect(() => {
     if (!isClient) return
 
-    // Check if user has seen the welcome screen before
-    const hasSeenWelcome = localStorage.getItem('annita-welcome-seen')
-    
-    if (hasSeenWelcome) {
-      // Skip welcome screen if user has seen it before
-      onComplete()
-      return
-    }
-
     // Show welcome screen after a short delay
     const showTimer = setTimeout(() => {
       setShowWelcome(true)
@@ -47,7 +38,6 @@ const WelcomeLoader = ({ onComplete }: WelcomeLoaderProps) => {
 
     // Complete loading after 12 seconds
     const timer = setTimeout(() => {
-      localStorage.setItem('annita-welcome-seen', 'true')
       onComplete()
     }, 12000) // 12 seconds total
 
