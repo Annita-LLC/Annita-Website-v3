@@ -57,46 +57,46 @@ const CookieConsent = () => {
       />
       
       {/* Cookie Popup */}
-      <div className="fixed inset-0 flex items-center justify-center p-4 z-50">
-        <div className="bg-white dark:bg-gray-800 rounded-2xl sm:rounded-3xl shadow-2xl border border-gray-200 dark:border-gray-700 max-w-md sm:max-w-lg lg:max-w-2xl w-full mx-auto">
+      <div className="fixed inset-0 flex items-center justify-center p-3 sm:p-4 z-50">
+        <div className="bg-white dark:bg-gray-800 rounded-xl sm:rounded-2xl lg:rounded-3xl shadow-2xl border border-gray-200 dark:border-gray-700 max-w-sm sm:max-w-md lg:max-w-lg w-full mx-auto">
           {/* Header */}
-          <div className="flex items-start justify-between p-3 sm:p-4 lg:p-6 border-b border-gray-100 dark:border-gray-700">
+          <div className="flex items-start justify-between p-2 sm:p-3 lg:p-4 border-b border-gray-100 dark:border-gray-700">
             <div className="flex items-center space-x-2 sm:space-x-3">
-              <div className="w-6 h-6 sm:w-8 sm:h-8 lg:w-10 lg:h-10 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-lg sm:rounded-xl flex items-center justify-center">
-                <Cookie className="w-3 h-3 sm:w-4 sm:h-4 lg:w-5 lg:h-5 text-white" />
+              <div className="w-5 h-5 sm:w-6 sm:h-6 lg:w-8 lg:h-8 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-lg sm:rounded-xl flex items-center justify-center">
+                <Cookie className="w-2.5 h-2.5 sm:w-3 sm:h-3 lg:w-4 lg:h-4 text-white" />
               </div>
               <div>
-                <h3 className="text-sm sm:text-base lg:text-lg font-bold text-orange-600 dark:text-orange-400">We Value Your Privacy</h3>
+                <h3 className="text-xs sm:text-sm lg:text-base font-bold text-orange-600 dark:text-orange-400">We Value Your Privacy</h3>
                 <p className="text-xs text-gray-600 dark:text-gray-400">Help us improve your experience</p>
               </div>
             </div>
-                          <button
-                onClick={() => setIsVisible(false)}
-                className="p-1 sm:p-1.5 lg:p-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition-colors duration-200"
-              >
-                <X className="w-3 h-3 sm:w-4 sm:h-4 lg:w-5 lg:h-5 text-gray-500 dark:text-gray-400" />
-              </button>
+                                               <button
+                       onClick={() => setIsVisible(false)}
+                       className="p-1 sm:p-1.5 lg:p-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition-colors duration-200"
+                     >
+                       <X className="w-2.5 h-2.5 sm:w-3 sm:h-3 lg:w-4 lg:h-4 text-gray-500 dark:text-gray-400" />
+                     </button>
           </div>
 
           {/* Content */}
-          <div className="p-3 sm:p-4 lg:p-6">
-            <p className="text-xs sm:text-sm lg:text-base text-gray-700 dark:text-gray-300 mb-3 sm:mb-4">
+          <div className="p-2 sm:p-3 lg:p-4">
+            <p className="text-xs sm:text-sm lg:text-base text-gray-700 dark:text-gray-300 mb-2 sm:mb-3">
               We use cookies and similar technologies to provide you with the best possible experience 
               on our website. This includes essential cookies for functionality, analytics cookies to 
               understand how you use our site, and marketing cookies to show you relevant content.
             </p>
 
             {/* Cookie Categories */}
-            <div className="space-y-2 sm:space-y-3 mb-3 sm:mb-4 lg:mb-6">
+            <div className="space-y-2 sm:space-y-3 mb-2 sm:mb-3 lg:mb-4">
               <div className="flex items-center justify-between p-2 sm:p-3 bg-blue-50 dark:bg-blue-900/20 rounded-lg">
                 <div className="flex items-center space-x-2 sm:space-x-3">
-                  <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-blue-600 dark:text-blue-400" />
+                  <CheckCircle className="w-3 h-3 sm:w-4 sm:h-4 text-blue-600 dark:text-blue-400" />
                   <div>
-                    <div className="text-sm sm:text-base font-medium text-gray-900 dark:text-white">Essential Cookies</div>
-                    <div className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">Required for website functionality</div>
+                    <div className="text-xs sm:text-sm font-medium text-gray-900 dark:text-white">Essential Cookies</div>
+                    <div className="text-xs text-gray-600 dark:text-gray-400">Required for website functionality</div>
                   </div>
                 </div>
-                <div className="text-xs sm:text-sm text-gray-500 dark:text-gray-400">Always Active</div>
+                <div className="text-xs text-gray-500 dark:text-gray-400">Always Active</div>
               </div>
 
               <div className="flex items-center justify-between p-2 sm:p-3 bg-gray-50 dark:bg-gray-700 rounded-lg">

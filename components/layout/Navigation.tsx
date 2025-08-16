@@ -61,6 +61,7 @@ const Navigation = () => {
       href: '#',
       dropdown: [
         { name: 'AnnitaPay', href: '/services/annitapay', icon: CreditCard, description: 'Secure digital payments' },
+        { name: 'Annita AI', href: '/ai/personal', icon: Zap, description: 'Personal AI assistant' },
         { name: 'Shopping', href: '/services/shopping', icon: ShoppingCart, description: 'E-commerce platform' },
         { name: 'Entertainment', href: '/services/entertainment', icon: Play, description: 'Entertainment & media' },
         { name: 'Health', href: '/services/health', icon: Heart, description: 'Health & wellness services' },
@@ -147,7 +148,7 @@ const Navigation = () => {
                   </div>
                   <div className="absolute -inset-1 bg-gradient-to-r from-primary-400 to-secondary-400 rounded-full blur opacity-20 group-hover:opacity-30 transition-opacity duration-300"></div>
                 </div>
-                <span className="text-lg sm:text-xl lg:text-2xl font-bold bg-gradient-to-r from-primary-500 to-secondary-500 bg-clip-text text-transparent dark:text-white">Annita</span>
+                <span className="text-lg sm:text-xl lg:text-2xl font-bold text-orange-500 dark:text-orange-400">Annita</span>
               </Link>
 
             {/* Desktop Navigation */}
@@ -256,7 +257,7 @@ const Navigation = () => {
                       alt="Annita Logo" 
                       className="w-6 h-6 sm:w-8 sm:h-8"
                     />
-                    <span className="text-lg sm:text-xl font-bold bg-gradient-to-r from-primary-500 to-secondary-500 bg-clip-text text-transparent">Annita</span>
+                    <span className="text-lg sm:text-xl font-bold text-orange-500 dark:text-orange-400">Annita</span>
                   </Link>
                   <div className="flex items-center space-x-2">
                     {/* Dark Mode Toggle */}
