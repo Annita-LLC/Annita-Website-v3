@@ -245,30 +245,30 @@ const DocumentationPage = () => {
           </div>
 
           <div className="max-w-4xl mx-auto">
-            <div className="bg-white rounded-3xl p-8 shadow-soft">
-              <div className="space-y-4">
+            <div className="bg-white rounded-3xl p-4 sm:p-6 lg:p-8 shadow-soft">
+              <div className="space-y-3 sm:space-y-4">
                 {apiEndpoints.map((endpoint, index) => (
-                  <div key={index} className="flex items-center justify-between p-4 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors cursor-pointer group">
-                    <div className="flex items-center space-x-4">
-                      <div className={`px-3 py-1 rounded-full text-sm font-medium ${
+                  <div key={index} className="flex flex-col sm:flex-row sm:items-center sm:justify-between p-3 sm:p-4 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors cursor-pointer group">
+                    <div className="flex items-start sm:items-center space-x-3 sm:space-x-4 mb-3 sm:mb-0">
+                      <div className={`px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-medium flex-shrink-0 ${
                         endpoint.method === 'GET' ? 'bg-green-100 text-green-600' :
                         endpoint.method === 'POST' ? 'bg-blue-100 text-blue-600' :
                         'bg-gray-100 text-gray-600'
                       }`}>
                         {endpoint.method}
                       </div>
-                      <div>
-                        <div className="font-mono text-gray-900">{endpoint.endpoint}</div>
-                        <div className="text-sm text-gray-600">{endpoint.description}</div>
+                      <div className="min-w-0 flex-1">
+                        <div className="font-mono text-gray-900 text-sm sm:text-base break-all sm:break-words">{endpoint.endpoint}</div>
+                        <div className="text-xs sm:text-sm text-gray-600 mt-1">{endpoint.description}</div>
                       </div>
                     </div>
-                    <div className="flex items-center space-x-3">
-                      <span className={`px-2 py-1 rounded-full text-xs ${
+                    <div className="flex items-center space-x-2 sm:space-x-3">
+                      <span className={`px-2 py-1 rounded-full text-xs flex-shrink-0 ${
                         endpoint.status === 'Stable' ? 'bg-green-100 text-green-600' : 'bg-yellow-100 text-yellow-600'
                       }`}>
                         {endpoint.status}
                       </span>
-                      <ArrowRight className="w-4 h-4 text-gray-400 group-hover:text-blue-600 group-hover:translate-x-1 transition-all duration-300" />
+                      <ArrowRight className="w-4 h-4 text-gray-400 group-hover:text-blue-600 group-hover:translate-x-1 transition-all duration-300 flex-shrink-0" />
                     </div>
                   </div>
                 ))}
