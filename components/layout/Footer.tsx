@@ -10,7 +10,8 @@ import {
   Mail,
   Phone,
   MapPin,
-  Heart
+  Heart,
+  Link
 } from 'lucide-react'
 
 const Footer = () => {
@@ -77,7 +78,8 @@ const Footer = () => {
     { name: 'WhatsApp', icon: MessageCircle, href: 'https://wa.me/231775057227' },
     { name: 'Instagram', icon: Instagram, href: 'https://instagram.com/annita_africa' },
     { name: 'LinkedIn', icon: Linkedin, href: 'https://linkedin.com/company/annita-africa' },
-    { name: 'YouTube', icon: Youtube, href: 'https://youtube.com/@annita-africa' }
+    { name: 'YouTube', icon: Youtube, href: 'https://youtube.com/@annita-africa' },
+    { name: 'Linktree', icon: Link, href: 'https://linktr.ee/annitastorellc' }
   ]
 
   const contactInfo = [
