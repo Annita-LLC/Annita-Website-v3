@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef } from 'react'
-import { Building, Handshake, Users, Target, Award, Globe, DollarSign, BookOpen } from 'lucide-react'
+import { Building, Users, Target, Award, Globe, DollarSign, BookOpen, Heart } from 'lucide-react'
 
 const PartnerCollaboration = () => {
   const ref = useRef(null)
@@ -126,7 +126,7 @@ const PartnerCollaboration = () => {
                   description: "See immediate results in youth development and community growth"
                 },
                 {
-                  icon: Handshake,
+                  icon: Heart,
                   title: "Strategic Partnership",
                   description: "Build long-term relationships with Annita LLC and future leaders"
                 },
