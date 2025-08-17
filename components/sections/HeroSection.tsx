@@ -47,6 +47,7 @@ import {
   Watch
 } from 'lucide-react'
 import Button from '@/components/ui/Button'
+import PhoneMockup from '@/components/ui/PhoneMockup'
 
 const HeroSection = () => {
   const [currentFeature, setCurrentFeature] = useState(0)
@@ -252,14 +253,15 @@ const HeroSection = () => {
               </motion.div>
             </motion.div>
 
-            {/* Right Column - Advanced Phone Mockup */}
+            {/* Right Column - Modern Phone Mockup */}
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
               className="relative"
             >
-              {/* Phone Frame with Advanced Design */}
+              <PhoneMockup />
+            </motion.div>
               <div className="relative mx-auto w-48 sm:w-56 md:w-64 lg:w-72 xl:w-80 h-[400px] sm:h-[500px] md:h-[560px] lg:h-[630px] xl:h-[700px] bg-gradient-to-b from-gray-900 via-gray-800 to-black rounded-[1.5rem] sm:rounded-[2rem] md:rounded-[2.5rem] lg:rounded-[3rem] p-1.5 sm:p-2 md:p-2.5 lg:p-3 shadow-2xl">
                 {/* Phone Bezel */}
                 <div className="absolute inset-0 bg-gradient-to-br from-gray-800 to-gray-900 rounded-[1.5rem] sm:rounded-[2rem] md:rounded-[2.5rem] lg:rounded-[3rem] p-1">
