@@ -112,9 +112,10 @@ const Navigation = () => {
       name: 'Support', 
       href: '#',
       dropdown: [
-        { name: 'Help Center', href: '/support/help-center', icon: HelpCircle, description: 'Get help and support' },
+        { name: 'Help Center', href: '/help', icon: HelpCircle, description: 'FAQ and help articles' },
+        { name: 'System Status', href: '/status', icon: Activity, description: 'Service status and uptime' },
+        { name: 'Support', href: '/support', icon: HelpCircle, description: 'Get help and support' },
         { name: 'Documentation', href: '/support/documentation', icon: FileText, description: 'Developer documentation' },
-        { name: 'Status', href: '/support/status', icon: BarChart3, description: 'System status' },
         { name: 'Report Issues', href: '/support/report-issues', icon: HelpCircle, description: 'Report bugs and issues' },
         { name: 'Contact Support', href: '/support/contact-support', icon: Mail, description: 'Get in touch with us' },
         { name: 'Contact Sales', href: '/contact-sales', icon: Phone, description: 'Talk to our business development team' },
