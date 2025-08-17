@@ -378,41 +378,7 @@ const FeaturesSection = () => {
           </div>
         </motion.div>
 
-        {/* CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 2.2 }}
-          className="text-center"
-        >
-          <div className="bg-gradient-to-r from-primary-600 to-secondary-600 rounded-3xl p-8 lg:p-12 text-white">
-            <h3 className="text-2xl lg:text-3xl font-bold text-orange-600 mb-4">
-              Ready to Transform Your Business?
-            </h3>
-            <p className="text-lg text-white/90 max-w-3xl mx-auto mb-8">
-              Join thousands of MSMEs already using Annita to grow their business 
-              and reach new customers across Africa.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button
-                variant="gradient"
-                size="xl"
-                icon={Play}
-                className="text-lg font-bold shadow-2xl hover:shadow-primary-500/25 transform hover:-translate-y-1 transition-all duration-300"
-              >
-                Get Started Free
-              </Button>
-              <Button
-                variant="glass"
-                size="xl"
-                icon={Download}
-                className="text-lg font-bold backdrop-blur-xl shadow-2xl hover:shadow-white/10 transform hover:-translate-y-1 transition-all duration-300"
-              >
-                Download App
-              </Button>
-            </div>
-          </div>
-        </motion.div>
+
       </div>
     </section>
   )
