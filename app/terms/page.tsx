@@ -18,7 +18,28 @@ const TermsPage = () => {
       <SEOHead
         title="Terms of Service - Annita LLC"
         description="Read Annita's terms of service to understand your rights and obligations when using our platform and services."
-        keywords="terms of service, terms and conditions, user agreement, Annita, legal"
+        keywords={[
+          'terms of service',
+          'terms and conditions',
+          'user agreement',
+          'Annita',
+          'legal',
+          'legal terms',
+          'service agreement',
+          'user terms',
+          'platform terms',
+          'business terms',
+          'digital terms',
+          'online agreement',
+          'website terms',
+          'app terms',
+          'service conditions',
+          'user obligations',
+          'legal framework',
+          'business agreement',
+          'digital agreement',
+          'platform agreement'
+        ]}
         canonical="/terms"
         ogImage="/images/terms-of-service.jpg"
       />

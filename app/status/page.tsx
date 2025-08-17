@@ -173,7 +173,38 @@ const StatusPage = () => {
       <SEOHead
         title="System Status - Annita LLC"
         description="Check the real-time status of Annita's services, uptime, and any ongoing incidents."
-        keywords="status, uptime, system health, incidents, monitoring, Annita"
+        keywords={[
+          'status',
+          'uptime',
+          'system health',
+          'incidents',
+          'monitoring',
+          'Annita',
+          'system status',
+          'service status',
+          'uptime monitoring',
+          'system monitoring',
+          'service monitoring',
+          'incident monitoring',
+          'system incidents',
+          'service incidents',
+          'system outages',
+          'service outages',
+          'system downtime',
+          'service downtime',
+          'system availability',
+          'service availability',
+          'system reliability',
+          'service reliability',
+          'system performance',
+          'service performance',
+          'system metrics',
+          'service metrics',
+          'system alerts',
+          'service alerts',
+          'system notifications',
+          'service notifications'
+        ]}
         canonical="/status"
         ogImage="/images/status-page.jpg"
       />

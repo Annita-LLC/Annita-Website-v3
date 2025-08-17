@@ -214,7 +214,48 @@ const AwardsPage = () => {
       <SEOHead
         title="Awards & Recognition - Annita LLC"
         description="Discover Annita's achievements, awards, and recognition for our innovative contributions to Africa's digital transformation."
-        keywords="awards, recognition, achievements, Annita, Africa, tech awards, innovation awards"
+        keywords={[
+          'awards',
+          'recognition',
+          'achievements',
+          'Annita',
+          'Africa',
+          'tech awards',
+          'innovation awards',
+          'business awards',
+          'community awards',
+          'digital transformation',
+          'fintech awards',
+          'startup awards',
+          'technology recognition',
+          'African tech',
+          'Liberia awards',
+          'West Africa',
+          'digital innovation',
+          'business excellence',
+          'community impact',
+          'youth empowerment',
+          'technology leadership',
+          'industry recognition',
+          'achievement awards',
+          'excellence awards',
+          'innovation recognition',
+          'business success',
+          'technology advancement',
+          'digital excellence',
+          'community development',
+          'social impact',
+          'entrepreneurship awards',
+          'MSME recognition',
+          'African innovation',
+          'tech ecosystem',
+          'digital economy',
+          'business growth',
+          'technology adoption',
+          'digital inclusion',
+          'economic development',
+          'sustainable technology'
+        ]}
         canonical="/awards"
         ogImage="/images/awards/best-fintech-2024.jpg"
       />

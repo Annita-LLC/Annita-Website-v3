@@ -223,7 +223,38 @@ const TeamPage = () => {
       <SEOHead
         title="Our Team - Annita LLC"
         description="Meet the talented team behind Annita - passionate individuals working to transform Africa's digital landscape."
-        keywords="team, leadership, employees, Annita, Africa, tech company, digital transformation"
+        keywords={[
+          'team',
+          'leadership',
+          'employees',
+          'Annita',
+          'Africa',
+          'tech company',
+          'digital transformation',
+          'company team',
+          'leadership team',
+          'executive team',
+          'management team',
+          'engineering team',
+          'business team',
+          'community team',
+          'African tech',
+          'Liberia tech',
+          'West Africa',
+          'digital leadership',
+          'tech leadership',
+          'business leadership',
+          'team profiles',
+          'company culture',
+          'workplace',
+          'career opportunities',
+          'job openings',
+          'team members',
+          'staff profiles',
+          'company employees',
+          'tech professionals',
+          'digital experts'
+        ]}
         canonical="/team"
         ogImage="/images/team/sarah-johnson.jpg"
       />

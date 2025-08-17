@@ -291,7 +291,45 @@ const GalleryPage = () => {
       <SEOHead
         title="Gallery - Annita LLC"
         description="Explore our collection of images, videos, and media showcasing Annita's journey, team, events, and achievements."
-        keywords="gallery, photos, videos, events, team, office, Annita, Liberia, tech company"
+        keywords={[
+          'gallery',
+          'photos',
+          'videos',
+          'events',
+          'team',
+          'office',
+          'Annita',
+          'Liberia',
+          'tech company',
+          'company photos',
+          'event photos',
+          'team photos',
+          'office photos',
+          'company videos',
+          'event videos',
+          'team videos',
+          'office videos',
+          'company media',
+          'event media',
+          'team media',
+          'office media',
+          'company gallery',
+          'event gallery',
+          'team gallery',
+          'office gallery',
+          'company images',
+          'event images',
+          'team images',
+          'office images',
+          'company pictures',
+          'event pictures',
+          'team pictures',
+          'office pictures',
+          'company footage',
+          'event footage',
+          'team footage',
+          'office footage'
+        ]}
         canonical="/gallery"
         ogImage="/images/gallery/launch-event.jpg"
         structuredData={structuredData}

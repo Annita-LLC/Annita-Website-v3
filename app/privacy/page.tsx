@@ -18,7 +18,38 @@ const PrivacyPage = () => {
       <SEOHead
         title="Privacy Policy - Annita LLC"
         description="Learn how Annita collects, uses, and protects your personal information. Read our comprehensive privacy policy."
-        keywords="privacy policy, data protection, personal information, GDPR, Annita, privacy"
+        keywords={[
+          'privacy policy',
+          'data protection',
+          'personal information',
+          'GDPR',
+          'Annita',
+          'privacy',
+          'data privacy',
+          'personal data',
+          'data security',
+          'privacy protection',
+          'data handling',
+          'personal information protection',
+          'privacy rights',
+          'data rights',
+          'privacy compliance',
+          'data compliance',
+          'privacy regulations',
+          'data regulations',
+          'privacy laws',
+          'data laws',
+          'privacy practices',
+          'data practices',
+          'privacy standards',
+          'data standards',
+          'privacy guidelines',
+          'data guidelines',
+          'privacy principles',
+          'data principles',
+          'privacy framework',
+          'data framework'
+        ]}
         canonical="/privacy"
         ogImage="/images/privacy-policy.jpg"
       />

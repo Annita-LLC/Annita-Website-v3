@@ -227,7 +227,38 @@ const HelpPage = () => {
       <SEOHead
         title="Help Center - Annita LLC"
         description="Get help with Annita services. Find answers to frequently asked questions, contact support, and learn how to use our platform."
-        keywords="help, support, FAQ, customer service, Annita, assistance"
+        keywords={[
+          'help',
+          'support',
+          'FAQ',
+          'customer service',
+          'Annita',
+          'assistance',
+          'help center',
+          'customer support',
+          'technical support',
+          'user support',
+          'product support',
+          'service help',
+          'troubleshooting',
+          'how to',
+          'user guide',
+          'documentation',
+          'support articles',
+          'help articles',
+          'customer assistance',
+          'user assistance',
+          'product help',
+          'service assistance',
+          'technical assistance',
+          'online help',
+          'help desk',
+          'support desk',
+          'customer care',
+          'user care',
+          'product care',
+          'service care'
+        ]}
         canonical="/help"
         ogImage="/images/help-center.jpg"
       />

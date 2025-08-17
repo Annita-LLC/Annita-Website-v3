@@ -151,7 +151,38 @@ const BlogPage = () => {
       <SEOHead
         title="Blog - Annita LLC"
         description="Insights, updates, and stories from Annita - Africa's leading digital platform."
-        keywords="blog, articles, tech news, business insights, Africa, digital transformation"
+        keywords={[
+          'blog',
+          'articles',
+          'tech news',
+          'business insights',
+          'Africa',
+          'digital transformation',
+          'blog posts',
+          'tech articles',
+          'business articles',
+          'industry insights',
+          'technology insights',
+          'business news',
+          'tech insights',
+          'digital insights',
+          'African tech',
+          'Liberia tech',
+          'West Africa tech',
+          'business transformation',
+          'digital business',
+          'tech business',
+          'business technology',
+          'digital innovation',
+          'tech innovation',
+          'business innovation',
+          'digital trends',
+          'tech trends',
+          'business trends',
+          'digital strategy',
+          'tech strategy',
+          'business strategy'
+        ]}
         canonical="/blog"
         ogImage="/images/blog/digital-payments-africa.jpg"
       />

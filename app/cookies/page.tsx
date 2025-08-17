@@ -120,7 +120,38 @@ const CookiesPage = () => {
       <SEOHead
         title="Cookie Policy - Annita LLC"
         description="Learn about how Annita uses cookies and similar technologies to enhance your browsing experience."
-        keywords="cookie policy, cookies, tracking, privacy, Annita, data collection"
+        keywords={[
+          'cookie policy',
+          'cookies',
+          'tracking',
+          'privacy',
+          'Annita',
+          'data collection',
+          'cookie management',
+          'tracking cookies',
+          'analytics cookies',
+          'functional cookies',
+          'essential cookies',
+          'cookie consent',
+          'cookie preferences',
+          'cookie settings',
+          'cookie control',
+          'cookie opt-out',
+          'cookie opt-in',
+          'cookie banner',
+          'cookie notice',
+          'cookie information',
+          'cookie usage',
+          'cookie types',
+          'cookie categories',
+          'cookie duration',
+          'cookie storage',
+          'cookie deletion',
+          'cookie blocking',
+          'cookie acceptance',
+          'cookie rejection',
+          'cookie compliance'
+        ]}
         canonical="/cookies"
         ogImage="/images/cookie-policy.jpg"
       />
