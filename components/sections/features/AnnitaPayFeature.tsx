@@ -17,7 +17,7 @@ import {
   Users,
   Activity,
   Send,
-  Receive,
+  Download,
   Wallet,
   Banknote,
   Smartphone,
@@ -231,7 +231,7 @@ const AnnitaPayFeature = () => {
                 Send Money
               </button>
               <button className="bg-gray-100 rounded-lg p-3 text-center text-sm font-medium hover:bg-gray-200 transition-colors flex items-center justify-center">
-                <Receive className="w-4 h-4 mr-2" />
+                <Download className="w-4 h-4 mr-2" />
                 Request
               </button>
             </div>
@@ -252,7 +252,7 @@ const AnnitaPayFeature = () => {
                       transaction.type === 'received' ? 'bg-green-100' : 'bg-blue-100'
                     }`}>
                       {transaction.type === 'received' ? (
-                        <Receive className="w-4 h-4 text-green-600" />
+                        <Download className="w-4 h-4 text-green-600" />
                       ) : (
                         <Send className="w-4 h-4 text-blue-600" />
                       )}

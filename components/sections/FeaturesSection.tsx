@@ -29,8 +29,7 @@ import {
   Rocket,
   Heart,
   Eye,
-  Activity,
-  Pulse
+  Activity
 } from 'lucide-react'
 import Button from '@/components/ui/Button'
 import MarketplaceFeature from './features/MarketplaceFeature'
