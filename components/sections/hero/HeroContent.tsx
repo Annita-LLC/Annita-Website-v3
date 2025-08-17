@@ -115,54 +115,7 @@ const HeroContent = () => {
         </motion.button>
       </motion.div>
 
-              {/* Trust Indicators */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.6 }}
-          className="flex flex-col sm:flex-row items-center space-y-3 sm:space-y-0 sm:space-x-6 lg:space-x-8 pt-6 sm:pt-8"
-        >
-        {/* Rating */}
-        <div className="flex items-center space-x-2">
-          <div className="flex space-x-1">
-            {[...Array(5)].map((_, i) => (
-              <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
-            ))}
-          </div>
-          <div className="text-sm text-gray-600">
-            <span className="font-semibold">4.9/5</span> from 10,000+ users
-          </div>
-        </div>
 
-        {/* Awards */}
-        <div className="flex items-center space-x-2">
-          <Award className="w-5 h-5 text-orange-500" />
-          <span className="text-sm text-gray-600">Best Digital Platform 2024</span>
-        </div>
-
-        {/* Security */}
-        <div className="flex items-center space-x-2">
-          <Shield className="w-5 h-5 text-green-500" />
-          <span className="text-sm text-gray-600">Bank-level Security</span>
-        </div>
-      </motion.div>
-
-      {/* Live Activity Indicator */}
-      <motion.div
-        initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.6, delay: 0.7 }}
-        className="flex items-center space-x-3 bg-green-50 border border-green-200 rounded-full px-4 py-2 w-fit"
-      >
-        <motion.div
-          animate={{ scale: [1, 1.2, 1] }}
-          transition={{ duration: 2, repeat: Infinity }}
-          className="w-2 h-2 bg-green-500 rounded-full"
-        />
-        <span className="text-sm text-green-700 font-medium">
-          <span className="font-bold">1,247</span> people using Annita right now
-        </span>
-      </motion.div>
     </div>
   )
 }

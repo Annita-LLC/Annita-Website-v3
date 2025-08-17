@@ -27,8 +27,6 @@ import {
 import Button from '@/components/ui/Button'
 import HeroContent from './HeroContent'
 import HeroPhone from './HeroPhone'
-import HeroStats from './HeroStats'
-import HeroFeatures from './HeroFeatures'
 
 const HeroSection = () => {
   const ref = useRef(null)
@@ -92,25 +90,7 @@ const HeroSection = () => {
           </motion.div>
         </div>
 
-        {/* Bottom Stats Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="mt-16 lg:mt-24"
-        >
-          <HeroStats />
-        </motion.div>
 
-        {/* Features Preview */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          className="mt-16 lg:mt-24"
-        >
-          <HeroFeatures />
-        </motion.div>
       </div>
 
 
