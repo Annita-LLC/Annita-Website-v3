@@ -276,7 +276,8 @@ const GalleryPage = () => {
     ? galleryItems 
     : galleryItems.filter(item => item.category === activeFilter)
 
-  const getPlatformIcon = (platform: string) => {
+  const getPlatformIcon = (platform?: string) => {
+    if (!platform) return null
     switch (platform) {
       case 'youtube': return <Youtube className="w-5 h-5" />
       case 'instagram': return <Instagram className="w-5 h-5" />
@@ -442,9 +443,11 @@ const GalleryPage = () => {
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowFullScreen
                           ></iframe>
-                          <div className="absolute top-4 right-4 bg-white/90 rounded-full p-2">
-                            {getPlatformIcon(item.platform)}
-                          </div>
+                          {item.platform && (
+                            <div className="absolute top-4 right-4 bg-white/90 rounded-full p-2">
+                              {getPlatformIcon(item.platform)}
+                            </div>
+                          )}
                         </div>
                       )}
                       
@@ -496,9 +499,11 @@ const GalleryPage = () => {
                               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                               allowFullScreen
                             ></iframe>
-                            <div className="absolute top-4 right-4 bg-white/90 rounded-full p-2">
-                              {getPlatformIcon(item.platform)}
-                            </div>
+                            {item.platform && (
+                              <div className="absolute top-4 right-4 bg-white/90 rounded-full p-2">
+                                {getPlatformIcon(item.platform)}
+                              </div>
+                            )}
                           </div>
                         )}
                       </div>
