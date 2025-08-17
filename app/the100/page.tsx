@@ -114,6 +114,7 @@ const The100Page = () => {
               ].map((tab) => (
                 <button
                   key={tab.id}
+                  data-tab={tab.id}
                   onClick={() => setActiveTab(tab.id)}
                   className={`px-4 py-3 text-sm font-medium whitespace-nowrap transition-colors duration-200 ${
                     activeTab === tab.id

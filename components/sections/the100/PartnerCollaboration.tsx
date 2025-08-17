@@ -312,10 +312,35 @@ const PartnerCollaboration = () => {
               to become successful entrepreneurs and business leaders.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white text-orange-600 px-8 py-3 rounded-lg font-semibold hover:bg-orange-50 transition-colors duration-200">
+              <button 
+                className="bg-white text-orange-600 px-8 py-3 rounded-lg font-semibold hover:bg-orange-50 transition-colors duration-200"
+                onClick={() => {
+                  // Scroll to apply section, set active tab to apply, and switch to partner form
+                  const applyTab = document.querySelector('[data-tab="apply"]') as HTMLElement
+                  if (applyTab) {
+                    applyTab.click()
+                    // Wait a bit for the tab to switch, then set partner form
+                    setTimeout(() => {
+                      const partnerFormButton = document.querySelector('[data-form-type="partner"]') as HTMLElement
+                      if (partnerFormButton) {
+                        partnerFormButton.click()
+                      }
+                    }, 100)
+                  }
+                }}
+              >
                 Become a Partner
               </button>
-              <button className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-orange-600 transition-colors duration-200">
+              <button 
+                className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-orange-600 transition-colors duration-200"
+                onClick={() => {
+                  // Scroll to overview section
+                  const overviewTab = document.querySelector('[data-tab="overview"]') as HTMLElement
+                  if (overviewTab) {
+                    overviewTab.click()
+                  }
+                }}
+              >
                 Learn More
               </button>
             </div>

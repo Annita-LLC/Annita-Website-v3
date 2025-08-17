@@ -88,6 +88,14 @@ const HeroSection = () => {
               variant="primary"
               size="lg"
               className="w-full sm:w-auto text-lg px-8 py-4"
+              onClick={() => {
+                // Scroll to apply section and set active tab
+                const applyTab = document.querySelector('[data-tab="apply"]') as HTMLElement
+                if (applyTab) {
+                  applyTab.click()
+                  applyTab.scrollIntoView({ behavior: 'smooth' })
+                }
+              }}
             >
               <Zap className="w-5 h-5 mr-2" />
               Apply Now
@@ -96,6 +104,14 @@ const HeroSection = () => {
               variant="outline"
               size="lg"
               className="w-full sm:w-auto text-lg px-8 py-4"
+              onClick={() => {
+                // Scroll to partners section and set active tab
+                const partnersTab = document.querySelector('[data-tab="partners"]') as HTMLElement
+                if (partnersTab) {
+                  partnersTab.click()
+                  partnersTab.scrollIntoView({ behavior: 'smooth' })
+                }
+              }}
             >
               <Users className="w-5 h-5 mr-2" />
               Partner With Us

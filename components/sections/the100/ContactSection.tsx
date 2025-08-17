@@ -350,10 +350,28 @@ const ContactSection = () => {
               apply for the program, or explore partnership opportunities.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white text-orange-600 px-8 py-3 rounded-lg font-semibold hover:bg-orange-50 transition-colors duration-200">
+              <button 
+                className="bg-white text-orange-600 px-8 py-3 rounded-lg font-semibold hover:bg-orange-50 transition-colors duration-200"
+                onClick={() => {
+                  // Scroll to apply section and set active tab
+                  const applyTab = document.querySelector('[data-tab="apply"]') as HTMLElement
+                  if (applyTab) {
+                    applyTab.click()
+                  }
+                }}
+              >
                 Apply Now
               </button>
-              <button className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-orange-600 transition-colors duration-200">
+              <button 
+                className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-orange-600 transition-colors duration-200"
+                onClick={() => {
+                  // Scroll to partners section and set active tab
+                  const partnersTab = document.querySelector('[data-tab="partners"]') as HTMLElement
+                  if (partnersTab) {
+                    partnersTab.click()
+                  }
+                }}
+              >
                 Partner With Us
               </button>
             </div>

@@ -660,6 +660,7 @@ const ApplicationForms = () => {
               {formTypes.map((formType) => (
                 <button
                   key={formType.id}
+                  data-form-type={formType.id}
                   onClick={() => setActiveForm(formType.id)}
                   className={`p-6 rounded-xl border-2 transition-all duration-200 ${
                     activeForm === formType.id
