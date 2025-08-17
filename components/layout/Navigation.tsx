@@ -245,119 +245,216 @@ const Navigation = () => {
         </div>
       </nav>
 
-      {/* Mobile Menu */}
+      {/* Enhanced Mobile Menu */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, x: '100%' }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: '100%' }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
             className="fixed inset-0 z-50 lg:hidden"
           >
-            <div className="absolute inset-0 bg-black/20" onClick={() => setIsOpen(false)} />
-            <div className="absolute right-0 top-0 h-full w-[85vw] max-w-[320px] sm:w-80 bg-white dark:bg-gray-900 shadow-2xl">
+            {/* Backdrop with blur */}
+            <motion.div 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="absolute inset-0 bg-black/30 backdrop-blur-sm" 
+              onClick={() => setIsOpen(false)} 
+            />
+            
+            {/* Menu Container */}
+            <motion.div
+              initial={{ x: '100%', opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              exit={{ x: '100%', opacity: 0 }}
+              transition={{ duration: 0.4, ease: "easeOut" }}
+              className="absolute right-0 top-0 h-full w-[90vw] max-w-[380px] bg-white/95 dark:bg-gray-900/95 backdrop-blur-xl shadow-2xl border-l border-gray-200/50 dark:border-gray-700/50"
+            >
               <div className="flex flex-col h-full">
-                <div className="flex items-center justify-between p-4 sm:p-6 border-b border-gray-200 dark:border-gray-700">
-                  <Link href="/" className="flex items-center space-x-2" onClick={() => setIsOpen(false)}>
-                    <img 
-                      src="/images/blog/Annita's Logo.png" 
-                      alt="Annita Logo" 
-                      className="w-6 h-6 sm:w-8 sm:h-8"
-                    />
-                    <span className="text-lg sm:text-xl font-bold text-orange-500 dark:text-orange-400">Annita</span>
+                {/* Header */}
+                <motion.div 
+                  initial={{ y: -20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ delay: 0.1 }}
+                  className="flex items-center justify-between p-6 border-b border-gray-200/50 dark:border-gray-700/50"
+                >
+                  <Link href="/" className="flex items-center space-x-3" onClick={() => setIsOpen(false)}>
+                    <div className="relative">
+                      <div className="w-10 h-10 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center shadow-lg">
+                        <img 
+                          src="/images/blog/Annita's Logo.png" 
+                          alt="Annita Logo" 
+                          className="w-6 h-6"
+                        />
+                      </div>
+                      <div className="absolute -inset-1 bg-gradient-to-r from-orange-400 to-orange-500 rounded-xl blur opacity-30"></div>
+                    </div>
+                    <div>
+                      <span className="text-xl font-bold text-orange-500 dark:text-orange-400">Annita</span>
+                      <div className="text-xs text-gray-500">Digital Platform</div>
+                    </div>
                   </Link>
+                  
                   <div className="flex items-center space-x-2">
                     {/* Dark Mode Toggle */}
-                    <button
+                    <motion.button
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
                       onClick={toggleDarkMode}
-                      className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200"
+                      className="p-2 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-200"
                       aria-label="Toggle dark mode"
                     >
                       {isDarkMode ? (
-                        <Sun className="w-4 h-4 text-yellow-500" />
+                        <Sun className="w-5 h-5 text-yellow-500" />
                       ) : (
-                        <Moon className="w-4 h-4 text-gray-600 dark:text-gray-300" />
+                        <Moon className="w-5 h-5 text-gray-600 dark:text-gray-300" />
                       )}
-                    </button>
+                    </motion.button>
                     
-                    <button
+                    <motion.button
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
                       onClick={() => setIsOpen(false)}
-                      className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700"
+                      className="p-2 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-200"
                     >
                       <X className="w-5 h-5" />
-                    </button>
+                    </motion.button>
                   </div>
-                </div>
+                </motion.div>
 
-                <div className="flex-1 overflow-y-auto py-4 sm:py-6">
-                  <div className="px-4 sm:px-6 space-y-3 sm:space-y-4">
-                    {navItems.map((item) => (
-                      <div key={item.name}>
+                {/* Navigation Items */}
+                <div className="flex-1 overflow-y-auto py-6">
+                  <div className="px-6 space-y-2">
+                    {navItems.map((item, index) => (
+                      <motion.div
+                        key={item.name}
+                        initial={{ x: 50, opacity: 0 }}
+                        animate={{ x: 0, opacity: 1 }}
+                        transition={{ delay: 0.1 + index * 0.05 }}
+                      >
                         {item.dropdown ? (
-                          <div>
-                            <button
+                          <div className="mb-2">
+                            <motion.button
+                              whileHover={{ x: 5 }}
+                              whileTap={{ scale: 0.98 }}
                               onClick={() => toggleDropdown(item.name)}
-                              className="flex items-center justify-between w-full p-3 text-left hover:bg-gray-50 rounded-lg transition-colors duration-200"
+                              className="flex items-center justify-between w-full p-4 text-left hover:bg-gradient-to-r hover:from-orange-50 hover:to-orange-100 dark:hover:from-orange-900/20 dark:hover:to-orange-800/20 rounded-xl transition-all duration-300 group"
                             >
-                              <span className="font-medium">{item.name}</span>
-                              <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${
-                                activeDropdown === item.name ? 'rotate-180' : ''
+                              <div className="flex items-center space-x-3">
+                                <div className="w-8 h-8 bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                                  <span className="text-white text-sm font-bold">{item.name.charAt(0)}</span>
+                                </div>
+                                <span className="font-semibold text-gray-900 dark:text-white">{item.name}</span>
+                              </div>
+                              <ChevronDown className={`w-5 h-5 transition-all duration-300 ${
+                                activeDropdown === item.name ? 'rotate-180 text-orange-500' : 'text-gray-400'
                               }`} />
-                            </button>
+                            </motion.button>
+                            
                             <AnimatePresence>
                               {activeDropdown === item.name && (
                                 <motion.div
                                   initial={{ opacity: 0, height: 0 }}
                                   animate={{ opacity: 1, height: 'auto' }}
                                   exit={{ opacity: 0, height: 0 }}
-                                  transition={{ duration: 0.2 }}
-                                  className="ml-4 mt-2 space-y-2"
+                                  transition={{ duration: 0.3 }}
+                                  className="ml-4 mt-3 space-y-2"
                                 >
-                                  {item.dropdown.map((dropdownItem) => (
-                                    <Link
+                                  {item.dropdown.map((dropdownItem, dropdownIndex) => (
+                                    <motion.div
                                       key={dropdownItem.name}
-                                      href={dropdownItem.href}
-                                      className="flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors duration-200"
-                                      onClick={() => {
-                                        setIsOpen(false)
-                                        setActiveDropdown(null)
-                                      }}
+                                      initial={{ opacity: 0, x: -20 }}
+                                      animate={{ opacity: 1, x: 0 }}
+                                      transition={{ delay: dropdownIndex * 0.05 }}
                                     >
-                                      <dropdownItem.icon className="w-4 h-4 text-primary-600" />
-                                      <span className="text-sm">{dropdownItem.name}</span>
-                                    </Link>
+                                      <Link
+                                        href={dropdownItem.href}
+                                        className="flex items-center space-x-3 p-3 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-800 transition-all duration-200 group"
+                                        onClick={() => {
+                                          setIsOpen(false)
+                                          setActiveDropdown(null)
+                                        }}
+                                      >
+                                        <div className="w-8 h-8 bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-700 dark:to-gray-600 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                                          <dropdownItem.icon className="w-4 h-4 text-gray-600 dark:text-gray-300" />
+                                        </div>
+                                        <div className="flex-1">
+                                          <div className="font-medium text-gray-900 dark:text-white">{dropdownItem.name}</div>
+                                          <div className="text-xs text-gray-500 dark:text-gray-400">{dropdownItem.description}</div>
+                                        </div>
+                                      </Link>
+                                    </motion.div>
                                   ))}
                                 </motion.div>
                               )}
                             </AnimatePresence>
                           </div>
                         ) : (
-                          <Link
-                            href={item.href}
-                            className="block p-3 font-medium hover:bg-gray-50 rounded-lg transition-colors duration-200"
-                            onClick={() => setIsOpen(false)}
+                          <motion.div
+                            whileHover={{ x: 5 }}
+                            whileTap={{ scale: 0.98 }}
                           >
-                            {item.name}
-                          </Link>
+                            <Link
+                              href={item.href}
+                              className="flex items-center space-x-3 p-4 font-semibold hover:bg-gradient-to-r hover:from-orange-50 hover:to-orange-100 dark:hover:from-orange-900/20 dark:hover:to-orange-800/20 rounded-xl transition-all duration-300 group"
+                              onClick={() => setIsOpen(false)}
+                            >
+                              <div className="w-8 h-8 bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                                <span className="text-white text-sm font-bold">{item.name.charAt(0)}</span>
+                              </div>
+                              <span className="text-gray-900 dark:text-white">{item.name}</span>
+                            </Link>
+                          </motion.div>
                         )}
-                      </div>
+                      </motion.div>
                     ))}
                   </div>
                 </div>
 
-                <div className="p-4 sm:p-6 border-t border-gray-200 space-y-3 sm:space-y-4">
-                  <Link
-                    href="/download"
-                    className="block w-full text-center py-3 px-4 bg-primary-600 text-white rounded-lg font-medium hover:bg-primary-700 transition-colors duration-200"
-                    onClick={() => setIsOpen(false)}
+                {/* Footer */}
+                <motion.div 
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ delay: 0.3 }}
+                  className="p-6 border-t border-gray-200/50 dark:border-gray-700/50 space-y-4"
+                >
+                  {/* Quick Stats */}
+                  <div className="grid grid-cols-2 gap-3">
+                    <div className="bg-gradient-to-r from-orange-50 to-orange-100 dark:from-orange-900/20 dark:to-orange-800/20 rounded-xl p-3 text-center">
+                      <div className="text-lg font-bold text-orange-600">450M+</div>
+                      <div className="text-xs text-gray-600 dark:text-gray-400">Users</div>
+                    </div>
+                    <div className="bg-gradient-to-r from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20 rounded-xl p-3 text-center">
+                      <div className="text-lg font-bold text-blue-600">54</div>
+                      <div className="text-xs text-gray-600 dark:text-gray-400">Countries</div>
+                    </div>
+                  </div>
+                  
+                  {/* CTA Button */}
+                  <motion.div
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
                   >
-                    <Download className="w-4 h-4 inline mr-2" />
-                    Download App
-                  </Link>
-                </div>
+                    <Link
+                      href="/download"
+                      className="block w-full text-center py-4 px-6 bg-gradient-to-r from-orange-500 to-orange-600 text-white rounded-xl font-semibold hover:from-orange-600 hover:to-orange-700 transition-all duration-300 shadow-lg hover:shadow-xl"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      <Download className="w-5 h-5 inline mr-2" />
+                      Download App
+                    </Link>
+                  </motion.div>
+                  
+                  {/* Live Status */}
+                  <div className="flex items-center justify-center space-x-2 text-sm text-gray-500 dark:text-gray-400">
+                    <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                    <span>Live • 99.9% Uptime</span>
+                  </div>
+                </motion.div>
               </div>
-            </div>
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>

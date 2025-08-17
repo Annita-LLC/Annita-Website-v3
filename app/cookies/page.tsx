@@ -156,8 +156,8 @@ const CookiesPage = () => {
         ogImage="/images/cookie-policy.jpg"
       />
 
-      <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white">
-        {/* Hero Section */}
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white">
+      {/* Hero Section */}
         <section className="relative py-20 sm:py-32 overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-r from-orange-500 to-orange-600"></div>
           <div className="absolute inset-0 bg-black opacity-20"></div>
@@ -174,7 +174,7 @@ const CookiesPage = () => {
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold">
                   Cookie <span className="text-orange-200">Policy</span>
                 </h1>
-              </div>
+            </div>
               <p className="text-xl sm:text-2xl text-orange-100 max-w-3xl mx-auto mb-8">
                 How we use cookies and similar technologies to enhance your experience
               </p>
@@ -187,13 +187,13 @@ const CookiesPage = () => {
                 </span>
               </div>
             </motion.div>
-          </div>
-        </section>
+        </div>
+      </section>
 
         {/* Content Section */}
         <section className="py-16 sm:py-20" ref={ref}>
           <div className="container mx-auto px-3 sm:px-4 lg:px-6 xl:px-8">
-            <div className="max-w-4xl mx-auto">
+          <div className="max-w-4xl mx-auto">
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -268,8 +268,8 @@ const CookiesPage = () => {
                         ))}
                       </tbody>
                     </table>
-                  </div>
-                </div>
+          </div>
+        </div>
 
                 {/* Third-Party Cookies */}
                 <div className="mb-12">
@@ -285,8 +285,8 @@ const CookiesPage = () => {
                   </ul>
                   <p className="text-gray-600 leading-relaxed">
                     These third-party services have their own privacy policies and cookie practices. We encourage you to review their policies for more information.
-                  </p>
-                </div>
+            </p>
+          </div>
 
                 {/* Managing Cookies */}
                 <div className="mb-12">
@@ -305,8 +305,8 @@ const CookiesPage = () => {
                         <li>Block third-party cookies only</li>
                         <li>Delete existing cookies</li>
                         <li>Set preferences for specific websites</li>
-                      </ul>
-                    </div>
+              </ul>
+            </div>
                     <div>
                       <h3 className="text-xl font-semibold text-gray-900 mb-3">Cookie Consent</h3>
                       <p className="text-gray-600 leading-relaxed mb-3">
@@ -317,16 +317,16 @@ const CookiesPage = () => {
                         <li>Reject non-essential cookies</li>
                         <li>Customize your preferences</li>
                         <li>Change your settings later through our cookie preferences page</li>
-                      </ul>
-                    </div>
+              </ul>
+            </div>
                     <div>
                       <h3 className="text-xl font-semibold text-gray-900 mb-3">Mobile Apps</h3>
                       <p className="text-gray-600 leading-relaxed">
                         For our mobile applications, you can manage cookie preferences through your device settings or within the app settings.
                       </p>
                     </div>
-                  </div>
-                </div>
+              </div>
+            </div>
 
                 {/* Impact of Disabling Cookies */}
                 <div className="mb-12">
@@ -344,11 +344,11 @@ const CookiesPage = () => {
                           <li>Disabling functional cookies may limit personalization features</li>
                           <li>Disabling analytics cookies may affect our ability to improve our services</li>
                           <li>Some features may not work properly without cookies</li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+              </ul>
+            </div>
+          </div>
+        </div>
+          </div>
 
                 {/* Updates to Policy */}
                 <div className="mb-12">
@@ -361,7 +361,7 @@ const CookiesPage = () => {
                     <li>Updating the "Last Updated" date at the top of this policy</li>
                     <li>Sending you an email notification for significant changes</li>
                   </ul>
-                </div>
+            </div>
 
                 {/* Contact Information */}
                 <div className="mb-8">
@@ -374,18 +374,18 @@ const CookiesPage = () => {
                       <div className="flex items-center gap-3">
                         <Mail className="w-5 h-5 text-orange-500" />
                         <span className="text-gray-700">Email: privacy@annita.com</span>
-                      </div>
+              </div>
                       <div className="flex items-center gap-3">
                         <Phone className="w-5 h-5 text-orange-500" />
                         <span className="text-gray-700">Phone: +231 775 057 227</span>
-                      </div>
+            </div>
                       <div className="flex items-center gap-3">
                         <Globe className="w-5 h-5 text-orange-500" />
                         <span className="text-gray-700">Address: Monrovia, Liberia</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
                 {/* Effective Date */}
                 <div className="border-t border-gray-200 pt-6">
@@ -397,10 +397,10 @@ const CookiesPage = () => {
                   </p>
                 </div>
               </motion.div>
-            </div>
           </div>
-        </section>
-      </div>
+        </div>
+      </section>
+    </div>
     </>
   )
 }

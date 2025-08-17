@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { Suspense } from 'react'
-import HeroSection from '@/components/sections/HeroSection'
+import HeroSection from '@/components/sections/hero/HeroSection'
 import FeaturesSection from '@/components/sections/FeaturesSection'
 import StatsSection from '@/components/sections/StatsSection'
 // import AboutSection from '@/components/sections/AboutSection'
