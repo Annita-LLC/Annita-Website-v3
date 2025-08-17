@@ -133,7 +133,7 @@ const AIPage = () => {
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white">
       {/* Hero Section */}
       <section className="relative py-20 bg-gradient-to-r from-primary-500 to-secondary-500 text-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="container mx-auto px-3 sm:px-4 lg:px-6 xl:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <div className="w-20 h-20 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-6">
               <Brain className="w-10 h-10" />
@@ -150,7 +150,7 @@ const AIPage = () => {
 
       {/* AI Services Selection */}
       <section className="py-12 bg-white border-b border-gray-200">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="container mx-auto px-3 sm:px-4 lg:px-6 xl:px-8">
           <div className="flex flex-wrap gap-4 justify-center">
             {aiServices.map((service) => (
               <button
@@ -172,7 +172,7 @@ const AIPage = () => {
 
       {/* Chat Interface */}
       <section className="py-8">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="container mx-auto px-3 sm:px-4 lg:px-6 xl:px-8">
           <div className="max-w-4xl mx-auto">
             <div className="bg-white rounded-3xl shadow-soft border border-gray-200 overflow-hidden">
               {/* Chat Header */}
@@ -306,7 +306,7 @@ const AIPage = () => {
 
       {/* AI Capabilities */}
       <section className="py-20 bg-gradient-to-br from-neutral-50 to-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="container mx-auto px-3 sm:px-4 lg:px-6 xl:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-neutral-800 mb-6">
               AI Capabilities
