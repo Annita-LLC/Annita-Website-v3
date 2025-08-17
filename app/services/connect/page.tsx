@@ -190,7 +190,7 @@ const ConnectPage = () => {
             <div className="absolute -bottom-8 left-1/3 w-72 h-72 bg-purple-200 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-4000"></div>
           </div>
 
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="container mx-auto px-3 sm:px-4 lg:px-6 xl:px-8 relative z-10">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <motion.div
                 initial={{ opacity: 0, x: -30 }}
@@ -273,7 +273,7 @@ const ConnectPage = () => {
 
         {/* Features Section */}
         <section className="py-16 sm:py-20" ref={ref}>
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="container mx-auto px-3 sm:px-4 lg:px-6 xl:px-8">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -320,7 +320,7 @@ const ConnectPage = () => {
 
         {/* Tools Section */}
         <section className="py-16 sm:py-20 bg-gradient-to-r from-blue-50 to-blue-100">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="container mx-auto px-3 sm:px-4 lg:px-6 xl:px-8">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -366,7 +366,7 @@ const ConnectPage = () => {
 
         {/* Platform Statistics Section */}
         <section className="py-16 sm:py-20">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="container mx-auto px-3 sm:px-4 lg:px-6 xl:px-8">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -407,7 +407,7 @@ const ConnectPage = () => {
 
         {/* Benefits Section */}
         <section className="py-16 sm:py-20 bg-gradient-to-r from-gray-50 to-white">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="container mx-auto px-3 sm:px-4 lg:px-6 xl:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <motion.div
                 initial={{ opacity: 0, x: -30 }}
@@ -467,7 +467,7 @@ const ConnectPage = () => {
 
         {/* CTA Section */}
         <section className="py-16 sm:py-20 bg-gradient-to-r from-blue-500 to-blue-600">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="container mx-auto px-3 sm:px-4 lg:px-6 xl:px-8">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
