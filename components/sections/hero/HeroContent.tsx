@@ -36,42 +36,42 @@ const HeroContent = () => {
         <span>AI-Powered Digital Platform</span>
       </motion.div>
 
-      {/* Main Heading */}
-      <motion.h1
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.1 }}
-        className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight"
-      >
-        <span className="text-gray-900">Africa's First</span>
-        <br />
-        <span className="bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text text-transparent">
-          AI-Powered
-        </span>
-        <br />
-        <span className="text-gray-900">All-in-One Digital Platform</span>
-      </motion.h1>
+              {/* Main Heading */}
+        <motion.h1
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight"
+        >
+          <span className="text-gray-900">Africa's First</span>
+          <br />
+          <span className="bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text text-transparent">
+            AI-Powered
+          </span>
+          <br />
+          <span className="text-gray-900">All-in-One Digital Platform</span>
+        </motion.h1>
 
-      {/* Subtitle */}
-      <motion.p
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.2 }}
-        className="text-lg sm:text-xl lg:text-2xl text-gray-600 max-w-3xl leading-relaxed"
-      >
+              {/* Subtitle */}
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-600 max-w-3xl leading-relaxed"
+        >
         Annita is Africa's first all-in-one digital platform, combining e-commerce, fintech,
         <span className="text-orange-600 font-semibold"> Artificial Intelligence</span>, communication,
         marketing, logistics, and more into a single ecosystem. We empower MSMEs and individuals
         with innovative solutions, connectivity, and convenience.
       </motion.p>
 
-      {/* Features List */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.3 }}
-        className="grid grid-cols-2 gap-4 max-w-2xl"
-      >
+              {/* Features List */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 max-w-2xl"
+        >
         {features.map((feature, index) => (
           <motion.div
             key={feature}
@@ -88,13 +88,13 @@ const HeroContent = () => {
         ))}
       </motion.div>
 
-      {/* CTA Buttons */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.5 }}
-        className="flex flex-col sm:flex-row gap-4 items-center sm:items-start"
-      >
+              {/* CTA Buttons */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.5 }}
+          className="flex flex-col sm:flex-row gap-3 sm:gap-4 items-center sm:items-start"
+        >
         <Button className="group text-lg px-8 py-4">
           Get Started Free
           <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
@@ -115,13 +115,13 @@ const HeroContent = () => {
         </motion.button>
       </motion.div>
 
-      {/* Trust Indicators */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.6 }}
-        className="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-8 pt-8"
-      >
+              {/* Trust Indicators */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.6 }}
+          className="flex flex-col sm:flex-row items-center space-y-3 sm:space-y-0 sm:space-x-6 lg:space-x-8 pt-6 sm:pt-8"
+        >
         {/* Rating */}
         <div className="flex items-center space-x-2">
           <div className="flex space-x-1">

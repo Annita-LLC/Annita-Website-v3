@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect, useRef } from 'react'
+import { useRef } from 'react'
 import { motion, useInView, AnimatePresence } from 'framer-motion'
 import { 
   ArrowRight, 
@@ -31,34 +31,8 @@ import HeroStats from './HeroStats'
 import HeroFeatures from './HeroFeatures'
 
 const HeroSection = () => {
-  const [currentApp, setCurrentApp] = useState(0)
-  const [isPlaying, setIsPlaying] = useState(false)
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-100px" })
-
-  const apps = [
-    { name: 'AnnitaPay', color: 'from-green-500 to-emerald-500' },
-    { name: 'Marketplace', color: 'from-blue-500 to-cyan-500' },
-    { name: 'AI Assistant', color: 'from-purple-500 to-pink-500' },
-    { name: 'Logistics', color: 'from-orange-500 to-red-500' }
-  ]
-
-  useEffect(() => {
-    if (isPlaying) {
-      const interval = setInterval(() => {
-        setCurrentApp(prev => (prev + 1) % apps.length)
-      }, 3000)
-      return () => clearInterval(interval)
-    }
-  }, [isPlaying, apps.length])
-
-  const startDemo = () => {
-    setIsPlaying(true)
-  }
-
-  const stopDemo = () => {
-    setIsPlaying(false)
-  }
 
   return (
     <section className="relative min-h-screen bg-gradient-to-br from-gray-50 via-white to-orange-50 overflow-hidden">
@@ -94,7 +68,7 @@ const HeroSection = () => {
       </div>
 
       <div className="container mx-auto px-3 sm:px-4 lg:px-6 xl:px-8 relative z-10">
-        <div className="flex flex-col lg:flex-row items-center min-h-screen py-20">
+        <div className="flex flex-col lg:flex-row items-center min-h-screen py-12 sm:py-16 lg:py-20">
           
           {/* Left Content */}
           <motion.div
@@ -102,25 +76,19 @@ const HeroSection = () => {
             initial={{ opacity: 0, x: -50 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8 }}
-            className="flex-1 text-center lg:text-left mb-12 lg:mb-0"
+            className="flex-1 text-center lg:text-left mb-8 sm:mb-12 lg:mb-0 order-2 lg:order-1"
           >
             <HeroContent />
           </motion.div>
 
-          {/* Right Phone Section */}
+          {/* Right Image Section */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="flex-1 flex justify-center lg:justify-end"
+            className="flex-1 flex justify-center lg:justify-end order-1 lg:order-2 mb-8 sm:mb-12 lg:mb-0"
           >
-            <HeroPhone 
-              currentApp={currentApp}
-              apps={apps}
-              isPlaying={isPlaying}
-              onStartDemo={startDemo}
-              onStopDemo={stopDemo}
-            />
+            <HeroPhone />
           </motion.div>
         </div>
 
@@ -145,21 +113,7 @@ const HeroSection = () => {
         </motion.div>
       </div>
 
-      {/* Floating CTA */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={isInView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.8, delay: 0.8 }}
-        className="fixed bottom-6 right-6 z-50"
-      >
-        <motion.button
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          className="bg-gradient-to-r from-orange-500 to-orange-600 text-white p-4 rounded-full shadow-lg hover:shadow-xl transition-shadow duration-300"
-        >
-          <Download className="w-6 h-6" />
-        </motion.button>
-      </motion.div>
+
     </section>
   )
 }

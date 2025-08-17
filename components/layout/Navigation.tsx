@@ -270,7 +270,7 @@ const Navigation = () => {
               animate={{ x: 0, opacity: 1 }}
               exit={{ x: '100%', opacity: 0 }}
               transition={{ duration: 0.4, ease: "easeOut" }}
-              className="absolute right-0 top-0 h-full w-[90vw] max-w-[380px] bg-white/95 dark:bg-gray-900/95 backdrop-blur-xl shadow-2xl border-l border-gray-200/50 dark:border-gray-700/50"
+              className="absolute right-0 top-0 h-full w-[85vw] max-w-[360px] bg-white/98 dark:bg-gray-900/98 backdrop-blur-2xl shadow-3xl border-l border-gray-200/30 dark:border-gray-700/30"
             >
               <div className="flex flex-col h-full">
                 {/* Header */}
@@ -278,7 +278,7 @@ const Navigation = () => {
                   initial={{ y: -20, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ delay: 0.1 }}
-                  className="flex items-center justify-between p-6 border-b border-gray-200/50 dark:border-gray-700/50"
+                  className="flex items-center justify-between p-6 border-b border-gray-200/20 dark:border-gray-700/20"
                 >
                   <Link href="/" className="flex items-center space-x-3" onClick={() => setIsOpen(false)}>
                     <div className="relative">
@@ -293,7 +293,7 @@ const Navigation = () => {
                     </div>
                     <div>
                       <span className="text-xl font-bold text-orange-500 dark:text-orange-400">Annita</span>
-                      <div className="text-xs text-gray-500">Digital Platform</div>
+                      <div className="text-xs text-gray-500 dark:text-gray-400">Digital Platform</div>
                     </div>
                   </Link>
                   
@@ -325,8 +325,8 @@ const Navigation = () => {
                 </motion.div>
 
                 {/* Navigation Items */}
-                <div className="flex-1 overflow-y-auto py-6">
-                  <div className="px-6 space-y-2">
+                <div className="flex-1 overflow-y-auto py-4">
+                  <div className="px-6 space-y-1">
                     {navItems.map((item, index) => (
                       <motion.div
                         key={item.name}
@@ -340,7 +340,7 @@ const Navigation = () => {
                               whileHover={{ x: 5 }}
                               whileTap={{ scale: 0.98 }}
                               onClick={() => toggleDropdown(item.name)}
-                              className="flex items-center justify-between w-full p-4 text-left hover:bg-gradient-to-r hover:from-orange-50 hover:to-orange-100 dark:hover:from-orange-900/20 dark:hover:to-orange-800/20 rounded-xl transition-all duration-300 group"
+                              className="flex items-center justify-between w-full p-3 text-left hover:bg-gradient-to-r hover:from-orange-50 hover:to-orange-100 dark:hover:from-orange-900/20 dark:hover:to-orange-800/20 rounded-xl transition-all duration-300 group"
                             >
                               <div className="flex items-center space-x-3">
                                 <div className="w-8 h-8 bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
@@ -398,7 +398,7 @@ const Navigation = () => {
                           >
                             <Link
                               href={item.href}
-                              className="flex items-center space-x-3 p-4 font-semibold hover:bg-gradient-to-r hover:from-orange-50 hover:to-orange-100 dark:hover:from-orange-900/20 dark:hover:to-orange-800/20 rounded-xl transition-all duration-300 group"
+                              className="flex items-center space-x-3 p-3 font-semibold hover:bg-gradient-to-r hover:from-orange-50 hover:to-orange-100 dark:hover:from-orange-900/20 dark:hover:to-orange-800/20 rounded-xl transition-all duration-300 group"
                               onClick={() => setIsOpen(false)}
                             >
                               <div className="w-8 h-8 bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
@@ -418,7 +418,7 @@ const Navigation = () => {
                   initial={{ y: 20, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ delay: 0.3 }}
-                  className="p-6 border-t border-gray-200/50 dark:border-gray-700/50 space-y-4"
+                  className="p-6 border-t border-gray-200/20 dark:border-gray-700/20 space-y-4"
                 >
                   {/* Quick Stats */}
                   <div className="grid grid-cols-2 gap-3">
