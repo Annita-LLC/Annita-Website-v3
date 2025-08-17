@@ -105,7 +105,7 @@ const StatsSection = () => {
 
   return (
     <section className="py-16 sm:py-20 bg-gradient-to-br from-gray-50 to-white">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="container mx-auto px-3 sm:px-4 lg:px-6 xl:px-8">
         {/* Section Header */}
         <motion.div
           ref={ref}
@@ -161,55 +161,7 @@ const StatsSection = () => {
           ))}
         </div>
 
-        {/* Growth Timeline */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          className="mb-16 sm:mb-20"
-        >
-          <h3 className="text-xl sm:text-2xl font-bold text-orange-600 text-center mb-8 sm:mb-12">
-            Our Growth Journey
-          </h3>
-          <div className="relative">
-            {/* Timeline Line */}
-            <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-primary-500 to-secondary-500" />
-            
-            <div className="space-y-8 sm:space-y-12">
-              {[
-                { year: '2021', title: 'Platform Launch', metric: '$500', description: 'Initial revenue generation' },
-                { year: '2022', title: 'Market Expansion', metric: '$2.5K', description: '400% revenue growth' },
-                { year: '2023', title: 'Award Recognition', metric: '$8K', description: 'Orange Social Venture Prize Winner' },
-                { year: '2024', title: 'Pan-African Scale', metric: '$17K', description: 'Top 50 Businesses in Africa' },
-                { year: '2025', title: 'Future Vision', metric: '$35K+', description: 'Projected revenue target' }
-              ].map((item, index) => (
-                <motion.div
-                  key={item.year}
-                  initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-                  animate={isInView ? { opacity: 1, x: 0 } : {}}
-                  transition={{ duration: 0.6, delay: 0.8 + index * 0.1 }}
-                  className={`flex flex-col sm:flex-row items-center ${index % 2 === 0 ? 'sm:flex-row' : 'sm:flex-row-reverse'}`}
-                >
-                  <div className="w-full sm:w-1/2 px-4 sm:px-8 mb-4 sm:mb-0">
-                    <div className={`bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 shadow-soft border border-gray-200 ${index % 2 === 0 ? 'text-right' : 'text-left'}`}>
-                      <div className="text-2xl sm:text-3xl font-bold text-orange-500 mb-1 sm:mb-2">{item.year}</div>
-                      <div className="text-lg sm:text-xl font-semibold text-orange-600 mb-1 sm:mb-2">{item.title}</div>
-                      <div className="text-xl sm:text-2xl font-bold text-primary-600 mb-1">{item.metric}</div>
-                      <div className="text-sm sm:text-base text-gray-600">{item.description}</div>
-                    </div>
-                  </div>
-                  
-                  {/* Timeline Dot */}
-                  <div className="relative z-10">
-                    <div className="w-5 h-5 sm:w-6 sm:h-6 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-full shadow-lg border-3 sm:border-4 border-white" />
-                  </div>
-                  
-                  <div className="w-full sm:w-1/2 px-4 sm:px-8" />
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </motion.div>
+
 
         {/* Platform Features Stats */}
         <motion.div

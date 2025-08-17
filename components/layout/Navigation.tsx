@@ -136,7 +136,7 @@ const Navigation = () => {
           ? 'bg-white/95 dark:bg-gray-900/95 backdrop-blur-md shadow-medium border-b border-gray-200 dark:border-gray-700' 
           : 'bg-white/90 dark:bg-gray-900/90 backdrop-blur-md'
       }`}>
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="container mx-auto px-3 sm:px-4 lg:px-6 xl:px-8">
           <div className="flex justify-between items-center h-14 sm:h-16 lg:h-20">
             {/* Logo */}
                           <Link href="/" className="flex items-center space-x-2 sm:space-x-3">
@@ -231,9 +231,9 @@ const Navigation = () => {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="lg:hidden p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200"
+              className="lg:hidden p-1.5 sm:p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200"
             >
-              {isOpen ? <X className="w-5 h-5 sm:w-6 sm:h-6 dark:text-white" /> : <Menu className="w-5 h-5 sm:w-6 sm:h-6 dark:text-white" />}
+              {isOpen ? <X className="w-4 h-4 sm:w-5 sm:h-5 dark:text-white" /> : <Menu className="w-4 h-4 sm:w-5 sm:h-5 dark:text-white" />}
             </button>
           </div>
         </div>
@@ -250,9 +250,9 @@ const Navigation = () => {
             className="fixed inset-0 z-50 lg:hidden"
           >
             <div className="absolute inset-0 bg-black/20" onClick={() => setIsOpen(false)} />
-            <div className="absolute right-0 top-0 h-full w-72 sm:w-80 bg-white dark:bg-gray-900 shadow-2xl">
+            <div className="absolute right-0 top-0 h-full w-[85vw] max-w-[320px] sm:w-80 bg-white dark:bg-gray-900 shadow-2xl">
               <div className="flex flex-col h-full">
-                <div className="flex items-center justify-between p-6 border-b border-gray-200 dark:border-gray-700">
+                <div className="flex items-center justify-between p-4 sm:p-6 border-b border-gray-200 dark:border-gray-700">
                   <Link href="/" className="flex items-center space-x-2" onClick={() => setIsOpen(false)}>
                     <img 
                       src="/images/blog/Annita's Logo.png" 
@@ -284,8 +284,8 @@ const Navigation = () => {
                   </div>
                 </div>
 
-                <div className="flex-1 overflow-y-auto py-6">
-                  <div className="px-6 space-y-4">
+                <div className="flex-1 overflow-y-auto py-4 sm:py-6">
+                  <div className="px-4 sm:px-6 space-y-3 sm:space-y-4">
                     {navItems.map((item) => (
                       <div key={item.name}>
                         {item.dropdown ? (
@@ -340,7 +340,7 @@ const Navigation = () => {
                   </div>
                 </div>
 
-                <div className="p-6 border-t border-gray-200 space-y-4">
+                <div className="p-4 sm:p-6 border-t border-gray-200 space-y-3 sm:space-y-4">
                   <Link
                     href="/download"
                     className="block w-full text-center py-3 px-4 bg-primary-600 text-white rounded-lg font-medium hover:bg-primary-700 transition-colors duration-200"

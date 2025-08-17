@@ -139,7 +139,7 @@ const FeaturesSection = () => {
 
   return (
     <section className="py-16 sm:py-20 bg-gradient-to-br from-gray-50 to-white">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="container mx-auto px-3 sm:px-4 lg:px-6 xl:px-8">
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 30 }}

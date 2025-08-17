@@ -31,7 +31,7 @@ const TrustedPartnersSection = () => {
 
   return (
     <section className="py-16 sm:py-20 bg-gradient-to-br from-neutral-50 to-white">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="container mx-auto px-3 sm:px-4 lg:px-6 xl:px-8">
         <div className="text-center mb-12 sm:mb-16">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-orange-600 mb-4 sm:mb-6">
             Trusted & Backed By

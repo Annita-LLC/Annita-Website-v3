@@ -141,7 +141,7 @@ const HeroSection = () => {
       {/* Hero Content */}
 
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 pt-16 sm:pt-20 lg:pt-24 xl:pt-32 pb-8 sm:pb-12 lg:pb-16">
+              <div className="relative z-10 container mx-auto px-3 sm:px-4 lg:px-6 xl:px-8 pt-16 sm:pt-20 lg:pt-24 xl:pt-32 pb-8 sm:pb-12 lg:pb-16">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
             {/* Left Column - Text Content */}
