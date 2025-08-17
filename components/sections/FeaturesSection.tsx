@@ -20,7 +20,8 @@ import {
   CheckCircle,
   ArrowRight,
   Play,
-  Download
+  Download,
+  Brain
 } from 'lucide-react'
 import Button from '@/components/ui/Button'
 
@@ -84,6 +85,20 @@ const FeaturesSection = () => {
       ],
       color: 'from-purple-500 to-pink-500',
       gradient: 'bg-gradient-to-br from-purple-50 to-pink-50'
+    },
+    {
+      icon: Brain,
+      title: 'Annita AI',
+      subtitle: 'Artificial Intelligence Platform',
+      description: 'Intelligent automation and AI-powered insights to optimize business operations and drive growth for MSMEs.',
+      features: [
+        'AI-powered business insights',
+        'Automated customer support',
+        'Predictive analytics',
+        'Smart inventory management'
+      ],
+      color: 'from-teal-500 to-cyan-500',
+      gradient: 'bg-gradient-to-br from-teal-50 to-cyan-50'
     }
   ]
 
