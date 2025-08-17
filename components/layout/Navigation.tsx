@@ -37,7 +37,8 @@ import {
   Database,
   Sun,
   Moon,
-  Activity
+  Activity,
+  Image
 } from 'lucide-react'
 
 const Navigation = () => {
@@ -97,11 +98,12 @@ const Navigation = () => {
     { 
       name: 'Company', 
       href: '#',
-      dropdown: [
-        { name: 'About Us', href: '/about', icon: Users, description: 'Our story and mission' },
-        { name: 'The 100', href: '/the100', icon: Target, description: 'Youth empowerment initiative' },
-        { name: 'Investors', href: '/investors', icon: DollarSign, description: 'Investment opportunities and company info' },
-        { name: 'Awards & Recognition', href: '/awards', icon: Award, description: 'Our achievements and recognition' },
+                          dropdown: [
+                      { name: 'About Us', href: '/about', icon: Users, description: 'Our story and mission' },
+                      { name: 'The 100', href: '/the100', icon: Target, description: 'Youth empowerment initiative' },
+                      { name: 'Investors', href: '/investors', icon: DollarSign, description: 'Investment opportunities and company info' },
+                      { name: 'Awards & Recognition', href: '/awards', icon: Award, description: 'Our achievements and recognition' },
+                      { name: 'Gallery', href: '/gallery', icon: Image, description: 'Photos, videos, and media' },
         { name: 'Careers', href: '/careers', icon: Briefcase, description: 'Join our team' },
         { name: 'Blog', href: '/blog', icon: FileText, description: 'Latest news and insights' },
       ]
