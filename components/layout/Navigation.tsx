@@ -46,6 +46,7 @@ const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false)
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
   const [isDarkMode, setIsDarkMode] = useState(false)
+  const [dropdownTimeout, setDropdownTimeout] = useState<NodeJS.Timeout | null>(null)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -130,6 +131,21 @@ const Navigation = () => {
     setActiveDropdown(activeDropdown === name ? null : name)
   }
 
+  const handleDropdownMouseEnter = (name: string) => {
+    if (dropdownTimeout) {
+      clearTimeout(dropdownTimeout)
+      setDropdownTimeout(null)
+    }
+    setActiveDropdown(name)
+  }
+
+  const handleDropdownMouseLeave = () => {
+    const timeout = setTimeout(() => {
+      setActiveDropdown(null)
+    }, 300)
+    setDropdownTimeout(timeout)
+  }
+
   const toggleDarkMode = () => {
     setIsDarkMode(!isDarkMode)
     document.documentElement.classList.toggle('dark')
@@ -165,13 +181,17 @@ const Navigation = () => {
               {navItems.map((item) => (
                 <div key={item.name} className="relative">
                   {item.dropdown ? (
-                    <div className="relative">
+                    <div 
+                      className="relative"
+                      onMouseEnter={() => handleDropdownMouseEnter(item.name)}
+                      onMouseLeave={handleDropdownMouseLeave}
+                    >
                       <button
                         onClick={() => toggleDropdown(item.name)}
                         className="nav-link flex items-center space-x-1"
                       >
                         <span>{item.name}</span>
-                        <ChevronDown className="w-4 h-4 transition-transform duration-200" />
+                        <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${activeDropdown === item.name ? 'rotate-180' : ''}`} />
                       </button>
                       
                       <AnimatePresence>
@@ -181,23 +201,25 @@ const Navigation = () => {
                             animate={{ opacity: 1, y: 0 }}
                             exit={{ opacity: 0, y: 10 }}
                             transition={{ duration: 0.2 }}
-                            className="absolute top-full left-0 mt-2 w-80 bg-white rounded-xl shadow-large border border-gray-200 p-4"
+                            className="absolute top-full left-0 mt-2 w-80 bg-white dark:bg-gray-800 rounded-xl shadow-large border border-gray-200 dark:border-gray-700"
                           >
-                            <div className="grid gap-3">
-                              {item.dropdown.map((dropdownItem) => (
-                                <Link
-                                  key={dropdownItem.name}
-                                  href={dropdownItem.href}
-                                  className="flex items-start space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors duration-200"
-                                  onClick={() => setActiveDropdown(null)}
-                                >
-                                  <dropdownItem.icon className="w-5 h-5 text-primary-600 mt-0.5 flex-shrink-0" />
-                                  <div>
-                                    <div className="font-medium text-gray-900">{dropdownItem.name}</div>
-                                    <div className="text-sm text-gray-500">{dropdownItem.description}</div>
-                                  </div>
-                                </Link>
-                              ))}
+                            <div className="max-h-96 overflow-y-auto p-4 scrollbar-thin scrollbar-thumb-gray-300 dark:scrollbar-thumb-gray-600 scrollbar-track-transparent">
+                              <div className="grid gap-3">
+                                {item.dropdown.map((dropdownItem) => (
+                                  <Link
+                                    key={dropdownItem.name}
+                                    href={dropdownItem.href}
+                                    className="flex items-start space-x-3 p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200"
+                                    onClick={() => setActiveDropdown(null)}
+                                  >
+                                    <dropdownItem.icon className="w-5 h-5 text-primary-600 dark:text-primary-400 mt-0.5 flex-shrink-0" />
+                                    <div>
+                                      <div className="font-medium text-gray-900 dark:text-white">{dropdownItem.name}</div>
+                                      <div className="text-sm text-gray-500 dark:text-gray-400">{dropdownItem.description}</div>
+                                    </div>
+                                  </Link>
+                                ))}
+                              </div>
                             </div>
                           </motion.div>
                         )}
@@ -360,33 +382,35 @@ const Navigation = () => {
                                   animate={{ opacity: 1, height: 'auto' }}
                                   exit={{ opacity: 0, height: 0 }}
                                   transition={{ duration: 0.3 }}
-                                  className="ml-4 mt-3 space-y-2"
+                                  className="ml-4 mt-3"
                                 >
-                                  {item.dropdown.map((dropdownItem, dropdownIndex) => (
-                                    <motion.div
-                                      key={dropdownItem.name}
-                                      initial={{ opacity: 0, x: -20 }}
-                                      animate={{ opacity: 1, x: 0 }}
-                                      transition={{ delay: dropdownIndex * 0.05 }}
-                                    >
-                                      <Link
-                                        href={dropdownItem.href}
-                                        className="flex items-center space-x-3 p-3 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-800 transition-all duration-200 group"
-                                        onClick={() => {
-                                          setIsOpen(false)
-                                          setActiveDropdown(null)
-                                        }}
+                                  <div className="max-h-64 overflow-y-auto space-y-2 scrollbar-thin scrollbar-thumb-gray-300 dark:scrollbar-thumb-gray-600 scrollbar-track-transparent pr-2">
+                                    {item.dropdown.map((dropdownItem, dropdownIndex) => (
+                                      <motion.div
+                                        key={dropdownItem.name}
+                                        initial={{ opacity: 0, x: -20 }}
+                                        animate={{ opacity: 1, x: 0 }}
+                                        transition={{ delay: dropdownIndex * 0.05 }}
                                       >
-                                        <div className="w-8 h-8 bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-700 dark:to-gray-600 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                                          <dropdownItem.icon className="w-4 h-4 text-gray-600 dark:text-gray-300" />
-                                        </div>
-                                        <div className="flex-1">
-                                          <div className="font-medium text-gray-900 dark:text-white">{dropdownItem.name}</div>
-                                          <div className="text-xs text-gray-500 dark:text-gray-400">{dropdownItem.description}</div>
-                                        </div>
-                                      </Link>
-                                    </motion.div>
-                                  ))}
+                                        <Link
+                                          href={dropdownItem.href}
+                                          className="flex items-center space-x-3 p-3 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-800 transition-all duration-200 group"
+                                          onClick={() => {
+                                            setIsOpen(false)
+                                            setActiveDropdown(null)
+                                          }}
+                                        >
+                                          <div className="w-8 h-8 bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-700 dark:to-gray-600 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                                            <dropdownItem.icon className="w-4 h-4 text-gray-600 dark:text-gray-300" />
+                                          </div>
+                                          <div className="flex-1">
+                                            <div className="font-medium text-gray-900 dark:text-white">{dropdownItem.name}</div>
+                                            <div className="text-xs text-gray-500 dark:text-gray-400">{dropdownItem.description}</div>
+                                          </div>
+                                        </Link>
+                                      </motion.div>
+                                    ))}
+                                  </div>
                                 </motion.div>
                               )}
                             </AnimatePresence>

@@ -10,40 +10,13 @@ import {
   QrCode,
   Globe,
   Zap,
-  User,
-  Mail,
-  Lock,
-  Eye,
-  EyeOff,
-  Phone,
-  ArrowLeft
+  ExternalLink
 } from 'lucide-react'
 import Button from '@/components/ui/Button'
 import SEOHead from '@/components/seo/SEOHead'
 
 const DownloadPage = () => {
-  const [showAuth, setShowAuth] = useState(false)
-  const [isLogin, setIsLogin] = useState(true)
-  const [showPassword, setShowPassword] = useState(false)
-  const [formData, setFormData] = useState({
-    email: '',
-    password: '',
-    name: '',
-    phone: ''
-  })
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    })
-  }
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    // Handle authentication logic here
-    console.log('Form submitted:', formData)
-  }
 
   const features = [
     'Secure payments with AnnitaPay',
@@ -172,30 +145,26 @@ const DownloadPage = () => {
                 {/* Download Buttons */}
                 <div className="space-y-4">
                   <div className="flex flex-col sm:flex-row gap-4">
-                    <Button 
-                      variant="white" 
-                      size="lg" 
-                      className="flex items-center justify-center"
-                      onClick={() => setShowAuth(true)}
+                    <a 
+                      href="#" 
+                      className="inline-block transform hover:scale-105 transition-transform duration-200"
                     >
                       <img 
                         src="/images/Icons/Download_on_the_App_Store_Badge.svg.webp" 
                         alt="Download on App Store" 
                         className="h-8"
                       />
-                    </Button>
-                    <Button 
-                      variant="white" 
-                      size="lg" 
-                      className="flex items-center justify-center"
-                      onClick={() => setShowAuth(true)}
+                    </a>
+                    <a 
+                      href="#" 
+                      className="inline-block transform hover:scale-105 transition-transform duration-200"
                     >
                       <img 
                         src="/images/Icons/google-play-badge-en.webp" 
                         alt="Get it on Google Play" 
                         className="h-8"
                       />
-                    </Button>
+                    </a>
                   </div>
                   <p className="text-sm text-white/70">
                     Available on App Store and Google Play Store
@@ -220,142 +189,7 @@ const DownloadPage = () => {
         </div>
       </section>
 
-      {/* Authentication Modal */}
-      {showAuth && (
-        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-          <div className="bg-white rounded-3xl shadow-2xl max-w-md w-full p-8">
-            <div className="flex items-center justify-between mb-6">
-              <h2 className="text-2xl font-bold text-gray-900">
-                {isLogin ? 'Sign In' : 'Create Account'}
-              </h2>
-              <button
-                onClick={() => setShowAuth(false)}
-                className="p-2 hover:bg-gray-100 rounded-lg transition-colors"
-              >
-                <ArrowLeft className="w-5 h-5 text-gray-500" />
-              </button>
-            </div>
 
-            <form onSubmit={handleSubmit} className="space-y-4">
-              {!isLogin && (
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Full Name
-                  </label>
-                  <div className="relative">
-                    <User className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
-                    <input
-                      type="text"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleInputChange}
-                      className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                      placeholder="Enter your full name"
-                      required={!isLogin}
-                    />
-                  </div>
-                </div>
-              )}
-
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Email Address
-                </label>
-                <div className="relative">
-                  <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
-                  <input
-                    type="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleInputChange}
-                    className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                    placeholder="Enter your email"
-                    required
-                  />
-                </div>
-              </div>
-
-              {!isLogin && (
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Phone Number
-                  </label>
-                  <div className="relative">
-                    <Phone className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
-                    <input
-                      type="tel"
-                      name="phone"
-                      value={formData.phone}
-                      onChange={handleInputChange}
-                      className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                      placeholder="Enter your phone number"
-                      required={!isLogin}
-                    />
-                  </div>
-                </div>
-              )}
-
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Password
-                </label>
-                <div className="relative">
-                  <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
-                  <input
-                    type={showPassword ? 'text' : 'password'}
-                    name="password"
-                    value={formData.password}
-                    onChange={handleInputChange}
-                    className="w-full pl-10 pr-12 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                    placeholder="Enter your password"
-                    required
-                  />
-                  <button
-                    type="button"
-                    onClick={() => setShowPassword(!showPassword)}
-                    className="absolute right-3 top-1/2 transform -translate-y-1/2 p-1 hover:bg-gray-100 rounded"
-                  >
-                    {showPassword ? (
-                      <EyeOff className="w-4 h-4 text-gray-400" />
-                    ) : (
-                      <Eye className="w-4 h-4 text-gray-400" />
-                    )}
-                  </button>
-                </div>
-              </div>
-
-              <Button
-                type="submit"
-                variant="gradient"
-                size="lg"
-                className="w-full"
-              >
-                {isLogin ? 'Sign In' : 'Create Account'}
-              </Button>
-            </form>
-
-            <div className="mt-6 text-center">
-              <p className="text-sm text-gray-600">
-                {isLogin ? "Don't have an account? " : "Already have an account? "}
-                <button
-                  onClick={() => setIsLogin(!isLogin)}
-                  className="text-blue-600 hover:text-blue-700 font-medium"
-                >
-                  {isLogin ? 'Sign Up' : 'Sign In'}
-                </button>
-              </p>
-            </div>
-
-            {isLogin && (
-              <div className="mt-4 text-center">
-                <button className="text-sm text-blue-600 hover:text-blue-700">
-                  Forgot your password?
-                </button>
-              </div>
-            )}
-          </div>
-        </div>
-      )}
 
       {/* App Stats Section */}
       <section className="py-20">
@@ -423,18 +257,16 @@ const DownloadPage = () => {
                   ))}
                   <span className="text-sm text-gray-600">4.8/5</span>
                 </div>
-                <Button 
-                  variant="gradient" 
-                  size="lg" 
-                  className="w-full"
-                  onClick={() => setShowAuth(true)}
+                <a 
+                  href="#" 
+                  className="inline-block transform hover:scale-105 transition-transform duration-200"
                 >
                   <img 
                     src="/images/Icons/Download_on_the_App_Store_Badge.svg.webp" 
                     alt="Download on App Store" 
                     className="h-6"
                   />
-                </Button>
+                </a>
                 <p className="text-xs text-gray-500">
                   Requires iOS 13.0 or later
                 </p>
@@ -457,18 +289,16 @@ const DownloadPage = () => {
                   ))}
                   <span className="text-sm text-gray-600">4.7/5</span>
                 </div>
-                <Button 
-                  variant="gradient" 
-                  size="lg" 
-                  className="w-full"
-                  onClick={() => setShowAuth(true)}
+                <a 
+                  href="#" 
+                  className="inline-block transform hover:scale-105 transition-transform duration-200"
                 >
                   <img 
                     src="/images/Icons/google-play-badge-en.webp" 
                     alt="Get it on Google Play" 
                     className="h-6"
                   />
-                </Button>
+                </a>
                 <p className="text-xs text-gray-500">
                   Requires Android 8.0 or later
                 </p>
@@ -478,24 +308,110 @@ const DownloadPage = () => {
         </div>
       </section>
 
-      {/* QR Code Section */}
+      {/* Advanced Download Section with QR Codes */}
       <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
-              Scan to Download
-            </h2>
-            <p className="text-xl text-gray-600 mb-8">
-              Use your phone's camera to scan the QR code and download the app directly.
-            </p>
-            
-            <div className="bg-white rounded-3xl p-8 shadow-soft inline-block">
-              <div className="w-64 h-64 bg-gray-100 rounded-2xl flex items-center justify-center mb-4">
-                <QrCode className="w-32 h-32 text-gray-400" />
-              </div>
-              <p className="text-sm text-gray-600">
-                Point your camera at this QR code
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
+                Download Annita App
+              </h2>
+              <p className="text-xl text-gray-600">
+                Get the complete Annita experience on your mobile device
               </p>
+            </div>
+            
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+              {/* iOS Download */}
+              <div className="bg-white rounded-3xl p-8 shadow-soft hover:shadow-medium transition-shadow duration-300">
+                <div className="text-center">
+                  <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                    <Smartphone className="w-10 h-10 text-white" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">iOS App</h3>
+                  <p className="text-gray-600 mb-6">
+                    Download for iPhone and iPad from the App Store
+                  </p>
+                  
+                  {/* QR Code */}
+                  <div className="bg-gray-50 rounded-2xl p-6 mb-6 inline-block">
+                    <div className="w-48 h-48 bg-white rounded-xl flex items-center justify-center border-2 border-gray-200">
+                      <QrCode className="w-24 h-24 text-gray-400" />
+                    </div>
+                    <p className="text-sm text-gray-500 mt-3">Scan to download from App Store</p>
+                  </div>
+                  
+                  {/* App Store Button */}
+                  <a 
+                    href="#" 
+                    className="inline-block transform hover:scale-105 transition-transform duration-200"
+                  >
+                    <img 
+                      src="/images/app-store-badge.png" 
+                      alt="Download on the App Store"
+                      className="h-12 w-auto"
+                    />
+                  </a>
+                </div>
+              </div>
+
+              {/* Android Download */}
+              <div className="bg-white rounded-3xl p-8 shadow-soft hover:shadow-medium transition-shadow duration-300">
+                <div className="text-center">
+                  <div className="w-20 h-20 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                    <Smartphone className="w-10 h-10 text-white" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">Android App</h3>
+                  <p className="text-gray-600 mb-6">
+                    Download for Android devices from Google Play Store
+                  </p>
+                  
+                  {/* QR Code */}
+                  <div className="bg-gray-50 rounded-2xl p-6 mb-6 inline-block">
+                    <div className="w-48 h-48 bg-white rounded-xl flex items-center justify-center border-2 border-gray-200">
+                      <QrCode className="w-24 h-24 text-gray-400" />
+                    </div>
+                    <p className="text-sm text-gray-500 mt-3">Scan to download from Play Store</p>
+                  </div>
+                  
+                  {/* Google Play Button */}
+                  <a 
+                    href="#" 
+                    className="inline-block transform hover:scale-105 transition-transform duration-200"
+                  >
+                    <img 
+                      src="/images/google-play-badge.png" 
+                      alt="Get it on Google Play"
+                      className="h-12 w-auto"
+                    />
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* Direct Download Links */}
+            <div className="mt-12 text-center">
+              <div className="bg-white rounded-2xl p-6 shadow-soft inline-block">
+                <h4 className="text-lg font-semibold text-gray-900 mb-4">Direct Download Links</h4>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <a 
+                    href="#" 
+                    className="flex items-center justify-center space-x-2 bg-blue-600 text-white px-6 py-3 rounded-xl hover:bg-blue-700 transition-colors duration-200"
+                  >
+                    <Download className="w-5 h-5" />
+                    <span>Download for iOS</span>
+                    <ExternalLink className="w-4 h-4" />
+                  </a>
+                  <a 
+                    href="#" 
+                    className="flex items-center justify-center space-x-2 bg-green-600 text-white px-6 py-3 rounded-xl hover:bg-green-700 transition-colors duration-200"
+                  >
+                    <Download className="w-5 h-5" />
+                    <span>Download for Android</span>
+                    <ExternalLink className="w-4 h-4" />
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -536,44 +452,7 @@ const DownloadPage = () => {
         </div>
       </section>
 
-      {/* Get Started Section */}
-      <section className="py-20 bg-gradient-to-br from-blue-50 to-cyan-50">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
-              Ready to Get Started?
-            </h2>
-            <p className="text-xl text-gray-600 mb-8">
-              Create your account or sign in to access all Annita services.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button 
-                variant="gradient" 
-                size="lg"
-                onClick={() => {
-                  setIsLogin(false)
-                  setShowAuth(true)
-                }}
-              >
-                Create Account
-              </Button>
-              <Button 
-                variant="outline" 
-                size="lg"
-                onClick={() => {
-                  setIsLogin(true)
-                  setShowAuth(true)
-                }}
-              >
-                Sign In
-              </Button>
-            </div>
-            <p className="text-sm text-gray-500 mt-4">
-              Already have the app? Sign in to sync your account across devices.
-            </p>
-          </div>
-        </div>
-      </section>
+
       </div>
     </>
   )
