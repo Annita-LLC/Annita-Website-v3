@@ -24,8 +24,8 @@ export default function HomePage() {
   const homeStructuredData = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "name": "Annita - Africa's First All-in-One Digital Platform",
-    "description": "Annita is Africa's first all-in-one digital platform, combining e-commerce, fintech, AI, communication, marketing, logistics, and more into a single ecosystem. Empowering MSMEs and individuals with innovative solutions.",
+    "name": "Annita - Africa's First AI-Powered All-in-One Digital Platform",
+    "description": "Annita is Africa's first all-in-one digital platform, combining e-commerce, fintech, Artificial Intelligence, communication, marketing, logistics, and more into a single ecosystem. We empower MSMEs and individuals with innovative AI-powered solutions, connectivity, and convenience.",
     "url": "https://annita.com",
     "potentialAction": {
       "@type": "SearchAction",
@@ -79,8 +79,8 @@ export default function HomePage() {
   return (
     <>
       <SEOHead
-        title="Annita - Africa's First All-in-One Digital Platform"
-        description="Annita is Africa's first all-in-one digital platform, combining e-commerce, fintech, AI, communication, marketing, logistics, and more into a single ecosystem. Empowering 450M+ African MSMEs with innovative solutions for digital transformation and economic growth."
+        title="Annita - Africa's First AI-Powered All-in-One Digital Platform"
+        description="Annita is Africa's first all-in-one digital platform, combining e-commerce, fintech, Artificial Intelligence, communication, marketing, logistics, and more into a single ecosystem. We empower MSMEs and individuals with innovative AI-powered solutions, connectivity, and convenience."
         keywords={[
           'Annita',
           'Africa digital platform',

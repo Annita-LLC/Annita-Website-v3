@@ -158,8 +158,8 @@ const HeroSection = () => {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="inline-flex items-center px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white text-xs sm:text-sm font-medium mb-4 sm:mb-6"
               >
-                <Star className="w-3 h-3 sm:w-4 sm:h-4 mr-1.5 sm:mr-2 text-yellow-400" />
-                #1 Digital Platform in Africa
+                <Brain className="w-3 h-3 sm:w-4 sm:h-4 mr-1.5 sm:mr-2 text-orange-400" />
+                AI-Powered Digital Platform
               </motion.div>
 
               {/* Main Heading */}
@@ -171,9 +171,9 @@ const HeroSection = () => {
               >
                 Africa's First{' '}
                 <span className="text-orange-500">
-                  All-in-One
+                  AI-Powered
                 </span>{' '}
-                Digital Platform
+                All-in-One Digital Platform
               </motion.h1>
 
               {/* Subtitle */}
@@ -183,8 +183,10 @@ const HeroSection = () => {
                 transition={{ duration: 0.8, delay: 0.4 }}
                 className="text-base sm:text-lg lg:text-xl xl:text-2xl text-gray-200 mb-4 sm:mb-6 lg:mb-8 leading-relaxed"
               >
-                Empowering 450M+ MSMEs with integrated e-commerce, fintech, AI, 
-                communication, marketing, and logistics solutions.
+                Annita is Africa's first all-in-one digital platform, combining e-commerce, fintech, 
+                <span className="text-orange-400 font-semibold"> Artificial Intelligence</span>, communication, 
+                marketing, logistics, and more into a single ecosystem. We empower MSMEs and individuals 
+                with innovative solutions, connectivity, and convenience.
               </motion.p>
 
               {/* Features Rotator */}
