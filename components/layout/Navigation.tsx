@@ -102,6 +102,8 @@ const Navigation = () => {
                       { name: 'About Us', href: '/about', icon: Users, description: 'Our story and mission' },
                       { name: 'The 100', href: '/the100', icon: Target, description: 'Youth empowerment initiative' },
                       { name: 'Investors', href: '/investors', icon: DollarSign, description: 'Investment opportunities and company info' },
+                      { name: 'Pricing', href: '/pricing', icon: DollarSign, description: 'Transparent pricing plans' },
+                      { name: 'Business Model', href: '/business-model', icon: Building2, description: 'Our revenue model and strategy' },
                       { name: 'Awards & Recognition', href: '/awards', icon: Award, description: 'Our achievements and recognition' },
                       { name: 'Gallery', href: '/gallery', icon: Image, description: 'Photos, videos, and media' },
         { name: 'Careers', href: '/careers', icon: Briefcase, description: 'Join our team' },
