@@ -75,29 +75,7 @@ const EnterprisePage = () => {
     }
   ]
 
-  const testimonials = [
-    {
-      name: 'Dr. Sarah Johnson',
-      role: 'CTO, African Development Bank',
-      company: 'African Development Bank',
-      content: 'Annita\'s enterprise solution has transformed our digital infrastructure. The platform\'s scalability and security have exceeded our expectations.',
-      rating: 5
-    },
-    {
-      name: 'Michael Chen',
-      role: 'Head of Digital Innovation',
-      company: 'Ecobank Group',
-      content: 'The integration capabilities and dedicated support team have made our digital transformation seamless and efficient.',
-      rating: 5
-    },
-    {
-      name: 'Emma Davis',
-      role: 'Director of Operations',
-      company: 'Liberia Revenue Authority',
-      content: 'Annita\'s compliance features and government-grade security have been crucial for our digital modernization efforts.',
-      rating: 5
-    }
-  ]
+
 
   const plans = [
     {
@@ -346,37 +324,7 @@ const EnterprisePage = () => {
         </div>
       </section>
 
-      {/* Testimonials Section */}
-      <section className="py-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-              Trusted by Industry Leaders
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              See how leading organizations are transforming their operations with Annita.
-            </p>
-          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <div key={index} className="bg-white rounded-2xl p-6 shadow-soft">
-                <div className="flex items-center mb-4">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Award key={i} className="w-5 h-5 text-yellow-400 fill-current" />
-                  ))}
-                </div>
-                <p className="text-gray-700 mb-6 italic">"{testimonial.content}"</p>
-                <div>
-                  <p className="font-semibold text-gray-900">{testimonial.name}</p>
-                  <p className="text-sm text-gray-600">{testimonial.role}</p>
-                  <p className="text-sm text-blue-600">{testimonial.company}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Pricing Section */}
       <section className="py-20 bg-gradient-to-br from-gray-50 to-white">

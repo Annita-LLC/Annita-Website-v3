@@ -234,8 +234,8 @@ const GalleryPage = () => {
       id: 21,
       type: 'video',
       category: 'videos',
-      title: 'Customer Testimonials',
-      description: 'Hear from our satisfied customers',
+      title: 'Product Demo',
+      description: 'See our platform in action',
       videoUrl: 'https://www.youtube.com/embed/9bZkp7q19f0',
       platform: 'youtube',
       date: '2024'

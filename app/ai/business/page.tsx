@@ -160,26 +160,7 @@ const BusinessAIPage = () => {
     }
   ]
 
-  const testimonials = [
-    {
-      name: 'David Chen',
-      role: 'CEO, TechStart Africa',
-      content: 'Annita\'s AI has transformed our business operations. We\'ve seen a 40% increase in efficiency and our customers love the personalized experience.',
-      avatar: 'DC'
-    },
-    {
-      name: 'Maria Santos',
-      role: 'Operations Manager, RetailPlus',
-      content: 'The predictive analytics have helped us optimize our inventory and reduce costs significantly. It\'s like having a crystal ball for our business.',
-      avatar: 'MS'
-    },
-    {
-      name: 'James Okafor',
-      role: 'Founder, DigitalCommerce',
-      content: 'Our customer service has improved dramatically with the AI chatbot. We can now handle 10x more inquiries without increasing our team size.',
-      avatar: 'JO'
-    }
-  ]
+
 
   return (
     <div className="min-h-screen">
@@ -317,36 +298,7 @@ const BusinessAIPage = () => {
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-orange-600 mb-6">
-              What Our Business Customers Say
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Real results from businesses using our AI technology
-            </p>
-          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <div key={testimonial.name} className="bg-white rounded-2xl p-8 shadow-soft">
-                <div className="flex items-center mb-6">
-                  <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center mr-4">
-                    <span className="text-white font-bold">{testimonial.avatar}</span>
-                  </div>
-                  <div>
-                    <div className="font-semibold text-gray-900">{testimonial.name}</div>
-                    <div className="text-sm text-gray-600">{testimonial.role}</div>
-                  </div>
-                </div>
-                <p className="text-gray-600 italic">"{testimonial.content}"</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* FAQ Section */}
       <FAQSection />

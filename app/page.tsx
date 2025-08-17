@@ -8,7 +8,7 @@ import StatsSection from '@/components/sections/StatsSection'
 // import AboutSection from '@/components/sections/AboutSection'
 
 import TrustedPartnersSection from '@/components/sections/TrustedPartnersSection'
-import TestimonialsSection from '@/components/sections/TestimonialsSection'
+
 import CTASection from '@/components/sections/CTASection'
 import LoadingSpinner from '@/components/ui/LoadingSpinner'
 import WelcomeLoader from '@/components/ui/WelcomeLoader'
@@ -149,7 +149,7 @@ export default function HomePage() {
       </Suspense>
       
       <Suspense fallback={<LoadingSpinner />}>
-        <TestimonialsSection />
+
       </Suspense>
       
       <Suspense fallback={<LoadingSpinner />}>
