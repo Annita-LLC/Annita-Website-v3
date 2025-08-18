@@ -74,17 +74,17 @@ const HeroSection = () => {
             initial={{ opacity: 0, x: -50 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8 }}
-            className="flex-1 text-center lg:text-left mb-8 sm:mb-12 lg:mb-0 order-2 lg:order-1"
+            className="flex-1 text-center lg:text-left mb-8 sm:mb-12 lg:mb-0"
           >
             <HeroContent />
           </motion.div>
 
-          {/* Right Image Section */}
+          {/* Right Phone Section */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="flex-1 flex justify-center lg:justify-end order-1 lg:order-2 mb-8 sm:mb-12 lg:mb-0"
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="flex-1 flex justify-center lg:justify-end mb-8 sm:mb-12 lg:mb-0"
           >
             <HeroPhone />
           </motion.div>

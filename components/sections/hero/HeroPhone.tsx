@@ -18,18 +18,69 @@ const HeroPhone = () => {
     <div className="relative w-full max-w-2xl mx-auto">
       {/* Phone Frame Container */}
       <motion.div
-        initial={{ opacity: 0, scale: 0.9 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.8, delay: 0.3 }}
+        initial={{ opacity: 0, scale: 0.9, rotateY: -15 }}
+        animate={{ 
+          opacity: 1, 
+          scale: 1, 
+          rotateY: [0, 5, -5, 0],
+          y: [0, -10, 0]
+        }}
+        transition={{ 
+          duration: 2, 
+          delay: 0.3,
+          y: {
+            duration: 4,
+            repeat: Infinity,
+            ease: "easeInOut"
+          },
+          rotateY: {
+            duration: 6,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }
+        }}
         className="relative"
+        style={{ perspective: "1000px" }}
       >
         {/* Background Glow */}
         <div className="absolute inset-0 bg-gradient-to-r from-orange-500/20 to-purple-500/20 rounded-[3rem] blur-3xl"></div>
         
         {/* Phone Frame */}
-        <div className="relative w-80 h-[600px] mx-auto">
+        <motion.div 
+          className="relative w-80 h-[600px] mx-auto"
+          animate={{
+            rotateZ: [0, 2, -2, 0],
+            scale: [1, 1.02, 1]
+          }}
+          transition={{
+            rotateZ: {
+              duration: 8,
+              repeat: Infinity,
+              ease: "easeInOut"
+            },
+            scale: {
+              duration: 3,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }
+          }}
+        >
           {/* Phone Body */}
-          <div className="absolute inset-0 bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 rounded-[3rem] shadow-2xl border-8 border-gray-700">
+          <motion.div 
+            className="absolute inset-0 bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 rounded-[3rem] shadow-2xl border-8 border-gray-700"
+            animate={{
+              boxShadow: [
+                "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
+                "0 35px 60px -12px rgba(0, 0, 0, 0.35)",
+                "0 25px 50px -12px rgba(0, 0, 0, 0.25)"
+              ]
+            }}
+            transition={{
+              duration: 4,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+          >
             {/* Notch */}
             <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-32 h-6 bg-gray-900 rounded-b-2xl"></div>
             
@@ -48,7 +99,17 @@ const HeroPhone = () => {
 
               {/* App Screen with Image */}
               <div className="absolute top-8 left-0 right-0 bottom-0">
-                <div className="relative w-full h-full">
+                <motion.div 
+                  className="relative w-full h-full"
+                  animate={{
+                    scale: [1, 1.05, 1]
+                  }}
+                  transition={{
+                    duration: 5,
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                  }}
+                >
                   <Image
                     src="/images/blog/OurServices03.webp"
                     alt="Annita Digital Platform Services"
@@ -69,66 +130,118 @@ const HeroPhone = () => {
                       className="text-center text-white"
                     >
                       <motion.div
-                        animate={{ scale: [1, 1.05, 1] }}
-                        transition={{ duration: 2, repeat: Infinity }}
+                        animate={{ 
+                          scale: [1, 1.1, 1],
+                          rotate: [0, 5, -5, 0]
+                        }}
+                        transition={{ 
+                          duration: 3, 
+                          repeat: Infinity,
+                          ease: "easeInOut"
+                        }}
                         className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center mx-auto mb-4"
                       >
-                        <Play className="w-8 h-8" />
+                        <motion.div
+                          animate={{ rotate: [0, 360] }}
+                          transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
+                        >
+                          <Play className="w-8 h-8" />
+                        </motion.div>
                       </motion.div>
-                      <div className="text-lg font-semibold mb-2">Watch Demo</div>
-                      <div className="text-sm opacity-90">See Annita in action</div>
+                      <motion.div
+                        animate={{ opacity: [0.8, 1, 0.8] }}
+                        transition={{ duration: 2, repeat: Infinity }}
+                      >
+                        <div className="text-lg font-semibold mb-2">Watch Demo</div>
+                        <div className="text-sm opacity-90">See Annita in action</div>
+                      </motion.div>
                     </motion.div>
                   </div>
-                </div>
+                </motion.div>
               </div>
             </div>
 
             {/* Home Indicator */}
             <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 w-32 h-1 bg-white rounded-full opacity-60"></div>
-          </div>
+          </motion.div>
 
           {/* Floating Elements */}
           <motion.div
             animate={{ 
-              y: [-10, 10, -10],
-              rotate: [0, 180, 360]
+              y: [-15, 15, -15],
+              rotate: [0, 180, 360],
+              scale: [1, 1.2, 1]
             }}
             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute -top-4 -right-4 w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center shadow-lg"
+            className="absolute -top-6 -right-6 w-10 h-10 bg-gradient-to-r from-orange-500 to-red-500 rounded-full flex items-center justify-center shadow-lg"
           >
-            <Zap className="w-4 h-4 text-white" />
+            <motion.div
+              animate={{ rotate: [0, 360] }}
+              transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
+            >
+              <Zap className="w-5 h-5 text-white" />
+            </motion.div>
           </motion.div>
           
           <motion.div
             animate={{ 
-              y: [10, -10, 10],
-              scale: [1, 1.2, 1]
+              y: [15, -15, 15],
+              scale: [1, 1.3, 1],
+              rotate: [0, -180, -360]
             }}
             transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute -bottom-4 -left-4 w-6 h-6 bg-purple-500 rounded-full flex items-center justify-center shadow-lg"
+            className="absolute -bottom-6 -left-6 w-8 h-8 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center shadow-lg"
           >
-            <Sparkles className="w-3 h-3 text-white" />
+            <motion.div
+              animate={{ rotate: [0, -360] }}
+              transition={{ duration: 1.5, repeat: Infinity, ease: "linear" }}
+            >
+              <Sparkles className="w-4 h-4 text-white" />
+            </motion.div>
           </motion.div>
 
           {/* Additional floating elements */}
           <motion.div
             animate={{ 
-              x: [-5, 5, -5],
-              y: [-5, 5, -5]
+              x: [-8, 8, -8],
+              y: [-8, 8, -8],
+              scale: [1, 1.5, 1]
             }}
             transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute top-1/2 -right-2 w-4 h-4 bg-blue-400 rounded-full opacity-60"
+            className="absolute top-1/3 -right-3 w-5 h-5 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full opacity-80"
           />
           
           <motion.div
             animate={{ 
-              x: [5, -5, 5],
-              y: [5, -5, 5]
+              x: [8, -8, 8],
+              y: [8, -8, 8],
+              scale: [1, 1.3, 1]
             }}
             transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute bottom-1/2 -left-2 w-3 h-3 bg-pink-400 rounded-full opacity-60"
+            className="absolute bottom-1/3 -left-3 w-4 h-4 bg-gradient-to-r from-pink-400 to-rose-400 rounded-full opacity-80"
           />
-        </div>
+
+          {/* More floating elements */}
+          <motion.div
+            animate={{ 
+              x: [-10, 10, -10],
+              y: [10, -10, 10],
+              rotate: [0, 360]
+            }}
+            transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute top-1/4 -left-4 w-3 h-3 bg-gradient-to-r from-green-400 to-emerald-400 rounded-full opacity-70"
+          />
+          
+          <motion.div
+            animate={{ 
+              x: [10, -10, 10],
+              y: [-10, 10, -10],
+              scale: [1, 1.4, 1]
+            }}
+            transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute bottom-1/4 -right-4 w-4 h-4 bg-gradient-to-r from-yellow-400 to-orange-400 rounded-full opacity-70"
+          />
+        </motion.div>
       </motion.div>
 
       {/* Feature Highlights */}
