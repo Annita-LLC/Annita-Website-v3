@@ -187,8 +187,8 @@ const BlogPage = () => {
         ogImage="/images/blog/digital-payments-africa.jpg"
       />
 
-      <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white">
-        {/* Hero Section */}
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white">
+      {/* Hero Section */}
         <section className="relative py-20 sm:py-32 overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-r from-orange-500 to-orange-600"></div>
           <div className="absolute inset-0 bg-black opacity-20"></div>
@@ -200,9 +200,9 @@ const BlogPage = () => {
               transition={{ duration: 0.8 }}
               className="text-center text-white"
             >
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
                 Annita <span className="text-orange-200">Blog</span>
-              </h1>
+            </h1>
               <p className="text-xl sm:text-2xl text-orange-100 max-w-3xl mx-auto mb-8">
                 Insights, updates, and stories from Africa's leading digital platform
               </p>
@@ -216,8 +216,8 @@ const BlogPage = () => {
             <div className="flex flex-col lg:flex-row gap-6 items-center justify-between">
               <div className="relative w-full lg:w-96">
                 <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
-                <input
-                  type="text"
+                <input 
+                  type="text" 
                   placeholder="Search articles..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
@@ -227,22 +227,22 @@ const BlogPage = () => {
 
               <div className="flex flex-wrap gap-2">
                 {categories.map((category) => (
-                  <button
+              <button 
                     key={category.id}
                     onClick={() => setActiveCategory(category.id)}
                     className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200 ${
                       activeCategory === category.id
                         ? 'bg-orange-500 text-white'
-                        : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                    }`}
-                  >
+                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                }`}
+              >
                     {category.label} ({category.count})
-                  </button>
-                ))}
+              </button>
+            ))}
               </div>
-            </div>
           </div>
-        </section>
+        </div>
+      </section>
 
         {/* Featured Posts */}
         {featuredPosts.length > 0 && (
@@ -254,9 +254,9 @@ const BlogPage = () => {
                 transition={{ duration: 0.8 }}
                 className="text-center mb-16"
               >
-                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
                   Featured <span className="text-orange-600">Articles</span>
-                </h2>
+            </h2>
               </motion.div>
 
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -279,13 +279,13 @@ const BlogPage = () => {
                           Featured
                         </span>
                       </div>
-                    </div>
-                    
-                    <div className="p-6">
+          </div>
+
+                <div className="p-6">
                       <div className="flex items-center gap-4 mb-4">
                         <span className="text-xs font-medium text-orange-600 uppercase tracking-wide">
-                          {post.category}
-                        </span>
+                      {post.category}
+                    </span>
                         <div className="flex items-center gap-2 text-sm text-gray-500">
                           <Calendar className="w-4 h-4" />
                           {post.publishDate}
@@ -293,7 +293,7 @@ const BlogPage = () => {
                         <div className="flex items-center gap-2 text-sm text-gray-500">
                           <Clock className="w-4 h-4" />
                           {post.readTime}
-                        </div>
+                  </div>
                       </div>
                       
                       <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-orange-600 transition-colors duration-200">
@@ -319,10 +319,10 @@ const BlogPage = () => {
                       </div>
                     </div>
                   </motion.article>
-                ))}
-              </div>
-            </div>
-          </section>
+            ))}
+          </div>
+        </div>
+      </section>
         )}
 
         {/* Regular Posts */}
@@ -334,12 +334,12 @@ const BlogPage = () => {
               transition={{ duration: 0.8 }}
               className="text-center mb-16"
             >
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
                 Latest <span className="text-orange-600">Articles</span>
-              </h2>
+            </h2>
             </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {regularPosts.map((post, index) => (
                 <motion.article
                   key={post.id}
@@ -354,17 +354,17 @@ const BlogPage = () => {
                       alt={post.title}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                     />
-                  </div>
+                </div>
                   
-                  <div className="p-6">
+                <div className="p-6">
                     <div className="flex items-center gap-4 mb-4">
                       <span className="text-xs font-medium text-orange-600 uppercase tracking-wide">
-                        {post.category}
-                      </span>
+                      {post.category}
+                    </span>
                       <div className="flex items-center gap-2 text-sm text-gray-500">
                         <Calendar className="w-4 h-4" />
                         {post.publishDate}
-                      </div>
+                  </div>
                     </div>
                     
                     <h3 className="text-lg font-bold text-gray-900 mb-3 group-hover:text-orange-600 transition-colors duration-200">
@@ -387,10 +387,10 @@ const BlogPage = () => {
                     </div>
                   </div>
                 </motion.article>
-              ))}
-            </div>
+            ))}
           </div>
-        </section>
+        </div>
+      </section>
 
         {/* CTA Section */}
         <section className="py-16 sm:py-20 bg-gradient-to-r from-orange-500 to-orange-600">
@@ -403,13 +403,13 @@ const BlogPage = () => {
             >
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
                 Stay Informed
-              </h2>
+            </h2>
               <p className="text-xl text-orange-100 max-w-3xl mx-auto mb-8">
                 Subscribe to our newsletter for the latest insights and updates
-              </p>
+            </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
-                <input
-                  type="email"
+                <input 
+                  type="email" 
                   placeholder="Enter your email"
                   className="flex-1 px-6 py-3 rounded-lg text-gray-900 focus:ring-2 focus:ring-white focus:outline-none"
                 />
@@ -418,9 +418,9 @@ const BlogPage = () => {
                 </button>
               </div>
             </motion.div>
-          </div>
-        </section>
-      </div>
+        </div>
+      </section>
+    </div>
     </>
   )
 }

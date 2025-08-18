@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import SEOHead from '@/components/seo/SEOHead'
+import ComingSoonBanner from '@/components/ui/ComingSoonBanner'
 import HeroSection from '@/components/sections/the100/HeroSection'
 import ProgramOverview from '@/components/sections/the100/ProgramOverview'
 import ProgramStructure from '@/components/sections/the100/ProgramStructure'
@@ -97,6 +98,7 @@ const The100Page = () => {
       />
       
       <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white">
+        <ComingSoonBanner />
         <HeroSection />
         
         {/* Navigation Tabs */}

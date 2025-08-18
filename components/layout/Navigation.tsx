@@ -91,7 +91,7 @@ const Navigation = () => {
         { name: 'AnnitaPay', href: '/payments', icon: CreditCard, description: 'Secure payment gateway with escrow' },
         { name: 'Annita Logistics', href: '/logistics', icon: Truck, description: 'On-demand delivery network' },
         { name: 'Annita Connect', href: '/connect', icon: MessageSquare, description: 'Communication & marketing suite' },
-        { name: 'Analytics & AI', href: '/analytics', icon: BarChart3, description: 'AI-driven business insights' },
+
         { name: 'Live Activity', href: '/live-activity', icon: Activity, description: 'Real-time platform activity feed' },
         { name: 'API & Integrations', href: '/api', icon: Code, description: 'Developer platform & integrations' },
       ]
@@ -105,7 +105,7 @@ const Navigation = () => {
                       { name: 'Investors', href: '/investors', icon: DollarSign, description: 'Investment opportunities and company info' },
                       { name: 'Pricing', href: '/pricing', icon: DollarSign, description: 'Transparent pricing plans' },
                       { name: 'Business Model', href: '/business-model', icon: Building2, description: 'Our revenue model and strategy' },
-                      { name: 'Testimonials', href: '/testimonials', icon: MessageSquare, description: 'Customer reviews and success stories' },
+              
                       { name: 'Awards & Recognition', href: '/awards', icon: Award, description: 'Our achievements and recognition' },
                       { name: 'Gallery', href: '/gallery', icon: Image, description: 'Photos, videos, and media' },
         { name: 'Careers', href: '/careers', icon: Briefcase, description: 'Join our team' },
@@ -116,12 +116,10 @@ const Navigation = () => {
       name: 'Support', 
       href: '#',
       dropdown: [
-        { name: 'Help Center', href: '/help', icon: HelpCircle, description: 'FAQ and help articles' },
+        { name: 'Support Center', href: '/support', icon: HelpCircle, description: 'Get help and support' },
         { name: 'System Status', href: '/status', icon: Activity, description: 'Service status and uptime' },
-        { name: 'Support', href: '/support', icon: HelpCircle, description: 'Get help and support' },
         { name: 'Documentation', href: '/support/documentation', icon: FileText, description: 'Developer documentation' },
         { name: 'Report Issues', href: '/support/report-issues', icon: HelpCircle, description: 'Report bugs and issues' },
-        { name: 'Contact Support', href: '/support/contact-support', icon: Mail, description: 'Get in touch with us' },
         { name: 'Contact Sales', href: '/contact-sales', icon: Phone, description: 'Talk to our business development team' },
       ]
     },

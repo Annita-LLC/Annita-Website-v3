@@ -74,26 +74,7 @@ const PartnerApplyPage = () => {
     }
   ]
 
-  const testimonials = [
-    {
-      name: 'TechFlow Solutions',
-      type: 'Technology Partner',
-      content: 'Partnering with Annita has opened up incredible opportunities. Our revenue has grown 300% in the first year.',
-      avatar: 'TF'
-    },
-    {
-      name: 'Global Commerce Group',
-      type: 'Channel Partner',
-      content: 'The support and training we receive from Annita is exceptional. Our clients love the platform.',
-      avatar: 'GC'
-    },
-    {
-      name: 'Digital Dynamics',
-      type: 'Strategic Partner',
-      content: 'Annita\'s technology and partnership approach has transformed our business model completely.',
-      avatar: 'DD'
-    }
-  ]
+
 
   return (
     <div className="min-h-screen">
@@ -429,36 +410,7 @@ const PartnerApplyPage = () => {
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
-              What Our Partners Say
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Success stories from our partner network
-            </p>
-          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <div key={testimonial.name} className="bg-white rounded-2xl p-8 shadow-soft">
-                <div className="flex items-center mb-6">
-                  <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-500 rounded-xl flex items-center justify-center mr-4">
-                    <span className="text-white font-bold">{testimonial.avatar}</span>
-                  </div>
-                  <div>
-                    <div className="font-semibold text-gray-900">{testimonial.name}</div>
-                    <div className="text-sm text-gray-600">{testimonial.type}</div>
-                  </div>
-                </div>
-                <p className="text-gray-600 italic">"{testimonial.content}"</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-br from-blue-900 via-indigo-900 to-purple-900 text-white">

@@ -144,7 +144,7 @@ annita-website/
 
 ### Components
 - **Buttons**: Multiple variants with hover effects
-- **Cards**: Feature cards, testimonial cards, pricing cards
+- **Cards**: Feature cards, pricing cards
 - **Forms**: Contact forms, newsletter signup
 - **Navigation**: Responsive navigation with mobile menu
 

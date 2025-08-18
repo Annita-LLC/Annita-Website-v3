@@ -47,7 +47,7 @@ const Footer = () => {
         { name: 'AnnitaPay', href: '/payments' },
         { name: 'Annita Logistics', href: '/logistics' },
         { name: 'Annita Connect', href: '/connect' },
-        { name: 'Analytics & AI', href: '/analytics' },
+
         { name: 'Live Activity', href: '/live-activity' },
         { name: 'API & Integrations', href: '/api' }
       ]

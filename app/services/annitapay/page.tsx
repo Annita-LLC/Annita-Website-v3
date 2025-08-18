@@ -61,29 +61,7 @@ const AnnitaPayPage = () => {
     "Advanced fraud protection"
   ]
 
-  const testimonials = [
-    {
-      name: "Sarah Johnson",
-      role: "Small Business Owner",
-      rating: 5,
-      comment: "AnnitaPay transformed my business. The instant payments and low fees have helped me grow significantly.",
-      avatar: "👩‍💼"
-    },
-    {
-      name: "Michael Doe",
-      role: "Freelancer",
-      rating: 5,
-      comment: "The mobile app is incredible. I can send money to clients instantly, no matter where they are.",
-      avatar: "👨‍💻"
-    },
-    {
-      name: "Grace Williams",
-      role: "Student",
-      rating: 5,
-      comment: "Perfect for sending money to family. Fast, secure, and very easy to use.",
-      avatar: "👩‍🎓"
-    }
-  ]
+
 
   const structuredData = {
     "@context": "https://schema.org",
@@ -312,52 +290,7 @@ const AnnitaPayPage = () => {
           </div>
         </section>
 
-        {/* Testimonials Section */}
-        <section className="py-16 sm:py-20">
-          <div className="container mx-auto px-3 sm:px-4 lg:px-6 xl:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8 }}
-              className="text-center mb-16"
-            >
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-                What Our <span className="text-orange-600">Users Say</span>
-              </h2>
-              <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
-                Join thousands of satisfied users who trust AnnitaPay for their daily transactions.
-              </p>
-            </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {testimonials.map((testimonial, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={isInView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
-                  className="bg-white p-6 rounded-2xl shadow-lg border border-gray-100"
-                >
-                  <div className="flex items-center mb-4">
-                    <div className="text-3xl mr-4">{testimonial.avatar}</div>
-                    <div>
-                      <h4 className="text-lg font-semibold text-gray-900">{testimonial.name}</h4>
-                      <p className="text-orange-600 font-medium text-sm">{testimonial.role}</p>
-                    </div>
-                  </div>
-                  <div className="flex items-center mb-4">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 text-yellow-400 fill-current" />
-                    ))}
-                  </div>
-                  <blockquote className="text-gray-700 text-sm italic">
-                    "{testimonial.comment}"
-                  </blockquote>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
 
         {/* CTA Section */}
         <section className="py-16 sm:py-20 bg-gradient-to-r from-orange-500 to-orange-600">

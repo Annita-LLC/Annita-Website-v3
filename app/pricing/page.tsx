@@ -217,8 +217,8 @@ const PricingPage = () => {
         structuredData={structuredData}
       />
 
-      <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white">
-        {/* Hero Section */}
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white">
+      {/* Hero Section */}
         <section className="relative py-16 sm:py-20 lg:py-24 overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-r from-orange-500 to-orange-600"></div>
           <div className="absolute inset-0 bg-black opacity-20"></div>
@@ -232,7 +232,7 @@ const PricingPage = () => {
             >
               <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 sm:mb-6">
                 Transparent <span className="text-orange-200">Pricing</span>
-              </h1>
+            </h1>
               <p className="text-lg sm:text-xl lg:text-2xl text-orange-100 max-w-4xl mx-auto mb-6 sm:mb-8">
                 Choose the perfect plan for your business with our clear markup base model
               </p>
@@ -242,8 +242,8 @@ const PricingPage = () => {
                 <span className="bg-white/20 px-3 sm:px-4 py-2 rounded-full">Volume Discounts</span>
               </div>
             </motion.div>
-          </div>
-        </section>
+        </div>
+      </section>
 
         {/* Billing Toggle */}
         <section className="py-8 bg-white border-b border-gray-200">
@@ -292,14 +292,14 @@ const PricingPage = () => {
                     plan.popular ? 'ring-2 ring-orange-500 scale-105' : ''
                   }`}
                 >
-                  {plan.popular && (
-                    <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                {plan.popular && (
+                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
                       <span className="bg-orange-500 text-white px-4 py-2 rounded-full text-sm font-semibold">
-                        Most Popular
+                      Most Popular
                       </span>
-                    </div>
-                  )}
-                  
+                  </div>
+                )}
+                
                   <div className="p-6 sm:p-8">
                     <div className="text-center mb-6">
                       <div className="inline-flex items-center justify-center w-12 h-12 bg-orange-100 rounded-2xl mb-4">
@@ -323,15 +323,15 @@ const PricingPage = () => {
                             /{billingCycle === 'monthly' ? 'mo' : 'year'}
                           </span>
                         )}
-                      </div>
+                  </div>
                       {plan.monthlyPrice === 0 && (
                         <p className="text-orange-600 font-semibold mt-2">Forever Free</p>
                       )}
-                    </div>
+                </div>
 
                     <div className="space-y-3 mb-8">
                       <h4 className="font-semibold text-gray-900 mb-3">What's included:</h4>
-                      {plan.features.map((feature, featureIndex) => (
+                  {plan.features.map((feature, featureIndex) => (
                         <div key={featureIndex} className="flex items-start">
                           <Check className="w-5 h-5 text-green-500 mt-0.5 mr-3 flex-shrink-0" />
                           <span className="text-sm sm:text-base text-gray-700">{feature}</span>
@@ -360,12 +360,12 @@ const PricingPage = () => {
                     >
                       {plan.monthlyPrice === 0 ? 'Get Started Free' : 'Start Free Trial'}
                     </button>
-                  </div>
+              </div>
                 </motion.div>
-              ))}
-            </div>
+            ))}
           </div>
-        </section>
+        </div>
+      </section>
 
         {/* Markup Base Model Section */}
         <section className="py-12 sm:py-16 lg:py-20 bg-gray-50">
@@ -379,7 +379,7 @@ const PricingPage = () => {
             >
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">
                 Our <span className="text-orange-600">Markup Base Model</span>
-              </h2>
+            </h2>
               <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
                 {markupModel.description}
               </p>
@@ -397,23 +397,23 @@ const PricingPage = () => {
                   <div className="text-center">
                     <div className="inline-flex items-center justify-center w-12 h-12 bg-orange-100 rounded-2xl mb-4">
                       <DollarSign className="w-6 h-6 text-orange-600" />
-                    </div>
+          </div>
                     <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2">
                       {component.title}
                     </h3>
                     <div className="text-3xl sm:text-4xl font-bold text-orange-600 mb-2">
                       {component.rate}
-                    </div>
+                </div>
                     <p className="text-gray-600 text-sm sm:text-base mb-3">
                       {component.description}
                     </p>
                     <p className="text-gray-500 text-xs sm:text-sm">
                       {component.details}
                     </p>
-                  </div>
+              </div>
                 </motion.div>
-              ))}
-            </div>
+            ))}
+          </div>
 
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -427,9 +427,9 @@ const PricingPage = () => {
                 </h3>
                 <p className="text-gray-600 text-lg">
                   We believe in transparent, value-based pricing that grows with your business
-                </p>
-              </div>
-              
+            </p>
+          </div>
+
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
                 <div>
                   <h4 className="text-xl font-semibold text-gray-900 mb-4">Base Transaction Fee</h4>
@@ -482,10 +482,10 @@ const PricingPage = () => {
                 </div>
               </div>
             </motion.div>
-          </div>
-        </section>
+        </div>
+      </section>
 
-        {/* FAQ Section */}
+      {/* FAQ Section */}
         <section className="py-12 sm:py-16 lg:py-20">
           <div className="container mx-auto px-3 sm:px-4 lg:px-6 xl:px-8">
             <motion.div
@@ -496,7 +496,7 @@ const PricingPage = () => {
             >
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">
                 Frequently Asked <span className="text-orange-600">Questions</span>
-              </h2>
+            </h2>
               <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
                 Everything you need to know about our pricing and billing
               </p>
@@ -549,9 +549,9 @@ const PricingPage = () => {
                 </button>
               </div>
             </motion.div>
-          </div>
-        </section>
-      </div>
+        </div>
+      </section>
+    </div>
     </>
   )
 }

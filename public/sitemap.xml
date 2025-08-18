@@ -135,12 +135,7 @@
     <priority>0.8</priority>
   </url>
   
-  <url>
-    <loc>https://annita.com/analytics</loc>
-    <lastmod>2024-03-15</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
+
   
   <url>
     <loc>https://annita.com/api</loc>
