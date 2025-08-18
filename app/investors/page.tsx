@@ -665,20 +665,23 @@ const InvestorsPage = () => {
                   {
                     name: 'Christopher O. Fallah',
                     role: 'Founder & CEO',
-                    bio: 'Serial entrepreneur with 10+ years in fintech and e-commerce',
-                    image: '/images/team/ceo.jpg'
+                    bio: 'Visionary leader with experience in African startups. Led MVP launch and awards wins including Orange Social Venture Prize.',
+                    image: '/images/team/ceo-fallah.jpg',
+                    initials: 'COF'
                   },
                   {
-                    name: 'Sarah Johnson',
+                    name: 'Emmanuel Z. Weh',
                     role: 'CTO',
-                    bio: 'Former senior engineer at major tech companies',
-                    image: '/images/team/cto.jpg'
+                    bio: 'Expert in scalable platforms and low-connectivity solutions. Oversees tech architecture for African market needs.',
+                    image: '/images/team/CTO.jpg',
+                    initials: 'EW'
                   },
                   {
-                    name: 'Michael Chen',
-                    role: 'CFO',
-                    bio: '15+ years in financial management and fundraising',
-                    image: '/images/team/cfo.jpg'
+                    name: 'Siah Fallah',
+                    role: 'CMO',
+                    bio: 'Drives marketing strategies and MSME engagement. Focused on growth and customer acquisition across Africa.',
+                    image: '/images/team/SF_beautiful-asian-woman-fashion-designer-poses-office-studio-entrepreneur-OL.jpg',
+                    initials: 'SF'
                   }
                 ].map((member, index) => (
                   <motion.div
@@ -686,12 +689,19 @@ const InvestorsPage = () => {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: index * 0.1 }}
-                    className="bg-white dark:bg-gray-800 rounded-xl p-6 text-center shadow-lg"
+                    className="bg-white dark:bg-gray-800 rounded-xl p-6 text-center shadow-lg hover:shadow-xl transition-all duration-300 group"
                   >
-                    <div className="w-20 h-20 bg-gradient-to-br from-orange-500 to-red-500 rounded-full mx-auto mb-4 flex items-center justify-center">
-                      <span className="text-white font-bold text-xl">
-                        {member.name.split(' ').map(n => n[0]).join('')}
-                      </span>
+                    <div className="relative mb-4">
+                      <div className="w-20 h-20 mx-auto rounded-full overflow-hidden border-4 border-orange-100 group-hover:border-orange-200 transition-colors duration-300">
+                        <img 
+                          src={member.image} 
+                          alt={member.name}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                      <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-gradient-to-br from-orange-500 to-red-500 rounded-full flex items-center justify-center">
+                        <span className="text-white text-xs font-bold">{member.initials}</span>
+                      </div>
                     </div>
                     <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-1">
                       {member.name}

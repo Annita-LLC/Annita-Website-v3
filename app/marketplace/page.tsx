@@ -1,94 +1,16 @@
 "use client"
 
-import { 
-  ShoppingCart, 
-  Search, 
-  Filter, 
-  Star, 
-  Heart, 
-  Share2, 
-  Truck, 
-  Shield, 
-  Zap, 
-  Users, 
-  TrendingUp,
-  Award,
-  CheckCircle,
-  ArrowRight,
-  Globe,
-  CreditCard,
-  Package,
-  Tag
-} from 'lucide-react'
-import Button from '@/components/ui/Button'
+import { useRef } from 'react'
+import { motion, useInView } from 'framer-motion'
 import SEOHead from '@/components/seo/SEOHead'
+import HeroSection from '@/components/sections/marketplace/HeroSection'
+import FeaturesSection from '@/components/sections/marketplace/FeaturesSection'
+import CategoriesSection from '@/components/sections/marketplace/CategoriesSection'
+import CTASection from '@/components/sections/marketplace/CTASection'
 
 const MarketplacePage = () => {
-  const stats = [
-    { number: '3,000+', label: 'Active Vendors', icon: Users },
-    { number: '50,000+', label: 'Products Listed', icon: Package },
-    { number: '99.9%', label: 'Secure Transactions', icon: Shield },
-    { number: '24/7', label: 'Customer Support', icon: Zap }
-  ]
-
-  const features = [
-    {
-      icon: Shield,
-      title: 'Secure Escrow Payments',
-      description: 'Your money is protected until you receive your order. No more payment scams.',
-      color: 'from-green-500 to-emerald-500'
-    },
-    {
-      icon: Truck,
-      title: 'Integrated Logistics',
-      description: 'Same-day and next-day delivery across Africa with real-time tracking.',
-      color: 'from-blue-500 to-cyan-500'
-    },
-    {
-      icon: Search,
-      title: 'Smart Search & Filters',
-      description: 'Find exactly what you need with AI-powered search and advanced filters.',
-      color: 'from-purple-500 to-pink-500'
-    },
-    {
-      icon: Globe,
-      title: 'Pan-African Reach',
-      description: 'Buy from vendors across Africa. Cross-border trade made simple.',
-      color: 'from-orange-500 to-red-500'
-    }
-  ]
-
-  const benefits = [
-    {
-      icon: CreditCard,
-      title: 'Multiple Payment Options',
-      description: 'Pay with mobile money, cards, or bank transfers. All secure and instant.'
-    },
-    {
-      icon: Award,
-      title: 'Quality Guarantee',
-      description: 'All products are verified and quality-checked before listing.'
-    },
-    {
-      icon: TrendingUp,
-      title: 'Best Prices',
-      description: 'Compare prices across vendors and get the best deals.'
-    },
-    {
-      icon: CheckCircle,
-      title: 'Easy Returns',
-      description: '30-day return policy with hassle-free refunds.'
-    }
-  ]
-
-  const categories = [
-    { name: 'Electronics', icon: Zap, count: '5,234', color: 'from-blue-500 to-cyan-500' },
-    { name: 'Fashion', icon: Tag, count: '12,456', color: 'from-pink-500 to-rose-500' },
-    { name: 'Home & Garden', icon: Package, count: '8,901', color: 'from-green-500 to-emerald-500' },
-    { name: 'Sports', icon: TrendingUp, count: '3,567', color: 'from-orange-500 to-red-500' },
-    { name: 'Books', icon: Award, count: '2,345', color: 'from-purple-500 to-indigo-500' },
-    { name: 'Beauty', icon: Star, count: '6,789', color: 'from-yellow-500 to-amber-500' }
-  ]
+  const ref = useRef(null)
+  const isInView = useInView(ref, { once: true, margin: "-100px" })
 
   const marketplaceStructuredData = {
     "@context": "https://schema.org",
@@ -102,234 +24,59 @@ const MarketplacePage = () => {
       "query-input": "required name=search_term_string"
     },
     "offers": {
-      "@type": "Offer",
-      "description": "Multivendor marketplace with secure payments",
-      "price": "0",
-      "priceCurrency": "USD"
-    },
-    "provider": {
-      "@type": "Organization",
-      "name": "Annita",
-      "url": "https://annita.com"
+      "@type": "AggregateOffer",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock"
     }
   }
 
   return (
     <>
       <SEOHead
-        title="Marketplace - Africa's Largest Multivendor Platform"
-        description="Discover Africa's largest multivendor marketplace with 3,000+ vendors and 50,000+ products. Buy and sell with confidence using our secure escrow system, integrated logistics, and AI-powered search. Pan-African reach with same-day delivery."
+        title="Marketplace - Africa's Largest Multivendor Platform | Annita LLC"
+        description="Buy and sell across Africa with secure escrow payments, integrated logistics, and AI-powered search. Join thousands of vendors and millions of customers."
         keywords={[
-          'Annita marketplace',
-          'Africa marketplace',
-          'multivendor marketplace',
-          'e-commerce platform',
-          'online shopping Africa',
-          'secure escrow payments',
-          'integrated logistics',
-          'cross-border trade',
-          'African vendors',
-          'online marketplace',
-          'secure transactions',
-          'same-day delivery',
-          'next-day delivery',
-          'real-time tracking',
-          'AI-powered search',
-          'smart filters',
-          'mobile money payments',
-          'quality guarantee',
-          'easy returns',
-          'best prices',
-          'pan-African reach',
-          'African e-commerce',
-          'digital marketplace',
+          'African marketplace',
+          'multivendor platform',
           'secure payments',
-          'escrow system',
-          'logistics integration',
+          'escrow protection',
+          'cross-border trade',
+          'African e-commerce',
+          'online shopping',
           'vendor platform',
-          'buyer protection',
-          'seller platform',
-          'African products',
-          'local vendors',
-          'international shipping',
-          'payment security',
-          'transaction protection',
-          'marketplace security',
-          'African business platform',
+          'secure transactions',
+          'logistics integration',
+          'AI-powered search',
+          'mobile money payments',
+          'African businesses',
           'digital commerce',
-          'online retail',
-          'e-commerce solutions'
+          'marketplace platform',
+          'secure shopping',
+          'product categories',
+          'vendor registration',
+          'buyer protection',
+          'seller tools',
+          'payment gateway',
+          'delivery tracking',
+          'quality guarantee',
+          'return policy',
+          'customer support',
+          'African vendors',
+          'local products',
+          'international shipping',
+          'marketplace security',
+          'trusted platform'
         ]}
         canonical="/marketplace"
         ogImage="/marketplace-og-image.jpg"
         structuredData={marketplaceStructuredData}
       />
-      <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-primary-900 via-primary-800 to-secondary-800 text-white overflow-hidden">
-        <div className="absolute inset-0 bg-black/20"></div>
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
-              Africa's Largest
-              <span className="block text-orange-500">
-                Multivendor Marketplace
-              </span>
-            </h1>
-            <p className="text-xl text-gray-200 mb-8 max-w-2xl mx-auto">
-              Buy and sell with confidence. Secure payments, integrated logistics, and 24/7 support.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button
-                variant="gradient"
-                size="lg"
-                icon={ShoppingCart}
-                className="text-lg font-bold"
-              >
-                Start Selling
-              </Button>
-              <Button
-                variant="glass"
-                size="lg"
-                icon={Search}
-                className="text-lg font-bold"
-              >
-                Browse Products
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Stats Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-            {stats.map((stat, index) => (
-              <div key={stat.label} className="text-center">
-                <div className="w-16 h-16 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                  <stat.icon className="w-8 h-8 text-white" />
-                </div>
-                <div className="text-3xl font-bold text-gray-900 mb-2">{stat.number}</div>
-                <div className="text-gray-600">{stat.label}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Features Section */}
-      <section className="py-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
-              Why Choose Annita Marketplace?
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              We've built the most comprehensive marketplace platform specifically for African businesses and consumers.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {features.map((feature, index) => (
-              <div key={feature.title} className="bg-white rounded-2xl p-8 shadow-soft hover:shadow-large transition-all duration-300 transform hover:-translate-y-2">
-                <div className={`w-16 h-16 bg-gradient-to-br ${feature.color} rounded-2xl flex items-center justify-center mb-6`}>
-                  <feature.icon className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-4">{feature.title}</h3>
-                <p className="text-gray-600">{feature.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Categories Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
-              Popular Categories
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Discover millions of products across all categories
-            </p>
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
-            {categories.map((category, index) => (
-              <div key={category.name} className="bg-white rounded-2xl p-6 text-center hover:shadow-large transition-all duration-300 transform hover:-translate-y-2 cursor-pointer">
-                <div className={`w-12 h-12 bg-gradient-to-br ${category.color} rounded-xl flex items-center justify-center mx-auto mb-4`}>
-                  <category.icon className="w-6 h-6 text-white" />
-                </div>
-                <h3 className="font-bold text-gray-900 mb-2">{category.name}</h3>
-                <p className="text-sm text-gray-600">{category.count} products</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Benefits Section */}
-      <section className="py-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
-              Shop with Confidence
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Every purchase is protected by our comprehensive buyer protection program
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {benefits.map((benefit, index) => (
-              <div key={benefit.title} className="text-center">
-                <div className="w-16 h-16 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                  <benefit.icon className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-4">{benefit.title}</h3>
-                <p className="text-gray-600">{benefit.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-br from-primary-900 via-primary-800 to-secondary-800 text-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl sm:text-4xl font-bold mb-6">
-              Ready to Start Your Business?
-            </h2>
-            <p className="text-xl text-gray-200 mb-8">
-              Join thousands of successful vendors and start selling today. 
-              No setup fees, no monthly charges.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button
-                variant="gradient"
-                size="lg"
-                icon={ArrowRight}
-                iconPosition="right"
-                className="text-lg font-bold"
-              >
-                Start Selling Now
-              </Button>
-              <Button
-                variant="glass"
-                size="lg"
-                icon={Users}
-                className="text-lg font-bold"
-              >
-                Learn More
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
+      
+      <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white">
+        <HeroSection />
+        <FeaturesSection />
+        <CategoriesSection />
+        <CTASection />
       </div>
     </>
   )
