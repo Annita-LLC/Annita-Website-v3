@@ -855,17 +855,17 @@ const InvestorsPage = () => {
                     initials: 'COF'
                   },
                   {
-                    name: 'Lamber',
-                    role: 'CTO',
+                    name: 'Lamber Kpukuyou ',
+                    role: 'Chief Technology Officer (CTO)',
                     bio: 'Expert in scalable platforms and low-connectivity solutions. Oversees tech architecture for African market needs.',
-                    image: '/images/Lamber.jpg',
-                    initials: 'EW'
+                    image: '/images/Lamber Kpukuyou (Chief Technology Officer (CTO).jpg',
+                    initials: 'LK'
                   },
                   {
                     name: 'Siah Fallah',
-                    role: 'CMO',
+                    role: 'Chief Marketing Officer (CMO)',
                     bio: 'Drives marketing strategies and MSME engagement. Focused on growth and customer acquisition across Africa.',
-                    image: '/images/team/SF_beautiful-asian-woman-fashion-designer-poses-office-studio-entrepreneur-OL.jpg',
+                    image: '/images/team/Siah Fallah(Chief Marketing Officer (CMO).jpeg',
                     initials: 'SF'
                   }
                 ].map((member, index) => (

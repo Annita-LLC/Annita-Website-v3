@@ -58,7 +58,6 @@ const Navigation = () => {
 
   const navItems = [
     { name: 'Home', href: '/' },
-    { name: 'Contact Us', href: '/contact-us' },
     { 
       name: 'Personal', 
       href: '#',
@@ -106,7 +105,6 @@ const Navigation = () => {
                       { name: 'Gallery', href: '/gallery', icon: Image, description: 'Photos, videos, and media' },
         { name: 'Careers', href: '/careers', icon: Briefcase, description: 'Join our team' },
         { name: 'Apply Now', href: '/careers/apply', icon: UserPlus, description: 'Submit your application' },
-        { name: 'Blog', href: '/blog', icon: FileText, description: 'Latest news and insights' },
       ]
     },
     { 
@@ -114,6 +112,7 @@ const Navigation = () => {
       href: '#',
       dropdown: [
         { name: 'Support Center', href: '/support', icon: HelpCircle, description: 'Get help and support' },
+        { name: 'Contact Us', href: '/contact-us', icon: Mail, description: 'Get in touch with our team' },
         { name: 'System Status', href: '/status', icon: Activity, description: 'Service status and uptime' },
         { name: 'Documentation', href: '/support/documentation', icon: FileText, description: 'Developer documentation' },
         { name: 'Report Issues', href: '/support/report-issues', icon: HelpCircle, description: 'Report bugs and issues' },
