@@ -79,92 +79,7 @@ const CareersPage = () => {
     }
   ]
 
-  const openPositions = [
-    {
-      title: 'Senior Frontend Engineer',
-      department: 'Engineering',
-      location: 'Remote / Monrovia, Liberia',
-      type: 'Full-time',
-      experience: '5+ years',
-      description: 'Build beautiful, responsive user interfaces for our platform',
-      requirements: [
-        'Expert in React, TypeScript, and modern frontend technologies',
-        'Experience with Next.js and state management',
-        'Strong UI/UX design principles',
-        'Experience with mobile-first development'
-      ]
-    },
-    {
-      title: 'Senior Backend Engineer',
-      department: 'Engineering',
-      location: 'Remote / Monrovia, Liberia',
-      type: 'Full-time',
-      experience: '5+ years',
-      description: 'Design and build scalable backend systems',
-      requirements: [
-        'Expert in Node.js, Python, or Go',
-        'Experience with microservices architecture',
-        'Database design and optimization',
-        'API design and security best practices'
-      ]
-    },
-    {
-      title: 'Product Manager',
-      department: 'Product',
-      location: 'Remote / Monrovia, Liberia',
-      type: 'Full-time',
-      experience: '3+ years',
-      description: 'Lead product strategy and development for our platform',
-      requirements: [
-        'Experience in fintech or e-commerce products',
-        'Strong analytical and strategic thinking',
-        'User research and data analysis skills',
-        'Experience with agile development methodologies'
-      ]
-    },
-    {
-      title: 'Business Development Manager',
-      department: 'Sales',
-      location: 'West Africa',
-      type: 'Full-time',
-      experience: '3+ years',
-      description: 'Drive partnerships and business growth across Africa',
-      requirements: [
-        'Experience in B2B sales and partnerships',
-        'Knowledge of African markets and business landscape',
-        'Strong networking and relationship building skills',
-        'Experience in fintech or e-commerce industry'
-      ]
-    },
-    {
-      title: 'Data Scientist',
-      department: 'Analytics',
-      location: 'Remote',
-      type: 'Full-time',
-      experience: '3+ years',
-      description: 'Build AI/ML models to optimize business operations',
-      requirements: [
-        'Expert in Python, R, or similar languages',
-        'Experience with machine learning frameworks',
-        'Statistical analysis and modeling skills',
-        'Experience with big data technologies'
-      ]
-    },
-    {
-      title: 'Customer Success Manager',
-      department: 'Customer Success',
-      location: 'Remote / Monrovia, Liberia',
-      type: 'Full-time',
-      experience: '2+ years',
-      description: 'Ensure customer satisfaction and platform adoption',
-      requirements: [
-        'Experience in customer success or account management',
-        'Strong communication and problem-solving skills',
-        'Experience with CRM systems',
-        'Passion for helping customers succeed'
-      ]
-    }
-  ]
+  const openPositions = []
 
   const teamStats = [
     { number: '25+', label: 'Team Members' },
@@ -380,63 +295,48 @@ const CareersPage = () => {
         </div>
       </section>
 
-      {/* Open Positions Section */}
+      {/* No Vacancy Section */}
       <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
+          <div className="max-w-4xl mx-auto text-center">
+            <div className="w-20 h-20 bg-gradient-to-br from-orange-500 to-red-500 rounded-2xl flex items-center justify-center mx-auto mb-6">
+              <Briefcase className="w-10 h-10 text-white" />
+            </div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-orange-600 mb-6">
-              Open Positions
+              No Vacancy at the Moment
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Join our growing team and help us build the future of African commerce.
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+              We currently don't have any open positions available. However, we're always looking for talented individuals 
+              who are passionate about our mission to empower African MSMEs.
             </p>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {openPositions.map((position, index) => (
-              <div key={index} className="bg-white rounded-3xl p-8 shadow-soft">
-                <div className="flex items-start justify-between mb-4">
-                  <div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-2">{position.title}</h3>
-                    <p className="text-blue-600 font-medium">{position.department}</p>
-                  </div>
-                  <Link href="/careers/apply">
-                    <button className="btn-sm bg-blue-600 text-white hover:bg-blue-700">
-                      Apply Now
-                    </button>
-                  </Link>
-                </div>
-                
-                <div className="flex items-center space-x-4 mb-4 text-sm text-gray-600">
-                  <div className="flex items-center space-x-1">
-                    <MapPin className="w-4 h-4" />
-                    <span>{position.location}</span>
-                  </div>
-                  <div className="flex items-center space-x-1">
-                    <Clock className="w-4 h-4" />
-                    <span>{position.type}</span>
-                  </div>
-                  <div className="flex items-center space-x-1">
-                    <Briefcase className="w-4 h-4" />
-                    <span>{position.experience}</span>
-                  </div>
-                </div>
-
-                <p className="text-gray-600 mb-4">{position.description}</p>
-                
-                <div>
-                  <h4 className="font-semibold text-gray-900 mb-2">Requirements:</h4>
-                  <ul className="space-y-1">
-                    {position.requirements.map((requirement, reqIndex) => (
-                      <li key={reqIndex} className="flex items-start space-x-2">
-                        <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
-                        <span className="text-sm text-gray-700">{requirement}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+            <div className="bg-white rounded-3xl p-8 shadow-soft max-w-2xl mx-auto">
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                Stay Connected
+              </h3>
+              <p className="text-gray-600 mb-6">
+                We encourage you to check back regularly for new opportunities, or send us your resume for future consideration. 
+                We'll keep your information on file and reach out when suitable positions become available.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Link href="/careers/apply">
+                  <Button
+                    variant="gradient"
+                    size="lg"
+                    icon={Download}
+                    className="w-full sm:w-auto"
+                  >
+                    Apply Now
+                  </Button>
+                </Link>
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="w-full sm:w-auto"
+                >
+                  Follow Us
+                </Button>
               </div>
-            ))}
+            </div>
           </div>
         </div>
       </section>
@@ -490,29 +390,33 @@ const CareersPage = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-gradient-to-r from-blue-600 to-cyan-600 rounded-3xl p-8 lg:p-12 text-white text-center">
             <h2 className="text-3xl sm:text-4xl font-bold mb-6">
-              Ready to Join Our Team?
+              Interested in Our Mission?
             </h2>
             <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-              If you don't see a position that fits, we'd still love to hear from you. 
-              Send us your resume and tell us how you can contribute to our mission.
+              While we don't have open positions right now, we're always interested in connecting with talented individuals 
+              who share our passion for empowering African MSMEs. Send us your resume for future opportunities.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button
-                variant="gradient"
-                size="xl"
-                icon={Play}
-                className="text-lg font-bold shadow-2xl hover:shadow-blue-500/25 transform hover:-translate-y-1 transition-all duration-300"
-              >
-                Get Started Free
-              </Button>
-              <Button
-                variant="glass"
-                size="xl"
-                icon={Download}
-                className="text-lg font-bold backdrop-blur-xl shadow-2xl hover:shadow-white/10 transform hover:-translate-y-1 transition-all duration-300"
-              >
-                Download App
-              </Button>
+              <Link href="/careers/apply">
+                <Button
+                  variant="gradient"
+                  size="xl"
+                  icon={Download}
+                  className="text-lg font-bold shadow-2xl hover:shadow-blue-500/25 transform hover:-translate-y-1 transition-all duration-300"
+                >
+                  Apply Now
+                </Button>
+              </Link>
+              <Link href="/about">
+                <Button
+                  variant="glass"
+                  size="xl"
+                  icon={Play}
+                  className="text-lg font-bold backdrop-blur-xl shadow-2xl hover:shadow-white/10 transform hover:-translate-y-1 transition-all duration-300"
+                >
+                  Learn More
+                </Button>
+              </Link>
             </div>
           </div>
         </div>

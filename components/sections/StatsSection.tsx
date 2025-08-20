@@ -195,38 +195,7 @@ const StatsSection = () => {
           </div>
         </motion.div>
 
-        {/* Impact Statement */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 1.8 }}
-          className="mt-20 text-center"
-        >
-          <div className="bg-gradient-to-r from-primary-50 to-secondary-50 rounded-3xl p-8 lg:p-12">
-            <Heart className="w-12 h-12 text-primary-600 mx-auto mb-6" />
-            <h3 className="text-2xl lg:text-3xl font-bold text-orange-600 mb-4">
-              Empowering Africa's Future
-            </h3>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto mb-6">
-              We're not just building a platform—we're creating opportunities for millions of Africans 
-              to participate in the global digital economy, fostering sustainable growth and prosperity.
-            </p>
-            <div className="flex flex-wrap justify-center gap-6 text-sm text-gray-500">
-              <div className="flex items-center space-x-2">
-                <Target className="w-4 h-4 text-primary-600" />
-                <span>5M MSMEs by 2029</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <Globe className="w-4 h-4 text-primary-600" />
-                <span>Cross-border trade enabled</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <Users className="w-4 h-4 text-primary-600" />
-                <span>Women empowerment focus</span>
-              </div>
-            </div>
-          </div>
-        </motion.div>
+
       </div>
     </section>
   )

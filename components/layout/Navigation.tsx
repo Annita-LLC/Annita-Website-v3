@@ -58,6 +58,7 @@ const Navigation = () => {
 
   const navItems = [
     { name: 'Home', href: '/' },
+    { name: 'Contact Us', href: '/contact-us' },
     { 
       name: 'Personal', 
       href: '#',
@@ -87,11 +88,6 @@ const Navigation = () => {
       name: 'Platform', 
       href: '#',
       dropdown: [
-        { name: 'Annita Marketplace', href: '/marketplace', icon: ShoppingCart, description: 'Multivendor e-commerce platform' },
-        { name: 'AnnitaPay', href: '/payments', icon: CreditCard, description: 'Secure payment gateway with escrow' },
-        { name: 'Annita Logistics', href: '/logistics', icon: Truck, description: 'On-demand delivery network' },
-        { name: 'Annita Connect', href: '/connect', icon: MessageSquare, description: 'Communication & marketing suite' },
-
         { name: 'Live Activity', href: '/live-activity', icon: Activity, description: 'Real-time platform activity feed' },
         { name: 'API & Integrations', href: '/api', icon: Code, description: 'Developer platform & integrations' },
       ]
@@ -109,6 +105,7 @@ const Navigation = () => {
                       { name: 'Awards & Recognition', href: '/awards', icon: Award, description: 'Our achievements and recognition' },
                       { name: 'Gallery', href: '/gallery', icon: Image, description: 'Photos, videos, and media' },
         { name: 'Careers', href: '/careers', icon: Briefcase, description: 'Join our team' },
+        { name: 'Apply Now', href: '/careers/apply', icon: UserPlus, description: 'Submit your application' },
         { name: 'Blog', href: '/blog', icon: FileText, description: 'Latest news and insights' },
       ]
     },

@@ -2,29 +2,47 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://annita.com/sitemap.xml
+Sitemap: https://www.an-nita.com/sitemap.xml
 
 # Crawl-delay for respectful crawling
 Crawl-delay: 1
 
-# Allow all major search engines
+# Allow all major search engines with specific optimizations
 User-agent: Googlebot
 Allow: /
+Crawl-delay: 1
 
 User-agent: Bingbot
 Allow: /
+Crawl-delay: 1
 
 User-agent: Slurp
 Allow: /
+Crawl-delay: 1
 
 User-agent: DuckDuckBot
 Allow: /
+Crawl-delay: 1
 
 User-agent: Baiduspider
 Allow: /
+Crawl-delay: 1
 
 User-agent: YandexBot
 Allow: /
+Crawl-delay: 1
+
+User-agent: FacebookExternalHit
+Allow: /
+Crawl-delay: 1
+
+User-agent: Twitterbot
+Allow: /
+Crawl-delay: 1
+
+User-agent: LinkedInBot
+Allow: /
+Crawl-delay: 1
 
 # Disallow admin and private areas
 Disallow: /admin/
@@ -32,16 +50,70 @@ Disallow: /private/
 Disallow: /api/
 Disallow: /_next/
 Disallow: /static/
+Disallow: /node_modules/
+Disallow: /.git/
+Disallow: /.env
+Disallow: /package.json
+Disallow: /package-lock.json
 
-# Allow important pages
+# Allow important pages with high priority
 Allow: /about
 Allow: /contact
+Allow: /contact-sales
 Allow: /ai
+Allow: /ai/personal
+Allow: /ai/business
 Allow: /services
+Allow: /services/annitapay
+Allow: /services/shopping
+Allow: /services/entertainment
+Allow: /services/health
+Allow: /services/education
+Allow: /services/social
+Allow: /services/global-market
+Allow: /services/annitapay-business
+Allow: /services/ai
+Allow: /services/logistics
+Allow: /services/ads
+Allow: /services/erp
+Allow: /services/connect
 Allow: /marketplace
 Allow: /payments
 Allow: /enterprise
-Allow: /support
+Allow: /pricing
 Allow: /download
+Allow: /support
+
+Allow: /team
 Allow: /careers
 Allow: /investors
+Allow: /partners
+Allow: /blog
+Allow: /gallery
+Allow: /awards
+Allow: /the100
+Allow: /logistics
+Allow: /connect
+Allow: /status
+
+# Block image and media crawlers from non-media content
+User-agent: Googlebot-Image
+Allow: /images/
+Allow: /favicon.ico
+Disallow: /
+
+User-agent: Bingbot-Image
+Allow: /images/
+Allow: /favicon.ico
+Disallow: /
+
+# Block mobile crawlers from desktop content (if needed)
+User-agent: Googlebot-Mobile
+Allow: /
+
+# Block archive.org and other archive sites (optional)
+User-agent: ia_archiver
+Disallow: /
+
+User-agent: archive.org_bot
+Disallow: /

@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import SEOHead from '@/components/seo/SEOHead'
 import { 
   Download, 
@@ -24,52 +24,50 @@ import {
   Truck,
   MessageSquare,
   Database,
-  Mail
+  Mail,
+  PieChart,
+  TrendingDown,
+  UserPlus,
+  ShoppingBag,
+  Heart,
+  Repeat,
+  Award,
+  Phone,
+  Video,
+  MapPin,
+  X
 } from 'lucide-react'
 import Button from '@/components/ui/Button'
 
 const InvestorsPage = () => {
   const [activeTab, setActiveTab] = useState('overview')
+  const [showContactForm, setShowContactForm] = useState(false)
+  const [formType, setFormType] = useState('call') // 'call' or 'message'
 
   const companyMetrics = [
-    { label: 'Total Users', value: '50K+', icon: Users, color: 'text-blue-500' },
-    { label: 'Countries', value: '15+', icon: Globe, color: 'text-green-500' },
-    { label: 'Revenue Growth', value: '300%', icon: TrendingUp, color: 'text-orange-500' },
-    { label: 'Market Cap', value: '$50M', icon: DollarSign, color: 'text-purple-500' }
+    { label: 'Total Sellers', value: '3,000+', icon: Users, color: 'text-blue-500' },
+    { label: 'Active MSMEs', value: '800+', icon: ShoppingBag, color: 'text-green-500' },
+    { label: 'Total Buyers', value: '1,500+', icon: UserPlus, color: 'text-orange-500' },
+    { label: 'Monthly Run Rate', value: '$1,800+', icon: DollarSign, color: 'text-purple-500' }
   ]
 
   const fundingRounds = [
     {
-      round: 'Seed Round',
-      date: 'Q1 2024',
-      amount: '$2.5M',
-      investors: ['Orange Digital Center', 'Angel Investors'],
-      stage: 'Completed',
-      status: 'completed'
-    },
-    {
-      round: 'Series A',
-      date: 'Q3 2024',
-      amount: '$8M',
-      investors: ['Venture Capital Firms', 'Strategic Partners'],
-      stage: 'In Progress',
-      status: 'active'
-    },
-    {
-      round: 'Series B',
+      round: 'First Fundraising Round',
       date: 'Q1 2025',
-      amount: '$25M',
-      investors: ['TBD'],
-      stage: 'Planned',
-      status: 'planned'
+      amount: '$100,000',
+      equity: '25%',
+      valuation: '$400,000',
+      investors: ['Open for Investment'],
+      stage: 'Active',
+      status: 'active'
     }
   ]
 
   const capTable = [
-    { stakeholder: 'Founders', ownership: '45%', shares: '4,500,000' },
-    { stakeholder: 'Seed Investors', ownership: '25%', shares: '2,500,000' },
-    { stakeholder: 'Series A Investors', ownership: '20%', shares: '2,000,000' },
-    { stakeholder: 'Employee Stock Options', ownership: '10%', shares: '1,000,000' }
+    { stakeholder: 'Founders', ownership: '75%', shares: '75,000' },
+    { stakeholder: 'New Investors', ownership: '25%', shares: '25,000' },
+    { stakeholder: 'Total', ownership: '100%', shares: '100,000' }
   ]
 
   const documents = [
@@ -108,10 +106,33 @@ const InvestorsPage = () => {
   ]
 
   const useOfFunds = [
-    { category: 'Product Development', percentage: 40, amount: '$3.2M', description: 'Platform enhancement and new features' },
-    { category: 'Market Expansion', percentage: 30, amount: '$2.4M', description: 'Geographic expansion and marketing' },
-    { category: 'Team Growth', percentage: 20, amount: '$1.6M', description: 'Hiring key talent and leadership' },
-    { category: 'Operations', percentage: 10, amount: '$0.8M', description: 'Infrastructure and operational costs' }
+    { category: 'Sellers Acquisition & Growth Marketing', percentage: 40, amount: '$40,000', description: 'Customer acquisition and marketing campaigns' },
+    { category: 'Talent Acquisition & Team Scaling', percentage: 20, amount: '$20,000', description: 'Hiring key talent and expanding team' },
+    { category: 'Product Enhancement & Feature Expansion', percentage: 15, amount: '$15,000', description: 'Platform development and new features' },
+    { category: 'Operations & Infrastructure', percentage: 15, amount: '$15,000', description: 'Operational costs and infrastructure' },
+    { category: 'Strategic Partnerships & Ecosystem Development', percentage: 5, amount: '$5,000', description: 'Partnership development and ecosystem building' },
+    { category: 'Training Programs & Vendor Support', percentage: 5, amount: '$5,000', description: 'Vendor training and support programs' }
+  ]
+
+  const financialMetrics = [
+    { year: '2021', revenue: '$500', growth: 'MVP launch', growthRate: 'N/A' },
+    { year: '2022', revenue: '$2,500', growth: '+400% growth', growthRate: '400%' },
+    { year: '2023', revenue: '$8,000', growth: '+220% growth', growthRate: '220%' },
+    { year: '2024', revenue: '$17,000', growth: '+112% growth', growthRate: '112%' },
+    { year: '2025', revenue: '$30,000-35,000', growth: '+75-105% growth', growthRate: '75-105%' }
+  ]
+
+  const tractionMetrics = [
+    { metric: 'Total Sellers Onboarded', value: '3,000+', description: 'Since 2021', icon: Users },
+    { metric: 'Active Selling MSMEs', value: '800+', description: 'Currently active', icon: ShoppingBag },
+    { metric: 'Total Buyers', value: '1,500+', description: 'Registered users', icon: UserPlus },
+    { metric: 'Active Paying Buyers', value: '500+', description: 'Monthly active', icon: Heart },
+    { metric: 'Avg. Revenue/Seller', value: '$85/year', description: 'Annual revenue per seller', icon: DollarSign },
+    { metric: 'Avg. Transaction Value', value: '$50.00', description: 'Per transaction', icon: CreditCard },
+    { metric: 'Customer Acquisition Cost', value: '$4.00', description: 'Cost to acquire new customer', icon: Target },
+    { metric: 'Repeat Purchase Rate', value: '75%', description: 'Customer retention', icon: Repeat },
+    { metric: 'Customer Satisfaction Rate', value: '90%', description: 'User satisfaction score', icon: Award },
+    { metric: 'Seller Retention Rate', value: '70%', description: 'Seller retention', icon: TrendingUp }
   ]
 
   const competitiveAdvantages = [
@@ -152,12 +173,32 @@ const InvestorsPage = () => {
     alert(`Download started for ${title}`)
   }
 
+  const handleFormSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    const formData = new FormData(e.target as HTMLFormElement)
+    const data = Object.fromEntries(formData)
+    
+    // In a real implementation, this would send the data to your backend
+    console.log('Form submitted:', data)
+    
+    // Show success message
+    alert(`Thank you for your interest! We'll contact you soon via ${data.contactMethod || 'email'}.`)
+    
+    // Close the form
+    setShowContactForm(false)
+  }
+
+  const openContactForm = (type: 'call' | 'message') => {
+    setFormType(type)
+    setShowContactForm(true)
+  }
+
   const investorsStructuredData = {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "Annita",
     "description": "Africa's first all-in-one digital platform empowering MSMEs with innovative solutions",
-    "url": "https://annita.com",
+    "url": "https://www.an-nita.com",
     "foundingDate": "2021",
     "address": {
       "@type": "PostalAddress",
@@ -167,7 +208,7 @@ const InvestorsPage = () => {
     "contactPoint": {
       "@type": "ContactPoint",
       "contactType": "investor relations",
-      "email": "investors@annita.com"
+      "email": "annitallc@gmail.com"
     },
     "award": [
       "Orange Social Venture Prize (1st Place)",
@@ -176,7 +217,7 @@ const InvestorsPage = () => {
     "funding": {
       "@type": "MonetaryAmount",
       "currency": "USD",
-      "value": "2500000"
+      "value": "100000"
     }
   }
 
@@ -184,7 +225,7 @@ const InvestorsPage = () => {
     <>
       <SEOHead
         title="Investors - Annita Investment Opportunities"
-        description="Explore investment opportunities in Annita, Africa's first all-in-one digital platform. 300% revenue growth, 50K+ users, 15+ countries. Seed round completed, Series A in progress. Download pitch deck, business plan, and financial model."
+        description="Explore investment opportunities in Annita, Africa's first all-in-one digital platform. 3,000+ sellers, 1,500+ buyers, 400% revenue growth. First fundraising round: $100,000 for 25% equity at $400,000 valuation. Download pitch deck, business plan, and financial model."
         keywords={[
           'Annita investors',
           'investment opportunities',
@@ -194,7 +235,7 @@ const InvestorsPage = () => {
           'fintech investment',
           'e-commerce investment',
           'digital platform investment',
-          'Series A funding',
+          'first fundraising round',
           'seed round',
           'pitch deck',
           'business plan',
@@ -366,8 +407,8 @@ const InvestorsPage = () => {
                     across Africa with integrated solutions that drive growth and digital transformation.
                   </p>
                   <p className="text-lg text-gray-700 dark:text-gray-300 mb-6">
-                    Our platform serves over 50,000 users across 15+ countries, with a focus on the 
-                    rapidly growing African digital economy. We've achieved 300% revenue growth year-over-year 
+                    Our platform serves over 3,000 sellers and 1,500+ buyers, with a focus on the 
+                    rapidly growing African digital economy. We've achieved consistent revenue growth 
                     and are positioned to capture a significant share of the $1.2 trillion African e-commerce market.
                   </p>
                 </div>
@@ -442,6 +483,85 @@ const InvestorsPage = () => {
               transition={{ duration: 0.6 }}
               className="space-y-12"
             >
+              {/* Revenue Performance */}
+              <div>
+                <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-8">
+                  Revenue Performance & Projections (2021-2025)
+                </h3>
+                <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden">
+                  <div className="overflow-x-auto">
+                    <table className="w-full">
+                      <thead className="bg-gray-50 dark:bg-gray-700">
+                        <tr>
+                          <th className="px-6 py-4 text-left text-sm font-semibold text-gray-900 dark:text-white">
+                            Year
+                          </th>
+                          <th className="px-6 py-4 text-left text-sm font-semibold text-gray-900 dark:text-white">
+                            Revenue
+                          </th>
+                          <th className="px-6 py-4 text-left text-sm font-semibold text-gray-900 dark:text-white">
+                            Growth Story
+                          </th>
+                          <th className="px-6 py-4 text-left text-sm font-semibold text-gray-900 dark:text-white">
+                            Growth Rate
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody className="divide-y divide-gray-200 dark:divide-gray-700">
+                        {financialMetrics.map((row, index) => (
+                          <tr key={row.year} className="hover:bg-gray-50 dark:hover:bg-gray-700">
+                            <td className="px-6 py-4 text-sm font-semibold text-gray-900 dark:text-white">
+                              {row.year}
+                            </td>
+                            <td className="px-6 py-4 text-sm text-gray-900 dark:text-white">
+                              {row.revenue}
+                            </td>
+                            <td className="px-6 py-4 text-sm text-gray-600 dark:text-gray-400">
+                              {row.growth}
+                            </td>
+                            <td className="px-6 py-4 text-sm text-gray-600 dark:text-gray-400">
+                              {row.growthRate}
+                            </td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <div className="mt-4 text-sm text-gray-600 dark:text-gray-400">
+                  <strong>Current Monthly Run Rate:</strong> $1,800+ (Q4 2024)
+                </div>
+              </div>
+
+              {/* Traction Metrics */}
+              <div>
+                <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-8">
+                  Traction Metrics
+                </h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {tractionMetrics.map((metric, index) => (
+                    <motion.div
+                      key={metric.metric}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.6, delay: index * 0.1 }}
+                      className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg"
+                    >
+                      <metric.icon className="w-8 h-8 text-orange-500 mb-4" />
+                      <div className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
+                        {metric.value}
+                      </div>
+                      <div className="text-sm font-semibold text-gray-900 dark:text-white mb-1">
+                        {metric.metric}
+                      </div>
+                      <div className="text-sm text-gray-600 dark:text-gray-400">
+                        {metric.description}
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+
               {/* Cap Table */}
               <div>
                 <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-8">
@@ -486,7 +606,7 @@ const InvestorsPage = () => {
               {/* Use of Funds */}
               <div>
                 <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-8">
-                  Use of Funds (Series A - $8M)
+                  Use of Funds ($100,000)
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {useOfFunds.map((item, index) => (
@@ -537,6 +657,69 @@ const InvestorsPage = () => {
               <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-8">
                 Funding Rounds
               </h3>
+              
+              {/* Current Round Details */}
+              <div className="bg-gradient-to-r from-orange-50 to-red-50 dark:from-orange-900/20 dark:to-red-900/20 rounded-xl p-8 border border-orange-200 dark:border-orange-800">
+                <div className="text-center mb-8">
+                  <h4 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
+                    First Fundraising Round
+                  </h4>
+                  <p className="text-lg text-gray-600 dark:text-gray-400">
+                    We're raising $100,000 for 25% equity at a $400,000 post-money valuation
+                  </p>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                  <div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg">
+                    <h5 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">Option 1 – SAFE (Preferred)</h5>
+                    <div className="space-y-3">
+                      <div className="flex justify-between">
+                        <span className="text-gray-600 dark:text-gray-400">Instrument:</span>
+                        <span className="font-medium">Y Combinator SAFE</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-gray-600 dark:text-gray-400">Valuation Cap:</span>
+                        <span className="font-medium">$400,000</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-gray-600 dark:text-gray-400">Discount:</span>
+                        <span className="font-medium">15%</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg">
+                    <h5 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">Option 2 – Equity</h5>
+                    <div className="space-y-3">
+                      <div className="flex justify-between">
+                        <span className="text-gray-600 dark:text-gray-400">Equity:</span>
+                        <span className="font-medium">25%</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-gray-600 dark:text-gray-400">Investment:</span>
+                        <span className="font-medium">$100,000</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-gray-600 dark:text-gray-400">Post-money Valuation:</span>
+                        <span className="font-medium">$400,000</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="text-center">
+                  <Button
+                    variant="gradient"
+                    size="lg"
+                    className="flex items-center space-x-2 mx-auto"
+                  >
+                    <span>Express Interest</span>
+                    <ArrowRight className="w-5 h-5" />
+                  </Button>
+                </div>
+              </div>
+
+              {/* Funding Rounds Table */}
               <div className="space-y-6">
                 {fundingRounds.map((round, index) => (
                   <motion.div
@@ -562,20 +745,22 @@ const InvestorsPage = () => {
                             {round.stage}
                           </span>
                         </div>
-                        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-sm">
+                        <div className="grid grid-cols-1 sm:grid-cols-4 gap-4 text-sm">
                           <div>
                             <span className="text-gray-600 dark:text-gray-400">Amount:</span>
                             <div className="font-semibold text-gray-900 dark:text-white">{round.amount}</div>
                           </div>
                           <div>
-                            <span className="text-gray-600 dark:text-gray-400">Date:</span>
-                            <div className="font-semibold text-gray-900 dark:text-white">{round.date}</div>
+                            <span className="text-gray-600 dark:text-gray-400">Equity:</span>
+                            <div className="font-semibold text-gray-900 dark:text-white">{round.equity}</div>
                           </div>
                           <div>
-                            <span className="text-gray-600 dark:text-gray-400">Investors:</span>
-                            <div className="font-semibold text-gray-900 dark:text-white">
-                              {round.investors.join(', ')}
-                            </div>
+                            <span className="text-gray-600 dark:text-gray-400">Valuation:</span>
+                            <div className="font-semibold text-gray-900 dark:text-white">{round.valuation}</div>
+                          </div>
+                          <div>
+                            <span className="text-gray-600 dark:text-gray-400">Date:</span>
+                            <div className="font-semibold text-gray-900 dark:text-white">{round.date}</div>
                           </div>
                         </div>
                       </div>
@@ -670,10 +855,10 @@ const InvestorsPage = () => {
                     initials: 'COF'
                   },
                   {
-                    name: 'Emmanuel Z. Weh',
+                    name: 'Lamber',
                     role: 'CTO',
                     bio: 'Expert in scalable platforms and low-connectivity solutions. Oversees tech architecture for African market needs.',
-                    image: '/images/team/CTO.jpg',
+                    image: '/images/Lamber.jpg',
                     initials: 'EW'
                   },
                   {
@@ -718,6 +903,259 @@ const InvestorsPage = () => {
         </div>
       </section>
 
+      {/* Investor Contact Form */}
+      <section className="py-16 sm:py-20 bg-gray-50 dark:bg-gray-900">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-6">
+              Investor Relations
+            </h2>
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+              Join us in revolutionizing Africa's digital economy through our comprehensive e-commerce, fintech, and AI platform
+            </p>
+          </motion.div>
+
+          <div className="max-w-4xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8 sm:p-12"
+            >
+              <form className="space-y-6" onSubmit={handleFormSubmit}>
+                {/* Personal Information */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                      First Name *
+                    </label>
+                    <input
+                      type="text"
+                      id="firstName"
+                      name="firstName"
+                      required
+                      className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent dark:bg-gray-700 dark:text-white"
+                      placeholder="Enter your first name"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="lastName" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                      Last Name *
+                    </label>
+                    <input
+                      type="text"
+                      id="lastName"
+                      name="lastName"
+                      required
+                      className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent dark:bg-gray-700 dark:text-white"
+                      placeholder="Enter your last name"
+                    />
+                  </div>
+                </div>
+
+                {/* Contact Information */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                      Email Address *
+                    </label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      required
+                      className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent dark:bg-gray-700 dark:text-white"
+                      placeholder="your.email@company.com"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="phone" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                      Phone Number
+                    </label>
+                    <input
+                      type="tel"
+                      id="phone"
+                      name="phone"
+                      className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent dark:bg-gray-700 dark:text-white"
+                      placeholder="+1 (555) 123-4567"
+                    />
+                  </div>
+                </div>
+
+                {/* Company Information */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <label htmlFor="company" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                      Company/Organization
+                    </label>
+                    <input
+                      type="text"
+                      id="company"
+                      name="company"
+                      className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent dark:bg-gray-700 dark:text-white"
+                      placeholder="Your company name"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="position" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                      Position/Title
+                    </label>
+                    <input
+                      type="text"
+                      id="position"
+                      name="position"
+                      className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent dark:bg-gray-700 dark:text-white"
+                      placeholder="Investment Manager, Partner, etc."
+                    />
+                  </div>
+                </div>
+
+                {/* Investment Details */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <label htmlFor="investmentType" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                      Investment Type *
+                    </label>
+                    <select
+                      id="investmentType"
+                      name="investmentType"
+                      required
+                      className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent dark:bg-gray-700 dark:text-white"
+                    >
+                      <option value="">Select investment type</option>
+                      <option value="angel">Angel Investor</option>
+                      <option value="venture-capital">Venture Capital</option>
+                      <option value="private-equity">Private Equity</option>
+                      <option value="corporate">Corporate Investment</option>
+                      <option value="family-office">Family Office</option>
+                      <option value="other">Other</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label htmlFor="investmentAmount" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                      Investment Range
+                    </label>
+                    <select
+                      id="investmentAmount"
+                      name="investmentAmount"
+                      className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent dark:bg-gray-700 dark:text-white"
+                    >
+                      <option value="">Select investment range</option>
+                      <option value="25k-50k">$25K - $50K</option>
+                      <option value="50k-100k">$50K - $100K</option>
+                      <option value="100k-250k">$100K - $250K</option>
+                      <option value="250k-500k">$250K - $500K</option>
+                      <option value="500k-1m">$500K - $1M</option>
+                      <option value="1m-plus">$1M+</option>
+                    </select>
+                  </div>
+                </div>
+
+                {/* Interest Areas */}
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-3">
+                    Areas of Interest (Select all that apply)
+                  </label>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                    {[
+                      'E-commerce & Marketplace',
+                      'Fintech & Payments',
+                      'AI & Technology',
+                      'African Market',
+                      'MSME Digitalization',
+                      'Logistics & Supply Chain',
+                      'Marketing & Advertising',
+                      'Data Analytics'
+                    ].map((interest) => (
+                      <label key={interest} className="flex items-center space-x-3">
+                        <input
+                          type="checkbox"
+                          name="interests"
+                          value={interest.toLowerCase().replace(/\s+/g, '-')}
+                          className="w-4 h-4 text-orange-600 border-gray-300 rounded focus:ring-orange-500"
+                        />
+                        <span className="text-sm text-gray-700 dark:text-gray-300">{interest}</span>
+                      </label>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Message */}
+                <div>
+                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                    Additional Information
+                  </label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows={4}
+                    className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent dark:bg-gray-700 dark:text-white"
+                    placeholder="Tell us about your investment goals, timeline, or any specific questions you have..."
+                  ></textarea>
+                </div>
+
+                {/* Preferred Contact Method */}
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-3">
+                    Preferred Contact Method
+                  </label>
+                  <div className="flex flex-wrap gap-4">
+                    {[
+                      { value: 'email', label: 'Email', icon: Mail },
+                      { value: 'phone', label: 'Phone Call', icon: Phone },
+                      { value: 'video', label: 'Video Call', icon: Video },
+                      { value: 'meeting', label: 'In-Person Meeting', icon: MapPin }
+                    ].map((method) => (
+                      <label key={method.value} className="flex items-center space-x-2">
+                        <input
+                          type="radio"
+                          name="contactMethod"
+                          value={method.value}
+                          className="w-4 h-4 text-orange-600 border-gray-300 focus:ring-orange-500"
+                        />
+                        <method.icon className="w-4 h-4 text-gray-500" />
+                        <span className="text-sm text-gray-700 dark:text-gray-300">{method.label}</span>
+                      </label>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Submit Button */}
+                <div className="flex flex-col sm:flex-row gap-4 pt-6">
+                  <Button
+                    type="submit"
+                    variant="gradient"
+                    size="lg"
+                    className="flex-1 flex items-center justify-center space-x-2"
+                  >
+                    <Calendar className="w-5 h-5" />
+                    <span>Schedule Investor Call</span>
+                  </Button>
+                  <Button
+                    type="button"
+                    variant="outline"
+                    size="lg"
+                    className="flex-1 flex items-center justify-center space-x-2"
+                  >
+                    <Mail className="w-5 h-5" />
+                    <span>Send Message</span>
+                  </Button>
+                </div>
+
+                <p className="text-xs text-gray-500 dark:text-gray-400 text-center">
+                  By submitting this form, you agree to be contacted by our investment team. We respect your privacy and will not share your information with third parties.
+                </p>
+              </form>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="bg-gradient-to-r from-orange-500 via-red-500 to-purple-600 text-white py-16 sm:py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -747,6 +1185,7 @@ const InvestorsPage = () => {
               variant="gradient"
               size="lg"
               className="flex items-center space-x-2 bg-white text-orange-600 hover:bg-gray-100"
+              onClick={() => openContactForm('call')}
             >
               <span>Schedule Investor Call</span>
               <ExternalLink className="w-5 h-5" />
@@ -755,6 +1194,7 @@ const InvestorsPage = () => {
               variant="outline"
               size="lg"
               className="flex items-center space-x-2 border-white text-white hover:bg-white hover:text-orange-600"
+              onClick={() => openContactForm('message')}
             >
               <Mail className="w-5 h-5" />
               <span>Contact Investment Team</span>
@@ -763,6 +1203,261 @@ const InvestorsPage = () => {
         </div>
       </section>
       </div>
+
+      {/* Contact Form Modal */}
+      <AnimatePresence>
+        {showContactForm && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm"
+            onClick={() => setShowContactForm(false)}
+          >
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.9, y: 20 }}
+              transition={{ duration: 0.3 }}
+              className="bg-white dark:bg-gray-800 rounded-2xl shadow-2xl w-full max-w-2xl max-h-[90vh] overflow-y-auto"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* Modal Header */}
+              <div className="flex items-center justify-between p-6 border-b border-gray-200 dark:border-gray-700">
+                <div>
+                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white">
+                    {formType === 'call' ? 'Schedule Investor Call' : 'Contact Investment Team'}
+                  </h3>
+                  <p className="text-gray-600 dark:text-gray-400 mt-1">
+                    {formType === 'call' 
+                      ? 'Let\'s discuss investment opportunities and schedule a call'
+                      : 'Send us a message and we\'ll get back to you promptly'
+                    }
+                  </p>
+                </div>
+                <button
+                  onClick={() => setShowContactForm(false)}
+                  className="p-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition-colors"
+                >
+                  <X className="w-6 h-6 text-gray-500" />
+                </button>
+              </div>
+
+              {/* Modal Form */}
+              <div className="p-6">
+                <form className="space-y-6" onSubmit={handleFormSubmit}>
+                  {/* Personal Information */}
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <label htmlFor="modalFirstName" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                        First Name *
+                      </label>
+                      <input
+                        type="text"
+                        id="modalFirstName"
+                        name="firstName"
+                        required
+                        className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent dark:bg-gray-700 dark:text-white"
+                        placeholder="Enter your first name"
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor="modalLastName" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                        Last Name *
+                      </label>
+                      <input
+                        type="text"
+                        id="modalLastName"
+                        name="lastName"
+                        required
+                        className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent dark:bg-gray-700 dark:text-white"
+                        placeholder="Enter your last name"
+                      />
+                    </div>
+                  </div>
+
+                  {/* Contact Information */}
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <label htmlFor="modalEmail" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                        Email Address *
+                      </label>
+                      <input
+                        type="email"
+                        id="modalEmail"
+                        name="email"
+                        required
+                        className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent dark:bg-gray-700 dark:text-white"
+                        placeholder="your.email@company.com"
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor="modalPhone" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                        Phone Number
+                      </label>
+                      <input
+                        type="tel"
+                        id="modalPhone"
+                        name="phone"
+                        className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent dark:bg-gray-700 dark:text-white"
+                        placeholder="+1 (555) 123-4567"
+                      />
+                    </div>
+                  </div>
+
+                  {/* Company Information */}
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <label htmlFor="modalCompany" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                        Company/Organization
+                      </label>
+                      <input
+                        type="text"
+                        id="modalCompany"
+                        name="company"
+                        className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent dark:bg-gray-700 dark:text-white"
+                        placeholder="Your company name"
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor="modalPosition" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                        Position/Title
+                      </label>
+                      <input
+                        type="text"
+                        id="modalPosition"
+                        name="position"
+                        className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent dark:bg-gray-700 dark:text-white"
+                        placeholder="Investment Manager, Partner, etc."
+                      />
+                    </div>
+                  </div>
+
+                  {/* Investment Details */}
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <label htmlFor="modalInvestmentType" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                        Investment Type *
+                      </label>
+                      <select
+                        id="modalInvestmentType"
+                        name="investmentType"
+                        required
+                        className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent dark:bg-gray-700 dark:text-white"
+                      >
+                        <option value="">Select investment type</option>
+                        <option value="angel">Angel Investor</option>
+                        <option value="venture-capital">Venture Capital</option>
+                        <option value="private-equity">Private Equity</option>
+                        <option value="corporate">Corporate Investment</option>
+                        <option value="family-office">Family Office</option>
+                        <option value="other">Other</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label htmlFor="modalInvestmentAmount" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                        Investment Range
+                      </label>
+                      <select
+                        id="modalInvestmentAmount"
+                        name="investmentAmount"
+                        className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent dark:bg-gray-700 dark:text-white"
+                      >
+                        <option value="">Select investment range</option>
+                        <option value="25k-50k">$25K - $50K</option>
+                        <option value="50k-100k">$50K - $100K</option>
+                        <option value="100k-250k">$100K - $250K</option>
+                        <option value="250k-500k">$250K - $500K</option>
+                        <option value="500k-1m">$500K - $1M</option>
+                        <option value="1m-plus">$1M+</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  {/* Message */}
+                  <div>
+                    <label htmlFor="modalMessage" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                      {formType === 'call' ? 'Call Details & Preferences' : 'Message'}
+                    </label>
+                    <textarea
+                      id="modalMessage"
+                      name="message"
+                      rows={4}
+                      className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent dark:bg-gray-700 dark:text-white"
+                      placeholder={formType === 'call' 
+                        ? "Tell us about your investment goals, preferred call time, or any specific topics you'd like to discuss..."
+                        : "Tell us about your investment goals, timeline, or any specific questions you have..."
+                      }
+                    ></textarea>
+                  </div>
+
+                  {/* Preferred Contact Method */}
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-3">
+                      Preferred Contact Method
+                    </label>
+                    <div className="flex flex-wrap gap-4">
+                      {[
+                        { value: 'email', label: 'Email', icon: Mail },
+                        { value: 'phone', label: 'Phone Call', icon: Phone },
+                        { value: 'video', label: 'Video Call', icon: Video },
+                        { value: 'meeting', label: 'In-Person Meeting', icon: MapPin }
+                      ].map((method) => (
+                        <label key={method.value} className="flex items-center space-x-2">
+                          <input
+                            type="radio"
+                            name="contactMethod"
+                            value={method.value}
+                            className="w-4 h-4 text-orange-600 border-gray-300 focus:ring-orange-500"
+                          />
+                          <method.icon className="w-4 h-4 text-gray-500" />
+                          <span className="text-sm text-gray-700 dark:text-gray-300">{method.label}</span>
+                        </label>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Submit Button */}
+                  <div className="flex flex-col sm:flex-row gap-4 pt-6">
+                    <Button
+                      type="submit"
+                      variant="gradient"
+                      size="lg"
+                      className="flex-1 flex items-center justify-center space-x-2"
+                    >
+                      {formType === 'call' ? (
+                        <>
+                          <Calendar className="w-5 h-5" />
+                          <span>Schedule Call</span>
+                        </>
+                      ) : (
+                        <>
+                          <Mail className="w-5 h-5" />
+                          <span>Send Message</span>
+                        </>
+                      )}
+                    </Button>
+                    <Button
+                      type="button"
+                      variant="outline"
+                      size="lg"
+                      className="flex-1"
+                      onClick={() => setShowContactForm(false)}
+                    >
+                      Cancel
+                    </Button>
+                  </div>
+
+                  <p className="text-xs text-gray-500 dark:text-gray-400 text-center">
+                    By submitting this form, you agree to be contacted by our investment team. We respect your privacy and will not share your information with third parties.
+                  </p>
+                </form>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   )
 }

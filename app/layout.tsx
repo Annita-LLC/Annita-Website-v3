@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     default: 'Annita - Africa\'s First All-in-One Digital Platform',
     template: '%s | Annita'
   },
-  description: 'Annita is Africa\'s first all-in-one digital platform, combining e-commerce, fintech, AI, communication, marketing, logistics, and more into a single ecosystem. Empowering MSMEs and individuals with innovative solutions.',
+  description: 'Annita is Africa\'s premier digital platform, offering integrated e-commerce, fintech, AI, and logistics solutions. Empowering 450M+ African MSMEs with innovative technology for digital transformation.',
   keywords: [
     'Annita',
     'Africa',
@@ -55,7 +55,16 @@ export const metadata: Metadata = {
     'women empowerment',
     'sustainable development',
     'job creation',
-    'economic growth'
+    'economic growth',
+    'African tech',
+    'digital payments',
+    'mobile money',
+    'business automation',
+    'supply chain',
+    'cross-border trade',
+    'African innovation',
+    'tech startup',
+    'digital economy'
   ],
   authors: [{ name: 'Annita Team' }],
   creator: 'Annita',
@@ -65,7 +74,7 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://annita.com'),
+  metadataBase: new URL('https://www.an-nita.com'),
   alternates: {
     canonical: '/',
     languages: {
@@ -77,7 +86,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://annita.com',
+    url: 'https://www.an-nita.com',
     title: 'Annita - Africa\'s First All-in-One Digital Platform',
     description: 'Empowering 450M+ African MSMEs with integrated e-commerce, fintech, AI, and logistics solutions.',
     siteName: 'Annita',
@@ -98,6 +107,23 @@ export const metadata: Metadata = {
     creator: '@annita_africa',
     site: '@annita_africa',
   },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  verification: {
+    google: 'your-google-verification-code',
+    yandex: 'your-yandex-verification-code',
+    yahoo: 'your-yahoo-verification-code',
+  },
+}
   robots: {
     index: true,
     follow: true,
@@ -162,8 +188,8 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "Organization",
               "name": "Annita",
-              "url": "https://annita.com",
-              "logo": "https://annita.com/logo.png",
+                             "url": "https://www.an-nita.com",
+               "logo": "https://www.an-nita.com/logo.png",
               "description": "Africa's first all-in-one digital platform, combining e-commerce, fintech, AI, communication, marketing, logistics, and more into a single ecosystem.",
               "foundingDate": "2021",
               "address": {
@@ -174,7 +200,7 @@ export default function RootLayout({
               "contactPoint": {
                 "@type": "ContactPoint",
                 "contactType": "customer service",
-                "email": "contact@annita.com"
+                                 "email": "annitallc@gmail.com"
               },
               "sameAs": [
                 "https://twitter.com/annita_africa",

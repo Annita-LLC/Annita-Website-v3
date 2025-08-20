@@ -43,11 +43,6 @@ const Footer = () => {
     {
       title: 'Platform',
       links: [
-        { name: 'Annita Marketplace', href: '/marketplace' },
-        { name: 'AnnitaPay', href: '/payments' },
-        { name: 'Annita Logistics', href: '/logistics' },
-        { name: 'Annita Connect', href: '/connect' },
-
         { name: 'Live Activity', href: '/live-activity' },
         { name: 'API & Integrations', href: '/api' }
       ]
@@ -55,7 +50,8 @@ const Footer = () => {
     {
       title: 'Resources',
       links: [
-        { name: 'Help Center', href: '/support/help-center' },
+        { name: 'Contact Us', href: '/contact-us' },
+
         { name: 'Documentation', href: '/support/documentation' },
         { name: 'Status', href: '/support/status' },
         { name: 'Blog', href: '/blog' },
@@ -84,7 +80,7 @@ const Footer = () => {
 
   const contactInfo = [
     { icon: Mail, label: 'Email', value: 'annitallc@gmail.com', href: 'mailto:annitallc@gmail.com' },
-    { icon: Phone, label: 'Phone', value: '+234 123 456 7890', href: 'tel:+2341234567890' },
+    { icon: Phone, label: 'Phone', value: '+231 77 505 7227', href: 'tel:+231 77 505 7227' },
     { icon: MapPin, label: 'Address', value: 'Monrovia, Liberia', href: '#' }
   ]
 

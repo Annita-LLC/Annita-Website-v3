@@ -308,30 +308,7 @@ const SupportPage = () => {
       {/* FAQ Section */}
       <FAQSection />
 
-      {/* CTA Section */}
-      <section className="py-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-gradient-to-r from-blue-600 to-cyan-600 rounded-3xl p-8 lg:p-12 text-white text-center">
-            <h2 className="text-3xl sm:text-4xl font-bold mb-6">
-              Still Need Help?
-            </h2>
-            <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-              Our support team is ready to help you succeed. Get in touch and we'll get back to you quickly.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="btn-lg bg-white text-blue-600 hover:bg-gray-100 group">
-                <Headphones className="w-5 h-5 mr-2" />
-                Contact Support
-                <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-              </button>
-              <button className="btn-lg border-2 border-white text-white hover:bg-white hover:text-blue-600">
-                <BookOpen className="w-5 h-5 mr-2" />
-                View Documentation
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
+
     </div>
   )
 }

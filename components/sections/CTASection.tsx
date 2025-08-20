@@ -92,21 +92,7 @@ const CTASection = () => {
             reach new customers, and streamline their operations across Africa.
           </p>
           
-          {/* Trust Indicators */}
-          <div className="flex flex-wrap justify-center gap-4 sm:gap-6 text-sm text-white/80 mb-6 sm:mb-8">
-            <div className="flex items-center space-x-2">
-              <CheckCircle className="w-4 h-4 text-green-400" />
-              <span>3,000+ Active Vendors</span>
-            </div>
-            <div className="flex items-center space-x-2">
-              <CheckCircle className="w-4 h-4 text-green-400" />
-              <span>90% Satisfaction Rate</span>
-            </div>
-            <div className="flex items-center space-x-2">
-              <CheckCircle className="w-4 h-4 text-green-400" />
-              <span>24/7 Customer Support</span>
-            </div>
-          </div>
+
         </motion.div>
 
         {/* Benefits */}
@@ -151,29 +137,7 @@ const CTASection = () => {
               Contact us for personalized assistance and expert guidance.
             </p>
             
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 mb-6 sm:mb-8">
-              <div className="flex items-center justify-center space-x-3">
-                <Phone className="w-6 h-6 text-white" />
-                <div className="text-left">
-                  <div className="text-white font-medium">Call Us</div>
-                  <div className="text-white/80 text-sm">+234 123 456 7890</div>
-                </div>
-              </div>
-              <div className="flex items-center justify-center space-x-3">
-                <Mail className="w-6 h-6 text-white" />
-                <div className="text-left">
-                  <div className="text-white font-medium">Email Us</div>
-                  <div className="text-white/80 text-sm">contact@annita.com</div>
-                </div>
-              </div>
-              <div className="flex items-center justify-center space-x-3">
-                <MessageSquare className="w-6 h-6 text-white" />
-                <div className="text-left">
-                  <div className="text-white font-medium">Live Chat</div>
-                  <div className="text-white/80 text-sm">Available 24/7</div>
-                </div>
-              </div>
-            </div>
+
 
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
               <Button
