@@ -1,6 +1,5 @@
 import React from 'react'
 import SEOHead from '@/components/seo/SEOHead'
-import ResponsiveContainer from '@/components/ui/ResponsiveContainer'
 import Button from '@/components/ui/Button'
 import { 
   Mail, 
@@ -119,7 +118,7 @@ export default function ContactUsPage() {
 
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-primary-50 to-secondary-50 dark:from-primary-900/20 dark:to-secondary-900/20 py-16 sm:py-20 lg:py-24">
-        <ResponsiveContainer>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-4xl mx-auto">
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-zen-dots font-bold text-heading mb-6">
               Contact Us
@@ -139,12 +138,12 @@ export default function ContactUsPage() {
               </Button>
             </div>
           </div>
-        </ResponsiveContainer>
+        </div>
       </section>
 
       {/* Contact Methods */}
       <section className="py-16 sm:py-20">
-        <ResponsiveContainer>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {contactMethods.map((method, index) => (
               <div key={index} className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-medium hover:shadow-large transition-all duration-300 border border-gray-200 dark:border-gray-700">
@@ -177,12 +176,12 @@ export default function ContactUsPage() {
               </div>
             ))}
           </div>
-        </ResponsiveContainer>
+        </div>
       </section>
 
       {/* Office Hours & Location */}
       <section className="py-16 sm:py-20 bg-section-light dark:bg-section-dark">
-        <ResponsiveContainer>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-2xl sm:text-3xl font-zen-dots font-bold text-heading mb-6">
@@ -249,12 +248,12 @@ export default function ContactUsPage() {
               </div>
             </div>
           </div>
-        </ResponsiveContainer>
+        </div>
       </section>
 
       {/* Support Categories */}
       <section className="py-16 sm:py-20">
-        <ResponsiveContainer>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-2xl sm:text-3xl font-zen-dots font-bold text-heading mb-4">
               Get the Right Support
@@ -283,12 +282,12 @@ export default function ContactUsPage() {
               </div>
             ))}
           </div>
-        </ResponsiveContainer>
+        </div>
       </section>
 
       {/* FAQ Section */}
       <section className="py-16 sm:py-20 bg-section-light dark:bg-section-dark">
-        <ResponsiveContainer>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-2xl sm:text-3xl font-zen-dots font-bold text-heading mb-4">
               Frequently Asked Questions
@@ -328,7 +327,7 @@ export default function ContactUsPage() {
               </Button>
             </div>
           </div>
-        </ResponsiveContainer>
+        </div>
       </section>
     </>
   )
