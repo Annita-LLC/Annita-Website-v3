@@ -128,14 +128,14 @@ export default function ContactUsPage() {
               technical issues, or general inquiries about Annita.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button href="mailto:annitallc@gmail.com" variant="primary" size="lg">
+              <a href="mailto:annitallc@gmail.com" className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold bg-orange-500 hover:bg-orange-600 text-white shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 rounded-xl transition-all duration-300">
                 <Mail className="w-5 h-5 mr-2" />
                 Email Support
-              </Button>
-              <Button href="tel:+231775057227" variant="outline" size="lg">
+              </a>
+              <a href="tel:+231775057227" className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold border-2 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 rounded-xl shadow-md hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-300">
                 <Phone className="w-5 h-5 mr-2" />
                 Call Us
-              </Button>
+              </a>
             </div>
           </div>
         </div>
@@ -276,9 +276,9 @@ export default function ContactUsPage() {
                 <p className="text-text-secondary mb-6">
                   {category.description}
                 </p>
-                <Button href={category.href} variant="outline" size="sm">
+                <a href={category.href} className="inline-flex items-center justify-center px-4 py-2 text-sm font-semibold border-2 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 rounded-lg shadow-md hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-300">
                   Learn More
-                </Button>
+                </a>
               </div>
             ))}
           </div>
@@ -317,14 +317,14 @@ export default function ContactUsPage() {
               Still have questions? We're here to help!
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button href="mailto:annitallc@gmail.com" variant="primary">
+              <a href="mailto:annitallc@gmail.com" className="inline-flex items-center justify-center px-6 py-3 text-base font-semibold bg-orange-500 hover:bg-orange-600 text-white shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 rounded-xl transition-all duration-300">
                 <Mail className="w-4 h-4 mr-2" />
                 Email Support
-              </Button>
-              <Button href="/support" variant="outline">
+              </a>
+              <a href="/support" className="inline-flex items-center justify-center px-6 py-3 text-base font-semibold border-2 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 rounded-xl shadow-md hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-300">
                 <HelpCircle className="w-4 h-4 mr-2" />
                 Visit Support Center
-              </Button>
+              </a>
             </div>
           </div>
         </div>
