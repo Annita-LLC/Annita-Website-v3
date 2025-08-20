@@ -4,7 +4,7 @@
 @tailwind utilities;
 
 @layer base {
-  :root {
+:root {
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
     --card: 0 0% 100%;
@@ -58,29 +58,29 @@
   font-feature-settings: "rlig" 1, "calt" 1;
 }
 
-  html {
-    scroll-behavior: smooth;
-  }
+html {
+  scroll-behavior: smooth;
+}
 
-  /* Custom scrollbar */
-  ::-webkit-scrollbar {
-    width: 8px;
-  }
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
 
-  ::-webkit-scrollbar-track {
+::-webkit-scrollbar-track {
     @apply bg-gray-100 dark:bg-gray-800;
-  }
+}
 
-  ::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb {
     @apply bg-primary-500 dark:bg-primary-400 rounded-full;
-  }
+}
 
-  ::-webkit-scrollbar-thumb:hover {
+::-webkit-scrollbar-thumb:hover {
     @apply bg-primary-600 dark:bg-primary-300;
-  }
+}
 
-  /* Selection styles */
-  ::selection {
+/* Selection styles */
+::selection {
     @apply bg-primary-100 dark:bg-primary-900 text-primary-900 dark:text-primary-100;
   }
 
@@ -128,9 +128,9 @@
 
   .card {
     @apply bg-white dark:bg-gray-800 rounded-xl shadow-soft border border-gray-200 dark:border-gray-700 overflow-hidden;
-  }
+}
 
-  .card-hover {
+.card-hover {
     @apply card hover:shadow-medium transition-all duration-300 transform hover:-translate-y-1;
   }
 
@@ -298,10 +298,10 @@
 
   .form-success {
     @apply text-sm text-success-600 mt-1;
-  }
+}
 
-  /* Loading states */
-  .loading {
+/* Loading states */
+.loading {
     @apply animate-pulse bg-gray-200 rounded;
   }
 

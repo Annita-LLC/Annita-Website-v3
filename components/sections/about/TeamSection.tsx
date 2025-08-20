@@ -28,9 +28,9 @@ const TeamSection = () => {
       image: '/images/team/ceo-fallah.jpg',
       fallback: 'CF',
       social: {
-        linkedin: 'https://linkedin.com/in/christopher-fallah',
-        twitter: 'https://twitter.com/christopher_fallah',
-        email: 'christopher@annita.com'
+        linkedin: 'https://www.linkedin.com/in/christopher-o-fallah-',
+        twitter: 'https://twitter.com/Mr_Fallah_231',
+        email: 'christopherfallah16@gmail.com'
       },
       expertise: ['Strategic Leadership', 'African Markets', 'Startup Growth'],
       location: 'Monrovia, Liberia',
@@ -41,15 +41,15 @@ const TeamSection = () => {
       role: 'Chief Marketing Officer (CMO)',
       achievement: 'Drives marketing strategies',
       description: 'Focused on MSME engagement and growth',
-      image: '/images/team/SF_beautiful-asian-woman-fashion-designer-poses-office-studio-entrepreneur-OL.jpg',
+      image: '/images/team/Siah Fallah(Chief Marketing Officer (CMO).jpeg',
       fallback: 'SF',
       social: {
-        linkedin: 'https://linkedin.com/in/siah-fallah',
-        twitter: 'https://twitter.com/siah_fallah',
-        email: 'siah@annita.com'
+        linkedin: 'https://www.linkedin.com/in/siah-fallah-1b1b1b1b1b/',
+        twitter: 'https://twitter.com/Siah_Fallah',
+        email: 'siahcarolfallah25@gmail.com'
       },
       expertise: ['Digital Marketing', 'MSME Engagement', 'Growth Strategy'],
-      location: 'Monrovia, Liberia',
+      location: 'Bridgetown, Barbados',
       joined: '2021'
     },
     {
@@ -60,9 +60,9 @@ const TeamSection = () => {
       image: '/images/team/Lamber Kpukuyou (Chief Technology Officer (CTO).jpg',
       fallback: 'LK',
       social: {
-        linkedin: 'https://linkedin.com/in/lamber-kpukuyou',
+        linkedin: 'https://linkedin.com/in/lamber-j-kpukuyou',
         twitter: 'https://twitter.com/lamber_kpukuyou',
-        email: 'lamber@annita.com'
+        email: 'joekpukuyou5@gmail.com'
       },
       expertise: ['Backend Development', 'Payment Systems', 'Security'],
       location: 'Monrovia, Liberia',

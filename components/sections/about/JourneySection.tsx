@@ -17,34 +17,34 @@ const JourneySection = () => {
 
   const milestones = [
     {
-      year: '2021',
-      title: 'Foundation',
-      description: 'Launched MVP with multivendor marketplace, generating $500 in initial revenue',
+      year: 'August 2021',
+      title: 'Launched MVP',
+      description: 'Multi-Vendor marketplace with ads and logistic-only. Product Validation & First Paying Users',
       achievement: 'MVP Launch',
       icon: Rocket,
       color: 'from-blue-500 to-cyan-500'
     },
     {
-      year: '2022',
-      title: 'Growth',
-      description: 'Onboarded 3,000+ vendors and 1,500+ buyers, achieved $2,500 revenue (+400% growth)',
-      achievement: '400% Growth',
+      year: 'June 2022',
+      title: '🤝 Onboarded to MANSA Platform',
+      description: 'Validated by Afreximbank\'s MANSA as a trusted and credible cross-border trade partner. Cross-Border MSME Onboarding Begins',
+      achievement: 'MANSA Validation',
       icon: TrendingUp,
       color: 'from-green-500 to-emerald-500'
     },
     {
-      year: '2023',
-      title: 'Recognition',
-      description: 'Won Orange Social Venture Prize (1st Place) and scaled to $8,000 revenue (+220% growth)',
+      year: 'May 2023',
+      title: '🏆 Major Awards & Recognitions',
+      description: 'Won Orange Social Venture Prize (1st Place). Named Top 50 Businesses in Africa by the African Union',
       achievement: 'Award Winner',
       icon: Award,
       color: 'from-purple-500 to-pink-500'
     },
     {
-      year: '2024',
-      title: 'Expansion',
-      description: 'Launched comprehensive platform with AI, payments, logistics, and lifestyle services',
-      achievement: 'Platform Launch',
+      year: 'March 2024',
+      title: 'Q1 2025',
+      description: 'AnnitaPay Testing Phase/Fund Raising',
+      achievement: 'Payment Platform',
       icon: Target,
       color: 'from-orange-500 to-red-500'
     }
