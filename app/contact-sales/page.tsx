@@ -89,8 +89,8 @@ const ContactSalesPage = () => {
                       <Phone className="w-6 h-6 text-white" />
                     </div>
                     <div>
-                      <div className="font-semibold text-gray-900">Call Us</div>
-                      <div className="text-gray-600">+1 (555) 123-4567</div>
+                                             <div className="font-semibold text-gray-900">Call Us</div>
+                       <div className="text-gray-600">+231 77 505 7227</div>
                     </div>
                   </div>
 
@@ -100,7 +100,7 @@ const ContactSalesPage = () => {
                     </div>
                     <div>
                       <div className="font-semibold text-gray-900">Email Us</div>
-                      <div className="text-gray-600">sales@annita.com</div>
+                      <div className="text-gray-600">annitallc@gmail.com</div>
                     </div>
                   </div>
 
@@ -110,7 +110,7 @@ const ContactSalesPage = () => {
                     </div>
                     <div>
                       <div className="font-semibold text-gray-900">Business Hours</div>
-                      <div className="text-gray-600">Mon-Fri: 9AM-6PM PST<br />Sat: 10AM-4PM PST</div>
+                      <div className="text-gray-600">Mon-Fri: 8:30AM-5:30PM GMT<br />Sat: 8:30AM-2:00PM GMT<br />Sun: Closed</div>
                     </div>
                   </div>
                 </div>

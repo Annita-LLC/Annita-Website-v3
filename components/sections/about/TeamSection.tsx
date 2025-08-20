@@ -37,24 +37,8 @@ const TeamSection = () => {
       joined: '2021'
     },
     {
-      name: 'Emmanuel Z. Weh',
-      role: 'CTO',
-      achievement: 'Expert in scalable platforms',
-      description: 'Oversees tech architecture for low-connectivity environments',
-      image: '/images/team/CTO.jpg',
-      fallback: 'EW',
-      social: {
-        linkedin: 'https://linkedin.com/in/emmanuel-weh',
-        twitter: 'https://twitter.com/emmanuel_weh',
-        email: 'emmanuel@annita.com'
-      },
-      expertise: ['System Architecture', 'Scalability', 'Low-Connectivity Solutions'],
-      location: 'Monrovia, Liberia',
-      joined: '2021'
-    },
-    {
       name: 'Siah Fallah',
-      role: 'CMO',
+      role: 'Chief Marketing Officer (CMO)',
       achievement: 'Drives marketing strategies',
       description: 'Focused on MSME engagement and growth',
       image: '/images/team/SF_beautiful-asian-woman-fashion-designer-poses-office-studio-entrepreneur-OL.jpg',
@@ -66,30 +50,14 @@ const TeamSection = () => {
       },
       expertise: ['Digital Marketing', 'MSME Engagement', 'Growth Strategy'],
       location: 'Monrovia, Liberia',
-      joined: '2022'
-    },
-    {
-      name: 'Victor Coleman',
-      role: 'Senior Frontend Engineer',
-      achievement: 'Builds user-friendly interfaces',
-      description: 'Ensures mobile-first design excellence',
-      image: '/images/team/Victor.jpg',
-      fallback: 'VC',
-      social: {
-        linkedin: 'https://linkedin.com/in/victor-coleman',
-        twitter: 'https://twitter.com/victor_coleman',
-        email: 'victor@annita.com'
-      },
-      expertise: ['Frontend Development', 'UI/UX Design', 'Mobile Optimization'],
-      location: 'Monrovia, Liberia',
-      joined: '2022'
+      joined: '2021'
     },
     {
       name: 'Lamber Kpukuyou',
-      role: 'Senior Backend Engineer',
+      role: 'Chief Technology Officer (CTO)',
       achievement: 'Handles secure integrations',
       description: 'Manages payments and logistics systems',
-      image: '/images/team/Lamber.jpg',
+      image: '/images/team/Lamber Kpukuyou (Chief Technology Officer (CTO).jpg',
       fallback: 'LK',
       social: {
         linkedin: 'https://linkedin.com/in/lamber-kpukuyou',
@@ -98,7 +66,7 @@ const TeamSection = () => {
       },
       expertise: ['Backend Development', 'Payment Systems', 'Security'],
       location: 'Monrovia, Liberia',
-      joined: '2022'
+      joined: '2025'
     }
   ]
 

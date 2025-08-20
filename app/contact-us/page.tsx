@@ -43,9 +43,9 @@ export default function ContactUsPage() {
   ]
 
   const officeHours = [
-    { day: 'Monday - Friday', hours: '8:00 AM - 6:00 PM GMT' },
-    { day: 'Saturday', hours: '9:00 AM - 4:00 PM GMT' },
-    { day: 'Sunday', hours: '10:00 AM - 2:00 PM GMT' }
+    { day: 'Monday - Friday', hours: '8:30 AM - 5:30 PM GMT' },
+    { day: 'Saturday', hours: '8:30 AM - 2:00 PM GMT' },
+    { day: 'Sunday', hours: 'Closed' }
   ]
 
   const faqs = [
