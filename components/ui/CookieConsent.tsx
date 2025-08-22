@@ -17,35 +17,84 @@ import Button from '@/components/ui/Button'
 const CookieConsent = () => {
   const [isVisible, setIsVisible] = useState(false)
   const [isExpanded, setIsExpanded] = useState(false)
+  const [timeUntilShow, setTimeUntilShow] = useState<number | null>(null)
 
   useEffect(() => {
     // Check if user has already given consent
     const hasConsented = localStorage.getItem('annita-cookie-consent')
-    if (!hasConsented) {
-      // Show popup after a longer delay to be less intrusive
+    const consentVersion = localStorage.getItem('annita-cookie-consent-version')
+    
+    // Only show if user hasn't consented or if consent version is outdated
+    if (!hasConsented || !consentVersion) {
+      const startTime = Date.now()
+      const delay = 30000 // 30 seconds
+      
+      // Update countdown every second
+      const countdownInterval = setInterval(() => {
+        const elapsed = Date.now() - startTime
+        const remaining = Math.max(0, delay - elapsed)
+        setTimeUntilShow(Math.ceil(remaining / 1000))
+        
+        if (remaining <= 0) {
+          clearInterval(countdownInterval)
+          setTimeUntilShow(null)
+          setIsVisible(true)
+        }
+      }, 1000)
+      
+      // Show popup after 30 seconds
       const timer = setTimeout(() => {
         setIsVisible(true)
-      }, 3000)
-      return () => clearTimeout(timer)
+        setTimeUntilShow(null)
+      }, delay)
+      
+      return () => {
+        clearTimeout(timer)
+        clearInterval(countdownInterval)
+      }
     }
   }, [])
 
   const acceptAll = () => {
     localStorage.setItem('annita-cookie-consent', 'all')
     localStorage.setItem('annita-cookie-consent-date', new Date().toISOString())
+    localStorage.setItem('annita-cookie-consent-version', '1.0') // Track consent version
     setIsVisible(false)
   }
 
   const acceptEssential = () => {
     localStorage.setItem('annita-cookie-consent', 'essential')
     localStorage.setItem('annita-cookie-consent-date', new Date().toISOString())
+    localStorage.setItem('annita-cookie-consent-version', '1.0') // Track consent version
     setIsVisible(false)
   }
 
   const decline = () => {
     localStorage.setItem('annita-cookie-consent', 'declined')
     localStorage.setItem('annita-cookie-consent-date', new Date().toISOString())
+    localStorage.setItem('annita-cookie-consent-version', '1.0') // Track consent version
     setIsVisible(false)
+  }
+
+  // Function to reset cookie consent (for testing purposes)
+  const resetCookieConsent = () => {
+    localStorage.removeItem('annita-cookie-consent')
+    localStorage.removeItem('annita-cookie-consent-date')
+    localStorage.removeItem('annita-cookie-consent-version')
+  }
+
+  // Expose reset function globally for testing (remove in production)
+  if (typeof window !== 'undefined') {
+    (window as any).resetCookieConsent = resetCookieConsent
+  }
+
+  // Show countdown indicator for development (remove in production)
+  if (!isVisible && timeUntilShow !== null && timeUntilShow > 0) {
+    return (
+      <div className="fixed bottom-4 right-4 bg-blue-600 text-white px-3 py-2 rounded-lg text-sm z-40">
+        Cookie consent in {timeUntilShow}s
+      </div>
+    )
   }
 
   if (!isVisible) return null

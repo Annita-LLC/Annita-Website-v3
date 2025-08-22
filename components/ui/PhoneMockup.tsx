@@ -100,7 +100,7 @@ const PhoneMockup = () => {
   }
 
   return (
-    <div className="relative mx-auto w-48 sm:w-56 md:w-64 lg:w-72 xl:w-80 h-[400px] sm:h-[500px] md:h-[560px] lg:h-[630px] xl:h-[700px]">
+    <div className="relative mx-auto w-40 sm:w-48 md:w-56 lg:w-64 xl:w-72 h-[320px] sm:h-[400px] md:h-[450px] lg:h-[500px] xl:h-[560px]">
       {/* Phone Frame with Modern Design */}
       <div className="relative w-full h-full">
         {/* Phone Body */}

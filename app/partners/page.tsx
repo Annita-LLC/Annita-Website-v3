@@ -82,25 +82,32 @@ const PartnersPage = () => {
       achievements: ['MANSA platform integration', 'Trade finance solutions', 'Regional expansion support']
     },
     {
-      name: 'Orange Telecom',
+      name: 'Orange Digital Center',
       logo: '📱',
-      category: 'Telecommunications',
-      description: 'Mobile money integration and rural connectivity',
-      achievements: ['Mobile money integration', 'Rural agent network', 'Digital inclusion programs']
+      category: 'Innovation Support',
+      description: 'Supported by Orange Digital Center - Orange Social Venture 1st Place Winner',
+      achievements: ['Innovation award', 'Grant funding', 'Digital transformation support']
     },
     {
       name: 'African Union',
       logo: '🌍',
-      category: 'Government',
-      description: 'Digital transformation for African MSMEs',
+      category: 'Government Support',
+      description: 'Supported by African Union for digital transformation initiatives',
       achievements: ['Policy advocacy', 'Capacity building', 'Regional coordination']
     },
     {
-      name: 'Ecobank Group',
-      logo: '🏛️',
-      category: 'Banking',
-      description: 'Financial services integration and expansion',
-      achievements: ['Payment processing', 'Banking integration', 'Financial inclusion']
+      name: 'Wakanow',
+      logo: '✈️',
+      category: 'Travel Partner',
+      description: 'Airlines and Hotels Booking Partner',
+      achievements: ['Flight bookings', 'Hotel reservations', 'Travel services integration']
+    },
+    {
+      name: 'Smart Liberia',
+      logo: '🇱🇷',
+      category: 'Government Support',
+      description: 'Supported by Smart Liberia for digital innovation and development',
+      achievements: ['Digital innovation support', 'Local development initiatives', 'Technology advancement']
     }
   ]
 

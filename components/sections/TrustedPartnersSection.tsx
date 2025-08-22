@@ -5,7 +5,7 @@ const TrustedPartnersSection = () => {
     {
       name: 'African Union',
       image: '/images/Trusted and Back By/African Union.png',
-      description: 'Official partner of the African Union'
+      description: 'Supported by African Union'
     },
     {
       name: 'EU-TAF',
@@ -15,7 +15,7 @@ const TrustedPartnersSection = () => {
     {
       name: 'Orange Digital Center',
       image: '/images/Trusted and Back By/Orange Digital Center.jpg',
-      description: 'Partner of Orange Digital Center'
+      description: 'Supported by Orange Digital Center - Orange Social Venture 1st Place Winner'
     },
     {
       name: 'Mansa Due Diligence',
@@ -25,7 +25,12 @@ const TrustedPartnersSection = () => {
     {
       name: 'Wakanow',
       image: '/images/Trusted and Back By/Wakanow.jpg',
-      description: 'Strategic partner Wakanow'
+      description: 'Airlines and Hotels Booking Partner'
+    },
+    {
+      name: 'Smart Liberia',
+      image: '/images/Trusted and Back By/Smart Liberia.jpg',
+      description: 'Supported by Smart Liberia'
     }
   ]
 

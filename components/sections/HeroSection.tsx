@@ -57,10 +57,6 @@ const HeroSection = () => {
   const [signalStrength, setSignalStrength] = useState(4)
 
   const features = [
-    { icon: Globe, text: 'Pan-African Reach' },
-    { icon: Users, text: '450M+ MSMEs' },
-    { icon: TrendingUp, text: 'Growing Fast' },
-    { icon: Shield, text: 'Secure & Trusted' },
   ]
 
   const apps = [
@@ -150,30 +146,17 @@ const HeroSection = () => {
               transition={{ duration: 0.8 }}
               className="text-center lg:text-left"
             >
-              {/* Badge */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="inline-flex items-center px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white text-xs sm:text-sm font-medium mb-4 sm:mb-6"
-              >
-                <Brain className="w-3 h-3 sm:w-4 sm:h-4 mr-1.5 sm:mr-2 text-orange-400" />
-                AI-Powered Digital Platform
-              </motion.div>
+              
 
-              {/* Main Heading */}
-              <motion.h1
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.3 }}
-                className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-bold text-white mb-3 sm:mb-4 lg:mb-6 leading-tight"
-              >
-                Africa's First{' '}
-                <span className="text-orange-500">
-                  AI-Powered
-                </span>{' '}
-                All-in-One Digital Platform
-              </motion.h1>
+                             {/* Main Heading */}
+               <motion.h1
+                 initial={{ opacity: 0, y: 30 }}
+                 animate={{ opacity: 1, y: 0 }}
+                 transition={{ duration: 0.8, delay: 0.3 }}
+                 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-bold text-white mb-3 sm:mb-4 lg:mb-6 leading-tight"
+               >
+                 Africa's First All-in-One Digital Platform
+               </motion.h1>
 
               {/* Subtitle */}
               <motion.p
@@ -182,27 +165,10 @@ const HeroSection = () => {
                 transition={{ duration: 0.8, delay: 0.4 }}
                 className="text-base sm:text-lg lg:text-xl xl:text-2xl text-gray-200 mb-4 sm:mb-6 lg:mb-8 leading-relaxed"
               >
-                Annita is Africa's first all-in-one digital platform, combining e-commerce, fintech, 
-                <span className="text-orange-400 font-semibold"> Artificial Intelligence</span>, communication, 
-                marketing, logistics, and more into a single ecosystem. We empower MSMEs and individuals 
-                with innovative solutions, connectivity, and convenience.
+                We empower MSMEs and individuals with innovative solutions, connectivity, and convenience.
               </motion.p>
 
-              {/* Features Rotator */}
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.5 }}
-                className="flex items-center justify-center lg:justify-start space-x-3 sm:space-x-4 mb-6 sm:mb-8"
-              >
-                <div className="flex items-center space-x-1.5 sm:space-x-2 text-white">
-                  {(() => {
-                    const IconComponent = features[currentFeature].icon;
-                    return <IconComponent className="w-4 h-4 sm:w-5 sm:h-5 text-primary-300" />;
-                  })()}
-                  <span className="font-medium text-sm sm:text-base">{features[currentFeature].text}</span>
-                </div>
-              </motion.div>
+
 
               {/* CTA Buttons */}
               <motion.div
