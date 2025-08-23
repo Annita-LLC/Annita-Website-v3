@@ -15,7 +15,7 @@ import {
 
 const HeroPhone = () => {
   return (
-    <div className="relative w-full max-w-[10rem] sm:max-w-[12rem] md:max-w-[14rem] lg:max-w-[16rem] xl:max-w-[18rem] mx-auto">
+    <div className="relative w-full max-w-[12rem] sm:max-w-[14rem] md:max-w-[16rem] lg:max-w-[20rem] xl:max-w-[24rem] mx-auto">
       {/* Phone Frame Container */}
       <motion.div
         initial={{ opacity: 0, scale: 0.9, rotateY: -15 }}
@@ -47,7 +47,7 @@ const HeroPhone = () => {
         
         {/* Phone Frame */}
         <motion.div 
-          className="relative w-40 h-[300px] sm:w-48 sm:h-[360px] md:w-56 md:h-[420px] lg:w-64 lg:h-[480px] mx-auto"
+          className="relative w-48 h-[360px] sm:w-56 sm:h-[420px] md:w-64 md:h-[480px] lg:w-80 lg:h-[600px] mx-auto"
           animate={{
             rotateZ: [0, 2, -2, 0],
             scale: [1, 1.02, 1]

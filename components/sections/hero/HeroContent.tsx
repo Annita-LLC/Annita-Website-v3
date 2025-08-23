@@ -21,14 +21,14 @@ const HeroContent = () => {
   const features: string[] = []
 
   return (
-    <div className="space-y-6 sm:space-y-8">
+    <div className="space-y-4 sm:space-y-6 lg:space-y-8">
 
       {/* Main Heading */}
       <motion.h1
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.1 }}
-        className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold leading-tight"
+        className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold leading-tight"
       >
         <span className="text-gray-900">Africa's First</span>
         <br />
@@ -42,7 +42,7 @@ const HeroContent = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.2 }}
-        className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-600 max-w-2xl leading-relaxed"
+        className="text-xs sm:text-sm md:text-base lg:text-lg text-gray-600 max-w-xl lg:max-w-2xl leading-relaxed"
       >
         We empower MSMEs and individuals with innovative solutions, connectivity, and convenience.
       </motion.p>

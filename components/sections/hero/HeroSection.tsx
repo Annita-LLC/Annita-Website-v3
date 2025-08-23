@@ -65,7 +65,7 @@ const HeroSection = () => {
             initial={{ opacity: 0, x: -30 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6 }}
-            className="flex-1 text-center lg:text-left mb-6 sm:mb-8 lg:mb-0 lg:pr-8"
+            className="flex-1 text-center lg:text-left mb-8 sm:mb-12 lg:mb-0 lg:pr-4"
           >
             <HeroContent />
           </motion.div>
@@ -75,7 +75,7 @@ const HeroSection = () => {
             initial={{ opacity: 0, x: 30 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="flex-1 flex justify-center lg:justify-end lg:absolute lg:right-0 lg:top-0 lg:bottom-0 lg:items-center lg:pr-8"
+            className="flex-1 flex justify-center lg:justify-end lg:absolute lg:right-0 lg:top-0 lg:bottom-0 lg:items-center lg:pr-4"
           >
             <HeroPhone />
           </motion.div>
