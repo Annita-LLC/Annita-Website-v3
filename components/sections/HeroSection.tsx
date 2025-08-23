@@ -150,16 +150,7 @@ const HeroSection = () => {
               transition={{ duration: 0.8 }}
               className="text-center lg:text-left"
             >
-              {/* Badge */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="inline-flex items-center px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white text-xs sm:text-sm font-medium mb-4 sm:mb-6"
-              >
-                <Brain className="w-3 h-3 sm:w-4 sm:h-4 mr-1.5 sm:mr-2 text-orange-400" />
-                AI-Powered Digital Platform
-              </motion.div>
+
 
                              {/* Main Heading */}
                <motion.h1
@@ -169,9 +160,6 @@ const HeroSection = () => {
                  className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-bold text-white mb-3 sm:mb-4 lg:mb-6 leading-tight"
                >
                 Africa's First{' '}
-                <span className="text-orange-500">
-                  AI-Powered
-                </span>{' '}
                 All-in-One Digital Platform
                </motion.h1>
 

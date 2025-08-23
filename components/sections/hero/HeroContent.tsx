@@ -16,25 +16,11 @@ import {
 import Button from '@/components/ui/Button'
 
 const HeroContent = () => {
-  const features = [
-    'AI-Powered Insights',
-    'Secure Payments',
-    'Global Reach',
-    '24/7 Support'
-  ]
+  const features = []
 
   return (
     <div className="space-y-8">
-      {/* Badge */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        className="inline-flex items-center space-x-2 bg-gradient-to-r from-orange-100 to-yellow-100 text-orange-700 px-4 py-2 rounded-full text-sm font-medium border border-orange-200"
-      >
-        <Sparkles className="w-4 h-4" />
-        <span>AI-Powered Digital Platform</span>
-      </motion.div>
+
 
               {/* Main Heading */}
         <motion.h1
@@ -44,10 +30,6 @@ const HeroContent = () => {
           className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight"
         >
           <span className="text-gray-900">Africa's First</span>
-          <br />
-          <span className="bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text text-transparent">
-            AI-Powered
-          </span>
           <br />
           <span className="text-gray-900">All-in-One Digital Platform</span>
         </motion.h1>
