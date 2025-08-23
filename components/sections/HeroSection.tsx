@@ -1,4 +1,4 @@
-'use client'
+ 'use client'
 
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
@@ -161,32 +161,22 @@ const HeroSection = () => {
                 AI-Powered Digital Platform
               </motion.div>
 
-              {/* Main Heading */}
-              <motion.h1
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.3 }}
-                className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-bold text-white mb-3 sm:mb-4 lg:mb-6 leading-tight"
-              >
+                             {/* Main Heading */}
+               <motion.h1
+                 initial={{ opacity: 0, y: 30 }}
+                 animate={{ opacity: 1, y: 0 }}
+                 transition={{ duration: 0.8, delay: 0.3 }}
+                 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-bold text-white mb-3 sm:mb-4 lg:mb-6 leading-tight"
+               >
                 Africa's First{' '}
                 <span className="text-orange-500">
                   AI-Powered
                 </span>{' '}
                 All-in-One Digital Platform
-              </motion.h1>
+               </motion.h1>
 
               {/* Subtitle */}
-              <motion.p
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.4 }}
-                className="text-base sm:text-lg lg:text-xl xl:text-2xl text-gray-200 mb-4 sm:mb-6 lg:mb-8 leading-relaxed"
-              >
-                Annita is Africa's first all-in-one digital platform, combining e-commerce, fintech, 
-                <span className="text-orange-400 font-semibold"> Artificial Intelligence</span>, communication, 
-                marketing, logistics, and more into a single ecosystem. We empower MSMEs and individuals 
-                with innovative solutions, connectivity, and convenience.
-              </motion.p>
+              
 
               {/* Features Rotator */}
               <motion.div

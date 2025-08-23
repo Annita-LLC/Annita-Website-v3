@@ -22,10 +22,10 @@ const CookieConsent = () => {
     // Check if user has already given consent
     const hasConsented = localStorage.getItem('annita-cookie-consent')
     if (!hasConsented) {
-      // Show popup after a longer delay to be less intrusive
+      // Show popup after 20 seconds to be less intrusive
       const timer = setTimeout(() => {
         setIsVisible(true)
-      }, 3000)
+      }, 20000) // 20 seconds
       return () => clearTimeout(timer)
     }
   }, [])
