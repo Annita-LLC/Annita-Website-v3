@@ -1221,7 +1221,7 @@ const InvestorsPage = () => {
               exit={{ opacity: 0, scale: 0.9, y: 20 }}
               transition={{ duration: 0.3 }}
               className="bg-white dark:bg-gray-800 rounded-2xl shadow-2xl w-full max-w-2xl max-h-[90vh] overflow-y-auto"
-              onClick={(e) => e.stopPropagation()}
+              onClick={(e: React.MouseEvent) => e.stopPropagation()}
             >
               {/* Modal Header */}
               <div className="flex items-center justify-between p-6 border-b border-gray-200 dark:border-gray-700">
