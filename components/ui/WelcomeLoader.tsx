@@ -219,26 +219,30 @@ const WelcomeLoader = ({ onComplete }: WelcomeLoaderProps) => {
                     
                     {/* Custom Annita Logo */}
                     <motion.div
-                      className={`text-white font-black tracking-tight z-10 ${
-                        isMobile ? logoSizes.mobile.text : 
-                        dimensions.width < 640 ? logoSizes.tablet.text :
-                        dimensions.width < 1024 ? logoSizes.desktop.text :
-                        logoSizes.large.text
-                      }`}
+                      className="z-10"
                       animate={{ 
-                        textShadow: [
-                          '0 0 8px rgba(255,255,255,0.4)',
-                          '0 0 16px rgba(255,255,255,0.7)',
-                          '0 0 8px rgba(255,255,255,0.4)'
+                        filter: [
+                          'drop-shadow(0 0 8px rgba(255,255,255,0.4))',
+                          'drop-shadow(0 0 16px rgba(255,255,255,0.7))',
+                          'drop-shadow(0 0 8px rgba(255,255,255,0.4))'
                         ],
                         rotate: [0, -360]
                       }}
                       transition={{ 
-                        textShadow: { duration: 2, repeat: Infinity },
+                        filter: { duration: 2, repeat: Infinity },
                         rotate: { duration: 20, repeat: Infinity, ease: "linear" }
                       }}
                     >
-                      A
+                      <img 
+                        src="/images/logo/annita-icon.svg" 
+                        alt="Annita Logo"
+                        className={`${
+                          isMobile ? 'w-12 h-12' : 
+                          dimensions.width < 640 ? 'w-16 h-16' :
+                          dimensions.width < 1024 ? 'w-20 h-20' :
+                          'w-24 h-24'
+                        }`}
+                      />
                     </motion.div>
                     
                     {/* Responsive Decorative Elements */}
