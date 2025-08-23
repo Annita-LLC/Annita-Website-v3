@@ -30,9 +30,7 @@ const HeroContent = () => {
         transition={{ duration: 0.6, delay: 0.1 }}
         className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight"
       >
-        <span className="text-gray-900">Africa's First</span>
-        <br />
-        <span className="text-gray-900">All-in-One Digital Platform</span>
+        <span className="text-gray-900">Africa's First All-in-One Digital Platform</span>
       </motion.h1>
 
       {/* Subtitle */}

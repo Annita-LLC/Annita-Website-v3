@@ -15,7 +15,7 @@ import {
 
 const HeroPhone = () => {
   return (
-    <div className="relative w-full max-w-[12rem] sm:max-w-[14rem] md:max-w-[16rem] lg:max-w-[18rem] xl:max-w-[20rem] mx-auto">
+    <div className="relative w-full max-w-[10rem] sm:max-w-[12rem] md:max-w-[14rem] lg:max-w-[16rem] xl:max-w-[18rem] mx-auto">
       {/* Phone Frame Container */}
       <motion.div
         initial={{ opacity: 0, scale: 0.9, rotateY: -15 }}
@@ -23,7 +23,7 @@ const HeroPhone = () => {
           opacity: 1, 
           scale: 1, 
           rotateY: [0, 5, -5, 0],
-          y: [0, -10, 0]
+          y: [0, -8, 0]
         }}
         transition={{ 
           duration: 2, 
@@ -43,11 +43,11 @@ const HeroPhone = () => {
         style={{ perspective: "1000px" }}
       >
         {/* Background Glow */}
-        <div className="absolute inset-0 bg-gradient-to-r from-orange-500/20 to-purple-500/20 rounded-[2rem] sm:rounded-[2.5rem] md:rounded-[3rem] blur-2xl sm:blur-3xl"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-orange-500/20 to-purple-500/20 rounded-[2rem] sm:rounded-[2.5rem] md:rounded-[3rem] blur-xl sm:blur-2xl"></div>
         
         {/* Phone Frame */}
         <motion.div 
-          className="relative w-48 h-[360px] sm:w-56 sm:h-[420px] md:w-64 md:h-[480px] lg:w-72 lg:h-[540px] mx-auto"
+          className="relative w-40 h-[300px] sm:w-48 sm:h-[360px] md:w-56 md:h-[420px] lg:w-64 lg:h-[480px] mx-auto"
           animate={{
             rotateZ: [0, 2, -2, 0],
             scale: [1, 1.02, 1]
