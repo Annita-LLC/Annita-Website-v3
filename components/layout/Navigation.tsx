@@ -288,14 +288,14 @@ const Navigation = () => {
                 <div className="flex items-center justify-between p-6 border-b border-gray-200 dark:border-gray-700">
                   <Link href="/" className="flex items-center space-x-2" onClick={() => setIsOpen(false)}>
                     <div className="relative">
-                      <div className="w-8 h-8 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-full flex items-center justify-center shadow-lg">
+                      <div className="w-8 h-8 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full flex items-center justify-center shadow-lg">
                         <img 
                           src="/images/blog/Annita's Logo.png" 
                           alt="Annita Logo" 
                           className="w-5 h-5 rounded-full object-cover"
                         />
                       </div>
-                      <div className="absolute -inset-1 bg-gradient-to-r from-primary-400 to-secondary-400 rounded-full blur opacity-20"></div>
+                      <div className="absolute -inset-1 bg-gradient-to-r from-orange-400 to-orange-500 rounded-full blur opacity-20"></div>
                     </div>
                     <span className="text-lg font-bold text-orange-500 dark:text-orange-400">Annita</span>
                   </Link>
@@ -389,10 +389,10 @@ const Navigation = () => {
                 <div className="p-6 border-t border-gray-200 dark:border-gray-700">
                   <Link
                     href="/download"
-                    className="btn-primary block w-full text-center"
+                    className="flex items-center justify-center w-full px-6 py-3 bg-gradient-to-r from-orange-500 to-orange-600 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-300"
                     onClick={() => setIsOpen(false)}
                   >
-                    <Download className="w-4 h-4 mr-2" />
+                    <Download className="w-5 h-5 mr-2" />
                     Download App
                   </Link>
                 </div>
