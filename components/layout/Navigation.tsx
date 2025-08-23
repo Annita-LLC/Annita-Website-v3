@@ -256,113 +256,76 @@ const Navigation = () => {
         </div>
       </nav>
 
-      {/* Enhanced Mobile Menu */}
+      {/* Clean Mobile Menu */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.3 }}
+            transition={{ duration: 0.2 }}
             className="fixed inset-0 z-50 lg:hidden"
           >
-            {/* Backdrop with blur */}
+            {/* Backdrop */}
             <motion.div 
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="absolute inset-0 bg-black/30 backdrop-blur-sm" 
+              className="absolute inset-0 bg-black/20" 
               onClick={() => setIsOpen(false)} 
             />
             
             {/* Menu Container */}
             <motion.div
-              initial={{ x: '100%', opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              exit={{ x: '100%', opacity: 0 }}
-              transition={{ duration: 0.4, ease: "easeOut" }}
-              className="absolute right-0 top-0 h-full w-[85vw] max-w-[360px] bg-white/98 dark:bg-gray-900/98 backdrop-blur-2xl shadow-3xl border-l border-gray-200/30 dark:border-gray-700/30"
+              initial={{ x: '100%' }}
+              animate={{ x: 0 }}
+              exit={{ x: '100%' }}
+              transition={{ duration: 0.3, ease: "easeOut" }}
+              className="absolute right-0 top-0 h-full w-80 bg-white dark:bg-gray-900 shadow-xl"
             >
               <div className="flex flex-col h-full">
                 {/* Header */}
-                <motion.div 
-                  initial={{ y: -20, opacity: 0 }}
-                  animate={{ y: 0, opacity: 1 }}
-                  transition={{ delay: 0.1 }}
-                  className="flex items-center justify-between p-6 border-b border-gray-200/20 dark:border-gray-700/20"
-                >
-                  <Link href="/" className="flex items-center space-x-3" onClick={() => setIsOpen(false)}>
-                    <div className="relative">
-                      <div className="w-10 h-10 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center shadow-lg">
-                        <img 
-                          src="/images/blog/Annita's Logo.png" 
-                          alt="Annita Logo" 
-                          className="w-6 h-6"
-                        />
-                      </div>
-                      <div className="absolute -inset-1 bg-gradient-to-r from-orange-400 to-orange-500 rounded-xl blur opacity-30"></div>
+                <div className="flex items-center justify-between p-6 border-b border-gray-200 dark:border-gray-700">
+                  <Link href="/" className="flex items-center space-x-2" onClick={() => setIsOpen(false)}>
+                    <div className="w-8 h-8 bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg flex items-center justify-center">
+                      <img 
+                        src="/images/blog/Annita's Logo.png" 
+                        alt="Annita Logo" 
+                        className="w-5 h-5"
+                      />
                     </div>
-                    <div>
-                      <span className="text-xl font-bold text-orange-500 dark:text-orange-400">Annita</span>
-                      <div className="text-xs text-gray-500 dark:text-gray-400">Digital Platform</div>
-                    </div>
+                    <span className="text-lg font-bold text-gray-900 dark:text-white">Annita</span>
                   </Link>
                   
-                  <div className="flex items-center space-x-2">
-                    {/* Dark Mode Toggle */}
-                    <motion.button
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      onClick={toggleDarkMode}
-                      className="p-2 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-200"
-                      aria-label="Toggle dark mode"
-                    >
-                      {isDarkMode ? (
-                        <Sun className="w-5 h-5 text-yellow-500" />
-                      ) : (
-                        <Moon className="w-5 h-5 text-gray-600 dark:text-gray-300" />
-                      )}
-                    </motion.button>
-                    
-                    <motion.button
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      onClick={() => setIsOpen(false)}
-                      className="p-2 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-200"
-                    >
-                      <X className="w-5 h-5" />
-                    </motion.button>
-                  </div>
-                </motion.div>
+                  <button
+                    onClick={() => setIsOpen(false)}
+                    className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                  >
+                    <X className="w-5 h-5" />
+                  </button>
+                </div>
 
                 {/* Navigation Items */}
-                <div className="flex-1 overflow-y-auto py-4">
-                  <div className="px-6 space-y-1">
+                <div className="flex-1 py-6">
+                  <div className="px-6 space-y-2">
                     {navItems.map((item, index) => (
                       <motion.div
                         key={item.name}
-                        initial={{ x: 50, opacity: 0 }}
+                        initial={{ x: 20, opacity: 0 }}
                         animate={{ x: 0, opacity: 1 }}
-                        transition={{ delay: 0.1 + index * 0.05 }}
+                        transition={{ delay: index * 0.05 }}
                       >
                         {item.dropdown ? (
-                          <div className="mb-2">
-                            <motion.button
-                              whileHover={{ x: 5 }}
-                              whileTap={{ scale: 0.98 }}
+                          <div>
+                            <button
                               onClick={() => toggleDropdown(item.name)}
-                              className="flex items-center justify-between w-full p-3 text-left hover:bg-gradient-to-r hover:from-orange-50 hover:to-orange-100 dark:hover:from-orange-900/20 dark:hover:to-orange-800/20 rounded-xl transition-all duration-300 group"
+                              className="flex items-center justify-between w-full p-3 text-left hover:bg-gray-50 dark:hover:bg-gray-800 rounded-lg transition-colors"
                             >
-                              <div className="flex items-center space-x-3">
-                                <div className="w-8 h-8 bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                                  <span className="text-white text-sm font-bold">{item.name.charAt(0)}</span>
-                                </div>
-                                <span className="font-semibold text-gray-900 dark:text-white">{item.name}</span>
-                              </div>
-                              <ChevronDown className={`w-5 h-5 transition-all duration-300 ${
-                                activeDropdown === item.name ? 'rotate-180 text-orange-500' : 'text-gray-400'
+                              <span className="font-medium text-gray-900 dark:text-white">{item.name}</span>
+                              <ChevronDown className={`w-4 h-4 transition-transform ${
+                                activeDropdown === item.name ? 'rotate-180' : ''
                               }`} />
-                            </motion.button>
+                            </button>
                             
                             <AnimatePresence>
                               {activeDropdown === item.name && (
@@ -370,56 +333,34 @@ const Navigation = () => {
                                   initial={{ opacity: 0, height: 0 }}
                                   animate={{ opacity: 1, height: 'auto' }}
                                   exit={{ opacity: 0, height: 0 }}
-                                  transition={{ duration: 0.3 }}
-                                  className="ml-4 mt-3"
+                                  transition={{ duration: 0.2 }}
+                                  className="ml-4 mt-2 space-y-1"
                                 >
-                                  <div className="max-h-64 overflow-y-auto space-y-2 scrollbar-thin scrollbar-thumb-gray-300 dark:scrollbar-thumb-gray-600 scrollbar-track-transparent pr-2">
-                                    {item.dropdown.map((dropdownItem, dropdownIndex) => (
-                                      <motion.div
-                                        key={dropdownItem.name}
-                                        initial={{ opacity: 0, x: -20 }}
-                                        animate={{ opacity: 1, x: 0 }}
-                                        transition={{ delay: dropdownIndex * 0.05 }}
-                                      >
-                                        <Link
-                                          href={dropdownItem.href}
-                                          className="flex items-center space-x-3 p-3 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-800 transition-all duration-200 group"
-                                          onClick={() => {
-                                            setIsOpen(false)
-                                            setActiveDropdown(null)
-                                          }}
-                                        >
-                                          <div className="w-8 h-8 bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-700 dark:to-gray-600 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                                            <dropdownItem.icon className="w-4 h-4 text-gray-600 dark:text-gray-300" />
-                                          </div>
-                                          <div className="flex-1">
-                                            <div className="font-medium text-gray-900 dark:text-white">{dropdownItem.name}</div>
-                                            <div className="text-xs text-gray-500 dark:text-gray-400">{dropdownItem.description}</div>
-                                          </div>
-                                        </Link>
-                                      </motion.div>
-                                    ))}
-                                  </div>
+                                  {item.dropdown.map((dropdownItem) => (
+                                    <Link
+                                      key={dropdownItem.name}
+                                      href={dropdownItem.href}
+                                      className="block p-2 text-sm text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-50 dark:hover:bg-gray-800 rounded-lg transition-colors"
+                                      onClick={() => {
+                                        setIsOpen(false)
+                                        setActiveDropdown(null)
+                                      }}
+                                    >
+                                      {dropdownItem.name}
+                                    </Link>
+                                  ))}
                                 </motion.div>
                               )}
                             </AnimatePresence>
                           </div>
                         ) : (
-                          <motion.div
-                            whileHover={{ x: 5 }}
-                            whileTap={{ scale: 0.98 }}
+                          <Link
+                            href={item.href}
+                            className="block p-3 font-medium text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800 rounded-lg transition-colors"
+                            onClick={() => setIsOpen(false)}
                           >
-                            <Link
-                              href={item.href}
-                              className="flex items-center space-x-3 p-3 font-semibold hover:bg-gradient-to-r hover:from-orange-50 hover:to-orange-100 dark:hover:from-orange-900/20 dark:hover:to-orange-800/20 rounded-xl transition-all duration-300 group"
-                              onClick={() => setIsOpen(false)}
-                            >
-                              <div className="w-8 h-8 bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                                <span className="text-white text-sm font-bold">{item.name.charAt(0)}</span>
-                              </div>
-                              <span className="text-gray-900 dark:text-white">{item.name}</span>
-                            </Link>
-                          </motion.div>
+                            {item.name}
+                          </Link>
                         )}
                       </motion.div>
                     ))}
@@ -427,45 +368,15 @@ const Navigation = () => {
                 </div>
 
                 {/* Footer */}
-                <motion.div 
-                  initial={{ y: 20, opacity: 0 }}
-                  animate={{ y: 0, opacity: 1 }}
-                  transition={{ delay: 0.3 }}
-                  className="p-6 border-t border-gray-200/20 dark:border-gray-700/20 space-y-4"
-                >
-                  {/* Quick Stats */}
-                  <div className="grid grid-cols-2 gap-3">
-                    <div className="bg-gradient-to-r from-orange-50 to-orange-100 dark:from-orange-900/20 dark:to-orange-800/20 rounded-xl p-3 text-center">
-                      <div className="text-lg font-bold text-orange-600">450M+</div>
-                      <div className="text-xs text-gray-600 dark:text-gray-400">Users</div>
-                    </div>
-                    <div className="bg-gradient-to-r from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20 rounded-xl p-3 text-center">
-                      <div className="text-lg font-bold text-blue-600">54</div>
-                      <div className="text-xs text-gray-600 dark:text-gray-400">Countries</div>
-                    </div>
-                  </div>
-                  
-                  {/* CTA Button */}
-                  <motion.div
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
+                <div className="p-6 border-t border-gray-200 dark:border-gray-700">
+                  <Link
+                    href="/download"
+                    className="block w-full text-center py-3 px-4 bg-orange-500 text-white rounded-lg font-medium hover:bg-orange-600 transition-colors"
+                    onClick={() => setIsOpen(false)}
                   >
-                    <Link
-                      href="/download"
-                      className="block w-full text-center py-4 px-6 bg-gradient-to-r from-orange-500 to-orange-600 text-white rounded-xl font-semibold hover:from-orange-600 hover:to-orange-700 transition-all duration-300 shadow-lg hover:shadow-xl"
-                      onClick={() => setIsOpen(false)}
-                    >
-                      <Download className="w-5 h-5 inline mr-2" />
-                      Download App
-                    </Link>
-                  </motion.div>
-                  
-                  {/* Live Status */}
-                  <div className="flex items-center justify-center space-x-2 text-sm text-gray-500 dark:text-gray-400">
-                    <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                    <span>Live • 99.9% Uptime</span>
-                  </div>
-                </motion.div>
+                    Download App
+                  </Link>
+                </div>
               </div>
             </motion.div>
           </motion.div>
