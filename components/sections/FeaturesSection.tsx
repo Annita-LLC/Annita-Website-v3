@@ -71,24 +71,24 @@ const FeaturesSection = () => {
 
   const benefits = [
     {
-      icon: Users,
-      title: 'Financial Inclusion',
-      description: 'Enabling underbanked communities to access digital financial services'
+      icon: TrendingUp,
+      title: 'Grow Your Business',
+      description: 'Increase revenue by up to 300% with our platform'
     },
     {
       icon: Globe,
-      title: 'Cross-Border Trade',
-      description: 'AfCFTA compliance enabling seamless cross-border transactions'
+      title: 'Reach Global Markets',
+      description: 'Access customers across 54 African countries'
     },
     {
-      icon: Star,
-      title: 'Women Empowerment',
-      description: 'Special focus on women-led businesses and rural entrepreneurs'
+      icon: Shield,
+      title: 'Secure & Reliable',
+      description: 'Bank-level security with 99.9% uptime guarantee'
     },
     {
-      icon: Zap,
-      title: 'Operational Efficiency',
-      description: 'Consolidated tools reducing costs and complexity for MSMEs'
+      icon: Users,
+      title: '24/7 Support',
+      description: 'Round-the-clock assistance for your success'
     }
   ]
 

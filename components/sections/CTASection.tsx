@@ -2,6 +2,7 @@
 
 import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
+import Link from 'next/link'
 import { 
   Download, 
   ArrowRight, 
@@ -21,28 +22,7 @@ const CTASection = () => {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-100px" })
 
-  const benefits = [
-    {
-      icon: TrendingUp,
-      title: 'Grow Your Business',
-      description: 'Increase revenue by up to 300% with our platform'
-    },
-    {
-      icon: Globe,
-      title: 'Reach Global Markets',
-      description: 'Access customers across 54 African countries'
-    },
-    {
-      icon: Shield,
-      title: 'Secure & Reliable',
-      description: 'Bank-level security with 99.9% uptime guarantee'
-    },
-    {
-      icon: Users,
-      title: '24/7 Support',
-      description: 'Round-the-clock assistance for your success'
-    }
-  ]
+
 
 
 
@@ -95,29 +75,7 @@ const CTASection = () => {
 
         </motion.div>
 
-        {/* Benefits */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-12 sm:mb-16"
-        >
-          {benefits.map((benefit, index) => (
-            <motion.div
-              key={benefit.title}
-              initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.4 + index * 0.1 }}
-              className="text-center group"
-            >
-              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-white/20 backdrop-blur-sm rounded-xl sm:rounded-2xl flex items-center justify-center mx-auto mb-3 sm:mb-4 group-hover:scale-110 transition-transform duration-300">
-                <benefit.icon className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
-              </div>
-              <h4 className="text-base sm:text-lg font-semibold text-orange-400 mb-1 sm:mb-2">{benefit.title}</h4>
-              <p className="text-white/80 text-xs sm:text-sm">{benefit.description}</p>
-            </motion.div>
-          ))}
-        </motion.div>
+
 
 
 
@@ -140,22 +98,26 @@ const CTASection = () => {
 
 
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
-              <Button
-                variant="gradient"
-                size="lg"
-                icon={Download}
-                className="text-base sm:text-lg font-bold shadow-2xl hover:shadow-primary-500/25 transform hover:-translate-y-1 transition-all duration-300"
-              >
-                Download App
-              </Button>
-              <Button
-                variant="glass"
-                size="lg"
-                icon={Play}
-                className="text-base sm:text-lg font-bold backdrop-blur-xl shadow-2xl hover:shadow-white/10 transform hover:-translate-y-1 transition-all duration-300"
-              >
-                Get Started Free
-              </Button>
+              <Link href="/download">
+                <Button
+                  variant="gradient"
+                  size="lg"
+                  icon={Download}
+                  className="text-base sm:text-lg font-bold shadow-2xl hover:shadow-primary-500/25 transform hover:-translate-y-1 transition-all duration-300"
+                >
+                  Download App
+                </Button>
+              </Link>
+              <Link href="/download">
+                <Button
+                  variant="glass"
+                  size="lg"
+                  icon={Play}
+                  className="text-base sm:text-lg font-bold backdrop-blur-xl shadow-2xl hover:shadow-white/10 transform hover:-translate-y-1 transition-all duration-300"
+                >
+                  Get Started Free
+                </Button>
+              </Link>
             </div>
           </div>
         </motion.div>

@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Link from 'next/link'
 import { 
   ArrowRight, 
   Play, 
@@ -11,7 +12,8 @@ import {
   CheckCircle,
   TrendingUp,
   Globe,
-  Shield
+  Shield,
+  Download
 } from 'lucide-react'
 import Button from '@/components/ui/Button'
 
@@ -75,27 +77,29 @@ const HeroContent = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.5 }}
-          className="flex flex-col sm:flex-row gap-3 sm:gap-4 items-center sm:items-start"
+          className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start"
         >
-        <Button className="group text-lg px-8 py-4">
-          Get Started Free
-          <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-        </Button>
-        
-        <motion.button
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          className="flex items-center space-x-3 text-gray-700 hover:text-orange-600 transition-colors duration-300 group"
-        >
-          <div className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center group-hover:bg-orange-100 transition-colors duration-300">
-            <Play className="w-5 h-5 group-hover:text-orange-600 transition-colors duration-300" />
-          </div>
-          <div className="text-left">
-            <div className="font-medium">Watch Demo</div>
-            <div className="text-sm text-gray-500">2 min video</div>
-          </div>
-        </motion.button>
-      </motion.div>
+          <Link href="/download">
+            <Button
+              variant="gradient"
+              size="lg"
+              icon={Play}
+              className="text-base sm:text-lg font-bold shadow-2xl hover:shadow-primary-500/25 transform hover:-translate-y-1 transition-all duration-300"
+            >
+              Get Started Free
+            </Button>
+          </Link>
+          <Link href="/download">
+            <Button
+              variant="glass"
+              size="lg"
+              icon={Download}
+              className="text-base sm:text-lg font-bold backdrop-blur-xl shadow-2xl hover:shadow-white/10 transform hover:-translate-y-1 transition-all duration-300"
+            >
+              Download App
+            </Button>
+          </Link>
+        </motion.div>
 
 
     </div>
