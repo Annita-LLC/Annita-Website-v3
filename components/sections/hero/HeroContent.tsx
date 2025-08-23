@@ -18,7 +18,7 @@ import {
 import Button from '@/components/ui/Button'
 
 const HeroContent = () => {
-  const features = []
+  const features: string[] = []
 
   return (
     <div className="space-y-8">
