@@ -287,22 +287,40 @@ const Navigation = () => {
                 {/* Header */}
                 <div className="flex items-center justify-between p-6 border-b border-gray-200 dark:border-gray-700">
                   <Link href="/" className="flex items-center space-x-2" onClick={() => setIsOpen(false)}>
-                    <div className="w-8 h-8 bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg flex items-center justify-center">
-                      <img 
-                        src="/images/blog/Annita's Logo.png" 
-                        alt="Annita Logo" 
-                        className="w-5 h-5"
-                      />
+                    <div className="relative">
+                      <div className="w-8 h-8 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-full flex items-center justify-center shadow-lg">
+                        <img 
+                          src="/images/blog/Annita's Logo.png" 
+                          alt="Annita Logo" 
+                          className="w-5 h-5 rounded-full object-cover"
+                        />
+                      </div>
+                      <div className="absolute -inset-1 bg-gradient-to-r from-primary-400 to-secondary-400 rounded-full blur opacity-20"></div>
                     </div>
-                    <span className="text-lg font-bold text-gray-900 dark:text-white">Annita</span>
+                    <span className="text-lg font-bold text-orange-500 dark:text-orange-400">Annita</span>
                   </Link>
                   
-                  <button
-                    onClick={() => setIsOpen(false)}
-                    className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
-                  >
-                    <X className="w-5 h-5" />
-                  </button>
+                  <div className="flex items-center space-x-2">
+                    {/* Dark Mode Toggle */}
+                    <button
+                      onClick={toggleDarkMode}
+                      className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                      aria-label="Toggle dark mode"
+                    >
+                      {isDarkMode ? (
+                        <Sun className="w-5 h-5 text-yellow-500" />
+                      ) : (
+                        <Moon className="w-5 h-5 text-gray-600 dark:text-gray-300" />
+                      )}
+                    </button>
+                    
+                    <button
+                      onClick={() => setIsOpen(false)}
+                      className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                    >
+                      <X className="w-5 h-5" />
+                    </button>
+                  </div>
                 </div>
 
                 {/* Navigation Items */}
@@ -371,9 +389,10 @@ const Navigation = () => {
                 <div className="p-6 border-t border-gray-200 dark:border-gray-700">
                   <Link
                     href="/download"
-                    className="block w-full text-center py-3 px-4 bg-orange-500 text-white rounded-lg font-medium hover:bg-orange-600 transition-colors"
+                    className="btn-primary block w-full text-center"
                     onClick={() => setIsOpen(false)}
                   >
+                    <Download className="w-4 h-4 mr-2" />
                     Download App
                   </Link>
                 </div>
