@@ -36,18 +36,7 @@ const HeroContent = () => {
           <span className="text-gray-900">All-in-One Digital Platform</span>
         </motion.h1>
 
-              {/* Subtitle */}
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-600 max-w-3xl leading-relaxed"
-        >
-        Annita is Africa's first all-in-one digital platform, combining e-commerce, fintech,
-        <span className="text-orange-600 font-semibold"> Artificial Intelligence</span>, communication,
-        marketing, logistics, and more into a single ecosystem. We empower MSMEs and individuals
-        with innovative solutions, connectivity, and convenience.
-      </motion.p>
+
 
               {/* Features List */}
         <motion.div

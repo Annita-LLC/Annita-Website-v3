@@ -19,32 +19,32 @@ const CookieConsent = () => {
   const [isExpanded, setIsExpanded] = useState(false)
 
   useEffect(() => {
-    // Check if user has already given consent
-    const hasConsented = localStorage.getItem('annita-cookie-consent')
+    // Check if user has already given consent in this session
+    const hasConsented = sessionStorage.getItem('annita-cookie-consent')
     if (!hasConsented) {
-      // Show popup after 20 seconds to be less intrusive
+      // Show popup after 30 seconds to be less intrusive
       const timer = setTimeout(() => {
         setIsVisible(true)
-      }, 20000) // 20 seconds
+      }, 30000) // 30 seconds
       return () => clearTimeout(timer)
     }
   }, [])
 
   const acceptAll = () => {
-    localStorage.setItem('annita-cookie-consent', 'all')
-    localStorage.setItem('annita-cookie-consent-date', new Date().toISOString())
+    sessionStorage.setItem('annita-cookie-consent', 'all')
+    sessionStorage.setItem('annita-cookie-consent-date', new Date().toISOString())
     setIsVisible(false)
   }
 
   const acceptEssential = () => {
-    localStorage.setItem('annita-cookie-consent', 'essential')
-    localStorage.setItem('annita-cookie-consent-date', new Date().toISOString())
+    sessionStorage.setItem('annita-cookie-consent', 'essential')
+    sessionStorage.setItem('annita-cookie-consent-date', new Date().toISOString())
     setIsVisible(false)
   }
 
   const decline = () => {
-    localStorage.setItem('annita-cookie-consent', 'declined')
-    localStorage.setItem('annita-cookie-consent-date', new Date().toISOString())
+    sessionStorage.setItem('annita-cookie-consent', 'declined')
+    sessionStorage.setItem('annita-cookie-consent-date', new Date().toISOString())
     setIsVisible(false)
   }
 

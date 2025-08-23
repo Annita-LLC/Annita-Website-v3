@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Suspense } from 'react'
 import HeroSection from '@/components/sections/hero/HeroSection'
 import FeaturesSection from '@/components/sections/FeaturesSection'
@@ -15,9 +15,18 @@ import WelcomeLoader from '@/components/ui/WelcomeLoader'
 import SEOHead from '@/components/seo/SEOHead'
 
 export default function HomePage() {
-  const [showWelcome, setShowWelcome] = useState(true)
+  const [showWelcome, setShowWelcome] = useState(false)
+
+  useEffect(() => {
+    // Check if welcome loader has been shown in this session
+    const hasShownWelcome = sessionStorage.getItem('annita-welcome-shown')
+    if (!hasShownWelcome) {
+      setShowWelcome(true)
+    }
+  }, [])
 
   const handleWelcomeComplete = () => {
+    sessionStorage.setItem('annita-welcome-shown', 'true')
     setShowWelcome(false)
   }
 
