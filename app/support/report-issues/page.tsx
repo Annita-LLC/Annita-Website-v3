@@ -21,7 +21,9 @@ import {
   Users,
   FileText,
   Camera,
-  ArrowLeft
+  ArrowLeft,
+  Download,
+  ArrowRight
 } from 'lucide-react'
 import Link from 'next/link'
 
