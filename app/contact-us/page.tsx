@@ -1,6 +1,5 @@
 import React from 'react'
 import SEOHead from '@/components/seo/SEOHead'
-import Button from '@/components/ui/Button'
 import { 
   Mail, 
   Phone, 
@@ -79,20 +78,17 @@ export default function ContactUsPage() {
     {
       icon: HelpCircle,
       title: 'General Support',
-      description: 'Account issues, technical problems, and general questions',
-      
+      description: 'Account issues, technical problems, and general questions'
     },
     {
       icon: Users,
       title: 'Community Forum',
-      description: 'Connect with other users and share experiences',
-      
+      description: 'Connect with other users and share experiences'
     },
     {
       icon: Globe,
       title: 'Regional Support',
-      description: 'Local language support and regional assistance',
-      
+      description: 'Local language support and regional assistance'
     }
   ]
 
@@ -117,13 +113,13 @@ export default function ContactUsPage() {
       />
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-primary-50 to-secondary-50 dark:from-primary-900/20 dark:to-secondary-900/20 py-16 sm:py-20 lg:py-24">
+      <section className="bg-gradient-to-br from-orange-50 to-red-50 py-16 sm:py-20 lg:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-4xl mx-auto">
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-zen-dots font-bold text-heading mb-6">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
               Contact Us
             </h1>
-            <p className="text-lg sm:text-xl text-text-secondary mb-8 font-lora">
+            <p className="text-lg sm:text-xl text-gray-600 mb-8">
               We're here to help! Get in touch with our support team for any questions, 
               technical issues, or general inquiries about Annita.
             </p>
@@ -146,29 +142,29 @@ export default function ContactUsPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {contactMethods.map((method, index) => (
-              <div key={index} className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-medium hover:shadow-large transition-all duration-300 border border-gray-200 dark:border-gray-700">
+              <div key={index} className="bg-white rounded-xl p-6 shadow-soft hover:shadow-large transition-all duration-300 border border-gray-200">
                 <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-lg flex items-center justify-center mr-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-500 rounded-lg flex items-center justify-center mr-4">
                     <method.icon className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-zen-dots font-semibold text-heading">{method.title}</h3>
-                    <p className="text-sm text-text-secondary">{method.description}</p>
+                    <h3 className="text-xl font-semibold text-gray-900">{method.title}</h3>
+                    <p className="text-sm text-gray-600">{method.description}</p>
                   </div>
                 </div>
                 <div className="space-y-3">
                   <div className="flex items-center justify-between">
-                    <span className="text-text-secondary">Contact:</span>
+                    <span className="text-gray-600">Contact:</span>
                     <a 
                       href={method.href} 
-                      className="text-primary-600 dark:text-primary-400 font-medium hover:underline"
+                      className="text-orange-600 font-medium hover:underline"
                     >
                       {method.contact}
                     </a>
                   </div>
                   <div className="flex items-center justify-between">
-                    <span className="text-text-secondary">Response:</span>
-                    <span className="text-sm font-medium text-green-600 dark:text-green-400">
+                    <span className="text-gray-600">Response:</span>
+                    <span className="text-sm font-medium text-green-600">
                       {method.responseTime}
                     </span>
                   </div>
@@ -180,24 +176,24 @@ export default function ContactUsPage() {
       </section>
 
       {/* Office Hours & Location */}
-      <section className="py-16 sm:py-20 bg-section-light dark:bg-section-dark">
+      <section className="py-16 sm:py-20 bg-gray-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-2xl sm:text-3xl font-zen-dots font-bold text-heading mb-6">
+              <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6">
                 Office Hours & Location
               </h2>
               <div className="space-y-6">
                 <div className="flex items-start space-x-4">
-                  <div className="w-10 h-10 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <div className="w-10 h-10 bg-gradient-to-br from-orange-500 to-red-500 rounded-lg flex items-center justify-center flex-shrink-0">
                     <Clock className="w-5 h-5 text-white" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-heading mb-3">Business Hours</h3>
+                    <h3 className="text-lg font-semibold text-gray-900 mb-3">Business Hours</h3>
                     <div className="space-y-2">
                       {officeHours.map((schedule, index) => (
                         <div key={index} className="flex justify-between">
-                          <span className="text-text-secondary">{schedule.day}:</span>
+                          <span className="text-gray-600">{schedule.day}:</span>
                           <span className="font-medium">{schedule.hours}</span>
                         </div>
                       ))}
@@ -206,12 +202,12 @@ export default function ContactUsPage() {
                 </div>
                 
                 <div className="flex items-start space-x-4">
-                  <div className="w-10 h-10 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <div className="w-10 h-10 bg-gradient-to-br from-orange-500 to-red-500 rounded-lg flex items-center justify-center flex-shrink-0">
                     <MapPin className="w-5 h-5 text-white" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-heading mb-2">Office Address</h3>
-                    <p className="text-text-secondary">
+                    <h3 className="text-lg font-semibold text-gray-900 mb-2">Office Address</h3>
+                    <p className="text-gray-600">
                       Duazon, Silver Beach Road<br />
                       Monrovia, Liberia
                     </p>
@@ -220,30 +216,30 @@ export default function ContactUsPage() {
               </div>
             </div>
             
-            <div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-medium border border-gray-200 dark:border-gray-700">
-              <h3 className="text-xl font-zen-dots font-semibold text-heading mb-4">
+            <div className="bg-white rounded-xl p-6 shadow-soft border border-gray-200">
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">
                 Why Choose Our Support?
               </h3>
               <div className="space-y-4">
                 <div className="flex items-center space-x-3">
                   <CheckCircle className="w-5 h-5 text-green-500" />
-                  <span className="text-text-secondary">24/7 availability for urgent issues</span>
+                  <span className="text-gray-600">24/7 availability for urgent issues</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <CheckCircle className="w-5 h-5 text-green-500" />
-                  <span className="text-text-secondary">Multilingual support team</span>
+                  <span className="text-gray-600">Multilingual support team</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <CheckCircle className="w-5 h-5 text-green-500" />
-                  <span className="text-text-secondary">Average response time under 2 hours</span>
+                  <span className="text-gray-600">Average response time under 2 hours</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <CheckCircle className="w-5 h-5 text-green-500" />
-                  <span className="text-text-secondary">Expert technical assistance</span>
+                  <span className="text-gray-600">Expert technical assistance</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <CheckCircle className="w-5 h-5 text-green-500" />
-                  <span className="text-text-secondary">Personalized solutions</span>
+                  <span className="text-gray-600">Personalized solutions</span>
                 </div>
               </div>
             </div>
@@ -255,10 +251,10 @@ export default function ContactUsPage() {
       <section className="py-16 sm:py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-2xl sm:text-3xl font-zen-dots font-bold text-heading mb-4">
+            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
               Get the Right Support
             </h2>
-            <p className="text-lg text-text-secondary max-w-2xl mx-auto">
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               Choose the support option that best fits your needs. We have specialized teams 
               for different types of inquiries.
             </p>
@@ -266,14 +262,14 @@ export default function ContactUsPage() {
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {supportCategories.map((category, index) => (
-              <div key={index} className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-medium hover:shadow-large transition-all duration-300 border border-gray-200 dark:border-gray-700 text-center">
-                <div className="w-16 h-16 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div key={index} className="bg-white rounded-xl p-6 shadow-soft hover:shadow-large transition-all duration-300 border border-gray-200 text-center">
+                <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-red-500 rounded-full flex items-center justify-center mx-auto mb-4">
                   <category.icon className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-xl font-zen-dots font-semibold text-heading mb-3">
+                <h3 className="text-xl font-semibold text-gray-900 mb-3">
                   {category.title}
                 </h3>
-                <p className="text-text-secondary mb-6">
+                <p className="text-gray-600 mb-6">
                   {category.description}
                 </p>
                 <div className="inline-flex items-center justify-center px-4 py-2 text-sm font-semibold border-2 border-gray-300 text-gray-500 rounded-lg">
@@ -286,13 +282,13 @@ export default function ContactUsPage() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-16 sm:py-20 bg-section-light dark:bg-section-dark">
+      <section className="py-16 sm:py-20 bg-gray-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-2xl sm:text-3xl font-zen-dots font-bold text-heading mb-4">
+            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
               Frequently Asked Questions
             </h2>
-            <p className="text-lg text-text-secondary max-w-2xl mx-auto">
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               Find quick answers to common questions. Can't find what you're looking for? 
               Contact our support team.
             </p>
@@ -300,12 +296,12 @@ export default function ContactUsPage() {
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
             {faqs.map((faq, index) => (
-              <div key={index} className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-medium border border-gray-200 dark:border-gray-700">
-                <h3 className="text-lg font-semibold text-heading mb-3 flex items-start">
-                  <Star className="w-5 h-5 text-primary-500 mr-2 mt-0.5 flex-shrink-0" />
+              <div key={index} className="bg-white rounded-xl p-6 shadow-soft border border-gray-200">
+                <h3 className="text-lg font-semibold text-gray-900 mb-3 flex items-start">
+                  <Star className="w-5 h-5 text-orange-500 mr-2 mt-0.5 flex-shrink-0" />
                   {faq.question}
                 </h3>
-                <p className="text-text-secondary font-lora">
+                <p className="text-gray-600">
                   {faq.answer}
                 </p>
               </div>
@@ -313,7 +309,7 @@ export default function ContactUsPage() {
           </div>
           
           <div className="text-center mt-12">
-            <p className="text-text-secondary mb-6">
+            <p className="text-gray-600 mb-6">
               Still have questions? We're here to help!
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -321,7 +317,6 @@ export default function ContactUsPage() {
                 <Mail className="w-4 h-4 mr-2" />
                 Email Support
               </a>
-              
             </div>
           </div>
         </div>
