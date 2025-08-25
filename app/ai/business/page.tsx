@@ -23,7 +23,6 @@ import {
   Package
 } from 'lucide-react'
 import Button from '@/components/ui/Button'
-import FAQSection from '@/components/sections/FAQSection'
 
 export const metadata: Metadata = {
   title: 'Business AI - Annita',
@@ -31,7 +30,7 @@ export const metadata: Metadata = {
 }
 
 const BusinessAIPage = () => {
-  const features = [
+  const businessFeatures = [
     {
       icon: TrendingUp,
       title: 'Predictive Analytics',
@@ -70,97 +69,63 @@ const BusinessAIPage = () => {
     }
   ]
 
-  const aiCapabilities = [
-    {
-      icon: Brain,
-      title: 'Machine Learning',
-      description: 'Advanced ML models that learn from your data and improve over time',
-      benefits: [
-        'Pattern recognition in customer behavior',
-        'Predictive modeling for sales forecasting',
-        'Anomaly detection for fraud prevention',
-        'Recommendation engines for products'
-      ]
-    },
-    {
-      icon: Globe,
-      title: 'Natural Language Processing',
-      description: 'Understand and process customer communications automatically',
-      benefits: [
-        'Sentiment analysis of customer feedback',
-        'Automated email categorization',
-        'Voice-to-text transcription',
-        'Multi-language support'
-      ]
-    },
-    {
-      icon: PieChart,
-      title: 'Data Analytics',
-      description: 'Transform raw data into actionable business insights',
-      benefits: [
-        'Real-time performance monitoring',
-        'Custom report generation',
-        'Data visualization and dashboards',
-        'Trend analysis and forecasting'
-      ]
-    },
-    {
-      icon: Zap,
-      title: 'Process Automation',
-      description: 'Streamline operations with intelligent automation',
-      benefits: [
-        'Workflow automation',
-        'Document processing',
-        'Inventory management',
-        'Order processing optimization'
-      ]
-    }
-  ]
-
-  const useCases = [
+  const dailyUseCases = [
     {
       title: 'E-commerce Optimization',
       description: 'Increase sales with AI-powered product recommendations and pricing optimization',
       icon: ShoppingBag,
-      metrics: [
+      benefits: [
         '30% increase in conversion rates',
         '25% reduction in cart abandonment',
-        '40% improvement in customer lifetime value'
+        '40% improvement in customer lifetime value',
+        'Smart inventory management'
       ]
     },
     {
       title: 'Customer Service Enhancement',
       description: 'Provide 24/7 support with intelligent chatbots and automated responses',
       icon: MessageSquare,
-      metrics: [
+      benefits: [
         '80% faster response times',
         '60% reduction in support costs',
-        '95% customer satisfaction rate'
+        '95% customer satisfaction rate',
+        'Multi-language support'
       ]
     },
     {
       title: 'Financial Management',
       description: 'Optimize cash flow and reduce financial risks with AI insights',
       icon: TrendingUp,
-      metrics: [
+      benefits: [
         '50% faster financial reporting',
         '35% reduction in late payments',
-        '90% accuracy in cash flow predictions'
+        '90% accuracy in cash flow predictions',
+        'Automated expense tracking'
       ]
     },
     {
       title: 'Supply Chain Optimization',
       description: 'Streamline logistics and inventory management with predictive analytics',
       icon: Package,
-      metrics: [
+      benefits: [
         '40% reduction in inventory costs',
         '60% faster delivery times',
-        '85% improvement in demand forecasting'
+        '85% improvement in demand forecasting',
+        'Real-time tracking and alerts'
       ]
     }
   ]
 
-
+  const businessBenefits = [
+    'Increase revenue by up to 300% with AI insights',
+    'Reduce operational costs by 40% through automation',
+    'Improve customer satisfaction by 95%',
+    'Make data-driven decisions with real-time analytics',
+    'Scale operations efficiently with smart automation',
+    'Protect your business with AI-powered security',
+    'Optimize marketing campaigns for better ROI',
+    'Streamline supply chain and logistics operations'
+  ]
 
   return (
     <div className="min-h-screen">
@@ -189,7 +154,7 @@ const BusinessAIPage = () => {
                 icon={Play}
                 className="text-base sm:text-lg font-bold shadow-2xl hover:shadow-purple-500/25 transform hover:-translate-y-1 transition-all duration-300"
               >
-                Get Started Free
+                Try Business AI
               </Button>
               <Button
                 variant="glass"
@@ -204,12 +169,12 @@ const BusinessAIPage = () => {
         </div>
       </section>
 
-      {/* AI Features Section */}
+      {/* Business Features Section */}
       <section className="py-16 sm:py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 sm:mb-16">
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-orange-600 mb-4 sm:mb-6">
-              AI-Powered Business Features
+              Business AI Features
             </h2>
             <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
               Discover how AI can transform every aspect of your business operations
@@ -217,7 +182,7 @@ const BusinessAIPage = () => {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-            {features.map((feature, index) => (
+            {businessFeatures.map((feature, index) => (
               <div key={index} className="bg-white rounded-xl sm:rounded-2xl p-6 sm:p-8 shadow-soft hover:shadow-large transition-all duration-300">
                 <div className={`w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br ${feature.color} rounded-xl sm:rounded-2xl flex items-center justify-center mb-4 sm:mb-6`}>
                   <feature.icon className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
@@ -230,31 +195,31 @@ const BusinessAIPage = () => {
         </div>
       </section>
 
-      {/* AI Capabilities Section */}
-      <section className="py-20 bg-gray-50">
+      {/* Daily Use Cases Section */}
+      <section className="py-16 sm:py-20 bg-gray-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-orange-600 mb-6">
-              Advanced AI Capabilities
+          <div className="text-center mb-12 sm:mb-16">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-orange-600 mb-4 sm:mb-6">
+              Transform Your Business Operations
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Built on cutting-edge artificial intelligence technologies
+            <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
+              See how AI can make your business operations smarter and more efficient
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {aiCapabilities.map((capability, index) => (
-              <div key={capability.title} className="bg-white rounded-2xl p-8 shadow-soft">
-                <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center mb-6">
-                  <capability.icon className="w-8 h-8 text-white" />
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
+            {dailyUseCases.map((useCase, index) => (
+              <div key={index} className="bg-white rounded-xl sm:rounded-2xl p-6 sm:p-8 shadow-soft hover:shadow-large transition-all duration-300">
+                <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl sm:rounded-2xl flex items-center justify-center mb-4 sm:mb-6">
+                  <useCase.icon className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
                 </div>
-                <h3 className="text-xl font-bold text-orange-600 mb-4">{capability.title}</h3>
-                <p className="text-gray-600 mb-6">{capability.description}</p>
-                <div className="space-y-2">
-                  {capability.benefits.map((benefit, benefitIndex) => (
+                <h3 className="text-lg sm:text-xl font-bold text-orange-600 mb-3 sm:mb-4">{useCase.title}</h3>
+                <p className="text-sm sm:text-base text-gray-600 mb-4 sm:mb-6">{useCase.description}</p>
+                <div className="space-y-2 sm:space-y-3">
+                  {useCase.benefits.map((benefit, benefitIndex) => (
                     <div key={benefitIndex} className="flex items-center space-x-2">
-                      <CheckCircle className="w-4 h-4 text-green-500" />
-                      <span className="text-sm text-gray-700">{benefit}</span>
+                      <CheckCircle className="w-3 h-3 sm:w-4 sm:h-4 text-green-500" />
+                      <span className="text-xs sm:text-sm text-gray-700">{benefit}</span>
                     </div>
                   ))}
                 </div>
@@ -264,72 +229,26 @@ const BusinessAIPage = () => {
         </div>
       </section>
 
-      {/* Use Cases Section */}
+      {/* Benefits Section */}
       <section className="py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-orange-600 mb-6">
-              Real-World Business Applications
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              See how businesses are using AI to achieve remarkable results
-            </p>
-          </div>
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl sm:text-4xl font-bold text-orange-600 mb-6">
+                Why Choose Business AI?
+              </h2>
+              <p className="text-xl text-gray-600">
+                Experience the benefits of having an AI assistant that understands your business needs
+              </p>
+            </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {useCases.map((useCase, index) => (
-              <div key={useCase.title} className="bg-white rounded-2xl p-8 shadow-soft hover:shadow-large transition-all duration-300">
-                <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center mb-6">
-                  <useCase.icon className="w-8 h-8 text-white" />
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {businessBenefits.map((benefit, index) => (
+                <div key={index} className="flex items-center space-x-3">
+                  <CheckCircle className="w-6 h-6 text-green-600 flex-shrink-0" />
+                  <span className="text-gray-700">{benefit}</span>
                 </div>
-                <h3 className="text-xl font-bold text-orange-600 mb-4">{useCase.title}</h3>
-                <p className="text-gray-600 mb-6">{useCase.description}</p>
-                <div className="space-y-3">
-                  {useCase.metrics.map((metric, metricIndex) => (
-                    <div key={metricIndex} className="flex items-center space-x-2">
-                      <Star className="w-4 h-4 text-yellow-500" />
-                      <span className="text-sm font-medium text-gray-700">{metric}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-
-
-      {/* FAQ Section */}
-      <FAQSection />
-
-      {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 text-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl sm:text-4xl font-bold text-orange-600 mb-6">
-              Ready to Harness the Power of AI?
-            </h2>
-            <p className="text-xl text-gray-200 mb-8">
-              Join thousands of businesses already using AI to transform their operations and drive growth
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button
-                variant="gradient"
-                size="xl"
-                icon={Play}
-                className="text-lg font-bold shadow-2xl hover:shadow-purple-500/25 transform hover:-translate-y-1 transition-all duration-300"
-              >
-                Get Started Free
-              </Button>
-              <Button
-                variant="glass"
-                size="xl"
-                icon={Download}
-                className="text-lg font-bold backdrop-blur-xl shadow-2xl hover:shadow-white/10 transform hover:-translate-y-1 transition-all duration-300"
-              >
-                Download App
-              </Button>
+              ))}
             </div>
           </div>
         </div>
@@ -339,11 +258,11 @@ const BusinessAIPage = () => {
       <section className="py-20 bg-gradient-to-r from-orange-600 to-red-600 text-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl sm:text-4xl font-bold text-orange-400 mb-6">
-              For More AI Features, Download the App
+            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
+              Ready to Transform Your Business?
             </h2>
             <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-              Get access to advanced AI tools, real-time insights, and mobile-optimized features that will take your business to the next level.
+              Download the Annita app to access your business AI assistant and start growing smarter today.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button

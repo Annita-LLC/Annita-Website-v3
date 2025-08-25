@@ -74,11 +74,9 @@ const HeroSection = () => {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-900 leading-tight mb-6"
               >
-                Transform Your
+                Ready to Transform
                 <br />
-                <span className="text-orange-600">Business</span>
-                <br />
-                <span className="text-gray-900">Today</span>
+                <span className="text-orange-600">Your Business?</span>
               </motion.h1>
 
               {/* Subtitle */}

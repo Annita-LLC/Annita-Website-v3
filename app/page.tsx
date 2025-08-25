@@ -4,7 +4,6 @@ import { useState, useEffect } from 'react'
 import { Suspense } from 'react'
 import HeroSection from '@/components/sections/hero/HeroSection'
 import FeaturesSection from '@/components/sections/FeaturesSection'
-import StatsSection from '@/components/sections/StatsSection'
 // import AboutSection from '@/components/sections/AboutSection'
 
 import TrustedPartnersSection from '@/components/sections/TrustedPartnersSection'
@@ -147,10 +146,6 @@ export default function HomePage() {
       
       <Suspense fallback={<LoadingSpinner />}>
         <FeaturesSection />
-      </Suspense>
-      
-      <Suspense fallback={<LoadingSpinner />}>
-        <StatsSection />
       </Suspense>
       
       {/* AboutSection removed - team section moved to /about page */}

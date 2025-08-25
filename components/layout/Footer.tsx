@@ -23,6 +23,7 @@ const Footer = () => {
       links: [
         { name: 'AnnitaPay', href: '/services/annitapay' },
         { name: 'Shopping', href: '/services/shopping' },
+        { name: 'Personal AI', href: '/ai/personal' },
         
       ]
     },
@@ -44,7 +45,6 @@ const Footer = () => {
         { name: 'Contact Us', href: '/contact-us' },
 
         
-        { name: 'Blog', href: '/blog' },
         { name: 'Careers', href: '/careers' },
         { name: 'About', href: '/about' }
       ]
