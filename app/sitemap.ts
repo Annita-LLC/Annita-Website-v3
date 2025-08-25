@@ -191,12 +191,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ]
 
-  // Support pages
-  const supportPages = [
-    
-
-    
-  ]
+  // Support pages (removed - no longer needed)
+  const supportPages: Array<{
+    url: string;
+    lastModified: Date;
+    changeFrequency: 'always' | 'hourly' | 'daily' | 'weekly' | 'monthly' | 'yearly' | 'never';
+    priority: number;
+  }> = []
 
   // Content pages
   const contentPages = [
