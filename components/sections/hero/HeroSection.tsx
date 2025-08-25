@@ -65,7 +65,7 @@ const HeroSection = () => {
               >
                 <Sparkles className="w-4 h-4 mr-2" />
                 Africa's First All-in-One Platform
-              </motion.div>
+          </motion.div>
 
               {/* Main Heading */}
               <motion.h1
@@ -92,10 +92,10 @@ const HeroSection = () => {
               </motion.p>
 
               {/* CTA Buttons */}
-              <motion.div
+          <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.8, delay: 0.4 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
                 className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
               >
                 <Link href="/download">
@@ -139,8 +139,8 @@ const HeroSection = () => {
                   <Globe className="w-4 h-4 mr-2" />
                   <span>54 African Countries</span>
                 </div>
-              </motion.div>
-            </div>
+          </motion.div>
+        </div>
           </motion.div>
 
           {/* Right Content - Phone */}
