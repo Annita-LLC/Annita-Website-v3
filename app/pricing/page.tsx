@@ -46,38 +46,39 @@ const PricingPage = () => {
 
   const pricingPlans = [
     {
-      id: 'starter',
-      name: 'Starter',
-      description: 'Perfect for individuals and small businesses',
-      monthlyPrice: 0,
-      yearlyPrice: 0,
+      id: 'growth',
+      name: 'Growth',
+      description: 'Perfect for small businesses starting their digital journey',
+      monthlyPrice: 10,
+      yearlyPrice: 100,
       features: [
-        'Basic AnnitaPay transactions',
-        'Up to 100 transactions/month',
-        'Standard customer support',
-        'Basic analytics dashboard',
+        'Marketing credits',
+        'Basic analytics',
+        'Priority support',
         'Mobile app access',
-        'Email notifications'
+        'Email notifications',
+        'Basic reporting'
       ],
       limitations: [
-        'No advanced features',
         'Limited API access',
-        'Basic reporting only'
+        'Basic marketing tools only',
+        'Standard support hours'
       ],
       popular: false,
       icon: Users
     },
     {
-      id: 'professional',
-      name: 'Professional',
+      id: 'pro',
+      name: 'Pro',
       description: 'Ideal for growing businesses and startups',
-      monthlyPrice: 29,
-      yearlyPrice: 290,
+      monthlyPrice: 25,
+      yearlyPrice: 250,
       features: [
-        'All Starter features',
-        'Up to 1,000 transactions/month',
-        'Priority customer support',
-        'Advanced analytics & reporting',
+        'All Growth features',
+        'AI recommendations',
+        'Highlighted listings',
+        'Advanced analytics',
+        'Faster support',
         'API access with documentation',
         'Custom branding options',
         'Multi-user access (up to 5)',
@@ -92,16 +93,17 @@ const PricingPage = () => {
       icon: TrendingUp
     },
     {
-      id: 'enterprise',
-      name: 'Enterprise',
+      id: 'premium',
+      name: 'Premium',
       description: 'For large organizations and corporations',
-      monthlyPrice: 99,
-      yearlyPrice: 990,
+      monthlyPrice: 50,
+      yearlyPrice: 500,
       features: [
-        'All Professional features',
-        'Unlimited transactions',
-        '24/7 dedicated support',
-        'Custom analytics & insights',
+        'All Pro features',
+        'Full AI suite',
+        'Premium analytics',
+        'Ad credits',
+        'Priority exposure',
         'Full API access with webhooks',
         'White-label solutions',
         'Unlimited user access',
@@ -119,31 +121,31 @@ const PricingPage = () => {
 
   const markupModel = {
     title: "Markup Base Model Explained",
-    description: "Our transparent pricing model ensures fair and sustainable business growth",
+    description: "Vendors choose either markup OR subscription, not both. Our transparent pricing ensures fair and sustainable business growth",
     components: [
       {
-        title: "Base Transaction Fee",
-        description: "Fixed percentage on each transaction",
-        rate: "2.5%",
-        details: "Standard processing fee for all transactions"
-      },
-      {
-        title: "Platform Access Fee", 
-        description: "Monthly subscription for platform features",
-        rate: "Variable",
-        details: "Based on plan tier and usage volume"
-      },
-      {
-        title: "Premium Features",
-        description: "Additional services and integrations",
+        title: "Dynamic Markup (5-15%)",
+        description: "Vendor sets markup rate per product or account level",
         rate: "5-15%",
-        details: "Advanced analytics, custom integrations, white-label solutions"
+        details: "Customer sees final price including markup, vendor receives full original price"
       },
       {
-        title: "Volume Discounts",
-        description: "Reduced rates for high-volume users",
-        rate: "Up to 50%",
-        details: "Tiered pricing based on monthly transaction volume"
+        title: "Subscription Plans", 
+        description: "Monthly/Annual plans for premium tools and features",
+        rate: "$10-$50/month",
+        details: "Growth ($10), Pro ($25), Premium ($50) with AI tools and analytics"
+      },
+      {
+        title: "No Transaction Fees",
+        description: "Annita does not take commission per transaction unless markup is selected",
+        rate: "0%",
+        details: "Transparent pricing with no hidden fees or surprise charges"
+      },
+      {
+        title: "Hybrid Flexibility",
+        description: "Vendors can choose their preferred revenue model",
+        rate: "Flexible",
+        details: "Switch between markup and subscription models as business grows"
       }
     ]
   }
@@ -151,27 +153,27 @@ const PricingPage = () => {
   const faqs = [
     {
       question: "How does the markup base model work?",
-      answer: "Our markup model combines a base transaction fee (2.5%) with platform access fees and premium feature costs. This ensures transparency while covering our operational costs and providing value-added services."
+      answer: "Vendors set a markup rate (5-15%) on their products. Customers see the final price including markup, vendors receive the full original product price, and Annita earns the markup difference. No transaction fees unless markup is selected."
     },
     {
-      question: "Can I switch between plans?",
-      answer: "Yes, you can upgrade or downgrade your plan at any time. Changes take effect immediately, and we'll prorate any billing adjustments."
+      question: "Can I choose between markup and subscription?",
+      answer: "Yes, vendors choose either markup OR subscription, not both. You can switch between models as your business grows. The system tracks revenue sources per vendor for accurate reporting."
     },
     {
       question: "Are there any hidden fees?",
-      answer: "No hidden fees. All costs are clearly outlined in our pricing structure. The only additional costs are for premium features you choose to add."
+      answer: "No hidden fees. Annita does not take commission per transaction unless markup is selected. All costs are clearly outlined in our pricing structure with complete transparency."
     },
     {
-      question: "Do you offer volume discounts?",
-      answer: "Yes, we offer significant discounts for high-volume users. Contact our sales team for custom pricing based on your transaction volume."
+      question: "What's included in the subscription plans?",
+      answer: "Growth ($10/month): Marketing credits, basic analytics, priority support. Pro ($25/month): AI recommendations, highlighted listings, advanced analytics. Premium ($50/month): Full AI suite, premium analytics, ad credits, API access."
     },
     {
-      question: "What payment methods do you accept?",
-      answer: "We accept all major credit cards, bank transfers, and mobile money payments. Enterprise customers can also arrange for invoiced payments."
+      question: "How does the escrow system work?",
+      answer: "Payments are held in Annita Escrow Wallet until delivery confirmation. Vendors receive full product price instantly upon delivery confirmation, logistics providers get commission immediately, and Annita collects revenue if markup model is used."
     },
     {
       question: "Is there a free trial available?",
-      answer: "Yes, all paid plans come with a 14-day free trial. No credit card required to start your trial."
+      answer: "Yes, all subscription plans come with a 14-day free trial. No credit card required to start your trial. You can also use the markup model without any subscription fees."
     }
   ]
 
@@ -179,7 +181,7 @@ const PricingPage = () => {
     <>
       <SEOHead
         title="Pricing - Annita LLC"
-        description="Transparent pricing for Annita's digital platform. Choose from Starter (Free), Professional ($29/month), or Enterprise ($99/month) plans with our markup base model."
+        description="Transparent pricing for Annita's digital platform. Choose from Growth ($10/month), Pro ($25/month), or Premium ($50/month) subscription plans or use our markup base model (5-15%)."
         keywords={[
           'pricing',
           'plans',
