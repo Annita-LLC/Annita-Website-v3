@@ -31,7 +31,7 @@ import Link from 'next/link'
 
 const HeroSection = () => {
   const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: "-100px" })
+  const isInView = useInView(ref, { once: true, margin: "0px" })
 
   return (
     <section className="relative min-h-screen bg-white overflow-hidden">
@@ -51,16 +51,16 @@ const HeroSection = () => {
           <motion.div
             ref={ref}
             initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8, ease: "easeOut" }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
             className="flex-1 text-center lg:text-left lg:pr-16"
           >
             <div className="max-w-2xl mx-auto lg:mx-0">
               {/* Badge */}
               <motion.div
                 initial={{ opacity: 0, y: 10 }}
-                animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6, delay: 0.1 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: 0.1 }}
                 className="inline-flex items-center px-4 py-2 bg-orange-50 text-orange-700 rounded-full text-sm font-medium mb-8"
               >
                 <Sparkles className="w-4 h-4 mr-2" />
@@ -70,8 +70,8 @@ const HeroSection = () => {
               {/* Main Heading */}
               <motion.h1
                 initial={{ opacity: 0, y: 20 }}
-                animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.8, delay: 0.2 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
                 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-900 leading-tight mb-6"
               >
                 Transform Your
@@ -84,8 +84,8 @@ const HeroSection = () => {
               {/* Subtitle */}
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
-                animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.8, delay: 0.3 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
                 className="text-lg sm:text-xl lg:text-2xl text-gray-600 leading-relaxed mb-8 max-w-xl lg:max-w-none"
               >
                 We empower MSMEs and individuals with innovative solutions, connectivity, and convenience.
@@ -94,8 +94,8 @@ const HeroSection = () => {
               {/* CTA Buttons */}
           <motion.div
                 initial={{ opacity: 0, y: 20 }}
-                animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.4 }}
+                animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
                 className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
               >
                 <Link href="/download">
@@ -123,8 +123,8 @@ const HeroSection = () => {
               {/* Trust indicators */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
-                animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.8, delay: 0.5 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.5 }}
                 className="mt-12 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-6 text-sm text-gray-500"
               >
                 <div className="flex items-center">
@@ -146,8 +146,8 @@ const HeroSection = () => {
           {/* Right Content - Phone */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.3 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
             className="flex-1 flex justify-center lg:justify-end mt-12 lg:mt-0"
           >
             <div className="relative">
