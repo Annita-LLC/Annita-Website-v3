@@ -110,8 +110,7 @@ const Navigation = () => {
         { name: 'Documentation', href: '/support/documentation', icon: FileText, description: 'Developer documentation' },
         { name: 'Report Issues', href: '/support/report-issues', icon: HelpCircle, description: 'Report bugs and issues' },
         { name: 'Contact Sales', href: '/contact-sales', icon: Phone, description: 'Talk to our business development team' },
-        { name: 'Live Activity', href: '/live-activity', icon: Activity, description: 'Real-time platform activity feed' },
-        { name: 'API & Integrations', href: '/api', icon: Code, description: 'Developer platform & integrations' },
+
       ]
     },
   ]

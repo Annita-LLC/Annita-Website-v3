@@ -40,13 +40,7 @@ const Footer = () => {
         { name: 'ERP System', href: '/services/erp' }
       ]
     },
-    {
-      title: 'Platform',
-      links: [
-        { name: 'Live Activity', href: '/live-activity' },
-        { name: 'API & Integrations', href: '/api' }
-      ]
-    },
+
     {
       title: 'Resources',
       links: [
