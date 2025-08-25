@@ -24,17 +24,17 @@ const NotFoundPage = () => {
       color: 'from-orange-500 to-red-500'
     },
     {
-      title: 'Support',
+      title: 'Contact',
       description: 'Get help and find answers',
       icon: HelpCircle,
-      
+      href: '/contact-us',
       color: 'from-blue-500 to-cyan-500'
     },
     {
-      title: 'Contact',
-      description: 'Reach out to our team',
+      title: 'About',
+      description: 'Learn more about Annita',
       icon: Mail,
-      href: '/contact',
+      href: '/about',
       color: 'from-green-500 to-emerald-500'
     }
   ]
