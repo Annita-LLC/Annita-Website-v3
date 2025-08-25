@@ -103,8 +103,7 @@ const Navigation = () => {
       dropdown: [
         
         { name: 'Contact Us', href: '/contact-us', icon: Mail, description: 'Get in touch with our team' },
-        { name: 'System Status', href: '/status', icon: Activity, description: 'Service status and uptime' },
-        { name: 'Documentation', href: '/support/documentation', icon: FileText, description: 'Developer documentation' },
+        
         { name: 'Report Issues', href: '/support/report-issues', icon: HelpCircle, description: 'Report bugs and issues' },
         { name: 'Contact Sales', href: '/contact-sales', icon: Phone, description: 'Talk to our business development team' },
 
