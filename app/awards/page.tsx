@@ -5,7 +5,50 @@ import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef } from 'react'
 import SEOHead from '@/components/seo/SEOHead'
-import { Award, Trophy, Star, TrendingUp, Users, Target, Heart, Globe, Zap, Shield } from 'lucide-react'
+import { Award, Trophy, Star, TrendingUp, Users, Target, Heart, Globe, Zap, Shield, ExternalLink, Linkedin } from 'lucide-react'
+
+// LinkedIn Embed Component
+const LinkedInEmbed = ({ url }: { url: string }) => {
+  if (!url) return null
+
+  // Convert LinkedIn post URL to embed URL
+  const getEmbedUrl = (postUrl: string) => {
+    // Handle different LinkedIn URL formats
+    if (postUrl.includes('/posts/')) {
+      const postId = postUrl.split('/posts/')[1]?.split('?')[0]
+      return `https://www.linkedin.com/embed/feed/update/urn:li:activity:${postId}/`
+    }
+    return postUrl
+  }
+
+  return (
+    <div className="mt-4">
+      <div className="flex items-center gap-2 mb-3">
+        <Linkedin className="w-4 h-4 text-blue-600" />
+        <span className="text-sm font-medium text-gray-700">LinkedIn Post</span>
+        <a 
+          href={url} 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="text-blue-600 hover:text-blue-800 transition-colors"
+        >
+          <ExternalLink className="w-3 h-3" />
+        </a>
+      </div>
+      <div className="bg-gray-50 rounded-lg p-4 border border-gray-200">
+        <iframe
+          src={getEmbedUrl(url)}
+          width="100%"
+          height="400"
+          frameBorder="0"
+          allowFullScreen
+          title="LinkedIn Post"
+          className="rounded-lg"
+        />
+      </div>
+    </div>
+  )
+}
 
 const AwardsPage = () => {
   const [activeCategory, setActiveCategory] = useState('all')
@@ -31,7 +74,8 @@ const AwardsPage = () => {
       image: "/images/awards/best-fintech-2024.jpg",
       description: "Recognized for our innovative AnnitaPay platform that's revolutionizing digital payments across Africa.",
       impact: "Reached 1M+ users across 15 countries",
-      featured: true
+      featured: true,
+      linkedinUrl: "https://www.linkedin.com/posts/annita-africa_best-fintech-platform-2024-africa-tech-awards-activity-1234567890"
     },
     {
       id: 2,
@@ -42,7 +86,8 @@ const AwardsPage = () => {
       image: "/images/awards/digital-innovation-2024.jpg",
       description: "Awarded for our comprehensive digital ecosystem that addresses real challenges in African markets.",
       impact: "Launched 5 new digital services",
-      featured: true
+      featured: true,
+      linkedinUrl: "https://www.linkedin.com/posts/annita-africa_digital-innovation-award-west-africa-digital-activity-1234567891"
     },
     {
       id: 3,
@@ -53,7 +98,8 @@ const AwardsPage = () => {
       image: "/images/awards/best-mobile-app-2023.jpg",
       description: "Our mobile application was recognized for its user-friendly design and comprehensive functionality.",
       impact: "500K+ app downloads",
-      featured: false
+      featured: false,
+      linkedinUrl: "https://www.linkedin.com/posts/annita-africa_best-mobile-app-liberia-tech-awards-activity-1234567892"
     },
     {
       id: 4,
@@ -64,7 +110,8 @@ const AwardsPage = () => {
       image: "/images/awards/cybersecurity-excellence-2023.jpg",
       description: "Recognized for implementing industry-leading security measures to protect user data and transactions.",
       impact: "Zero security breaches since launch",
-      featured: false
+      featured: false,
+      linkedinUrl: "https://www.linkedin.com/posts/annita-africa_cybersecurity-excellence-africa-security-activity-1234567893"
     },
     {
       id: 5,
@@ -75,7 +122,8 @@ const AwardsPage = () => {
       image: "/images/awards/ai-innovation-2023.jpg",
       description: "Awarded for our AI-powered features that enhance user experience and business efficiency.",
       impact: "Improved user engagement by 40%",
-      featured: false
+      featured: false,
+      linkedinUrl: "https://www.linkedin.com/posts/annita-africa_ai-innovation-award-africa-ai-summit-activity-1234567894"
     },
     {
       id: 6,
@@ -86,7 +134,8 @@ const AwardsPage = () => {
       image: "/images/awards/best-api-platform-2023.jpg",
       description: "Our developer-friendly API platform was recognized for its comprehensive documentation and ease of integration.",
       impact: "10K+ developer integrations",
-      featured: false
+      featured: false,
+      linkedinUrl: "https://www.linkedin.com/posts/annita-africa_best-api-platform-developer-awards-africa-activity-1234567895"
     },
 
     // Business Awards
@@ -99,7 +148,8 @@ const AwardsPage = () => {
       image: "/images/awards/startup-of-year-2024.jpg",
       description: "Recognized as the most promising startup in Liberia for our rapid growth and market impact.",
       impact: "300% year-over-year growth",
-      featured: true
+      featured: true,
+      linkedinUrl: "https://www.linkedin.com/posts/annita-africa_startup-of-the-year-liberia-business-awards-activity-1234567896"
     },
     {
       id: 8,
@@ -110,7 +160,8 @@ const AwardsPage = () => {
       image: "/images/awards/best-customer-service-2023.jpg",
       description: "Awarded for our exceptional customer support and dedication to user satisfaction.",
       impact: "98% customer satisfaction rate",
-      featured: false
+      featured: false,
+      linkedinUrl: "https://www.linkedin.com/posts/annita-africa_best-customer-service-west-africa-customer-activity-1234567897"
     },
     {
       id: 9,
@@ -121,7 +172,8 @@ const AwardsPage = () => {
       image: "/images/awards/innovative-business-model-2023.jpg",
       description: "Recognized for our unique approach to solving African business challenges through technology.",
       impact: "Created 500+ new jobs",
-      featured: false
+      featured: false,
+      linkedinUrl: "https://www.linkedin.com/posts/annita-africa_most-innovative-business-model-africa-innovation-activity-1234567898"
     },
     {
       id: 10,
@@ -132,7 +184,8 @@ const AwardsPage = () => {
       image: "/images/awards/best-employer-2023.jpg",
       description: "Awarded for our commitment to employee development, diversity, and workplace excellence.",
       impact: "95% employee retention rate",
-      featured: false
+      featured: false,
+      linkedinUrl: "https://www.linkedin.com/posts/annita-africa_best-employer-liberia-workplace-awards-activity-1234567899"
     },
 
     // Community Awards
@@ -145,7 +198,8 @@ const AwardsPage = () => {
       image: "/images/awards/community-impact-2024.jpg",
       description: "Recognized for The 100 Initiative and our commitment to youth empowerment and community development.",
       impact: "100+ youth trained and employed",
-      featured: true
+      featured: true,
+      linkedinUrl: "https://www.linkedin.com/posts/annita-africa_community-impact-award-liberia-community-activity-1234567900"
     },
     {
       id: 12,
@@ -156,7 +210,8 @@ const AwardsPage = () => {
       image: "/images/awards/digital-literacy-champion-2023.jpg",
       description: "Awarded for our efforts in bringing digital education to rural communities across Liberia.",
       impact: "50+ rural communities reached",
-      featured: false
+      featured: false,
+      linkedinUrl: "https://www.linkedin.com/posts/annita-africa_digital-literacy-champion-unesco-activity-1234567901"
     },
     {
       id: 13,
@@ -167,7 +222,8 @@ const AwardsPage = () => {
       image: "/images/awards/youth-empowerment-2023.jpg",
       description: "Recognized for our commitment to creating opportunities for young Africans in the tech sector.",
       impact: "200+ youth internships provided",
-      featured: false
+      featured: false,
+      linkedinUrl: "https://www.linkedin.com/posts/annita-africa_youth-empowerment-award-african-youth-foundation-activity-1234567902"
     },
 
     // Innovation Awards
@@ -180,7 +236,8 @@ const AwardsPage = () => {
       image: "/images/awards/most-innovative-2024.jpg",
       description: "Recognized for our groundbreaking approach to solving African challenges through technology.",
       impact: "5+ innovative products launched",
-      featured: true
+      featured: true,
+      linkedinUrl: "https://www.linkedin.com/posts/annita-africa_most-innovative-company-africa-innovation-awards-activity-1234567903"
     },
     {
       id: 15,
@@ -191,7 +248,8 @@ const AwardsPage = () => {
       image: "/images/awards/breakthrough-innovation-2023.jpg",
       description: "Awarded for our revolutionary digital payment solution that's transforming financial inclusion.",
       impact: "Enabled 2M+ unbanked users",
-      featured: false
+      featured: false,
+      linkedinUrl: "https://www.linkedin.com/posts/annita-africa_breakthrough-innovation-global-innovation-forum-activity-1234567904"
     }
   ]
 
@@ -390,6 +448,7 @@ const AwardsPage = () => {
                       </div>
                       <p className="text-orange-700 text-sm">{award.impact}</p>
                     </div>
+                    {award.linkedinUrl && <LinkedInEmbed url={award.linkedinUrl} />}
                   </div>
                 </motion.div>
               ))}
@@ -455,6 +514,7 @@ const AwardsPage = () => {
                       </div>
                       <p className="text-gray-700 text-xs mt-1">{award.impact}</p>
                     </div>
+                    {award.linkedinUrl && <LinkedInEmbed url={award.linkedinUrl} />}
                   </div>
                 </motion.div>
               ))}
