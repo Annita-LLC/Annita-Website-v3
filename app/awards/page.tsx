@@ -56,200 +56,60 @@ const AwardsPage = () => {
   const isInView = useInView(ref, { once: true })
 
   const categories = [
-    { id: 'all', label: 'All Awards', count: 15 },
-    { id: 'tech', label: 'Technology', count: 6 },
-    { id: 'business', label: 'Business', count: 4 },
-    { id: 'community', label: 'Community', count: 3 },
-    { id: 'innovation', label: 'Innovation', count: 2 }
+    { id: 'all', label: 'All Awards', count: 4 },
+    { id: 'tech', label: 'Technology', count: 1 },
+    { id: 'business', label: 'Business', count: 3 }
   ]
 
   const awards = [
     // Technology Awards
     {
       id: 1,
-      title: "Best Fintech Platform 2024",
-      organization: "Africa Tech Awards",
+      title: "1st Place - Orange Social Venture Prize 2024",
+      organization: "Orange Social Venture Prize",
       category: "tech",
       year: "2024",
-      image: "/images/awards/best-fintech-2024.jpg",
-      description: "Recognized for our innovative AnnitaPay platform that's revolutionizing digital payments across Africa.",
-      impact: "Reached 1M+ users across 15 countries",
+      image: "/images/awards/orange-social-venture-prize-2024.jpg",
+      description: "Annita was awarded 1st Place in the Orange Social Venture Prize 2024 – Liberia National Grand Prize, receiving a $3,000 USD grant for our innovative digital platform.",
+      impact: "Received $3,000 USD grant for platform development",
       featured: true,
-      linkedinUrl: "https://www.linkedin.com/posts/annita-africa_best-fintech-platform-2024-africa-tech-awards-activity-1234567890"
+      linkedinUrl: "https://www.linkedin.com/posts/christopher-o-fallah-15058ab4_i-give-all-the-glory-to-my-lord-and-savior-activity-7235399030187397120-Otrb"
     },
     {
       id: 2,
-      title: "Digital Innovation Award",
-      organization: "West Africa Digital Summit",
-      category: "tech",
+      title: "Enterprise African Network (EAN) Fellowship",
+      organization: "African Union",
+      category: "business",
       year: "2024",
-      image: "/images/awards/digital-innovation-2024.jpg",
-      description: "Awarded for our comprehensive digital ecosystem that addresses real challenges in African markets.",
-      impact: "Launched 5 new digital services",
+      image: "/images/awards/ean-fellowship-2024.jpg",
+      description: "Annita has been selected as one of the 50 innovative small businesses for the inaugural Enterprise African Network (EAN) Fellowship Programme, participating in the prestigious third AU Micro, Small, and Medium Enterprise (MSME) Forum.",
+      impact: "Selected among 50 innovative businesses across Africa",
       featured: true,
-      linkedinUrl: "https://www.linkedin.com/posts/annita-africa_digital-innovation-award-west-africa-digital-activity-1234567891"
+      linkedinUrl: "https://www.linkedin.com/posts/christopher-o-fallah-15058ab4_annita-has-been-selected-as-one-of-the-50-activity-7231565059083104256-NRVM"
     },
     {
       id: 3,
-      title: "Best Mobile App",
-      organization: "Liberia Tech Awards",
-      category: "tech",
-      year: "2023",
-      image: "/images/awards/best-mobile-app-2023.jpg",
-      description: "Our mobile application was recognized for its user-friendly design and comprehensive functionality.",
-      impact: "500K+ app downloads",
-      featured: false,
-      linkedinUrl: "https://www.linkedin.com/posts/annita-africa_best-mobile-app-liberia-tech-awards-activity-1234567892"
+      title: "9th Place Winner - SMART Liberia ESP",
+      organization: "SMART Liberia",
+      category: "business",
+      year: "2024",
+      image: "/images/awards/smart-liberia-esp-2024.jpg",
+      description: "Back-to-back wins as the 9th place winner at SMART Liberia's ESP, receiving the L$75,000 prize for our innovative business model and social impact.",
+      impact: "Received L$75,000 prize for business innovation",
+      featured: true,
+      linkedinUrl: "https://www.linkedin.com/posts/christopher-o-fallah-15058ab4_back-to-back-wins-not-luck-grace-humbled-activity-7235717012008697857-B4fQ"
     },
     {
       id: 4,
-      title: "Cybersecurity Excellence",
-      organization: "Africa Security Conference",
-      category: "tech",
-      year: "2023",
-      image: "/images/awards/cybersecurity-excellence-2023.jpg",
-      description: "Recognized for implementing industry-leading security measures to protect user data and transactions.",
-      impact: "Zero security breaches since launch",
-      featured: false,
-      linkedinUrl: "https://www.linkedin.com/posts/annita-africa_cybersecurity-excellence-africa-security-activity-1234567893"
-    },
-    {
-      id: 5,
-      title: "AI Innovation Award",
-      organization: "Africa AI Summit",
-      category: "tech",
-      year: "2023",
-      image: "/images/awards/ai-innovation-2023.jpg",
-      description: "Awarded for our AI-powered features that enhance user experience and business efficiency.",
-      impact: "Improved user engagement by 40%",
-      featured: false,
-      linkedinUrl: "https://www.linkedin.com/posts/annita-africa_ai-innovation-award-africa-ai-summit-activity-1234567894"
-    },
-    {
-      id: 6,
-      title: "Best API Platform",
-      organization: "Developer Awards Africa",
-      category: "tech",
-      year: "2023",
-      image: "/images/awards/best-api-platform-2023.jpg",
-      description: "Our developer-friendly API platform was recognized for its comprehensive documentation and ease of integration.",
-      impact: "10K+ developer integrations",
-      featured: false,
-      linkedinUrl: "https://www.linkedin.com/posts/annita-africa_best-api-platform-developer-awards-africa-activity-1234567895"
-    },
-
-    // Business Awards
-    {
-      id: 7,
-      title: "Startup of the Year",
-      organization: "Liberia Business Awards",
+      title: "Mansa Platform Partnership",
+      organization: "Mansa Due Diligence",
       category: "business",
       year: "2024",
-      image: "/images/awards/startup-of-year-2024.jpg",
-      description: "Recognized as the most promising startup in Liberia for our rapid growth and market impact.",
-      impact: "300% year-over-year growth",
-      featured: true,
-      linkedinUrl: "https://www.linkedin.com/posts/annita-africa_startup-of-the-year-liberia-business-awards-activity-1234567896"
-    },
-    {
-      id: 8,
-      title: "Best Customer Service",
-      organization: "West Africa Customer Experience Awards",
-      category: "business",
-      year: "2023",
-      image: "/images/awards/best-customer-service-2023.jpg",
-      description: "Awarded for our exceptional customer support and dedication to user satisfaction.",
-      impact: "98% customer satisfaction rate",
+      image: "/images/awards/mansa-platform-2024.jpg",
+      description: "Annita joins the Mansa platform, strengthening our position in the African business ecosystem and expanding our reach across the continent.",
+      impact: "Enhanced business credibility and continental reach",
       featured: false,
-      linkedinUrl: "https://www.linkedin.com/posts/annita-africa_best-customer-service-west-africa-customer-activity-1234567897"
-    },
-    {
-      id: 9,
-      title: "Most Innovative Business Model",
-      organization: "Africa Innovation Summit",
-      category: "business",
-      year: "2023",
-      image: "/images/awards/innovative-business-model-2023.jpg",
-      description: "Recognized for our unique approach to solving African business challenges through technology.",
-      impact: "Created 500+ new jobs",
-      featured: false,
-      linkedinUrl: "https://www.linkedin.com/posts/annita-africa_most-innovative-business-model-africa-innovation-activity-1234567898"
-    },
-    {
-      id: 10,
-      title: "Best Employer",
-      organization: "Liberia Workplace Awards",
-      category: "business",
-      year: "2023",
-      image: "/images/awards/best-employer-2023.jpg",
-      description: "Awarded for our commitment to employee development, diversity, and workplace excellence.",
-      impact: "95% employee retention rate",
-      featured: false,
-      linkedinUrl: "https://www.linkedin.com/posts/annita-africa_best-employer-liberia-workplace-awards-activity-1234567899"
-    },
-
-    // Community Awards
-    {
-      id: 11,
-      title: "Community Impact Award",
-      organization: "Liberia Community Foundation",
-      category: "community",
-      year: "2024",
-      image: "/images/awards/community-impact-2024.jpg",
-      description: "Recognized for The 100 Initiative and our commitment to youth empowerment and community development.",
-      impact: "100+ youth trained and employed",
-      featured: true,
-      linkedinUrl: "https://www.linkedin.com/posts/annita-africa_community-impact-award-liberia-community-activity-1234567900"
-    },
-    {
-      id: 12,
-      title: "Digital Literacy Champion",
-      organization: "UNESCO",
-      category: "community",
-      year: "2023",
-      image: "/images/awards/digital-literacy-champion-2023.jpg",
-      description: "Awarded for our efforts in bringing digital education to rural communities across Liberia.",
-      impact: "50+ rural communities reached",
-      featured: false,
-      linkedinUrl: "https://www.linkedin.com/posts/annita-africa_digital-literacy-champion-unesco-activity-1234567901"
-    },
-    {
-      id: 13,
-      title: "Youth Empowerment Award",
-      organization: "African Youth Foundation",
-      category: "community",
-      year: "2023",
-      image: "/images/awards/youth-empowerment-2023.jpg",
-      description: "Recognized for our commitment to creating opportunities for young Africans in the tech sector.",
-      impact: "200+ youth internships provided",
-      featured: false,
-      linkedinUrl: "https://www.linkedin.com/posts/annita-africa_youth-empowerment-award-african-youth-foundation-activity-1234567902"
-    },
-
-    // Innovation Awards
-    {
-      id: 14,
-      title: "Most Innovative Company",
-      organization: "Africa Innovation Awards",
-      category: "innovation",
-      year: "2024",
-      image: "/images/awards/most-innovative-2024.jpg",
-      description: "Recognized for our groundbreaking approach to solving African challenges through technology.",
-      impact: "5+ innovative products launched",
-      featured: true,
-      linkedinUrl: "https://www.linkedin.com/posts/annita-africa_most-innovative-company-africa-innovation-awards-activity-1234567903"
-    },
-    {
-      id: 15,
-      title: "Breakthrough Innovation",
-      organization: "Global Innovation Forum",
-      category: "innovation",
-      year: "2023",
-      image: "/images/awards/breakthrough-innovation-2023.jpg",
-      description: "Awarded for our revolutionary digital payment solution that's transforming financial inclusion.",
-      impact: "Enabled 2M+ unbanked users",
-      featured: false,
-      linkedinUrl: "https://www.linkedin.com/posts/annita-africa_breakthrough-innovation-global-innovation-forum-activity-1234567904"
+      linkedinUrl: "https://www.linkedin.com/posts/christopher-o-fallah-15058ab4_annita-joins-the-mansa-platform-strengthening-activity-7303127700020350977-ykKT"
     }
   ]
 
@@ -261,10 +121,10 @@ const AwardsPage = () => {
   const regularAwards = filteredAwards.filter(award => !award.featured)
 
   const stats = [
-    { icon: Award, value: "15+", label: "Awards Won" },
-    { icon: Users, value: "1M+", label: "Users Impacted" },
-    { icon: Target, value: "15", label: "Countries Reached" },
-    { icon: TrendingUp, value: "300%", label: "Growth Rate" }
+    { icon: Award, value: "4", label: "Awards Won" },
+    { icon: Users, value: "50", label: "Innovative Businesses Selected" },
+    { icon: Target, value: "3", label: "Major Prizes" },
+    { icon: TrendingUp, value: "100%", label: "Success Rate" }
   ]
 
   return (
@@ -338,9 +198,9 @@ const AwardsPage = () => {
                 Celebrating our achievements and the impact we've made across Africa
               </p>
               <div className="flex flex-wrap justify-center gap-4 text-sm">
-                <span className="bg-white/20 px-4 py-2 rounded-full">15+ Awards</span>
-                <span className="bg-white/20 px-4 py-2 rounded-full">4 Categories</span>
-                <span className="bg-white/20 px-4 py-2 rounded-full">2023-2024</span>
+                <span className="bg-white/20 px-4 py-2 rounded-full">4 Awards</span>
+                <span className="bg-white/20 px-4 py-2 rounded-full">2 Categories</span>
+                <span className="bg-white/20 px-4 py-2 rounded-full">2024</span>
               </div>
             </motion.div>
           </div>
