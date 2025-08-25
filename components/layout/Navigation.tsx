@@ -101,7 +101,7 @@ const Navigation = () => {
       name: 'Support', 
       href: '#',
       dropdown: [
-        { name: 'Support Center', href: '/support', icon: HelpCircle, description: 'Get help and support' },
+        
         { name: 'Contact Us', href: '/contact-us', icon: Mail, description: 'Get in touch with our team' },
         { name: 'System Status', href: '/status', icon: Activity, description: 'Service status and uptime' },
         { name: 'Documentation', href: '/support/documentation', icon: FileText, description: 'Developer documentation' },

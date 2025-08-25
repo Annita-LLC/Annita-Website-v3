@@ -193,12 +193,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // Support pages
   const supportPages = [
-    {
-      url: `${baseUrl}/support`,
-      lastModified: currentDate,
-      changeFrequency: 'weekly' as const,
-      priority: 0.8,
-    },
+    
 
     {
       url: `${baseUrl}/status`,

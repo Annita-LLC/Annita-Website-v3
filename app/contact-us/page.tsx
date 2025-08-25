@@ -63,7 +63,7 @@ export default function ContactUsPage() {
     },
     {
       question: 'How do I report a technical issue?',
-      answer: 'You can report technical issues through our Support Center, email us directly, or use the "Report Issues" feature in your account.'
+      answer: 'You can report technical issues by emailing us directly or using the "Report Issues" feature in your account.'
     },
     {
       question: 'Is my data secure?',
@@ -80,19 +80,19 @@ export default function ContactUsPage() {
       icon: HelpCircle,
       title: 'General Support',
       description: 'Account issues, technical problems, and general questions',
-      href: '/support'
+      
     },
     {
       icon: Users,
       title: 'Community Forum',
       description: 'Connect with other users and share experiences',
-      href: '/support/community'
+      
     },
     {
       icon: Globe,
       title: 'Regional Support',
       description: 'Local language support and regional assistance',
-      href: '/support/regional'
+      
     }
   ]
 
@@ -321,10 +321,7 @@ export default function ContactUsPage() {
                 <Mail className="w-4 h-4 mr-2" />
                 Email Support
               </a>
-              <a href="/support" className="inline-flex items-center justify-center px-6 py-3 text-base font-semibold border-2 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 rounded-xl shadow-md hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-300">
-                <HelpCircle className="w-4 h-4 mr-2" />
-                Visit Support Center
-              </a>
+              
             </div>
           </div>
         </div>

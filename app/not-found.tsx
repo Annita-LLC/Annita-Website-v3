@@ -27,7 +27,7 @@ const NotFoundPage = () => {
       title: 'Support',
       description: 'Get help and find answers',
       icon: HelpCircle,
-      href: '/support',
+      
       color: 'from-blue-500 to-cyan-500'
     },
     {
