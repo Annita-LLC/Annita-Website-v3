@@ -23,10 +23,7 @@ const Footer = () => {
       links: [
         { name: 'AnnitaPay', href: '/services/annitapay' },
         { name: 'Shopping', href: '/services/shopping' },
-        { name: 'Entertainment', href: '/services/entertainment' },
-        { name: 'Health', href: '/services/health' },
-        { name: 'Education', href: '/services/education' },
-        { name: 'Social', href: '/services/social' }
+        
       ]
     },
     {

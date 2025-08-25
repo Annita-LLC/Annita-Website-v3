@@ -65,10 +65,7 @@ const Navigation = () => {
         { name: 'AnnitaPay', href: '/services/annitapay', icon: CreditCard, description: 'Secure digital payments' },
         { name: 'Annita AI', href: '/ai/personal', icon: Zap, description: 'Personal AI assistant' },
         { name: 'Shopping', href: '/services/shopping', icon: ShoppingCart, description: 'E-commerce platform' },
-        { name: 'Entertainment', href: '/services/entertainment', icon: Play, description: 'Entertainment & media' },
-        { name: 'Health', href: '/services/health', icon: Heart, description: 'Health & wellness services' },
-        { name: 'Education', href: '/services/education', icon: GraduationCap, description: 'Educational resources' },
-        { name: 'Social', href: '/services/social', icon: MessageCircle, description: 'Social networking' },
+        
       ]
     },
     { 
