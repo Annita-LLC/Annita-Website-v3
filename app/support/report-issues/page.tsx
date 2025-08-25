@@ -21,7 +21,6 @@ import {
   Users,
   FileText,
   Camera,
-  Link,
   ArrowLeft
 } from 'lucide-react'
 import Link from 'next/link'
