@@ -22,11 +22,7 @@ const TrustedPartnersSection = () => {
       image: '/images/Trusted and Back By/Mansa Due Deligence Data Platform (1).jpg',
       description: 'Mansa Due Diligence Data Platform'
     },
-    {
-      name: 'Wakanow',
-      image: '/images/Trusted and Back By/Wakanow.jpg',
-      description: 'Strategic partner Wakanow'
-    }
+
   ]
 
   return (
