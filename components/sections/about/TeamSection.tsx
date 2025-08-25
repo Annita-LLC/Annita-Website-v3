@@ -181,26 +181,26 @@ const TeamSection = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 1.0 }}
-          className="relative bg-white rounded-3xl p-8 sm:p-12 shadow-soft"
+          className="relative bg-white rounded-3xl p-4 sm:p-8 lg:p-12 shadow-soft"
         >
-          <h3 className="text-xl sm:text-2xl font-bold text-orange-600 mb-4 sm:mb-6 text-center">Team Gallery</h3>
+          <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-orange-600 mb-6 sm:mb-8 lg:mb-10 text-center">Team Gallery</h3>
           
-          <div className="relative max-w-4xl mx-auto">
-            <div className="relative h-64 sm:h-80 rounded-2xl overflow-hidden bg-gradient-to-br from-orange-100 to-red-100">
+          <div className="relative max-w-6xl mx-auto">
+            <div className="relative h-80 sm:h-96 md:h-[500px] lg:h-[600px] xl:h-[700px] rounded-2xl overflow-hidden bg-gradient-to-br from-orange-100 to-red-100">
               <img 
                 src={team[currentImageIndex].image} 
                 alt={team[currentImageIndex].name}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover object-center"
               />
-              <div className="absolute inset-0 bg-black/20"></div>
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
-                <h4 className="text-base sm:text-lg font-semibold text-white mb-1 sm:mb-2">{team[currentImageIndex].name}</h4>
-                <p className="text-orange-300 font-medium mb-3 sm:mb-4 text-sm sm:text-base">{team[currentImageIndex].role}</p>
-                <div className="flex flex-wrap gap-2">
+              <div className="absolute inset-0 bg-black/10"></div>
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent p-4 sm:p-6 lg:p-8">
+                <h4 className="text-lg sm:text-xl lg:text-2xl font-semibold text-white mb-2 sm:mb-3">{team[currentImageIndex].name}</h4>
+                <p className="text-orange-300 font-medium mb-3 sm:mb-4 lg:mb-6 text-sm sm:text-base lg:text-lg">{team[currentImageIndex].role}</p>
+                <div className="flex flex-wrap gap-2 sm:gap-3">
                   {team[currentImageIndex].expertise.map((skill, skillIndex) => (
                     <span 
                       key={skillIndex}
-                      className="px-2 py-1 bg-white/20 text-white text-xs rounded-full backdrop-blur-sm"
+                      className="px-3 py-1 sm:px-4 sm:py-2 bg-white/20 text-white text-xs sm:text-sm rounded-full backdrop-blur-sm border border-white/30"
                     >
                       {skill}
                     </span>
@@ -212,24 +212,24 @@ const TeamSection = () => {
             {/* Navigation Buttons */}
             <button
               onClick={prevImage}
-              className="absolute left-4 top-1/2 transform -translate-y-1/2 w-10 h-10 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center shadow-lg hover:bg-white transition-colors duration-200"
+              className="absolute left-2 sm:left-4 lg:left-6 top-1/2 transform -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center shadow-lg hover:bg-white transition-colors duration-200 z-10"
             >
-              <ChevronLeft className="w-5 h-5 text-gray-700" />
+              <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6 lg:w-7 lg:h-7 text-gray-700" />
             </button>
             <button
               onClick={nextImage}
-              className="absolute right-4 top-1/2 transform -translate-y-1/2 w-10 h-10 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center shadow-lg hover:bg-white transition-colors duration-200"
+              className="absolute right-2 sm:right-4 lg:right-6 top-1/2 transform -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center shadow-lg hover:bg-white transition-colors duration-200 z-10"
             >
-              <ChevronRight className="w-5 h-5 text-gray-700" />
+              <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6 lg:w-7 lg:h-7 text-gray-700" />
             </button>
 
             {/* Dots Indicator */}
-            <div className="flex justify-center mt-6 space-x-2">
+            <div className="flex justify-center mt-6 sm:mt-8 lg:mt-10 space-x-2 sm:space-x-3">
               {team.map((_, index) => (
                 <button
                   key={index}
                   onClick={() => setCurrentImageIndex(index)}
-                  className={`w-2 h-2 rounded-full transition-colors duration-200 ${
+                  className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-colors duration-200 ${
                     index === currentImageIndex ? 'bg-orange-500' : 'bg-gray-300'
                   }`}
                 />

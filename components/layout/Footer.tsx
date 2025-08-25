@@ -11,7 +11,13 @@ import {
   Phone,
   MapPin,
   Heart,
-  Link as LinkIcon
+  Link as LinkIcon,
+  ExternalLink,
+  Globe,
+  Building,
+  Users,
+  Briefcase,
+  Award
 } from 'lucide-react'
 
 const Footer = () => {
@@ -60,12 +66,19 @@ const Footer = () => {
   ]
 
   const socialLinks = [
-    { name: 'Facebook', icon: Facebook, href: 'https://facebook.com/annita.africa' },
-    { name: 'WhatsApp', icon: MessageCircle, href: 'https://wa.me/231775057227' },
-    { name: 'Instagram', icon: Instagram, href: 'https://instagram.com/annita_africa' },
+    { name: 'Website', icon: Globe, href: 'https://annita.com' },
     { name: 'LinkedIn', icon: Linkedin, href: 'https://linkedin.com/company/annita-africa' },
+    { name: 'Facebook', icon: Facebook, href: 'https://facebook.com/annita.africa' },
+    { name: 'Instagram', icon: Instagram, href: 'https://instagram.com/annita_africa' },
+    { name: 'TikTok', icon: ExternalLink, href: 'https://tiktok.com/@annita_africa' },
     { name: 'YouTube', icon: Youtube, href: 'https://youtube.com/@annita-africa' },
-    { name: 'Linktree', icon: LinkIcon, href: 'https://linktr.ee/annitastorellc' }
+    { name: 'WhatsApp', icon: MessageCircle, href: 'https://wa.me/231775057227' },
+    { name: 'GitHub', icon: ExternalLink, href: 'https://github.com/annita-africa' },
+    { name: 'VC4A', icon: Building, href: 'https://vc4a.com/annita' },
+    { name: 'F6S', icon: Users, href: 'https://f6s.com/annita' },
+    { name: 'Crunchbase', icon: Briefcase, href: 'https://crunchbase.com/organization/annita' },
+    { name: 'IATF 2025', icon: Award, href: 'https://iatf2025.com/annita' },
+    { name: 'Linktree', icon: LinkIcon, href: 'https://linktr.ee/annitallc' }
   ]
 
   const contactInfo = [
@@ -118,19 +131,23 @@ const Footer = () => {
             </div>
 
             {/* Social Links */}
-            <div className="flex space-x-3 sm:space-x-4">
-              {socialLinks.map((social) => (
-                <a
-                  key={social.name}
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-8 h-8 sm:w-10 sm:h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-primary-600 transition-colors duration-200 group"
-                  aria-label={social.name}
-                >
-                  <social.icon className="w-4 h-4 sm:w-5 sm:h-5 text-gray-400 group-hover:text-white transition-colors duration-200" />
-                </a>
-              ))}
+            <div className="mb-4 sm:mb-6">
+              <h4 className="text-sm font-semibold text-orange-500 mb-3">Connect With Us</h4>
+              <div className="grid grid-cols-4 sm:grid-cols-6 gap-2 sm:gap-3">
+                {socialLinks.map((social) => (
+                  <a
+                    key={social.name}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-8 h-8 sm:w-10 sm:h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-orange-600 transition-colors duration-200 group"
+                    aria-label={social.name}
+                    title={social.name}
+                  >
+                    <social.icon className="w-3 h-3 sm:w-4 sm:h-4 text-gray-400 group-hover:text-white transition-colors duration-200" />
+                  </a>
+                ))}
+              </div>
             </div>
           </div>
 

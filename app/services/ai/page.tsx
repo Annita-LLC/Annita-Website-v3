@@ -1,339 +1,284 @@
 'use client'
 
-import { useState, useRef, useEffect } from 'react'
+import { Metadata } from 'next'
 import { 
-  Send, 
-  Bot, 
   Brain, 
-  Zap, 
-  MessageSquare, 
-  FileText, 
-  Image, 
-  Code,
-  Mic,
-  MicOff,
-  Paperclip,
-  X,
-  RotateCcw,
-  Settings,
-  Sparkles,
-  TrendingUp,
-  Users,
-  Globe
+  TrendingUp, 
+  Users, 
+  BarChart3, 
+  Target,
+  CheckCircle,
+  ArrowRight,
+  Play,
+  Download,
+  Zap,
+  Star,
+  Shield,
+  Globe,
+  MessageSquare,
+  FileText,
+  PieChart,
+  Activity,
+  BookOpen,
+  Terminal,
+  ShoppingBag,
+  Package
 } from 'lucide-react'
-import { motion, AnimatePresence } from 'framer-motion'
 import Button from '@/components/ui/Button'
 
-interface Message {
-  id: string
-  type: 'user' | 'ai'
-  content: string
-  timestamp: Date
-  aiType?: string
-}
-
 const AIPage = () => {
-  const [messages, setMessages] = useState<Message[]>([])
-  const [inputMessage, setInputMessage] = useState('')
-  const [isLoading, setIsLoading] = useState(false)
-  const [selectedAI, setSelectedAI] = useState('general')
-  const [isRecording, setIsRecording] = useState(false)
-  const messagesEndRef = useRef<HTMLDivElement>(null)
-
-  const aiServices = [
+  const aiFeatures = [
     {
-      id: 'general',
-      name: 'General AI',
-      description: 'Your personal AI assistant',
-      icon: Bot,
-      color: 'from-blue-500 to-cyan-500',
-      examples: ['Help me plan my day', 'Write a professional email']
-    },
-    {
-      id: 'business',
-      name: 'Business AI',
-      description: 'AI-powered business insights',
       icon: TrendingUp,
-      color: 'from-green-500 to-emerald-500',
-      examples: ['Analyze market trends', 'Create a business plan']
+      title: 'Predictive Analytics',
+      description: 'Forecast market trends and customer behavior with AI-powered insights',
+      color: 'from-green-500 to-emerald-500'
     },
     {
-      id: 'creative',
-      name: 'Creative AI',
-      description: 'Unleash your creativity',
-      icon: Sparkles,
-      color: 'from-purple-500 to-pink-500',
-      examples: ['Write a story', 'Create marketing content']
+      icon: Users,
+      title: 'Customer Intelligence',
+      description: 'Understand your customers better with AI-driven segmentation and analysis',
+      color: 'from-blue-500 to-cyan-500'
     },
     {
-      id: 'coding',
-      name: 'Code AI',
-      description: 'Programming assistance',
-      icon: Code,
-      color: 'from-indigo-500 to-purple-500',
-      examples: ['Debug my code', 'Create a React component']
+      icon: Target,
+      title: 'Smart Automation',
+      description: 'Automate repetitive tasks and workflows to increase efficiency',
+      color: 'from-purple-500 to-pink-500'
+    },
+    {
+      icon: BarChart3,
+      title: 'Real-time Analytics',
+      description: 'Monitor your business performance with live dashboards and insights',
+      color: 'from-orange-500 to-red-500'
+    },
+    {
+      icon: MessageSquare,
+      title: 'AI Chat Support',
+      description: 'Provide instant customer support with intelligent chatbots',
+      color: 'from-indigo-500 to-purple-500'
+    },
+    {
+      icon: Shield,
+      title: 'Fraud Detection',
+      description: 'Protect your business with AI-powered security and fraud prevention',
+      color: 'from-red-500 to-pink-500'
     }
   ]
 
-  const scrollToBottom = () => {
-    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' })
-  }
-
-  useEffect(() => {
-    scrollToBottom()
-  }, [messages])
-
-  const handleSendMessage = async () => {
-    if (!inputMessage.trim() || isLoading) return
-
-    const userMessage: Message = {
-      id: Date.now().toString(),
-      type: 'user',
-      content: inputMessage,
-      timestamp: new Date()
+  const dailyUseCases = [
+    {
+      title: 'E-commerce Optimization',
+      description: 'Increase sales with AI-powered product recommendations and pricing optimization',
+      icon: ShoppingBag,
+      benefits: [
+        '30% increase in conversion rates',
+        '25% reduction in cart abandonment',
+        '40% improvement in customer lifetime value',
+        'Smart inventory management'
+      ]
+    },
+    {
+      title: 'Customer Service Enhancement',
+      description: 'Provide 24/7 support with intelligent chatbots and automated responses',
+      icon: MessageSquare,
+      benefits: [
+        '80% faster response times',
+        '60% reduction in support costs',
+        '95% customer satisfaction rate',
+        'Multi-language support'
+      ]
+    },
+    {
+      title: 'Financial Management',
+      description: 'Optimize cash flow and reduce financial risks with AI insights',
+      icon: TrendingUp,
+      benefits: [
+        '50% faster financial reporting',
+        '35% reduction in late payments',
+        '90% accuracy in cash flow predictions',
+        'Automated expense tracking'
+      ]
+    },
+    {
+      title: 'Supply Chain Optimization',
+      description: 'Streamline logistics and inventory management with predictive analytics',
+      icon: Package,
+      benefits: [
+        '40% reduction in inventory costs',
+        '60% faster delivery times',
+        '85% improvement in demand forecasting',
+        'Real-time tracking and alerts'
+      ]
     }
+  ]
 
-    setMessages(prev => [...prev, userMessage])
-    setInputMessage('')
-    setIsLoading(true)
-
-    // Simulate AI response
-    setTimeout(() => {
-      const aiMessage: Message = {
-        id: (Date.now() + 1).toString(),
-        type: 'ai',
-        content: `I'm Annita's AI assistant. I understand you're asking about "${inputMessage}". This is a demonstration of our AI capabilities. In the real implementation, I would provide specific, helpful responses based on your query.`,
-        timestamp: new Date(),
-        aiType: selectedAI
-      }
-      setMessages(prev => [...prev, aiMessage])
-      setIsLoading(false)
-    }, 1500)
-  }
-
-  const handleKeyPress = (e: React.KeyboardEvent) => {
-    if (e.key === 'Enter' && !e.shiftKey) {
-      e.preventDefault()
-      handleSendMessage()
-    }
-  }
-
-  const clearChat = () => {
-    setMessages([])
-  }
-
-  const selectedAIService = aiServices.find(s => s.id === selectedAI)
-
-  const renderIcon = (icon: any, className: string) => {
-    const IconComponent = icon
-    return <IconComponent className={className} />
-  }
+  const aiBenefits = [
+    'Increase revenue by up to 300% with AI insights',
+    'Reduce operational costs by 40% through automation',
+    'Improve customer satisfaction by 95%',
+    'Make data-driven decisions with real-time analytics',
+    'Scale operations efficiently with smart automation',
+    'Protect your business with AI-powered security',
+    'Optimize marketing campaigns for better ROI',
+    'Streamline supply chain and logistics operations'
+  ]
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white">
+    <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-to-r from-primary-500 to-secondary-500 text-white">
-        <div className="container mx-auto px-3 sm:px-4 lg:px-6 xl:px-8">
+      <section className="relative bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 text-white overflow-hidden">
+        <div className="absolute inset-0 bg-black/20"></div>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
-            <div className="w-20 h-20 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-6">
-              <Brain className="w-10 h-10" />
+            <div className="inline-flex items-center px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white text-xs sm:text-sm font-medium mb-4 sm:mb-6">
+              <Brain className="w-3 h-3 sm:w-4 sm:h-4 mr-1.5 sm:mr-2" />
+              AI-Powered Business Intelligence
             </div>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
-              Annita AI
+            
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 sm:mb-6">
+              Annita <span className="text-orange-500">AI</span>
             </h1>
-            <p className="text-xl sm:text-2xl text-white/90 mb-8">
-              Experience the power of artificial intelligence
+            <p className="text-lg sm:text-xl text-gray-200 mb-6 sm:mb-8 max-w-2xl mx-auto">
+              AI-powered business tools to help your business grow, optimize operations, 
+              and make data-driven decisions with unprecedented precision.
             </p>
-          </div>
-        </div>
-      </section>
 
-      {/* AI Services Selection */}
-      <section className="py-12 bg-white border-b border-gray-200">
-        <div className="container mx-auto px-3 sm:px-4 lg:px-6 xl:px-8">
-          <div className="flex flex-wrap gap-4 justify-center">
-            {aiServices.map((service) => (
-              <button
-                key={service.id}
-                onClick={() => setSelectedAI(service.id)}
-                className={`flex items-center space-x-3 px-6 py-3 rounded-2xl transition-all duration-300 ${
-                  selectedAI === service.id
-                    ? 'bg-gradient-to-r ' + service.color + ' text-white shadow-lg'
-                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                }`}
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
+              <Button
+                variant="gradient"
+                size="lg"
+                icon={Play}
+                className="text-base sm:text-lg font-bold shadow-2xl hover:shadow-purple-500/25 transform hover:-translate-y-1 transition-all duration-300"
               >
-                {renderIcon(service.icon, "w-5 h-5")}
-                <span className="font-medium">{service.name}</span>
-              </button>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Chat Interface */}
-      <section className="py-8">
-        <div className="container mx-auto px-3 sm:px-4 lg:px-6 xl:px-8">
-          <div className="max-w-4xl mx-auto">
-            <div className="bg-white rounded-3xl shadow-soft border border-gray-200 overflow-hidden">
-              {/* Chat Header */}
-              <div className="bg-gradient-to-r from-gray-50 to-white p-6 border-b border-gray-200">
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center space-x-4">
-                    <div className={`w-12 h-12 bg-gradient-to-br ${selectedAIService?.color} rounded-xl flex items-center justify-center`}>
-                      {selectedAIService && renderIcon(selectedAIService.icon, "w-6 h-6 text-white")}
-                    </div>
-                    <div>
-                      <h2 className="text-xl font-bold text-gray-900">{selectedAIService?.name}</h2>
-                      <p className="text-sm text-gray-600">{selectedAIService?.description}</p>
-                    </div>
-                  </div>
-                  <button
-                    onClick={clearChat}
-                    className="p-2 hover:bg-gray-100 rounded-lg transition-colors"
-                    title="Clear chat"
-                  >
-                    <RotateCcw className="w-5 h-5 text-gray-500" />
-                  </button>
-                </div>
-              </div>
-
-              {/* Chat Messages */}
-              <div className="h-96 overflow-y-auto p-6">
-                <AnimatePresence>
-                  {messages.map((message) => (
-                    <motion.div
-                      key={message.id}
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      className={`flex ${message.type === 'user' ? 'justify-end' : 'justify-start'} mb-4`}
-                    >
-                      <div className={`max-w-[80%] ${message.type === 'user' ? 'order-2' : 'order-1'}`}>
-                        <div className={`p-4 rounded-2xl ${
-                          message.type === 'user' 
-                            ? 'bg-gradient-to-r from-blue-500 to-cyan-500 text-white' 
-                            : 'bg-gray-100 text-gray-900'
-                        }`}>
-                          <p className="text-sm">{message.content}</p>
-                          <div className={`text-xs mt-2 ${
-                            message.type === 'user' ? 'text-blue-100' : 'text-gray-500'
-                          }`}>
-                            {message.timestamp.toLocaleTimeString()}
-                          </div>
-                        </div>
-                      </div>
-                      <div className={`w-8 h-8 rounded-full flex items-center justify-center ${
-                        message.type === 'user' ? 'order-1 ml-2' : 'order-2 mr-2'
-                      }`}>
-                        {message.type === 'user' ? (
-                          <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full flex items-center justify-center">
-                            <span className="text-white text-sm font-bold">U</span>
-                          </div>
-                        ) : (
-                          <div className={`w-8 h-8 bg-gradient-to-br ${selectedAIService?.color} rounded-full flex items-center justify-center`}>
-                            <Bot className="w-4 h-4 text-white" />
-                          </div>
-                        )}
-                      </div>
-                    </motion.div>
-                  ))}
-
-                  {isLoading && (
-                    <motion.div
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      className="flex justify-start mb-4"
-                    >
-                      <div className="w-8 h-8 mr-2">
-                        <div className={`w-8 h-8 bg-gradient-to-br ${selectedAIService?.color} rounded-full flex items-center justify-center`}>
-                          <Bot className="w-4 h-4 text-white" />
-                        </div>
-                      </div>
-                      <div className="bg-gray-100 p-4 rounded-2xl">
-                        <div className="flex space-x-1">
-                          <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"></div>
-                          <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
-                          <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
-                        </div>
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-                <div ref={messagesEndRef} />
-              </div>
-
-              {/* Chat Input */}
-              <div className="p-6 border-t border-gray-200 bg-gray-50">
-                <div className="flex items-end space-x-3">
-                  <div className="flex-1">
-                    <div className="relative">
-                      <textarea
-                        value={inputMessage}
-                        onChange={(e) => setInputMessage(e.target.value)}
-                        onKeyPress={handleKeyPress}
-                        placeholder={`Ask ${selectedAIService?.name} anything...`}
-                        className="w-full p-4 pr-12 border border-gray-300 rounded-2xl resize-none focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                        rows={1}
-                        style={{ minHeight: '60px', maxHeight: '120px' }}
-                      />
-                      <div className="absolute right-3 bottom-3 flex items-center space-x-2">
-                        <button className="p-2 hover:bg-gray-200 rounded-lg transition-colors">
-                          <Paperclip className="w-4 h-4 text-gray-500" />
-                        </button>
-                        <button 
-                          onClick={() => setIsRecording(!isRecording)}
-                          className={`p-2 rounded-lg transition-colors ${
-                            isRecording ? 'bg-red-100 text-red-600' : 'hover:bg-gray-200 text-gray-500'
-                          }`}
-                        >
-                          {isRecording ? <MicOff className="w-4 h-4" /> : <Mic className="w-4 h-4" />}
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                  <button
-                    onClick={handleSendMessage}
-                    disabled={!inputMessage.trim() || isLoading}
-                    className="p-4 bg-gradient-to-r from-blue-500 to-cyan-500 text-white rounded-2xl hover:from-blue-600 hover:to-cyan-600 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
-                  >
-                    <Send className="w-5 h-5" />
-                  </button>
-                </div>
-              </div>
+                Try Business AI
+              </Button>
+              <Button
+                variant="glass"
+                size="lg"
+                icon={Download}
+                className="text-base sm:text-lg font-bold backdrop-blur-xl shadow-2xl hover:shadow-white/10 transform hover:-translate-y-1 transition-all duration-300"
+              >
+                Download App
+              </Button>
             </div>
           </div>
         </div>
       </section>
 
-      {/* AI Capabilities */}
-      <section className="py-20 bg-gradient-to-br from-neutral-50 to-white">
-        <div className="container mx-auto px-3 sm:px-4 lg:px-6 xl:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-neutral-800 mb-6">
-              AI Capabilities
+      {/* AI Features Section */}
+      <section className="py-16 sm:py-20">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12 sm:mb-16">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-orange-600 mb-4 sm:mb-6">
+              AI-Powered Business Features
             </h2>
-            <p className="text-xl text-neutral-600 max-w-3xl mx-auto">
-              Our AI systems are designed to help you with every aspect of your digital life.
+            <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
+              Discover how AI can transform every aspect of your business operations
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
-            {aiServices.map((service) => (
-              <div key={service.id} className="bg-white rounded-3xl p-8 shadow-soft hover:shadow-medium transition-all duration-300">
-                <div className={`w-16 h-16 bg-gradient-to-br ${service.color} rounded-2xl flex items-center justify-center mb-6`}>
-                  {renderIcon(service.icon, "w-8 h-8 text-white")}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+            {aiFeatures.map((feature, index) => (
+              <div key={index} className="bg-white rounded-xl sm:rounded-2xl p-6 sm:p-8 shadow-soft hover:shadow-large transition-all duration-300">
+                <div className={`w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br ${feature.color} rounded-xl sm:rounded-2xl flex items-center justify-center mb-4 sm:mb-6`}>
+                  <feature.icon className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">{service.name}</h3>
-                <p className="text-gray-600 mb-4">{service.description}</p>
-                <ul className="space-y-2 text-sm text-gray-600">
-                  {service.examples.map((example, index) => (
-                    <li key={index} className="flex items-center space-x-2">
-                      <div className="w-1.5 h-1.5 bg-blue-500 rounded-full"></div>
-                      <span>{example}</span>
-                    </li>
-                  ))}
-                </ul>
+                <h3 className="text-lg sm:text-xl font-bold text-orange-600 mb-3 sm:mb-4">{feature.title}</h3>
+                <p className="text-sm sm:text-base text-gray-600">{feature.description}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Daily Use Cases Section */}
+      <section className="py-16 sm:py-20 bg-gray-50">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12 sm:mb-16">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-orange-600 mb-4 sm:mb-6">
+              Transform Your Business Operations
+            </h2>
+            <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
+              See how AI can make your business operations smarter and more efficient
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
+            {dailyUseCases.map((useCase, index) => (
+              <div key={index} className="bg-white rounded-xl sm:rounded-2xl p-6 sm:p-8 shadow-soft hover:shadow-large transition-all duration-300">
+                <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl sm:rounded-2xl flex items-center justify-center mb-4 sm:mb-6">
+                  <useCase.icon className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
+                </div>
+                <h3 className="text-lg sm:text-xl font-bold text-orange-600 mb-3 sm:mb-4">{useCase.title}</h3>
+                <p className="text-sm sm:text-base text-gray-600 mb-4 sm:mb-6">{useCase.description}</p>
+                <div className="space-y-2 sm:space-y-3">
+                  {useCase.benefits.map((benefit, benefitIndex) => (
+                    <div key={benefitIndex} className="flex items-center space-x-2">
+                      <CheckCircle className="w-3 h-3 sm:w-4 sm:h-4 text-green-500" />
+                      <span className="text-xs sm:text-sm text-gray-700">{benefit}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Benefits Section */}
+      <section className="py-20">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl sm:text-4xl font-bold text-orange-600 mb-6">
+                Why Choose Annita AI?
+              </h2>
+              <p className="text-xl text-gray-600">
+                Experience the benefits of having an AI assistant that understands your business needs
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {aiBenefits.map((benefit, index) => (
+                <div key={index} className="flex items-center space-x-3">
+                  <CheckCircle className="w-6 h-6 text-green-600 flex-shrink-0" />
+                  <span className="text-gray-700">{benefit}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Download CTA Section */}
+      <section className="py-20 bg-gradient-to-r from-orange-600 to-red-600 text-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
+              Ready to Transform Your Business?
+            </h2>
+            <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+              Download the Annita app to access your business AI assistant and start growing smarter today.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button
+                variant="white"
+                size="xl"
+                icon={Download}
+                className="text-lg font-bold shadow-2xl hover:shadow-white/25 transform hover:-translate-y-1 transition-all duration-300"
+              >
+                Download App Now
+              </Button>
+              <Button
+                variant="outline"
+                size="xl"
+                icon={Play}
+                className="text-lg font-bold border-white text-white hover:bg-white hover:text-orange-600"
+              >
+                Learn More
+              </Button>
+            </div>
           </div>
         </div>
       </section>

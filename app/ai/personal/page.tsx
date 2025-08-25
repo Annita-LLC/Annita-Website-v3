@@ -24,7 +24,7 @@ import {
 import Button from '@/components/ui/Button'
 
 export const metadata: Metadata = {
-  title: 'Personal AI Assistant - Annita',
+  title: 'Annita AI Assistant - Annita',
   description: 'Your personal AI assistant for daily life. Get help with productivity, entertainment, health, and more with Annita\'s AI-powered personal tools.',
 }
 
@@ -137,11 +137,11 @@ const PersonalAIPage = () => {
           <div className="max-w-4xl mx-auto text-center">
             <div className="inline-flex items-center px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white text-xs sm:text-sm font-medium mb-4 sm:mb-6">
               <Brain className="w-3 h-3 sm:w-4 sm:h-4 mr-1.5 sm:mr-2" />
-              Personal AI Assistant
+              Annita AI Assistant
             </div>
             
             <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 sm:mb-6">
-              Your Personal <span className="text-orange-500">AI Companion</span>
+              Annita <span className="text-orange-500">AI</span>
             </h1>
             <p className="text-lg sm:text-xl text-gray-200 mb-6 sm:mb-8 max-w-2xl mx-auto">
               Transform your daily life with AI-powered personal assistance. From health and fitness to productivity and creativity, 
@@ -155,7 +155,7 @@ const PersonalAIPage = () => {
                 icon={Play}
                 className="text-base sm:text-lg font-bold shadow-2xl hover:shadow-purple-500/25 transform hover:-translate-y-1 transition-all duration-300"
               >
-                Try Personal AI
+                Try Annita AI
               </Button>
               <Button
                 variant="glass"
@@ -175,7 +175,7 @@ const PersonalAIPage = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 sm:mb-16">
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-orange-600 mb-4 sm:mb-6">
-              Personal AI Features
+              Annita AI Features
             </h2>
             <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
               Discover how AI can enhance every aspect of your personal life
@@ -236,7 +236,7 @@ const PersonalAIPage = () => {
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-3xl sm:text-4xl font-bold text-orange-600 mb-6">
-                Why Choose Personal AI?
+                Why Choose Annita AI?
               </h2>
               <p className="text-xl text-gray-600">
                 Experience the benefits of having an AI assistant that understands your personal needs
@@ -262,10 +262,10 @@ const PersonalAIPage = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
-              Ready to Transform Your Personal Life?
+              Ready to Transform Your Life?
             </h2>
             <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-              Download the Annita app to access your personal AI assistant and start living smarter today.
+              Download the Annita app to access your Annita AI assistant and start living smarter today.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button

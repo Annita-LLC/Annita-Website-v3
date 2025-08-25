@@ -1,112 +1,50 @@
 "use client"
 
+import { motion } from 'framer-motion'
+import { useInView } from 'framer-motion'
 import { useRef } from 'react'
-import { motion, useInView } from 'framer-motion'
-import { 
-  ArrowRight,
-  Download,
-  Play,
-  Users,
-  Globe
-} from 'lucide-react'
-import Button from '@/components/ui/Button'
+import { Download, ArrowRight } from 'lucide-react'
 
 const CTASection = () => {
   const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: "-100px" })
+  const isInView = useInView(ref, { once: true })
 
   return (
-    <section className="py-16 sm:py-20 bg-gradient-to-r from-orange-500 to-red-500 text-white">
+    <section className="py-16 sm:py-20 bg-gradient-to-br from-gray-50 to-white" ref={ref}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div 
-          ref={ref}
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="max-w-4xl mx-auto text-center"
-        >
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
-            Ready to Transform Your Business?
-          </h2>
-          <p className="text-xl sm:text-2xl text-orange-100 mb-8 max-w-3xl mx-auto">
-            Join thousands of businesses across Africa who are already using Annita to grow, 
-            scale, and succeed in the digital economy.
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-            <Button
-              variant="white"
-              size="xl"
-              icon={Download}
-              className="text-lg font-bold shadow-2xl hover:shadow-white/25 transform hover:-translate-y-1 transition-all duration-300"
-            >
-              Download App
-            </Button>
-            <Button
-              variant="glass"
-              size="xl"
-              icon={Play}
-              className="text-lg font-bold backdrop-blur-xl shadow-2xl hover:shadow-white/10 transform hover:-translate-y-1 transition-all duration-300"
-            >
-              Watch Demo
-            </Button>
-          </div>
-
-          {/* Stats */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-8">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              className="text-center"
-            >
-              <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center mx-auto mb-3">
-                <Users className="w-6 h-6" />
-              </div>
-              <div className="text-2xl sm:text-3xl font-bold">3,000+</div>
-              <div className="text-orange-100 text-sm">Active Vendors</div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.5 }}
-              className="text-center"
-            >
-              <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center mx-auto mb-3">
-                <Globe className="w-6 h-6" />
-              </div>
-              <div className="text-2xl sm:text-3xl font-bold">1,500+</div>
-              <div className="text-orange-100 text-sm">Active Buyers</div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.6 }}
-              className="text-center"
-            >
-              <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center mx-auto mb-3">
-                <ArrowRight className="w-6 h-6" />
-              </div>
-              <div className="text-2xl sm:text-3xl font-bold">400%</div>
-              <div className="text-orange-100 text-sm">Growth Rate</div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.7 }}
-              className="text-center"
-            >
-              <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center mx-auto mb-3">
-                <Download className="w-6 h-6" />
-              </div>
-              <div className="text-2xl sm:text-3xl font-bold">5M</div>
-              <div className="text-orange-100 text-sm">Target MSMEs</div>
-            </motion.div>
-          </div>
-        </motion.div>
+        <div className="max-w-4xl mx-auto">
+          {/* Call to Action */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8 }}
+            className="text-center p-8 bg-gradient-to-r from-orange-500 to-orange-600 rounded-2xl text-white"
+          >
+            <h3 className="text-2xl sm:text-3xl font-bold mb-4">
+              Ready to Transform Your Business?
+            </h3>
+            <p className="text-orange-100 mb-6 max-w-2xl mx-auto">
+              Join thousands of MSMEs already using Annita to grow their revenue, reach new customers, 
+              and streamline their operations across Africa.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a 
+                href="/download"
+                className="inline-flex items-center justify-center bg-white text-orange-600 px-8 py-3 rounded-lg font-semibold hover:bg-orange-50 transition-colors duration-200"
+              >
+                <Download className="w-5 h-5 mr-2" />
+                Download App
+              </a>
+              <a 
+                href="/contact-sales"
+                className="inline-flex items-center justify-center border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-orange-600 transition-colors duration-200"
+              >
+                Contact Sales
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </a>
+            </div>
+          </motion.div>
+        </div>
       </div>
     </section>
   )
