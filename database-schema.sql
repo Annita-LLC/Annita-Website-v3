@@ -385,14 +385,18 @@ CREATE POLICY "Allow insert for all users" ON investor_downloads FOR INSERT WITH
 -- Add RLS policy for the view (optional - for future admin dashboard)
 -- CREATE POLICY "Allow admin read access" ON recent_inquiries FOR SELECT USING (auth.role() = 'service_role');
 
+-- Note: View uses SECURITY INVOKER to respect user permissions and RLS policies
+-- This ensures the view inherits security from underlying tables
+
 -- Create views for easier data access
 -- Note: View uses standard security (not SECURITY DEFINER) for better security
 -- Access is controlled through RLS policies on underlying tables
 -- Force drop and recreate to ensure no SECURITY DEFINER properties
 DROP VIEW IF EXISTS recent_inquiries CASCADE;
 DROP VIEW IF EXISTS public.recent_inquiries CASCADE;
--- Create view WITHOUT SECURITY DEFINER for proper security
-CREATE VIEW recent_inquiries AS
+-- Create view WITH SECURITY INVOKER for proper security (respects user permissions)
+CREATE VIEW recent_inquiries 
+WITH (security_invoker=on) AS
 SELECT 
     'contact' as type,
     id,
@@ -427,6 +431,7 @@ ORDER BY created_at DESC;
 -- Verify view security properties (for debugging)
 -- SELECT schemaname, viewname, security_barrier, security_invoker 
 -- FROM pg_views WHERE viewname = 'recent_inquiries';
+-- Expected: security_invoker should be 't' (true) for proper security
 
 -- Create function to get user's IP address
 DROP FUNCTION IF EXISTS get_client_ip();
