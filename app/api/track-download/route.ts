@@ -1,10 +1,17 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createClient } from '@supabase/supabase-js'
 
-// Server-side Supabase client
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!
-const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY!
-const supabase = createClient(supabaseUrl, supabaseServiceKey)
+// Create Supabase client function to avoid build-time issues
+function createSupabaseClient() {
+  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
+  const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY
+  
+  if (!supabaseUrl || !supabaseServiceKey) {
+    throw new Error('Missing Supabase environment variables')
+  }
+  
+  return createClient(supabaseUrl, supabaseServiceKey)
+}
 
 // Get client IP address
 function getClientIP(request: NextRequest): string | null {
@@ -60,6 +67,7 @@ export async function POST(request: NextRequest) {
     }
     
     // Insert into database
+    const supabase = createSupabaseClient()
     const { data, error } = await supabase
       .from('investor_downloads')
       .insert([downloadData])
