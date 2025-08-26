@@ -388,7 +388,10 @@ CREATE POLICY "Allow insert for all users" ON investor_downloads FOR INSERT WITH
 -- Create views for easier data access
 -- Note: View uses standard security (not SECURITY DEFINER) for better security
 -- Access is controlled through RLS policies on underlying tables
+-- Force drop and recreate to ensure no SECURITY DEFINER properties
 DROP VIEW IF EXISTS recent_inquiries CASCADE;
+DROP VIEW IF EXISTS public.recent_inquiries CASCADE;
+-- Create view WITHOUT SECURITY DEFINER for proper security
 CREATE VIEW recent_inquiries AS
 SELECT 
     'contact' as type,
@@ -420,6 +423,10 @@ SELECT
     created_at
 FROM support_issues
 ORDER BY created_at DESC;
+
+-- Verify view security properties (for debugging)
+-- SELECT schemaname, viewname, security_barrier, security_invoker 
+-- FROM pg_views WHERE viewname = 'recent_inquiries';
 
 -- Create function to get user's IP address
 DROP FUNCTION IF EXISTS get_client_ip();
