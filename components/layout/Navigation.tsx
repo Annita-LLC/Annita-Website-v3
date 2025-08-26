@@ -104,6 +104,7 @@ const Navigation = () => {
         
         { name: 'Report Issues', href: '/support/report-issues', icon: HelpCircle, description: 'Report bugs and issues' },
         { name: 'Contact Sales', href: '/contact-sales', icon: Phone, description: 'Talk to our business development team' },
+        { name: 'Theme Settings', href: '#', icon: Settings, description: 'Light, dark, or system theme', isThemeToggle: true },
 
       ]
     },
@@ -185,18 +186,31 @@ const Navigation = () => {
                             <div className="max-h-96 overflow-y-auto p-4 scrollbar-thin scrollbar-thumb-gray-300 dark:scrollbar-thumb-gray-600 scrollbar-track-transparent">
                               <div className="grid gap-3">
                                 {item.dropdown.map((dropdownItem) => (
-                                  <Link
-                                    key={dropdownItem.name}
-                                    href={dropdownItem.href}
-                                    className="flex items-start space-x-3 p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200"
-                                    onClick={() => setActiveDropdown(null)}
-                                  >
-                                    <dropdownItem.icon className="w-5 h-5 text-primary-600 dark:text-primary-400 mt-0.5 flex-shrink-0" />
-                                    <div>
-                                      <div className="font-medium text-gray-900 dark:text-white">{dropdownItem.name}</div>
-                                      <div className="text-sm text-gray-500 dark:text-gray-400">{dropdownItem.description}</div>
+                                  dropdownItem.isThemeToggle ? (
+                                    <div key={dropdownItem.name} className="p-3">
+                                      <div className="flex items-start space-x-3">
+                                        <dropdownItem.icon className="w-5 h-5 text-primary-600 dark:text-primary-400 mt-0.5 flex-shrink-0" />
+                                        <div className="flex-1">
+                                          <div className="font-medium text-gray-900 dark:text-white mb-2">{dropdownItem.name}</div>
+                                          <div className="text-sm text-gray-500 dark:text-gray-400 mb-3">{dropdownItem.description}</div>
+                                          <ThemeToggle />
+                                        </div>
+                                      </div>
                                     </div>
-                                  </Link>
+                                  ) : (
+                                    <Link
+                                      key={dropdownItem.name}
+                                      href={dropdownItem.href}
+                                      className="flex items-start space-x-3 p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200"
+                                      onClick={() => setActiveDropdown(null)}
+                                    >
+                                      <dropdownItem.icon className="w-5 h-5 text-primary-600 dark:text-primary-400 mt-0.5 flex-shrink-0" />
+                                      <div>
+                                        <div className="font-medium text-gray-900 dark:text-white">{dropdownItem.name}</div>
+                                        <div className="text-sm text-gray-500 dark:text-gray-400">{dropdownItem.description}</div>
+                                      </div>
+                                    </Link>
+                                  )
                                 ))}
                               </div>
                             </div>
@@ -216,9 +230,6 @@ const Navigation = () => {
 
             {/* CTA Buttons */}
             <div className="hidden lg:flex items-center space-x-3 xl:space-x-4">
-              {/* Theme Toggle */}
-              <ThemeToggle />
-              
               <Link href="/download" className="btn-primary">
                 <Download className="w-4 h-4 mr-2" />
                 Download App
@@ -281,9 +292,6 @@ const Navigation = () => {
                   </Link>
                   
                   <div className="flex items-center space-x-2">
-                    {/* Theme Toggle */}
-                    <SimpleThemeToggle />
-                    
                     <button
                       onClick={() => setIsOpen(false)}
                       className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
@@ -315,7 +323,7 @@ const Navigation = () => {
                               }`} />
                             </button>
                             
-                            <AnimatePresence>
+                                                            <AnimatePresence>
                               {activeDropdown === item.name && (
                                 <motion.div
                                   initial={{ opacity: 0, height: 0 }}
@@ -325,17 +333,24 @@ const Navigation = () => {
                                   className="ml-4 mt-2 space-y-1"
                                 >
                                   {item.dropdown.map((dropdownItem) => (
-                                    <Link
-                                      key={dropdownItem.name}
-                                      href={dropdownItem.href}
-                                      className="block p-2 text-sm text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-50 dark:hover:bg-gray-800 rounded-lg transition-colors"
-                                      onClick={() => {
-                                        setIsOpen(false)
-                                        setActiveDropdown(null)
-                                      }}
-                                    >
-                                      {dropdownItem.name}
-                                    </Link>
+                                    dropdownItem.isThemeToggle ? (
+                                      <div key={dropdownItem.name} className="p-2">
+                                        <div className="text-sm text-gray-600 dark:text-gray-300 mb-2">{dropdownItem.name}</div>
+                                        <SimpleThemeToggle />
+                                      </div>
+                                    ) : (
+                                      <Link
+                                        key={dropdownItem.name}
+                                        href={dropdownItem.href}
+                                        className="block p-2 text-sm text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-50 dark:hover:bg-gray-800 rounded-lg transition-colors"
+                                        onClick={() => {
+                                          setIsOpen(false)
+                                          setActiveDropdown(null)
+                                        }}
+                                      >
+                                        {dropdownItem.name}
+                                      </Link>
+                                    )
                                   ))}
                                 </motion.div>
                               )}
