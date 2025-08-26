@@ -35,17 +35,15 @@ import {
   Zap,
   Target,
   Database,
-  Sun,
-  Moon,
   Activity,
   Image
 } from 'lucide-react'
+import { ThemeToggle, SimpleThemeToggle } from '@/components/ui/ThemeToggle'
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
-  const [isDarkMode, setIsDarkMode] = useState(false)
   const [dropdownTimeout, setDropdownTimeout] = useState<NodeJS.Timeout | null>(null)
 
   useEffect(() => {
@@ -130,10 +128,7 @@ const Navigation = () => {
     setDropdownTimeout(timeout)
   }
 
-  const toggleDarkMode = () => {
-    setIsDarkMode(!isDarkMode)
-    document.documentElement.classList.toggle('dark')
-  }
+
 
   return (
     <>
@@ -221,18 +216,8 @@ const Navigation = () => {
 
             {/* CTA Buttons */}
             <div className="hidden lg:flex items-center space-x-3 xl:space-x-4">
-              {/* Dark Mode Toggle */}
-              <button
-                onClick={toggleDarkMode}
-                className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200"
-                aria-label="Toggle dark mode"
-              >
-                {isDarkMode ? (
-                  <Sun className="w-5 h-5 text-yellow-500" />
-                ) : (
-                  <Moon className="w-5 h-5 text-gray-600 dark:text-gray-300" />
-                )}
-              </button>
+              {/* Theme Toggle */}
+              <ThemeToggle />
               
               <Link href="/download" className="btn-primary">
                 <Download className="w-4 h-4 mr-2" />
@@ -296,18 +281,8 @@ const Navigation = () => {
                   </Link>
                   
                   <div className="flex items-center space-x-2">
-                    {/* Dark Mode Toggle */}
-                    <button
-                      onClick={toggleDarkMode}
-                      className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
-                      aria-label="Toggle dark mode"
-                    >
-                      {isDarkMode ? (
-                        <Sun className="w-5 h-5 text-yellow-500" />
-                      ) : (
-                        <Moon className="w-5 h-5 text-gray-600 dark:text-gray-300" />
-                      )}
-                    </button>
+                    {/* Theme Toggle */}
+                    <SimpleThemeToggle />
                     
                     <button
                       onClick={() => setIsOpen(false)}

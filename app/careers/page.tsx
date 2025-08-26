@@ -124,10 +124,10 @@ export default function CareersPage() {
   ]
 
   const teamStats = [
-    { number: '25+', label: 'Team Members' },
-    { number: '15+', label: 'Countries' },
-    { number: '50%', label: 'Women in Leadership' },
-    { number: '95%', label: 'Employee Satisfaction' }
+    { number: '3', label: 'Team Members' },
+    { number: '1+', label: 'Countries' },
+    { number: '100%', label: 'Employee Satisfaction' },
+    { number: 'Growing', label: 'Team' }
   ]
 
   const handleDepartmentSelect = (departmentId: string) => {
@@ -216,19 +216,19 @@ export default function CareersPage() {
       />
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-orange-50 to-red-50 py-16 sm:py-20 lg:py-24">
+      <section className="bg-gradient-to-br from-orange-50 to-red-50 dark:from-gray-900 dark:to-gray-800 py-16 sm:py-20 lg:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
             <div className="text-center">
-              <div className="inline-flex items-center px-4 py-2 rounded-full bg-orange-100 text-orange-700 text-sm font-medium mb-6">
+              <div className="inline-flex items-center px-4 py-2 rounded-full bg-orange-100 dark:bg-orange-900/30 text-orange-700 dark:text-orange-300 text-sm font-medium mb-6">
                 <Users className="w-4 h-4 mr-2" />
                 Join Our Team
               </div>
               
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-                Join Our <span className="text-orange-500">Mission</span>
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6">
+                Join Our <span className="text-orange-500 dark:text-orange-400">Mission</span>
               </h1>
-              <p className="text-lg sm:text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+              <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto">
                 Help us empower millions of African MSMEs through innovative technology. 
                 Be part of something bigger than yourself.
               </p>
@@ -243,212 +243,212 @@ export default function CareersPage() {
             <div className="max-w-6xl mx-auto">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
                 {/* Careers Information */}
-                <div>
-                  <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6">
-                    Future Opportunities
-                  </h2>
-                  <p className="text-lg text-gray-600 mb-8">
-                    While we don't have any open positions at the moment, we're always looking for 
-                    passionate individuals who share our vision. Submit your application and we'll 
-                    contact you when opportunities arise.
-                  </p>
+                                 <div>
+                   <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-6">
+                     Future Opportunities
+                   </h2>
+                   <p className="text-lg text-gray-600 dark:text-gray-300 mb-8">
+                     While we don't have any open positions at the moment, we're always looking for 
+                     passionate individuals who share our vision. Submit your application and we'll 
+                     contact you when opportunities arise.
+                   </p>
 
-                  {/* Team Stats */}
-                  <div className="grid grid-cols-2 gap-4 mb-8">
-                    {teamStats.map((stat, index) => (
-                      <div key={index} className="bg-white rounded-xl p-4 shadow-soft border border-gray-200 text-center">
-                        <div className="text-2xl font-bold text-orange-600 mb-1">{stat.number}</div>
-                        <div className="text-sm text-gray-600">{stat.label}</div>
-                      </div>
-                    ))}
-                  </div>
+                                     {/* Team Stats */}
+                   <div className="grid grid-cols-2 gap-4 mb-8">
+                     {teamStats.map((stat, index) => (
+                       <div key={index} className="bg-white dark:bg-gray-800 rounded-xl p-4 shadow-soft border border-gray-200 dark:border-gray-700 text-center">
+                         <div className="text-2xl font-bold text-orange-600 dark:text-orange-400 mb-1">{stat.number}</div>
+                         <div className="text-sm text-gray-600 dark:text-gray-400">{stat.label}</div>
+                       </div>
+                     ))}
+                   </div>
 
                   {/* Departments */}
                   <div className="space-y-6">
                     {departments.map((department) => (
-                      <button
-                        key={department.id}
-                        onClick={() => handleDepartmentSelect(department.id)}
-                        className={`w-full p-6 rounded-xl border-2 transition-all duration-200 text-left ${
-                          selectedPosition === department.id
-                            ? 'border-orange-500 bg-orange-50'
-                            : 'border-gray-200 hover:border-gray-300 bg-white'
-                        }`}
-                      >
-                        <div className="flex items-center justify-between mb-4">
-                          <div className="flex items-center space-x-4">
-                            <div className={`w-12 h-12 bg-gradient-to-br ${department.color} rounded-lg flex items-center justify-center`}>
-                              <department.icon className="w-6 h-6 text-white" />
-                            </div>
-                            <div>
-                              <h3 className="text-lg font-bold text-gray-900">{department.title}</h3>
-                              <p className="text-sm text-gray-600">Department</p>
-                            </div>
-                          </div>
-                          <div className="text-right">
-                            <div className="text-sm font-bold text-orange-600">Future Role</div>
-                            <div className="text-xs text-gray-500">Remote / Liberia</div>
-                          </div>
-                        </div>
-                        
-                        <p className="text-sm text-gray-600 mb-3">{department.description}</p>
-                        
-                        <div className="flex items-center space-x-4 text-xs text-gray-500">
-                          <div className="flex items-center space-x-1">
-                            <Clock className="w-3 h-3" />
-                            <span>Various levels</span>
-                          </div>
-                          <div className="flex items-center space-x-1">
-                            <MapPin className="w-3 h-3" />
-                            <span>Remote / Liberia</span>
-                          </div>
-                        </div>
-                      </button>
+                                             <button
+                         key={department.id}
+                         onClick={() => handleDepartmentSelect(department.id)}
+                         className={`w-full p-6 rounded-xl border-2 transition-all duration-200 text-left ${
+                           selectedPosition === department.id
+                             ? 'border-orange-500 dark:border-orange-400 bg-orange-50 dark:bg-orange-900/20'
+                             : 'border-gray-200 dark:border-gray-700 hover:border-gray-300 dark:hover:border-gray-600 bg-white dark:bg-gray-800'
+                         }`}
+                       >
+                         <div className="flex items-center justify-between mb-4">
+                           <div className="flex items-center space-x-4">
+                             <div className={`w-12 h-12 bg-gradient-to-br ${department.color} rounded-lg flex items-center justify-center`}>
+                               <department.icon className="w-6 h-6 text-white" />
+                             </div>
+                             <div>
+                               <h3 className="text-lg font-bold text-gray-900 dark:text-white">{department.title}</h3>
+                               <p className="text-sm text-gray-600 dark:text-gray-400">Department</p>
+                             </div>
+                           </div>
+                           <div className="text-right">
+                             <div className="text-sm font-bold text-orange-600 dark:text-orange-400">Future Role</div>
+                             <div className="text-xs text-gray-500 dark:text-gray-400">Remote / Liberia</div>
+                           </div>
+                         </div>
+                         
+                         <p className="text-sm text-gray-600 dark:text-gray-300 mb-3">{department.description}</p>
+                         
+                         <div className="flex items-center space-x-4 text-xs text-gray-500 dark:text-gray-400">
+                           <div className="flex items-center space-x-1">
+                             <Clock className="w-3 h-3" />
+                             <span>Various levels</span>
+                           </div>
+                           <div className="flex items-center space-x-1">
+                             <MapPin className="w-3 h-3" />
+                             <span>Remote / Liberia</span>
+                           </div>
+                         </div>
+                       </button>
                     ))}
                   </div>
 
-                  {/* Values */}
-                  <div className="mt-8 bg-white rounded-xl p-6 shadow-soft border border-gray-200">
-                    <h3 className="text-lg font-semibold text-gray-900 mb-4">
-                      Our Values
-                    </h3>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                      {values.map((value, index) => (
-                        <div key={index} className="flex items-start space-x-3">
-                          <div className="w-8 h-8 bg-gradient-to-br from-orange-500 to-red-500 rounded-lg flex items-center justify-center flex-shrink-0">
-                            <value.icon className="w-4 h-4 text-white" />
-                          </div>
-                          <div>
-                            <h4 className="text-sm font-semibold text-gray-900">{value.title}</h4>
-                            <p className="text-xs text-gray-600">{value.description}</p>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
+                                     {/* Values */}
+                   <div className="mt-8 bg-white dark:bg-gray-800 rounded-xl p-6 shadow-soft border border-gray-200 dark:border-gray-700">
+                     <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
+                       Our Values
+                     </h3>
+                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                       {values.map((value, index) => (
+                         <div key={index} className="flex items-start space-x-3">
+                           <div className="w-8 h-8 bg-gradient-to-br from-orange-500 to-red-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                             <value.icon className="w-4 h-4 text-white" />
+                           </div>
+                           <div>
+                             <h4 className="text-sm font-semibold text-gray-900 dark:text-white">{value.title}</h4>
+                             <p className="text-xs text-gray-600 dark:text-gray-400">{value.description}</p>
+                           </div>
+                         </div>
+                       ))}
+                     </div>
+                   </div>
                 </div>
 
-                {/* Contact Form */}
-                <div className="bg-white rounded-xl shadow-soft p-6 border border-gray-200">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-6">
-                    {selectedPosition ? `Apply for ${departments.find(d => d.id === selectedPosition)?.title} Role` : 'Submit Your Application'}
-                  </h3>
+                                 {/* Contact Form */}
+                 <div className="bg-white dark:bg-gray-800 rounded-xl shadow-soft p-6 border border-gray-200 dark:border-gray-700">
+                   <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-6">
+                     {selectedPosition ? `Apply for ${departments.find(d => d.id === selectedPosition)?.title} Role` : 'Submit Your Application'}
+                   </h3>
                   
                   <form onSubmit={handleSubmit} className="space-y-6">
-                    {!selectedPosition && (
-                      <div className="bg-orange-50 rounded-lg p-4 mb-6">
-                        <p className="text-sm text-orange-700">
-                          Please select a department above to apply, or submit a general application for future opportunities.
-                        </p>
-                      </div>
-                    )}
+                                         {!selectedPosition && (
+                       <div className="bg-orange-50 dark:bg-orange-900/30 rounded-lg p-4 mb-6">
+                         <p className="text-sm text-orange-700 dark:text-orange-300">
+                           Please select a department above to apply, or submit a general application for future opportunities.
+                         </p>
+                       </div>
+                     )}
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                      <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-2">
-                          Full Name *
-                        </label>
-                        <input
-                          type="text"
-                          required
-                          value={formData.name}
-                          onChange={(e) => handleInputChange('name', e.target.value)}
-                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200"
-                          placeholder="Your full name"
-                        />
-                      </div>
+                                             <div>
+                         <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                           Full Name *
+                         </label>
+                         <input
+                           type="text"
+                           required
+                           value={formData.name}
+                           onChange={(e) => handleInputChange('name', e.target.value)}
+                           className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200"
+                           placeholder="Your full name"
+                         />
+                       </div>
                       
-                      <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-2">
-                          Email Address *
-                        </label>
-                        <input
-                          type="email"
-                          required
-                          value={formData.email}
-                          onChange={(e) => handleInputChange('email', e.target.value)}
-                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200"
-                          placeholder="your.email@company.com"
-                        />
-                      </div>
+                                             <div>
+                         <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                           Email Address *
+                         </label>
+                         <input
+                           type="email"
+                           required
+                           value={formData.email}
+                           onChange={(e) => handleInputChange('email', e.target.value)}
+                           className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200"
+                           placeholder="your.email@company.com"
+                         />
+                       </div>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                      <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-2">
-                          Phone Number
-                        </label>
-                        <input
-                          type="tel"
-                          value={formData.phone}
-                          onChange={(e) => handleInputChange('phone', e.target.value)}
-                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200"
-                          placeholder="+1234567890"
-                        />
-                      </div>
+                                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                       <div>
+                         <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                           Phone Number
+                         </label>
+                         <input
+                           type="tel"
+                           value={formData.phone}
+                           onChange={(e) => handleInputChange('phone', e.target.value)}
+                           className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200"
+                           placeholder="+1234567890"
+                         />
+                       </div>
 
-                      <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-2">
-                          Current Company
-                        </label>
-                        <input
-                          type="text"
-                          value={formData.company}
-                          onChange={(e) => handleInputChange('company', e.target.value)}
-                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200"
-                          placeholder="Your current company"
-                        />
-                      </div>
-                    </div>
+                       <div>
+                         <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                           Current Company
+                         </label>
+                         <input
+                           type="text"
+                           value={formData.company}
+                           onChange={(e) => handleInputChange('company', e.target.value)}
+                           className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200"
+                           placeholder="Your current company"
+                         />
+                       </div>
+                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                      <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-2">
-                          Years of Experience
-                        </label>
-                        <select
-                          value={formData.experience}
-                          onChange={(e) => handleInputChange('experience', e.target.value)}
-                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200"
-                        >
-                          <option value="">Select experience level</option>
-                          <option value="0-1">0-1 years</option>
-                          <option value="2-3">2-3 years</option>
-                          <option value="4-5">4-5 years</option>
-                          <option value="6-8">6-8 years</option>
-                          <option value="8+">8+ years</option>
-                        </select>
-                      </div>
-                      
-                      <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-2">
-                          Preferred Department
-                        </label>
-                        <select
-                          value={formData.position}
-                          onChange={(e) => handleInputChange('position', e.target.value)}
-                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200"
-                        >
-                          <option value="">Select department</option>
-                          {departments.map((dept) => (
-                            <option key={dept.id} value={dept.id}>{dept.title}</option>
-                          ))}
-                        </select>
-                      </div>
-                    </div>
+                                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                       <div>
+                         <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                           Years of Experience
+                         </label>
+                         <select
+                           value={formData.experience}
+                           onChange={(e) => handleInputChange('experience', e.target.value)}
+                           className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200"
+                         >
+                           <option value="">Select experience level</option>
+                           <option value="0-1">0-1 years</option>
+                           <option value="2-3">2-3 years</option>
+                           <option value="4-5">4-5 years</option>
+                           <option value="6-8">6-8 years</option>
+                           <option value="8+">8+ years</option>
+                         </select>
+                       </div>
+                       
+                       <div>
+                         <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                           Preferred Department
+                         </label>
+                         <select
+                           value={formData.position}
+                           onChange={(e) => handleInputChange('position', e.target.value)}
+                           className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200"
+                         >
+                           <option value="">Select department</option>
+                           {departments.map((dept) => (
+                             <option key={dept.id} value={dept.id}>{dept.title}</option>
+                           ))}
+                         </select>
+                       </div>
+                     </div>
 
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
-                        Cover Letter
-                      </label>
-                      <textarea
-                        rows={4}
-                        value={formData.message}
-                        onChange={(e) => handleInputChange('message', e.target.value)}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200"
-                        placeholder="Tell us about your skills, experience, and why you'd be a great fit for our team. We'll contact you when relevant opportunities arise..."
-                      />
-                    </div>
+                                         <div>
+                       <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                         Cover Letter
+                       </label>
+                       <textarea
+                         rows={4}
+                         value={formData.message}
+                         onChange={(e) => handleInputChange('message', e.target.value)}
+                         className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200"
+                         placeholder="Tell us about your skills, experience, and why you'd be a great fit for our team. We'll contact you when relevant opportunities arise..."
+                       />
+                     </div>
 
                     <button
                       type="submit"
@@ -469,76 +469,76 @@ export default function CareersPage() {
                     </button>
                   </form>
 
-                  {/* Benefits */}
-                  <div className="mt-8 pt-8 border-t border-gray-200">
-                    <h4 className="text-lg font-semibold text-gray-900 mb-4">Why Work at Annita?</h4>
-                    <div className="space-y-3">
-                      {benefits.slice(0, 3).map((benefit, index) => (
-                        <div key={index} className="flex items-center space-x-3">
-                          <benefit.icon className="w-5 h-5 text-orange-500" />
-                          <span className="text-sm text-gray-600">{benefit.title}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
+                                     {/* Benefits */}
+                   <div className="mt-8 pt-8 border-t border-gray-200 dark:border-gray-700">
+                     <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">Why Work at Annita?</h4>
+                     <div className="space-y-3">
+                       {benefits.slice(0, 3).map((benefit, index) => (
+                         <div key={index} className="flex items-center space-x-3">
+                           <benefit.icon className="w-5 h-5 text-orange-500" />
+                           <span className="text-sm text-gray-600 dark:text-gray-400">{benefit.title}</span>
+                         </div>
+                       ))}
+                     </div>
+                   </div>
 
-                  {/* Contact Information */}
-                  <div className="mt-8 pt-8 border-t border-gray-200">
-                    <h4 className="text-lg font-semibold text-gray-900 mb-4">Need Help?</h4>
-                    <div className="space-y-3">
-                      <div className="flex items-center space-x-3">
-                        <Mail className="w-5 h-5 text-orange-500" />
-                        <span className="text-gray-600">annitallc@gmail.com</span>
-                      </div>
-                      <div className="flex items-center space-x-3">
-                        <Phone className="w-5 h-5 text-orange-500" />
-                        <span className="text-gray-600">+231 77 505 7227</span>
-                      </div>
-                      <div className="flex items-center space-x-3">
-                        <MessageSquare className="w-5 h-5 text-orange-500" />
-                        <span className="text-gray-600">Live chat available</span>
-                      </div>
-                    </div>
-                  </div>
+                   {/* Contact Information */}
+                   <div className="mt-8 pt-8 border-t border-gray-200 dark:border-gray-700">
+                     <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">Need Help?</h4>
+                     <div className="space-y-3">
+                       <div className="flex items-center space-x-3">
+                         <Mail className="w-5 h-5 text-orange-500" />
+                         <span className="text-gray-600 dark:text-gray-400">annitallc@gmail.com</span>
+                       </div>
+                       <div className="flex items-center space-x-3">
+                         <Phone className="w-5 h-5 text-orange-500" />
+                         <span className="text-gray-600 dark:text-gray-400">+231 77 505 7227</span>
+                       </div>
+                       <div className="flex items-center space-x-3">
+                         <MessageSquare className="w-5 h-5 text-orange-500" />
+                         <span className="text-gray-600 dark:text-gray-400">Live chat available</span>
+                       </div>
+                     </div>
+                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       ) : (
-        /* Success Message */
-        <div className="py-16 sm:py-20">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-2xl mx-auto text-center">
-              <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                <CheckCircle className="w-10 h-10 text-green-600" />
-              </div>
-              
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">
-                Application Submitted Successfully!
-              </h2>
-              
-              <p className="text-gray-600 mb-8">
-                Thank you for your interest in joining our team! We'll keep your application on file and contact you when relevant opportunities arise.
-              </p>
-              
-              <div className="bg-gray-50 rounded-lg p-6 mb-8">
-                <h3 className="font-semibold text-gray-900 mb-4">What happens next?</h3>
-                <div className="space-y-3 text-left">
-                  <div className="flex items-center">
-                    <div className="w-6 h-6 bg-orange-500 text-white rounded-full flex items-center justify-center text-sm font-bold mr-3">1</div>
-                    <span className="text-gray-600">We'll review your application and keep it on file</span>
-                  </div>
-                  <div className="flex items-center">
-                    <div className="w-6 h-6 bg-orange-500 text-white rounded-full flex items-center justify-center text-sm font-bold mr-3">2</div>
-                    <span className="text-gray-600">When opportunities arise, we'll contact you</span>
-                  </div>
-                  <div className="flex items-center">
-                    <div className="w-6 h-6 bg-orange-500 text-white rounded-full flex items-center justify-center text-sm font-bold mr-3">3</div>
-                    <span className="text-gray-600">You'll be considered for relevant positions</span>
-                  </div>
-                </div>
-              </div>
+                 /* Success Message */
+         <div className="py-16 sm:py-20">
+           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+             <div className="max-w-2xl mx-auto text-center">
+               <div className="w-20 h-20 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center mx-auto mb-6">
+                 <CheckCircle className="w-10 h-10 text-green-600 dark:text-green-400" />
+               </div>
+               
+               <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+                 Application Submitted Successfully!
+               </h2>
+               
+               <p className="text-gray-600 dark:text-gray-300 mb-8">
+                 Thank you for your interest in joining our team! We'll keep your application on file and contact you when relevant opportunities arise.
+               </p>
+               
+               <div className="bg-gray-50 dark:bg-gray-800 rounded-lg p-6 mb-8">
+                 <h3 className="font-semibold text-gray-900 dark:text-white mb-4">What happens next?</h3>
+                 <div className="space-y-3 text-left">
+                   <div className="flex items-center">
+                     <div className="w-6 h-6 bg-orange-500 text-white rounded-full flex items-center justify-center text-sm font-bold mr-3">1</div>
+                     <span className="text-gray-600 dark:text-gray-300">We'll review your application and keep it on file</span>
+                   </div>
+                   <div className="flex items-center">
+                     <div className="w-6 h-6 bg-orange-500 text-white rounded-full flex items-center justify-center text-sm font-bold mr-3">2</div>
+                     <span className="text-gray-600 dark:text-gray-300">When opportunities arise, we'll contact you</span>
+                   </div>
+                   <div className="flex items-center">
+                     <div className="w-6 h-6 bg-orange-500 text-white rounded-full flex items-center justify-center text-sm font-bold mr-3">3</div>
+                     <span className="text-gray-600 dark:text-gray-300">You'll be considered for relevant positions</span>
+                   </div>
+                 </div>
+               </div>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link
@@ -572,18 +572,18 @@ export default function CareersPage() {
         </div>
       )}
 
-      {/* Home Page CTA Section */}
-      <section className="py-16 sm:py-20 bg-gradient-to-br from-gray-50 to-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center p-8 bg-gradient-to-r from-orange-500 to-orange-600 rounded-2xl text-white">
-              <h3 className="text-2xl sm:text-3xl font-bold mb-4">
-                Ready to Transform Your Business?
-              </h3>
-              <p className="text-orange-100 mb-6 max-w-2xl mx-auto">
-                Join thousands of MSMEs already using Annita to grow their revenue, reach new customers, 
-                and streamline their operations across Africa.
-              </p>
+             {/* Home Page CTA Section */}
+       <section className="py-16 sm:py-20 bg-gradient-to-br from-gray-50 to-white dark:from-gray-900 dark:to-gray-800">
+         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+           <div className="max-w-4xl mx-auto">
+             <div className="text-center p-8 bg-gradient-to-r from-orange-500 to-orange-600 rounded-2xl text-white">
+               <h3 className="text-2xl sm:text-3xl font-bold mb-4">
+                 Ready to Transform Your Business?
+               </h3>
+               <p className="text-orange-100 mb-6 max-w-2xl mx-auto">
+                 Join thousands of MSMEs already using Annita to grow their revenue, reach new customers, 
+                 and streamline their operations across Africa.
+               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a 
                   href="/download"

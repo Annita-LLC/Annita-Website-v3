@@ -1,3 +1,8 @@
 [33md1448cd[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m Update cookie consent timing and reduce phone mockup size for better UX
 [33m4921cba[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m Move platform items to support dropdown
 [33mb4332a2[m New Page Updates
+[33m53528de[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m Completely redesign Awards & Recognition, Gallery, and Careers pages with modern form-based design similar to Contact Sales and other recent pages
+[33m04eed94[m Completely redesign Pricing and Business Model pages with modern form-based design similar to Contact Sales and other recent pages
+[33mb2c1b5c[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m Completely redesign Download App page with modern form-based design similar to Contact Sales and other recent pages
+[33mf7fbbd6[m Completely redesign Contact Us page with modern form-based design similar to Report Issues and Sales pages
+[33md48769a[m Remove 'Back to Contact' link from Contact Sales page hero section
