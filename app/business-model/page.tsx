@@ -1,9 +1,6 @@
-"use client"
+'use client'
 
 import { useState } from 'react'
-import { motion } from 'framer-motion'
-import { useInView } from 'framer-motion'
-import { useRef } from 'react'
 import SEOHead from '@/components/seo/SEOHead'
 import { 
   TrendingUp, 
@@ -25,20 +22,97 @@ import {
   Route,
   AlertTriangle,
   Database,
-  Cpu
+  Cpu,
+  Mail,
+  Phone,
+  MessageSquare,
+  Download
 } from 'lucide-react'
+import Link from 'next/link'
 
-const BusinessModelPage = () => {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true })
+export default function BusinessModelPage() {
+  const [selectedModel, setSelectedModel] = useState('')
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    company: '',
+    phone: '',
+    businessType: '',
+    revenue: '',
+    message: ''
+  })
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [isSubmitted, setIsSubmitted] = useState(false)
 
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Annita LLC",
-    "description": "Annita's advanced payment and revenue system with escrow, AI logistics, and flexible vendor models",
-    "url": "https://www.an-nita.com/business-model"
-  }
+  const businessModels = [
+    {
+      id: 'markup',
+      name: 'Markup Base Model',
+      description: 'Dynamic 5-15% markup per product or account level',
+      icon: DollarSign,
+      color: 'from-green-500 to-emerald-500',
+      features: [
+        'Vendor sets markup rate (5-15%)',
+        'Customer sees final price including markup',
+        'Vendor receives full original price',
+        'Dynamic adjustments by category',
+        'No transaction fees unless markup selected'
+      ],
+      example: 'Product: $50, Markup: 10%, Customer pays: $55, Vendor gets: $50, Annita earns: $5'
+    },
+    {
+      id: 'subscription',
+      name: 'Subscription Plans',
+      description: 'Monthly/Annual plans for premium tools and features',
+      icon: Users,
+      color: 'from-blue-500 to-cyan-500',
+      features: [
+        'Growth ($10/month): Marketing credits, analytics',
+        'Pro ($25/month): AI recommendations, API access',
+        'Premium ($50/month): Full AI suite, white-label',
+        'No markup on transactions',
+        '14-day free trial available'
+      ],
+      example: 'Choose subscription for advanced features without affecting product pricing'
+    },
+    {
+      id: 'hybrid',
+      name: 'Hybrid Flexibility',
+      description: 'Switch between models as your business grows',
+      icon: TrendingUp,
+      color: 'from-purple-500 to-pink-500',
+      features: [
+        'Choose either markup OR subscription',
+        'Switch models as business evolves',
+        'System tracks revenue sources per vendor',
+        'Accurate reporting and analytics',
+        'Flexible growth strategy'
+      ],
+      example: 'Start with subscription, switch to markup as volume increases'
+    }
+  ]
+
+  const businessTypes = [
+    'E-commerce',
+    'Retail',
+    'Manufacturing',
+    'Technology',
+    'Healthcare',
+    'Education',
+    'Finance',
+    'Real Estate',
+    'Food & Beverage',
+    'Other'
+  ]
+
+  const revenueRanges = [
+    'Under $10K/month',
+    '$10K - $50K/month',
+    '$50K - $100K/month',
+    '$100K - $500K/month',
+    '$500K - $1M/month',
+    '$1M+/month'
+  ]
 
   const paymentFlowSteps = [
     {
@@ -70,115 +144,29 @@ const BusinessModelPage = () => {
     }
   ]
 
-  const logisticsComponents = [
-    {
-      component: "Base Fee",
-      calculation: "$2",
-      notes: "Covers minimal operational cost"
-    },
-    {
-      component: "Distance Rate",
-      calculation: "$0.50 per km",
-      notes: "Adjusted automatically per route"
-    },
-    {
-      component: "Weight/Volume Multiplier",
-      calculation: "1–2x",
-      notes: "Depending on parcel size"
-    },
-    {
-      component: "Delivery Speed Bonus",
-      calculation: "+$1–$5",
-      notes: "Express/SLA delivery"
-    },
-    {
-      component: "Rating-Based Bonus",
-      calculation: "Up to +$2",
-      notes: "Based on positive customer ratings"
-    }
-  ]
+  const handleModelSelect = (modelId: string) => {
+    setSelectedModel(modelId)
+  }
 
-  const subscriptionPlans = [
-    {
-      name: "Growth",
-      price: "$10 / $100",
-      features: [
-        "Marketing credits",
-        "Basic analytics",
-        "Priority support"
-      ],
-      color: "text-green-600",
-      bgColor: "bg-green-100"
-    },
-    {
-      name: "Pro",
-      price: "$25 / $250",
-      features: [
-        "AI recommendations",
-        "Highlighted listings",
-        "Advanced analytics",
-        "Faster support"
-      ],
-      color: "text-blue-600",
-      bgColor: "bg-blue-100"
-    },
-    {
-      name: "Premium",
-      price: "$50 / $500",
-      features: [
-        "Full AI suite",
-        "Premium analytics",
-        "Ad credits",
-        "Priority exposure",
-        "API access"
-      ],
-      color: "text-purple-600",
-      bgColor: "bg-purple-100"
-    }
-  ]
+  const handleInputChange = (field: string, value: string) => {
+    setFormData(prev => ({
+      ...prev,
+      [field]: value
+    }))
+  }
 
-  const enhancements = [
-    {
-      title: "Tiered Logistics Network",
-      description: "Create tiered system for logistics providers based on performance metrics",
-      implementation: "Assign scores based on delivery success rate, speed, and customer feedback",
-      example: "Tier 1 providers (90%+ rating) get premium orders; Tier 3 providers (70–80%) handle bulk deliveries",
-      icon: Target,
-      color: "text-blue-600"
-    },
-    {
-      title: "Dynamic Pricing Engine",
-      description: "Adjust fees based on real-time market conditions",
-      implementation: "Integrate real-time data feeds and use machine learning for optimal pricing",
-      example: "Increase logistics fees by 10% during Black Friday; offer 5% subscription discounts during off-peak",
-      icon: TrendingUp,
-      color: "text-green-600"
-    },
-    {
-      title: "AI-Powered Recommendations",
-      description: "Leverage AI to analyze vendor sales data and market trends",
-      implementation: "Use machine learning models to analyze historical sales and conversion rates",
-      example: "Suggest markup increases or subscription upgrades based on vendor growth patterns",
-      icon: Brain,
-      color: "text-purple-600"
-    },
-    {
-      title: "Fraud Detection Module",
-      description: "Monitor transactions and vendor behavior to detect anomalies",
-      implementation: "Deploy anomaly detection algorithms to flag unusual patterns",
-      example: "Flag vendors creating fake orders or multiple refunds from one customer",
-      icon: Shield,
-      color: "text-red-600"
-    },
-    {
-      title: "API Integrations",
-      description: "Allow enterprise vendors to connect existing ERP and CRM systems",
-      implementation: "Develop secure RESTful API for inventory syncing and order tracking",
-      example: "Vendor syncs Shopify inventory to Annita, automatically updating stock levels",
-      icon: Database,
-      color: "text-orange-600"
-    }
-  ]
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    if (!selectedModel) return
+    
+    setIsSubmitting(true)
+    
+    // Simulate form submission
+    await new Promise(resolve => setTimeout(resolve, 2000))
+    
+    setIsSubmitting(false)
+    setIsSubmitted(true)
+  }
 
   return (
     <>
@@ -208,398 +196,394 @@ const BusinessModelPage = () => {
           'revenue optimization'
         ]}
         canonical="/business-model"
-        ogImage="/images/business-model.jpg"
-        structuredData={structuredData}
       />
 
-      <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white">
-        {/* Hero Section */}
-        <section className="relative py-16 sm:py-20 lg:py-24 overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-r from-orange-500 to-orange-600"></div>
-          <div className="absolute inset-0 bg-black opacity-20"></div>
-          
-          <div className="container mx-auto px-3 sm:px-4 lg:px-6 xl:px-8 relative z-10">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="text-center text-white"
-            >
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 sm:mb-6">
-                Advanced <span className="text-orange-200">Business Model</span>
+      {/* Hero Section */}
+      <section className="bg-gradient-to-br from-orange-50 to-red-50 py-16 sm:py-20 lg:py-24">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center">
+              <div className="inline-flex items-center px-4 py-2 rounded-full bg-orange-100 text-orange-700 text-sm font-medium mb-6">
+                <TrendingUp className="w-4 h-4 mr-2" />
+                Advanced Business Model
+              </div>
+              
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+                Our Revenue <span className="text-orange-500">Strategy</span>
               </h1>
-              <p className="text-lg sm:text-xl lg:text-2xl text-orange-100 max-w-4xl mx-auto mb-6 sm:mb-8">
-                Annita Advanced Payment & Revenue System with AI-powered logistics and flexible vendor models
+              <p className="text-lg sm:text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+                Annita Advanced Payment & Revenue System with AI-powered logistics 
+                and flexible vendor models for sustainable growth.
               </p>
-              <div className="flex flex-wrap justify-center gap-3 sm:gap-4 text-sm sm:text-base">
-                <span className="bg-white/20 px-3 sm:px-4 py-2 rounded-full">Advanced Escrow System</span>
-                <span className="bg-white/20 px-3 sm:px-4 py-2 rounded-full">AI Logistics</span>
-                <span className="bg-white/20 px-3 sm:px-4 py-2 rounded-full">Flexible Revenue Models</span>
-              </div>
-            </motion.div>
+            </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Payment Flow Section */}
-        <section className="py-12 sm:py-16 lg:py-20">
-          <div className="container mx-auto px-3 sm:px-4 lg:px-6 xl:px-8">
-            <motion.div
-              ref={ref}
-              initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8 }}
-              className="text-center mb-12 sm:mb-16"
-            >
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">
-                1️⃣ Payment <span className="text-orange-600">Flow</span>
-              </h2>
-              <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
-                Advanced Escrow System ensuring trust, security, and transparency for all parties
-              </p>
-            </motion.div>
+      {!isSubmitted ? (
+        <div className="py-16 sm:py-20">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-6xl mx-auto">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                {/* Business Model Information */}
+                <div>
+                  <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6">
+                    Revenue Models
+                  </h2>
+                  <p className="text-lg text-gray-600 mb-8">
+                    Choose the revenue model that best fits your business strategy and growth plans.
+                  </p>
 
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
-              {paymentFlowSteps.map((step, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={isInView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ duration: 0.6, delay: index * 0.2 }}
-                  className="bg-white rounded-2xl shadow-lg p-6 border border-gray-200"
-                >
-                  <div className="flex items-center mb-4">
-                    <div className={`w-12 h-12 ${step.bgColor} rounded-full flex items-center justify-center mr-4`}>
-                      <step.icon className={`w-6 h-6 ${step.color}`} />
+                  {/* Business Models */}
+                  <div className="space-y-6">
+                    {businessModels.map((model) => (
+                      <button
+                        key={model.id}
+                        onClick={() => handleModelSelect(model.id)}
+                        className={`w-full p-6 rounded-xl border-2 transition-all duration-200 text-left ${
+                          selectedModel === model.id
+                            ? 'border-orange-500 bg-orange-50'
+                            : 'border-gray-200 hover:border-gray-300 bg-white'
+                        }`}
+                      >
+                        <div className="flex items-center space-x-4 mb-4">
+                          <div className={`w-12 h-12 bg-gradient-to-br ${model.color} rounded-lg flex items-center justify-center`}>
+                            <model.icon className="w-6 h-6 text-white" />
+                          </div>
+                          <div>
+                            <h3 className="text-xl font-bold text-gray-900">{model.name}</h3>
+                            <p className="text-sm text-gray-600">{model.description}</p>
+                          </div>
+                        </div>
+                        
+                        <div className="space-y-3">
+                          <div>
+                            <h4 className="font-semibold text-gray-900 mb-2">Key Features:</h4>
+                            <ul className="space-y-1">
+                              {model.features.map((feature, index) => (
+                                <li key={index} className="flex items-center text-sm text-gray-600">
+                                  <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
+                                  {feature}
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                          <div className="bg-gray-50 p-3 rounded-lg">
+                            <p className="text-sm font-medium text-gray-700 mb-1">Example:</p>
+                            <p className="text-sm text-gray-600">{model.example}</p>
+                          </div>
+                        </div>
+                      </button>
+                    ))}
+                  </div>
+
+                  {/* Payment Flow */}
+                  <div className="mt-8 bg-white rounded-xl p-6 shadow-soft border border-gray-200">
+                    <h3 className="text-lg font-semibold text-gray-900 mb-4">
+                      Payment Flow Process
+                    </h3>
+                    <div className="space-y-4">
+                      {paymentFlowSteps.map((step) => (
+                        <div key={step.step} className="flex items-start space-x-3">
+                          <div className={`w-8 h-8 ${step.bgColor} rounded-full flex items-center justify-center flex-shrink-0`}>
+                            <span className={`text-sm font-bold ${step.color}`}>{step.step}</span>
+                          </div>
+                          <div>
+                            <h4 className="font-medium text-gray-900">{step.title}</h4>
+                            <p className="text-sm text-gray-600">{step.description}</p>
+                          </div>
+                        </div>
+                      ))}
                     </div>
-                    <div className="text-2xl font-bold text-gray-900">Step {step.step}</div>
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-3">{step.title}</h3>
-                  <p className="text-gray-600 mb-3">{step.description}</p>
-                  <div className="bg-gray-50 p-3 rounded-lg">
-                    <p className="text-sm text-gray-700 font-medium">{step.detail}</p>
+
+                  {/* Key Benefits */}
+                  <div className="mt-8 bg-white rounded-xl p-6 shadow-soft border border-gray-200">
+                    <h3 className="text-lg font-semibold text-gray-900 mb-4">
+                      Key Benefits
+                    </h3>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      <div className="flex items-center space-x-3">
+                        <Shield className="w-5 h-5 text-green-500" />
+                        <span className="text-sm text-gray-600">Maximum trust for customers</span>
+                      </div>
+                      <div className="flex items-center space-x-3">
+                        <DollarSign className="w-5 h-5 text-green-500" />
+                        <span className="text-sm text-gray-600">Fair and timely vendor payout</span>
+                      </div>
+                      <div className="flex items-center space-x-3">
+                        <Truck className="w-5 h-5 text-green-500" />
+                        <span className="text-sm text-gray-600">Real-time logistics commission</span>
+                      </div>
+                      <div className="flex items-center space-x-3">
+                        <Lock className="w-5 h-5 text-green-500" />
+                        <span className="text-sm text-gray-600">Protection from fraud</span>
+                      </div>
+                    </div>
                   </div>
-                </motion.div>
-              ))}
-            </div>
+                </div>
 
-            {/* Benefits */}
-            <div className="bg-gradient-to-r from-blue-50 to-orange-50 rounded-2xl p-8 border border-blue-200">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">Benefits</h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div className="text-center">
-                  <Shield className="w-8 h-8 text-blue-600 mx-auto mb-2" />
-                  <p className="text-sm font-medium text-gray-700">Maximum trust for customers</p>
-                </div>
-                <div className="text-center">
-                  <DollarSign className="w-8 h-8 text-green-600 mx-auto mb-2" />
-                  <p className="text-sm font-medium text-gray-700">Fair and timely vendor payout</p>
-                </div>
-                <div className="text-center">
-                  <Truck className="w-8 h-8 text-orange-600 mx-auto mb-2" />
-                  <p className="text-sm font-medium text-gray-700">Real-time logistics commission</p>
-                </div>
-                <div className="text-center">
-                  <Lock className="w-8 h-8 text-red-600 mx-auto mb-2" />
-                  <p className="text-sm font-medium text-gray-700">Protection from fraud</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+                {/* Contact Form */}
+                <div className="bg-white rounded-xl shadow-soft p-6 border border-gray-200">
+                  <h3 className="text-xl font-semibold text-gray-900 mb-6">
+                    {selectedModel ? `Get Started with ${businessModels.find(m => m.id === selectedModel)?.name}` : 'Contact Sales'}
+                  </h3>
+                  
+                  <form onSubmit={handleSubmit} className="space-y-6">
+                    {!selectedModel && (
+                      <div className="bg-orange-50 rounded-lg p-4 mb-6">
+                        <p className="text-sm text-orange-700">
+                          Please select a revenue model above to get started, or contact our sales team for custom solutions.
+                        </p>
+                      </div>
+                    )}
 
-        {/* Logistics Commission Section */}
-        <section className="py-12 sm:py-16 lg:py-20 bg-gray-50">
-          <div className="container mx-auto px-3 sm:px-4 lg:px-6 xl:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8 }}
-              className="text-center mb-12 sm:mb-16"
-            >
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">
-                2️⃣ Logistics <span className="text-orange-600">Commission</span>
-              </h2>
-              <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
-                Fair, scalable, and performance-based pay for logistics providers
-              </p>
-            </motion.div>
-
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-              {/* Commission Formula */}
-              <div className="bg-white rounded-2xl shadow-lg p-8">
-                <h3 className="text-2xl font-bold text-gray-900 mb-6">Commission Formula</h3>
-                <div className="space-y-4">
-                  {logisticsComponents.map((component, index) => (
-                    <div key={index} className="flex justify-between items-center p-4 bg-gray-50 rounded-lg">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div>
-                        <p className="font-medium text-gray-900">{component.component}</p>
-                        <p className="text-sm text-gray-600">{component.notes}</p>
+                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                          Full Name *
+                        </label>
+                        <input
+                          type="text"
+                          required
+                          value={formData.name}
+                          onChange={(e) => handleInputChange('name', e.target.value)}
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200"
+                          placeholder="Your full name"
+                        />
                       </div>
-                      <div className="text-lg font-bold text-orange-600">{component.calculation}</div>
-                    </div>
-                  ))}
-                </div>
-                
-                <div className="mt-6 p-4 bg-orange-50 rounded-lg border border-orange-200">
-                  <h4 className="font-bold text-orange-800 mb-2">Example Calculation:</h4>
-                  <div className="text-sm text-orange-700 space-y-1">
-                    <p>Distance: 10 km × $0.50 = $5</p>
-                    <p>Base fee: $2</p>
-                    <p>Weight multiplier: 1.2x → $5 × 1.2 = $6</p>
-                    <p>Delivery speed bonus: $2</p>
-                    <p className="font-bold">Total commission: $10</p>
-                  </div>
-                </div>
-              </div>
-
-              {/* AI Logistics */}
-              <div className="bg-white rounded-2xl shadow-lg p-8">
-                <h3 className="text-2xl font-bold text-gray-900 mb-6">AI-Based Logistics</h3>
-                <div className="space-y-4">
-                  <div className="flex items-start space-x-3">
-                    <Brain className="w-6 h-6 text-purple-600 mt-1 flex-shrink-0" />
-                    <div>
-                      <h4 className="font-semibold text-gray-900">Route Optimization</h4>
-                      <p className="text-sm text-gray-600">AI algorithms minimize cost and delivery time</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start space-x-3">
-                    <TrendingUp className="w-6 h-6 text-green-600 mt-1 flex-shrink-0" />
-                    <div>
-                      <h4 className="font-semibold text-gray-900">Dynamic Pricing</h4>
-                      <p className="text-sm text-gray-600">Based on peak hours, demand surges, and fuel costs</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start space-x-3">
-                    <Route className="w-6 h-6 text-blue-600 mt-1 flex-shrink-0" />
-                    <div>
-                      <h4 className="font-semibold text-gray-900">Smart Assignment</h4>
-                      <p className="text-sm text-gray-600">Automatic provider assignment based on proximity and capacity</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Revenue Models Section */}
-        <section className="py-12 sm:py-16 lg:py-20">
-          <div className="container mx-auto px-3 sm:px-4 lg:px-6 xl:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8 }}
-              className="text-center mb-12 sm:mb-16"
-            >
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">
-                3️⃣ Revenue <span className="text-orange-600">Models</span>
-              </h2>
-              <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
-                Two flexible options: Markup Base Model or Subscription Plans
-              </p>
-            </motion.div>
-
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12">
-              {/* Markup Model */}
-              <div className="bg-white rounded-2xl shadow-lg p-8 border-2 border-green-200">
-                <div className="flex items-center mb-6">
-                  <DollarSign className="w-8 h-8 text-green-600 mr-3" />
-                  <h3 className="text-2xl font-bold text-gray-900">Markup Base Model</h3>
-                </div>
-                <p className="text-gray-600 mb-6">Dynamic 5–15% markup per product or account level</p>
-                
-                <div className="bg-green-50 p-4 rounded-lg mb-6">
-                  <h4 className="font-bold text-green-800 mb-2">Example:</h4>
-                  <div className="text-sm text-green-700 space-y-1">
-                    <p>Product price: $50</p>
-                    <p>Vendor markup: 10%</p>
-                    <p>Customer pays: $55</p>
-                    <p>Vendor receives: $50</p>
-                    <p className="font-bold">Annita earns: $5</p>
-                  </div>
-                </div>
-
-                <div className="space-y-3">
-                  <div className="flex items-center space-x-2">
-                    <CheckCircle className="w-5 h-5 text-green-600" />
-                    <span className="text-sm text-gray-700">Vendor sets markup rate (5–15%)</span>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <CheckCircle className="w-5 h-5 text-green-600" />
-                    <span className="text-sm text-gray-700">Customer sees final price including markup</span>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <CheckCircle className="w-5 h-5 text-green-600" />
-                    <span className="text-sm text-gray-700">Dynamic adjustments by category and performance</span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Subscription Plans */}
-              <div className="bg-white rounded-2xl shadow-lg p-8 border-2 border-blue-200">
-                <div className="flex items-center mb-6">
-                  <Users className="w-8 h-8 text-blue-600 mr-3" />
-                  <h3 className="text-2xl font-bold text-gray-900">Subscription Plans</h3>
-                </div>
-                <p className="text-gray-600 mb-6">Premium tools, enhanced visibility, and AI-driven growth</p>
-                
-                <div className="space-y-4">
-                  {subscriptionPlans.map((plan, index) => (
-                    <div key={index} className={`p-4 rounded-lg border ${plan.bgColor} border-current`}>
-                      <div className="flex justify-between items-center mb-3">
-                        <h4 className={`font-bold ${plan.color}`}>{plan.name}</h4>
-                        <span className={`font-bold ${plan.color}`}>{plan.price}</span>
+                      
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                          Email Address *
+                        </label>
+                        <input
+                          type="email"
+                          required
+                          value={formData.email}
+                          onChange={(e) => handleInputChange('email', e.target.value)}
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200"
+                          placeholder="your.email@company.com"
+                        />
                       </div>
-                      <ul className="space-y-1">
-                        {plan.features.map((feature, featureIndex) => (
-                          <li key={featureIndex} className="text-sm text-gray-700 flex items-center space-x-2">
-                            <ArrowRight className="w-3 h-3 text-gray-500" />
-                            <span>{feature}</span>
-                          </li>
-                        ))}
-                      </ul>
                     </div>
-                  ))}
-                </div>
-              </div>
-            </div>
 
-            {/* Hybrid Flexibility */}
-            <div className="bg-gradient-to-r from-orange-50 to-red-50 rounded-2xl p-8 border border-orange-200">
-              <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">Hybrid Flexibility</h3>
-              <div className="text-center text-gray-700">
-                <p className="mb-4">Vendors choose either markup OR subscription, not both</p>
-                <p className="text-sm">System tracks revenue sources per vendor for accurate reporting</p>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                          Company Name
+                        </label>
+                        <input
+                          type="text"
+                          value={formData.company}
+                          onChange={(e) => handleInputChange('company', e.target.value)}
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200"
+                          placeholder="Your company name"
+                        />
+                      </div>
+
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                          Phone Number
+                        </label>
+                        <input
+                          type="tel"
+                          value={formData.phone}
+                          onChange={(e) => handleInputChange('phone', e.target.value)}
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200"
+                          placeholder="+1234567890"
+                        />
+                      </div>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                          Business Type
+                        </label>
+                        <select
+                          value={formData.businessType}
+                          onChange={(e) => handleInputChange('businessType', e.target.value)}
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200"
+                        >
+                          <option value="">Select business type</option>
+                          {businessTypes.map((type) => (
+                            <option key={type} value={type}>{type}</option>
+                          ))}
+                        </select>
+                      </div>
+
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                          Monthly Revenue
+                        </label>
+                        <select
+                          value={formData.revenue}
+                          onChange={(e) => handleInputChange('revenue', e.target.value)}
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200"
+                        >
+                          <option value="">Select revenue range</option>
+                          {revenueRanges.map((range) => (
+                            <option key={range} value={range}>{range}</option>
+                          ))}
+                        </select>
+                      </div>
+                    </div>
+
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                        Message
+                      </label>
+                      <textarea
+                        rows={4}
+                        value={formData.message}
+                        onChange={(e) => handleInputChange('message', e.target.value)}
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200"
+                        placeholder="Tell us about your business needs and how we can help..."
+                      />
+                    </div>
+
+                    <button
+                      type="submit"
+                      disabled={isSubmitting || !selectedModel}
+                      className="w-full inline-flex items-center justify-center px-8 py-4 bg-orange-500 text-white font-semibold rounded-lg hover:bg-orange-600 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200"
+                    >
+                      {isSubmitting ? (
+                        <>
+                          <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div>
+                          Processing...
+                        </>
+                      ) : (
+                        <>
+                          {selectedModel ? 'Get Started' : 'Contact Sales'}
+                          <ArrowRight className="w-5 h-5 ml-2" />
+                        </>
+                      )}
+                    </button>
+                  </form>
+
+                  {/* Contact Information */}
+                  <div className="mt-8 pt-8 border-t border-gray-200">
+                    <h4 className="text-lg font-semibold text-gray-900 mb-4">Need Help?</h4>
+                    <div className="space-y-3">
+                      <div className="flex items-center space-x-3">
+                        <Mail className="w-5 h-5 text-orange-500" />
+                        <span className="text-gray-600">annitallc@gmail.com</span>
+                      </div>
+                      <div className="flex items-center space-x-3">
+                        <Phone className="w-5 h-5 text-orange-500" />
+                        <span className="text-gray-600">+231 77 505 7227</span>
+                      </div>
+                      <div className="flex items-center space-x-3">
+                        <MessageSquare className="w-5 h-5 text-orange-500" />
+                        <span className="text-gray-600">Live chat available</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-        </section>
-
-        {/* System Architecture */}
-        <section className="py-12 sm:py-16 lg:py-20 bg-gray-50">
-          <div className="container mx-auto px-3 sm:px-4 lg:px-6 xl:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8 }}
-              className="text-center mb-12 sm:mb-16"
-            >
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">
-                4️⃣ System <span className="text-orange-600">Architecture</span>
+        </div>
+      ) : (
+        /* Success Message */
+        <div className="py-16 sm:py-20">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-2xl mx-auto text-center">
+              <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                <CheckCircle className="w-10 h-10 text-green-600" />
+              </div>
+              
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">
+                Request Submitted Successfully!
               </h2>
-              <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
-                Advanced flow diagram with integrated security and real-time insights
+              
+              <p className="text-gray-600 mb-8">
+                Thank you for your interest! Our business development team will review your request and get back to you within 24 hours.
               </p>
-            </motion.div>
-
-            <div className="bg-white rounded-2xl shadow-lg p-8">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div className="text-center">
-                  <Cpu className="w-12 h-12 text-blue-600 mx-auto mb-4" />
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">All Transactions Logged</h3>
-                  <p className="text-gray-600">Complete audit trail for security and compliance</p>
-                </div>
-                <div className="text-center">
-                  <AlertTriangle className="w-12 h-12 text-orange-600 mx-auto mb-4" />
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">Dispute Handling</h3>
-                  <p className="text-gray-600">Integrated module for security and conflict resolution</p>
-                </div>
-                <div className="text-center">
-                  <BarChart3 className="w-12 h-12 text-green-600 mx-auto mb-4" />
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">Dynamic Dashboards</h3>
-                  <p className="text-gray-600">Real-time insights for vendors, logistics, and management</p>
+              
+              <div className="bg-gray-50 rounded-lg p-6 mb-8">
+                <h3 className="font-semibold text-gray-900 mb-4">What happens next?</h3>
+                <div className="space-y-3 text-left">
+                  <div className="flex items-center">
+                    <div className="w-6 h-6 bg-orange-500 text-white rounded-full flex items-center justify-center text-sm font-bold mr-3">1</div>
+                    <span className="text-gray-600">We'll review your business model selection and requirements</span>
+                  </div>
+                  <div className="flex items-center">
+                    <div className="w-6 h-6 bg-orange-500 text-white rounded-full flex items-center justify-center text-sm font-bold mr-3">2</div>
+                    <span className="text-gray-600">Our team will contact you to discuss implementation and setup</span>
+                  </div>
+                  <div className="flex items-center">
+                    <div className="w-6 h-6 bg-orange-500 text-white rounded-full flex items-center justify-center text-sm font-bold mr-3">3</div>
+                    <span className="text-gray-600">You'll receive a customized business model proposal</span>
+                  </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Enhancements Section */}
-        <section className="py-12 sm:py-16 lg:py-20">
-          <div className="container mx-auto px-3 sm:px-4 lg:px-6 xl:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8 }}
-              className="text-center mb-12 sm:mb-16"
-            >
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">
-                5️⃣ Advanced <span className="text-orange-600">Enhancements</span>
-              </h2>
-              <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
-                Scaling features for sustainable growth and maximum efficiency
-              </p>
-            </motion.div>
-
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              {enhancements.map((enhancement, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={isInView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="bg-white rounded-2xl shadow-lg p-6 border border-gray-200"
+              
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Link
+                  href="/contact-us"
+                  className="inline-flex items-center px-6 py-3 bg-orange-500 text-white font-semibold rounded-lg hover:bg-orange-600 transition-colors duration-200"
                 >
-                  <div className="flex items-center mb-4">
-                    <enhancement.icon className={`w-8 h-8 ${enhancement.color} mr-3`} />
-                    <h3 className="text-xl font-bold text-gray-900">{enhancement.title}</h3>
-                  </div>
-                  <p className="text-gray-600 mb-4">{enhancement.description}</p>
-                  <div className="bg-gray-50 p-3 rounded-lg mb-3">
-                    <p className="text-sm font-medium text-gray-700 mb-1">Implementation:</p>
-                    <p className="text-sm text-gray-600">{enhancement.implementation}</p>
-                  </div>
-                  <div className="bg-orange-50 p-3 rounded-lg">
-                    <p className="text-sm font-medium text-orange-700 mb-1">Example:</p>
-                    <p className="text-sm text-orange-600">{enhancement.example}</p>
-                  </div>
-                </motion.div>
-              ))}
+                  <MessageSquare className="w-4 h-4 mr-2" />
+                  Contact Support
+                </Link>
+                <button
+                  onClick={() => {
+                    setIsSubmitted(false)
+                    setSelectedModel('')
+                    setFormData({
+                      name: '',
+                      email: '',
+                      company: '',
+                      phone: '',
+                      businessType: '',
+                      revenue: '',
+                      message: ''
+                    })
+                  }}
+                  className="inline-flex items-center px-6 py-3 border-2 border-orange-500 text-orange-500 font-semibold rounded-lg hover:bg-orange-50 transition-colors duration-200"
+                >
+                  Choose Another Model
+                </button>
+              </div>
             </div>
           </div>
-        </section>
+        </div>
+      )}
 
-        {/* Key Advantages */}
-        <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-r from-orange-500 to-orange-600">
-          <div className="container mx-auto px-3 sm:px-4 lg:px-6 xl:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8 }}
-              className="text-center text-white"
-            >
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-8">
-                ✅ Key <span className="text-orange-200">Advantages</span>
-              </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div className="text-center">
-                  <Shield className="w-12 h-12 text-orange-200 mx-auto mb-4" />
-                  <h3 className="text-xl font-bold mb-2">Maximum Trust</h3>
-                  <p className="text-orange-100">Transparency via escrow and real-time payments</p>
-                </div>
-                <div className="text-center">
-                  <DollarSign className="w-12 h-12 text-orange-200 mx-auto mb-4" />
-                  <h3 className="text-xl font-bold mb-2">Flexible Models</h3>
-                  <p className="text-orange-100">Markup or subscription without hidden fees</p>
-                </div>
-                <div className="text-center">
-                  <Truck className="w-12 h-12 text-orange-200 mx-auto mb-4" />
-                  <h3 className="text-xl font-bold mb-2">Performance Incentives</h3>
-                  <p className="text-orange-100">Logistics incentives for faster, reliable delivery</p>
-                </div>
-                <div className="text-center">
-                  <Zap className="w-12 h-12 text-orange-200 mx-auto mb-4" />
-                  <h3 className="text-xl font-bold mb-2">AI-Driven</h3>
-                  <p className="text-orange-100">Scalable system with AI optimizations</p>
-                </div>
+      {/* Home Page CTA Section */}
+      <section className="py-16 sm:py-20 bg-gradient-to-br from-gray-50 to-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center p-8 bg-gradient-to-r from-orange-500 to-orange-600 rounded-2xl text-white">
+              <h3 className="text-2xl sm:text-3xl font-bold mb-4">
+                Ready to Transform Your Business?
+              </h3>
+              <p className="text-orange-100 mb-6 max-w-2xl mx-auto">
+                Join thousands of MSMEs already using Annita to grow their revenue, reach new customers, 
+                and streamline their operations across Africa.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <a 
+                  href="/download"
+                  className="inline-flex items-center justify-center bg-white text-orange-600 px-8 py-3 rounded-lg font-semibold hover:bg-orange-50 transition-colors duration-200"
+                >
+                  <Download className="w-5 h-5 mr-2" />
+                  Download App
+                </a>
+                <a 
+                  href="/contact-sales"
+                  className="inline-flex items-center justify-center border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-orange-600 transition-colors duration-200"
+                >
+                  Contact Sales
+                  <ArrowRight className="w-5 h-5 ml-2" />
+                </a>
               </div>
-            </motion.div>
+            </div>
           </div>
-        </section>
-      </div>
+        </div>
+      </section>
     </>
   )
 }
-
-export default BusinessModelPage

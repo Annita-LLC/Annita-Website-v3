@@ -1,48 +1,39 @@
-"use client"
+'use client'
 
 import { useState } from 'react'
-import { motion } from 'framer-motion'
-import { useInView } from 'framer-motion'
-import { useRef } from 'react'
 import SEOHead from '@/components/seo/SEOHead'
-import { Check, X, Star, Zap, Shield, Users, Globe, TrendingUp, DollarSign, Calculator, Info } from 'lucide-react'
+import { 
+  CheckCircle,
+  Star,
+  Shield,
+  Users,
+  Globe,
+  TrendingUp,
+  DollarSign,
+  Calculator,
+  Info,
+  ArrowRight,
+  Download,
+  Mail,
+  Phone,
+  MessageSquare,
+  X
+} from 'lucide-react'
+import Link from 'next/link'
 
-const PricingPage = () => {
+export default function PricingPage() {
+  const [selectedPlan, setSelectedPlan] = useState('')
   const [billingCycle, setBillingCycle] = useState('monthly')
-  const [selectedPlan, setSelectedPlan] = useState('starter')
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true })
-
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@type": "Product",
-    "name": "Annita Platform Pricing",
-    "description": "Transparent pricing for Annita's digital platform services with markup base model",
-    "url": "https://annita.com/pricing",
-    "offers": [
-      {
-        "@type": "Offer",
-        "name": "Starter Plan",
-        "price": "0",
-        "priceCurrency": "USD",
-        "description": "Free starter plan for individuals and small businesses"
-      },
-      {
-        "@type": "Offer", 
-        "name": "Professional Plan",
-        "price": "29",
-        "priceCurrency": "USD",
-        "description": "Professional plan for growing businesses"
-      },
-      {
-        "@type": "Offer",
-        "name": "Enterprise Plan", 
-        "price": "99",
-        "priceCurrency": "USD",
-        "description": "Enterprise plan for large organizations"
-      }
-    ]
-  }
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    company: '',
+    phone: '',
+    plan: '',
+    message: ''
+  })
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [isSubmitted, setIsSubmitted] = useState(false)
 
   const pricingPlans = [
     {
@@ -177,6 +168,31 @@ const PricingPage = () => {
     }
   ]
 
+  const handlePlanSelect = (planId: string) => {
+    setSelectedPlan(planId)
+    setFormData(prev => ({ ...prev, plan: planId }))
+  }
+
+  const handleInputChange = (field: string, value: string) => {
+    setFormData(prev => ({
+      ...prev,
+      [field]: value
+    }))
+  }
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    if (!selectedPlan) return
+    
+    setIsSubmitting(true)
+    
+    // Simulate form submission
+    await new Promise(resolve => setTimeout(resolve, 2000))
+    
+    setIsSubmitting(false)
+    setIsSubmitted(true)
+  }
+
   return (
     <>
       <SEOHead
@@ -215,347 +231,386 @@ const PricingPage = () => {
           'usage-based pricing'
         ]}
         canonical="/pricing"
-        ogImage="/images/pricing-page.jpg"
-        structuredData={structuredData}
       />
 
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white">
       {/* Hero Section */}
-        <section className="relative py-16 sm:py-20 lg:py-24 overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-r from-orange-500 to-orange-600"></div>
-          <div className="absolute inset-0 bg-black opacity-20"></div>
-          
-          <div className="container mx-auto px-3 sm:px-4 lg:px-6 xl:px-8 relative z-10">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="text-center text-white"
-            >
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 sm:mb-6">
-                Transparent <span className="text-orange-200">Pricing</span>
-            </h1>
-              <p className="text-lg sm:text-xl lg:text-2xl text-orange-100 max-w-4xl mx-auto mb-6 sm:mb-8">
-                Choose the perfect plan for your business with our clear markup base model
-              </p>
-              <div className="flex flex-wrap justify-center gap-3 sm:gap-4 text-sm sm:text-base">
-                <span className="bg-white/20 px-3 sm:px-4 py-2 rounded-full">No Hidden Fees</span>
-                <span className="bg-white/20 px-3 sm:px-4 py-2 rounded-full">14-Day Free Trial</span>
-                <span className="bg-white/20 px-3 sm:px-4 py-2 rounded-full">Volume Discounts</span>
+      <section className="bg-gradient-to-br from-orange-50 to-red-50 py-16 sm:py-20 lg:py-24">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center">
+              <div className="inline-flex items-center px-4 py-2 rounded-full bg-orange-100 text-orange-700 text-sm font-medium mb-6">
+                <DollarSign className="w-4 h-4 mr-2" />
+                Transparent Pricing
               </div>
-            </motion.div>
+              
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+                Choose Your <span className="text-orange-500">Plan</span>
+              </h1>
+              <p className="text-lg sm:text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+                Transparent pricing with our clear markup base model. Choose the perfect plan 
+                for your business with no hidden fees.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
-        {/* Billing Toggle */}
-        <section className="py-8 bg-white border-b border-gray-200">
-          <div className="container mx-auto px-3 sm:px-4 lg:px-6 xl:px-8">
-            <div className="flex justify-center">
-              <div className="bg-gray-100 rounded-2xl p-1 flex items-center">
-                <button
-                  onClick={() => setBillingCycle('monthly')}
-                  className={`px-4 sm:px-6 py-2 sm:py-3 rounded-xl text-sm sm:text-base font-medium transition-all duration-200 ${
-                    billingCycle === 'monthly'
-                      ? 'bg-white text-orange-600 shadow-md'
-                      : 'text-gray-600 hover:text-gray-900'
-                  }`}
-                >
-                  Monthly
-                </button>
-                <button
-                  onClick={() => setBillingCycle('yearly')}
-                  className={`px-4 sm:px-6 py-2 sm:py-3 rounded-xl text-sm sm:text-base font-medium transition-all duration-200 ${
-                    billingCycle === 'yearly'
-                      ? 'bg-white text-orange-600 shadow-md'
-                      : 'text-gray-600 hover:text-gray-900'
-                  }`}
-                >
-                  Yearly
-                  <span className="ml-1 sm:ml-2 bg-orange-100 text-orange-600 text-xs px-2 py-1 rounded-full">
-                    Save 17%
-                  </span>
-                </button>
-              </div>
-            </div>
-          </div>
-        </section>
+      {!isSubmitted ? (
+        <div className="py-16 sm:py-20">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-6xl mx-auto">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                {/* Pricing Information */}
+                <div>
+                  <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6">
+                    Pricing Plans
+                  </h2>
+                  <p className="text-lg text-gray-600 mb-8">
+                    Choose the plan that best fits your business needs. All plans include a 14-day free trial.
+                  </p>
 
-        {/* Pricing Plans */}
-        <section className="py-12 sm:py-16 lg:py-20">
-          <div className="container mx-auto px-3 sm:px-4 lg:px-6 xl:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-6">
-              {pricingPlans.map((plan, index) => (
-                <motion.div
-                  key={plan.id}
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={isInView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className={`relative bg-white rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300 ${
-                    plan.popular ? 'ring-2 ring-orange-500 scale-105' : ''
-                  }`}
-                >
-                {plan.popular && (
-                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                      <span className="bg-orange-500 text-white px-4 py-2 rounded-full text-sm font-semibold">
-                      Most Popular
-                      </span>
-                  </div>
-                )}
-                
-                  <div className="p-6 sm:p-8">
-                    <div className="text-center mb-6">
-                      <div className="inline-flex items-center justify-center w-12 h-12 bg-orange-100 rounded-2xl mb-4">
-                        <plan.icon className="w-6 h-6 text-orange-600" />
-                      </div>
-                      <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">
-                        {plan.name}
-                      </h3>
-                      <p className="text-gray-600 text-sm sm:text-base">
-                        {plan.description}
-                      </p>
-                    </div>
-
-                    <div className="text-center mb-6">
-                      <div className="flex items-baseline justify-center">
-                        <span className="text-4xl sm:text-5xl font-bold text-gray-900">
-                          ${billingCycle === 'monthly' ? plan.monthlyPrice : plan.yearlyPrice}
-                        </span>
-                        {plan.monthlyPrice > 0 && (
-                          <span className="text-gray-500 ml-2">
-                            /{billingCycle === 'monthly' ? 'mo' : 'year'}
+                  {/* Billing Toggle */}
+                  <div className="mb-8">
+                    <div className="flex justify-center">
+                      <div className="bg-gray-100 rounded-2xl p-1 flex items-center">
+                        <button
+                          onClick={() => setBillingCycle('monthly')}
+                          className={`px-6 py-3 rounded-xl text-sm font-medium transition-all duration-200 ${
+                            billingCycle === 'monthly'
+                              ? 'bg-white text-orange-600 shadow-md'
+                              : 'text-gray-600 hover:text-gray-900'
+                          }`}
+                        >
+                          Monthly
+                        </button>
+                        <button
+                          onClick={() => setBillingCycle('yearly')}
+                          className={`px-6 py-3 rounded-xl text-sm font-medium transition-all duration-200 ${
+                            billingCycle === 'yearly'
+                              ? 'bg-white text-orange-600 shadow-md'
+                              : 'text-gray-600 hover:text-gray-900'
+                          }`}
+                        >
+                          Yearly
+                          <span className="ml-2 bg-orange-100 text-orange-600 text-xs px-2 py-1 rounded-full">
+                            Save 17%
                           </span>
-                        )}
+                        </button>
+                      </div>
+                    </div>
                   </div>
-                      {plan.monthlyPrice === 0 && (
-                        <p className="text-orange-600 font-semibold mt-2">Forever Free</p>
-                      )}
+
+                  {/* Pricing Plans */}
+                  <div className="space-y-6">
+                    {pricingPlans.map((plan) => (
+                      <button
+                        key={plan.id}
+                        onClick={() => handlePlanSelect(plan.id)}
+                        className={`w-full p-6 rounded-xl border-2 transition-all duration-200 text-left ${
+                          selectedPlan === plan.id
+                            ? 'border-orange-500 bg-orange-50'
+                            : 'border-gray-200 hover:border-gray-300 bg-white'
+                        }`}
+                      >
+                        <div className="flex items-center justify-between mb-4">
+                          <div className="flex items-center space-x-4">
+                            <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-500 rounded-lg flex items-center justify-center">
+                              <plan.icon className="w-6 h-6 text-white" />
+                            </div>
+                            <div>
+                              <h3 className="text-xl font-bold text-gray-900">{plan.name}</h3>
+                              <p className="text-sm text-gray-600">{plan.description}</p>
+                            </div>
+                          </div>
+                          <div className="text-right">
+                            <div className="text-2xl font-bold text-gray-900">
+                              ${billingCycle === 'monthly' ? plan.monthlyPrice : plan.yearlyPrice}
+                            </div>
+                            <div className="text-sm text-gray-500">
+                              /{billingCycle === 'monthly' ? 'month' : 'year'}
+                            </div>
+                          </div>
+                        </div>
+                        
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                          <div>
+                            <h4 className="font-semibold text-gray-900 mb-2">Features:</h4>
+                            <ul className="space-y-1">
+                              {plan.features.slice(0, 4).map((feature, index) => (
+                                <li key={index} className="flex items-center text-sm text-gray-600">
+                                  <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
+                                  {feature}
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                          <div>
+                            <h4 className="font-semibold text-gray-900 mb-2">Limitations:</h4>
+                            <ul className="space-y-1">
+                              {plan.limitations.slice(0, 2).map((limitation, index) => (
+                                <li key={index} className="flex items-center text-sm text-gray-600">
+                                  <X className="w-4 h-4 text-red-500 mr-2" />
+                                  {limitation}
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        </div>
+                      </button>
+                    ))}
+                  </div>
+
+                  {/* Markup Model Info */}
+                  <div className="mt-8 bg-white rounded-xl p-6 shadow-soft border border-gray-200">
+                    <h3 className="text-lg font-semibold text-gray-900 mb-4">
+                      Markup Base Model
+                    </h3>
+                    <p className="text-gray-600 mb-4">
+                      Vendors can choose between subscription plans or a markup model (5-15%).
+                    </p>
+                    <div className="space-y-2">
+                      <div className="flex items-center space-x-2">
+                        <CheckCircle className="w-4 h-4 text-green-500" />
+                        <span className="text-sm text-gray-600">No transaction fees</span>
+                      </div>
+                      <div className="flex items-center space-x-2">
+                        <CheckCircle className="w-4 h-4 text-green-500" />
+                        <span className="text-sm text-gray-600">Transparent pricing</span>
+                      </div>
+                      <div className="flex items-center space-x-2">
+                        <CheckCircle className="w-4 h-4 text-green-500" />
+                        <span className="text-sm text-gray-600">Flexible switching</span>
+                      </div>
+                    </div>
+                  </div>
                 </div>
 
-                    <div className="space-y-3 mb-8">
-                      <h4 className="font-semibold text-gray-900 mb-3">What's included:</h4>
-                  {plan.features.map((feature, featureIndex) => (
-                        <div key={featureIndex} className="flex items-start">
-                          <Check className="w-5 h-5 text-green-500 mt-0.5 mr-3 flex-shrink-0" />
-                          <span className="text-sm sm:text-base text-gray-700">{feature}</span>
-                        </div>
-                      ))}
-                      {plan.limitations.length > 0 && (
-                        <>
-                          <h4 className="font-semibold text-gray-900 mt-4 mb-3">Limitations:</h4>
-                          {plan.limitations.map((limitation, limitationIndex) => (
-                            <div key={limitationIndex} className="flex items-start">
-                              <X className="w-5 h-5 text-red-500 mt-0.5 mr-3 flex-shrink-0" />
-                              <span className="text-sm sm:text-base text-gray-600">{limitation}</span>
-                            </div>
-                          ))}
-                        </>
-                      )}
+                {/* Contact Form */}
+                <div className="bg-white rounded-xl shadow-soft p-6 border border-gray-200">
+                  <h3 className="text-xl font-semibold text-gray-900 mb-6">
+                    {selectedPlan ? `Get Started with ${pricingPlans.find(p => p.id === selectedPlan)?.name}` : 'Contact Sales'}
+                  </h3>
+                  
+                  <form onSubmit={handleSubmit} className="space-y-6">
+                    {!selectedPlan && (
+                      <div className="bg-orange-50 rounded-lg p-4 mb-6">
+                        <p className="text-sm text-orange-700">
+                          Please select a plan above to get started, or contact our sales team for custom pricing.
+                        </p>
+                      </div>
+                    )}
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                          Full Name *
+                        </label>
+                        <input
+                          type="text"
+                          required
+                          value={formData.name}
+                          onChange={(e) => handleInputChange('name', e.target.value)}
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200"
+                          placeholder="Your full name"
+                        />
+                      </div>
+                      
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                          Email Address *
+                        </label>
+                        <input
+                          type="email"
+                          required
+                          value={formData.email}
+                          onChange={(e) => handleInputChange('email', e.target.value)}
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200"
+                          placeholder="your.email@company.com"
+                        />
+                      </div>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                          Company Name
+                        </label>
+                        <input
+                          type="text"
+                          value={formData.company}
+                          onChange={(e) => handleInputChange('company', e.target.value)}
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200"
+                          placeholder="Your company name"
+                        />
+                      </div>
+
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                          Phone Number
+                        </label>
+                        <input
+                          type="tel"
+                          value={formData.phone}
+                          onChange={(e) => handleInputChange('phone', e.target.value)}
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200"
+                          placeholder="+1234567890"
+                        />
+                      </div>
+                    </div>
+
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                        Message
+                      </label>
+                      <textarea
+                        rows={4}
+                        value={formData.message}
+                        onChange={(e) => handleInputChange('message', e.target.value)}
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200"
+                        placeholder="Tell us about your business needs..."
+                      />
                     </div>
 
                     <button
-                      onClick={() => setSelectedPlan(plan.id)}
-                      className={`w-full py-3 sm:py-4 px-6 rounded-2xl font-semibold text-sm sm:text-base transition-all duration-200 ${
-                        plan.popular
-                          ? 'bg-orange-500 text-white hover:bg-orange-600'
-                          : 'bg-gray-100 text-gray-900 hover:bg-gray-200'
-                      }`}
+                      type="submit"
+                      disabled={isSubmitting || !selectedPlan}
+                      className="w-full inline-flex items-center justify-center px-8 py-4 bg-orange-500 text-white font-semibold rounded-lg hover:bg-orange-600 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200"
                     >
-                      {plan.monthlyPrice === 0 ? 'Get Started Free' : 'Start Free Trial'}
+                      {isSubmitting ? (
+                        <>
+                          <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div>
+                          Processing...
+                        </>
+                      ) : (
+                        <>
+                          {selectedPlan ? 'Start Free Trial' : 'Contact Sales'}
+                          <ArrowRight className="w-5 h-5 ml-2" />
+                        </>
+                      )}
                     </button>
-              </div>
-                </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+                  </form>
 
-        {/* Markup Base Model Section */}
-        <section className="py-12 sm:py-16 lg:py-20 bg-gray-50">
-          <div className="container mx-auto px-3 sm:px-4 lg:px-6 xl:px-8">
-            <motion.div
-              ref={ref}
-              initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8 }}
-              className="text-center mb-12 sm:mb-16"
-            >
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">
-                Our <span className="text-orange-600">Markup Base Model</span>
-            </h2>
-              <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
-                {markupModel.description}
-              </p>
-            </motion.div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
-              {markupModel.components.map((component, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={isInView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="bg-white rounded-2xl p-6 sm:p-8 shadow-lg hover:shadow-xl transition-shadow duration-300"
-                >
-                  <div className="text-center">
-                    <div className="inline-flex items-center justify-center w-12 h-12 bg-orange-100 rounded-2xl mb-4">
-                      <DollarSign className="w-6 h-6 text-orange-600" />
-          </div>
-                    <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2">
-                      {component.title}
-                    </h3>
-                    <div className="text-3xl sm:text-4xl font-bold text-orange-600 mb-2">
-                      {component.rate}
+                  {/* Contact Information */}
+                  <div className="mt-8 pt-8 border-t border-gray-200">
+                    <h4 className="text-lg font-semibold text-gray-900 mb-4">Need Help?</h4>
+                    <div className="space-y-3">
+                      <div className="flex items-center space-x-3">
+                        <Mail className="w-5 h-5 text-orange-500" />
+                        <span className="text-gray-600">annitallc@gmail.com</span>
+                      </div>
+                      <div className="flex items-center space-x-3">
+                        <Phone className="w-5 h-5 text-orange-500" />
+                        <span className="text-gray-600">+231 77 505 7227</span>
+                      </div>
+                      <div className="flex items-center space-x-3">
+                        <MessageSquare className="w-5 h-5 text-orange-500" />
+                        <span className="text-gray-600">Live chat available</span>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                    <p className="text-gray-600 text-sm sm:text-base mb-3">
-                      {component.description}
-                    </p>
-                    <p className="text-gray-500 text-xs sm:text-sm">
-                      {component.details}
-                    </p>
-              </div>
-                </motion.div>
-            ))}
-          </div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              className="mt-12 sm:mt-16 bg-white rounded-3xl p-6 sm:p-8 lg:p-12 shadow-lg"
-            >
-              <div className="text-center mb-8">
-                <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
-                  How Our Pricing Works
-                </h3>
-                <p className="text-gray-600 text-lg">
-                  We believe in transparent, value-based pricing that grows with your business
-            </p>
-          </div>
-
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
-                <div>
-                  <h4 className="text-xl font-semibold text-gray-900 mb-4">Base Transaction Fee</h4>
-                  <p className="text-gray-600 mb-4">
-                    Every transaction processed through AnnitaPay incurs a 2.5% base fee. This covers:
-                  </p>
-                  <ul className="space-y-2 text-sm sm:text-base">
-                    <li className="flex items-start">
-                      <Check className="w-4 h-4 text-green-500 mt-1 mr-2 flex-shrink-0" />
-                      Payment processing and security
-                    </li>
-                    <li className="flex items-start">
-                      <Check className="w-4 h-4 text-green-500 mt-1 mr-2 flex-shrink-0" />
-                      Fraud protection and monitoring
-                    </li>
-                    <li className="flex items-start">
-                      <Check className="w-4 h-4 text-green-500 mt-1 mr-2 flex-shrink-0" />
-                      Infrastructure and maintenance
-                    </li>
-                    <li className="flex items-start">
-                      <Check className="w-4 h-4 text-green-500 mt-1 mr-2 flex-shrink-0" />
-                      Customer support and compliance
-                    </li>
-                  </ul>
-                </div>
-                
-                <div>
-                  <h4 className="text-xl font-semibold text-gray-900 mb-4">Platform Access & Features</h4>
-                  <p className="text-gray-600 mb-4">
-                    Monthly subscription fees provide access to our platform features:
-                  </p>
-                  <ul className="space-y-2 text-sm sm:text-base">
-                    <li className="flex items-start">
-                      <Check className="w-4 h-4 text-green-500 mt-1 mr-2 flex-shrink-0" />
-                      Analytics and reporting tools
-                    </li>
-                    <li className="flex items-start">
-                      <Check className="w-4 h-4 text-green-500 mt-1 mr-2 flex-shrink-0" />
-                      API access and integrations
-                    </li>
-                    <li className="flex items-start">
-                      <Check className="w-4 h-4 text-green-500 mt-1 mr-2 flex-shrink-0" />
-                      Multi-user management
-                    </li>
-                    <li className="flex items-start">
-                      <Check className="w-4 h-4 text-green-500 mt-1 mr-2 flex-shrink-0" />
-                      Advanced security features
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </motion.div>
-        </div>
-      </section>
-
-      {/* FAQ Section */}
-        <section className="py-12 sm:py-16 lg:py-20">
-          <div className="container mx-auto px-3 sm:px-4 lg:px-6 xl:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8 }}
-              className="text-center mb-12 sm:mb-16"
-            >
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">
-                Frequently Asked <span className="text-orange-600">Questions</span>
-            </h2>
-              <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
-                Everything you need to know about our pricing and billing
-              </p>
-            </motion.div>
-
-            <div className="max-w-4xl mx-auto">
-              <div className="space-y-6">
-                {faqs.map((faq, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={isInView ? { opacity: 1, y: 0 } : {}}
-                    transition={{ duration: 0.6, delay: index * 0.1 }}
-                    className="bg-white rounded-2xl p-6 sm:p-8 shadow-lg hover:shadow-xl transition-shadow duration-300"
-                  >
-                    <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-3">
-                      {faq.question}
-                    </h3>
-                    <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
-                      {faq.answer}
-                    </p>
-                  </motion.div>
-                ))}
               </div>
             </div>
           </div>
-        </section>
-
-        {/* CTA Section */}
-        <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-r from-orange-500 to-orange-600">
-          <div className="container mx-auto px-3 sm:px-4 lg:px-6 xl:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8 }}
-              className="text-center text-white"
-            >
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6">
-                Ready to Get Started?
+        </div>
+      ) : (
+        /* Success Message */
+        <div className="py-16 sm:py-20">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-2xl mx-auto text-center">
+              <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                <CheckCircle className="w-10 h-10 text-green-600" />
+              </div>
+              
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">
+                Request Submitted Successfully!
               </h2>
-              <p className="text-lg sm:text-xl text-orange-100 max-w-3xl mx-auto mb-8">
-                Join thousands of businesses already using Annita to grow their digital presence
+              
+              <p className="text-gray-600 mb-8">
+                Thank you for your interest! Our sales team will review your request and get back to you within 24 hours.
               </p>
-              <div className="flex flex-col sm:flex-row justify-center gap-4">
-                <button className="bg-white text-orange-600 px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-orange-50 transition-colors duration-200">
-                  Start Free Trial
-                </button>
-                <button className="border-2 border-white text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-white hover:text-orange-600 transition-colors duration-200">
-                  Contact Sales
+              
+              <div className="bg-gray-50 rounded-lg p-6 mb-8">
+                <h3 className="font-semibold text-gray-900 mb-4">What happens next?</h3>
+                <div className="space-y-3 text-left">
+                  <div className="flex items-center">
+                    <div className="w-6 h-6 bg-orange-500 text-white rounded-full flex items-center justify-center text-sm font-bold mr-3">1</div>
+                    <span className="text-gray-600">We'll review your plan selection and business needs</span>
+                  </div>
+                  <div className="flex items-center">
+                    <div className="w-6 h-6 bg-orange-500 text-white rounded-full flex items-center justify-center text-sm font-bold mr-3">2</div>
+                    <span className="text-gray-600">Our team will contact you to discuss setup and pricing</span>
+                  </div>
+                  <div className="flex items-center">
+                    <div className="w-6 h-6 bg-orange-500 text-white rounded-full flex items-center justify-center text-sm font-bold mr-3">3</div>
+                    <span className="text-gray-600">You'll receive access to start your free trial</span>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Link
+                  href="/contact-us"
+                  className="inline-flex items-center px-6 py-3 bg-orange-500 text-white font-semibold rounded-lg hover:bg-orange-600 transition-colors duration-200"
+                >
+                  <MessageSquare className="w-4 h-4 mr-2" />
+                  Contact Support
+                </Link>
+                <button
+                  onClick={() => {
+                    setIsSubmitted(false)
+                    setSelectedPlan('')
+                    setFormData({
+                      name: '',
+                      email: '',
+                      company: '',
+                      phone: '',
+                      plan: '',
+                      message: ''
+                    })
+                  }}
+                  className="inline-flex items-center px-6 py-3 border-2 border-orange-500 text-orange-500 font-semibold rounded-lg hover:bg-orange-50 transition-colors duration-200"
+                >
+                  Choose Another Plan
                 </button>
               </div>
-            </motion.div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Home Page CTA Section */}
+      <section className="py-16 sm:py-20 bg-gradient-to-br from-gray-50 to-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center p-8 bg-gradient-to-r from-orange-500 to-orange-600 rounded-2xl text-white">
+              <h3 className="text-2xl sm:text-3xl font-bold mb-4">
+                Ready to Transform Your Business?
+              </h3>
+              <p className="text-orange-100 mb-6 max-w-2xl mx-auto">
+                Join thousands of MSMEs already using Annita to grow their revenue, reach new customers, 
+                and streamline their operations across Africa.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <a 
+                  href="/download"
+                  className="inline-flex items-center justify-center bg-white text-orange-600 px-8 py-3 rounded-lg font-semibold hover:bg-orange-50 transition-colors duration-200"
+                >
+                  <Download className="w-5 h-5 mr-2" />
+                  Download App
+                </a>
+                <a 
+                  href="/contact-sales"
+                  className="inline-flex items-center justify-center border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-orange-600 transition-colors duration-200"
+                >
+                  Contact Sales
+                  <ArrowRight className="w-5 h-5 ml-2" />
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
-    </div>
     </>
   )
 }
-
-export default PricingPage
