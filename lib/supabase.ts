@@ -18,7 +18,7 @@ export interface ContactInquiry {
   country?: string
   subject?: string
   message: string
-  inquiry_type: 'general' | 'technical' | 'account' | 'business' | 'feature' | 'feedback'
+  inquiry_category: 'general' | 'technical' | 'account' | 'business' | 'feature' | 'feedback'
   urgency?: 'low' | 'normal' | 'high' | 'urgent'
   preferred_contact?: 'email' | 'phone'
   newsletter_opt_in?: boolean
@@ -38,7 +38,7 @@ export interface CareerApplication {
   position: string
   experience?: 'entry' | 'mid' | 'senior' | 'lead' | 'executive'
   company?: string
-  current_role?: string
+  current_position?: string
   education?: string
   field_of_study?: string
   linkedin_url?: string
@@ -57,7 +57,7 @@ export interface CareerApplication {
 
 export interface SupportIssue {
   id?: string
-  issue_type: 'bug' | 'feature' | 'security' | 'performance' | 'ui' | 'payment'
+  issue_category: 'bug' | 'feature' | 'security' | 'performance' | 'ui' | 'payment'
   priority?: 'low' | 'medium' | 'high' | 'critical'
   title: string
   description: string
@@ -99,7 +99,7 @@ export interface SalesInquiry {
   email: string
   company?: string
   phone?: string
-  business_size?: '1-10' | '11-50' | '51-200' | '201-500' | '500+'
+  company_size?: '1-10' | '11-50' | '51-200' | '201-500' | '500+'
   industry?: string
   goals?: string
   timeline?: string
