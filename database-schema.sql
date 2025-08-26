@@ -2,7 +2,8 @@
 -- This schema handles all form submissions and user data collection
 
 -- Enable Row Level Security (RLS)
-ALTER DATABASE postgres SET "app.jwt_secret" TO 'your-jwt-secret';
+-- Note: app.jwt_secret setting removed as it requires superuser privileges
+-- RLS policies work without this setting for our anonymous form submissions
 
 -- Create custom types
 CREATE TYPE inquiry_type AS ENUM ('general', 'technical', 'account', 'business', 'feature', 'feedback');
