@@ -333,7 +333,7 @@ BEGIN
     NEW.updated_at = NOW();
     RETURN NEW;
 END;
-$$ language 'plpgsql';
+$$ language 'plpgsql' SECURITY DEFINER SET search_path = public;
 
 CREATE TRIGGER update_contact_inquiries_updated_at BEFORE UPDATE ON contact_inquiries FOR EACH ROW EXECUTE FUNCTION update_updated_at_column();
 CREATE TRIGGER update_career_applications_updated_at BEFORE UPDATE ON career_applications FOR EACH ROW EXECUTE FUNCTION update_updated_at_column();
@@ -384,7 +384,9 @@ CREATE POLICY "Allow insert for all users" ON investor_downloads FOR INSERT WITH
 
 -- Create views for easier data access
 DROP VIEW IF EXISTS recent_inquiries CASCADE;
-CREATE VIEW recent_inquiries AS
+CREATE VIEW recent_inquiries 
+WITH (security_barrier = true)
+AS
 SELECT 
     'contact' as type,
     id,
@@ -423,7 +425,7 @@ RETURNS INET AS $$
 BEGIN
     RETURN inet_client_addr();
 END;
-$$ LANGUAGE plpgsql;
+$$ LANGUAGE plpgsql SECURITY DEFINER SET search_path = public;
 
 -- Create function to get user agent
 DROP FUNCTION IF EXISTS get_user_agent();
@@ -432,4 +434,4 @@ RETURNS TEXT AS $$
 BEGIN
     RETURN current_setting('request.headers', true)::json->>'user-agent';
 END;
-$$ LANGUAGE plpgsql;
+$$ LANGUAGE plpgsql SECURITY DEFINER SET search_path = public;
