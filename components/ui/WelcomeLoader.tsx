@@ -87,7 +87,7 @@ const WelcomeLoader = ({ onComplete }: WelcomeLoaderProps) => {
           <div className="relative z-10 flex items-center justify-center min-h-screen px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-2xl mx-auto">
               
-              {/* Modern Logo */}
+              {/* Modern Logo - Same as Header */}
               <motion.div
                 initial={{ scale: 0, rotate: -90, opacity: 0 }}
                 animate={{ scale: 1, rotate: 0, opacity: 1 }}
@@ -101,14 +101,14 @@ const WelcomeLoader = ({ onComplete }: WelcomeLoaderProps) => {
               >
                 <div className="relative mx-auto w-24 h-24 sm:w-32 sm:h-32">
                   
-                  {/* Main Logo Circle */}
+                  {/* Main Logo Circle - Same as Header */}
                   <motion.div
-                    className="relative w-full h-full bg-white/20 rounded-2xl flex items-center justify-center backdrop-blur-sm border border-white/20 shadow-2xl overflow-hidden"
+                    className="relative w-full h-full bg-gradient-to-br from-orange-500 to-orange-600 rounded-full flex items-center justify-center shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-105 overflow-hidden"
                     animate={{ rotate: [0, 360] }}
                     transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
                   >
                     
-                    {/* Custom Annita Logo */}
+                    {/* Custom Annita Logo - Same as Header */}
                     <motion.div
                       className="z-10"
                       animate={{ 
@@ -125,30 +125,45 @@ const WelcomeLoader = ({ onComplete }: WelcomeLoaderProps) => {
                       }}
                     >
                       <img 
-                        src="/images/logo/annita-icon.svg" 
+                        src="/images/blog/Annita's Logo.png" 
                         alt="Annita Logo"
-                        className="w-12 h-12 sm:w-16 sm:h-16"
+                        className="w-12 h-12 sm:w-16 sm:h-16 rounded-full object-cover"
                       />
                     </motion.div>
 
                     {/* Inner Gradient Overlay */}
                     <motion.div
-                      className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-transparent rounded-2xl"
+                      className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-transparent rounded-full"
                       animate={{ rotate: [0, 360] }}
                       transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
                     />
                   </motion.div>
                   
+                  {/* Glow Effect - Same as Header */}
+                  <motion.div
+                    className="absolute -inset-1 bg-gradient-to-r from-orange-400 to-orange-500 rounded-full blur opacity-20 group-hover:opacity-30 transition-opacity duration-300"
+                    animate={{
+                      scale: [1, 1.15, 1],
+                      opacity: [0.2, 0.4, 0.2],
+                      rotate: [0, 180, 360]
+                    }}
+                    transition={{
+                      duration: 4,
+                      repeat: Infinity,
+                      ease: "easeInOut"
+                    }}
+                  />
+                  
                   {/* Floating Orbital Ring */}
                   <motion.div
-                    className="absolute -inset-4 border border-white/30 rounded-2xl"
+                    className="absolute -inset-4 border border-orange-400/30 rounded-full"
                     animate={{ rotate: 360 }}
                     transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
                   />
                   
                   {/* Dynamic Glow */}
                   <motion.div
-                    className="absolute -inset-8 bg-gradient-to-r from-orange-500/30 via-red-500/30 to-purple-500/30 rounded-2xl blur-xl"
+                    className="absolute -inset-8 bg-gradient-to-r from-orange-500/30 via-red-500/30 to-purple-500/30 rounded-full blur-xl"
                     animate={{
                       scale: [1, 1.15, 1],
                       opacity: [0.3, 0.7, 0.3],
@@ -176,8 +191,7 @@ const WelcomeLoader = ({ onComplete }: WelcomeLoaderProps) => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 1, delay: 1 }}
                 >
-                  Welcome to{' '}
-                  <span className="text-orange-500">Annita</span>
+                  Welcome to Annita
                 </motion.h1>
 
                 <motion.p
