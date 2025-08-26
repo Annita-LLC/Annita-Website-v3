@@ -139,7 +139,7 @@ export interface The100YouthApplication {
   goals?: string
   motivation?: string
   availability?: string
-  references?: string
+  references_info?: string
   ip_address?: string
   user_agent?: string
   status?: string

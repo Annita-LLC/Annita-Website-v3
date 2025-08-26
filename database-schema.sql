@@ -152,7 +152,7 @@ CREATE TABLE the100_youth_applications (
     goals TEXT,
     motivation TEXT,
     availability VARCHAR(100),
-    references TEXT,
+    references_info TEXT,
     ip_address INET,
     user_agent TEXT,
     status VARCHAR(50) DEFAULT 'pending',
