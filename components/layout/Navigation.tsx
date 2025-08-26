@@ -186,17 +186,17 @@ const Navigation = () => {
                             <div className="max-h-96 overflow-y-auto p-4 scrollbar-thin scrollbar-thumb-gray-300 dark:scrollbar-thumb-gray-600 scrollbar-track-transparent">
                               <div className="grid gap-3">
                                 {item.dropdown.map((dropdownItem) => (
-                                  dropdownItem.isThemeToggle ? (
-                                    <div key={dropdownItem.name} className="p-3">
-                                      <div className="flex items-start space-x-3">
-                                        <dropdownItem.icon className="w-5 h-5 text-primary-600 dark:text-primary-400 mt-0.5 flex-shrink-0" />
-                                        <div className="flex-1">
-                                          <div className="font-medium text-gray-900 dark:text-white mb-2">{dropdownItem.name}</div>
-                                          <div className="text-sm text-gray-500 dark:text-gray-400 mb-3">{dropdownItem.description}</div>
-                                          <ThemeToggle />
-                                        </div>
-                                      </div>
-                                    </div>
+                                                                     dropdownItem.isThemeToggle ? (
+                                     <div key={dropdownItem.name} className="p-3">
+                                       <div className="flex items-start space-x-3">
+                                         <dropdownItem.icon className="w-5 h-5 text-primary-600 dark:text-primary-400 mt-0.5 flex-shrink-0" />
+                                         <div className="flex-1">
+                                           <div className="font-medium text-gray-900 dark:text-white mb-2">{dropdownItem.name}</div>
+                                           <div className="text-sm text-gray-500 dark:text-gray-400 mb-3">{dropdownItem.description}</div>
+                                           <SimpleThemeToggle />
+                                         </div>
+                                       </div>
+                                     </div>
                                   ) : (
                                     <Link
                                       key={dropdownItem.name}
