@@ -5,6 +5,7 @@ import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef } from 'react'
 import SEOHead from '@/components/seo/SEOHead'
+import CTASection from '@/components/sections/CTASection'
 import { 
   Truck, 
   Package, 
@@ -459,34 +460,7 @@ const LogisticsPage = () => {
         </section>
 
         {/* CTA Section */}
-        <section className="py-16 sm:py-20 bg-gradient-to-r from-blue-500 to-blue-600">
-          <div className="container mx-auto px-3 sm:px-4 lg:px-6 xl:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8 }}
-              className="text-center text-white"
-            >
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
-                Start Shipping Today
-              </h2>
-              <p className="text-blue-100 text-lg mb-8 max-w-2xl mx-auto">
-                Join thousands of customers who trust Annita Logistics for their 
-                delivery needs. Fast, secure, and reliable shipping solutions.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-blue-50 transition-colors duration-200 flex items-center justify-center">
-                  <Download className="w-5 h-5 mr-2" />
-                  Schedule Pickup
-                </button>
-                <button className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors duration-200 flex items-center justify-center">
-                  Get Quote
-                  <ArrowRight className="w-5 h-5 ml-2" />
-                </button>
-              </div>
-            </motion.div>
-          </div>
-        </section>
+        <CTASection />
       </div>
     </>
   )

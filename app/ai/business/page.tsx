@@ -23,6 +23,7 @@ import {
   Package
 } from 'lucide-react'
 import Button from '@/components/ui/Button'
+import CTASection from '@/components/sections/CTASection'
 
 export const metadata: Metadata = {
   title: 'Business AI - Annita',
@@ -254,37 +255,8 @@ const BusinessAIPage = () => {
         </div>
       </section>
 
-      {/* Download CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-orange-600 to-red-600 text-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
-              Ready to Transform Your Business?
-            </h2>
-            <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-              Download the Annita app to access your business AI assistant and start growing smarter today.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button
-                variant="white"
-                size="xl"
-                icon={Download}
-                className="text-lg font-bold shadow-2xl hover:shadow-white/25 transform hover:-translate-y-1 transition-all duration-300"
-              >
-                Download App Now
-              </Button>
-              <Button
-                variant="outline"
-                size="xl"
-                icon={Play}
-                className="text-lg font-bold border-white text-white hover:bg-white hover:text-orange-600"
-              >
-                Learn More
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* CTA Section */}
+      <CTASection />
     </div>
   )
 }
