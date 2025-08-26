@@ -99,13 +99,10 @@ const Navigation = () => {
       name: 'Support', 
       href: '#',
       dropdown: [
-        
+        { name: 'Theme Settings', href: '#', icon: Settings, description: 'Light, dark, or system theme', isThemeToggle: true },
         { name: 'Contact Us', href: '/contact-us', icon: Mail, description: 'Get in touch with our team' },
-        
         { name: 'Report Issues', href: '/support/report-issues', icon: HelpCircle, description: 'Report bugs and issues' },
         { name: 'Contact Sales', href: '/contact-sales', icon: Phone, description: 'Talk to our business development team' },
-        { name: 'Theme Settings', href: '#', icon: Settings, description: 'Light, dark, or system theme', isThemeToggle: true },
-
       ]
     },
   ]
