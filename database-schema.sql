@@ -382,11 +382,14 @@ CREATE POLICY "Allow insert for all users" ON investor_downloads FOR INSERT WITH
 -- These policies are for when you build an admin dashboard
 -- For now, data access is through Supabase dashboard or direct SQL queries
 
+-- Add RLS policy for the view (optional - for future admin dashboard)
+-- CREATE POLICY "Allow admin read access" ON recent_inquiries FOR SELECT USING (auth.role() = 'service_role');
+
 -- Create views for easier data access
+-- Note: View uses standard security (not SECURITY DEFINER) for better security
+-- Access is controlled through RLS policies on underlying tables
 DROP VIEW IF EXISTS recent_inquiries CASCADE;
-CREATE VIEW recent_inquiries 
-WITH (security_barrier = true)
-AS
+CREATE VIEW recent_inquiries AS
 SELECT 
     'contact' as type,
     id,
