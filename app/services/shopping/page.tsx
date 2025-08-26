@@ -59,53 +59,7 @@ const ShoppingPage = () => {
     }
   ]
 
-  const categories = [
-    { name: "Electronics", icon: "📱", count: "2,500+" },
-    { name: "Fashion", icon: "👕", count: "5,000+" },
-    { name: "Home & Garden", icon: "🏠", count: "3,200+" },
-    { name: "Sports", icon: "⚽", count: "1,800+" },
-    { name: "Books", icon: "📚", count: "4,500+" },
-    { name: "Beauty", icon: "💄", count: "2,800+" }
-  ]
 
-  const popularProducts = [
-    {
-      name: "Wireless Bluetooth Headphones",
-      price: "$89.99",
-      originalPrice: "$129.99",
-      rating: 4.8,
-      reviews: 245,
-      image: "🎧",
-      badge: "Best Seller"
-    },
-    {
-      name: "Smart Fitness Watch",
-      price: "$199.99",
-      originalPrice: "$299.99",
-      rating: 4.9,
-      reviews: 189,
-      image: "⌚",
-      badge: "New"
-    },
-    {
-      name: "Organic Cotton T-Shirt",
-      price: "$24.99",
-      originalPrice: "$39.99",
-      rating: 4.7,
-      reviews: 156,
-      image: "👕",
-      badge: "Sale"
-    },
-    {
-      name: "Portable Power Bank",
-      price: "$49.99",
-      originalPrice: "$79.99",
-      rating: 4.6,
-      reviews: 203,
-      image: "🔋",
-      badge: "Popular"
-    }
-  ]
 
   const benefits = [
     "Millions of products from verified sellers",
@@ -280,100 +234,7 @@ const ShoppingPage = () => {
         </div>
       </section>
 
-      {/* Categories Section */}
-        <section className="py-16 sm:py-20 bg-gradient-to-r from-blue-50 to-blue-100">
-          <div className="container mx-auto px-3 sm:px-4 lg:px-6 xl:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8 }}
-              className="text-center mb-16"
-            >
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-                Shop by <span className="text-blue-600">Category</span>
-            </h2>
-              <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
-                Explore millions of products across all categories with the best prices and deals.
-              </p>
-            </motion.div>
 
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
-              {categories.map((category, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={isInView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
-                  className="bg-white p-6 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300 text-center cursor-pointer group"
-                >
-                  <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">
-                    {category.icon}
-                  </div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">{category.name}</h3>
-                  <p className="text-blue-600 font-medium text-sm">{category.count} products</p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Popular Products Section */}
-        <section className="py-16 sm:py-20">
-          <div className="container mx-auto px-3 sm:px-4 lg:px-6 xl:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8 }}
-              className="text-center mb-16"
-            >
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-                Popular <span className="text-blue-600">Products</span>
-              </h2>
-              <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
-                Discover trending products loved by our community with great reviews and competitive prices.
-              </p>
-            </motion.div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {popularProducts.map((product, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={isInView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
-                  className="bg-white p-6 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300 cursor-pointer group"
-                >
-                  <div className="relative mb-4">
-                    <div className="text-6xl text-center group-hover:scale-110 transition-transform duration-300">
-                      {product.image}
-                    </div>
-                    {product.badge && (
-                      <div className="absolute top-0 right-0 bg-blue-600 text-white px-2 py-1 rounded-full text-xs font-semibold">
-                        {product.badge}
-                      </div>
-                    )}
-                  </div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2 line-clamp-2">{product.name}</h3>
-                  <div className="flex items-center mb-2">
-                    <div className="flex items-center">
-                      {[...Array(5)].map((_, i) => (
-                        <Star key={i} className={`w-4 h-4 ${i < Math.floor(product.rating) ? 'text-yellow-400 fill-current' : 'text-gray-300'}`} />
-                      ))}
-                    </div>
-                    <span className="text-sm text-gray-600 ml-2">({product.reviews})</span>
-                  </div>
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <span className="text-xl font-bold text-blue-600">{product.price}</span>
-                      <span className="text-sm text-gray-500 line-through ml-2">{product.originalPrice}</span>
-                </div>
-                    <Heart className="w-5 h-5 text-gray-400 hover:text-red-500 transition-colors duration-200" />
-              </div>
-                </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
 
         {/* Benefits Section */}
         <section className="py-16 sm:py-20 bg-gradient-to-r from-gray-50 to-white">

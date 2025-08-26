@@ -127,7 +127,7 @@ const HeroSection = () => {
               >
                 <div className="flex items-center">
                   <Users className="w-4 h-4 mr-2" />
-                  <span>10,000+ Active Users</span>
+                  <span>3,000+ Active Users</span>
                 </div>
                 <div className="flex items-center">
                   <Shield className="w-4 h-4 mr-2" />
@@ -135,7 +135,7 @@ const HeroSection = () => {
                 </div>
                 <div className="flex items-center">
                   <Globe className="w-4 h-4 mr-2" />
-                  <span>54 African Countries</span>
+                  <span>3 African Countries</span>
                 </div>
           </motion.div>
         </div>
