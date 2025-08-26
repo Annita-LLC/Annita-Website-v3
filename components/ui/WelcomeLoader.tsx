@@ -12,8 +12,6 @@ const WelcomeLoader = ({ onComplete }: WelcomeLoaderProps) => {
   const [progress, setProgress] = useState(0)
   const [isClient, setIsClient] = useState(false)
   const [showWelcome, setShowWelcome] = useState(false)
-  const [dimensions, setDimensions] = useState({ width: 0, height: 0 })
-  const [isMobile, setIsMobile] = useState(false)
 
   // Memoized completion handler
   const handleComplete = useCallback(() => {
@@ -23,16 +21,6 @@ const WelcomeLoader = ({ onComplete }: WelcomeLoaderProps) => {
 
   useEffect(() => {
     setIsClient(true)
-    if (typeof window !== 'undefined') {
-      const updateDimensions = () => {
-        setDimensions({ width: window.innerWidth, height: window.innerHeight })
-        setIsMobile(window.innerWidth < 768)
-      }
-      
-      updateDimensions()
-      window.addEventListener('resize', updateDimensions)
-      return () => window.removeEventListener('resize', updateDimensions)
-    }
   }, [])
 
   useEffect(() => {
@@ -43,9 +31,9 @@ const WelcomeLoader = ({ onComplete }: WelcomeLoaderProps) => {
       setShowWelcome(true)
     }, 300)
 
-    // Smooth progress animation over 6 seconds
+    // Smooth progress animation over 4 seconds
     const startTime = Date.now()
-    const duration = 6000 // 6 seconds
+    const duration = 4000 // 4 seconds
     
     const updateProgress = () => {
       const elapsed = Date.now() - startTime
@@ -70,30 +58,13 @@ const WelcomeLoader = ({ onComplete }: WelcomeLoaderProps) => {
     }
   }, [isClient, handleComplete])
 
-  // Responsive values
-  const logoSizes = {
-    mobile: { base: 'w-20 h-20', text: 'text-xl', dots: { large: 'w-1.5 h-1.5', small: 'w-1 h-1' } },
-    tablet: { base: 'w-28 h-28', text: 'text-2xl', dots: { large: 'w-2 h-2', small: 'w-1.5 h-1.5' } },
-    desktop: { base: 'w-36 h-36', text: 'text-4xl', dots: { large: 'w-2.5 h-2.5', small: 'w-2 h-2' } },
-    large: { base: 'w-44 h-44', text: 'text-5xl', dots: { large: 'w-3 h-3', small: 'w-2.5 h-2.5' } }
-  }
-
-  const textSizes = {
-    title: 'text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl',
-    subtitle: 'text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl',
-    progress: 'text-xs sm:text-sm',
-    status: 'text-xs sm:text-sm'
-  }
-
   if (!isClient) {
     return (
-      <div className="fixed inset-0 z-[70] bg-slate-900 flex items-center justify-center">
-        <div className="w-6 h-6 sm:w-8 sm:h-8 border-2 border-orange-500 border-t-transparent rounded-full animate-spin" />
+      <div className="fixed inset-0 z-[70] bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center">
+        <div className="w-8 h-8 border-2 border-white border-t-transparent rounded-full animate-spin" />
       </div>
     )
   }
-
-  const particleCount = isMobile ? 6 : dimensions.width < 1024 ? 10 : 15
 
   return (
     <AnimatePresence>
@@ -103,116 +74,36 @@ const WelcomeLoader = ({ onComplete }: WelcomeLoaderProps) => {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0, scale: 1.05 }}
           transition={{ duration: 0.5 }}
-          className="fixed inset-0 z-[70] bg-gradient-to-br from-slate-900 via-purple-900/80 to-slate-900 overflow-hidden"
+          className="fixed inset-0 z-[70] bg-gradient-to-r from-primary-500 to-accent-500 overflow-hidden"
         >
-          {/* Dynamic Background Grid */}
-          <div className="absolute inset-0 opacity-10 sm:opacity-20">
-            <div 
-              className="absolute inset-0"
-              style={{
-                backgroundImage: `
-                  radial-gradient(circle at 25% 25%, #f97316 0%, transparent 50%),
-                  radial-gradient(circle at 75% 75%, #8b5cf6 0%, transparent 50%),
-                  linear-gradient(45deg, transparent 49%, rgba(249, 115, 22, 0.1) 50%, transparent 51%)
-                `
-              }}
-            />
-          </div>
-
-          {/* Responsive Floating Particles */}
-          {showWelcome && (
-            <div className="absolute inset-0 pointer-events-none">
-              {[...Array(particleCount)].map((_, i) => (
-                <motion.div
-                  key={i}
-                  className={`absolute rounded-full ${
-                    isMobile ? 'w-0.5 h-0.5' : 'w-1 h-1 md:w-1.5 md:h-1.5'
-                  } ${
-                    i % 3 === 0 ? 'bg-orange-400/60' : 
-                    i % 3 === 1 ? 'bg-purple-400/60' : 'bg-blue-400/60'
-                  }`}
-                  initial={{
-                    x: Math.random() * dimensions.width,
-                    y: dimensions.height + 20,
-                    scale: 0
-                  }}
-                  animate={{
-                    x: Math.random() * dimensions.width,
-                    y: -20,
-                    scale: [0, 1, 0]
-                  }}
-                  transition={{
-                    duration: Math.random() * (isMobile ? 6 : 8) + (isMobile ? 4 : 6),
-                    repeat: Infinity,
-                    ease: "linear",
-                    delay: Math.random() * 3
-                  }}
-                />
-              ))}
-            </div>
-          )}
-
-          {/* Responsive Ambient Glow Orbs */}
-          <div className="absolute inset-0 pointer-events-none">
-            <motion.div
-              className={`absolute top-1/3 left-1/3 bg-gradient-to-r from-orange-500/20 via-red-500/20 to-purple-500/20 rounded-full blur-2xl ${
-                isMobile ? 'w-32 h-32' : 'w-48 h-48 sm:w-64 sm:h-64 lg:w-80 lg:h-80 xl:w-96 xl:h-96'
-              }`}
-              animate={{
-                scale: [1, 1.2, 1],
-                x: [-30, 30, -30],
-                y: [-20, 20, -20],
-              }}
-              transition={{
-                duration: isMobile ? 8 : 12,
-                repeat: Infinity,
-                ease: "easeInOut"
-              }}
-            />
-            <motion.div
-              className={`absolute bottom-1/3 right-1/3 bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-pink-500/20 rounded-full blur-2xl ${
-                isMobile ? 'w-28 h-28' : 'w-40 h-40 sm:w-56 sm:h-56 lg:w-72 lg:h-72 xl:w-80 xl:h-80'
-              }`}
-              animate={{
-                scale: [1.1, 0.9, 1.1],
-                x: [20, -20, 20],
-                y: [30, -15, 30],
-              }}
-              transition={{
-                duration: isMobile ? 6 : 10,
-                repeat: Infinity,
-                ease: "easeInOut",
-                delay: 2
-              }}
-            />
+          {/* Background Elements - Same as contact page */}
+          <div className="absolute inset-0">
+            <div className="absolute top-20 left-10 w-72 h-72 bg-orange-200 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob"></div>
+            <div className="absolute top-40 right-10 w-72 h-72 bg-blue-200 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000"></div>
+            <div className="absolute -bottom-8 left-1/3 w-72 h-72 bg-green-200 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-4000"></div>
           </div>
 
           {/* Main Content Container */}
-          <div className="relative z-10 flex items-center justify-center min-h-screen px-3 xs:px-4 sm:px-6">
-            <div className="text-center max-w-xs xs:max-w-sm sm:max-w-2xl md:max-w-4xl lg:max-w-5xl xl:max-w-6xl mx-auto w-full">
+          <div className="relative z-10 flex items-center justify-center min-h-screen px-4 sm:px-6 lg:px-8">
+            <div className="text-center max-w-2xl mx-auto">
               
-              {/* Responsive Modern Logo */}
+              {/* Modern Logo */}
               <motion.div
                 initial={{ scale: 0, rotate: -90, opacity: 0 }}
                 animate={{ scale: 1, rotate: 0, opacity: 1 }}
                 transition={{ 
-                  duration: 1.5, 
+                  duration: 1.2, 
                   ease: [0.25, 0.46, 0.45, 0.94],
                   type: "spring",
                   stiffness: 80
                 }}
-                className="mb-6 xs:mb-8 sm:mb-10 md:mb-12"
+                className="mb-8"
               >
-                <div className={`relative mx-auto ${
-                  isMobile ? logoSizes.mobile.base : 
-                  dimensions.width < 640 ? logoSizes.tablet.base :
-                  dimensions.width < 1024 ? logoSizes.desktop.base :
-                  logoSizes.large.base
-                }`}>
+                <div className="relative mx-auto w-24 h-24 sm:w-32 sm:h-32">
                   
                   {/* Main Logo Circle */}
                   <motion.div
-                    className="relative w-full h-full bg-gradient-to-br from-orange-500 via-red-500 to-purple-600 rounded-full flex items-center justify-center shadow-lg sm:shadow-2xl overflow-hidden"
+                    className="relative w-full h-full bg-white/20 rounded-2xl flex items-center justify-center backdrop-blur-sm border border-white/20 shadow-2xl overflow-hidden"
                     animate={{ rotate: [0, 360] }}
                     transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
                   >
@@ -236,83 +127,28 @@ const WelcomeLoader = ({ onComplete }: WelcomeLoaderProps) => {
                       <img 
                         src="/images/logo/annita-icon.svg" 
                         alt="Annita Logo"
-                        className={`${
-                          isMobile ? 'w-12 h-12' : 
-                          dimensions.width < 640 ? 'w-16 h-16' :
-                          dimensions.width < 1024 ? 'w-20 h-20' :
-                          'w-24 h-24'
-                        }`}
+                        className="w-12 h-12 sm:w-16 sm:h-16"
                       />
                     </motion.div>
-                    
-                    {/* Responsive Decorative Elements */}
-                    <motion.div
-                      className={`absolute ${isMobile ? 'top-1 right-1' : 'top-1.5 right-1.5 sm:top-2 sm:right-2'} ${
-                        isMobile ? logoSizes.mobile.dots.large : 
-                        dimensions.width < 640 ? logoSizes.tablet.dots.large :
-                        dimensions.width < 1024 ? logoSizes.desktop.dots.large :
-                        logoSizes.large.dots.large
-                      } bg-yellow-300 rounded-full z-10`}
-                      animate={{ 
-                        scale: [1, 1.4, 1], 
-                        opacity: [1, 0.6, 1],
-                        rotate: [0, -360]
-                      }}
-                      transition={{ 
-                        scale: { duration: 1.5, repeat: Infinity, delay: 0.3 },
-                        opacity: { duration: 1.5, repeat: Infinity, delay: 0.3 },
-                        rotate: { duration: 20, repeat: Infinity, ease: "linear" }
-                      }}
-                    />
-                    <motion.div
-                      className={`absolute ${isMobile ? 'bottom-1 left-1' : 'bottom-1.5 left-1.5 sm:bottom-2 sm:left-2'} ${
-                        isMobile ? logoSizes.mobile.dots.small : 
-                        dimensions.width < 640 ? logoSizes.tablet.dots.small :
-                        dimensions.width < 1024 ? logoSizes.desktop.dots.small :
-                        logoSizes.large.dots.small
-                      } bg-cyan-300 rounded-full z-10`}
-                      animate={{ 
-                        scale: [1, 1.2, 1], 
-                        opacity: [1, 0.7, 1],
-                        rotate: [0, -360]
-                      }}
-                      transition={{ 
-                        scale: { duration: 2, repeat: Infinity, delay: 0.8 },
-                        opacity: { duration: 2, repeat: Infinity, delay: 0.8 },
-                        rotate: { duration: 20, repeat: Infinity, ease: "linear" }
-                      }}
-                    />
 
                     {/* Inner Gradient Overlay */}
                     <motion.div
-                      className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-transparent rounded-full"
+                      className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-transparent rounded-2xl"
                       animate={{ rotate: [0, 360] }}
                       transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
                     />
                   </motion.div>
                   
-                  {/* Responsive Floating Orbital Rings */}
+                  {/* Floating Orbital Ring */}
                   <motion.div
-                    className={`absolute border border-orange-400/30 rounded-full ${
-                      isMobile ? '-inset-2' : '-inset-2 sm:-inset-3'
-                    }`}
+                    className="absolute -inset-4 border border-white/30 rounded-2xl"
                     animate={{ rotate: 360 }}
                     transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
                   />
                   
+                  {/* Dynamic Glow */}
                   <motion.div
-                    className={`absolute border border-purple-400/20 rounded-full ${
-                      isMobile ? '-inset-4' : '-inset-4 sm:-inset-6'
-                    }`}
-                    animate={{ rotate: -360 }}
-                    transition={{ duration: 12, repeat: Infinity, ease: "linear" }}
-                  />
-                  
-                  {/* Responsive Dynamic Glow */}
-                  <motion.div
-                    className={`absolute bg-gradient-to-r from-orange-500/30 via-red-500/30 to-purple-500/30 rounded-full blur-xl ${
-                      isMobile ? '-inset-6' : '-inset-6 sm:-inset-8'
-                    }`}
+                    className="absolute -inset-8 bg-gradient-to-r from-orange-500/30 via-red-500/30 to-purple-500/30 rounded-2xl blur-xl"
                     animate={{
                       scale: [1, 1.15, 1],
                       opacity: [0.3, 0.7, 0.3],
@@ -327,58 +163,49 @@ const WelcomeLoader = ({ onComplete }: WelcomeLoaderProps) => {
                 </div>
               </motion.div>
 
-              {/* Responsive Welcome Text */}
+              {/* Welcome Text */}
               <motion.div
                 initial={{ y: 30, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 1.2, delay: 0.6, ease: "easeOut" }}
-                className="mb-6 xs:mb-8 sm:mb-10"
+                className="mb-8"
               >
                 <motion.h1
-                  className={`font-black mb-3 xs:mb-4 sm:mb-6 leading-tight ${textSizes.title}`}
+                  className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 text-white"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 1, delay: 1 }}
                 >
-                  <motion.span
-                    className="bg-gradient-to-r from-orange-400 via-red-500 to-purple-600 bg-clip-text text-transparent"
-                    animate={{ 
-                      backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'] 
-                    }}
-                    transition={{ duration: 3, repeat: Infinity }}
-                  >
-                    Welcome to Annita
-                  </motion.span>
+                  Welcome to{' '}
+                  <span className="text-orange-500">Annita</span>
                 </motion.h1>
 
                 <motion.p
-                  className={`text-gray-300 max-w-full leading-relaxed font-light px-2 ${textSizes.subtitle}`}
+                  className="text-xl sm:text-2xl text-white/90 max-w-lg mx-auto leading-relaxed"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 1, delay: 1.3 }}
                 >
                   Africa's first{' '}
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 font-medium">
+                  <span className="text-orange-400 font-semibold">
                     all-in-one digital platform
                   </span>
                 </motion.p>
               </motion.div>
 
-              {/* Responsive Progress Bar */}
+              {/* Progress Bar */}
               <motion.div
                 initial={{ scale: 0.9, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ duration: 0.8, delay: 1.5 }}
-                className="max-w-xs xs:max-w-sm sm:max-w-md md:max-w-lg mx-auto mb-6 sm:mb-8"
+                className="max-w-md mx-auto mb-8"
               >
-                <div className="relative px-2">
+                <div className="relative">
                   {/* Progress Container */}
-                  <div className={`relative bg-slate-800/60 rounded-full overflow-hidden backdrop-blur-sm border border-slate-700/50 ${
-                    isMobile ? 'h-1.5' : 'h-2'
-                  }`}>
+                  <div className="relative bg-white/20 rounded-full overflow-hidden backdrop-blur-sm border border-white/20 h-3">
                     {/* Animated Progress Fill */}
                     <motion.div
-                      className="h-full bg-gradient-to-r from-orange-500 via-red-500 to-purple-600 rounded-full relative"
+                      className="h-full bg-gradient-to-r from-orange-500 to-red-500 rounded-full relative"
                       initial={{ width: 0 }}
                       animate={{ width: `${progress}%` }}
                       transition={{ duration: 0.3, ease: "easeOut" }}
@@ -394,21 +221,18 @@ const WelcomeLoader = ({ onComplete }: WelcomeLoaderProps) => {
                           repeatDelay: 1
                         }}
                       />
-                      
-                      {/* Progress Glow */}
-                      <div className="absolute inset-0 bg-gradient-to-r from-orange-500 to-purple-600 blur-sm opacity-60" />
                     </motion.div>
                   </div>
                   
                   {/* Progress Percentage */}
                   <motion.div
-                    className={`absolute left-0 right-0 text-center ${isMobile ? '-bottom-6' : '-bottom-8'}`}
+                    className="absolute left-0 right-0 text-center -bottom-8"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 2 }}
                   >
                     <motion.span 
-                      className={`font-medium text-gray-300 ${textSizes.progress}`}
+                      className="font-medium text-white/90 text-sm"
                       key={Math.round(progress)}
                       initial={{ scale: 1.1 }}
                       animate={{ scale: 1 }}
@@ -417,30 +241,12 @@ const WelcomeLoader = ({ onComplete }: WelcomeLoaderProps) => {
                       Initializing platform... {Math.round(progress)}%
                     </motion.span>
                   </motion.div>
-
-                  {/* Responsive Progress Indicators */}
-                  <div className={`absolute left-0 right-0 flex justify-between text-gray-500 ${
-                    isMobile ? '-top-6 text-xs' : '-top-8 text-xs'
-                  }`}>
-                    {(isMobile ? ['Secure', 'Load', 'UI', 'Ready'] : ['Security', 'Features', 'Interface', 'Ready']).map((label, index) => (
-                      <motion.span
-                        key={label}
-                        className={`transition-colors duration-300 ${
-                          progress >= (index + 1) * 25 ? 'text-orange-400' : ''
-                        }`}
-                        animate={progress >= (index + 1) * 25 ? { scale: [1, 1.1, 1] } : {}}
-                        transition={{ duration: 0.3 }}
-                      >
-                        {label}
-                      </motion.span>
-                    ))}
-                  </div>
                 </div>
               </motion.div>
 
-              {/* Responsive Loading Status Messages */}
+              {/* Loading Status Messages */}
               <motion.div
-                className={`${isMobile ? 'h-4' : 'h-6'}`}
+                className="h-6"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 2.5 }}
@@ -452,7 +258,7 @@ const WelcomeLoader = ({ onComplete }: WelcomeLoaderProps) => {
                       initial={{ opacity: 0, y: 8 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -8 }}
-                      className={`text-gray-400 ${textSizes.status}`}
+                      className="text-white/70 text-sm"
                     >
                       🔐 Securing your experience...
                     </motion.p>
@@ -463,7 +269,7 @@ const WelcomeLoader = ({ onComplete }: WelcomeLoaderProps) => {
                       initial={{ opacity: 0, y: 8 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -8 }}
-                      className={`text-gray-400 ${textSizes.status}`}
+                      className="text-white/70 text-sm"
                     >
                       ⚡ Loading powerful features...
                     </motion.p>
@@ -474,7 +280,7 @@ const WelcomeLoader = ({ onComplete }: WelcomeLoaderProps) => {
                       initial={{ opacity: 0, y: 8 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -8 }}
-                      className={`text-gray-400 ${textSizes.status}`}
+                      className="text-white/70 text-sm"
                     >
                       🎨 Preparing your interface...
                     </motion.p>
@@ -485,7 +291,7 @@ const WelcomeLoader = ({ onComplete }: WelcomeLoaderProps) => {
                       initial={{ opacity: 0, y: 8 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -8 }}
-                      className={`text-gray-400 ${textSizes.status}`}
+                      className="text-white/70 text-sm"
                     >
                       🚀 Almost ready to launch...
                     </motion.p>
@@ -495,18 +301,14 @@ const WelcomeLoader = ({ onComplete }: WelcomeLoaderProps) => {
             </div>
           </div>
 
-          {/* Responsive Bottom Accent Line */}
+          {/* Bottom Accent Line */}
           <motion.div
-            className={`absolute left-1/2 transform -translate-x-1/2 ${isMobile ? 'bottom-4' : 'bottom-6 sm:bottom-8'}`}
+            className="absolute left-1/2 transform -translate-x-1/2 bottom-8"
             initial={{ width: 0, opacity: 0 }}
-            animate={{ 
-              width: isMobile ? "120px" : "160px sm:200px md:240px", 
-              opacity: 1 
-            }}
+            animate={{ width: "200px", opacity: 1 }}
             transition={{ duration: 1.5, delay: 2.5, ease: "easeOut" }}
           >
-            <div className="h-px bg-gradient-to-r from-transparent via-orange-500 to-transparent" />
-            <div className="h-px bg-gradient-to-r from-transparent via-purple-500 to-transparent mt-0.5 sm:mt-1 opacity-60" />
+            <div className="h-px bg-gradient-to-r from-transparent via-white/50 to-transparent" />
           </motion.div>
         </motion.div>
       )}
