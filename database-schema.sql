@@ -5,17 +5,57 @@
 -- Note: app.jwt_secret setting removed as it requires superuser privileges
 -- RLS policies work without this setting for our anonymous form submissions
 
--- Create custom types
-CREATE TYPE inquiry_type AS ENUM ('general', 'technical', 'account', 'business', 'feature', 'feedback');
-CREATE TYPE urgency_level AS ENUM ('low', 'normal', 'high', 'urgent');
-CREATE TYPE contact_method AS ENUM ('email', 'phone');
-CREATE TYPE issue_type AS ENUM ('bug', 'feature', 'security', 'performance', 'ui', 'payment');
-CREATE TYPE priority_level AS ENUM ('low', 'medium', 'high', 'critical');
-CREATE TYPE application_type AS ENUM ('youth', 'partner', 'mentor');
-CREATE TYPE business_size AS ENUM ('1-10', '11-50', '51-200', '201-500', '500+');
-CREATE TYPE experience_level AS ENUM ('entry', 'mid', 'senior', 'lead', 'executive');
+-- Create custom types (only if they don't exist)
+DO $$ BEGIN
+    CREATE TYPE inquiry_type AS ENUM ('general', 'technical', 'account', 'business', 'feature', 'feedback');
+EXCEPTION
+    WHEN duplicate_object THEN null;
+END $$;
+
+DO $$ BEGIN
+    CREATE TYPE urgency_level AS ENUM ('low', 'normal', 'high', 'urgent');
+EXCEPTION
+    WHEN duplicate_object THEN null;
+END $$;
+
+DO $$ BEGIN
+    CREATE TYPE contact_method AS ENUM ('email', 'phone');
+EXCEPTION
+    WHEN duplicate_object THEN null;
+END $$;
+
+DO $$ BEGIN
+    CREATE TYPE issue_type AS ENUM ('bug', 'feature', 'security', 'performance', 'ui', 'payment');
+EXCEPTION
+    WHEN duplicate_object THEN null;
+END $$;
+
+DO $$ BEGIN
+    CREATE TYPE priority_level AS ENUM ('low', 'medium', 'high', 'critical');
+EXCEPTION
+    WHEN duplicate_object THEN null;
+END $$;
+
+DO $$ BEGIN
+    CREATE TYPE application_type AS ENUM ('youth', 'partner', 'mentor');
+EXCEPTION
+    WHEN duplicate_object THEN null;
+END $$;
+
+DO $$ BEGIN
+    CREATE TYPE business_size AS ENUM ('1-10', '11-50', '51-200', '201-500', '500+');
+EXCEPTION
+    WHEN duplicate_object THEN null;
+END $$;
+
+DO $$ BEGIN
+    CREATE TYPE experience_level AS ENUM ('entry', 'mid', 'senior', 'lead', 'executive');
+EXCEPTION
+    WHEN duplicate_object THEN null;
+END $$;
 
 -- 1. CONTACT INQUIRIES TABLE
+DROP TABLE IF EXISTS contact_inquiries CASCADE;
 CREATE TABLE contact_inquiries (
     id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
     first_name VARCHAR(100) NOT NULL,
@@ -37,6 +77,7 @@ CREATE TABLE contact_inquiries (
 );
 
 -- 2. CAREER APPLICATIONS TABLE
+DROP TABLE IF EXISTS career_applications CASCADE;
 CREATE TABLE career_applications (
     id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
     first_name VARCHAR(100) NOT NULL,
@@ -65,6 +106,7 @@ CREATE TABLE career_applications (
 );
 
 -- 3. SUPPORT ISSUES TABLE
+DROP TABLE IF EXISTS support_issues CASCADE;
 CREATE TABLE support_issues (
     id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
     issue_category issue_type NOT NULL,
@@ -87,6 +129,7 @@ CREATE TABLE support_issues (
 );
 
 -- 4. BUSINESS INQUIRIES TABLE
+DROP TABLE IF EXISTS business_inquiries CASCADE;
 CREATE TABLE business_inquiries (
     id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
     name VARCHAR(200) NOT NULL,
@@ -104,6 +147,7 @@ CREATE TABLE business_inquiries (
 );
 
 -- 5. SALES INQUIRIES TABLE
+DROP TABLE IF EXISTS sales_inquiries CASCADE;
 CREATE TABLE sales_inquiries (
     id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
     first_name VARCHAR(100) NOT NULL,
@@ -123,6 +167,7 @@ CREATE TABLE sales_inquiries (
 );
 
 -- 6. PRICING INQUIRIES TABLE
+DROP TABLE IF EXISTS pricing_inquiries CASCADE;
 CREATE TABLE pricing_inquiries (
     id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
     name VARCHAR(200) NOT NULL,
@@ -139,6 +184,7 @@ CREATE TABLE pricing_inquiries (
 );
 
 -- 7. THE 100 YOUTH APPLICATIONS TABLE
+DROP TABLE IF EXISTS the100_youth_applications CASCADE;
 CREATE TABLE the100_youth_applications (
     id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
     first_name VARCHAR(100) NOT NULL,
@@ -162,6 +208,7 @@ CREATE TABLE the100_youth_applications (
 );
 
 -- 8. THE 100 PARTNER APPLICATIONS TABLE
+DROP TABLE IF EXISTS the100_partner_applications CASCADE;
 CREATE TABLE the100_partner_applications (
     id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
     organization_name VARCHAR(200) NOT NULL,
@@ -182,6 +229,7 @@ CREATE TABLE the100_partner_applications (
 );
 
 -- 9. THE 100 MENTOR APPLICATIONS TABLE
+DROP TABLE IF EXISTS the100_mentor_applications CASCADE;
 CREATE TABLE the100_mentor_applications (
     id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
     first_name VARCHAR(100) NOT NULL,
@@ -201,6 +249,7 @@ CREATE TABLE the100_mentor_applications (
 );
 
 -- 10. THE 100 CONTACT INQUIRIES TABLE
+DROP TABLE IF EXISTS the100_contact_inquiries CASCADE;
 CREATE TABLE the100_contact_inquiries (
     id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
     name VARCHAR(200) NOT NULL,
@@ -216,6 +265,7 @@ CREATE TABLE the100_contact_inquiries (
 );
 
 -- 11. NEWSLETTER SUBSCRIPTIONS TABLE
+DROP TABLE IF EXISTS newsletter_subscriptions CASCADE;
 CREATE TABLE newsletter_subscriptions (
     id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
     email VARCHAR(255) UNIQUE NOT NULL,
@@ -228,6 +278,7 @@ CREATE TABLE newsletter_subscriptions (
 );
 
 -- 12. FILE UPLOADS TABLE (for resumes, attachments, etc.)
+DROP TABLE IF EXISTS file_uploads CASCADE;
 CREATE TABLE file_uploads (
     id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
     original_name VARCHAR(255) NOT NULL,
@@ -243,6 +294,7 @@ CREATE TABLE file_uploads (
 );
 
 -- 13. INVESTOR DOWNLOADS TABLE (track investor document downloads)
+DROP TABLE IF EXISTS investor_downloads CASCADE;
 CREATE TABLE investor_downloads (
     id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
     document_name VARCHAR(200) NOT NULL,
@@ -331,6 +383,7 @@ CREATE POLICY "Allow insert for all users" ON investor_downloads FOR INSERT WITH
 -- For now, data access is through Supabase dashboard or direct SQL queries
 
 -- Create views for easier data access
+DROP VIEW IF EXISTS recent_inquiries CASCADE;
 CREATE VIEW recent_inquiries AS
 SELECT 
     'contact' as type,
@@ -364,6 +417,7 @@ FROM support_issues
 ORDER BY created_at DESC;
 
 -- Create function to get user's IP address
+DROP FUNCTION IF EXISTS get_client_ip();
 CREATE OR REPLACE FUNCTION get_client_ip()
 RETURNS INET AS $$
 BEGIN
@@ -372,6 +426,7 @@ END;
 $$ LANGUAGE plpgsql;
 
 -- Create function to get user agent
+DROP FUNCTION IF EXISTS get_user_agent();
 CREATE OR REPLACE FUNCTION get_user_agent()
 RETURNS TEXT AS $$
 BEGIN
