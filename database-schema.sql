@@ -241,6 +241,22 @@ CREATE TABLE file_uploads (
     created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
 );
 
+-- 13. INVESTOR DOWNLOADS TABLE (track investor document downloads)
+CREATE TABLE investor_downloads (
+    id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
+    document_name VARCHAR(200) NOT NULL,
+    document_type VARCHAR(100) NOT NULL, -- 'pitch_deck', 'financial_model', 'business_plan', etc.
+    downloader_email VARCHAR(255),
+    downloader_name VARCHAR(200),
+    downloader_company VARCHAR(200),
+    downloader_role VARCHAR(100),
+    ip_address INET,
+    user_agent TEXT,
+    download_count INTEGER DEFAULT 1,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
+    updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
+);
+
 -- Create indexes for better performance
 CREATE INDEX idx_contact_inquiries_email ON contact_inquiries(email);
 CREATE INDEX idx_contact_inquiries_created_at ON contact_inquiries(created_at);
@@ -253,6 +269,9 @@ CREATE INDEX idx_the100_youth_email ON the100_youth_applications(email);
 CREATE INDEX idx_the100_partner_email ON the100_partner_applications(email);
 CREATE INDEX idx_the100_mentor_email ON the100_mentor_applications(email);
 CREATE INDEX idx_newsletter_email ON newsletter_subscriptions(email);
+CREATE INDEX idx_investor_downloads_email ON investor_downloads(downloader_email);
+CREATE INDEX idx_investor_downloads_document ON investor_downloads(document_type);
+CREATE INDEX idx_investor_downloads_created_at ON investor_downloads(created_at);
 
 -- Create updated_at triggers
 CREATE OR REPLACE FUNCTION update_updated_at_column()
@@ -273,6 +292,7 @@ CREATE TRIGGER update_the100_youth_updated_at BEFORE UPDATE ON the100_youth_appl
 CREATE TRIGGER update_the100_partner_updated_at BEFORE UPDATE ON the100_partner_applications FOR EACH ROW EXECUTE FUNCTION update_updated_at_column();
 CREATE TRIGGER update_the100_mentor_updated_at BEFORE UPDATE ON the100_mentor_applications FOR EACH ROW EXECUTE FUNCTION update_updated_at_column();
 CREATE TRIGGER update_the100_contact_updated_at BEFORE UPDATE ON the100_contact_inquiries FOR EACH ROW EXECUTE FUNCTION update_updated_at_column();
+CREATE TRIGGER update_investor_downloads_updated_at BEFORE UPDATE ON investor_downloads FOR EACH ROW EXECUTE FUNCTION update_updated_at_column();
 
 -- Enable Row Level Security (RLS) on all tables
 ALTER TABLE contact_inquiries ENABLE ROW LEVEL SECURITY;
@@ -287,9 +307,10 @@ ALTER TABLE the100_mentor_applications ENABLE ROW LEVEL SECURITY;
 ALTER TABLE the100_contact_inquiries ENABLE ROW LEVEL SECURITY;
 ALTER TABLE newsletter_subscriptions ENABLE ROW LEVEL SECURITY;
 ALTER TABLE file_uploads ENABLE ROW LEVEL SECURITY;
+ALTER TABLE investor_downloads ENABLE ROW LEVEL SECURITY;
 
 -- Create policies for secure access
--- Allow insert for all authenticated and anonymous users (for form submissions)
+-- Allow insert for all users (anonymous form submissions)
 CREATE POLICY "Allow insert for all users" ON contact_inquiries FOR INSERT WITH CHECK (true);
 CREATE POLICY "Allow insert for all users" ON career_applications FOR INSERT WITH CHECK (true);
 CREATE POLICY "Allow insert for all users" ON support_issues FOR INSERT WITH CHECK (true);
@@ -302,10 +323,11 @@ CREATE POLICY "Allow insert for all users" ON the100_mentor_applications FOR INS
 CREATE POLICY "Allow insert for all users" ON the100_contact_inquiries FOR INSERT WITH CHECK (true);
 CREATE POLICY "Allow insert for all users" ON newsletter_subscriptions FOR INSERT WITH CHECK (true);
 CREATE POLICY "Allow insert for all users" ON file_uploads FOR INSERT WITH CHECK (true);
+CREATE POLICY "Allow insert for all users" ON investor_downloads FOR INSERT WITH CHECK (true);
 
--- Allow read only for authenticated admin users (you'll need to set up admin roles)
--- CREATE POLICY "Allow read for admins" ON contact_inquiries FOR SELECT USING (auth.role() = 'admin');
--- (Add similar policies for other tables when you set up admin authentication)
+-- Allow read access for admin dashboard (using service role key)
+-- These policies are for when you build an admin dashboard
+-- For now, data access is through Supabase dashboard or direct SQL queries
 
 -- Create views for easier data access
 CREATE VIEW recent_inquiries AS

@@ -223,6 +223,21 @@ export interface FileUpload {
   created_at?: string
 }
 
+export interface InvestorDownload {
+  id?: string
+  document_name: string
+  document_type: 'pitch_deck' | 'financial_model' | 'business_plan' | 'executive_summary' | 'market_analysis' | 'other'
+  downloader_email?: string
+  downloader_name?: string
+  downloader_company?: string
+  downloader_role?: string
+  ip_address?: string
+  user_agent?: string
+  download_count?: number
+  created_at?: string
+  updated_at?: string
+}
+
 // Utility functions to get client information
 export const getClientInfo = () => {
   if (typeof window === 'undefined') {
@@ -417,6 +432,28 @@ export const databaseService = {
       .select('*')
       .order('created_at', { ascending: false })
       .limit(limit)
+    
+    if (error) throw error
+    return data
+  },
+
+  // Track investor document downloads
+  async trackInvestorDownload(data: InvestorDownload) {
+    const { data: result, error } = await supabase
+      .from('investor_downloads')
+      .insert([data])
+      .select()
+    
+    if (error) throw error
+    return result[0]
+  },
+
+  // Get download statistics
+  async getDownloadStats() {
+    const { data, error } = await supabase
+      .from('investor_downloads')
+      .select('document_type, download_count')
+      .order('created_at', { ascending: false })
     
     if (error) throw error
     return data

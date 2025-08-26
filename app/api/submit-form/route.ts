@@ -129,6 +129,13 @@ export async function POST(request: NextRequest) {
           .select()
         break
         
+      case 'investor_download':
+        result = await supabase
+          .from('investor_downloads')
+          .insert([enrichedData])
+          .select()
+        break
+        
       default:
         return NextResponse.json(
           { error: 'Invalid form type' },

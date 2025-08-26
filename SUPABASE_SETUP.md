@@ -2,7 +2,7 @@
 
 ## 📋 Overview
 
-This guide will help you set up Supabase as your backend database for the Annita website. All form submissions and user data will be securely stored in Supabase instead of being lost or exposed publicly.
+This guide will help you set up Supabase as your backend database for the Annita website. Since users will only submit forms and download investor documents (no login/transactions required), this setup is optimized for anonymous form submissions and download tracking. All form submissions and user data will be securely stored in Supabase instead of being lost or exposed publicly.
 
 ## 🚀 Step 1: Create Supabase Project
 
@@ -65,11 +65,12 @@ npm install @supabase/supabase-js
 
 ## 🔒 Step 7: Configure Row Level Security (RLS)
 
-The database schema already includes RLS policies, but you may want to customize them:
+The database schema includes RLS policies optimized for anonymous form submissions:
 
-1. Go to **Authentication** → **Policies**
-2. Review and adjust policies as needed
-3. For admin access, create admin roles and policies
+1. **Insert policies**: Allow all users to submit forms (no authentication required)
+2. **Read policies**: Data access is through Supabase dashboard or service role key
+3. **No user authentication**: Since users don't login, all policies are set for anonymous access
+4. **Admin access**: Use the service role key for admin dashboard access
 
 ## 📊 Step 8: Test the Integration
 
@@ -92,6 +93,14 @@ Now you need to update each form to use the new database integration. Here's wha
 6. **Pricing Inquiries** (`/pricing`)
 7. **The 100 Applications** (`/the100`)
 8. **Download/Newsletter** (`/download`)
+
+### Investor Downloads to Track:
+
+1. **Pitch Deck** downloads
+2. **Financial Model** downloads
+3. **Business Plan** downloads
+4. **Executive Summary** downloads
+5. **Market Analysis** downloads
 
 ### Example Form Update:
 
@@ -127,14 +136,21 @@ const handleSubmit = async (e: React.FormEvent) => {
 ## 🔍 Step 10: Monitor and Admin
 
 ### View Data in Supabase:
-- **Table Editor**: View all form submissions
-- **SQL Editor**: Run custom queries
+- **Table Editor**: View all form submissions and download tracking
+- **SQL Editor**: Run custom queries for analytics
 - **Logs**: Monitor API calls and errors
+
+### Data Analytics:
+- **Form submissions**: Track all contact forms, applications, and inquiries
+- **Download analytics**: Monitor which investor documents are most popular
+- **Geographic data**: IP tracking shows where your visitors are from
+- **User behavior**: Track which forms and documents get the most engagement
 
 ### Create Admin Dashboard (Optional):
 - Build a simple admin interface to view submissions
 - Use the `recent_inquiries` view for overview
-- Implement authentication for admin access
+- Track investor document download statistics
+- Monitor form submission trends
 
 ## 🚨 Security Considerations
 
