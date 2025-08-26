@@ -13,14 +13,11 @@ import {
   MapPin,
   Clock,
   DollarSign,
-  Briefcase,
   GraduationCap,
-  Play,
   Download,
   Mail,
   Phone,
   MessageSquare,
-  Building,
   Star
 } from 'lucide-react'
 import Link from 'next/link'
@@ -95,66 +92,34 @@ export default function CareersPage() {
     }
   ]
 
-  const positions = [
+  const departments = [
     {
-      id: 'software-engineer',
-      title: 'Software Engineer',
-      department: 'Engineering',
-      type: 'Full-time',
-      location: 'Remote / Liberia',
-      experience: '2-5 years',
+      id: 'engineering',
+      title: 'Engineering',
       description: 'Build scalable applications and contribute to our platform development',
-      requirements: [
-        'Strong programming skills in JavaScript/TypeScript',
-        'Experience with React, Node.js, and cloud platforms',
-        'Knowledge of database design and API development',
-        'Passion for African tech ecosystem'
-      ]
+      icon: Zap,
+      color: 'from-blue-500 to-cyan-500'
     },
     {
-      id: 'product-manager',
-      title: 'Product Manager',
-      department: 'Product',
-      type: 'Full-time',
-      location: 'Remote / Liberia',
-      experience: '3-7 years',
+      id: 'product',
+      title: 'Product',
       description: 'Lead product strategy and drive innovation across our platform',
-      requirements: [
-        'Experience in product management and strategy',
-        'Strong analytical and problem-solving skills',
-        'Knowledge of fintech and e-commerce domains',
-        'Experience working with cross-functional teams'
-      ]
+      icon: Star,
+      color: 'from-green-500 to-emerald-500'
     },
     {
-      id: 'marketing-specialist',
-      title: 'Marketing Specialist',
-      department: 'Marketing',
-      type: 'Full-time',
-      location: 'Remote / Liberia',
-      experience: '2-4 years',
+      id: 'marketing',
+      title: 'Marketing',
       description: 'Develop and execute marketing strategies for African markets',
-      requirements: [
-        'Experience in digital marketing and brand management',
-        'Knowledge of African market dynamics',
-        'Strong communication and creative skills',
-        'Experience with social media and content creation'
-      ]
+      icon: Heart,
+      color: 'from-purple-500 to-pink-500'
     },
     {
-      id: 'sales-representative',
-      title: 'Sales Representative',
-      department: 'Sales',
-      type: 'Full-time',
-      location: 'Liberia / West Africa',
-      experience: '1-3 years',
+      id: 'sales',
+      title: 'Sales',
       description: 'Drive business growth through strategic partnerships and sales',
-      requirements: [
-        'Strong sales and negotiation skills',
-        'Experience in B2B sales and relationship building',
-        'Knowledge of African business landscape',
-        'Excellent communication and presentation skills'
-      ]
+      icon: Users,
+      color: 'from-orange-500 to-red-500'
     }
   ]
 
@@ -165,9 +130,9 @@ export default function CareersPage() {
     { number: '95%', label: 'Employee Satisfaction' }
   ]
 
-  const handlePositionSelect = (positionId: string) => {
-    setSelectedPosition(positionId)
-    setFormData(prev => ({ ...prev, position: positionId }))
+  const handleDepartmentSelect = (departmentId: string) => {
+    setSelectedPosition(departmentId)
+    setFormData(prev => ({ ...prev, position: departmentId }))
   }
 
   const handleInputChange = (field: string, value: string) => {
@@ -280,11 +245,12 @@ export default function CareersPage() {
                 {/* Careers Information */}
                 <div>
                   <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6">
-                    Open Positions
+                    Future Opportunities
                   </h2>
                   <p className="text-lg text-gray-600 mb-8">
-                    We're looking for passionate individuals who share our vision of 
-                    transforming Africa's digital economy. Explore our current openings.
+                    While we don't have any open positions at the moment, we're always looking for 
+                    passionate individuals who share our vision. Submit your application and we'll 
+                    contact you when opportunities arise.
                   </p>
 
                   {/* Team Stats */}
@@ -297,44 +263,44 @@ export default function CareersPage() {
                     ))}
                   </div>
 
-                  {/* Positions */}
+                  {/* Departments */}
                   <div className="space-y-6">
-                    {positions.map((position) => (
+                    {departments.map((department) => (
                       <button
-                        key={position.id}
-                        onClick={() => handlePositionSelect(position.id)}
+                        key={department.id}
+                        onClick={() => handleDepartmentSelect(department.id)}
                         className={`w-full p-6 rounded-xl border-2 transition-all duration-200 text-left ${
-                          selectedPosition === position.id
+                          selectedPosition === department.id
                             ? 'border-orange-500 bg-orange-50'
                             : 'border-gray-200 hover:border-gray-300 bg-white'
                         }`}
                       >
                         <div className="flex items-center justify-between mb-4">
                           <div className="flex items-center space-x-4">
-                            <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-500 rounded-lg flex items-center justify-center">
-                              <Briefcase className="w-6 h-6 text-white" />
+                            <div className={`w-12 h-12 bg-gradient-to-br ${department.color} rounded-lg flex items-center justify-center`}>
+                              <department.icon className="w-6 h-6 text-white" />
                             </div>
                             <div>
-                              <h3 className="text-lg font-bold text-gray-900">{position.title}</h3>
-                              <p className="text-sm text-gray-600">{position.department}</p>
+                              <h3 className="text-lg font-bold text-gray-900">{department.title}</h3>
+                              <p className="text-sm text-gray-600">Department</p>
                             </div>
                           </div>
                           <div className="text-right">
-                            <div className="text-sm font-bold text-orange-600">{position.type}</div>
-                            <div className="text-xs text-gray-500">{position.location}</div>
+                            <div className="text-sm font-bold text-orange-600">Future Role</div>
+                            <div className="text-xs text-gray-500">Remote / Liberia</div>
                           </div>
                         </div>
                         
-                        <p className="text-sm text-gray-600 mb-3">{position.description}</p>
+                        <p className="text-sm text-gray-600 mb-3">{department.description}</p>
                         
                         <div className="flex items-center space-x-4 text-xs text-gray-500">
                           <div className="flex items-center space-x-1">
                             <Clock className="w-3 h-3" />
-                            <span>{position.experience}</span>
+                            <span>Various levels</span>
                           </div>
                           <div className="flex items-center space-x-1">
                             <MapPin className="w-3 h-3" />
-                            <span>{position.location}</span>
+                            <span>Remote / Liberia</span>
                           </div>
                         </div>
                       </button>
@@ -365,14 +331,14 @@ export default function CareersPage() {
                 {/* Contact Form */}
                 <div className="bg-white rounded-xl shadow-soft p-6 border border-gray-200">
                   <h3 className="text-xl font-semibold text-gray-900 mb-6">
-                    {selectedPosition ? `Apply for ${positions.find(p => p.id === selectedPosition)?.title}` : 'Submit Your Application'}
+                    {selectedPosition ? `Apply for ${departments.find(d => d.id === selectedPosition)?.title} Role` : 'Submit Your Application'}
                   </h3>
                   
                   <form onSubmit={handleSubmit} className="space-y-6">
                     {!selectedPosition && (
                       <div className="bg-orange-50 rounded-lg p-4 mb-6">
                         <p className="text-sm text-orange-700">
-                          Please select a position above to apply, or submit a general application for future opportunities.
+                          Please select a department above to apply, or submit a general application for future opportunities.
                         </p>
                       </div>
                     )}
@@ -453,6 +419,22 @@ export default function CareersPage() {
                           <option value="8+">8+ years</option>
                         </select>
                       </div>
+                      
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                          Preferred Department
+                        </label>
+                        <select
+                          value={formData.position}
+                          onChange={(e) => handleInputChange('position', e.target.value)}
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200"
+                        >
+                          <option value="">Select department</option>
+                          {departments.map((dept) => (
+                            <option key={dept.id} value={dept.id}>{dept.title}</option>
+                          ))}
+                        </select>
+                      </div>
                     </div>
 
                     <div>
@@ -464,7 +446,7 @@ export default function CareersPage() {
                         value={formData.message}
                         onChange={(e) => handleInputChange('message', e.target.value)}
                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200"
-                        placeholder="Tell us why you're interested in this position and why you'd be a great fit for our team..."
+                        placeholder="Tell us about your skills, experience, and why you'd be a great fit for our team. We'll contact you when relevant opportunities arise..."
                       />
                     </div>
 
@@ -537,7 +519,7 @@ export default function CareersPage() {
               </h2>
               
               <p className="text-gray-600 mb-8">
-                Thank you for your interest in joining our team! Our HR team will review your application and get back to you within 5-7 business days.
+                Thank you for your interest in joining our team! We'll keep your application on file and contact you when relevant opportunities arise.
               </p>
               
               <div className="bg-gray-50 rounded-lg p-6 mb-8">
@@ -545,15 +527,15 @@ export default function CareersPage() {
                 <div className="space-y-3 text-left">
                   <div className="flex items-center">
                     <div className="w-6 h-6 bg-orange-500 text-white rounded-full flex items-center justify-center text-sm font-bold mr-3">1</div>
-                    <span className="text-gray-600">We'll review your application and experience</span>
+                    <span className="text-gray-600">We'll review your application and keep it on file</span>
                   </div>
                   <div className="flex items-center">
                     <div className="w-6 h-6 bg-orange-500 text-white rounded-full flex items-center justify-center text-sm font-bold mr-3">2</div>
-                    <span className="text-gray-600">If selected, we'll schedule an initial interview</span>
+                    <span className="text-gray-600">When opportunities arise, we'll contact you</span>
                   </div>
                   <div className="flex items-center">
                     <div className="w-6 h-6 bg-orange-500 text-white rounded-full flex items-center justify-center text-sm font-bold mr-3">3</div>
-                    <span className="text-gray-600">You'll receive updates on your application status</span>
+                    <span className="text-gray-600">You'll be considered for relevant positions</span>
                   </div>
                 </div>
               </div>
@@ -582,7 +564,7 @@ export default function CareersPage() {
                   }}
                   className="inline-flex items-center px-6 py-3 border-2 border-orange-500 text-orange-500 font-semibold rounded-lg hover:bg-orange-50 transition-colors duration-200"
                 >
-                  Apply for Another Position
+                  Apply for Another Department
                 </button>
               </div>
             </div>
