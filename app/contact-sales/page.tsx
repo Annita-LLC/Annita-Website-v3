@@ -456,19 +456,19 @@ export default function ContactSalesPage() {
                 </Link>
                 <button
                   onClick={() => {
-                    setIsSubmitted(false)
-                    setFormData({
-                      firstName: '',
-                      lastName: '',
-                      email: '',
-                      company: '',
-                      phone: '',
-                      businessSize: '',
-                      industry: '',
-                      goals: '',
-                      timeline: '',
-                      budget: ''
-                    })
+                    reset()
+                                          setFormData({
+                        first_name: '',
+                        last_name: '',
+                        email: '',
+                        company: '',
+                        phone: '',
+                        business_size: '',
+                        industry: '',
+                        goals: '',
+                        timeline: '',
+                        budget: ''
+                      })
                   }}
                   className="inline-flex items-center px-6 py-3 border-2 border-orange-500 text-orange-500 font-semibold rounded-lg hover:bg-orange-50 transition-colors duration-200"
                 >

@@ -167,13 +167,13 @@ export default function BusinessModelPage() {
     e.preventDefault()
     if (!selectedModel) return
     
-    setIsSubmitting(true)
+    // Add selected model to form data
+    const formDataWithModel = {
+      ...formData,
+      selected_model: selectedModel
+    }
     
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 2000))
-    
-    setIsSubmitting(false)
-    setIsSubmitted(true)
+    await submitForm('business', formDataWithModel)
   }
 
   return (
@@ -228,7 +228,7 @@ export default function BusinessModelPage() {
         </div>
       </section>
 
-      {!isSubmitted ? (
+      {!isSubmitted || !success ? (
         <div className="py-16 sm:py-20">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-6xl mx-auto">
@@ -494,20 +494,27 @@ export default function BusinessModelPage() {
           </div>
         </div>
       ) : (
-        /* Success Message */
-        <div className="py-16 sm:py-20">
+        /* Success/Error Message */
+        <div className={`py-16 sm:py-20 ${success ? 'bg-gradient-to-br from-green-50 to-emerald-50' : 'bg-gradient-to-br from-red-50 to-pink-50'}`}>
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-2xl mx-auto text-center">
-              <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                <CheckCircle className="w-10 h-10 text-green-600" />
+              <div className={`w-20 h-20 ${success ? 'bg-green-100' : 'bg-red-100'} rounded-full flex items-center justify-center mx-auto mb-6`}>
+                {success ? (
+                  <CheckCircle className="w-10 h-10 text-green-600" />
+                ) : (
+                  <AlertTriangle className="w-10 h-10 text-red-600" />
+                )}
               </div>
               
               <h2 className="text-2xl font-bold text-gray-900 mb-4">
-                Request Submitted Successfully!
+                {success ? 'Request Submitted Successfully!' : 'Submission Failed'}
               </h2>
               
               <p className="text-gray-600 mb-8">
-                Thank you for your interest! Our business development team will review your request and get back to you within 24 hours.
+                {success 
+                  ? 'Thank you for your interest! Our business development team will review your request and get back to you within 24 hours.'
+                  : error || 'There was an error submitting your form. Please try again.'
+                }
               </p>
               
               <div className="bg-gray-50 rounded-lg p-6 mb-8">
@@ -538,7 +545,7 @@ export default function BusinessModelPage() {
                 </Link>
                 <button
                   onClick={() => {
-                    setIsSubmitted(false)
+                    reset()
                     setSelectedModel('')
                     setFormData({
                       name: '',

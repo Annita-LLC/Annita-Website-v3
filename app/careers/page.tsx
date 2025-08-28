@@ -551,7 +551,7 @@ export default function CareersPage() {
                 </Link>
                 <button
                   onClick={() => {
-                    setIsSubmitted(false)
+                    reset()
                     setSelectedPosition('')
                     setFormData({
                       name: '',

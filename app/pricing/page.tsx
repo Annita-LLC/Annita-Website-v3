@@ -198,7 +198,7 @@ export default function PricingPage() {
     await new Promise(resolve => setTimeout(resolve, 2000))
     
     setIsSubmitting(false)
-    setIsSubmitted(true)
+    // Form submission handled by useFormSubmission hook
   }
 
   return (
@@ -566,7 +566,7 @@ export default function PricingPage() {
                 </Link>
                 <button
                   onClick={() => {
-                    setIsSubmitted(false)
+                    reset()
                     setSelectedPlan('')
                     setFormData({
                       name: '',

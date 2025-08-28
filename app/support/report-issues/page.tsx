@@ -487,7 +487,7 @@ export default function ReportIssuesPage() {
                 </Link>
                 <button
                   onClick={() => {
-                    setIsSubmitted(false)
+                    reset()
                     setFormData({
                       issue_type: '',
                       priority: 'medium',
