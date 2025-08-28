@@ -61,59 +61,59 @@ const GlobalMarketPage = () => {
     { 
       name: "Africa", 
       icon: "🌍", 
-      countries: "54 countries",
+      countries: "Pending",
       description: "Connect with African markets and suppliers",
-      stats: "2M+ businesses"
+      stats: "Pending"
     },
     { 
       name: "Europe", 
       icon: "🇪🇺", 
-      countries: "44 countries",
+      countries: "Pending",
       description: "Access European markets and technology",
-      stats: "5M+ businesses"
+      stats: "Pending"
     },
     { 
       name: "Asia", 
       icon: "🌏", 
-      countries: "48 countries",
+      countries: "Pending",
       description: "Connect with Asian manufacturers and markets",
-      stats: "8M+ businesses"
+      stats: "Pending"
     },
     { 
       name: "Americas", 
       icon: "🌎", 
-      countries: "35 countries",
+      countries: "Pending",
       description: "Access North and South American markets",
-      stats: "6M+ businesses"
+      stats: "Pending"
     }
   ]
 
   const marketStats = [
     {
       title: "Active Businesses",
-      value: "25M+",
-      change: "+15%",
+      value: "Pending",
+      change: "Pending",
       icon: "🏢",
       color: "blue"
     },
     {
       title: "Countries",
-      value: "180+",
-      change: "+5",
+      value: "Pending",
+      change: "Pending",
       icon: "🌍",
       color: "green"
     },
     {
       title: "Daily Transactions",
-      value: "$500M+",
-      change: "+25%",
+      value: "Pending",
+      change: "Pending",
       icon: "💰",
       color: "orange"
     },
     {
       title: "Trade Volume",
-      value: "$50B+",
-      change: "+30%",
+      value: "Pending",
+      change: "Pending",
       icon: "📈",
       color: "purple"
     }
@@ -423,15 +423,15 @@ const GlobalMarketPage = () => {
                   <div className="space-y-4">
                     <div className="flex justify-between items-center p-4 bg-gray-50 rounded-lg">
                       <span className="text-gray-600">New Businesses</span>
-                      <span className="font-semibold text-blue-600">50K+</span>
+                      <span className="font-semibold text-blue-600">Pending</span>
                     </div>
                     <div className="flex justify-between items-center p-4 bg-gray-50 rounded-lg">
                       <span className="text-gray-600">Trade Volume</span>
-                      <span className="font-semibold text-blue-600">$15B+</span>
+                      <span className="font-semibold text-blue-600">Pending</span>
                     </div>
                     <div className="flex justify-between items-center p-4 bg-gray-50 rounded-lg">
                       <span className="text-gray-600">Success Rate</span>
-                      <span className="font-semibold text-green-600">95%</span>
+                      <span className="font-semibold text-green-600">Pending</span>
                     </div>
                   </div>
                 </div>

@@ -279,15 +279,15 @@ const ShoppingPage = () => {
                   <div className="space-y-4">
                     <div className="flex justify-between items-center p-4 bg-gray-50 rounded-lg">
                       <span className="text-gray-600">Active Sellers</span>
-                      <span className="font-semibold text-blue-600">25K+</span>
+                      <span className="font-semibold text-blue-600">Pending</span>
                     </div>
                     <div className="flex justify-between items-center p-4 bg-gray-50 rounded-lg">
                       <span className="text-gray-600">Products Available</span>
-                      <span className="font-semibold text-blue-600">2M+</span>
+                      <span className="font-semibold text-blue-600">Pending</span>
                     </div>
                     <div className="flex justify-between items-center p-4 bg-gray-50 rounded-lg">
                       <span className="text-gray-600">Happy Customers</span>
-                      <span className="font-semibold text-green-600">500K+</span>
+                      <span className="font-semibold text-green-600">Pending</span>
                     </div>
                   </div>
                 </div>

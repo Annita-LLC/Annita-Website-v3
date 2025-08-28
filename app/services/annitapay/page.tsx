@@ -274,15 +274,15 @@ const AnnitaPayPage = () => {
                   <div className="space-y-4">
                     <div className="flex justify-between items-center p-4 bg-gray-50 rounded-lg">
                       <span className="text-gray-600">Total Transfers</span>
-                      <span className="font-semibold text-orange-600">$2.5M</span>
+                      <span className="font-semibold text-orange-600">Pending</span>
                     </div>
                     <div className="flex justify-between items-center p-4 bg-gray-50 rounded-lg">
                       <span className="text-gray-600">Active Users</span>
-                      <span className="font-semibold text-orange-600">50K+</span>
+                      <span className="font-semibold text-orange-600">Pending</span>
                     </div>
                     <div className="flex justify-between items-center p-4 bg-gray-50 rounded-lg">
                       <span className="text-gray-600">Success Rate</span>
-                      <span className="font-semibold text-green-600">99.9%</span>
+                      <span className="font-semibold text-green-600">Pending</span>
                     </div>
                   </div>
                 </div>

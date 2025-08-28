@@ -66,6 +66,7 @@ const AnnitaPayBusinessPage = () => {
       name: "Payment Gateway",
       icon: "💳",
       description: "Secure online payment processing",
+      shortDescription: "Accept payments globally with bank-grade security and instant processing. Perfect for e-commerce and online businesses.",
       features: ["Multi-currency support", "PCI DSS compliant", "Real-time processing"],
       pricing: "2.9% + $0.30"
     },
@@ -73,6 +74,7 @@ const AnnitaPayBusinessPage = () => {
       name: "Point of Sale",
       icon: "🏪",
       description: "In-store payment solutions",
+      shortDescription: "Transform any device into a powerful POS system. Accept cards, mobile payments, and manage inventory seamlessly.",
       features: ["Mobile POS", "Receipt printing", "Inventory integration"],
       pricing: "From $29/month"
     },
@@ -80,6 +82,7 @@ const AnnitaPayBusinessPage = () => {
       name: "Recurring Billing",
       icon: "🔄",
       description: "Automated subscription payments",
+      shortDescription: "Automate your subscription business with intelligent billing cycles, retry logic, and customer lifecycle management.",
       features: ["Flexible billing cycles", "Failed payment retry", "Customer management"],
       pricing: "1.5% + $0.10"
     },
@@ -87,51 +90,54 @@ const AnnitaPayBusinessPage = () => {
       name: "Invoice Management",
       icon: "📄",
       description: "Professional invoicing system",
+      shortDescription: "Create, send, and track professional invoices with automated reminders and payment reconciliation.",
       features: ["Custom templates", "Payment tracking", "Automated reminders"],
-      pricing: "Free with payments"
+      pricing: "$19/month"
     },
     {
       name: "Business Analytics",
       icon: "📊",
       description: "Comprehensive business insights",
+      shortDescription: "Make data-driven decisions with real-time analytics, customer insights, and performance dashboards.",
       features: ["Revenue tracking", "Customer analytics", "Performance reports"],
-      pricing: "Included free"
+      pricing: "$49/month"
     },
     {
       name: "API Integration",
       icon: "🔌",
       description: "Seamless platform integration",
+      shortDescription: "Integrate payments into your existing systems with powerful APIs, webhooks, and developer tools.",
       features: ["RESTful APIs", "Webhooks", "SDK support"],
-      pricing: "Free for developers"
+      pricing: "$99/month"
     }
   ]
 
   const businessStats = [
     {
       title: "Businesses Served",
-      value: "50K+",
-      change: "+25%",
+      value: "Pending",
+      change: "Pending",
       icon: "🏢",
       color: "blue"
     },
     {
       title: "Transaction Volume",
-      value: "$2B+",
-      change: "+40%",
+      value: "Pending",
+      change: "Pending",
       icon: "💰",
       color: "green"
     },
     {
       title: "Success Rate",
-      value: "99.9%",
-      change: "+0.1%",
+      value: "Pending",
+      change: "Pending",
       icon: "✅",
       color: "orange"
     },
     {
       title: "Countries",
-      value: "180+",
-      change: "+5",
+      value: "Pending",
+      change: "Pending",
       icon: "🌍",
       color: "purple"
     }
@@ -353,8 +359,8 @@ const AnnitaPayBusinessPage = () => {
                   <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">
                     {solution.icon}
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">{solution.name}</h3>
-                  <p className="text-gray-600 text-sm mb-4">{solution.description}</p>
+                                     <h3 className="text-xl font-semibold text-gray-900 mb-2">{solution.name}</h3>
+                   <p className="text-gray-600 text-sm mb-4">{solution.shortDescription}</p>
                   <ul className="space-y-2 mb-4">
                     {solution.features.map((feature, featureIndex) => (
                       <li key={featureIndex} className="flex items-center space-x-2 text-sm text-gray-600">
@@ -454,15 +460,15 @@ const AnnitaPayBusinessPage = () => {
                   <div className="space-y-4">
                     <div className="flex justify-between items-center p-4 bg-gray-50 rounded-lg">
                       <span className="text-gray-600">Revenue Growth</span>
-                      <span className="font-semibold text-blue-600">+45%</span>
+                      <span className="font-semibold text-blue-600">Pending</span>
                     </div>
                     <div className="flex justify-between items-center p-4 bg-gray-50 rounded-lg">
                       <span className="text-gray-600">Processing Costs</span>
-                      <span className="font-semibold text-green-600">-30%</span>
+                      <span className="font-semibold text-green-600">Pending</span>
                     </div>
                     <div className="flex justify-between items-center p-4 bg-gray-50 rounded-lg">
                       <span className="text-gray-600">Customer Satisfaction</span>
-                      <span className="font-semibold text-orange-600">98%</span>
+                      <span className="font-semibold text-orange-600">Pending</span>
                     </div>
                   </div>
                 </div>
