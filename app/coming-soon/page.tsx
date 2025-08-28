@@ -1129,20 +1129,31 @@ const ComingSoonPage = () => {
     setError('')
 
     try {
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1500))
-      
-      // Here you would typically make an API call to your backend
-      // const response = await fetch('/api/newsletter/subscribe', {
-      //   method: 'POST',
-      //   headers: { 'Content-Type': 'application/json' },
-      //   body: JSON.stringify({ email })
-      // })
+      const response = await fetch('/api/submit-form', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          formType: 'newsletter',
+          email: email,
+          platform: 'coming-soon'
+        })
+      })
 
-      setIsSubscribed(true)
-      setEmail('')
+      const result = await response.json()
+
+      if (!response.ok) {
+        throw new Error(result.error || 'Failed to subscribe')
+      }
+
+      if (result.success) {
+        setIsSubscribed(true)
+        setEmail('')
+      } else {
+        throw new Error(result.error || 'Subscription failed')
+      }
     } catch (err) {
-      setError('Something went wrong. Please try again.')
+      console.error('Newsletter subscription error:', err)
+      setError(err instanceof Error ? err.message : 'Something went wrong. Please try again.')
     } finally {
       setIsSubscribing(false)
     }
