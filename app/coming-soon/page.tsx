@@ -58,6 +58,150 @@ const ComingSoonPage = () => {
 
   const upcomingFeatures = [
     {
+      id: 'annita-3-0',
+      title: "Annita 3.0 Platform",
+      description: "Revolutionary all-in-one platform for Africa with offline functionality and comprehensive business tools",
+      category: 'platform',
+      status: 'in-development',
+      progress: 75,
+      estimatedRelease: 'Q2 2024',
+      features: [
+        "Offline functionality for all core features",
+        "Escrow settlements for secure trading",
+        "Comprehensive fintech solutions",
+        "AI business assistant integration",
+        "Built-in logistics and marketing tools"
+      ],
+      icon: Rocket,
+      color: 'from-red-500 to-orange-500'
+    },
+    {
+      id: 'cloud-services',
+      title: "Cloud Services",
+      description: "Secure data storage, backup, and cloud computing solutions for businesses of all sizes",
+      category: 'platform',
+      status: 'in-development',
+      progress: 60,
+      estimatedRelease: 'Q2 2024',
+      features: [
+        "Secure data storage and backup",
+        "Cloud computing infrastructure",
+        "Real-time data synchronization",
+        "Multi-region data centers",
+        "Enterprise-grade security"
+      ],
+      icon: Database,
+      color: 'from-blue-500 to-indigo-500'
+    },
+    {
+      id: 'pickup-centers',
+      title: "Pickup Centers Network",
+      description: "Nationwide network of secure pickup locations for orders and package collection",
+      category: 'logistics',
+      status: 'planning',
+      progress: 40,
+      estimatedRelease: 'Q3 2024',
+      features: [
+        "Nationwide pickup locations",
+        "Secure package storage",
+        "24/7 access with digital keys",
+        "Real-time tracking and notifications",
+        "Integration with delivery network"
+      ],
+      icon: Building,
+      color: 'from-green-500 to-emerald-500'
+    },
+    {
+      id: 'fulfillment-centers',
+      title: "Fulfillment Centers",
+      description: "Automated warehouses for fast order processing, packaging, and delivery optimization",
+      category: 'logistics',
+      status: 'planning',
+      progress: 35,
+      estimatedRelease: 'Q3 2024',
+      features: [
+        "Automated order processing",
+        "Smart inventory management",
+        "Fast packaging and labeling",
+        "Integration with pickup centers",
+        "Real-time order tracking"
+      ],
+      icon: Package,
+      color: 'from-purple-500 to-pink-500'
+    },
+    {
+      id: 'last-mile-delivery',
+      title: "Last-Mile Delivery Network",
+      description: "Local delivery network reaching every community and village across Africa",
+      category: 'logistics',
+      status: 'planning',
+      progress: 45,
+      estimatedRelease: 'Q3 2024',
+      features: [
+        "Local delivery partners",
+        "Community-based delivery",
+        "Real-time delivery tracking",
+        "Flexible delivery options",
+        "Rural area coverage"
+      ],
+      icon: Truck,
+      color: 'from-orange-500 to-red-500'
+    },
+    {
+      id: 'digital-banking',
+      title: "Digital Banking Services",
+      description: "Full banking services with savings, loans, investment options, and financial management",
+      category: 'payments',
+      status: 'planning',
+      progress: 50,
+      estimatedRelease: 'Q3 2024',
+      features: [
+        "Savings and checking accounts",
+        "Personal and business loans",
+        "Investment and wealth management",
+        "Financial planning tools",
+        "Multi-currency support"
+      ],
+      icon: CreditCard,
+      color: 'from-green-600 to-teal-600'
+    },
+    {
+      id: 'multi-platform-access',
+      title: "Multi-Platform Access",
+      description: "Universal access through web, mobile app, USSD, and offline modes for all users",
+      category: 'mobile',
+      status: 'in-development',
+      progress: 70,
+      estimatedRelease: 'Q2 2024',
+      features: [
+        "Web platform access",
+        "Mobile app (iOS/Android)",
+        "USSD code access",
+        "Offline functionality",
+        "Cross-platform synchronization"
+      ],
+      icon: Smartphone,
+      color: 'from-indigo-500 to-purple-500'
+    },
+    {
+      id: 'regional-expansion',
+      title: "Regional Expansion",
+      description: "Expansion across West Africa with localized services, languages, and support",
+      category: 'platform',
+      status: 'planning',
+      progress: 30,
+      estimatedRelease: 'Q4 2024',
+      features: [
+        "West African market entry",
+        "Localized interfaces",
+        "Regional payment methods",
+        "Local language support",
+        "Regional compliance"
+      ],
+      icon: Globe,
+      color: 'from-yellow-500 to-orange-500'
+    },
+    {
       id: 'mobile-app',
       title: "Annita Mobile App",
       description: "Native mobile applications for iOS and Android with offline capabilities and push notifications",
@@ -409,55 +553,7 @@ const ComingSoonPage = () => {
                         <p className="text-gray-600 text-sm">— MSMEs, vendors, freelancers, market women, students, and individuals.</p>
                       </div>
                     </div>
-                    <div className="flex items-start space-x-3">
-                      <span className="text-green-600 text-xl">☁️</span>
-                      <div>
-                        <span className="font-semibold text-gray-900">Cloud Services</span>
-                        <p className="text-gray-600 text-sm">— secure data storage, backup, and cloud computing for businesses.</p>
-                      </div>
-                    </div>
-                    <div className="flex items-start space-x-3">
-                      <span className="text-green-600 text-xl">🏪</span>
-                      <div>
-                        <span className="font-semibold text-gray-900">Pickup Centers</span>
-                        <p className="text-gray-600 text-sm">— nationwide network of secure pickup locations for orders and packages.</p>
-                      </div>
-                    </div>
-                    <div className="flex items-start space-x-3">
-                      <span className="text-green-600 text-xl">🏭</span>
-                      <div>
-                        <span className="font-semibold text-gray-900">Fulfillment Centers</span>
-                        <p className="text-gray-600 text-sm">— automated warehouses for fast order processing and delivery.</p>
-                      </div>
-                    </div>
-                    <div className="flex items-start space-x-3">
-                      <span className="text-green-600 text-xl">🚚</span>
-                      <div>
-                        <span className="font-semibold text-gray-900">Last-Mile Delivery</span>
-                        <p className="text-gray-600 text-sm">— local delivery network reaching every community and village.</p>
-                      </div>
-                    </div>
-                    <div className="flex items-start space-x-3">
-                      <span className="text-green-600 text-xl">🏦</span>
-                      <div>
-                        <span className="font-semibold text-gray-900">Digital Banking</span>
-                        <p className="text-gray-600 text-sm">— full banking services with savings, loans, and investment options.</p>
-                      </div>
-                    </div>
-                    <div className="flex items-start space-x-3">
-                      <span className="text-green-600 text-xl">📱</span>
-                      <div>
-                        <span className="font-semibold text-gray-900">Multi-Platform Access</span>
-                        <p className="text-gray-600 text-sm">— web, mobile app, USSD, and offline modes for universal access.</p>
-                      </div>
-                    </div>
-                    <div className="flex items-start space-x-3">
-                      <span className="text-green-600 text-xl">🌐</span>
-                      <div>
-                        <span className="font-semibold text-gray-900">Regional Expansion</span>
-                        <p className="text-gray-600 text-sm">— expanding across West Africa with localized services and support.</p>
-                      </div>
-                    </div>
+
                   </div>
                 </div>
 
@@ -469,7 +565,7 @@ const ComingSoonPage = () => {
                     <div className="space-y-4 text-center">
                       <p className="text-xl font-semibold">It's time for true digital freedom — without limits, without barriers.</p>
                       <p className="text-lg">One platform. All your business needs — online or offline.</p>
-                      <p className="text-lg">From cloud storage to pickup centers, we've got you covered.</p>
+                      <p className="text-lg">Explore our comprehensive suite of upcoming features below.</p>
                     </div>
 
                     <div className="mt-8 space-y-2 text-center">
