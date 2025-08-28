@@ -324,7 +324,8 @@ const ComingSoonPage = () => {
                   <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">Imagine this…</h3>
                   <p className="text-lg sm:text-xl text-gray-700 leading-relaxed">
                     You're in a village with unstable connectivity — and you can still sell your products, receive payments, 
-                    talk to customers, manage your business, and even grow your savings... all from one single platform.
+                    talk to customers, manage your business, store data securely in the cloud, access pickup centers, 
+                    and even grow your savings... all from one single platform.
                   </p>
                   <div className="mt-6">
                     <p className="text-lg font-semibold text-gray-800">No tech degree. No fancy setup. Just one app — online or offline.</p>
@@ -335,6 +336,8 @@ const ComingSoonPage = () => {
                     <span>Faster.</span>
                     <span>Offline-ready.</span>
                     <span>Inclusive.</span>
+                    <span>Connected.</span>
+                    <span>Secure.</span>
                   </div>
                 </div>
               </motion.div>
@@ -406,6 +409,55 @@ const ComingSoonPage = () => {
                         <p className="text-gray-600 text-sm">— MSMEs, vendors, freelancers, market women, students, and individuals.</p>
                       </div>
                     </div>
+                    <div className="flex items-start space-x-3">
+                      <span className="text-green-600 text-xl">☁️</span>
+                      <div>
+                        <span className="font-semibold text-gray-900">Cloud Services</span>
+                        <p className="text-gray-600 text-sm">— secure data storage, backup, and cloud computing for businesses.</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start space-x-3">
+                      <span className="text-green-600 text-xl">🏪</span>
+                      <div>
+                        <span className="font-semibold text-gray-900">Pickup Centers</span>
+                        <p className="text-gray-600 text-sm">— nationwide network of secure pickup locations for orders and packages.</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start space-x-3">
+                      <span className="text-green-600 text-xl">🏭</span>
+                      <div>
+                        <span className="font-semibold text-gray-900">Fulfillment Centers</span>
+                        <p className="text-gray-600 text-sm">— automated warehouses for fast order processing and delivery.</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start space-x-3">
+                      <span className="text-green-600 text-xl">🚚</span>
+                      <div>
+                        <span className="font-semibold text-gray-900">Last-Mile Delivery</span>
+                        <p className="text-gray-600 text-sm">— local delivery network reaching every community and village.</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start space-x-3">
+                      <span className="text-green-600 text-xl">🏦</span>
+                      <div>
+                        <span className="font-semibold text-gray-900">Digital Banking</span>
+                        <p className="text-gray-600 text-sm">— full banking services with savings, loans, and investment options.</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start space-x-3">
+                      <span className="text-green-600 text-xl">📱</span>
+                      <div>
+                        <span className="font-semibold text-gray-900">Multi-Platform Access</span>
+                        <p className="text-gray-600 text-sm">— web, mobile app, USSD, and offline modes for universal access.</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start space-x-3">
+                      <span className="text-green-600 text-xl">🌐</span>
+                      <div>
+                        <span className="font-semibold text-gray-900">Regional Expansion</span>
+                        <p className="text-gray-600 text-sm">— expanding across West Africa with localized services and support.</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
 
@@ -417,6 +469,7 @@ const ComingSoonPage = () => {
                     <div className="space-y-4 text-center">
                       <p className="text-xl font-semibold">It's time for true digital freedom — without limits, without barriers.</p>
                       <p className="text-lg">One platform. All your business needs — online or offline.</p>
+                      <p className="text-lg">From cloud storage to pickup centers, we've got you covered.</p>
                     </div>
 
                     <div className="mt-8 space-y-2 text-center">
