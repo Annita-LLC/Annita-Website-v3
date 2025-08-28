@@ -455,10 +455,10 @@ export default function ContactUsPage() {
                           <label className="flex items-center space-x-3 cursor-pointer">
                             <input
                               type="radio"
-                              name="preferredContact"
+                              name="preferred_contact"
                               value="email"
-                              checked={formData.preferredContact === 'email'}
-                              onChange={(e) => handleInputChange('preferredContact', e.target.value)}
+                              checked={formData.preferred_contact === 'email'}
+                              onChange={(e) => handleInputChange('preferred_contact', e.target.value)}
                               className="text-orange-500 focus:ring-orange-500"
                             />
                             <span className="text-gray-700">Email</span>
@@ -466,10 +466,10 @@ export default function ContactUsPage() {
                           <label className="flex items-center space-x-3 cursor-pointer">
                             <input
                               type="radio"
-                              name="preferredContact"
+                              name="preferred_contact"
                               value="phone"
-                              checked={formData.preferredContact === 'phone'}
-                              onChange={(e) => handleInputChange('preferredContact', e.target.value)}
+                              checked={formData.preferred_contact === 'phone'}
+                              onChange={(e) => handleInputChange('preferred_contact', e.target.value)}
                               className="text-orange-500 focus:ring-orange-500"
                             />
                             <span className="text-gray-700">Phone</span>

@@ -140,7 +140,7 @@ export default function ReportIssuesPage() {
     await submitForm('support', formData)
   }
 
-  const selectedIssueType = issueTypes.find(type => type.id === formData.issueType)
+  const selectedIssueType = issueTypes.find(type => type.id === formData.issue_type)
 
   return (
     <>
@@ -193,9 +193,9 @@ export default function ReportIssuesPage() {
                   {issueTypes.map((type) => (
                     <button
                       key={type.id}
-                      onClick={() => handleInputChange('issueType', type.id)}
-                      className={`p-6 rounded-xl border-2 transition-all duration-200 text-left ${
-                        formData.issueType === type.id
+                                              onClick={() => handleInputChange('issue_type', type.id)}
+                        className={`p-6 rounded-xl border-2 transition-all duration-200 text-left ${
+                          formData.issue_type === type.id
                           ? 'border-orange-500 bg-orange-50'
                           : 'border-gray-200 hover:border-gray-300 bg-white'
                       }`}
@@ -210,7 +210,7 @@ export default function ReportIssuesPage() {
                 </div>
               </div>
 
-              {formData.issueType && (
+                                    {formData.issue_type && (
                 <form onSubmit={handleSubmit} className="space-y-8">
                   {/* Priority Level */}
                   <div>

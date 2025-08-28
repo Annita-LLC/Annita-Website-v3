@@ -109,13 +109,12 @@ export default function DownloadPage() {
     e.preventDefault()
     if (!selectedPlatform || !email) return
     
-    setIsSubmitting(true)
+    const formData = {
+      email: email,
+      platform: selectedPlatform
+    }
     
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 2000))
-    
-    setIsSubmitting(false)
-    // Form submission handled by useFormSubmission hook
+    await submitForm('download', formData)
   }
 
   return (

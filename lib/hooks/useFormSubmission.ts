@@ -211,5 +211,11 @@ export const formValidations = {
   newsletter: (formData: any) => {
     if (!formData.email?.trim()) return 'Email is required'
     return null
+  },
+
+  download: (formData: any) => {
+    if (!formData.email?.trim()) return 'Email is required'
+    if (!formData.platform?.trim()) return 'Please select a platform'
+    return null
   }
 }

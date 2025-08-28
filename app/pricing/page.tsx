@@ -192,13 +192,12 @@ export default function PricingPage() {
     e.preventDefault()
     if (!selectedPlan) return
     
-    setIsSubmitting(true)
+    const formDataWithPlan = {
+      ...formData,
+      selected_plan: selectedPlan
+    }
     
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 2000))
-    
-    setIsSubmitting(false)
-    // Form submission handled by useFormSubmission hook
+    await submitForm('pricing', formDataWithPlan)
   }
 
   return (
