@@ -290,6 +290,149 @@ const ComingSoonPage = () => {
           </div>
         </section>
 
+        {/* Annita 3.0 Announcement */}
+        <section className="py-16 sm:py-20 bg-gradient-to-r from-red-50 to-orange-50 border-b border-orange-200">
+          <div className="container mx-auto px-3 sm:px-4 lg:px-6 xl:px-8">
+            <div className="max-w-5xl mx-auto">
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                className="text-center mb-12"
+              >
+                <div className="inline-flex items-center px-6 py-3 rounded-full bg-red-100 text-red-700 text-lg font-bold mb-6">
+                  🚨 Something BIG is coming to Africa — and it's built for everyone.
+                </div>
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 mb-8 leading-tight">
+                  Annita 3.0 isn't just another upgrade.
+                  <br />
+                  <span className="text-red-600">It's the future of doing business, communicating, and thriving in Africa</span>
+                  <br />
+                  <span className="text-lg sm:text-xl text-gray-600 font-normal">
+                    — whether you're in the heart of a city or a small rural town with little to no internet.
+                  </span>
+                </h2>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                className="bg-white p-8 sm:p-12 rounded-3xl shadow-xl border border-orange-200 mb-12"
+              >
+                <div className="text-center mb-8">
+                  <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">Imagine this…</h3>
+                  <p className="text-lg sm:text-xl text-gray-700 leading-relaxed">
+                    You're in a village with unstable connectivity — and you can still sell your products, receive payments, 
+                    talk to customers, manage your business, and even grow your savings... all from one single platform.
+                  </p>
+                  <div className="mt-6">
+                    <p className="text-lg font-semibold text-gray-800">No tech degree. No fancy setup. Just one app — online or offline.</p>
+                    <p className="text-2xl sm:text-3xl font-bold text-red-600 mt-2">That's Annita 3.0.</p>
+                  </div>
+                  <div className="mt-6 flex flex-wrap justify-center gap-4 text-lg font-semibold text-gray-700">
+                    <span>Smarter.</span>
+                    <span>Faster.</span>
+                    <span>Offline-ready.</span>
+                    <span>Inclusive.</span>
+                  </div>
+                </div>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+                className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12"
+              >
+                <div className="bg-white p-8 rounded-3xl shadow-lg border border-orange-200">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+                    🌍 Here's what's coming:
+                  </h3>
+                  <div className="space-y-4">
+                    <div className="flex items-start space-x-3">
+                      <span className="text-green-600 text-xl">✅</span>
+                      <div>
+                        <span className="font-semibold text-gray-900">Offline Functionality</span>
+                        <p className="text-gray-600 text-sm">— yes, you can access key features without internet.</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start space-x-3">
+                      <span className="text-green-600 text-xl">🔐</span>
+                      <div>
+                        <span className="font-semibold text-gray-900">Escrow Settlements</span>
+                        <p className="text-gray-600 text-sm">— making trade safer and more trusted for buyers & sellers.</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start space-x-3">
+                      <span className="text-green-600 text-xl">💸</span>
+                      <div>
+                        <span className="font-semibold text-gray-900">Fintech for all</span>
+                        <p className="text-gray-600 text-sm">— send, receive, save, and grow money with our smart digital wallet.</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start space-x-3">
+                      <span className="text-green-600 text-xl">🤖</span>
+                      <div>
+                        <span className="font-semibold text-gray-900">AI Business Assistant</span>
+                        <p className="text-gray-600 text-sm">— get automated help, insights, and guidance to run your hustle.</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start space-x-3">
+                      <span className="text-green-600 text-xl">📦</span>
+                      <div>
+                        <span className="font-semibold text-gray-900">Built-in logistics & marketing tools</span>
+                        <p className="text-gray-600 text-sm">— deliver faster and reach more customers.</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start space-x-3">
+                      <span className="text-green-600 text-xl">🧾</span>
+                      <div>
+                        <span className="font-semibold text-gray-900">Markup-based model (5–15%)</span>
+                        <p className="text-gray-600 text-sm">— no upfront costs, just sell and earn.</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start space-x-3">
+                      <span className="text-green-600 text-xl">🎯</span>
+                      <div>
+                        <span className="font-semibold text-gray-900">Flexible subscriptions</span>
+                        <p className="text-gray-600 text-sm">— Free, Growth, Pro, Premium — pick what suits you.</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start space-x-3">
+                      <span className="text-green-600 text-xl">👥</span>
+                      <div>
+                        <span className="font-semibold text-gray-900">For everyone</span>
+                        <p className="text-gray-600 text-sm">— MSMEs, vendors, freelancers, market women, students, and individuals.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="bg-gradient-to-br from-red-600 to-orange-600 p-8 rounded-3xl shadow-lg text-white">
+                  <div className="text-center">
+                    <h3 className="text-2xl font-bold mb-6">📣 This is Africa's all-in-one digital home.</h3>
+                    <p className="text-lg mb-6">Built in Liberia. Rising with the continent.</p>
+                    
+                    <div className="space-y-4 text-center">
+                      <p className="text-xl font-semibold">It's time for true digital freedom — without limits, without barriers.</p>
+                      <p className="text-lg">One platform. All your business needs — online or offline.</p>
+                    </div>
+
+                    <div className="mt-8 space-y-2 text-center">
+                      <p className="text-2xl font-bold">Simplify. Scale. Succeed.</p>
+                    </div>
+
+                    <button className="mt-8 bg-white text-red-600 px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition-colors duration-200">
+                      Get Ready for Annita 3.0
+                    </button>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+          </div>
+        </section>
+
         {/* Category Filter */}
         <section className="py-8 bg-white border-b border-gray-200">
           <div className="container mx-auto px-3 sm:px-4 lg:px-6 xl:px-8">
