@@ -37,7 +37,19 @@ import {
   Wifi,
   Lock,
   Award,
-  Rocket
+  Rocket,
+  Mic,
+  FileText,
+  Code,
+  Share2,
+  GraduationCap,
+  Eye,
+  Bell,
+  MapPin,
+  Activity,
+  Leaf,
+  Trophy,
+  Stethoscope
 } from 'lucide-react'
 
 const ComingSoonPage = () => {
@@ -344,6 +356,726 @@ const ComingSoonPage = () => {
       ],
       icon: Globe,
       color: 'from-yellow-500 to-orange-500'
+    },
+    {
+      id: 'ai-inventory-management',
+      title: "AI-Powered Inventory Management",
+      description: "Predictive stock management with automated reordering and demand forecasting",
+      category: 'ai',
+      status: 'planning',
+      progress: 25,
+      estimatedRelease: 'Q4 2024',
+      features: [
+        "Predictive demand forecasting",
+        "Automated reordering",
+        "Stock level optimization",
+        "Seasonal trend analysis",
+        "Real-time inventory tracking"
+      ],
+      icon: Brain,
+      color: 'from-purple-600 to-indigo-600'
+    },
+    {
+      id: 'smart-pricing-engine',
+      title: "Smart Pricing Engine",
+      description: "Dynamic pricing system that adjusts based on market conditions and demand",
+      category: 'ai',
+      status: 'research',
+      progress: 20,
+      estimatedRelease: 'Q1 2025',
+      features: [
+        "Dynamic price optimization",
+        "Market condition analysis",
+        "Competitor price monitoring",
+        "Demand-based pricing",
+        "Profit margin optimization"
+      ],
+      icon: TrendingUp,
+      color: 'from-green-600 to-emerald-600'
+    },
+    {
+      id: 'ai-customer-support',
+      title: "AI Customer Support",
+      description: "24/7 automated customer support with local language capabilities",
+      category: 'ai',
+      status: 'planning',
+      progress: 35,
+      estimatedRelease: 'Q3 2024',
+      features: [
+        "24/7 automated support",
+        "Local language processing",
+        "Context-aware responses",
+        "Escalation to human agents",
+        "Multi-channel support"
+      ],
+      icon: MessageSquare,
+      color: 'from-blue-600 to-cyan-600'
+    },
+    {
+      id: 'voice-commerce',
+      title: "Voice Commerce",
+      description: "Voice-activated shopping and payment system for hands-free transactions",
+      category: 'ai',
+      status: 'research',
+      progress: 15,
+      estimatedRelease: 'Q2 2025',
+      features: [
+        "Voice-activated shopping",
+        "Hands-free payments",
+        "Voice search capabilities",
+        "Multi-language voice support",
+        "Voice biometric authentication"
+      ],
+      icon: Mic,
+      color: 'from-pink-600 to-rose-600'
+    },
+    {
+      id: 'business-intelligence',
+      title: "Business Intelligence Dashboard",
+      description: "Comprehensive real-time business performance metrics and analytics",
+      category: 'platform',
+      status: 'planning',
+      progress: 45,
+      estimatedRelease: 'Q3 2024',
+      features: [
+        "Real-time performance metrics",
+        "Custom dashboard creation",
+        "Data visualization tools",
+        "Automated reporting",
+        "Performance alerts"
+      ],
+      icon: BarChart3,
+      color: 'from-indigo-600 to-purple-600'
+    },
+    {
+      id: 'market-trend-analysis',
+      title: "Market Trend Analysis",
+      description: "Local and regional market insights with predictive analytics",
+      category: 'platform',
+      status: 'planning',
+      progress: 30,
+      estimatedRelease: 'Q4 2024',
+      features: [
+        "Local market insights",
+        "Regional trend analysis",
+        "Predictive market forecasting",
+        "Competitor analysis",
+        "Market opportunity identification"
+      ],
+      icon: TrendingUp,
+      color: 'from-orange-600 to-red-600'
+    },
+    {
+      id: 'customer-analytics',
+      title: "Customer Behavior Analytics",
+      description: "Advanced customer insights and personalized recommendation engine",
+      category: 'ai',
+      status: 'planning',
+      progress: 40,
+      estimatedRelease: 'Q3 2024',
+      features: [
+        "Customer behavior tracking",
+        "Personalized recommendations",
+        "Purchase pattern analysis",
+        "Customer segmentation",
+        "Lifetime value prediction"
+      ],
+      icon: Users,
+      color: 'from-teal-600 to-cyan-600'
+    },
+    {
+      id: 'financial-forecasting',
+      title: "Financial Forecasting",
+      description: "AI-powered financial planning and forecasting tools for businesses",
+      category: 'payments',
+      status: 'planning',
+      progress: 35,
+      estimatedRelease: 'Q4 2024',
+      features: [
+        "Cash flow forecasting",
+        "Revenue prediction",
+        "Expense optimization",
+        "Investment recommendations",
+        "Financial risk assessment"
+      ],
+      icon: CreditCard,
+      color: 'from-emerald-600 to-green-600'
+    },
+    {
+      id: 'blockchain-integration',
+      title: "Blockchain Integration",
+      description: "Transparent and secure blockchain-based transactions and record keeping",
+      category: 'payments',
+      status: 'research',
+      progress: 20,
+      estimatedRelease: 'Q1 2025',
+      features: [
+        "Transparent transactions",
+        "Smart contract automation",
+        "Decentralized record keeping",
+        "Cryptocurrency support",
+        "Supply chain transparency"
+      ],
+      icon: Shield,
+      color: 'from-gray-700 to-gray-900'
+    },
+    {
+      id: 'fraud-detection',
+      title: "Advanced Fraud Detection",
+      description: "AI-powered security monitoring and fraud prevention system",
+      category: 'platform',
+      status: 'planning',
+      progress: 50,
+      estimatedRelease: 'Q3 2024',
+      features: [
+        "Real-time fraud monitoring",
+        "AI pattern recognition",
+        "Risk scoring algorithms",
+        "Automated fraud prevention",
+        "Security alerts"
+      ],
+      icon: Shield,
+      color: 'from-red-600 to-pink-600'
+    },
+    {
+      id: 'compliance-suite',
+      title: "Regulatory Compliance Suite",
+      description: "Automated compliance reporting and regulatory adherence tools",
+      category: 'enterprise',
+      status: 'planning',
+      progress: 30,
+      estimatedRelease: 'Q4 2024',
+      features: [
+        "Automated compliance reporting",
+        "Regulatory updates",
+        "Audit trail management",
+        "Policy enforcement",
+        "Compliance monitoring"
+      ],
+      icon: FileText,
+      color: 'from-blue-700 to-indigo-700'
+    },
+    {
+      id: 'data-privacy-tools',
+      title: "Data Privacy Tools",
+      description: "GDPR and local privacy law compliance with data protection features",
+      category: 'enterprise',
+      status: 'planning',
+      progress: 40,
+      estimatedRelease: 'Q3 2024',
+      features: [
+        "GDPR compliance",
+        "Data encryption",
+        "Privacy controls",
+        "Data deletion tools",
+        "Consent management"
+      ],
+      icon: Lock,
+      color: 'from-purple-700 to-indigo-700'
+    },
+    {
+      id: 'api-marketplace',
+      title: "API Marketplace",
+      description: "Third-party integrations and plugins marketplace for developers",
+      category: 'platform',
+      status: 'planning',
+      progress: 35,
+      estimatedRelease: 'Q4 2024',
+      features: [
+        "Third-party integrations",
+        "Developer tools",
+        "Plugin marketplace",
+        "API documentation",
+        "Integration testing"
+      ],
+      icon: Code,
+      color: 'from-gray-600 to-gray-800'
+    },
+    {
+      id: 'social-commerce',
+      title: "Social Commerce Integration",
+      description: "Direct selling through social media platforms with integrated tools",
+      category: 'platform',
+      status: 'planning',
+      progress: 45,
+      estimatedRelease: 'Q3 2024',
+      features: [
+        "Social media selling",
+        "Instagram shop integration",
+        "Facebook marketplace",
+        "Social proof tools",
+        "Influencer collaboration"
+      ],
+      icon: Share2,
+      color: 'from-pink-500 to-purple-500'
+    },
+    {
+      id: 'iot-integration',
+      title: "IoT Device Integration",
+      description: "Smart devices for inventory and delivery tracking automation",
+      category: 'logistics',
+      status: 'research',
+      progress: 15,
+      estimatedRelease: 'Q2 2025',
+      features: [
+        "Smart inventory tracking",
+        "IoT sensors integration",
+        "Automated delivery tracking",
+        "Real-time monitoring",
+        "Predictive maintenance"
+      ],
+      icon: Wifi,
+      color: 'from-blue-500 to-indigo-500'
+    },
+    {
+      id: 'cross-border-payments',
+      title: "Cross-Border Payment Gateway",
+      description: "International payment processing with multi-currency support",
+      category: 'payments',
+      status: 'planning',
+      progress: 40,
+      estimatedRelease: 'Q4 2024',
+      features: [
+        "International payments",
+        "Multi-currency support",
+        "Exchange rate optimization",
+        "Regulatory compliance",
+        "Fast settlement"
+      ],
+      icon: Globe,
+      color: 'from-green-500 to-teal-500'
+    },
+    {
+      id: 'digital-skills-academy',
+      title: "Digital Skills Academy",
+      description: "Free business and technology training platform for entrepreneurs",
+      category: 'platform',
+      status: 'planning',
+      progress: 50,
+      estimatedRelease: 'Q3 2024',
+      features: [
+        "Free business training",
+        "Technology courses",
+        "Local language content",
+        "Certification programs",
+        "Interactive learning"
+      ],
+      icon: GraduationCap,
+      color: 'from-blue-600 to-indigo-600'
+    },
+    {
+      id: 'mentorship-network',
+      title: "Mentorship Network",
+      description: "Connect with successful entrepreneurs and business mentors",
+      category: 'platform',
+      status: 'planning',
+      progress: 35,
+      estimatedRelease: 'Q4 2024',
+      features: [
+        "Entrepreneur matching",
+        "Video mentoring sessions",
+        "Success story sharing",
+        "Community forums",
+        "Mentorship programs"
+      ],
+      icon: Users,
+      color: 'from-purple-600 to-pink-600'
+    },
+    {
+      id: 'business-templates',
+      title: "Business Templates",
+      description: "Ready-to-use business plans, strategies, and operational templates",
+      category: 'platform',
+      status: 'planning',
+      progress: 45,
+      estimatedRelease: 'Q3 2024',
+      features: [
+        "Business plan templates",
+        "Marketing strategies",
+        "Financial models",
+        "Operational procedures",
+        "Legal document templates"
+      ],
+      icon: FileText,
+      color: 'from-green-600 to-emerald-600'
+    },
+    {
+      id: 'video-learning',
+      title: "Video Learning Platform",
+      description: "Local language business tutorials and educational content",
+      category: 'platform',
+      status: 'planning',
+      progress: 40,
+      estimatedRelease: 'Q4 2024',
+      features: [
+        "Local language tutorials",
+        "Business video courses",
+        "Interactive lessons",
+        "Progress tracking",
+        "Mobile learning"
+      ],
+      icon: Play,
+      color: 'from-red-600 to-pink-600'
+    },
+    {
+      id: 'health-insurance',
+      title: "Health Insurance Integration",
+      description: "Affordable health coverage and insurance for businesses and individuals",
+      category: 'platform',
+      status: 'research',
+      progress: 20,
+      estimatedRelease: 'Q1 2025',
+      features: [
+        "Affordable health coverage",
+        "Business insurance plans",
+        "Family coverage options",
+        "Digital claims processing",
+        "Health network access"
+      ],
+      icon: Heart,
+      color: 'from-red-500 to-pink-500'
+    },
+    {
+      id: 'telemedicine-services',
+      title: "Telemedicine Services",
+      description: "Remote healthcare consultations and medical support",
+      category: 'platform',
+      status: 'research',
+      progress: 25,
+      estimatedRelease: 'Q2 2025',
+      features: [
+        "Remote consultations",
+        "Digital prescriptions",
+        "Health monitoring",
+        "Medical record management",
+        "Emergency support"
+      ],
+      icon: Stethoscope,
+      color: 'from-blue-500 to-cyan-500'
+    },
+    {
+      id: 'mental-health-support',
+      title: "Mental Health Support",
+      description: "Business stress management and mental wellness resources",
+      category: 'platform',
+      status: 'research',
+      progress: 15,
+      estimatedRelease: 'Q2 2025',
+      features: [
+        "Stress management tools",
+        "Mental wellness resources",
+        "Professional counseling",
+        "Meditation and mindfulness",
+        "Community support groups"
+      ],
+      icon: Heart,
+      color: 'from-purple-500 to-pink-500'
+    },
+    {
+      id: 'wellness-programs',
+      title: "Wellness Programs",
+      description: "Employee health and wellness tracking and management",
+      category: 'platform',
+      status: 'research',
+      progress: 20,
+      estimatedRelease: 'Q1 2025',
+      features: [
+        "Employee wellness tracking",
+        "Health challenges",
+        "Fitness programs",
+        "Nutrition guidance",
+        "Wellness rewards"
+      ],
+      icon: Activity,
+      color: 'from-green-500 to-emerald-500'
+    },
+    {
+      id: 'green-business-tools',
+      title: "Green Business Tools",
+      description: "Carbon footprint tracking and sustainability management",
+      category: 'platform',
+      status: 'research',
+      progress: 15,
+      estimatedRelease: 'Q2 2025',
+      features: [
+        "Carbon footprint tracking",
+        "Sustainability reporting",
+        "Green certification",
+        "Eco-friendly practices",
+        "Environmental impact metrics"
+      ],
+      icon: Leaf,
+      color: 'from-green-600 to-emerald-600'
+    },
+    {
+      id: 'social-impact-metrics',
+      title: "Social Impact Metrics",
+      description: "Measure and showcase community impact and social responsibility",
+      category: 'platform',
+      status: 'planning',
+      progress: 30,
+      estimatedRelease: 'Q4 2024',
+      features: [
+        "Impact measurement tools",
+        "Social responsibility tracking",
+        "Community contribution metrics",
+        "Impact reporting",
+        "Sustainability goals"
+      ],
+      icon: Target,
+      color: 'from-blue-600 to-indigo-600'
+    },
+    {
+      id: 'sustainable-supply-chain',
+      title: "Sustainable Supply Chain",
+      description: "Eco-friendly sourcing and delivery with environmental responsibility",
+      category: 'logistics',
+      status: 'research',
+      progress: 20,
+      estimatedRelease: 'Q1 2025',
+      features: [
+        "Eco-friendly sourcing",
+        "Sustainable packaging",
+        "Green delivery options",
+        "Carbon-neutral shipping",
+        "Environmental compliance"
+      ],
+      icon: Leaf,
+      color: 'from-green-500 to-teal-500'
+    },
+    {
+      id: 'community-development-fund',
+      title: "Community Development Fund",
+      description: "Automatic contribution system for local community projects",
+      category: 'platform',
+      status: 'planning',
+      progress: 35,
+      estimatedRelease: 'Q4 2024',
+      features: [
+        "Automatic contributions",
+        "Local project funding",
+        "Transparent reporting",
+        "Community voting",
+        "Impact tracking"
+      ],
+      icon: Heart,
+      color: 'from-red-500 to-orange-500'
+    },
+    {
+      id: 'loyalty-programs',
+      title: "Loyalty Programs",
+      description: "Comprehensive points, rewards, and tier systems for customer retention",
+      category: 'platform',
+      status: 'planning',
+      progress: 45,
+      estimatedRelease: 'Q3 2024',
+      features: [
+        "Points accumulation",
+        "Reward redemption",
+        "Tier-based benefits",
+        "Personalized offers",
+        "Gamification elements"
+      ],
+      icon: Star,
+      color: 'from-yellow-500 to-orange-500'
+    },
+    {
+      id: 'business-challenges',
+      title: "Business Challenges",
+      description: "Monthly competitions and rewards to encourage business growth",
+      category: 'platform',
+      status: 'planning',
+      progress: 40,
+      estimatedRelease: 'Q4 2024',
+      features: [
+        "Monthly competitions",
+        "Performance challenges",
+        "Reward systems",
+        "Leaderboards",
+        "Achievement tracking"
+      ],
+      icon: Trophy,
+      color: 'from-yellow-600 to-orange-600'
+    },
+    {
+      id: 'achievement-badges',
+      title: "Achievement Badges",
+      description: "Recognition system for business milestones and accomplishments",
+      category: 'platform',
+      status: 'planning',
+      progress: 35,
+      estimatedRelease: 'Q3 2024',
+      features: [
+        "Milestone recognition",
+        "Achievement badges",
+        "Progress tracking",
+        "Social sharing",
+        "Reward unlocking"
+      ],
+      icon: Award,
+      color: 'from-purple-500 to-pink-500'
+    },
+    {
+      id: 'community-leaderboards',
+      title: "Community Leaderboards",
+      description: "Friendly competition and ranking system among business users",
+      category: 'platform',
+      status: 'planning',
+      progress: 30,
+      estimatedRelease: 'Q4 2024',
+      features: [
+        "Performance rankings",
+        "Community challenges",
+        "Friendly competition",
+        "Recognition system",
+        "Motivation tools"
+      ],
+      icon: Users,
+      color: 'from-blue-500 to-indigo-500'
+    },
+    {
+      id: 'ar-shopping',
+      title: "AR Shopping Experience",
+      description: "Augmented reality shopping with virtual product try-on capabilities",
+      category: 'mobile',
+      status: 'research',
+      progress: 10,
+      estimatedRelease: 'Q3 2025',
+      features: [
+        "Virtual product try-on",
+        "AR product visualization",
+        "3D product models",
+        "Interactive shopping",
+        "Spatial product placement"
+      ],
+      icon: Eye,
+      color: 'from-purple-600 to-pink-600'
+    },
+    {
+      id: 'offline-first-architecture',
+      title: "Offline-First Architecture",
+      description: "Complete offline functionality with seamless synchronization",
+      category: 'mobile',
+      status: 'in-development',
+      progress: 80,
+      estimatedRelease: 'Q2 2024',
+      features: [
+        "Complete offline operation",
+        "Data synchronization",
+        "Offline payments",
+        "Local data storage",
+        "Seamless online/offline transition"
+      ],
+      icon: Wifi,
+      color: 'from-gray-600 to-gray-800'
+    },
+    {
+      id: 'progressive-web-app',
+      title: "Progressive Web App",
+      description: "App-like experience on any device with native functionality",
+      category: 'mobile',
+      status: 'in-development',
+      progress: 70,
+      estimatedRelease: 'Q2 2024',
+      features: [
+        "App-like experience",
+        "Native functionality",
+        "Cross-platform compatibility",
+        "Offline capabilities",
+        "Push notifications"
+      ],
+      icon: Smartphone,
+      color: 'from-blue-500 to-indigo-500'
+    },
+    {
+      id: 'push-notification-hub',
+      title: "Push Notification Hub",
+      description: "Personalized notifications and alerts across all platforms",
+      category: 'mobile',
+      status: 'planning',
+      progress: 50,
+      estimatedRelease: 'Q3 2024',
+      features: [
+        "Personalized notifications",
+        "Multi-platform alerts",
+        "Smart notification timing",
+        "Custom notification preferences",
+        "Engagement tracking"
+      ],
+      icon: Bell,
+      color: 'from-orange-500 to-red-500'
+    },
+    {
+      id: 'white-label-platform',
+      title: "White-Label Platform",
+      description: "Customizable platform for large organizations and enterprises",
+      category: 'enterprise',
+      status: 'planning',
+      progress: 25,
+      estimatedRelease: 'Q4 2024',
+      features: [
+        "Custom branding",
+        "Enterprise customization",
+        "Dedicated infrastructure",
+        "Custom integrations",
+        "Enterprise support"
+      ],
+      icon: Building,
+      color: 'from-gray-700 to-gray-900'
+    },
+    {
+      id: 'advanced-reporting-suite',
+      title: "Advanced Reporting Suite",
+      description: "Comprehensive business reporting and analytics platform",
+      category: 'enterprise',
+      status: 'planning',
+      progress: 40,
+      estimatedRelease: 'Q3 2024',
+      features: [
+        "Comprehensive reporting",
+        "Custom report builder",
+        "Data export capabilities",
+        "Scheduled reports",
+        "Advanced analytics"
+      ],
+      icon: BarChart3,
+      color: 'from-indigo-600 to-purple-600'
+    },
+    {
+      id: 'multi-location-management',
+      title: "Multi-Location Management",
+      description: "Centralized management for multiple business locations",
+      category: 'enterprise',
+      status: 'planning',
+      progress: 35,
+      estimatedRelease: 'Q4 2024',
+      features: [
+        "Centralized management",
+        "Location-specific settings",
+        "Unified reporting",
+        "Cross-location analytics",
+        "Standardized operations"
+      ],
+      icon: MapPin,
+      color: 'from-green-600 to-teal-600'
+    },
+    {
+      id: 'employee-management',
+      title: "Employee Management Tools",
+      description: "HR and payroll integration with employee management features",
+      category: 'enterprise',
+      status: 'planning',
+      progress: 30,
+      estimatedRelease: 'Q4 2024',
+      features: [
+        "HR management",
+        "Payroll integration",
+        "Employee onboarding",
+        "Performance tracking",
+        "Benefits management"
+      ],
+      icon: Users,
+      color: 'from-blue-600 to-indigo-600'
     }
   ]
 
