@@ -46,8 +46,8 @@ export default function DownloadPage() {
       icon: Apple,
       color: 'from-blue-500 to-purple-500',
       store: 'App Store',
-      rating: '4.8',
-      downloads: '2.5M+'
+      rating: 'Pending',
+      downloads: 'Pending'
     },
     {
       id: 'android',
@@ -56,8 +56,8 @@ export default function DownloadPage() {
       icon: Play,
       color: 'from-green-500 to-emerald-500',
       store: 'Google Play',
-      rating: '4.7',
-      downloads: '2.3M+'
+      rating: 'Pending',
+      downloads: 'Pending'
     }
   ]
 
@@ -95,10 +95,10 @@ export default function DownloadPage() {
   ]
 
   const appStats = [
-    { label: 'Total Downloads', value: '5M+', icon: Download },
-    { label: 'Active Users', value: '2.1M+', icon: Users },
-    { label: 'Average Rating', value: '4.8/5', icon: Star },
-    { label: 'Countries', value: '15+', icon: Globe }
+    { label: 'Total Downloads', value: 'Pending', icon: Download },
+    { label: 'Active Users', value: 'Pending', icon: Users },
+    { label: 'Average Rating', value: 'Pending', icon: Star },
+    { label: 'Countries', value: 'Pending', icon: Globe }
   ]
 
   const handlePlatformSelect = (platformId: string) => {
@@ -121,7 +121,7 @@ export default function DownloadPage() {
     <>
       <SEOHead
         title="Download Annita - Africa's All-in-One Digital Platform"
-        description="Download Annita's mobile app and access Africa's all-in-one digital platform. Secure payments, marketplace shopping, AI tools, real-time tracking, and more. Available on iOS and Android with 5M+ downloads and 4.8-star rating."
+        description="Download Annita's mobile app and access Africa's all-in-one digital platform. Secure payments, marketplace shopping, AI tools, real-time tracking, and more. Available on iOS and Android with real-time stats and ratings."
         keywords={[
           'download Annita',
           'Annita mobile app',
