@@ -76,7 +76,7 @@ const ComingSoonPage = () => {
       category: 'platform',
       status: 'in-development',
       progress: 75,
-      estimatedRelease: 'Q2 2024',
+      estimatedRelease: 'Q1 2030',
       features: [
         "Offline functionality for all core features",
         "Escrow settlements for secure trading",
@@ -94,7 +94,7 @@ const ComingSoonPage = () => {
       category: 'platform',
       status: 'in-development',
       progress: 60,
-      estimatedRelease: 'Q2 2024',
+      estimatedRelease: 'Q2 2030',
       features: [
         "Secure data storage and backup",
         "Cloud computing infrastructure",
@@ -112,7 +112,7 @@ const ComingSoonPage = () => {
       category: 'logistics',
       status: 'planning',
       progress: 40,
-      estimatedRelease: 'Q3 2024',
+      estimatedRelease: 'Q3 2030',
       features: [
         "Nationwide pickup locations",
         "Secure package storage",
@@ -130,7 +130,7 @@ const ComingSoonPage = () => {
       category: 'logistics',
       status: 'planning',
       progress: 35,
-      estimatedRelease: 'Q3 2024',
+      estimatedRelease: 'Q4 2030',
       features: [
         "Automated order processing",
         "Smart inventory management",
@@ -148,7 +148,7 @@ const ComingSoonPage = () => {
       category: 'logistics',
       status: 'planning',
       progress: 45,
-      estimatedRelease: 'Q3 2024',
+      estimatedRelease: 'Q3 2030',
       features: [
         "Local delivery partners",
         "Community-based delivery",
@@ -166,7 +166,7 @@ const ComingSoonPage = () => {
       category: 'payments',
       status: 'planning',
       progress: 50,
-      estimatedRelease: 'Q3 2024',
+      estimatedRelease: 'Q3 2026',
       features: [
         "Savings and checking accounts",
         "Personal and business loans",
@@ -184,7 +184,7 @@ const ComingSoonPage = () => {
       category: 'mobile',
       status: 'in-development',
       progress: 70,
-      estimatedRelease: 'Q2 2024',
+      estimatedRelease: 'Q3 2030',
       features: [
         "Web platform access",
         "Mobile app (iOS/Android)",
@@ -202,7 +202,7 @@ const ComingSoonPage = () => {
       category: 'platform',
       status: 'planning',
       progress: 30,
-      estimatedRelease: 'Q4 2024',
+      estimatedRelease: 'Q1 2027',
       features: [
         "West African market entry",
         "Localized interfaces",
@@ -220,7 +220,7 @@ const ComingSoonPage = () => {
       category: 'mobile',
       status: 'in-development',
       progress: 85,
-      estimatedRelease: 'Q1 2024',
+      estimatedRelease: 'Q4 2030',
       features: [
         "Offline mode for core functions",
         "Push notifications for orders and payments",
@@ -238,7 +238,7 @@ const ComingSoonPage = () => {
       category: 'ai',
       status: 'beta-testing',
       progress: 70,
-      estimatedRelease: 'Q2 2024',
+      estimatedRelease: 'Q3 2030',
       features: [
         "Natural language processing",
         "Predictive analytics",
@@ -256,7 +256,7 @@ const ComingSoonPage = () => {
       category: 'platform',
       status: 'in-development',
       progress: 60,
-      estimatedRelease: 'Q2 2024',
+      estimatedRelease: 'Q3 2030',
       features: [
         "Real-time performance metrics",
         "Custom report builder",
@@ -274,7 +274,7 @@ const ComingSoonPage = () => {
       category: 'payments',
       status: 'planning',
       progress: 30,
-      estimatedRelease: 'Q3 2024',
+      estimatedRelease: 'Q2 2030',
       features: [
         "Bitcoin and Ethereum support",
         "Instant settlement",
@@ -292,7 +292,7 @@ const ComingSoonPage = () => {
       category: 'logistics',
       status: 'research',
       progress: 20,
-      estimatedRelease: 'Q4 2024',
+      estimatedRelease: 'Q1 2030',
       features: [
         "Autonomous drone navigation",
         "Real-time tracking",
@@ -310,7 +310,7 @@ const ComingSoonPage = () => {
       category: 'communication',
       status: 'in-development',
       progress: 75,
-      estimatedRelease: 'Q1 2024',
+      estimatedRelease: 'Q4 2030',
       features: [
         "HD video quality",
         "Screen sharing",
@@ -328,7 +328,7 @@ const ComingSoonPage = () => {
       category: 'enterprise',
       status: 'planning',
       progress: 40,
-      estimatedRelease: 'Q3 2024',
+      estimatedRelease: 'Q2 2030',
       features: [
         "Advanced security protocols",
         "Custom integrations",
@@ -346,7 +346,7 @@ const ComingSoonPage = () => {
       category: 'platform',
       status: 'in-development',
       progress: 65,
-      estimatedRelease: 'Q2 2024',
+      estimatedRelease: 'Q3 2030',
       features: [
         "Multi-currency support",
         "Localized interfaces",
@@ -364,7 +364,7 @@ const ComingSoonPage = () => {
       category: 'ai',
       status: 'planning',
       progress: 25,
-      estimatedRelease: 'Q4 2024',
+      estimatedRelease: 'Q1 2030',
       features: [
         "Predictive demand forecasting",
         "Automated reordering",
@@ -382,7 +382,7 @@ const ComingSoonPage = () => {
       category: 'ai',
       status: 'research',
       progress: 20,
-      estimatedRelease: 'Q1 2025',
+      estimatedRelease: 'Q4 2030',
       features: [
         "Dynamic price optimization",
         "Market condition analysis",
@@ -400,7 +400,7 @@ const ComingSoonPage = () => {
       category: 'ai',
       status: 'planning',
       progress: 35,
-      estimatedRelease: 'Q3 2024',
+      estimatedRelease: 'Q2 2030',
       features: [
         "24/7 automated support",
         "Local language processing",
@@ -418,7 +418,7 @@ const ComingSoonPage = () => {
       category: 'ai',
       status: 'research',
       progress: 15,
-      estimatedRelease: 'Q2 2025',
+      estimatedRelease: 'Q1 2030',
       features: [
         "Voice-activated shopping",
         "Hands-free payments",
@@ -436,7 +436,7 @@ const ComingSoonPage = () => {
       category: 'platform',
       status: 'planning',
       progress: 45,
-      estimatedRelease: 'Q3 2024',
+      estimatedRelease: 'Q2 2030',
       features: [
         "Real-time performance metrics",
         "Custom dashboard creation",
@@ -454,7 +454,7 @@ const ComingSoonPage = () => {
       category: 'platform',
       status: 'planning',
       progress: 30,
-      estimatedRelease: 'Q4 2024',
+      estimatedRelease: 'Q1 2030',
       features: [
         "Local market insights",
         "Regional trend analysis",
@@ -472,7 +472,7 @@ const ComingSoonPage = () => {
       category: 'ai',
       status: 'planning',
       progress: 40,
-      estimatedRelease: 'Q3 2024',
+      estimatedRelease: 'Q2 2030',
       features: [
         "Customer behavior tracking",
         "Personalized recommendations",
@@ -490,7 +490,7 @@ const ComingSoonPage = () => {
       category: 'payments',
       status: 'planning',
       progress: 35,
-      estimatedRelease: 'Q4 2024',
+      estimatedRelease: 'Q1 2030',
       features: [
         "Cash flow forecasting",
         "Revenue prediction",
@@ -508,7 +508,7 @@ const ComingSoonPage = () => {
       category: 'payments',
       status: 'research',
       progress: 20,
-      estimatedRelease: 'Q1 2025',
+      estimatedRelease: 'Q4 2030',
       features: [
         "Transparent transactions",
         "Smart contract automation",
@@ -526,7 +526,7 @@ const ComingSoonPage = () => {
       category: 'platform',
       status: 'planning',
       progress: 50,
-      estimatedRelease: 'Q3 2024',
+      estimatedRelease: 'Q2 2030',
       features: [
         "Real-time fraud monitoring",
         "AI pattern recognition",
@@ -544,7 +544,7 @@ const ComingSoonPage = () => {
       category: 'enterprise',
       status: 'planning',
       progress: 30,
-      estimatedRelease: 'Q4 2024',
+      estimatedRelease: 'Q1 2030',
       features: [
         "Automated compliance reporting",
         "Regulatory updates",
@@ -562,7 +562,7 @@ const ComingSoonPage = () => {
       category: 'enterprise',
       status: 'planning',
       progress: 40,
-      estimatedRelease: 'Q3 2024',
+      estimatedRelease: 'Q2 2030',
       features: [
         "GDPR compliance",
         "Data encryption",
@@ -580,7 +580,7 @@ const ComingSoonPage = () => {
       category: 'platform',
       status: 'planning',
       progress: 35,
-      estimatedRelease: 'Q4 2024',
+      estimatedRelease: 'Q1 2030',
       features: [
         "Third-party integrations",
         "Developer tools",
@@ -598,7 +598,7 @@ const ComingSoonPage = () => {
       category: 'platform',
       status: 'planning',
       progress: 45,
-      estimatedRelease: 'Q3 2024',
+      estimatedRelease: 'Q2 2030',
       features: [
         "Social media selling",
         "Instagram shop integration",
@@ -616,7 +616,7 @@ const ComingSoonPage = () => {
       category: 'logistics',
       status: 'research',
       progress: 15,
-      estimatedRelease: 'Q2 2025',
+      estimatedRelease: 'Q1 2030',
       features: [
         "Smart inventory tracking",
         "IoT sensors integration",
@@ -634,7 +634,7 @@ const ComingSoonPage = () => {
       category: 'payments',
       status: 'planning',
       progress: 40,
-      estimatedRelease: 'Q4 2024',
+      estimatedRelease: 'Q1 2030',
       features: [
         "International payments",
         "Multi-currency support",
@@ -652,7 +652,7 @@ const ComingSoonPage = () => {
       category: 'platform',
       status: 'planning',
       progress: 50,
-      estimatedRelease: 'Q3 2024',
+      estimatedRelease: 'Q2 2030',
       features: [
         "Free business training",
         "Technology courses",
@@ -670,7 +670,7 @@ const ComingSoonPage = () => {
       category: 'platform',
       status: 'planning',
       progress: 35,
-      estimatedRelease: 'Q4 2024',
+      estimatedRelease: 'Q1 2030',
       features: [
         "Entrepreneur matching",
         "Video mentoring sessions",
@@ -688,7 +688,7 @@ const ComingSoonPage = () => {
       category: 'platform',
       status: 'planning',
       progress: 45,
-      estimatedRelease: 'Q3 2024',
+      estimatedRelease: 'Q2 2030',
       features: [
         "Business plan templates",
         "Marketing strategies",
@@ -706,7 +706,7 @@ const ComingSoonPage = () => {
       category: 'platform',
       status: 'planning',
       progress: 40,
-      estimatedRelease: 'Q4 2024',
+      estimatedRelease: 'Q1 2030',
       features: [
         "Local language tutorials",
         "Business video courses",
@@ -724,7 +724,7 @@ const ComingSoonPage = () => {
       category: 'platform',
       status: 'research',
       progress: 20,
-      estimatedRelease: 'Q1 2025',
+      estimatedRelease: 'Q4 2030',
       features: [
         "Affordable health coverage",
         "Business insurance plans",
@@ -742,7 +742,7 @@ const ComingSoonPage = () => {
       category: 'platform',
       status: 'research',
       progress: 25,
-      estimatedRelease: 'Q2 2025',
+      estimatedRelease: 'Q1 2030',
       features: [
         "Remote consultations",
         "Digital prescriptions",
@@ -760,7 +760,7 @@ const ComingSoonPage = () => {
       category: 'platform',
       status: 'research',
       progress: 15,
-      estimatedRelease: 'Q2 2025',
+      estimatedRelease: 'Q1 2030',
       features: [
         "Stress management tools",
         "Mental wellness resources",
@@ -778,7 +778,7 @@ const ComingSoonPage = () => {
       category: 'platform',
       status: 'research',
       progress: 20,
-      estimatedRelease: 'Q1 2025',
+      estimatedRelease: 'Q4 2030',
       features: [
         "Employee wellness tracking",
         "Health challenges",
@@ -796,7 +796,7 @@ const ComingSoonPage = () => {
       category: 'platform',
       status: 'research',
       progress: 15,
-      estimatedRelease: 'Q2 2025',
+      estimatedRelease: 'Q1 2030',
       features: [
         "Carbon footprint tracking",
         "Sustainability reporting",
@@ -814,7 +814,7 @@ const ComingSoonPage = () => {
       category: 'platform',
       status: 'planning',
       progress: 30,
-      estimatedRelease: 'Q4 2024',
+      estimatedRelease: 'Q1 2030',
       features: [
         "Impact measurement tools",
         "Social responsibility tracking",
@@ -832,7 +832,7 @@ const ComingSoonPage = () => {
       category: 'logistics',
       status: 'research',
       progress: 20,
-      estimatedRelease: 'Q1 2025',
+      estimatedRelease: 'Q4 2030',
       features: [
         "Eco-friendly sourcing",
         "Sustainable packaging",
@@ -850,7 +850,7 @@ const ComingSoonPage = () => {
       category: 'platform',
       status: 'planning',
       progress: 35,
-      estimatedRelease: 'Q4 2024',
+      estimatedRelease: 'Q1 2030',
       features: [
         "Automatic contributions",
         "Local project funding",
@@ -868,7 +868,7 @@ const ComingSoonPage = () => {
       category: 'platform',
       status: 'planning',
       progress: 45,
-      estimatedRelease: 'Q3 2024',
+      estimatedRelease: 'Q2 2030',
       features: [
         "Points accumulation",
         "Reward redemption",
@@ -886,7 +886,7 @@ const ComingSoonPage = () => {
       category: 'platform',
       status: 'planning',
       progress: 40,
-      estimatedRelease: 'Q4 2024',
+      estimatedRelease: 'Q1 2030',
       features: [
         "Monthly competitions",
         "Performance challenges",
@@ -904,7 +904,7 @@ const ComingSoonPage = () => {
       category: 'platform',
       status: 'planning',
       progress: 35,
-      estimatedRelease: 'Q3 2024',
+      estimatedRelease: 'Q2 2030',
       features: [
         "Milestone recognition",
         "Achievement badges",
@@ -922,7 +922,7 @@ const ComingSoonPage = () => {
       category: 'platform',
       status: 'planning',
       progress: 30,
-      estimatedRelease: 'Q4 2024',
+      estimatedRelease: 'Q1 2030',
       features: [
         "Performance rankings",
         "Community challenges",
@@ -940,7 +940,7 @@ const ComingSoonPage = () => {
       category: 'mobile',
       status: 'research',
       progress: 10,
-      estimatedRelease: 'Q3 2025',
+      estimatedRelease: 'Q2 2030',
       features: [
         "Virtual product try-on",
         "AR product visualization",
@@ -958,7 +958,7 @@ const ComingSoonPage = () => {
       category: 'mobile',
       status: 'in-development',
       progress: 80,
-      estimatedRelease: 'Q2 2024',
+      estimatedRelease: 'Q3 2030',
       features: [
         "Complete offline operation",
         "Data synchronization",
@@ -976,7 +976,7 @@ const ComingSoonPage = () => {
       category: 'mobile',
       status: 'in-development',
       progress: 70,
-      estimatedRelease: 'Q2 2024',
+      estimatedRelease: 'Q3 2030',
       features: [
         "App-like experience",
         "Native functionality",
@@ -994,7 +994,7 @@ const ComingSoonPage = () => {
       category: 'mobile',
       status: 'planning',
       progress: 50,
-      estimatedRelease: 'Q3 2024',
+      estimatedRelease: 'Q2 2030',
       features: [
         "Personalized notifications",
         "Multi-platform alerts",
@@ -1012,7 +1012,7 @@ const ComingSoonPage = () => {
       category: 'enterprise',
       status: 'planning',
       progress: 25,
-      estimatedRelease: 'Q4 2024',
+      estimatedRelease: 'Q1 2030',
       features: [
         "Custom branding",
         "Enterprise customization",
@@ -1030,7 +1030,7 @@ const ComingSoonPage = () => {
       category: 'enterprise',
       status: 'planning',
       progress: 40,
-      estimatedRelease: 'Q3 2024',
+      estimatedRelease: 'Q2 2030',
       features: [
         "Comprehensive reporting",
         "Custom report builder",
@@ -1048,7 +1048,7 @@ const ComingSoonPage = () => {
       category: 'enterprise',
       status: 'planning',
       progress: 35,
-      estimatedRelease: 'Q4 2024',
+      estimatedRelease: 'Q1 2030',
       features: [
         "Centralized management",
         "Location-specific settings",
@@ -1066,7 +1066,7 @@ const ComingSoonPage = () => {
       category: 'enterprise',
       status: 'planning',
       progress: 30,
-      estimatedRelease: 'Q4 2024',
+      estimatedRelease: 'Q1 2030',
       features: [
         "HR management",
         "Payroll integration",
@@ -1537,3 +1537,10 @@ const ComingSoonPage = () => {
 }
 
 export default ComingSoonPage
+
+
+
+
+
+
+
