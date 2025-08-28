@@ -40,12 +40,12 @@ const Footer = () => {
     {
       title: 'Business',
       links: [
-        { name: 'Global Market', href: '/services/global-market' },
+        { name: 'Annita Global Market', href: '/services/global-market' },
         { name: 'AnnitaPay Business', href: '/services/annitapay-business' },
         { name: 'Annita AI', href: '/services/ai' },
-        { name: 'Logistics', href: '/services/logistics' },
-        { name: 'Ads', href: '/services/ads' },
-        { name: 'ERP System', href: '/services/erp' }
+        { name: 'Annita Logistics Network', href: '/services/logistics' },
+        { name: 'Annita Ads', href: '/services/ads' },
+        { name: 'Annita ERP System', href: '/services/erp' }
       ]
     },
 

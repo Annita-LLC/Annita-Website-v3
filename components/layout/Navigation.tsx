@@ -71,12 +71,12 @@ const Navigation = () => {
       name: 'Business', 
       href: '#',
       dropdown: [
-        { name: 'Global Market', href: '/services/global-market', icon: Globe, description: 'International marketplace' },
+        { name: 'Annita Global Market', href: '/services/global-market', icon: Globe, description: 'International marketplace' },
         { name: 'AnnitaPay Business', href: '/services/annitapay-business', icon: Building, description: 'Business payment solutions' },
         { name: 'Annita AI', href: '/services/ai', icon: Zap, description: 'AI-powered business tools' },
-        { name: 'Logistics', href: '/services/logistics', icon: Truck, description: 'Supply chain & delivery' },
-        { name: 'Ads', href: '/services/ads', icon: Target, description: 'Advertising platform' },
-        { name: 'ERP System', href: '/services/erp', icon: Database, description: 'Enterprise resource planning' },
+        { name: 'Annita Logistics Network', href: '/services/logistics', icon: Truck, description: 'Supply chain & delivery' },
+        { name: 'Annita Ads', href: '/services/ads', icon: Target, description: 'Advertising platform' },
+        { name: 'Annita ERP System', href: '/services/erp', icon: Database, description: 'Enterprise resource planning' },
       ]
     },
 
