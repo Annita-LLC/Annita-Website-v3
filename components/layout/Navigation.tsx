@@ -61,9 +61,9 @@ const Navigation = () => {
       name: 'Personal', 
       href: '#',
       dropdown: [
-        { name: 'AnnitaPay', href: '/services/annitapay', icon: CreditCard, description: 'Secure digital payments' },
-        { name: 'Annita AI', href: '/ai/personal', icon: Zap, description: 'Personal AI assistant' },
-        { name: 'Shopping', href: '/services/shopping', icon: ShoppingCart, description: 'E-commerce platform' },
+                 { name: 'AnnitaPay', href: '/services/annitapay', icon: CreditCard, description: 'Secure digital payments' },
+         { name: 'Annita AI', href: '/ai/personal', icon: Zap, description: 'Personal AI assistant' },
+         { name: 'Annita Marketplace', href: '/services/shopping', icon: ShoppingCart, description: 'Multivendor Ecommerce Shopping Place with countless MSMEs stores to shop from' },
         
       ]
     },
