@@ -49,13 +49,19 @@ import {
   Activity,
   Leaf,
   Trophy,
-  Stethoscope
+  Stethoscope,
+  Mail,
+  Send
 } from 'lucide-react'
 
 const ComingSoonPage = () => {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true })
   const [activeCategory, setActiveCategory] = useState('all')
+  const [email, setEmail] = useState('')
+  const [isSubscribing, setIsSubscribing] = useState(false)
+  const [isSubscribed, setIsSubscribed] = useState(false)
+  const [error, setError] = useState('')
 
   const categories = [
     { id: 'all', name: 'All Updates', icon: Rocket },
@@ -1105,6 +1111,43 @@ const ComingSoonPage = () => {
     ? upcomingFeatures 
     : upcomingFeatures.filter(feature => feature.category === activeCategory)
 
+  const handleNewsletterSubscribe = async (e: React.FormEvent) => {
+    e.preventDefault()
+    
+    if (!email) {
+      setError('Please enter your email address')
+      return
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    if (!emailRegex.test(email)) {
+      setError('Please enter a valid email address')
+      return
+    }
+
+    setIsSubscribing(true)
+    setError('')
+
+    try {
+      // Simulate API call
+      await new Promise(resolve => setTimeout(resolve, 1500))
+      
+      // Here you would typically make an API call to your backend
+      // const response = await fetch('/api/newsletter/subscribe', {
+      //   method: 'POST',
+      //   headers: { 'Content-Type': 'application/json' },
+      //   body: JSON.stringify({ email })
+      // })
+
+      setIsSubscribed(true)
+      setEmail('')
+    } catch (err) {
+      setError('Something went wrong. Please try again.')
+    } finally {
+      setIsSubscribing(false)
+    }
+  }
+
   return (
     <>
       <SEOHead
@@ -1406,33 +1449,142 @@ const ComingSoonPage = () => {
         </section>
 
         {/* Newsletter Signup */}
-        <section className="py-16 sm:py-20 bg-gradient-to-r from-purple-600 to-pink-600">
-          <div className="container mx-auto px-3 sm:px-4 lg:px-6 xl:px-8">
-            <div className="text-center max-w-3xl mx-auto">
+        <section className="py-20 sm:py-24 bg-gradient-to-br from-purple-600 via-pink-600 to-orange-500 relative overflow-hidden">
+          {/* Background Elements */}
+          <div className="absolute inset-0">
+            <div className="absolute top-0 left-1/4 w-96 h-96 bg-white/10 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse"></div>
+            <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-yellow-400/20 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse animation-delay-2000"></div>
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-pink-400/15 rounded-full mix-blend-multiply filter blur-2xl opacity-40 animate-pulse animation-delay-4000"></div>
+          </div>
+
+          <div className="container mx-auto px-3 sm:px-4 lg:px-6 xl:px-8 relative z-10">
+            <div className="text-center max-w-4xl mx-auto">
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.8 }}
               >
-                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">
-                  Stay <span className="text-yellow-300">Updated</span>
+                {/* Icon */}
+                <div className="inline-flex items-center justify-center w-20 h-20 bg-white/20 backdrop-blur-sm rounded-full mb-8">
+                  <Bell className="w-10 h-10 text-white" />
+                </div>
+
+                {/* Title */}
+                <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
+                  Stay <span className="text-yellow-300 drop-shadow-lg">Updated</span>
                 </h2>
-                <p className="text-lg sm:text-xl text-purple-100 mb-8 leading-relaxed">
+
+                {/* Description */}
+                <p className="text-xl sm:text-2xl text-white/90 mb-12 leading-relaxed max-w-2xl mx-auto">
                   Be the first to know when new features launch. Get early access and exclusive updates.
                 </p>
-                <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-                  <input
-                    type="email"
-                    placeholder="Enter your email"
-                    className="flex-1 px-6 py-4 rounded-lg text-gray-900 focus:ring-2 focus:ring-yellow-300 focus:outline-none"
-                  />
-                  <button className="bg-yellow-400 text-gray-900 px-8 py-4 rounded-lg font-semibold hover:bg-yellow-300 transition-colors duration-200">
-                    Subscribe
-                  </button>
+
+                {/* Newsletter Form */}
+                <div className="bg-white/10 backdrop-blur-md rounded-3xl p-8 sm:p-12 border border-white/20 shadow-2xl max-w-2xl mx-auto">
+                  {!isSubscribed ? (
+                    <form onSubmit={handleNewsletterSubscribe}>
+                      <div className="flex flex-col sm:flex-row gap-4">
+                        <div className="flex-1 relative">
+                          <input
+                            type="email"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                            placeholder="Enter your email address"
+                            className="w-full px-6 py-4 rounded-2xl text-gray-900 bg-white/95 backdrop-blur-sm border-2 border-white/30 focus:border-yellow-300 focus:ring-4 focus:ring-yellow-300/20 focus:outline-none transition-all duration-300 text-lg placeholder-gray-500"
+                            disabled={isSubscribing}
+                          />
+                          <div className="absolute right-3 top-1/2 transform -translate-y-1/2">
+                            <Mail className="w-5 h-5 text-gray-400" />
+                          </div>
+                        </div>
+                        <button 
+                          type="submit"
+                          disabled={isSubscribing}
+                          className="bg-gradient-to-r from-yellow-400 to-orange-400 hover:from-yellow-300 hover:to-orange-300 disabled:from-gray-400 disabled:to-gray-500 text-gray-900 px-8 py-4 rounded-2xl font-bold text-lg shadow-lg hover:shadow-xl transform hover:scale-105 disabled:transform-none disabled:shadow-none transition-all duration-300 flex items-center justify-center gap-2 min-w-[140px]"
+                        >
+                          {isSubscribing ? (
+                            <>
+                              <div className="w-5 h-5 border-2 border-gray-900 border-t-transparent rounded-full animate-spin"></div>
+                              Subscribing...
+                            </>
+                          ) : (
+                            <>
+                              <Send className="w-5 h-5" />
+                              Subscribe
+                            </>
+                          )}
+                        </button>
+                      </div>
+                      
+                      {/* Error Message */}
+                      {error && (
+                        <div className="mt-4 text-center">
+                          <p className="text-red-300 text-sm bg-red-500/20 px-4 py-2 rounded-lg">
+                            {error}
+                          </p>
+                        </div>
+                      )}
+                      
+                      {/* Privacy Message */}
+                      <div className="mt-4 text-center">
+                        <p className="text-white/80 text-sm">
+                          ✨ No spam, unsubscribe at any time. We respect your privacy.
+                        </p>
+                      </div>
+                    </form>
+                  ) : (
+                    <div className="text-center">
+                      <div className="w-16 h-16 bg-green-400/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <CheckCircle className="w-8 h-8 text-green-300" />
+                      </div>
+                      <h3 className="text-2xl font-bold text-white mb-2">Successfully Subscribed!</h3>
+                      <p className="text-white/80 mb-6">You'll receive updates about new features and exclusive content.</p>
+                      <button 
+                        onClick={() => setIsSubscribed(false)}
+                        className="bg-white/20 hover:bg-white/30 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300"
+                      >
+                        Subscribe Another Email
+                      </button>
+                    </div>
+                  )}
+
+                  {/* Additional Benefits */}
+                  <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
+                    <div className="flex flex-col items-center">
+                      <div className="w-8 h-8 bg-yellow-400/20 rounded-full flex items-center justify-center mb-2">
+                        <Star className="w-4 h-4 text-yellow-300" />
+                      </div>
+                      <p className="text-white/80 text-xs">Early Access</p>
+                    </div>
+                    <div className="flex flex-col items-center">
+                      <div className="w-8 h-8 bg-yellow-400/20 rounded-full flex items-center justify-center mb-2">
+                        <Zap className="w-4 h-4 text-yellow-300" />
+                      </div>
+                      <p className="text-white/80 text-xs">Exclusive Updates</p>
+                    </div>
+                    <div className="flex flex-col items-center">
+                      <div className="w-8 h-8 bg-yellow-400/20 rounded-full flex items-center justify-center mb-2">
+                        <Shield className="w-4 h-4 text-yellow-300" />
+                      </div>
+                      <p className="text-white/80 text-xs">Privacy First</p>
+                    </div>
+                  </div>
                 </div>
-                <p className="text-purple-200 text-sm mt-4">
-                  No spam, unsubscribe at any time. We respect your privacy.
-                </p>
+
+                {/* Social Proof */}
+                <div className="mt-12 text-center">
+                  <p className="text-white/70 text-sm mb-4">Join thousands of users already subscribed</p>
+                  <div className="flex justify-center items-center gap-6">
+                    <div className="flex -space-x-2">
+                      {[1, 2, 3, 4, 5].map((i) => (
+                        <div key={i} className="w-8 h-8 bg-gradient-to-br from-pink-400 to-purple-500 rounded-full border-2 border-white/20 flex items-center justify-center">
+                          <span className="text-white text-xs font-bold">{String.fromCharCode(64 + i)}</span>
+                        </div>
+                      ))}
+                    </div>
+                    <span className="text-white/80 text-sm">+2,847 subscribers</span>
+                  </div>
+                </div>
               </motion.div>
             </div>
           </div>
