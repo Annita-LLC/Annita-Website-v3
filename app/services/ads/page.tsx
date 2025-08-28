@@ -67,78 +67,78 @@ const AdsPage = () => {
       icon: "🖼️",
       description: "Visual banner advertisements",
       features: ["Rich media support", "Responsive design", "Interactive elements"],
-      reach: "500M+ impressions"
+      reach: "Pending"
     },
     {
       name: "Video Ads",
       icon: "🎥",
       description: "Engaging video content",
       features: ["Pre-roll ads", "Mid-roll ads", "Interactive overlays"],
-      reach: "200M+ views"
+      reach: "Pending"
     },
     {
       name: "Social Media Ads",
       icon: "📱",
       description: "Platform-specific advertising",
       features: ["Facebook ads", "Instagram ads", "Twitter ads"],
-      reach: "300M+ users"
+      reach: "Pending"
     },
     {
       name: "Search Ads",
       icon: "🔍",
       description: "Keyword-based advertising",
       features: ["Google ads", "Bing ads", "Local search"],
-      reach: "100M+ searches"
+      reach: "Pending"
     },
     {
       name: "Native Ads",
       icon: "📄",
       description: "Seamless content integration",
       features: ["Sponsored content", "In-feed ads", "Recommendation widgets"],
-      reach: "150M+ readers"
+      reach: "Pending"
     },
     {
       name: "Retargeting Ads",
       icon: "🔄",
       description: "Re-engage your audience",
       features: ["Pixel tracking", "Dynamic ads", "Cross-device targeting"],
-      reach: "250M+ users"
+      reach: "Pending"
     }
   ]
 
   const platformStats = [
     {
       title: "Active Advertisers",
-      value: "25K+",
-      change: "+30%",
+      value: "Pending",
+      change: "Pending",
       icon: "👥",
       color: "blue"
     },
     {
       title: "Monthly Impressions",
-      value: "2B+",
-      change: "+45%",
+      value: "Pending",
+      change: "Pending",
       icon: "👁️",
       color: "green"
     },
     {
       title: "Click-Through Rate",
-      value: "3.2%",
-      change: "+15%",
+      value: "Pending",
+      change: "Pending",
       icon: "🖱️",
       color: "orange"
     },
     {
       title: "Conversion Rate",
-      value: "8.5%",
-      change: "+20%",
+      value: "Pending",
+      change: "Pending",
       icon: "💰",
       color: "purple"
     }
   ]
 
   const benefits = [
-    "Reach 500M+ potential customers across Africa",
+    "Reach Pending potential customers across Africa",
     "Advanced targeting based on demographics, interests, and behavior",
     "Real-time campaign optimization and performance tracking",
     "Cost-effective advertising with flexible budget options",
@@ -448,15 +448,15 @@ const AdsPage = () => {
                   <div className="space-y-4">
                     <div className="flex justify-between items-center p-4 bg-gray-50 rounded-lg">
                       <span className="text-gray-600">ROAS (Return on Ad Spend)</span>
-                      <span className="font-semibold text-purple-600">4.2x</span>
+                      <span className="font-semibold text-purple-600">Pending</span>
                     </div>
                     <div className="flex justify-between items-center p-4 bg-gray-50 rounded-lg">
                       <span className="text-gray-600">Cost per Click</span>
-                      <span className="font-semibold text-green-600">$0.45</span>
+                      <span className="font-semibold text-green-600">Pending</span>
                     </div>
                     <div className="flex justify-between items-center p-4 bg-gray-50 rounded-lg">
                       <span className="text-gray-600">Conversion Rate</span>
-                      <span className="font-semibold text-orange-600">8.5%</span>
+                      <span className="font-semibold text-orange-600">Pending</span>
                     </div>
                   </div>
                 </div>

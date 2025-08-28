@@ -67,78 +67,78 @@ const ERPSystemPage = () => {
       icon: "💰",
       description: "Complete financial control and reporting",
       features: ["General ledger", "Accounts payable/receivable", "Budgeting", "Financial reporting"],
-      users: "10K+ businesses"
+      users: "Pending"
     },
     {
       name: "Human Resources",
       icon: "👥",
       description: "Comprehensive HR and payroll management",
       features: ["Employee management", "Payroll processing", "Benefits administration", "Performance tracking"],
-      users: "8K+ companies"
+      users: "Pending"
     },
     {
       name: "Supply Chain",
       icon: "📦",
       description: "End-to-end supply chain optimization",
       features: ["Inventory management", "Procurement", "Warehouse management", "Logistics tracking"],
-      users: "12K+ organizations"
+      users: "Pending"
     },
     {
       name: "Customer Relationship",
       icon: "🤝",
       description: "360-degree customer view and management",
       features: ["Lead management", "Sales automation", "Customer service", "Marketing automation"],
-      users: "15K+ businesses"
+      users: "Pending"
     },
     {
       name: "Manufacturing",
       icon: "🏭",
       description: "Production planning and execution",
       features: ["Production planning", "Quality control", "Maintenance management", "Cost tracking"],
-      users: "6K+ manufacturers"
+      users: "Pending"
     },
     {
       name: "Business Intelligence",
       icon: "📊",
       description: "Advanced analytics and reporting",
       features: ["Real-time dashboards", "Custom reports", "Data visualization", "Predictive analytics"],
-      users: "20K+ users"
+      users: "Pending"
     }
   ]
 
   const enterpriseStats = [
     {
       title: "Enterprise Clients",
-      value: "500+",
-      change: "+25%",
+      value: "Pending",
+      change: "Pending",
       icon: "🏢",
       color: "blue"
     },
     {
       title: "Data Processed",
-      value: "10TB+",
-      change: "+40%",
+      value: "Pending",
+      change: "Pending",
       icon: "💾",
       color: "green"
     },
     {
       title: "System Uptime",
-      value: "99.9%",
-      change: "+0.1%",
+      value: "Pending",
+      change: "Pending",
       icon: "⚡",
       color: "orange"
     },
     {
       title: "Cost Savings",
-      value: "30%",
-      change: "+5%",
+      value: "Pending",
+      change: "Pending",
       icon: "💰",
       color: "purple"
     }
   ]
 
   const benefits = [
-    "Streamline operations and reduce manual processes by 60%",
+    "Streamline operations and reduce manual processes by Pending",
     "Real-time visibility across all business functions",
     "Improved decision-making with advanced analytics",
     "Enhanced collaboration and communication",
@@ -454,15 +454,15 @@ const ERPSystemPage = () => {
                   <div className="space-y-4">
                     <div className="flex justify-between items-center p-4 bg-gray-50 rounded-lg">
                       <span className="text-gray-600">Operational Efficiency</span>
-                      <span className="font-semibold text-indigo-600">+60%</span>
+                      <span className="font-semibold text-indigo-600">Pending</span>
                     </div>
                     <div className="flex justify-between items-center p-4 bg-gray-50 rounded-lg">
                       <span className="text-gray-600">Cost Reduction</span>
-                      <span className="font-semibold text-green-600">-30%</span>
+                      <span className="font-semibold text-green-600">Pending</span>
                     </div>
                     <div className="flex justify-between items-center p-4 bg-gray-50 rounded-lg">
                       <span className="text-gray-600">Decision Speed</span>
-                      <span className="font-semibold text-orange-600">+75%</span>
+                      <span className="font-semibold text-orange-600">Pending</span>
                     </div>
                   </div>
                 </div>

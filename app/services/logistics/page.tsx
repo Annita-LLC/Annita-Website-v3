@@ -105,30 +105,30 @@ const LogisticsPage = () => {
   const deliveryStats = [
     {
       title: "Delivery Success Rate",
-      value: "99.8%",
-      change: "+0.2%",
+      value: "Pending",
+      change: "Pending",
       icon: "📈",
       color: "green"
     },
     {
       title: "Average Delivery Time",
-      value: "1.2",
-      unit: "days",
-      change: "-0.3 days",
+      value: "Pending",
+      unit: "",
+      change: "Pending",
       icon: "⏱️",
       color: "blue"
     },
     {
       title: "Active Drivers",
-      value: "2,500+",
-      change: "+150",
+      value: "Pending",
+      change: "Pending",
       icon: "👨‍💼",
       color: "orange"
     },
     {
       title: "Cities Covered",
-      value: "50+",
-      change: "+5",
+      value: "Pending",
+      change: "Pending",
       icon: "🏙️",
       color: "purple"
     }
@@ -442,15 +442,15 @@ const LogisticsPage = () => {
                   <div className="space-y-4">
                     <div className="flex justify-between items-center p-4 bg-gray-50 rounded-lg">
                       <span className="text-gray-600">Daily Deliveries</span>
-                      <span className="font-semibold text-blue-600">50K+</span>
+                      <span className="font-semibold text-blue-600">Pending</span>
                     </div>
                     <div className="flex justify-between items-center p-4 bg-gray-50 rounded-lg">
                       <span className="text-gray-600">Service Areas</span>
-                      <span className="font-semibold text-blue-600">200+</span>
+                      <span className="font-semibold text-blue-600">Pending</span>
                     </div>
                     <div className="flex justify-between items-center p-4 bg-gray-50 rounded-lg">
                       <span className="text-gray-600">Customer Satisfaction</span>
-                      <span className="font-semibold text-green-600">98%</span>
+                      <span className="font-semibold text-green-600">Pending</span>
                     </div>
                   </div>
                 </div>
