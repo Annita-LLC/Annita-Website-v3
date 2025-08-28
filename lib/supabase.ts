@@ -1,11 +1,29 @@
 import { createClient } from '@supabase/supabase-js'
 
-// Environment variables (you'll need to add these to your .env.local)
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!
-const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+// Create Supabase client function to avoid build-time issues
+export function createSupabaseClient() {
+  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
+  const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+  
+  if (!supabaseUrl || !supabaseAnonKey) {
+    throw new Error('Missing Supabase environment variables')
+  }
+  
+  return createClient(supabaseUrl, supabaseAnonKey)
+}
 
-// Create Supabase client
-export const supabase = createClient(supabaseUrl, supabaseAnonKey)
+// Create client instance for runtime use
+let supabaseInstance: ReturnType<typeof createSupabaseClient> | null = null
+
+export function getSupabaseClient() {
+  if (!supabaseInstance) {
+    supabaseInstance = createSupabaseClient()
+  }
+  return supabaseInstance
+}
+
+// Note: Don't export supabase at module level to avoid build-time issues
+// Use getSupabaseClient() function instead
 
 // Database types based on our schema
 export interface ContactInquiry {
@@ -257,6 +275,7 @@ export const getClientInfo = () => {
 export const databaseService = {
   // Contact Inquiries
   async submitContactInquiry(data: ContactInquiry) {
+    const supabase = getSupabaseClient()
     const { data: result, error } = await supabase
       .from('contact_inquiries')
       .insert([data])
@@ -268,6 +287,7 @@ export const databaseService = {
 
   // Career Applications
   async submitCareerApplication(data: CareerApplication) {
+    const supabase = getSupabaseClient()
     const { data: result, error } = await supabase
       .from('career_applications')
       .insert([data])
@@ -279,6 +299,7 @@ export const databaseService = {
 
   // Support Issues
   async submitSupportIssue(data: SupportIssue) {
+    const supabase = getSupabaseClient()
     const { data: result, error } = await supabase
       .from('support_issues')
       .insert([data])
@@ -290,6 +311,7 @@ export const databaseService = {
 
   // Business Inquiries
   async submitBusinessInquiry(data: BusinessInquiry) {
+    const supabase = getSupabaseClient()
     const { data: result, error } = await supabase
       .from('business_inquiries')
       .insert([data])
@@ -301,6 +323,7 @@ export const databaseService = {
 
   // Sales Inquiries
   async submitSalesInquiry(data: SalesInquiry) {
+    const supabase = getSupabaseClient()
     const { data: result, error } = await supabase
       .from('sales_inquiries')
       .insert([data])
@@ -312,6 +335,7 @@ export const databaseService = {
 
   // Pricing Inquiries
   async submitPricingInquiry(data: PricingInquiry) {
+    const supabase = getSupabaseClient()
     const { data: result, error } = await supabase
       .from('pricing_inquiries')
       .insert([data])
@@ -323,6 +347,7 @@ export const databaseService = {
 
   // The 100 Youth Applications
   async submitThe100YouthApplication(data: The100YouthApplication) {
+    const supabase = getSupabaseClient()
     const { data: result, error } = await supabase
       .from('the100_youth_applications')
       .insert([data])
@@ -334,6 +359,7 @@ export const databaseService = {
 
   // The 100 Partner Applications
   async submitThe100PartnerApplication(data: The100PartnerApplication) {
+    const supabase = getSupabaseClient()
     const { data: result, error } = await supabase
       .from('the100_partner_applications')
       .insert([data])
@@ -345,6 +371,7 @@ export const databaseService = {
 
   // The 100 Mentor Applications
   async submitThe100MentorApplication(data: The100MentorApplication) {
+    const supabase = getSupabaseClient()
     const { data: result, error } = await supabase
       .from('the100_mentor_applications')
       .insert([data])
@@ -356,6 +383,7 @@ export const databaseService = {
 
   // The 100 Contact Inquiries
   async submitThe100ContactInquiry(data: The100ContactInquiry) {
+    const supabase = getSupabaseClient()
     const { data: result, error } = await supabase
       .from('the100_contact_inquiries')
       .insert([data])
@@ -367,6 +395,7 @@ export const databaseService = {
 
   // Newsletter Subscriptions
   async subscribeToNewsletter(email: string, platform?: string) {
+    const supabase = getSupabaseClient()
     const { data: result, error } = await supabase
       .from('newsletter_subscriptions')
       .upsert([{ 
@@ -385,6 +414,7 @@ export const databaseService = {
 
   // File Uploads
   async uploadFile(file: File, relatedTable?: string, relatedId?: string) {
+    const supabase = getSupabaseClient()
     const fileName = `${Date.now()}-${file.name}`
     const filePath = `uploads/${relatedTable || 'general'}/${fileName}`
 
@@ -427,6 +457,7 @@ export const databaseService = {
 
   // Get recent inquiries (for admin dashboard)
   async getRecentInquiries(limit = 50) {
+    const supabase = getSupabaseClient()
     const { data, error } = await supabase
       .from('recent_inquiries')
       .select('*')
@@ -439,6 +470,7 @@ export const databaseService = {
 
   // Track investor document downloads
   async trackInvestorDownload(data: InvestorDownload) {
+    const supabase = getSupabaseClient()
     const { data: result, error } = await supabase
       .from('investor_downloads')
       .insert([data])
@@ -450,6 +482,7 @@ export const databaseService = {
 
   // Get download statistics
   async getDownloadStats() {
+    const supabase = getSupabaseClient()
     const { data, error } = await supabase
       .from('investor_downloads')
       .select('document_type, download_count')
