@@ -25,23 +25,43 @@ import {
   Send
 } from 'lucide-react'
 import Link from 'next/link'
+import { useFormSubmission, formValidations } from '@/lib/hooks/useFormSubmission'
 
 export default function ContactSalesPage() {
   const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
+    first_name: '',
+    last_name: '',
     email: '',
     company: '',
     phone: '',
-    businessSize: '',
+    business_size: '',
     industry: '',
     goals: '',
     timeline: '',
     budget: ''
   })
 
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [isSubmitted, setIsSubmitted] = useState(false)
+  const { submitForm, isSubmitting, isSubmitted, error, success, reset } = useFormSubmission({
+    validateForm: formValidations.sales,
+    onSuccess: (data) => {
+      console.log('Sales form submitted successfully:', data)
+      setFormData({
+        first_name: '',
+        last_name: '',
+        email: '',
+        company: '',
+        phone: '',
+        business_size: '',
+        industry: '',
+        goals: '',
+        timeline: '',
+        budget: ''
+      })
+    },
+    onError: (error) => {
+      console.error('Sales form submission failed:', error)
+    }
+  })
 
   const businessSizes = [
     '1-10 employees',
@@ -89,13 +109,7 @@ export default function ContactSalesPage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    setIsSubmitting(true)
-    
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 2000))
-    
-    setIsSubmitting(false)
-    setIsSubmitted(true)
+    await submitForm('sales', formData)
   }
 
   return (
@@ -227,8 +241,8 @@ export default function ContactSalesPage() {
                         <input
                           type="text"
                           required
-                          value={formData.firstName}
-                          onChange={(e) => handleInputChange('firstName', e.target.value)}
+                                          value={formData.first_name}
+                onChange={(e) => handleInputChange('first_name', e.target.value)}
                           className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200"
                           placeholder="Your first name"
                         />
@@ -241,8 +255,8 @@ export default function ContactSalesPage() {
                         <input
                           type="text"
                           required
-                          value={formData.lastName}
-                          onChange={(e) => handleInputChange('lastName', e.target.value)}
+                                          value={formData.last_name}
+                onChange={(e) => handleInputChange('last_name', e.target.value)}
                           className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200"
                           placeholder="Your last name"
                         />
@@ -298,8 +312,8 @@ export default function ContactSalesPage() {
                           Business Size
                         </label>
                         <select
-                          value={formData.businessSize}
-                          onChange={(e) => handleInputChange('businessSize', e.target.value)}
+                                          value={formData.business_size}
+                onChange={(e) => handleInputChange('business_size', e.target.value)}
                           className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200"
                         >
                           <option value="">Select size</option>

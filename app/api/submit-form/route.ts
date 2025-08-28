@@ -127,6 +127,13 @@ export async function POST(request: NextRequest) {
           .select()
         break
         
+      case 'download':
+        result = await supabase
+          .from('download_requests')
+          .insert([enrichedData])
+          .select()
+        break
+        
       case 'newsletter':
         result = await supabase
           .from('newsletter_subscriptions')

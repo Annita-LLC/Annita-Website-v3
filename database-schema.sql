@@ -264,7 +264,21 @@ CREATE TABLE the100_contact_inquiries (
     updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
 );
 
--- 11. NEWSLETTER SUBSCRIPTIONS TABLE
+-- 11. DOWNLOAD REQUESTS TABLE
+DROP TABLE IF EXISTS download_requests CASCADE;
+CREATE TABLE download_requests (
+    id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
+    email VARCHAR(255) NOT NULL,
+    platform VARCHAR(50) NOT NULL,
+    device_type VARCHAR(50),
+    country VARCHAR(100),
+    source VARCHAR(100),
+    ip_address INET,
+    user_agent TEXT,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
+);
+
+-- 12. NEWSLETTER SUBSCRIPTIONS TABLE
 DROP TABLE IF EXISTS newsletter_subscriptions CASCADE;
 CREATE TABLE newsletter_subscriptions (
     id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
@@ -277,7 +291,7 @@ CREATE TABLE newsletter_subscriptions (
     is_active BOOLEAN DEFAULT true
 );
 
--- 12. FILE UPLOADS TABLE (for resumes, attachments, etc.)
+-- 13. FILE UPLOADS TABLE (for resumes, attachments, etc.)
 DROP TABLE IF EXISTS file_uploads CASCADE;
 CREATE TABLE file_uploads (
     id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
@@ -293,7 +307,7 @@ CREATE TABLE file_uploads (
     created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
 );
 
--- 13. INVESTOR DOWNLOADS TABLE (track investor document downloads)
+-- 14. INVESTOR DOWNLOADS TABLE (track investor document downloads)
 DROP TABLE IF EXISTS investor_downloads CASCADE;
 CREATE TABLE investor_downloads (
     id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
@@ -321,6 +335,8 @@ CREATE INDEX idx_support_issues_priority ON support_issues(priority);
 CREATE INDEX idx_the100_youth_email ON the100_youth_applications(email);
 CREATE INDEX idx_the100_partner_email ON the100_partner_applications(email);
 CREATE INDEX idx_the100_mentor_email ON the100_mentor_applications(email);
+CREATE INDEX idx_download_requests_email ON download_requests(email);
+CREATE INDEX idx_download_requests_platform ON download_requests(platform);
 CREATE INDEX idx_newsletter_email ON newsletter_subscriptions(email);
 CREATE INDEX idx_investor_downloads_email ON investor_downloads(downloader_email);
 CREATE INDEX idx_investor_downloads_document ON investor_downloads(document_type);
@@ -358,6 +374,7 @@ ALTER TABLE the100_youth_applications ENABLE ROW LEVEL SECURITY;
 ALTER TABLE the100_partner_applications ENABLE ROW LEVEL SECURITY;
 ALTER TABLE the100_mentor_applications ENABLE ROW LEVEL SECURITY;
 ALTER TABLE the100_contact_inquiries ENABLE ROW LEVEL SECURITY;
+ALTER TABLE download_requests ENABLE ROW LEVEL SECURITY;
 ALTER TABLE newsletter_subscriptions ENABLE ROW LEVEL SECURITY;
 ALTER TABLE file_uploads ENABLE ROW LEVEL SECURITY;
 ALTER TABLE investor_downloads ENABLE ROW LEVEL SECURITY;
@@ -374,6 +391,7 @@ CREATE POLICY "Allow insert for all users" ON the100_youth_applications FOR INSE
 CREATE POLICY "Allow insert for all users" ON the100_partner_applications FOR INSERT WITH CHECK (true);
 CREATE POLICY "Allow insert for all users" ON the100_mentor_applications FOR INSERT WITH CHECK (true);
 CREATE POLICY "Allow insert for all users" ON the100_contact_inquiries FOR INSERT WITH CHECK (true);
+CREATE POLICY "Allow insert for all users" ON download_requests FOR INSERT WITH CHECK (true);
 CREATE POLICY "Allow insert for all users" ON newsletter_subscriptions FOR INSERT WITH CHECK (true);
 CREATE POLICY "Allow insert for all users" ON file_uploads FOR INSERT WITH CHECK (true);
 CREATE POLICY "Allow insert for all users" ON investor_downloads FOR INSERT WITH CHECK (true);

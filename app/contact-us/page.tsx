@@ -20,25 +20,48 @@ import {
   Download
 } from 'lucide-react'
 import Link from 'next/link'
+import { useFormSubmission, formValidations } from '@/lib/hooks/useFormSubmission'
 
 export default function ContactUsPage() {
   const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
+    first_name: '',
+    last_name: '',
     email: '',
     phone: '',
     company: '',
     country: '',
     subject: '',
     message: '',
-    inquiryType: '',
+    inquiry_type: '',
     urgency: 'normal',
-    preferredContact: 'email',
+    preferred_contact: 'email',
     newsletter: false
   })
 
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [isSubmitted, setIsSubmitted] = useState(false)
+  const { submitForm, isSubmitting, isSubmitted, error, success, reset } = useFormSubmission({
+    validateForm: formValidations.contact,
+    onSuccess: (data) => {
+      console.log('Contact form submitted successfully:', data)
+      // Reset form after successful submission
+      setFormData({
+        first_name: '',
+        last_name: '',
+        email: '',
+        phone: '',
+        company: '',
+        country: '',
+        subject: '',
+        message: '',
+        inquiry_type: '',
+        urgency: 'normal',
+        preferred_contact: 'email',
+        newsletter: false
+      })
+    },
+    onError: (error) => {
+      console.error('Contact form submission failed:', error)
+    }
+  })
 
   const inquiryTypes = [
     {
@@ -106,13 +129,7 @@ export default function ContactUsPage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    setIsSubmitting(true)
-    
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 2000))
-    
-    setIsSubmitting(false)
-    setIsSubmitted(true)
+    await submitForm('contact', formData)
   }
 
   return (
@@ -154,7 +171,7 @@ export default function ContactUsPage() {
         </div>
       </section>
 
-      {!isSubmitted ? (
+      {!isSubmitted || !success ? (
         <div className="py-16 sm:py-20">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-6xl mx-auto">
@@ -264,9 +281,9 @@ export default function ContactUsPage() {
                           <button
                             key={type.id}
                             type="button"
-                            onClick={() => handleInputChange('inquiryType', type.id)}
+                            onClick={() => handleInputChange('inquiry_type', type.id)}
                             className={`p-4 rounded-lg border-2 transition-all duration-200 text-left ${
-                              formData.inquiryType === type.id
+                              formData.inquiry_type === type.id
                                 ? 'border-orange-500 bg-orange-50'
                                 : 'border-gray-200 hover:border-gray-300 bg-white'
                             }`}
@@ -290,8 +307,8 @@ export default function ContactUsPage() {
                         <input
                           type="text"
                           required
-                          value={formData.firstName}
-                          onChange={(e) => handleInputChange('firstName', e.target.value)}
+                                          value={formData.first_name}
+                onChange={(e) => handleInputChange('first_name', e.target.value)}
                           className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200"
                           placeholder="Your first name"
                         />
@@ -304,8 +321,8 @@ export default function ContactUsPage() {
                         <input
                           type="text"
                           required
-                          value={formData.lastName}
-                          onChange={(e) => handleInputChange('lastName', e.target.value)}
+                                          value={formData.last_name}
+                onChange={(e) => handleInputChange('last_name', e.target.value)}
                           className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200"
                           placeholder="Your last name"
                         />
@@ -498,20 +515,27 @@ export default function ContactUsPage() {
           </div>
         </div>
       ) : (
-        /* Success Message */
-        <div className="py-16 sm:py-20">
+        /* Success/Error Message */
+        <div className={`py-16 sm:py-20 ${success ? 'bg-gradient-to-br from-green-50 to-emerald-50' : 'bg-gradient-to-br from-red-50 to-pink-50'}`}>
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-2xl mx-auto text-center">
-              <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                <CheckCircle className="w-10 h-10 text-green-600" />
+              <div className={`w-20 h-20 ${success ? 'bg-green-100' : 'bg-red-100'} rounded-full flex items-center justify-center mx-auto mb-6`}>
+                {success ? (
+                  <CheckCircle className="w-10 h-10 text-green-600" />
+                ) : (
+                  <AlertCircle className="w-10 h-10 text-red-600" />
+                )}
               </div>
               
               <h2 className="text-2xl font-bold text-gray-900 mb-4">
-                Message Sent Successfully!
+                {success ? 'Message Sent Successfully!' : 'Submission Failed'}
               </h2>
               
               <p className="text-gray-600 mb-8">
-                Thank you for reaching out! Our support team will review your message and get back to you within 24 hours.
+                {success 
+                  ? 'Thank you for reaching out! Our support team will review your message and get back to you within 24 hours.'
+                  : error || 'There was an error submitting your form. Please try again.'
+                }
               </p>
               
               <div className="bg-gray-50 rounded-lg p-6 mb-8">
@@ -542,19 +566,19 @@ export default function ContactUsPage() {
                 </Link>
                 <button
                   onClick={() => {
-                    setIsSubmitted(false)
+                    reset()
                     setFormData({
-                      firstName: '',
-                      lastName: '',
+                      first_name: '',
+                      last_name: '',
                       email: '',
                       phone: '',
                       company: '',
                       country: '',
                       subject: '',
                       message: '',
-                      inquiryType: '',
+                      inquiry_type: '',
                       urgency: 'normal',
-                      preferredContact: 'email',
+                      preferred_contact: 'email',
                       newsletter: false
                     })
                   }}

@@ -23,12 +23,20 @@ import {
   Play
 } from 'lucide-react'
 import Link from 'next/link'
+import { useFormSubmission, formValidations } from '@/lib/hooks/useFormSubmission'
 
 export default function DownloadPage() {
   const [selectedPlatform, setSelectedPlatform] = useState('')
   const [email, setEmail] = useState('')
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [isSubmitted, setIsSubmitted] = useState(false)
+  const { submitForm, isSubmitting, isSubmitted, error, success, reset } = useFormSubmission({
+    validateForm: formValidations.download,
+    onSuccess: (data) => {
+      console.log('download form submitted successfully:', data)
+    },
+    onError: (error) => {
+      console.error('download form submission failed:', error)
+    }
+  })
 
   const platforms = [
     {

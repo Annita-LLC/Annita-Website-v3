@@ -56,8 +56,8 @@ const ApplicationForms = () => {
 
   const YouthForm = () => {
     const [formData, setFormData] = useState({
-      firstName: '',
-      lastName: '',
+      first_name: '',
+      last_name: '',
       email: '',
       phone: '',
       age: '',
@@ -88,7 +88,7 @@ const ApplicationForms = () => {
             <input
               type="text"
               name="firstName"
-              value={formData.firstName}
+              value={formData.first_name}
               onChange={handleChange}
               required
               className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
@@ -99,7 +99,7 @@ const ApplicationForms = () => {
             <input
               type="text"
               name="lastName"
-              value={formData.lastName}
+              value={formData.last_name}
               onChange={handleChange}
               required
               className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
@@ -448,8 +448,8 @@ const ApplicationForms = () => {
 
   const MentorForm = () => {
     const [formData, setFormData] = useState({
-      firstName: '',
-      lastName: '',
+      first_name: '',
+      last_name: '',
       email: '',
       phone: '',
       company: '',
@@ -478,7 +478,7 @@ const ApplicationForms = () => {
             <input
               type="text"
               name="firstName"
-              value={formData.firstName}
+              value={formData.first_name}
               onChange={handleChange}
               required
               className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
@@ -489,7 +489,7 @@ const ApplicationForms = () => {
             <input
               type="text"
               name="lastName"
-              value={formData.lastName}
+              value={formData.last_name}
               onChange={handleChange}
               required
               className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"

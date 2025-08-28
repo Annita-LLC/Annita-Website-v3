@@ -26,10 +26,11 @@ import {
   ArrowRight
 } from 'lucide-react'
 import Link from 'next/link'
+import { useFormSubmission, formValidations } from '@/lib/hooks/useFormSubmission'
 
 export default function ReportIssuesPage() {
   const [formData, setFormData] = useState({
-    issueType: '',
+    issue_type: '',
     priority: 'medium',
     title: '',
     description: '',
@@ -42,8 +43,15 @@ export default function ReportIssuesPage() {
     attachments: [] as File[]
   })
 
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [isSubmitted, setIsSubmitted] = useState(false)
+  const { submitForm, isSubmitting, isSubmitted, error, success, reset } = useFormSubmission({
+    validateForm: formValidations.support,
+    onSuccess: (data) => {
+      console.log('support form submitted successfully:', data)
+    },
+    onError: (error) => {
+      console.error('support form submission failed:', error)
+    }
+  })
 
   const issueTypes = [
     {
@@ -129,13 +137,7 @@ export default function ReportIssuesPage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    setIsSubmitting(true)
-    
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 2000))
-    
-    setIsSubmitting(false)
-    setIsSubmitted(true)
+    await submitForm('support', formData)
   }
 
   const selectedIssueType = issueTypes.find(type => type.id === formData.issueType)
@@ -487,7 +489,7 @@ export default function ReportIssuesPage() {
                   onClick={() => {
                     setIsSubmitted(false)
                     setFormData({
-                      issueType: '',
+                      issue_type: '',
                       priority: 'medium',
                       title: '',
                       description: '',

@@ -24,11 +24,12 @@ import {
   MessageSquare
 } from 'lucide-react'
 import Link from 'next/link'
+import { useFormSubmission, formValidations } from '@/lib/hooks/useFormSubmission'
 
 export default function ApplyPage() {
   const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
+    first_name: '',
+    last_name: '',
     email: '',
     phone: '',
     location: '',
@@ -47,8 +48,15 @@ export default function ApplyPage() {
     salary: '',
     message: ''
   })
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [isSubmitted, setIsSubmitted] = useState(false)
+  const { submitForm, isSubmitting, isSubmitted, error, success, reset } = useFormSubmission({
+    validateForm: formValidations.career,
+    onSuccess: (data) => {
+      console.log('career form submitted successfully:', data)
+    },
+    onError: (error) => {
+      console.error('career form submission failed:', error)
+    }
+  })
 
   const positions = [
     'Software Engineer',
@@ -92,14 +100,7 @@ export default function ApplyPage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    
-    setIsSubmitting(true)
-    
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 2000))
-    
-    setIsSubmitting(false)
-    setIsSubmitted(true)
+    await submitForm('career', formData)
   }
 
   return (
@@ -161,8 +162,8 @@ export default function ApplyPage() {
                         <input
                           type="text"
                           required
-                          value={formData.firstName}
-                          onChange={(e) => handleInputChange('firstName', e.target.value)}
+                          value={formData.first_name}
+                          onChange={(e) => handleInputChange('first_name', e.target.value)}
                           className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200"
                           placeholder="Enter your first name"
                         />
@@ -175,8 +176,8 @@ export default function ApplyPage() {
                         <input
                           type="text"
                           required
-                          value={formData.lastName}
-                          onChange={(e) => handleInputChange('lastName', e.target.value)}
+                          value={formData.last_name}
+                          onChange={(e) => handleInputChange('last_name', e.target.value)}
                           className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200"
                           placeholder="Enter your last name"
                         />

@@ -29,6 +29,7 @@ import {
   Download
 } from 'lucide-react'
 import Link from 'next/link'
+import { useFormSubmission, formValidations } from '@/lib/hooks/useFormSubmission'
 
 export default function BusinessModelPage() {
   const [selectedModel, setSelectedModel] = useState('')
@@ -41,8 +42,15 @@ export default function BusinessModelPage() {
     revenue: '',
     message: ''
   })
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [isSubmitted, setIsSubmitted] = useState(false)
+  const { submitForm, isSubmitting, isSubmitted, error, success, reset } = useFormSubmission({
+    validateForm: formValidations.business,
+    onSuccess: (data) => {
+      console.log('business form submitted successfully:', data)
+    },
+    onError: (error) => {
+      console.error('business form submission failed:', error)
+    }
+  })
 
   const businessModels = [
     {

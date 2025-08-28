@@ -21,6 +21,7 @@ import {
   Star
 } from 'lucide-react'
 import Link from 'next/link'
+import { useFormSubmission, formValidations } from '@/lib/hooks/useFormSubmission'
 
 export default function CareersPage() {
   const [selectedPosition, setSelectedPosition] = useState('')
@@ -33,8 +34,15 @@ export default function CareersPage() {
     experience: '',
     message: ''
   })
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [isSubmitted, setIsSubmitted] = useState(false)
+  const { submitForm, isSubmitting, isSubmitted, error, success, reset } = useFormSubmission({
+    validateForm: formValidations.career,
+    onSuccess: (data) => {
+      console.log('career form submitted successfully:', data)
+    },
+    onError: (error) => {
+      console.error('career form submission failed:', error)
+    }
+  })
 
   const values = [
     {
@@ -144,14 +152,7 @@ export default function CareersPage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    
-    setIsSubmitting(true)
-    
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 2000))
-    
-    setIsSubmitting(false)
-    setIsSubmitted(true)
+    await submitForm('career', formData)
   }
 
   return (

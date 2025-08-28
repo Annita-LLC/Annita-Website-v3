@@ -20,6 +20,7 @@ import {
   X
 } from 'lucide-react'
 import Link from 'next/link'
+import { useFormSubmission, formValidations } from '@/lib/hooks/useFormSubmission'
 
 export default function PricingPage() {
   const [selectedPlan, setSelectedPlan] = useState('')
@@ -32,8 +33,15 @@ export default function PricingPage() {
     plan: '',
     message: ''
   })
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [isSubmitted, setIsSubmitted] = useState(false)
+  const { submitForm, isSubmitting, isSubmitted, error, success, reset } = useFormSubmission({
+    validateForm: formValidations.pricing,
+    onSuccess: (data) => {
+      console.log('pricing form submitted successfully:', data)
+    },
+    onError: (error) => {
+      console.error('pricing form submission failed:', error)
+    }
+  })
 
   const pricingPlans = [
     {
