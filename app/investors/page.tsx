@@ -35,7 +35,8 @@ import {
   Phone,
   Video,
   MapPin,
-  X
+  X,
+  Code
 } from 'lucide-react'
 import Button from '@/components/ui/Button'
 
@@ -43,6 +44,7 @@ const InvestorsPage = () => {
   const [activeTab, setActiveTab] = useState('overview')
   const [showContactForm, setShowContactForm] = useState(false)
   const [formType, setFormType] = useState('call') // 'call' or 'message'
+  const [documentCategory, setDocumentCategory] = useState('all')
 
   const companyMetrics = [
     { label: 'Total Sellers', value: '3,000+', icon: Users, color: 'text-blue-500' },
@@ -77,7 +79,8 @@ const InvestorsPage = () => {
       icon: FileText,
       size: '15.2 MB',
       format: 'PDF',
-      downloadUrl: '/documents/annita-pitch-deck.pdf'
+      downloadUrl: '/documents/annita-pitch-deck.pdf',
+      category: 'Investment'
     },
     {
       title: 'Business Plan',
@@ -85,7 +88,8 @@ const InvestorsPage = () => {
       icon: FileText,
       size: '8.7 MB',
       format: 'PDF',
-      downloadUrl: '/documents/annita-business-plan.pdf'
+      downloadUrl: '/documents/annita-business-plan.pdf',
+      category: 'Investment'
     },
     {
       title: 'Financial Model',
@@ -93,7 +97,8 @@ const InvestorsPage = () => {
       icon: BarChart3,
       size: '5.3 MB',
       format: 'Excel',
-      downloadUrl: '/documents/annita-financial-model.xlsx'
+      downloadUrl: '/documents/annita-financial-model.xlsx',
+      category: 'Financial'
     },
     {
       title: 'Market Analysis',
@@ -101,7 +106,62 @@ const InvestorsPage = () => {
       icon: Target,
       size: '12.1 MB',
       format: 'PDF',
-      downloadUrl: '/documents/annita-market-analysis.pdf'
+      downloadUrl: '/documents/annita-market-analysis.pdf',
+      category: 'Research'
+    },
+    {
+      title: 'Cap Table',
+      description: 'Current ownership structure and equity distribution',
+      icon: PieChart,
+      size: '2.1 MB',
+      format: 'PDF',
+      downloadUrl: '/documents/annita-cap-table.pdf',
+      category: 'Financial'
+    },
+    {
+      title: 'Due Diligence Package',
+      description: 'Comprehensive due diligence materials for potential investors',
+      icon: FileText,
+      size: '25.8 MB',
+      format: 'ZIP',
+      downloadUrl: '/documents/annita-due-diligence.zip',
+      category: 'Investment'
+    },
+    {
+      title: 'Technical Architecture',
+      description: 'Detailed technical architecture and platform capabilities',
+      icon: Code,
+      size: '6.7 MB',
+      format: 'PDF',
+      downloadUrl: '/documents/annita-technical-architecture.pdf',
+      category: 'Technical'
+    },
+    {
+      title: 'Legal Structure',
+      description: 'Corporate structure, legal entities, and compliance documentation',
+      icon: Building2,
+      size: '4.2 MB',
+      format: 'PDF',
+      downloadUrl: '/documents/annita-legal-structure.pdf',
+      category: 'Legal'
+    },
+    {
+      title: 'Team Profiles',
+      description: 'Detailed profiles of leadership team and key personnel',
+      icon: Users,
+      size: '3.8 MB',
+      format: 'PDF',
+      downloadUrl: '/documents/annita-team-profiles.pdf',
+      category: 'Team'
+    },
+    {
+      title: 'Awards & Recognition',
+      description: 'Awards, certifications, and industry recognition documentation',
+      icon: Award,
+      size: '5.5 MB',
+      format: 'PDF',
+      downloadUrl: '/documents/annita-awards-recognition.pdf',
+      category: 'Recognition'
     }
   ]
 
@@ -166,12 +226,69 @@ const InvestorsPage = () => {
     { id: 'team', label: 'Team & Advisors' }
   ]
 
-  const handleDownload = (url: string, title: string) => {
-    // In a real implementation, this would trigger the actual download
-    console.log(`Downloading ${title} from ${url}`)
-    // For demo purposes, we'll just show an alert
-    alert(`Download started for ${title}`)
+  const handleDownload = async (url: string, title: string) => {
+    try {
+      // Track the download in Supabase
+      const response = await fetch('/api/submit-form', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          formType: 'investor_download',
+          document_name: title,
+          document_type: getDocumentType(title),
+          downloader_email: '', // Will be filled if user is logged in
+          downloader_name: '', // Will be filled if user is logged in
+          downloader_company: '', // Will be filled if user is logged in
+          downloader_role: '' // Will be filled if user is logged in
+        })
+      })
+
+      if (response.ok) {
+        // Create a temporary link and trigger download
+        const link = document.createElement('a')
+        link.href = url
+        link.download = getFileName(title)
+        document.body.appendChild(link)
+        link.click()
+        document.body.removeChild(link)
+        
+        console.log(`Download tracked for ${title}`)
+      } else {
+        console.error('Failed to track download')
+      }
+    } catch (error) {
+      console.error('Download error:', error)
+      // Fallback: just download the file
+      const link = document.createElement('a')
+      link.href = url
+      link.download = getFileName(title)
+      document.body.appendChild(link)
+      link.click()
+      document.body.removeChild(link)
+    }
   }
+
+  const getDocumentType = (title: string): string => {
+    if (title.toLowerCase().includes('pitch')) return 'pitch_deck'
+    if (title.toLowerCase().includes('business plan')) return 'business_plan'
+    if (title.toLowerCase().includes('financial')) return 'financial_model'
+    if (title.toLowerCase().includes('market')) return 'market_analysis'
+    return 'other'
+  }
+
+  const getFileName = (title: string): string => {
+    const sanitizedTitle = title.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase()
+    const extension = title.toLowerCase().includes('financial') ? 'xlsx' : 'pdf'
+    return `annita-${sanitizedTitle}.${extension}`
+  }
+
+  // Get unique categories from documents
+  const documentCategories = ['all', ...Array.from(new Set(documents.map(doc => doc.category)))]
+
+  // Filter documents by category
+  const filteredDocuments = documentCategory === 'all' 
+    ? documents 
+    : documents.filter(doc => doc.category === documentCategory)
 
   const handleFormSubmit = (e: React.FormEvent) => {
     e.preventDefault()
@@ -791,11 +908,31 @@ const InvestorsPage = () => {
               transition={{ duration: 0.6 }}
               className="space-y-8"
             >
-              <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-8">
-                Investor Documents
-              </h3>
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white">
+                  Investor Documents
+                </h3>
+                
+                {/* Category Filter */}
+                <div className="flex flex-wrap gap-2">
+                  {documentCategories.map((category) => (
+                    <button
+                      key={category}
+                      onClick={() => setDocumentCategory(category)}
+                      className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
+                        documentCategory === category
+                          ? 'bg-orange-500 text-white shadow-lg'
+                          : 'bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600'
+                      }`}
+                    >
+                      {category === 'all' ? 'All Documents' : category}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {documents.map((doc, index) => (
+                {filteredDocuments.map((doc, index) => (
                   <motion.div
                     key={doc.title}
                     initial={{ opacity: 0, y: 20 }}
