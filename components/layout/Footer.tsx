@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import { useState } from 'react'
 import { 
   Facebook, 
   MessageCircle, 
@@ -17,11 +18,14 @@ import {
   Building,
   Users,
   Briefcase,
-  Award
+  Award,
+  Settings
 } from 'lucide-react'
+import CookieSettingsManager from '@/components/ui/CookieSettingsManager'
 
 const Footer = () => {
   const currentYear = new Date().getFullYear()
+  const [isCookieSettingsOpen, setIsCookieSettingsOpen] = useState(false)
 
   const footerSections = [
     {
@@ -60,7 +64,8 @@ const Footer = () => {
       links: [
         { name: 'Privacy Policy', href: '/privacy' },
         { name: 'Terms of Service', href: '/terms' },
-        { name: 'Cookie Policy', href: '/cookies' }
+        { name: 'Cookie Policy', href: '/cookies' },
+        { name: 'Cookie Settings', href: '#', isCookieSettings: true }
       ]
     }
   ]
@@ -158,12 +163,22 @@ const Footer = () => {
               <ul className="space-y-2 sm:space-y-3">
                 {section.links.map((link) => (
                   <li key={link.name}>
-                    <Link 
-                      href={link.href}
-                      className="footer-link text-gray-400 hover:text-white transition-colors duration-200 text-sm sm:text-base"
-                    >
-                      {link.name}
-                    </Link>
+                    {link.isCookieSettings ? (
+                      <button
+                        onClick={() => setIsCookieSettingsOpen(true)}
+                        className="footer-link text-gray-400 hover:text-white transition-colors duration-200 text-sm sm:text-base flex items-center gap-1"
+                      >
+                        <Settings className="w-3 h-3" />
+                        {link.name}
+                      </button>
+                    ) : (
+                      <Link 
+                        href={link.href}
+                        className="footer-link text-gray-400 hover:text-white transition-colors duration-200 text-sm sm:text-base"
+                      >
+                        {link.name}
+                      </Link>
+                    )}
                   </li>
                 ))}
               </ul>
@@ -191,6 +206,11 @@ const Footer = () => {
         </div>
       </div>
 
+      {/* Cookie Settings Manager */}
+      <CookieSettingsManager
+        isOpen={isCookieSettingsOpen}
+        onClose={() => setIsCookieSettingsOpen(false)}
+      />
 
     </footer>
   )

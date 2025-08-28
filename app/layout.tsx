@@ -6,6 +6,7 @@ import { Toaster } from 'react-hot-toast'
 import Navigation from '@/components/layout/Navigation'
 import Footer from '@/components/layout/Footer'
 import CookieConsent from '@/components/ui/CookieConsent'
+import FloatingCookieButton from '@/components/ui/FloatingCookieButton'
 import OfflineBanner from '@/components/ui/OfflineBanner'
 import { ThemeProvider } from '@/lib/theme'
 
@@ -213,6 +214,7 @@ export default function RootLayout({
           </div>
           <Analytics />
           <CookieConsent />
+          <FloatingCookieButton />
           <OfflineBanner />
           <Toaster
             position="top-right"
