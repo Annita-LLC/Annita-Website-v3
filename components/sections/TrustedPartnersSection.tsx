@@ -74,26 +74,9 @@ const TrustedPartnersSection = () => {
         {/* Slideshow Container */}
         <div className="relative">
           <div className="flex animate-scroll space-x-8 sm:space-x-12 md:space-x-16">
-            {/* First set of logos */}
+            {/* Single set of logos */}
             {partners.map((partner, index) => (
-              <div key={`first-${index}`} className="flex-shrink-0 flex flex-col items-center text-center group min-w-[120px] sm:min-w-[140px] md:min-w-[160px]">
-                <div className="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 lg:w-32 lg:h-32 bg-white rounded-xl sm:rounded-2xl shadow-soft p-3 sm:p-4 mb-3 sm:mb-4 flex items-center justify-center group-hover:shadow-medium transition-all duration-300">
-                  <Image
-                    src={partner.image}
-                    alt={partner.name}
-                    width={96}
-                    height={96}
-                    className="w-full h-full object-contain"
-                  />
-                </div>
-                <h3 className="text-xs sm:text-sm font-semibold text-orange-600 mb-1">{partner.name}</h3>
-                <p className="text-xs text-neutral-600 hidden sm:block">{partner.description}</p>
-              </div>
-            ))}
-            
-            {/* Duplicate set for seamless loop */}
-            {partners.map((partner, index) => (
-              <div key={`second-${index}`} className="flex-shrink-0 flex flex-col items-center text-center group min-w-[120px] sm:min-w-[140px] md:min-w-[160px]">
+              <div key={index} className="flex-shrink-0 flex flex-col items-center text-center group min-w-[120px] sm:min-w-[140px] md:min-w-[160px]">
                 <div className="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 lg:w-32 lg:h-32 bg-white rounded-xl sm:rounded-2xl shadow-soft p-3 sm:p-4 mb-3 sm:mb-4 flex items-center justify-center group-hover:shadow-medium transition-all duration-300">
                   <Image
                     src={partner.image}
@@ -114,15 +97,15 @@ const TrustedPartnersSection = () => {
       <style jsx>{`
         @keyframes scroll {
           0% {
-            transform: translateX(0);
+            transform: translateX(100%);
           }
           100% {
-            transform: translateX(-50%);
+            transform: translateX(-100%);
           }
         }
         
         .animate-scroll {
-          animation: scroll 30s linear infinite;
+          animation: scroll 15s linear forwards;
         }
         
         .animate-scroll:hover {
