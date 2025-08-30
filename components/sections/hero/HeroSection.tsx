@@ -223,19 +223,17 @@ const HeroSection = () => {
             className="flex-1 flex justify-center lg:justify-end mt-12 lg:mt-0"
           >
             <div className="relative w-full max-w-lg lg:max-w-xl">
-              <div className="relative rounded-xl overflow-hidden shadow-2xl">
-                <iframe 
-                  src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fweb.facebook.com%2Freel%2F1141319817913700%2F&show_text=false&width=560&t=0" 
-                  width="100%" 
-                  height="400" 
-                  style={{border:'none',overflow:'hidden'}} 
-                  scrolling="no" 
-                  frameBorder="0" 
-                  allowFullScreen={true} 
-                  allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-                  className="w-full h-full"
-                />
-              </div>
+              <iframe 
+                src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fweb.facebook.com%2Freel%2F1141319817913700%2F&show_text=false&width=560&t=0" 
+                width="560" 
+                height="314" 
+                style={{border:'none',overflow:'hidden'}} 
+                scrolling="no" 
+                frameBorder="0" 
+                allowFullScreen={true} 
+                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                className="w-full h-auto rounded-xl shadow-2xl"
+              />
             </div>
           </motion.div>
         </div>
