@@ -245,10 +245,10 @@ const HeroSection = () => {
             initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="flex-1 flex justify-center lg:justify-end mt-12 lg:mt-0"
+            className="flex-1 flex justify-center lg:justify-end mt-8 sm:mt-12 lg:mt-0 w-full"
           >
-            <div className="relative w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl">
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-gradient-to-br from-gray-50 to-white p-3 sm:p-4 md:p-6 backdrop-blur-sm border border-gray-100">
+            <div className="relative w-full max-w-[320px] sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl">
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-gradient-to-br from-gray-50 to-white p-2 sm:p-3 md:p-4 lg:p-6 backdrop-blur-sm border border-gray-100">
                 <div className="absolute inset-0 bg-gradient-to-br from-orange-500/5 to-blue-500/5 rounded-2xl"></div>
                 <div className="relative z-10">
                   <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
