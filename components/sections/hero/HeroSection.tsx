@@ -223,16 +223,22 @@ const HeroSection = () => {
             className="flex-1 flex justify-center lg:justify-end mt-12 lg:mt-0"
           >
             <div className="relative">
-              <iframe 
-                src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fweb.facebook.com%2Freel%2F1141319817913700%2F&show_text=false&width=560&t=0" 
-                width="560" 
-                height="314" 
-                style={{border:'none',overflow:'hidden'}} 
-                scrolling="no" 
-                frameBorder="0" 
-                allowFullScreen={true} 
-                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-              />
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-gradient-to-br from-gray-50 to-white p-6 backdrop-blur-sm border border-gray-100">
+                <div className="absolute inset-0 bg-gradient-to-br from-orange-500/5 to-blue-500/5 rounded-2xl"></div>
+                <div className="relative z-10">
+                  <iframe 
+                    src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fweb.facebook.com%2Freel%2F1141319817913700%2F&show_text=false&width=560&t=0" 
+                    width="560" 
+                    height="314" 
+                    style={{border:'none',overflow:'hidden'}} 
+                    scrolling="no" 
+                    frameBorder="0" 
+                    allowFullScreen={true} 
+                    allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                    className="rounded-xl"
+                  />
+                </div>
+              </div>
             </div>
           </motion.div>
         </div>
