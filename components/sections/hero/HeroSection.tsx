@@ -222,50 +222,20 @@ const HeroSection = () => {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="flex-1 flex justify-center lg:justify-end mt-12 lg:mt-0"
           >
-            <div className="relative">
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-white/10 backdrop-blur-sm p-4">
+            <div className="relative w-full max-w-lg lg:max-w-xl">
+              <div className="relative rounded-xl overflow-hidden shadow-2xl">
                 <iframe 
                   src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fweb.facebook.com%2Freel%2F1141319817913700%2F&show_text=false&width=560&t=0" 
                   width="100%" 
-                  height="314" 
+                  height="400" 
                   style={{border:'none',overflow:'hidden'}} 
                   scrolling="no" 
                   frameBorder="0" 
                   allowFullScreen={true} 
                   allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                  className="w-full h-full"
                 />
               </div>
-              
-              {/* Floating elements */}
-              <motion.div
-                animate={{ 
-                  y: [-10, 10, -10],
-                  rotate: [0, 5, -5, 0]
-                }}
-                transition={{ 
-                  duration: 4, 
-                  repeat: Infinity, 
-                  ease: "easeInOut" 
-                }}
-                className="absolute -top-8 -right-8 w-16 h-16 bg-gradient-to-r from-orange-400 to-orange-600 rounded-full flex items-center justify-center shadow-xl"
-              >
-                <TrendingUp className="w-8 h-8 text-white" />
-              </motion.div>
-              
-              <motion.div
-                animate={{ 
-                  y: [10, -10, 10],
-                  scale: [1, 1.1, 1]
-                }}
-                transition={{ 
-                  duration: 3, 
-                  repeat: Infinity, 
-                  ease: "easeInOut" 
-                }}
-                className="absolute -bottom-6 -left-6 w-12 h-12 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full flex items-center justify-center shadow-xl"
-              >
-                <Zap className="w-6 h-6 text-white" />
-              </motion.div>
             </div>
           </motion.div>
         </div>
