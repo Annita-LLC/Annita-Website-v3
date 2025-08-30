@@ -72,12 +72,12 @@ const TrustedPartnersSection = () => {
         </div>
 
         {/* Slideshow Container */}
-        <div className="relative">
-          <div className="flex animate-scroll space-x-8 sm:space-x-12 md:space-x-16">
-            {/* Single set of logos */}
+        <div className="relative overflow-hidden">
+          <div className="flex animate-scroll space-x-4 sm:space-x-6 md:space-x-8 lg:space-x-12 xl:space-x-16">
+            {/* First set of logos */}
             {partners.map((partner, index) => (
-              <div key={index} className="flex-shrink-0 flex flex-col items-center text-center group min-w-[120px] sm:min-w-[140px] md:min-w-[160px]">
-                <div className="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 lg:w-32 lg:h-32 bg-white rounded-xl sm:rounded-2xl shadow-soft p-3 sm:p-4 mb-3 sm:mb-4 flex items-center justify-center group-hover:shadow-medium transition-all duration-300">
+              <div key={`first-${index}`} className="flex-shrink-0 flex flex-col items-center text-center group min-w-[100px] xs:min-w-[110px] sm:min-w-[120px] md:min-w-[140px] lg:min-w-[160px]">
+                <div className="w-16 h-16 xs:w-18 xs:h-18 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 xl:w-32 xl:h-32 bg-white rounded-lg sm:rounded-xl md:rounded-2xl shadow-soft p-2 sm:p-3 md:p-4 mb-2 sm:mb-3 md:mb-4 flex items-center justify-center group-hover:shadow-medium transition-all duration-300">
                   <Image
                     src={partner.image}
                     alt={partner.name}
@@ -86,8 +86,25 @@ const TrustedPartnersSection = () => {
                     className="w-full h-full object-contain"
                   />
                 </div>
-                <h3 className="text-xs sm:text-sm font-semibold text-orange-600 mb-1">{partner.name}</h3>
-                <p className="text-xs text-neutral-600 hidden sm:block">{partner.description}</p>
+                <h3 className="text-xs font-semibold text-orange-600 mb-1">{partner.name}</h3>
+                <p className="text-xs text-neutral-600 hidden md:block">{partner.description}</p>
+              </div>
+            ))}
+            
+            {/* Duplicate set for seamless loop */}
+            {partners.map((partner, index) => (
+              <div key={`second-${index}`} className="flex-shrink-0 flex flex-col items-center text-center group min-w-[100px] xs:min-w-[110px] sm:min-w-[120px] md:min-w-[140px] lg:min-w-[160px]">
+                <div className="w-16 h-16 xs:w-18 xs:h-18 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 xl:w-32 xl:h-32 bg-white rounded-lg sm:rounded-xl md:rounded-2xl shadow-soft p-2 sm:p-3 md:p-4 mb-2 sm:mb-3 md:mb-4 flex items-center justify-center group-hover:shadow-medium transition-all duration-300">
+                  <Image
+                    src={partner.image}
+                    alt={partner.name}
+                    width={96}
+                    height={96}
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+                <h3 className="text-xs font-semibold text-orange-600 mb-1">{partner.name}</h3>
+                <p className="text-xs text-neutral-600 hidden md:block">{partner.description}</p>
               </div>
             ))}
           </div>
@@ -97,15 +114,33 @@ const TrustedPartnersSection = () => {
       <style jsx>{`
         @keyframes scroll {
           0% {
-            transform: translateX(100%);
+            transform: translateX(0);
           }
           100% {
-            transform: translateX(-100%);
+            transform: translateX(-50%);
           }
         }
         
         .animate-scroll {
-          animation: scroll 15s linear forwards;
+          animation: scroll 25s linear infinite;
+        }
+        
+        @media (min-width: 640px) {
+          .animate-scroll {
+            animation-duration: 22s;
+          }
+        }
+        
+        @media (min-width: 768px) {
+          .animate-scroll {
+            animation-duration: 20s;
+          }
+        }
+        
+        @media (min-width: 1024px) {
+          .animate-scroll {
+            animation-duration: 18s;
+          }
         }
         
         .animate-scroll:hover {
