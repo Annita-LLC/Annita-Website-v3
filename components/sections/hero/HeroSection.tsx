@@ -23,7 +23,8 @@ import {
   Target,
   Crown,
   Rocket,
-  Video
+  Video,
+  Brain
 } from 'lucide-react'
 import Button from '@/components/ui/Button'
 import Link from 'next/link'
@@ -69,6 +70,30 @@ const HeroSection = () => {
       secondaryCta: "Learn More",
       secondaryIcon: ArrowRight,
       background: "from-green-50 via-white to-teal-50/30"
+    },
+    {
+      id: 4,
+      badge: "AI-Powered Solutions",
+      title: "Intelligent Business Tools",
+      titleHighlight: "Business Tools",
+      subtitle: "Leverage cutting-edge AI technology to automate processes, gain insights, and scale your business efficiently.",
+      cta: "Discover AI",
+      ctaIcon: Brain,
+      secondaryCta: "See Examples",
+      secondaryIcon: Eye,
+      background: "from-purple-50 via-white to-pink-50/30"
+    },
+    {
+      id: 5,
+      badge: "Pan-African Network",
+      title: "Connect Across the Continent",
+      titleHighlight: "the Continent",
+      subtitle: "Access markets across Africa with our extensive network of partners, suppliers, and customers.",
+      cta: "Explore Network",
+      ctaIcon: Globe,
+      secondaryCta: "Partner With Us",
+      secondaryIcon: Heart,
+      background: "from-yellow-50 via-white to-orange-50/30"
     }
   ]
 
@@ -222,21 +247,21 @@ const HeroSection = () => {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="flex-1 flex justify-center lg:justify-end mt-12 lg:mt-0"
           >
-            <div className="relative">
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-gradient-to-br from-gray-50 to-white p-6 backdrop-blur-sm border border-gray-100">
+            <div className="relative w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl">
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-gradient-to-br from-gray-50 to-white p-3 sm:p-4 md:p-6 backdrop-blur-sm border border-gray-100">
                 <div className="absolute inset-0 bg-gradient-to-br from-orange-500/5 to-blue-500/5 rounded-2xl"></div>
                 <div className="relative z-10">
-                  <iframe 
-                    src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fweb.facebook.com%2Freel%2F1141319817913700%2F&show_text=false&width=560&t=0" 
-                    width="560" 
-                    height="314" 
-                    style={{border:'none',overflow:'hidden'}} 
-                    scrolling="no" 
-                    frameBorder="0" 
-                    allowFullScreen={true} 
-                    allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-                    className="rounded-xl"
-                  />
+                  <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
+                    <iframe 
+                      src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fweb.facebook.com%2Freel%2F1141319817913700%2F&show_text=false&width=560&t=0" 
+                      className="absolute top-0 left-0 w-full h-full rounded-xl"
+                      style={{border:'none',overflow:'hidden'}} 
+                      scrolling="no" 
+                      frameBorder="0" 
+                      allowFullScreen={true} 
+                      allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
