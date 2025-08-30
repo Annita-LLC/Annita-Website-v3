@@ -1,7 +1,7 @@
- 'use client'
+'use client'
 
 import { useState, useEffect } from 'react'
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import { 
   Play, 
   Download, 
@@ -44,17 +44,16 @@ import {
   Smartphone,
   Tablet,
   Monitor,
-  Watch
+  Watch,
+  ChevronLeft,
+  ChevronRight
 } from 'lucide-react'
 import Button from '@/components/ui/Button'
-import PhoneMockup from '@/components/ui/PhoneMockup'
 
 const HeroSection = () => {
+  const [currentSlide, setCurrentSlide] = useState(0)
   const [currentFeature, setCurrentFeature] = useState(0)
-  const [currentApp, setCurrentApp] = useState(0)
   const [showNotification, setShowNotification] = useState(false)
-  const [batteryLevel, setBatteryLevel] = useState(87)
-  const [signalStrength, setSignalStrength] = useState(4)
 
   const features = [
     { icon: Globe, text: 'Pan-African Reach' },
@@ -63,52 +62,69 @@ const HeroSection = () => {
     { icon: Shield, text: 'Secure & Trusted' },
   ]
 
-  const apps = [
-    { icon: ShoppingCart, name: 'Marketplace', color: 'from-blue-500 to-cyan-500', notifications: 3 },
-    { icon: CreditCard, name: 'AnnitaPay', color: 'from-green-500 to-emerald-500', notifications: 1 },
-    { icon: Truck, name: 'Logistics', color: 'from-orange-500 to-red-500', notifications: 0 },
-    { icon: MessageSquare, name: 'Connect', color: 'from-purple-500 to-pink-500', notifications: 5 },
-    { icon: BarChart3, name: 'Analytics', color: 'from-indigo-500 to-purple-500', notifications: 2 },
-    { icon: Brain, name: 'AI Assistant', color: 'from-teal-500 to-cyan-500', notifications: 0 },
-  ]
-
-  const notifications = [
-    { type: 'success', message: 'Payment received from Customer #1234', time: '2m ago', icon: CheckCircle },
-    { type: 'info', message: 'New order #5678 ready for pickup', time: '5m ago', icon: Bell },
-    { type: 'warning', message: 'Low inventory alert for Product X', time: '10m ago', icon: Shield },
+  const slides = [
+    {
+      id: 1,
+      title: "Africa's First All-in-One Digital Platform",
+      subtitle: "Empowering MSMEs across the continent with comprehensive digital solutions",
+      cta: "Get Started Free",
+      ctaIcon: Play,
+      secondaryCta: "Download App",
+      secondaryIcon: Download,
+      background: "from-primary-900 via-primary-800 to-secondary-800"
+    },
+    {
+      id: 2,
+      title: "Seamless Digital Commerce",
+      subtitle: "From marketplace to payments, logistics to AI - everything you need in one place",
+      cta: "Explore Features",
+      ctaIcon: Globe,
+      secondaryCta: "Watch Demo",
+      secondaryIcon: Video,
+      background: "from-blue-900 via-purple-800 to-indigo-800"
+    },
+    {
+      id: 3,
+      title: "Trusted by Millions",
+      subtitle: "Join thousands of businesses already transforming their operations with Annita",
+      cta: "Join Now",
+      ctaIcon: Users,
+      secondaryCta: "Learn More",
+      secondaryIcon: ArrowRight,
+      background: "from-green-900 via-teal-800 to-cyan-800"
+    }
   ]
 
   useEffect(() => {
     const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % slides.length)
+    }, 5000)
+    return () => clearInterval(interval)
+  }, [slides.length])
+
+  useEffect(() => {
+    const featureInterval = setInterval(() => {
       setCurrentFeature((prev) => (prev + 1) % features.length)
     }, 2000)
-    return () => clearInterval(interval)
+    return () => clearInterval(featureInterval)
   }, [features.length])
 
-  useEffect(() => {
-    const appInterval = setInterval(() => {
-      setCurrentApp((prev) => (prev + 1) % apps.length)
-    }, 3000)
-    return () => clearInterval(appInterval)
-  }, [apps.length])
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % slides.length)
+  }
 
-  useEffect(() => {
-    const notificationInterval = setInterval(() => {
-      setShowNotification(true)
-      setTimeout(() => setShowNotification(false), 3000)
-    }, 5000)
-    return () => clearInterval(notificationInterval)
-  }, [])
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length)
+  }
 
-  const renderIcon = (icon: any, className: string) => {
-    const IconComponent = icon
-    return <IconComponent className={className} />
+  const goToSlide = (index: number) => {
+    setCurrentSlide(index)
   }
 
   return (
     <div className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary-900 via-primary-800 to-secondary-800" />
+      <div className={`absolute inset-0 bg-gradient-to-br ${slides[currentSlide].background}`} />
       <div className="absolute inset-0 bg-gradient-to-b from-black/20 to-black/40" />
       
       {/* Animated Background Elements */}
@@ -150,21 +166,33 @@ const HeroSection = () => {
               transition={{ duration: 0.8 }}
               className="text-center lg:text-left"
             >
-
-
-                             {/* Main Heading */}
-               <motion.h1
-                 initial={{ opacity: 0, y: 30 }}
-                 animate={{ opacity: 1, y: 0 }}
-                 transition={{ duration: 0.8, delay: 0.3 }}
-                 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-bold text-white mb-3 sm:mb-4 lg:mb-6 leading-tight"
-               >
-                Africa's First{' '}
-                All-in-One Digital Platform
-               </motion.h1>
+              {/* Main Heading */}
+              <AnimatePresence mode="wait">
+                <motion.h1
+                  key={currentSlide}
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -30 }}
+                  transition={{ duration: 0.5 }}
+                  className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-bold text-white mb-3 sm:mb-4 lg:mb-6 leading-tight"
+                >
+                  {slides[currentSlide].title}
+                </motion.h1>
+              </AnimatePresence>
 
               {/* Subtitle */}
-              
+              <AnimatePresence mode="wait">
+                <motion.p
+                  key={`subtitle-${currentSlide}`}
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -30 }}
+                  transition={{ duration: 0.5, delay: 0.1 }}
+                  className="text-lg sm:text-xl lg:text-2xl text-white/80 mb-6 sm:mb-8 max-w-2xl mx-auto lg:mx-0"
+                >
+                  {slides[currentSlide].subtitle}
+                </motion.p>
+              </AnimatePresence>
 
               {/* Features Rotator */}
               <motion.div
@@ -183,29 +211,33 @@ const HeroSection = () => {
               </motion.div>
 
               {/* CTA Buttons */}
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.6 }}
-                className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start"
-              >
-                <Button
-                  variant="gradient"
-                  size="lg"
-                  icon={Play}
-                  className="text-base sm:text-lg font-bold shadow-2xl hover:shadow-primary-500/25 transform hover:-translate-y-1 transition-all duration-300"
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={`cta-${currentSlide}`}
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -30 }}
+                  transition={{ duration: 0.5, delay: 0.2 }}
+                  className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start"
                 >
-                  Get Started Free
-                </Button>
-                <Button
-                  variant="glass"
-                  size="lg"
-                  icon={Download}
-                  className="text-base sm:text-lg font-bold backdrop-blur-xl shadow-2xl hover:shadow-white/10 transform hover:-translate-y-1 transition-all duration-300"
-                >
-                  Download App
-                </Button>
-              </motion.div>
+                  <Button
+                    variant="gradient"
+                    size="lg"
+                    icon={slides[currentSlide].ctaIcon}
+                    className="text-base sm:text-lg font-bold shadow-2xl hover:shadow-primary-500/25 transform hover:-translate-y-1 transition-all duration-300"
+                  >
+                    {slides[currentSlide].cta}
+                  </Button>
+                  <Button
+                    variant="glass"
+                    size="lg"
+                    icon={slides[currentSlide].secondaryIcon}
+                    className="text-base sm:text-lg font-bold backdrop-blur-xl shadow-2xl hover:shadow-white/10 transform hover:-translate-y-1 transition-all duration-300"
+                  >
+                    {slides[currentSlide].secondaryCta}
+                  </Button>
+                </motion.div>
+              </AnimatePresence>
 
               {/* Trust Indicators */}
               <motion.div
@@ -229,17 +261,57 @@ const HeroSection = () => {
               </motion.div>
             </motion.div>
 
-            {/* Right Column - Modern Phone Mockup */}
+            {/* Right Column - Video */}
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
               className="relative"
             >
-              <PhoneMockup />
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-white/10 backdrop-blur-sm p-4">
+                <iframe 
+                  src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fweb.facebook.com%2Freel%2F1141319817913700%2F&show_text=false&width=560&t=0" 
+                  width="100%" 
+                  height="314" 
+                  style={{border:'none',overflow:'hidden'}} 
+                  scrolling="no" 
+                  frameBorder="0" 
+                  allowFullScreen={true} 
+                  allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                />
+              </div>
             </motion.div>
           </div>
         </div>
+      </div>
+
+      {/* Navigation Arrows */}
+      <button
+        onClick={prevSlide}
+        className="absolute left-4 top-1/2 transform -translate-y-1/2 z-20 p-2 rounded-full bg-white/10 backdrop-blur-sm text-white hover:bg-white/20 transition-all duration-300"
+      >
+        <ChevronLeft className="w-6 h-6" />
+      </button>
+      <button
+        onClick={nextSlide}
+        className="absolute right-4 top-1/2 transform -translate-y-1/2 z-20 p-2 rounded-full bg-white/10 backdrop-blur-sm text-white hover:bg-white/20 transition-all duration-300"
+      >
+        <ChevronRight className="w-6 h-6" />
+      </button>
+
+      {/* Slide Indicators */}
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 flex space-x-2">
+        {slides.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => goToSlide(index)}
+            className={`w-3 h-3 rounded-full transition-all duration-300 ${
+              index === currentSlide 
+                ? 'bg-white scale-125' 
+                : 'bg-white/40 hover:bg-white/60'
+            }`}
+          />
+        ))}
       </div>
 
       {/* Scroll Indicator */}
