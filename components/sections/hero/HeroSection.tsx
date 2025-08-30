@@ -222,7 +222,7 @@ const HeroSection = () => {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="flex-1 flex justify-center lg:justify-end mt-12 lg:mt-0"
           >
-            <div className="relative w-full max-w-lg lg:max-w-xl">
+            <div className="relative">
               <iframe 
                 src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fweb.facebook.com%2Freel%2F1141319817913700%2F&show_text=false&width=560&t=0" 
                 width="560" 
@@ -232,7 +232,6 @@ const HeroSection = () => {
                 frameBorder="0" 
                 allowFullScreen={true} 
                 allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-                className="w-full h-auto rounded-xl shadow-2xl"
               />
             </div>
           </motion.div>
