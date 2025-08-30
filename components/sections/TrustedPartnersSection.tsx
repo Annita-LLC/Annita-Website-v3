@@ -43,11 +43,6 @@ const TrustedPartnersSection = () => {
       description: 'Supported by International Trade Centre'
     },
     {
-      name: 'UNDP',
-      image: '/images/Trusted and Back By/undp-logo.5180ec1d.png',
-      description: 'Supported by UNDP'
-    },
-    {
       name: 'ATG',
       image: '/images/Trusted and Back By/atg-logo.82dbee15.png',
       description: 'Supported by ATG'
@@ -56,6 +51,11 @@ const TrustedPartnersSection = () => {
       name: 'EU TAF Support',
       image: '/images/Trusted and Back By/eu_taf_support_to_the_afcfta_logo.jpeg',
       description: 'EU TAF Support to AFCFTA'
+    },
+    {
+      name: 'UNDP',
+      image: '/images/Trusted and Back By/undp-logo.5180ec1d.png',
+      description: 'Supported by UNDP'
     }
   ]
 
