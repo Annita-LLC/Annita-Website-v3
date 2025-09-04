@@ -188,7 +188,7 @@ const Navigation = () => {
                             <div className="max-h-96 overflow-y-auto p-4 scrollbar-thin scrollbar-thumb-gray-300 dark:scrollbar-thumb-gray-600 scrollbar-track-transparent">
                               <div className="grid gap-3">
                                 {item.dropdown.map((dropdownItem) => (
-                                                                     dropdownItem.isThemeToggle ? (
+                                                                     'isThemeToggle' in dropdownItem && dropdownItem.isThemeToggle ? (
                                      <div key={dropdownItem.name} className="p-3">
                                        <div className="flex items-start space-x-3">
                                          <dropdownItem.icon className="w-5 h-5 text-primary-600 dark:text-primary-400 mt-0.5 flex-shrink-0" />
@@ -368,12 +368,12 @@ const Navigation = () => {
                                   className="ml-4 mt-2 space-y-1"
                                 >
                                   {item.dropdown.map((dropdownItem) => (
-                                    dropdownItem.isThemeToggle ? (
+                                    'isThemeToggle' in dropdownItem && dropdownItem.isThemeToggle ? (
                                       <div key={dropdownItem.name} className="p-2">
                                         <div className="text-sm text-gray-600 dark:text-gray-300 mb-2">{dropdownItem.name}</div>
                                         <SimpleThemeToggle />
                                       </div>
-                                    ) : dropdownItem.isExternal ? (
+                                    ) : 'isExternal' in dropdownItem && dropdownItem.isExternal ? (
                                       <a
                                         key={dropdownItem.name}
                                         href={dropdownItem.href}
