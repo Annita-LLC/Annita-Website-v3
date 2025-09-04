@@ -164,7 +164,7 @@ const Footer = () => {
               <ul className="space-y-2 sm:space-y-3">
                 {section.links.map((link) => (
                   <li key={link.name}>
-                    {link.isCookieSettings ? (
+                    {'isCookieSettings' in link && link.isCookieSettings ? (
                       <button
                         onClick={() => setIsCookieSettingsOpen(true)}
                         className="footer-link text-gray-400 hover:text-white transition-colors duration-200 text-sm sm:text-base flex items-center gap-1"
@@ -172,7 +172,7 @@ const Footer = () => {
                         <Settings className="w-3 h-3" />
                         {link.name}
                       </button>
-                    ) : link.isExternal ? (
+                    ) : 'isExternal' in link && link.isExternal ? (
                       <a 
                         href={link.href}
                         target="_blank"
