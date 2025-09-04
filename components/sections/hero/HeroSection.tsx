@@ -24,7 +24,10 @@ import {
   Crown,
   Rocket,
   Video,
-  Brain
+  Brain,
+  Star,
+  ExternalLink,
+  WifiOff
 } from 'lucide-react'
 import Button from '@/components/ui/Button'
 import Link from 'next/link'
@@ -37,59 +40,59 @@ const HeroSection = () => {
   const slides = [
     {
       id: 1,
-      badge: "Africa's First All-in-One Platform",
-      title: "Ready to Transform Your Business?",
-      titleHighlight: "Your Business?",
-      subtitle: "We empower MSMEs and individuals with innovative solutions, connectivity, and convenience.",
-      cta: "Get Started Free",
-      ctaIcon: Play,
-      secondaryCta: "Download App",
-      secondaryIcon: Download,
+      badge: "🚨 Something BIG is Coming",
+      title: "Annita 3.0 - The Future",
+      titleHighlight: "of Business in Africa",
+      subtitle: "Offline-ready, AI-powered, and built for everyone - whether you're in a city or rural village.",
+      cta: "Join Waitlist",
+      ctaIcon: Star,
+      secondaryCta: "See V1.0 Now",
+      secondaryIcon: ExternalLink,
       background: "from-gray-50 via-white to-orange-50/30"
     },
     {
       id: 2,
-      badge: "Seamless Digital Commerce",
-      title: "Everything You Need in One Place",
-      titleHighlight: "One Place",
-      subtitle: "From marketplace to payments, logistics to AI - comprehensive digital solutions for modern businesses.",
-      cta: "Explore Features",
+      badge: "Live Marketplace V1.0",
+      title: "Real Vendors, Real Sales",
+      titleHighlight: "Right Now",
+      subtitle: "3,000+ vendors already selling on our platform. Experience the working marketplace today.",
+      cta: "Visit Marketplace",
       ctaIcon: Globe,
-      secondaryCta: "Watch Demo",
-      secondaryIcon: Video,
+      secondaryCta: "Start Selling",
+      secondaryIcon: ArrowRight,
       background: "from-blue-50 via-white to-purple-50/30"
     },
     {
       id: 3,
-      badge: "Trusted by Millions",
-      title: "Join Thousands of Businesses",
-      titleHighlight: "Businesses",
-      subtitle: "Join thousands of businesses already transforming their operations with Annita's innovative platform.",
-      cta: "Join Now",
-      ctaIcon: Users,
-      secondaryCta: "Learn More",
-      secondaryIcon: ArrowRight,
+      badge: "Offline-Ready V3.0",
+      title: "Work Without Internet",
+      titleHighlight: "Anywhere in Africa",
+      subtitle: "Sell, receive payments, manage business, and grow savings - even with unstable connectivity.",
+      cta: "Learn More",
+      ctaIcon: WifiOff,
+      secondaryCta: "See Features",
+      secondaryIcon: Eye,
       background: "from-green-50 via-white to-teal-50/30"
     },
     {
       id: 4,
-      badge: "AI-Powered Solutions",
-      title: "Intelligent Business Tools",
-      titleHighlight: "Business Tools",
-      subtitle: "Leverage cutting-edge AI technology to automate processes, gain insights, and scale your business efficiently.",
+      badge: "AI Business Assistant",
+      title: "Smart Help for Your Hustle",
+      titleHighlight: "Your Hustle",
+      subtitle: "Get automated insights, guidance, and support to run your business smarter with AI.",
       cta: "Discover AI",
       ctaIcon: Brain,
-      secondaryCta: "See Examples",
-      secondaryIcon: Eye,
+      secondaryCta: "Try V1.0",
+      secondaryIcon: ExternalLink,
       background: "from-purple-50 via-white to-pink-50/30"
     },
     {
       id: 5,
-      badge: "Pan-African Network",
-      title: "Connect Across the Continent",
+      badge: "Built in Liberia",
+      title: "Rising with the Continent",
       titleHighlight: "the Continent",
-      subtitle: "Access markets across Africa with our extensive network of partners, suppliers, and customers.",
-      cta: "Explore Network",
+      subtitle: "Africa's all-in-one digital home. For MSMEs, vendors, freelancers, and individuals everywhere.",
+      cta: "Join Movement",
       ctaIcon: Globe,
       secondaryCta: "Partner With Us",
       secondaryIcon: Heart,
@@ -194,26 +197,51 @@ const HeroSection = () => {
                   transition={{ duration: 0.6, delay: 0.2 }}
                   className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
                 >
-                  <Link href="/download">
+                  {slides[currentSlide].cta === "Visit Marketplace" || slides[currentSlide].cta === "See V1.0 Now" ? (
                     <Button
                       variant="gradient"
                       size="lg"
                       icon={slides[currentSlide].ctaIcon}
                       className="w-full sm:w-auto text-base font-semibold px-8 py-4 shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
+                      onClick={() => window.open('https://annita.company.site/products', '_blank')}
                     >
                       {slides[currentSlide].cta}
                     </Button>
-                  </Link>
-                  <Link href="/download">
+                  ) : (
+                    <Link href="/download">
+                      <Button
+                        variant="gradient"
+                        size="lg"
+                        icon={slides[currentSlide].ctaIcon}
+                        className="w-full sm:w-auto text-base font-semibold px-8 py-4 shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
+                      >
+                        {slides[currentSlide].cta}
+                      </Button>
+                    </Link>
+                  )}
+                  
+                  {slides[currentSlide].secondaryCta === "Start Selling" || slides[currentSlide].secondaryCta === "Try V1.0" ? (
                     <Button
                       variant="outline"
                       size="lg"
                       icon={slides[currentSlide].secondaryIcon}
                       className="w-full sm:w-auto text-base font-semibold px-8 py-4 border-2 border-gray-300 hover:border-orange-500 hover:text-orange-600 transform hover:-translate-y-1 transition-all duration-300"
+                      onClick={() => window.open('https://annita.company.site/products', '_blank')}
                     >
                       {slides[currentSlide].secondaryCta}
                     </Button>
-                  </Link>
+                  ) : (
+                    <Link href="/download">
+                      <Button
+                        variant="outline"
+                        size="lg"
+                        icon={slides[currentSlide].secondaryIcon}
+                        className="w-full sm:w-auto text-base font-semibold px-8 py-4 border-2 border-gray-300 hover:border-orange-500 hover:text-orange-600 transform hover:-translate-y-1 transition-all duration-300"
+                      >
+                        {slides[currentSlide].secondaryCta}
+                      </Button>
+                    </Link>
+                  )}
                 </motion.div>
               </AnimatePresence>
 
@@ -226,15 +254,15 @@ const HeroSection = () => {
               >
                 <div className="flex items-center">
                   <Users className="w-4 h-4 mr-2" />
-                  <span>3,000+ Active Users</span>
-                </div>
-                <div className="flex items-center">
-                  <Shield className="w-4 h-4 mr-2" />
-                  <span>Bank-Level Security</span>
+                  <span>3,000+ Active Vendors</span>
                 </div>
                 <div className="flex items-center">
                   <Globe className="w-4 h-4 mr-2" />
-                  <span>3 African Countries</span>
+                  <span>Live Marketplace V1.0</span>
+                </div>
+                <div className="flex items-center">
+                  <Star className="w-4 h-4 mr-2" />
+                  <span>V3.0 Coming Soon</span>
                 </div>
               </motion.div>
             </div>

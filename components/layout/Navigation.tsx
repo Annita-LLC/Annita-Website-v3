@@ -57,6 +57,7 @@ const Navigation = () => {
 
   const navItems = [
     { name: 'Home', href: '/' },
+    { name: 'Marketplace V1.0', href: 'https://annita.company.site/products', isExternal: true },
     { 
       name: 'Personal', 
       href: '#',
@@ -217,9 +218,20 @@ const Navigation = () => {
                       </AnimatePresence>
                     </div>
                   ) : (
-                    <Link href={item.href} className="nav-link">
-                      {item.name}
-                    </Link>
+                    item.isExternal ? (
+                      <a 
+                        href={item.href} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="nav-link"
+                      >
+                        {item.name}
+                      </a>
+                    ) : (
+                      <Link href={item.href} className="nav-link">
+                        {item.name}
+                      </Link>
+                    )
                   )}
                 </div>
               ))}
@@ -355,13 +367,25 @@ const Navigation = () => {
                             </AnimatePresence>
                           </div>
                         ) : (
-                          <Link
-                            href={item.href}
-                            className="block p-3 font-medium text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800 rounded-lg transition-colors"
-                            onClick={() => setIsOpen(false)}
-                          >
-                            {item.name}
-                          </Link>
+                          item.isExternal ? (
+                            <a
+                              href={item.href}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="block p-3 font-medium text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800 rounded-lg transition-colors"
+                              onClick={() => setIsOpen(false)}
+                            >
+                              {item.name}
+                            </a>
+                          ) : (
+                            <Link
+                              href={item.href}
+                              className="block p-3 font-medium text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800 rounded-lg transition-colors"
+                              onClick={() => setIsOpen(false)}
+                            >
+                              {item.name}
+                            </Link>
+                          )
                         )}
                       </motion.div>
                     ))}

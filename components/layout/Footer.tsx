@@ -31,6 +31,7 @@ const Footer = () => {
     {
       title: 'Personal',
       links: [
+        { name: 'Live Marketplace V1.0', href: 'https://annita.company.site/products', isExternal: true },
         { name: 'AnnitaPay', href: '/services/annitapay' },
         { name: 'Annita Marketplace', href: '/services/shopping' },
         { name: 'Annita AI', href: '/ai/personal' },
@@ -171,6 +172,15 @@ const Footer = () => {
                         <Settings className="w-3 h-3" />
                         {link.name}
                       </button>
+                    ) : link.isExternal ? (
+                      <a 
+                        href={link.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="footer-link text-gray-400 hover:text-white transition-colors duration-200 text-sm sm:text-base"
+                      >
+                        {link.name}
+                      </a>
                     ) : (
                       <Link 
                         href={link.href}

@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef } from 'react'
-import { Download, ArrowRight } from 'lucide-react'
+import { Download, ArrowRight, ExternalLink, Star } from 'lucide-react'
 
 const CTASection = () => {
   const ref = useRef(null)
@@ -21,26 +21,28 @@ const CTASection = () => {
             className="text-center p-8 bg-gradient-to-r from-orange-500 to-orange-600 rounded-2xl text-white"
           >
             <h3 className="text-2xl sm:text-3xl font-bold mb-4">
-              Ready to Transform Your Business?
+              🚨 Something BIG is Coming - Annita 3.0
             </h3>
             <p className="text-orange-100 mb-6 max-w-2xl mx-auto">
-              Join thousands of MSMEs already using Annita to grow their revenue, reach new customers, 
-              and streamline their operations across Africa.
+              Experience our live marketplace V1.0 today, and join the waitlist for the revolutionary V3.0 - 
+              offline-ready, AI-powered, and built for everyone in Africa.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a 
-                href="/download"
+                href="https://annita.company.site/products"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center justify-center bg-white text-orange-600 px-8 py-3 rounded-lg font-semibold hover:bg-orange-50 transition-colors duration-200"
               >
-                <Download className="w-5 h-5 mr-2" />
-                Download App
+                <ExternalLink className="w-5 h-5 mr-2" />
+                Try Marketplace V1.0
               </a>
               <a 
-                href="/contact-sales"
+                href="/download"
                 className="inline-flex items-center justify-center border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-orange-600 transition-colors duration-200"
               >
-                Contact Sales
-                <ArrowRight className="w-5 h-5 ml-2" />
+                <Star className="w-5 h-5 mr-2" />
+                Join V3.0 Waitlist
               </a>
             </div>
           </motion.div>
