@@ -40,12 +40,14 @@ import {
   Rocket
 } from 'lucide-react'
 import { ThemeToggle, SimpleThemeToggle } from '@/components/ui/ThemeToggle'
+import WaitlistForm from '@/components/ui/WaitlistForm'
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
   const [dropdownTimeout, setDropdownTimeout] = useState<NodeJS.Timeout | null>(null)
+  const [isWaitlistOpen, setIsWaitlistOpen] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -57,14 +59,14 @@ const Navigation = () => {
 
   const navItems = [
     { name: 'Home', href: '/' },
-    { name: 'Marketplace V1.0', href: 'https://annita.company.site/products', isExternal: true },
     { 
       name: 'Personal', 
       href: '#',
       dropdown: [
-                 { name: 'AnnitaPay', href: '/services/annitapay', icon: CreditCard, description: 'Secure digital payments' },
-         { name: 'Annita AI', href: '/ai/personal', icon: Zap, description: 'Personal AI assistant' },
-         { name: 'Annita Marketplace', href: '/services/shopping', icon: ShoppingCart, description: 'Multivendor Ecommerce Shopping Place with countless MSMEs stores to shop from' },
+        { name: 'Live Marketplace V1.0', href: 'https://annita.company.site/products', icon: ShoppingCart, description: 'Current working marketplace with 3,000+ vendors', isExternal: true },
+        { name: 'AnnitaPay', href: '/services/annitapay', icon: CreditCard, description: 'Secure digital payments' },
+        { name: 'Annita AI', href: '/ai/personal', icon: Zap, description: 'Personal AI assistant' },
+        { name: 'Annita Marketplace', href: '/services/shopping', icon: ShoppingCart, description: 'Multivendor Ecommerce Shopping Place with countless MSMEs stores to shop from' },
         
       ]
     },
@@ -72,6 +74,7 @@ const Navigation = () => {
       name: 'Business', 
       href: '#',
       dropdown: [
+        { name: 'Live Marketplace V1.0', href: 'https://annita.company.site/products', icon: ShoppingCart, description: 'Current working marketplace with 3,000+ vendors', isExternal: true },
         { name: 'Annita Global Market', href: '/services/global-market', icon: Globe, description: 'International marketplace' },
         { name: 'AnnitaPay Business', href: '/services/annitapay-business', icon: Building, description: 'Business payment solutions' },
         { name: 'Annita AI', href: '/services/ai', icon: Zap, description: 'AI-powered business tools' },
@@ -196,6 +199,21 @@ const Navigation = () => {
                                          </div>
                                        </div>
                                      </div>
+                                  ) : dropdownItem.isExternal ? (
+                                    <a
+                                      key={dropdownItem.name}
+                                      href={dropdownItem.href}
+                                      target="_blank"
+                                      rel="noopener noreferrer"
+                                      className="flex items-start space-x-3 p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200"
+                                      onClick={() => setActiveDropdown(null)}
+                                    >
+                                      <dropdownItem.icon className="w-5 h-5 text-primary-600 dark:text-primary-400 mt-0.5 flex-shrink-0" />
+                                      <div>
+                                        <div className="font-medium text-gray-900 dark:text-white">{dropdownItem.name}</div>
+                                        <div className="text-sm text-gray-500 dark:text-gray-400">{dropdownItem.description}</div>
+                                      </div>
+                                    </a>
                                   ) : (
                                     <Link
                                       key={dropdownItem.name}
@@ -240,6 +258,13 @@ const Navigation = () => {
 
             {/* CTA Buttons */}
             <div className="hidden lg:flex items-center space-x-3 xl:space-x-4">
+              <button 
+                onClick={() => setIsWaitlistOpen(true)}
+                className="btn-secondary"
+              >
+                <Rocket className="w-4 h-4 mr-2" />
+                Join V3.0 Waitlist
+              </button>
               <Link href="/download" className="btn-primary">
                 <Download className="w-4 h-4 mr-2" />
                 Download App
@@ -348,6 +373,20 @@ const Navigation = () => {
                                         <div className="text-sm text-gray-600 dark:text-gray-300 mb-2">{dropdownItem.name}</div>
                                         <SimpleThemeToggle />
                                       </div>
+                                    ) : dropdownItem.isExternal ? (
+                                      <a
+                                        key={dropdownItem.name}
+                                        href={dropdownItem.href}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="block p-2 text-sm text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-50 dark:hover:bg-gray-800 rounded-lg transition-colors"
+                                        onClick={() => {
+                                          setIsOpen(false)
+                                          setActiveDropdown(null)
+                                        }}
+                                      >
+                                        {dropdownItem.name}
+                                      </a>
                                     ) : (
                                       <Link
                                         key={dropdownItem.name}
@@ -393,7 +432,17 @@ const Navigation = () => {
                 </div>
 
                 {/* Footer */}
-                <div className="p-6 border-t border-gray-200 dark:border-gray-700">
+                <div className="p-6 border-t border-gray-200 dark:border-gray-700 space-y-3">
+                  <button
+                    onClick={() => {
+                      setIsWaitlistOpen(true)
+                      setIsOpen(false)
+                    }}
+                    className="flex items-center justify-center w-full px-6 py-3 bg-gradient-to-r from-blue-500 to-blue-600 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-300"
+                  >
+                    <Rocket className="w-5 h-5 mr-2" />
+                    Join V3.0 Waitlist
+                  </button>
                   <Link
                     href="/download"
                     className="flex items-center justify-center w-full px-6 py-3 bg-gradient-to-r from-orange-500 to-orange-600 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-300"
@@ -408,6 +457,12 @@ const Navigation = () => {
           </motion.div>
         )}
       </AnimatePresence>
+
+      {/* Waitlist Form Modal */}
+      <WaitlistForm 
+        isOpen={isWaitlistOpen} 
+        onClose={() => setIsWaitlistOpen(false)} 
+      />
     </>
   )
 }
