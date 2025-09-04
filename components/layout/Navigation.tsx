@@ -199,7 +199,7 @@ const Navigation = () => {
                                          </div>
                                        </div>
                                      </div>
-                                  ) : dropdownItem.isExternal ? (
+                                  ) : 'isExternal' in dropdownItem && dropdownItem.isExternal ? (
                                     <a
                                       key={dropdownItem.name}
                                       href={dropdownItem.href}
