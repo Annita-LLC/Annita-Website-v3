@@ -2,12 +2,14 @@
 
 import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 import { Download, ArrowRight, ExternalLink, Star } from 'lucide-react'
+import WaitlistForm from '@/components/ui/WaitlistForm'
 
 const CTASection = () => {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true })
+  const [isWaitlistOpen, setIsWaitlistOpen] = useState(false)
 
   return (
     <section className="py-16 sm:py-20 bg-gradient-to-br from-gray-50 to-white" ref={ref}>
@@ -37,17 +39,23 @@ const CTASection = () => {
                 <ExternalLink className="w-5 h-5 mr-2" />
                 Try Marketplace V1.0
               </a>
-              <a 
-                href="/download"
+              <button 
+                onClick={() => setIsWaitlistOpen(true)}
                 className="inline-flex items-center justify-center border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-orange-600 transition-colors duration-200"
               >
                 <Star className="w-5 h-5 mr-2" />
                 Join V3.0 Waitlist
-              </a>
+              </button>
             </div>
           </motion.div>
         </div>
       </div>
+
+      {/* Waitlist Form Modal */}
+      <WaitlistForm 
+        isOpen={isWaitlistOpen} 
+        onClose={() => setIsWaitlistOpen(false)} 
+      />
     </section>
   )
 }

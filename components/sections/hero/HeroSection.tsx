@@ -30,11 +30,13 @@ import {
 } from 'lucide-react'
 import Button from '@/components/ui/Button'
 import Link from 'next/link'
+import WaitlistForm from '@/components/ui/WaitlistForm'
 
 const HeroSection = () => {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "0px" })
   const [currentSlide, setCurrentSlide] = useState(0)
+  const [isWaitlistOpen, setIsWaitlistOpen] = useState(false)
 
   const slides = [
     {
@@ -206,6 +208,16 @@ const HeroSection = () => {
                     >
                       {slides[currentSlide].cta}
                     </Button>
+                  ) : slides[currentSlide].cta === "Join Waitlist" ? (
+                    <Button
+                      variant="gradient"
+                      size="lg"
+                      icon={slides[currentSlide].ctaIcon}
+                      className="w-full sm:w-auto text-base font-semibold px-8 py-4 shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
+                      onClick={() => setIsWaitlistOpen(true)}
+                    >
+                      {slides[currentSlide].cta}
+                    </Button>
                   ) : (
                     <Link href="/download">
                       <Button
@@ -324,6 +336,12 @@ const HeroSection = () => {
           />
         ))}
       </div>
+
+      {/* Waitlist Form Modal */}
+      <WaitlistForm 
+        isOpen={isWaitlistOpen} 
+        onClose={() => setIsWaitlistOpen(false)} 
+      />
     </section>
   )
 }

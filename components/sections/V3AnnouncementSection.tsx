@@ -23,9 +23,11 @@ import {
   Laptop
 } from 'lucide-react'
 import Button from '@/components/ui/Button'
+import WaitlistForm from '@/components/ui/WaitlistForm'
 
 const V3AnnouncementSection = () => {
   const [activeTab, setActiveTab] = useState('coming')
+  const [isWaitlistOpen, setIsWaitlistOpen] = useState(false)
 
   const v3Features = [
     {
@@ -204,6 +206,7 @@ const V3AnnouncementSection = () => {
                       size="lg"
                       icon={Star}
                       className="text-lg font-bold"
+                      onClick={() => setIsWaitlistOpen(true)}
                     >
                       Join the Waitlist
                     </Button>
@@ -313,6 +316,12 @@ const V3AnnouncementSection = () => {
           </div>
         </motion.div>
       </div>
+
+      {/* Waitlist Form Modal */}
+      <WaitlistForm 
+        isOpen={isWaitlistOpen} 
+        onClose={() => setIsWaitlistOpen(false)} 
+      />
     </section>
   )
 }

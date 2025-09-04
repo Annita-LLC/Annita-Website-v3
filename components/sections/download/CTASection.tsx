@@ -12,20 +12,12 @@ import {
   CheckCircle
 } from 'lucide-react'
 import Button from '@/components/ui/Button'
+import WaitlistForm from '@/components/ui/WaitlistForm'
 
 const CTASection = () => {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-100px" })
-  const [email, setEmail] = useState('')
-  const [isSubmitted, setIsSubmitted] = useState(false)
-
-  const handleWaitlistSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    // Here you would typically send the email to your backend
-    console.log('Waitlist signup:', email)
-    setIsSubmitted(true)
-    setEmail('')
-  }
+  const [isWaitlistOpen, setIsWaitlistOpen] = useState(false)
 
   return (
     <section className="py-16 sm:py-20 bg-gradient-to-r from-orange-500 to-red-500 text-white">
@@ -45,41 +37,22 @@ const CTASection = () => {
             and grow their businesses with our all-in-one platform.
           </p>
 
-          {/* Waitlist Signup Form */}
+          {/* Waitlist CTA */}
           <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-3xl p-8 mb-12">
             <h3 className="text-2xl font-bold mb-4">🚀 Be First to Experience Annita v3.0</h3>
             <p className="text-orange-100 mb-6">
               Join the waitlist and get early access to revolutionary offline functionality, AI business tools, and enhanced features.
             </p>
             
-            {!isSubmitted ? (
-              <form onSubmit={handleWaitlistSubmit} className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-                <div className="flex-1">
-                  <input
-                    type="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    placeholder="Enter your email address"
-                    required
-                    className="w-full px-4 py-3 rounded-xl text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-white/50"
-                  />
-                </div>
-                <Button
-                  type="submit"
-                  variant="white"
-                  size="lg"
-                  icon={Mail}
-                  className="font-semibold"
-                >
-                  Join Waitlist
-                </Button>
-              </form>
-            ) : (
-              <div className="flex items-center justify-center space-x-2 text-green-300">
-                <CheckCircle className="w-6 h-6" />
-                <span className="text-lg font-semibold">Thank you! You're on the waitlist.</span>
-              </div>
-            )}
+            <Button
+              onClick={() => setIsWaitlistOpen(true)}
+              variant="white"
+              size="lg"
+              icon={Mail}
+              className="font-semibold"
+            >
+              Join Waitlist
+            </Button>
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
@@ -102,6 +75,12 @@ const CTASection = () => {
           </div>
         </motion.div>
       </div>
+
+      {/* Waitlist Form Modal */}
+      <WaitlistForm 
+        isOpen={isWaitlistOpen} 
+        onClose={() => setIsWaitlistOpen(false)} 
+      />
     </section>
   )
 }
