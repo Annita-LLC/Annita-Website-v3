@@ -25,7 +25,6 @@ import {
   Rocket,
   Video,
   Brain,
-  Star,
   ExternalLink,
   WifiOff
 } from 'lucide-react'
