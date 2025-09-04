@@ -236,7 +236,7 @@ const Navigation = () => {
                       </AnimatePresence>
                     </div>
                   ) : (
-                    item.isExternal ? (
+                    'isExternal' in item && item.isExternal ? (
                       <a 
                         href={item.href} 
                         target="_blank" 
@@ -406,7 +406,7 @@ const Navigation = () => {
                             </AnimatePresence>
                           </div>
                         ) : (
-                          item.isExternal ? (
+                          'isExternal' in item && item.isExternal ? (
                             <a
                               href={item.href}
                               target="_blank"
