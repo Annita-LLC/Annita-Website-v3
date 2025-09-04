@@ -20,8 +20,7 @@ import {
   Star,
   TrendingUp,
   Smartphone,
-  Laptop,
-  Wifi2
+  Laptop
 } from 'lucide-react'
 import Button from '@/components/ui/Button'
 
