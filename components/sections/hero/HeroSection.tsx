@@ -145,59 +145,59 @@ const HeroSection = () => {
             <div className="max-w-2xl mx-auto lg:mx-0">
               {/* Badge */}
               <AnimatePresence mode="wait">
-                <motion.div
+              <motion.div
                   key={`badge-${currentSlide}`}
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -10 }}
                   transition={{ duration: 0.4 }}
-                  className="inline-flex items-center px-4 py-2 bg-orange-50 text-orange-700 rounded-full text-sm font-medium mb-8"
-                >
-                  <Sparkles className="w-4 h-4 mr-2" />
+                className="inline-flex items-center px-4 py-2 bg-orange-50 text-orange-700 rounded-full text-sm font-medium mb-8"
+              >
+                <Sparkles className="w-4 h-4 mr-2" />
                   {slides[currentSlide].badge}
-                </motion.div>
+          </motion.div>
               </AnimatePresence>
 
               {/* Main Heading */}
               <AnimatePresence mode="wait">
-                <motion.h1
+              <motion.h1
                   key={`title-${currentSlide}`}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -20 }}
                   transition={{ duration: 0.6 }}
-                  className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-900 leading-tight mb-6"
-                >
+                className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-900 leading-tight mb-6"
+              >
                   {slides[currentSlide].title.split(slides[currentSlide].titleHighlight)[0]}
-                  <br />
+                <br />
                   <span className="text-orange-600">{slides[currentSlide].titleHighlight}</span>
-                </motion.h1>
+              </motion.h1>
               </AnimatePresence>
 
               {/* Subtitle */}
               <AnimatePresence mode="wait">
-                <motion.p
+              <motion.p
                   key={`subtitle-${currentSlide}`}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -20 }}
                   transition={{ duration: 0.6, delay: 0.1 }}
-                  className="text-lg sm:text-xl lg:text-2xl text-gray-600 leading-relaxed mb-8 max-w-xl lg:max-w-none"
-                >
+                className="text-lg sm:text-xl lg:text-2xl text-gray-600 leading-relaxed mb-8 max-w-xl lg:max-w-none"
+              >
                   {slides[currentSlide].subtitle}
-                </motion.p>
+              </motion.p>
               </AnimatePresence>
 
               {/* CTA Buttons */}
               <AnimatePresence mode="wait">
-                <motion.div
+          <motion.div
                   key={`cta-${currentSlide}`}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -20 }}
                   transition={{ duration: 0.6, delay: 0.2 }}
-                  className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
-                >
+                className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
+              >
                   {slides[currentSlide].cta === "Visit Marketplace" || slides[currentSlide].cta === "See V1.0 Now" ? (
                     <Button
                       variant="gradient"
@@ -218,17 +218,37 @@ const HeroSection = () => {
                     >
                       {slides[currentSlide].cta}
                     </Button>
+                  ) : slides[currentSlide].cta === "Learn More" ? (
+                    <Button
+                      variant="gradient"
+                      size="lg"
+                      icon={slides[currentSlide].ctaIcon}
+                      className="w-full sm:w-auto text-base font-semibold px-8 py-4 shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
+                      onClick={() => window.open('/learn-more', '_blank')}
+                    >
+                      {slides[currentSlide].cta}
+                    </Button>
+                  ) : slides[currentSlide].cta === "Discover AI" ? (
+                    <Button
+                      variant="gradient"
+                      size="lg"
+                      icon={slides[currentSlide].ctaIcon}
+                      className="w-full sm:w-auto text-base font-semibold px-8 py-4 shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
+                      onClick={() => window.open('/discover', '_blank')}
+                    >
+                      {slides[currentSlide].cta}
+                    </Button>
                   ) : (
-                    <Link href="/download">
-                      <Button
-                        variant="gradient"
-                        size="lg"
+                <Link href="/download">
+                  <Button
+                    variant="gradient"
+                    size="lg"
                         icon={slides[currentSlide].ctaIcon}
-                        className="w-full sm:w-auto text-base font-semibold px-8 py-4 shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
-                      >
+                    className="w-full sm:w-auto text-base font-semibold px-8 py-4 shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
+                  >
                         {slides[currentSlide].cta}
-                      </Button>
-                    </Link>
+                  </Button>
+                </Link>
                   )}
                   
                   {slides[currentSlide].secondaryCta === "Start Selling" || slides[currentSlide].secondaryCta === "Try V1.0" ? (
@@ -242,18 +262,18 @@ const HeroSection = () => {
                       {slides[currentSlide].secondaryCta}
                     </Button>
                   ) : (
-                    <Link href="/download">
-                      <Button
-                        variant="outline"
-                        size="lg"
+                <Link href="/download">
+                  <Button
+                    variant="outline"
+                    size="lg"
                         icon={slides[currentSlide].secondaryIcon}
-                        className="w-full sm:w-auto text-base font-semibold px-8 py-4 border-2 border-gray-300 hover:border-orange-500 hover:text-orange-600 transform hover:-translate-y-1 transition-all duration-300"
-                      >
+                    className="w-full sm:w-auto text-base font-semibold px-8 py-4 border-2 border-gray-300 hover:border-orange-500 hover:text-orange-600 transform hover:-translate-y-1 transition-all duration-300"
+                  >
                         {slides[currentSlide].secondaryCta}
-                      </Button>
-                    </Link>
+                  </Button>
+                </Link>
                   )}
-                </motion.div>
+              </motion.div>
               </AnimatePresence>
 
               {/* Trust indicators */}
@@ -275,8 +295,8 @@ const HeroSection = () => {
                   <Star className="w-4 h-4 mr-2" />
                   <span>V3.0 Coming Soon</span>
                 </div>
-              </motion.div>
-            </div>
+          </motion.div>
+        </div>
           </motion.div>
 
           {/* Right Content - Video */}

@@ -215,6 +215,7 @@ const V3AnnouncementSection = () => {
                       size="lg"
                       icon={ExternalLink}
                       className="text-lg font-bold border-white/30 text-white hover:bg-white/10"
+                      onClick={() => window.open('/learn-more', '_blank')}
                     >
                       Learn More
                     </Button>
