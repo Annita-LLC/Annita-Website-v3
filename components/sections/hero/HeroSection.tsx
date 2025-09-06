@@ -31,12 +31,14 @@ import {
 import Button from '@/components/ui/Button'
 import Link from 'next/link'
 import WaitlistForm from '@/components/ui/WaitlistForm'
+import DownloadChoiceModal from '@/components/ui/DownloadChoiceModal'
 
 const HeroSection = () => {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "0px" })
   const [currentSlide, setCurrentSlide] = useState(0)
   const [isWaitlistOpen, setIsWaitlistOpen] = useState(false)
+  const [isDownloadModalOpen, setIsDownloadModalOpen] = useState(false)
 
   const slides = [
     {
@@ -239,16 +241,15 @@ const HeroSection = () => {
                       {slides[currentSlide].cta}
                     </Button>
                   ) : (
-                <Link href="/download">
                   <Button
                     variant="gradient"
                     size="lg"
-                        icon={slides[currentSlide].ctaIcon}
+                    icon={slides[currentSlide].ctaIcon}
                     className="w-full sm:w-auto text-base font-semibold px-8 py-4 shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
+                    onClick={() => setIsDownloadModalOpen(true)}
                   >
-                        {slides[currentSlide].cta}
+                    {slides[currentSlide].cta}
                   </Button>
-                </Link>
                   )}
                   
                   {slides[currentSlide].secondaryCta === "Start Selling" || slides[currentSlide].secondaryCta === "Try V1.0" ? (
@@ -262,16 +263,15 @@ const HeroSection = () => {
                       {slides[currentSlide].secondaryCta}
                     </Button>
                   ) : (
-                <Link href="/download">
                   <Button
                     variant="outline"
                     size="lg"
-                        icon={slides[currentSlide].secondaryIcon}
+                    icon={slides[currentSlide].secondaryIcon}
                     className="w-full sm:w-auto text-base font-semibold px-8 py-4 border-2 border-gray-300 hover:border-orange-500 hover:text-orange-600 transform hover:-translate-y-1 transition-all duration-300"
+                    onClick={() => setIsDownloadModalOpen(true)}
                   >
-                        {slides[currentSlide].secondaryCta}
+                    {slides[currentSlide].secondaryCta}
                   </Button>
-                </Link>
                   )}
               </motion.div>
               </AnimatePresence>
@@ -361,6 +361,12 @@ const HeroSection = () => {
       <WaitlistForm 
         isOpen={isWaitlistOpen} 
         onClose={() => setIsWaitlistOpen(false)} 
+      />
+
+      {/* Download Choice Modal */}
+      <DownloadChoiceModal
+        isOpen={isDownloadModalOpen}
+        onClose={() => setIsDownloadModalOpen(false)}
       />
     </section>
   )

@@ -7,7 +7,11 @@ import {
   TrendingUp,
   Award,
   Target,
-  ArrowRight
+  ArrowRight,
+  DollarSign,
+  Globe,
+  Handshake,
+  Building
 } from 'lucide-react'
 import Button from '@/components/ui/Button'
 
@@ -19,34 +23,50 @@ const JourneySection = () => {
     {
       year: 'August 2021',
       title: 'Launched MVP',
-      description: 'Multi-Vendor marketplace with ads and logistic-only. Product Validation & First Paying Users',
+      description: 'Multi-Vendor marketplace with ads and logistic-only',
       achievement: 'MVP Launch',
       icon: Rocket,
       color: 'from-blue-500 to-cyan-500'
     },
     {
       year: 'June 2022',
-      title: '🤝 Onboarded to MANSA Platform',
-      description: 'Validated by Afreximbank\'s MANSA as a trusted and credible cross-border trade partner. Cross-Border MSME Onboarding Begins',
-      achievement: 'MANSA Validation',
-      icon: TrendingUp,
+      title: 'Product Validation & First Paying Users',
+      description: 'Achieved product-market fit with our first paying customers and validated our business model',
+      achievement: 'First Revenue',
+      icon: DollarSign,
       color: 'from-green-500 to-emerald-500'
     },
     {
       year: 'May 2023',
-      title: '🏆 Major Awards & Recognitions',
-      description: 'Won Orange Social Venture Prize (1st Place). Named Top 50 Businesses in Africa by the African Union',
-      achievement: 'Award Winner',
-      icon: Award,
+      title: 'Cross-Border MSME Onboarding Begins',
+      description: 'Expanded beyond local markets to serve Micro, Small, and Medium Enterprises across borders',
+      achievement: 'Cross-Border Expansion',
+      icon: Globe,
       color: 'from-purple-500 to-pink-500'
     },
     {
       year: 'March 2024',
-      title: 'Q1 2025',
-      description: 'AnnitaPay Testing Phase/Fund Raising',
-      achievement: 'Payment Platform',
-      icon: Target,
+      title: 'Major Awards & Recognitions',
+      description: 'Won Orange Social Venture Prize (1st Place) and Named Top 50 Businesses in Africa by the African Union',
+      achievement: 'Award Winner',
+      icon: Award,
       color: 'from-orange-500 to-red-500'
+    },
+    {
+      year: 'Q1 2025',
+      title: 'Onboarded to MANSA Platform',
+      description: 'Validated by Afreximbank\'s MANSA as a trusted and credible cross-border trade partner',
+      achievement: 'MANSA Validation',
+      icon: Handshake,
+      color: 'from-indigo-500 to-blue-500'
+    },
+    {
+      year: 'Q2 2025',
+      title: 'AnnitaPay Testing Phase',
+      description: 'Development and testing of our proprietary payment solution, enhancing our platform capabilities',
+      achievement: 'Payment Innovation',
+      icon: Building,
+      color: 'from-teal-500 to-green-500'
     }
   ]
 
@@ -64,8 +84,8 @@ const JourneySection = () => {
             Our Journey
           </h2>
           <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
-            From a simple idea to Africa's leading all-in-one digital platform, 
-            here's how we've grown and evolved over the years.
+            From a simple e-commerce idea to expanding into Africa's first all-in-one digital platform, 
+            here's our gradual evolution and growth story.
           </p>
         </motion.div>
 
