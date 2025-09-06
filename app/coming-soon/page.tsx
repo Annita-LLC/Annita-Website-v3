@@ -49,7 +49,8 @@ import {
   Activity,
   Leaf,
   Trophy,
-  Stethoscope
+  Stethoscope,
+  Bell
 } from 'lucide-react'
 
 const ComingSoonPage = () => {
