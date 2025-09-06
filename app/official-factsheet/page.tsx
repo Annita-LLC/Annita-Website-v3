@@ -450,6 +450,183 @@ const OfficialFactsheetPage = () => {
         </div>
       </section>
 
+      {/* Pricing Section */}
+      <section className="py-16 sm:py-20 bg-gray-50">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-6xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.8 }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
+                Flexible Pricing for Everyone
+              </h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                Choose the plan that fits your business needs. No upfront costs, just sell and earn.
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100"
+              >
+                <div className="text-center mb-6">
+                  <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mx-auto mb-4">
+                    <Users className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-2">Growth</h3>
+                  <div className="text-4xl font-bold text-gray-900 mb-2">$10</div>
+                  <p className="text-gray-600">Perfect for small businesses starting their digital journey</p>
+                </div>
+                <ul className="space-y-3 mb-8">
+                  <li className="flex items-center text-gray-600">
+                    <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
+                    Marketing credits
+                  </li>
+                  <li className="flex items-center text-gray-600">
+                    <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
+                    Basic analytics
+                  </li>
+                  <li className="flex items-center text-gray-600">
+                    <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
+                    Priority support
+                  </li>
+                  <li className="flex items-center text-gray-600">
+                    <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
+                    Mobile app access
+                  </li>
+                </ul>
+                <button className="w-full bg-blue-500 text-white py-3 px-6 rounded-lg font-semibold hover:bg-blue-600 transition-colors">
+                  Get Started
+                </button>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border-2 border-orange-500 relative"
+              >
+                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                  <span className="bg-orange-500 text-white px-4 py-1 rounded-full text-sm font-semibold">
+                    Most Popular
+                  </span>
+                </div>
+                <div className="text-center mb-6">
+                  <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center mx-auto mb-4">
+                    <TrendingUp className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-2">Pro</h3>
+                  <div className="text-4xl font-bold text-gray-900 mb-2">$25</div>
+                  <p className="text-gray-600">Ideal for growing businesses and startups</p>
+                </div>
+                <ul className="space-y-3 mb-8">
+                  <li className="flex items-center text-gray-600">
+                    <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
+                    All Growth features
+                  </li>
+                  <li className="flex items-center text-gray-600">
+                    <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
+                    AI recommendations
+                  </li>
+                  <li className="flex items-center text-gray-600">
+                    <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
+                    Advanced analytics
+                  </li>
+                  <li className="flex items-center text-gray-600">
+                    <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
+                    API access with documentation
+                  </li>
+                </ul>
+                <button className="w-full bg-orange-500 text-white py-3 px-6 rounded-lg font-semibold hover:bg-orange-600 transition-colors">
+                  Get Started
+                </button>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100"
+              >
+                <div className="text-center mb-6">
+                  <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mx-auto mb-4">
+                    <Globe className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-2">Premium</h3>
+                  <div className="text-4xl font-bold text-gray-900 mb-2">$50</div>
+                  <p className="text-gray-600">For large organizations and corporations</p>
+                </div>
+                <ul className="space-y-3 mb-8">
+                  <li className="flex items-center text-gray-600">
+                    <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
+                    All Pro features
+                  </li>
+                  <li className="flex items-center text-gray-600">
+                    <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
+                    Full AI suite
+                  </li>
+                  <li className="flex items-center text-gray-600">
+                    <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
+                    Premium analytics
+                  </li>
+                  <li className="flex items-center text-gray-600">
+                    <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
+                    White-label solutions
+                  </li>
+                </ul>
+                <button className="w-full bg-purple-500 text-white py-3 px-6 rounded-lg font-semibold hover:bg-purple-600 transition-colors">
+                  Get Started
+                </button>
+              </motion.div>
+            </div>
+
+            {/* Markup Model Info */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="mt-12 bg-white rounded-2xl p-8 shadow-lg border border-gray-100"
+            >
+              <div className="text-center mb-6">
+                <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center mx-auto mb-4">
+                  <DollarSign className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-2">Markup Base Model</h3>
+                <p className="text-gray-600">Vendors can choose between subscription plans or a markup model (5-15%)</p>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="space-y-3">
+                  <div className="flex items-center space-x-3">
+                    <CheckCircle className="w-5 h-5 text-green-500" />
+                    <span className="text-gray-600">No transaction fees</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <CheckCircle className="w-5 h-5 text-green-500" />
+                    <span className="text-gray-600">Transparent pricing</span>
+                  </div>
+                </div>
+                <div className="space-y-3">
+                  <div className="flex items-center space-x-3">
+                    <CheckCircle className="w-5 h-5 text-green-500" />
+                    <span className="text-gray-600">Flexible switching</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <CheckCircle className="w-5 h-5 text-green-500" />
+                    <span className="text-gray-600">14-day free trial</span>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-16 sm:py-20 bg-gradient-to-r from-orange-500 to-red-500 text-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">

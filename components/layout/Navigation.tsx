@@ -37,7 +37,8 @@ import {
   Database,
   Activity,
   Image,
-  Rocket
+  Rocket,
+  FileBarChart
 } from 'lucide-react'
 import { ThemeToggle, SimpleThemeToggle } from '@/components/ui/ThemeToggle'
 
@@ -89,6 +90,7 @@ const Navigation = () => {
                       { name: 'About Us', href: '/about', icon: Users, description: 'Our story and mission' },
                       { name: 'The 100', href: '/the100', icon: Target, description: 'Youth empowerment initiative' },
                       { name: 'Investors', href: '/investors', icon: DollarSign, description: 'Investment opportunities and company info' },
+                      { name: 'Official Factsheet', href: '/official-factsheet', icon: FileBarChart, description: 'Company metrics, revenue, and growth data' },
                       { name: 'Pricing', href: '/pricing', icon: DollarSign, description: 'Transparent pricing plans' },
                       { name: 'Business Model', href: '/business-model', icon: Building2, description: 'Our revenue model and strategy' },
                       { name: 'Coming Soon', href: '/coming-soon', icon: Rocket, description: 'Upcoming features and updates' },

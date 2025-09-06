@@ -201,7 +201,7 @@ const LearnMorePage = () => {
                 variant="glass"
                 size="lg"
                 icon={Globe}
-                className="text-lg font-bold backdrop-blur-xl"
+                className="text-lg font-bold backdrop-blur-xl text-white"
               >
                 Try V1.0 Now
               </Button>
@@ -352,7 +352,7 @@ const LearnMorePage = () => {
                 variant="glass"
                 size="lg"
                 icon={Globe}
-                className="text-lg font-bold backdrop-blur-xl"
+                className="text-lg font-bold backdrop-blur-xl text-white"
                 onClick={() => window.open('https://annita.company.site/products', '_blank')}
               >
                 Try V1.0 Now
