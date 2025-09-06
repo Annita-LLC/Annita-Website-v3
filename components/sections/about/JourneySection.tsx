@@ -10,7 +10,7 @@ import {
   ArrowRight,
   DollarSign,
   Globe,
-  Handshake,
+  UserCheck,
   Building
 } from 'lucide-react'
 import Button from '@/components/ui/Button'
@@ -57,7 +57,7 @@ const JourneySection = () => {
       title: 'Onboarded to MANSA Platform',
       description: 'Validated by Afreximbank\'s MANSA as a trusted and credible cross-border trade partner',
       achievement: 'MANSA Validation',
-      icon: Handshake,
+      icon: UserCheck,
       color: 'from-indigo-500 to-blue-500'
     },
     {
