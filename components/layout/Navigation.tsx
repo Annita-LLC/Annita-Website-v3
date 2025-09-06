@@ -90,6 +90,7 @@ const Navigation = () => {
       href: '#',
                           dropdown: [
                       { name: 'About Us', href: '/about', icon: Users, description: 'Our story and mission' },
+                      { name: 'Demo', href: '/demo', icon: Play, description: 'Interactive demo of Annita 3.0' },
                       { name: 'The 100', href: '/the100', icon: Target, description: 'Youth empowerment initiative' },
                       { name: 'Investors', href: '/investors', icon: DollarSign, description: 'Investment opportunities and company info' },
                       { name: 'Official Factsheet', href: '/official-factsheet', icon: FileBarChart, description: 'Company metrics, revenue, and growth data' },
