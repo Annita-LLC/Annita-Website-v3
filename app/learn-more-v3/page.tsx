@@ -557,7 +557,7 @@ const LearnMoreV3Page = () => {
         title="Learn More - Annita 3.0 Features | Comprehensive Platform Overview"
         description="Discover all the revolutionary features coming to Annita 3.0. From AI-powered business tools to offline functionality, explore how we're transforming digital commerce in Africa."
         keywords={['Annita 3.0', 'features', 'AI', 'offline functionality', 'digital payments', 'logistics', 'mobile app', 'business tools', 'Africa', 'e-commerce']}
-        canonicalUrl="https://an-nita.com/learn-more-v3"
+        canonical="https://an-nita.com/learn-more-v3"
       />
 
       {/* Hero Section */}
