@@ -1,4 +1,4 @@
-'use client'
+ 'use client'
 
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
@@ -166,18 +166,18 @@ const HeroSection = () => {
               transition={{ duration: 0.8 }}
               className="text-center lg:text-left"
             >
-              {/* Main Heading */}
+                             {/* Main Heading */}
               <AnimatePresence mode="wait">
-                <motion.h1
+               <motion.h1
                   key={currentSlide}
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
+                 initial={{ opacity: 0, y: 30 }}
+                 animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -30 }}
                   transition={{ duration: 0.5 }}
-                  className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-bold text-white mb-3 sm:mb-4 lg:mb-6 leading-tight"
-                >
+                 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-bold text-white mb-3 sm:mb-4 lg:mb-6 leading-tight"
+               >
                   {slides[currentSlide].title}
-                </motion.h1>
+               </motion.h1>
               </AnimatePresence>
 
               {/* Subtitle */}
@@ -212,31 +212,31 @@ const HeroSection = () => {
 
               {/* CTA Buttons */}
               <AnimatePresence mode="wait">
-                <motion.div
+              <motion.div
                   key={`cta-${currentSlide}`}
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -30 }}
                   transition={{ duration: 0.5, delay: 0.2 }}
-                  className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start"
-                >
-                  <Button
-                    variant="gradient"
-                    size="lg"
+                className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start"
+              >
+                <Button
+                  variant="gradient"
+                  size="lg"
                     icon={slides[currentSlide].ctaIcon}
-                    className="text-base sm:text-lg font-bold shadow-2xl hover:shadow-primary-500/25 transform hover:-translate-y-1 transition-all duration-300"
-                  >
+                  className="text-base sm:text-lg font-bold shadow-2xl hover:shadow-primary-500/25 transform hover:-translate-y-1 transition-all duration-300"
+                >
                     {slides[currentSlide].cta}
-                  </Button>
-                  <Button
-                    variant="glass"
-                    size="lg"
+                </Button>
+                <Button
+                  variant="glass"
+                  size="lg"
                     icon={slides[currentSlide].secondaryIcon}
-                    className="text-base sm:text-lg font-bold backdrop-blur-xl shadow-2xl hover:shadow-white/10 transform hover:-translate-y-1 transition-all duration-300"
-                  >
+                  className="text-base sm:text-lg font-bold backdrop-blur-xl shadow-2xl hover:shadow-white/10 transform hover:-translate-y-1 transition-all duration-300"
+                >
                     {slides[currentSlide].secondaryCta}
-                  </Button>
-                </motion.div>
+                </Button>
+              </motion.div>
               </AnimatePresence>
 
               {/* Trust Indicators */}

@@ -261,7 +261,7 @@ const HeroSection = () => {
                       onClick={() => window.open('https://annita.company.site/products', '_blank')}
                     >
                       {slides[currentSlide].secondaryCta}
-                    </Button>
+                  </Button>
                   ) : (
                   <Button
                     variant="outline"

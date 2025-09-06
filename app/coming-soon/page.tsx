@@ -6,6 +6,7 @@ import { useInView } from 'framer-motion'
 import { useRef } from 'react'
 import SEOHead from '@/components/seo/SEOHead'
 import CTASection from '@/components/sections/CTASection'
+import HeroSection from '@/components/sections/hero/HeroSection'
 import {
   Calendar,
   Clock,
@@ -44,24 +45,17 @@ import {
   Share2,
   GraduationCap,
   Eye,
-  Bell,
   MapPin,
   Activity,
   Leaf,
   Trophy,
-  Stethoscope,
-  Mail,
-  Send
+  Stethoscope
 } from 'lucide-react'
 
 const ComingSoonPage = () => {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true })
   const [activeCategory, setActiveCategory] = useState('all')
-  const [email, setEmail] = useState('')
-  const [isSubscribing, setIsSubscribing] = useState(false)
-  const [isSubscribed, setIsSubscribed] = useState(false)
-  const [error, setError] = useState('')
 
   const categories = [
     { id: 'all', name: 'All Updates', icon: Rocket },
@@ -82,7 +76,7 @@ const ComingSoonPage = () => {
       category: 'platform',
       status: 'in-development',
       progress: 75,
-      estimatedRelease: 'Q1 2030',
+      estimatedRelease: 'Q2 2025',
       features: [
         "Offline functionality for all core features",
         "Escrow settlements for secure trading",
@@ -167,12 +161,12 @@ const ComingSoonPage = () => {
     },
     {
       id: 'digital-banking',
-      title: "Digital Banking Services",
+      title: "AnnitaPay & Digital Banking Services",
       description: "Full banking services with savings, loans, investment options, and financial management",
       category: 'payments',
-      status: 'planning',
+      status: 'beta-testing',
       progress: 50,
-      estimatedRelease: 'Q3 2026',
+      estimatedRelease: 'Q2 2025',
       features: [
         "Savings and checking accounts",
         "Personal and business loans",
@@ -206,9 +200,9 @@ const ComingSoonPage = () => {
       title: "Regional Expansion",
       description: "Expansion across West Africa with localized services, languages, and support",
       category: 'platform',
-      status: 'planning',
-      progress: 30,
-      estimatedRelease: 'Q1 2027',
+      status: 'completed',
+      progress: 100,
+      estimatedRelease: 'May 2023',
       features: [
         "West African market entry",
         "Localized interfaces",
@@ -226,7 +220,7 @@ const ComingSoonPage = () => {
       category: 'mobile',
       status: 'in-development',
       progress: 85,
-      estimatedRelease: 'Q4 2030',
+      estimatedRelease: 'Q2 2025',
       features: [
         "Offline mode for core functions",
         "Push notifications for orders and payments",
@@ -244,7 +238,7 @@ const ComingSoonPage = () => {
       category: 'ai',
       status: 'beta-testing',
       progress: 70,
-      estimatedRelease: 'Q3 2030',
+      estimatedRelease: 'Q2 2025',
       features: [
         "Natural language processing",
         "Predictive analytics",
@@ -1111,53 +1105,6 @@ const ComingSoonPage = () => {
     ? upcomingFeatures 
     : upcomingFeatures.filter(feature => feature.category === activeCategory)
 
-  const handleNewsletterSubscribe = async (e: React.FormEvent) => {
-    e.preventDefault()
-    
-    if (!email) {
-      setError('Please enter your email address')
-      return
-    }
-
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-    if (!emailRegex.test(email)) {
-      setError('Please enter a valid email address')
-      return
-    }
-
-    setIsSubscribing(true)
-    setError('')
-
-    try {
-      const response = await fetch('/api/submit-form', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          formType: 'newsletter',
-          email: email,
-          platform: 'coming-soon'
-        })
-      })
-
-      const result = await response.json()
-
-      if (!response.ok) {
-        throw new Error(result.error || 'Failed to subscribe')
-      }
-
-      if (result.success) {
-        setIsSubscribed(true)
-        setEmail('')
-      } else {
-        throw new Error(result.error || 'Subscription failed')
-      }
-    } catch (err) {
-      console.error('Newsletter subscription error:', err)
-      setError(err instanceof Error ? err.message : 'Something went wrong. Please try again.')
-    } finally {
-      setIsSubscribing(false)
-    }
-  }
 
   return (
     <>
@@ -1180,45 +1127,7 @@ const ComingSoonPage = () => {
 
       <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white">
         {/* Hero Section */}
-        <section className="relative py-16 sm:py-20 lg:py-24 overflow-hidden">
-          <div className="absolute inset-0">
-            <div className="absolute top-0 left-1/4 w-72 h-72 bg-purple-200 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob"></div>
-            <div className="absolute top-0 right-1/4 w-72 h-72 bg-blue-200 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000"></div>
-            <div className="absolute -bottom-8 left-1/3 w-72 h-72 bg-pink-200 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-4000"></div>
-          </div>
-
-          <div className="container mx-auto px-3 sm:px-4 lg:px-6 xl:px-8 relative z-10">
-            <div className="text-center max-w-4xl mx-auto">
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8 }}
-              >
-                <div className="inline-flex items-center px-4 py-2 rounded-full bg-purple-100 text-purple-700 text-sm font-medium mb-6">
-                  <Rocket className="w-4 h-4 mr-2" />
-                  What's Coming Next
-                </div>
-                <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-900 mb-6">
-                  The Future of <span className="text-purple-600">Annita</span>
-                </h1>
-                <p className="text-lg sm:text-xl text-gray-600 mb-8 leading-relaxed">
-                  Discover the exciting new features and updates we're working on to make Annita 
-                  even more powerful and user-friendly. Stay ahead of the curve with our roadmap.
-                </p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <button className="bg-purple-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-purple-700 transition-colors duration-200 flex items-center justify-center">
-                    <Download className="w-5 h-5 mr-2" />
-                    Get Early Access
-                  </button>
-                  <button className="border-2 border-purple-600 text-purple-600 px-8 py-4 rounded-lg font-semibold hover:bg-purple-50 transition-colors duration-200 flex items-center justify-center">
-                    <Play className="w-5 h-5 mr-2" />
-                    Watch Demo
-                  </button>
-                </div>
-              </motion.div>
-            </div>
-          </div>
-        </section>
+        <HeroSection />
 
         {/* Annita 3.0 Announcement */}
         <section className="py-16 sm:py-20 bg-gradient-to-r from-red-50 to-orange-50 border-b border-orange-200">
@@ -1402,10 +1311,10 @@ const ComingSoonPage = () => {
                   <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center">
                     <CheckCircle className="w-6 h-6 text-green-600" />
                   </div>
-                  <span className="text-sm text-gray-500">December 2023</span>
+                  <span className="text-sm text-gray-500">March 2024</span>
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">Enhanced Security Features</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">Implemented advanced security protocols and two-factor authentication</p>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">Major Awards & Recognition</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">Won Orange Social Venture Prize (1st Place) and Named Top 50 Businesses in Africa by AU</p>
               </motion.div>
 
               <motion.div
@@ -1418,10 +1327,10 @@ const ComingSoonPage = () => {
                   <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center">
                     <CheckCircle className="w-6 h-6 text-green-600" />
                   </div>
-                  <span className="text-sm text-gray-500">November 2023</span>
+                  <span className="text-sm text-gray-500">May 2023</span>
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">Performance Optimization</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">Improved platform speed and reduced loading times by 40%</p>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">Cross-Border MSME Onboarding</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">Expanded beyond local markets to serve MSMEs across borders</p>
               </motion.div>
 
               <motion.div
@@ -1434,10 +1343,10 @@ const ComingSoonPage = () => {
                   <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center">
                     <CheckCircle className="w-6 h-6 text-green-600" />
                   </div>
-                  <span className="text-sm text-gray-500">October 2023</span>
+                  <span className="text-sm text-gray-500">June 2022</span>
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">Mobile Responsive Design</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">Enhanced mobile experience with improved navigation and touch interactions</p>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">Product Validation & First Paying Users</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">Achieved product-market fit with our first paying customers</p>
               </motion.div>
 
               <motion.div
@@ -1450,140 +1359,15 @@ const ComingSoonPage = () => {
                   <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center">
                     <CheckCircle className="w-6 h-6 text-green-600" />
                   </div>
-                  <span className="text-sm text-gray-500">September 2023</span>
+                  <span className="text-sm text-gray-500">August 2021</span>
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">Payment Gateway Integration</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">Added support for multiple payment methods and digital wallets</p>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">MVP Launch</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">Launched Multi-Vendor marketplace with ads and logistics</p>
               </motion.div>
             </div>
           </div>
         </section>
 
-                     {/* Newsletter Signup */}
-             <section className="py-16 bg-gradient-to-br from-purple-600 via-pink-600 to-orange-500 relative overflow-hidden">
-               {/* Background Elements */}
-               <div className="absolute inset-0">
-                 <div className="absolute top-0 left-1/4 w-64 h-64 bg-white/10 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse"></div>
-                 <div className="absolute bottom-0 right-1/4 w-64 h-64 bg-yellow-400/20 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse animation-delay-2000"></div>
-               </div>
-
-               <div className="container mx-auto px-3 sm:px-4 lg:px-6 xl:px-8 relative z-10">
-                 <div className="text-center max-w-3xl mx-auto">
-                   <motion.div
-                     initial={{ opacity: 0, y: 30 }}
-                     animate={isInView ? { opacity: 1, y: 0 } : {}}
-                     transition={{ duration: 0.8 }}
-                   >
-                     {/* Icon */}
-                     <div className="inline-flex items-center justify-center w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full mb-6">
-                       <Bell className="w-8 h-8 text-white" />
-                     </div>
-
-                     {/* Title */}
-                     <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
-                       Stay <span className="text-yellow-300 drop-shadow-lg">Updated</span>
-                     </h2>
-
-                     {/* Description */}
-                     <p className="text-lg text-white/90 mb-8 leading-relaxed">
-                       Be the first to know when new features launch. Get early access and exclusive updates.
-                     </p>
-
-                     {/* Newsletter Form */}
-                     <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 sm:p-8 border border-white/20 shadow-xl max-w-lg mx-auto">
-                       {!isSubscribed ? (
-                         <form onSubmit={handleNewsletterSubscribe}>
-                           <div className="flex flex-col sm:flex-row gap-3">
-                             <div className="flex-1 relative">
-                               <input
-                                 type="email"
-                                 value={email}
-                                 onChange={(e) => setEmail(e.target.value)}
-                                 placeholder="Enter your email address"
-                                 className="w-full px-4 py-3 rounded-xl text-gray-900 bg-white/95 backdrop-blur-sm border-2 border-white/30 focus:border-yellow-300 focus:ring-4 focus:ring-yellow-300/20 focus:outline-none transition-all duration-300 text-base placeholder-gray-500"
-                                 disabled={isSubscribing}
-                               />
-                               <div className="absolute right-3 top-1/2 transform -translate-y-1/2">
-                                 <Mail className="w-4 h-4 text-gray-400" />
-                               </div>
-                             </div>
-                             <button 
-                               type="submit"
-                               disabled={isSubscribing}
-                               className="bg-gradient-to-r from-yellow-400 to-orange-400 hover:from-yellow-300 hover:to-orange-300 disabled:from-gray-400 disabled:to-gray-500 text-gray-900 px-6 py-3 rounded-xl font-bold text-base shadow-lg hover:shadow-xl transform hover:scale-105 disabled:transform-none disabled:shadow-none transition-all duration-300 flex items-center justify-center gap-2 min-w-[120px]"
-                             >
-                               {isSubscribing ? (
-                                 <>
-                                   <div className="w-4 h-4 border-2 border-gray-900 border-t-transparent rounded-full animate-spin"></div>
-                                   Subscribing...
-                                 </>
-                               ) : (
-                                 <>
-                                   <Send className="w-4 h-4" />
-                                   Subscribe
-                                 </>
-                               )}
-                             </button>
-                           </div>
-                           
-                           {/* Error Message */}
-                           {error && (
-                             <div className="mt-3 text-center">
-                               <p className="text-red-300 text-sm bg-red-500/20 px-3 py-2 rounded-lg">
-                                 {error}
-                               </p>
-                             </div>
-                           )}
-                           
-                           {/* Privacy Message */}
-                           <div className="mt-3 text-center">
-                             <p className="text-white/80 text-xs">
-                               ✨ No spam, unsubscribe at any time. We respect your privacy.
-                             </p>
-                           </div>
-                         </form>
-                       ) : (
-                         <div className="text-center">
-                           <div className="w-12 h-12 bg-green-400/20 rounded-full flex items-center justify-center mx-auto mb-3">
-                             <CheckCircle className="w-6 h-6 text-green-300" />
-                           </div>
-                           <h3 className="text-xl font-bold text-white mb-2">Successfully Subscribed!</h3>
-                           <p className="text-white/80 mb-4 text-sm">You'll receive updates about new features and exclusive content.</p>
-                           <button 
-                             onClick={() => setIsSubscribed(false)}
-                             className="bg-white/20 hover:bg-white/30 text-white px-4 py-2 rounded-lg font-semibold transition-all duration-300 text-sm"
-                           >
-                             Subscribe Another Email
-                           </button>
-                         </div>
-                       )}
-
-                       {/* Additional Benefits */}
-                       <div className="mt-6 grid grid-cols-3 gap-3 text-center">
-                         <div className="flex flex-col items-center">
-                           <div className="w-6 h-6 bg-yellow-400/20 rounded-full flex items-center justify-center mb-1">
-                             <Star className="w-3 h-3 text-yellow-300" />
-                           </div>
-                           <p className="text-white/80 text-xs">Early Access</p>
-                         </div>
-                         <div className="flex flex-col items-center">
-                           <div className="w-6 h-6 bg-yellow-400/20 rounded-full flex items-center justify-center mb-1">
-                             <Zap className="w-3 h-3 text-yellow-300" />
-                           </div>
-                           <p className="text-white/80 text-xs">Exclusive Updates</p>
-                         </div>
-                         <div className="flex flex-col items-center">
-                           <div className="w-6 h-6 bg-yellow-400/20 rounded-full flex items-center justify-center mb-1">
-                             <Shield className="w-3 h-3 text-yellow-300" />
-                           </div>
-                           <p className="text-white/80 text-xs">Privacy First</p>
-                         </div>
-                       </div>
-                     </div>
-                   </motion.div>
-                 </div>
-               </div>
-             </section>
 
         {/* CTA Section */}
         <CTASection />
