@@ -3,12 +3,7 @@
 import { useState, useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { 
-  ArrowLeft,
   Play,
-  Pause,
-  Volume2,
-  VolumeX,
-  Maximize2,
   Smartphone,
   Tablet,
   Monitor,
@@ -32,9 +27,6 @@ import DownloadChoiceModal from '@/components/ui/DownloadChoiceModal'
 const DemoPage = () => {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-100px" })
-  const [isVideoPlaying, setIsVideoPlaying] = useState(false)
-  const [isMuted, setIsMuted] = useState(true)
-  const [isFullscreen, setIsFullscreen] = useState(false)
   const [isWaitlistOpen, setIsWaitlistOpen] = useState(false)
   const [isDownloadModalOpen, setIsDownloadModalOpen] = useState(false)
 
@@ -43,43 +35,37 @@ const DemoPage = () => {
       icon: WifiOff,
       title: "Offline Functionality",
       description: "Access key features without internet connection",
-      image: "/demo/offline-demo.png",
-      video: "/demo/offline-demo.mp4"
+      image: "/images/DEMO-Images/08-1800x1360_1752227930581.webp"
     },
     {
       icon: Shield,
       title: "Escrow Settlements",
       description: "Secure transactions with built-in protection",
-      image: "/demo/escrow-demo.png",
-      video: "/demo/escrow-demo.mp4"
+      image: "/images/DEMO-Images/08-1800x1360_1752227930605.webp"
     },
     {
       icon: CreditCard,
       title: "Fintech for All",
       description: "Complete digital wallet and payment solutions",
-      image: "/demo/fintech-demo.png",
-      video: "/demo/fintech-demo.mp4"
+      image: "/images/DEMO-Images/detail-3_1691366360328.jpg"
     },
     {
       icon: Brain,
       title: "AI Business Assistant",
       description: "Intelligent automation and business insights",
-      image: "/demo/ai-demo.png",
-      video: "/demo/ai-demo.mp4"
+      image: "/images/DEMO-Images/detail-8_1691366352083.jpg"
     },
     {
       icon: Truck,
       title: "Built-in Logistics",
       description: "Complete delivery and logistics management",
-      image: "/demo/logistics-demo.png",
-      video: "/demo/logistics-demo.mp4"
+      image: "/images/DEMO-Images/detail-image-03.jpg"
     },
     {
       icon: Megaphone,
       title: "Marketing Tools",
       description: "Advanced marketing and customer engagement",
-      image: "/demo/marketing-demo.png",
-      video: "/demo/marketing-demo.mp4"
+      image: "/images/DEMO-Images/detail-image-2.jpg"
     }
   ]
 
@@ -93,35 +79,6 @@ const DemoPage = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white">
-      {/* Header */}
-      <div className="bg-white shadow-sm border-b">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <div className="flex items-center justify-between">
-            <Link href="/" className="flex items-center space-x-2 text-gray-800 hover:text-orange-600 transition-colors">
-              <ArrowLeft className="w-5 h-5" />
-              <span className="font-medium">Back to Home</span>
-            </Link>
-            <div className="flex items-center space-x-4">
-              <Button
-                variant="outline"
-                size="sm"
-                onClick={() => setIsDownloadModalOpen(true)}
-              >
-                <ExternalLink className="w-4 h-4 mr-2" />
-                Try V1.0 Now
-              </Button>
-              <Button
-                variant="gradient"
-                size="sm"
-                onClick={() => setIsWaitlistOpen(true)}
-              >
-                <Star className="w-4 h-4 mr-2" />
-                Join Waitlist
-              </Button>
-            </div>
-          </div>
-        </div>
-      </div>
 
       {/* Hero Section */}
       <section className="py-16 sm:py-20 bg-gradient-to-r from-orange-500 to-red-500 text-white">
@@ -150,9 +107,9 @@ const DemoPage = () => {
                 size="lg"
                 icon={Play}
                 className="text-lg font-bold"
-                onClick={() => setIsVideoPlaying(!isVideoPlaying)}
+                onClick={() => setIsDownloadModalOpen(true)}
               >
-                {isVideoPlaying ? 'Pause Demo' : 'Start Demo'}
+                Try V1.0 Now
               </Button>
               <Button
                 variant="glass"
@@ -222,17 +179,15 @@ const DemoPage = () => {
                 <div className={`${selectedDevice.width} ${selectedDevice.height} bg-gray-900 rounded-3xl p-4 shadow-2xl relative overflow-hidden`}>
                   <div className="w-full h-full bg-white rounded-2xl overflow-hidden relative">
                     {/* Demo Content */}
-                    <div className="w-full h-full bg-gradient-to-br from-orange-50 to-red-50 flex items-center justify-center">
-                      <div className="text-center p-8">
-                        <div className="w-16 h-16 bg-orange-500 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                          <Zap className="w-8 h-8 text-white" />
-                        </div>
-                        <h3 className="text-xl font-bold text-gray-900 mb-2">Annita 3.0</h3>
-                        <p className="text-gray-600 text-sm">Interactive Demo</p>
-                        <div className="mt-4 flex justify-center">
-                          <div className="w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center">
-                            <Play className="w-4 h-4 text-white" />
-                          </div>
+                    <div className="w-full h-full relative">
+                      <img 
+                        src="/images/DEMO-Images/shot7_1737053810391.png" 
+                        alt="Annita 3.0 Demo" 
+                        className="w-full h-full object-cover"
+                      />
+                      <div className="absolute inset-0 bg-black/20 flex items-center justify-center">
+                        <div className="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center cursor-pointer hover:bg-orange-600 transition-colors">
+                          <Play className="w-8 h-8 text-white ml-1" />
                         </div>
                       </div>
                     </div>

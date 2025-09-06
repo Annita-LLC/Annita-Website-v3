@@ -6,7 +6,6 @@ import { useInView } from 'framer-motion'
 import { useRef } from 'react'
 import SEOHead from '@/components/seo/SEOHead'
 import CTASection from '@/components/sections/CTASection'
-import HeroSection from '@/components/sections/hero/HeroSection'
 import {
   Calendar,
   Clock,
@@ -52,11 +51,16 @@ import {
   Stethoscope,
   Bell
 } from 'lucide-react'
+import Button from '@/components/ui/Button'
+import WaitlistForm from '@/components/ui/WaitlistForm'
+import DownloadChoiceModal from '@/components/ui/DownloadChoiceModal'
 
 const ComingSoonPage = () => {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true })
   const [activeCategory, setActiveCategory] = useState('all')
+  const [isWaitlistOpen, setIsWaitlistOpen] = useState(false)
+  const [isDownloadModalOpen, setIsDownloadModalOpen] = useState(false)
 
   const categories = [
     { id: 'all', name: 'All Updates', icon: Rocket },
@@ -1127,8 +1131,67 @@ const ComingSoonPage = () => {
       />
 
       <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white">
-        {/* Hero Section */}
-        <HeroSection />
+        {/* Custom Hero Section */}
+        <section className="py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-orange-500 via-red-500 to-pink-500 text-white relative overflow-hidden">
+          {/* Background Pattern */}
+          <div className="absolute inset-0 opacity-10">
+            <div className="absolute inset-0" style={{
+              backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+            }} />
+          </div>
+          
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <motion.div
+              ref={ref}
+              initial={{ opacity: 0, y: 30 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.8 }}
+              className="max-w-4xl mx-auto text-center"
+            >
+              <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/20 backdrop-blur-sm text-white text-sm font-medium mb-6">
+                <Bell className="w-4 h-4 mr-2" />
+                Coming Soon
+              </div>
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
+                The Future is Almost Here
+              </h1>
+              <p className="text-xl sm:text-2xl text-orange-100 mb-8 max-w-3xl mx-auto leading-relaxed">
+                Get ready for Annita 3.0 - the most revolutionary digital platform Africa has ever seen. 
+                Offline-capable, AI-powered, and built for everyone.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+                <Button
+                  variant="white"
+                  size="lg"
+                  icon={Star}
+                  className="text-lg font-bold"
+                  onClick={() => setIsWaitlistOpen(true)}
+                >
+                  Join Waitlist
+                </Button>
+                <Button
+                  variant="glass"
+                  size="lg"
+                  icon={Download}
+                  className="text-lg font-bold backdrop-blur-xl text-white border-white/30"
+                  onClick={() => setIsDownloadModalOpen(true)}
+                >
+                  Try V1.0 Now
+                </Button>
+              </div>
+              <div className="flex items-center justify-center space-x-6 text-orange-100">
+                <div className="flex items-center space-x-2">
+                  <Clock className="w-5 h-5" />
+                  <span className="text-sm sm:text-base">Expected Launch: Q2 2025</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <Users className="w-5 h-5" />
+                  <span className="text-sm sm:text-base">500+ Early Access Users</span>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </section>
 
         {/* Annita 3.0 Announcement */}
         <section className="py-16 sm:py-20 bg-gradient-to-r from-red-50 to-orange-50 border-b border-orange-200">
@@ -1372,6 +1435,18 @@ const ComingSoonPage = () => {
 
         {/* CTA Section */}
         <CTASection />
+
+        {/* Waitlist Form Modal */}
+        <WaitlistForm
+          isOpen={isWaitlistOpen}
+          onClose={() => setIsWaitlistOpen(false)}
+        />
+
+        {/* Download Choice Modal */}
+        <DownloadChoiceModal
+          isOpen={isDownloadModalOpen}
+          onClose={() => setIsDownloadModalOpen(false)}
+        />
       </div>
     </>
   )

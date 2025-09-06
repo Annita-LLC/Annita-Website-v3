@@ -23,13 +23,13 @@ const DownloadChoiceModal = ({ isOpen, onClose }: DownloadChoiceModalProps) => {
   return (
     <AnimatePresence>
       {isOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 pointer-events-none">
           {/* Backdrop */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="absolute inset-0 bg-black/50 backdrop-blur-sm"
+            className="absolute inset-0 bg-black/50 backdrop-blur-sm pointer-events-auto"
             onClick={onClose}
           />
           
@@ -38,47 +38,47 @@ const DownloadChoiceModal = ({ isOpen, onClose }: DownloadChoiceModalProps) => {
             initial={{ opacity: 0, scale: 0.9, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.9, y: 20 }}
-            className="relative bg-white rounded-2xl shadow-2xl max-w-md w-full mx-4 overflow-hidden"
+            className="relative bg-white dark:bg-gray-900 rounded-2xl sm:rounded-3xl shadow-2xl w-full max-w-[95vw] sm:max-w-lg lg:max-w-xl mx-2 sm:mx-4 overflow-hidden pointer-events-auto max-h-[85vh] sm:max-h-[90vh]"
           >
             {/* Header */}
-            <div className="bg-gradient-to-r from-orange-500 to-red-500 p-6 text-white">
+            <div className="bg-gradient-to-r from-orange-500 to-red-500 px-4 sm:px-6 py-4 sm:py-5 text-white">
               <div className="flex items-center justify-between">
-                <h2 className="text-xl font-bold">Choose Your Experience</h2>
+                <h2 className="text-lg sm:text-xl font-bold">Choose Your Experience</h2>
                 <button
                   onClick={onClose}
-                  className="p-2 hover:bg-white/20 rounded-full transition-colors"
+                  className="w-7 h-7 sm:w-8 sm:h-8 flex items-center justify-center rounded-full hover:bg-white/20 transition-colors duration-200"
                 >
-                  <X className="w-5 h-5" />
+                  <X className="w-4 h-4 sm:w-5 sm:h-5" />
                 </button>
               </div>
-              <p className="text-orange-100 mt-2">
+              <p className="text-orange-100 mt-2 text-sm sm:text-base">
                 Select how you'd like to experience Annita
               </p>
             </div>
 
             {/* Content */}
-            <div className="p-6 space-y-4">
+            <div className="px-4 sm:px-6 py-4 sm:py-5 space-y-3 sm:space-y-4 overflow-y-auto max-h-[calc(85vh-120px)] sm:max-h-[calc(90vh-140px)]">
               {/* V3.0 App Option */}
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.1 }}
-                className="border-2 border-orange-200 rounded-xl p-4 hover:border-orange-300 transition-colors cursor-pointer"
+                className="border-2 border-orange-200 dark:border-orange-700 rounded-xl p-3 sm:p-4 hover:border-orange-300 dark:hover:border-orange-600 transition-colors cursor-pointer"
                 onClick={handleDownloadApp}
               >
-                <div className="flex items-start space-x-4">
-                  <div className="p-3 bg-orange-100 rounded-xl">
-                    <Smartphone className="w-6 h-6 text-orange-600" />
+                <div className="flex items-start space-x-3 sm:space-x-4">
+                  <div className="p-2 sm:p-3 bg-orange-100 dark:bg-orange-900/30 rounded-xl flex-shrink-0">
+                    <Smartphone className="w-5 h-5 sm:w-6 sm:h-6 text-orange-600 dark:text-orange-400" />
                   </div>
-                  <div className="flex-1">
-                    <h3 className="font-bold text-gray-900 mb-1">Download Annita 3.0 App</h3>
-                    <p className="text-sm text-gray-600 mb-3">
+                  <div className="flex-1 min-w-0">
+                    <h3 className="font-bold text-gray-900 dark:text-white mb-1 text-sm sm:text-base">Download Annita 3.0 App</h3>
+                    <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-300 mb-2 sm:mb-3 leading-relaxed">
                       Get early access to our revolutionary offline-capable platform with AI features, 
                       fintech tools, and comprehensive business solutions.
                     </p>
-                    <div className="flex items-center text-orange-600 text-sm font-medium">
+                    <div className="flex items-center text-orange-600 dark:text-orange-400 text-xs sm:text-sm font-medium">
                       <span>Join the waitlist</span>
-                      <ArrowRight className="w-4 h-4 ml-1" />
+                      <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 ml-1" />
                     </div>
                   </div>
                 </div>
@@ -89,22 +89,22 @@ const DownloadChoiceModal = ({ isOpen, onClose }: DownloadChoiceModalProps) => {
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.2 }}
-                className="border-2 border-gray-200 rounded-xl p-4 hover:border-gray-300 transition-colors cursor-pointer"
+                className="border-2 border-gray-200 dark:border-gray-700 rounded-xl p-3 sm:p-4 hover:border-gray-300 dark:hover:border-gray-600 transition-colors cursor-pointer"
                 onClick={handleVisitV1}
               >
-                <div className="flex items-start space-x-4">
-                  <div className="p-3 bg-gray-100 rounded-xl">
-                    <Globe className="w-6 h-6 text-gray-600" />
+                <div className="flex items-start space-x-3 sm:space-x-4">
+                  <div className="p-2 sm:p-3 bg-gray-100 dark:bg-gray-800 rounded-xl flex-shrink-0">
+                    <Globe className="w-5 h-5 sm:w-6 sm:h-6 text-gray-600 dark:text-gray-400" />
                   </div>
-                  <div className="flex-1">
-                    <h3 className="font-bold text-gray-900 mb-1">Visit Live Marketplace V1.0</h3>
-                    <p className="text-sm text-gray-600 mb-3">
+                  <div className="flex-1 min-w-0">
+                    <h3 className="font-bold text-gray-900 dark:text-white mb-1 text-sm sm:text-base">Visit Live Marketplace V1.0</h3>
+                    <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-300 mb-2 sm:mb-3 leading-relaxed">
                       Experience our current live marketplace with 3,000+ active vendors. 
                       Start selling or shopping right now on our proven platform.
                     </p>
-                    <div className="flex items-center text-gray-600 text-sm font-medium">
+                    <div className="flex items-center text-gray-600 dark:text-gray-400 text-xs sm:text-sm font-medium">
                       <span>Try it now</span>
-                      <ExternalLink className="w-4 h-4 ml-1" />
+                      <ExternalLink className="w-3 h-3 sm:w-4 sm:h-4 ml-1" />
                     </div>
                   </div>
                 </div>
@@ -112,8 +112,8 @@ const DownloadChoiceModal = ({ isOpen, onClose }: DownloadChoiceModalProps) => {
             </div>
 
             {/* Footer */}
-            <div className="bg-gray-50 px-6 py-4">
-              <p className="text-xs text-gray-500 text-center">
+            <div className="bg-gray-50 dark:bg-gray-800 px-4 sm:px-6 py-3 sm:py-4 border-t border-gray-100 dark:border-gray-700">
+              <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-400 text-center">
                 Both options are free to use. Choose what works best for you!
               </p>
             </div>

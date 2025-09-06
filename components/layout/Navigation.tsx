@@ -336,8 +336,8 @@ const Navigation = () => {
                 </div>
 
                 {/* Navigation Items */}
-                <div className="flex-1 py-6">
-                  <div className="px-6 space-y-2">
+                <div className="flex-1 py-6 overflow-y-auto">
+                  <div className="px-6 space-y-2 pb-4">
                     {navItems.map((item, index) => (
                       <motion.div
                         key={item.name}
@@ -364,7 +364,7 @@ const Navigation = () => {
                                   animate={{ opacity: 1, height: 'auto' }}
                                   exit={{ opacity: 0, height: 0 }}
                                   transition={{ duration: 0.2 }}
-                                  className="ml-4 mt-2 space-y-1"
+                                  className="ml-4 mt-2 space-y-1 max-h-64 overflow-y-auto"
                                 >
                                   {item.dropdown.map((dropdownItem) => (
                                     'isThemeToggle' in dropdownItem && dropdownItem.isThemeToggle ? (

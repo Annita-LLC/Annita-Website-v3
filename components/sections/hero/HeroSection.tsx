@@ -226,7 +226,7 @@ const HeroSection = () => {
                       size="lg"
                       icon={slides[currentSlide].ctaIcon}
                       className="w-full sm:w-auto text-base font-semibold px-8 py-4 shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
-                      onClick={() => window.open('/learn-more', '_blank')}
+                      onClick={() => window.open('/learn-more-v3', '_blank')}
                     >
                       {slides[currentSlide].cta}
                     </Button>
