@@ -42,6 +42,7 @@ import {
 } from 'lucide-react'
 import { ThemeToggle, SimpleThemeToggle } from '@/components/ui/ThemeToggle'
 import DownloadChoiceModal from '@/components/ui/DownloadChoiceModal'
+import GlobalSearch from '@/components/ui/GlobalSearch'
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -261,6 +262,7 @@ const Navigation = () => {
 
             {/* CTA Buttons */}
             <div className="hidden lg:flex items-center space-x-3 xl:space-x-4">
+              <GlobalSearch />
               <button 
                 onClick={() => setIsDownloadModalOpen(true)}
                 className="btn-primary"
@@ -431,7 +433,8 @@ const Navigation = () => {
                 </div>
 
                 {/* Footer */}
-                <div className="p-6 border-t border-gray-200 dark:border-gray-700">
+                <div className="p-6 border-t border-gray-200 dark:border-gray-700 space-y-4">
+                  <GlobalSearch />
                   <button
                     onClick={() => {
                       setIsOpen(false)
