@@ -6,6 +6,7 @@ import { useInView } from 'framer-motion'
 import { useRef } from 'react'
 import SEOHead from '@/components/seo/SEOHead'
 import CTASection from '@/components/sections/CTASection'
+import DownloadChoiceModal from '@/components/ui/DownloadChoiceModal'
 import { 
   ShoppingCart, 
   Search, 
@@ -28,6 +29,7 @@ import {
 } from 'lucide-react'
 
 const ShoppingPage = () => {
+  const [isDownloadModalOpen, setIsDownloadModalOpen] = useState(false)
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true })
   const [viewMode, setViewMode] = useState('grid')
@@ -138,7 +140,10 @@ const ShoppingPage = () => {
                   Find the best deals on everything you need.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <button className="bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-200 flex items-center justify-center">
+                  <button 
+                    onClick={() => setIsDownloadModalOpen(true)}
+                    className="bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-200 flex items-center justify-center"
+                  >
                     <Download className="w-5 h-5 mr-2" />
                     Download App
                   </button>
@@ -298,6 +303,12 @@ const ShoppingPage = () => {
 
         {/* CTA Section */}
         <CTASection />
+
+        {/* Download Choice Modal */}
+        <DownloadChoiceModal
+          isOpen={isDownloadModalOpen}
+          onClose={() => setIsDownloadModalOpen(false)}
+        />
     </div>
     </>
   )

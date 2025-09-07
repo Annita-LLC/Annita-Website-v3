@@ -27,11 +27,13 @@ import {
 import Link from 'next/link'
 import Button from '@/components/ui/Button'
 import WaitlistForm from '@/components/ui/WaitlistForm'
+import DownloadChoiceModal from '@/components/ui/DownloadChoiceModal'
 
 const OfficialFactsheetPage = () => {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-100px" })
   const [isWaitlistOpen, setIsWaitlistOpen] = useState(false)
+  const [isDownloadModalOpen, setIsDownloadModalOpen] = useState(false)
 
   const currentMetrics = [
     {
@@ -663,7 +665,7 @@ const OfficialFactsheetPage = () => {
                 size="lg"
                 icon={Globe}
                 className="text-lg font-bold backdrop-blur-xl"
-                onClick={() => window.open('https://annita.company.site/products', '_blank')}
+                onClick={() => setIsDownloadModalOpen(true)}
               >
                 Try V1.0 Now
               </Button>
@@ -676,6 +678,12 @@ const OfficialFactsheetPage = () => {
       <WaitlistForm 
         isOpen={isWaitlistOpen} 
         onClose={() => setIsWaitlistOpen(false)} 
+      />
+
+      {/* Download Choice Modal */}
+      <DownloadChoiceModal
+        isOpen={isDownloadModalOpen}
+        onClose={() => setIsDownloadModalOpen(false)}
       />
     </div>
   )

@@ -25,9 +25,11 @@ import {
   Package
 } from 'lucide-react'
 import Button from '@/components/ui/Button'
+import DownloadChoiceModal from '@/components/ui/DownloadChoiceModal'
 import CTASection from '@/components/sections/CTASection'
 
 const AIPage = () => {
+  const [isDownloadModalOpen, setIsDownloadModalOpen] = useState(false)
   const aiFeatures = [
     {
       icon: TrendingUp,
@@ -159,6 +161,7 @@ const AIPage = () => {
                 size="lg"
                 icon={Download}
                 className="text-base sm:text-lg font-bold backdrop-blur-xl shadow-2xl hover:shadow-white/10 transform hover:-translate-y-1 transition-all duration-300"
+                onClick={() => setIsDownloadModalOpen(true)}
               >
                 Download App
               </Button>
@@ -254,6 +257,12 @@ const AIPage = () => {
 
       {/* CTA Section */}
       <CTASection />
+
+      {/* Download Choice Modal */}
+      <DownloadChoiceModal
+        isOpen={isDownloadModalOpen}
+        onClose={() => setIsDownloadModalOpen(false)}
+      />
     </div>
   )
 }
