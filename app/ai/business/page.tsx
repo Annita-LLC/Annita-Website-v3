@@ -1,4 +1,6 @@
-import { Metadata } from 'next'
+'use client'
+
+import { useState } from 'react'
 import { 
   Brain, 
   TrendingUp, 
@@ -25,11 +27,6 @@ import {
 import Button from '@/components/ui/Button'
 import DownloadChoiceModal from '@/components/ui/DownloadChoiceModal'
 import CTASection from '@/components/sections/CTASection'
-
-export const metadata: Metadata = {
-  title: 'Business AI - Annita',
-  description: 'AI-powered business intelligence and automation tools to help your business grow, optimize operations, and make data-driven decisions.',
-}
 
 const BusinessAIPage = () => {
   const [isDownloadModalOpen, setIsDownloadModalOpen] = useState(false)

@@ -1,4 +1,6 @@
-import { Metadata } from 'next'
+'use client'
+
+import { useState } from 'react'
 import { 
   Brain, 
   Smartphone, 
@@ -24,11 +26,6 @@ import {
 import Button from '@/components/ui/Button'
 import DownloadChoiceModal from '@/components/ui/DownloadChoiceModal'
 import CTASection from '@/components/sections/CTASection'
-
-export const metadata: Metadata = {
-  title: 'Annita AI Assistant - Annita',
-  description: 'Your personal AI assistant for daily life. Get help with productivity, entertainment, health, and more with Annita\'s AI-powered personal tools.',
-}
 
 const PersonalAIPage = () => {
   const [isDownloadModalOpen, setIsDownloadModalOpen] = useState(false)
