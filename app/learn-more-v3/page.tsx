@@ -29,7 +29,12 @@ import {
   Coins,
   Cloud,
   Layers,
-  Palette
+  Palette,
+  Shield,
+  DollarSign,
+  Users,
+  Bell,
+  WifiOff
 } from 'lucide-react'
 import Button from '@/components/ui/Button'
 import WaitlistForm from '@/components/ui/WaitlistForm'
@@ -526,6 +531,886 @@ const LearnMoreV3Page = () => {
         "API access",
         "Custom integrations"
       ]
+    },
+
+    // Additional Platform Features
+    {
+      id: 'pickup-centers-network',
+      title: "Pickup Centers Network",
+      description: "Nationwide network of secure pickup locations for orders and package collection",
+      category: 'logistics',
+      status: 'planned',
+      progress: 40,
+      estimatedRelease: 'Q3 2030',
+      features: [
+        "Nationwide pickup locations",
+        "Secure package storage",
+        "24/7 access with digital keys",
+        "Real-time tracking and notifications",
+        "Integration with delivery network"
+      ],
+      icon: MapPin,
+      color: 'from-orange-500 to-orange-600',
+      detailedDescription: "A comprehensive network of secure pickup centers across Africa where customers can collect their orders at their convenience. Features 24/7 access with digital keys and real-time tracking.",
+      benefits: [
+        "Convenient pickup locations",
+        "24/7 access",
+        "Secure package storage",
+        "Real-time notifications"
+      ]
+    },
+    {
+      id: 'fulfillment-centers',
+      title: "Fulfillment Centers",
+      description: "Automated warehouses for fast order processing, packaging, and delivery optimization",
+      category: 'logistics',
+      status: 'planned',
+      progress: 35,
+      estimatedRelease: 'Q4 2030',
+      features: [
+        "Automated order processing",
+        "Smart inventory management",
+        "Fast packaging and labeling",
+        "Integration with pickup centers",
+        "Real-time order tracking"
+      ],
+      icon: Package,
+      color: 'from-red-500 to-red-600',
+      detailedDescription: "State-of-the-art automated fulfillment centers with smart inventory management and fast packaging systems. Located strategically across Africa for optimal delivery.",
+      benefits: [
+        "Automated processing",
+        "Smart inventory management",
+        "Fast packaging",
+        "Real-time tracking"
+      ]
+    },
+    {
+      id: 'last-mile-delivery',
+      title: "Last-Mile Delivery Network",
+      description: "Local delivery network reaching every community and village across Africa",
+      category: 'logistics',
+      status: 'planned',
+      progress: 45,
+      estimatedRelease: 'Q3 2030',
+      features: [
+        "Local delivery partners",
+        "Community-based delivery",
+        "Real-time delivery tracking",
+        "Flexible delivery options",
+        "Rural area coverage"
+      ],
+      icon: Truck,
+      color: 'from-green-500 to-green-600',
+      detailedDescription: "Comprehensive last-mile delivery network that reaches every community and village across Africa. Features community-based delivery partners and flexible delivery options.",
+      benefits: [
+        "Rural area coverage",
+        "Community-based delivery",
+        "Real-time tracking",
+        "Flexible options"
+      ]
+    },
+
+    // Additional Payment Features
+    {
+      id: 'annitapay-banking',
+      title: "AnnitaPay & Digital Banking Services",
+      description: "Full banking services with savings, loans, investment options, and financial management",
+      category: 'payments',
+      status: 'beta-testing',
+      progress: 50,
+      estimatedRelease: 'Q2 2025',
+      features: [
+        "Savings and checking accounts",
+        "Personal and business loans",
+        "Investment and wealth management",
+        "Financial planning tools",
+        "Multi-currency support"
+      ],
+      icon: CreditCard,
+      color: 'from-green-500 to-green-600',
+      detailedDescription: "Comprehensive digital banking services including savings accounts, loans, investment options, and financial planning tools. Designed specifically for African businesses and individuals.",
+      benefits: [
+        "Full banking services",
+        "Investment options",
+        "Financial planning",
+        "Multi-currency support"
+      ]
+    },
+
+    // Additional Mobile Features
+    {
+      id: 'annita-mobile-app-detailed',
+      title: "Annita Mobile App",
+      description: "Native mobile applications for iOS and Android with offline capabilities and push notifications",
+      category: 'mobile',
+      status: 'in-development',
+      progress: 85,
+      estimatedRelease: 'Q2 2025',
+      features: [
+        "Offline mode for core functions",
+        "Push notifications for orders and payments",
+        "Biometric authentication",
+        "Dark mode support",
+        "Multi-language interface"
+      ],
+      icon: Smartphone,
+      color: 'from-purple-500 to-purple-600',
+      detailedDescription: "Native mobile applications for iOS and Android with comprehensive offline capabilities, push notifications, and biometric authentication for secure access.",
+      benefits: [
+        "Full offline functionality",
+        "Push notifications",
+        "Biometric security",
+        "Multi-language support"
+      ]
+    },
+
+    // Additional AI Features
+    {
+      id: 'ai-business-assistant-detailed',
+      title: "AI Business Assistant",
+      description: "Intelligent virtual assistant for business operations, customer service, and decision support",
+      category: 'ai',
+      status: 'beta-testing',
+      progress: 70,
+      estimatedRelease: 'Q2 2025',
+      features: [
+        "Natural language processing",
+        "Predictive analytics",
+        "Automated customer support",
+        "Business insights and recommendations",
+        "Voice command integration"
+      ],
+      icon: Brain,
+      color: 'from-teal-500 to-teal-600',
+      detailedDescription: "Advanced AI business assistant with natural language processing, predictive analytics, and automated customer support. Provides intelligent business insights and recommendations.",
+      benefits: [
+        "Natural language processing",
+        "Predictive analytics",
+        "Automated support",
+        "Voice commands"
+      ]
+    },
+    {
+      id: 'advanced-analytics',
+      title: "Advanced Analytics Dashboard",
+      description: "Comprehensive business intelligence with real-time reporting and predictive insights",
+      category: 'ai',
+      status: 'in-development',
+      progress: 60,
+      estimatedRelease: 'Q3 2030',
+      features: [
+        "Real-time performance metrics",
+        "Custom report builder",
+        "Predictive trend analysis",
+        "Interactive data visualizations",
+        "Export and sharing capabilities"
+      ],
+      icon: Layers,
+      color: 'from-blue-500 to-blue-600',
+      detailedDescription: "Comprehensive business intelligence dashboard with real-time reporting, predictive insights, and interactive data visualizations for informed decision making.",
+      benefits: [
+        "Real-time metrics",
+        "Custom reports",
+        "Predictive analysis",
+        "Data visualization"
+      ]
+    },
+
+    // Additional Communication Features
+    {
+      id: 'video-calling-detailed',
+      title: "Video Calling & Conferencing",
+      description: "High-quality video calling with screen sharing, recording, and virtual backgrounds",
+      category: 'communication',
+      status: 'in-development',
+      progress: 75,
+      estimatedRelease: 'Q4 2030',
+      features: [
+        "HD video quality",
+        "Screen sharing",
+        "Meeting recording",
+        "Virtual backgrounds",
+        "Group video calls"
+      ],
+      icon: Video,
+      color: 'from-purple-500 to-purple-600',
+      detailedDescription: "High-quality video calling and conferencing with HD video, screen sharing, meeting recording, and virtual backgrounds. Perfect for business meetings and customer consultations.",
+      benefits: [
+        "HD video quality",
+        "Screen sharing",
+        "Meeting recording",
+        "Virtual backgrounds"
+      ]
+    },
+
+    // Additional Enterprise Features
+    {
+      id: 'enterprise-suite-detailed',
+      title: "Enterprise Suite",
+      description: "Comprehensive enterprise solutions with advanced security, compliance, and customization",
+      category: 'enterprise',
+      status: 'in-development',
+      progress: 40,
+      estimatedRelease: 'Q3 2030',
+      features: [
+        "Advanced security protocols",
+        "Custom integrations",
+        "White-label solutions",
+        "Dedicated support",
+        "Compliance certifications"
+      ],
+      icon: Building,
+      color: 'from-gray-500 to-gray-600',
+      detailedDescription: "Enterprise-grade solutions with advanced security protocols, custom integrations, white-label options, and dedicated support for large organizations.",
+      benefits: [
+        "Advanced security",
+        "Custom integrations",
+        "White-label options",
+        "Dedicated support"
+      ]
+    },
+    {
+      id: 'global-marketplace-expansion',
+      title: "Global Marketplace Expansion",
+      description: "Expansion to new markets with localized features and multi-currency support",
+      category: 'platform',
+      status: 'in-development',
+      progress: 65,
+      estimatedRelease: 'Q3 2030',
+      features: [
+        "Multi-currency support",
+        "Localized interfaces",
+        "Regional payment methods",
+        "Cross-border shipping",
+        "Local compliance"
+      ],
+      icon: Globe,
+      color: 'from-blue-500 to-blue-600',
+      detailedDescription: "Global expansion to new markets with localized interfaces, multi-currency support, regional payment methods, and cross-border shipping capabilities.",
+      benefits: [
+        "Multi-currency support",
+        "Localized interfaces",
+        "Cross-border shipping",
+        "Local compliance"
+      ]
+    },
+
+    // Additional AI Features
+    {
+      id: 'ai-inventory-management-detailed',
+      title: "AI-Powered Inventory Management",
+      description: "Predictive stock management with automated reordering and demand forecasting",
+      category: 'ai',
+      status: 'planned',
+      progress: 25,
+      estimatedRelease: 'Q1 2030',
+      features: [
+        "Predictive demand forecasting",
+        "Automated reordering",
+        "Stock level optimization",
+        "Seasonal trend analysis",
+        "Real-time inventory tracking"
+      ],
+      icon: Package,
+      color: 'from-cyan-500 to-cyan-600',
+      detailedDescription: "Advanced AI-powered inventory management system that predicts demand, automates reordering, and optimizes stock levels based on seasonal trends and market conditions.",
+      benefits: [
+        "Reduced stockouts",
+        "Lower inventory costs",
+        "Automated reordering",
+        "Better cash flow"
+      ]
+    },
+    {
+      id: 'smart-pricing-engine',
+      title: "Smart Pricing Engine",
+      description: "Dynamic pricing system that adjusts based on market conditions and demand",
+      category: 'ai',
+      status: 'research',
+      progress: 20,
+      estimatedRelease: 'Q4 2030',
+      features: [
+        "Dynamic price optimization",
+        "Market condition analysis",
+        "Competitor price monitoring",
+        "Demand-based pricing",
+        "Profit margin optimization"
+      ],
+      icon: Coins,
+      color: 'from-yellow-500 to-yellow-600',
+      detailedDescription: "Intelligent pricing engine that automatically adjusts prices based on market conditions, competitor analysis, and demand patterns to maximize profitability.",
+      benefits: [
+        "Dynamic pricing",
+        "Market analysis",
+        "Competitor monitoring",
+        "Profit optimization"
+      ]
+    },
+    {
+      id: 'ai-customer-support-detailed',
+      title: "AI Customer Support",
+      description: "24/7 automated customer support with local language capabilities",
+      category: 'ai',
+      status: 'planned',
+      progress: 35,
+      estimatedRelease: 'Q2 2030',
+      features: [
+        "24/7 automated support",
+        "Local language processing",
+        "Context-aware responses",
+        "Escalation to human agents",
+        "Multi-channel support"
+      ],
+      icon: MessageSquare,
+      color: 'from-emerald-500 to-emerald-600',
+      detailedDescription: "Advanced AI customer support system that provides 24/7 assistance in local languages with context-aware responses and seamless escalation to human agents.",
+      benefits: [
+        "24/7 availability",
+        "Local language support",
+        "Context-aware responses",
+        "Multi-channel support"
+      ]
+    },
+
+    // Additional Payment Features
+    {
+      id: 'cryptocurrency-payments-detailed',
+      title: "Cryptocurrency Payments",
+      description: "Support for major cryptocurrencies with instant settlement and low transaction fees",
+      category: 'payments',
+      status: 'planned',
+      progress: 30,
+      estimatedRelease: 'Q2 2030',
+      features: [
+        "Bitcoin and Ethereum support",
+        "Instant settlement",
+        "Low transaction fees",
+        "Multi-wallet integration",
+        "Regulatory compliance"
+      ],
+      icon: Coins,
+      color: 'from-yellow-500 to-yellow-600',
+      detailedDescription: "Comprehensive cryptocurrency payment system supporting major cryptocurrencies with instant settlement, low fees, and regulatory compliance.",
+      benefits: [
+        "Global payment access",
+        "Low transaction fees",
+        "Instant settlement",
+        "Decentralized security"
+      ]
+    },
+    {
+      id: 'cross-border-payment-gateway',
+      title: "Cross-Border Payment Gateway",
+      description: "International payment processing with multi-currency support",
+      category: 'payments',
+      status: 'planned',
+      progress: 40,
+      estimatedRelease: 'Q1 2030',
+      features: [
+        "International payments",
+        "Multi-currency support",
+        "Exchange rate optimization",
+        "Regulatory compliance",
+        "Fast settlement"
+      ],
+      icon: Globe,
+      color: 'from-blue-500 to-blue-600',
+      detailedDescription: "Advanced cross-border payment gateway with multi-currency support, real-time exchange rates, and regulatory compliance for international transactions.",
+      benefits: [
+        "Global payment access",
+        "Real-time exchange rates",
+        "Regulatory compliance",
+        "Fast international transfers"
+      ]
+    },
+
+    // Additional Logistics Features
+    {
+      id: 'drone-delivery-detailed',
+      title: "Drone Delivery Network",
+      description: "Innovative drone delivery service for fast and efficient package delivery in urban areas",
+      category: 'logistics',
+      status: 'research',
+      progress: 20,
+      estimatedRelease: 'Q1 2030',
+      features: [
+        "Autonomous drone navigation",
+        "Real-time tracking",
+        "Weather-resistant operations",
+        "Safe landing zones",
+        "Regulatory compliance"
+      ],
+      icon: Plane,
+      color: 'from-sky-500 to-sky-600',
+      detailedDescription: "Cutting-edge drone delivery network with autonomous navigation, real-time tracking, and weather-resistant operations for fast urban delivery.",
+      benefits: [
+        "Ultra-fast delivery",
+        "Reduced traffic congestion",
+        "Lower delivery costs",
+        "Environmentally friendly"
+      ]
+    },
+
+    // Additional Communication Features
+    {
+      id: 'voice-commerce-detailed',
+      title: "Voice Commerce",
+      description: "Voice-activated shopping and payment system for hands-free transactions",
+      category: 'communication',
+      status: 'research',
+      progress: 15,
+      estimatedRelease: 'Q1 2030',
+      features: [
+        "Voice-activated shopping",
+        "Hands-free payments",
+        "Voice search capabilities",
+        "Multi-language voice support",
+        "Voice biometric authentication"
+      ],
+      icon: Mic,
+      color: 'from-pink-500 to-pink-600',
+      detailedDescription: "Revolutionary voice commerce system that enables hands-free shopping and payments using natural voice commands in multiple languages.",
+      benefits: [
+        "Hands-free shopping",
+        "Accessibility for all",
+        "Multi-language support",
+        "Voice biometric security"
+      ]
+    },
+
+    // Additional Analytics & Business Intelligence Features
+    {
+      id: 'business-intelligence-dashboard',
+      title: "Business Intelligence Dashboard",
+      description: "Comprehensive real-time business performance metrics and analytics",
+      category: 'ai',
+      status: 'planned',
+      progress: 45,
+      estimatedRelease: 'Q2 2030',
+      features: [
+        "Real-time performance metrics",
+        "Custom dashboard creation",
+        "Data visualization tools",
+        "Automated reporting",
+        "Performance alerts"
+      ],
+      icon: Layers,
+      color: 'from-indigo-500 to-indigo-600',
+      detailedDescription: "Advanced business intelligence dashboard with real-time metrics, custom dashboard creation, and automated reporting for comprehensive business insights.",
+      benefits: [
+        "Real-time metrics",
+        "Custom dashboards",
+        "Data visualization",
+        "Automated reporting"
+      ]
+    },
+    {
+      id: 'market-trend-analysis',
+      title: "Market Trend Analysis",
+      description: "Local and regional market insights with predictive analytics",
+      category: 'ai',
+      status: 'planned',
+      progress: 30,
+      estimatedRelease: 'Q1 2030',
+      features: [
+        "Local market insights",
+        "Regional trend analysis",
+        "Predictive market forecasting",
+        "Competitor analysis",
+        "Market opportunity identification"
+      ],
+      icon: Globe,
+      color: 'from-blue-500 to-blue-600',
+      detailedDescription: "Comprehensive market trend analysis providing local and regional insights with predictive forecasting and competitor analysis for strategic decision making.",
+      benefits: [
+        "Local market insights",
+        "Predictive forecasting",
+        "Competitor analysis",
+        "Market opportunities"
+      ]
+    },
+    {
+      id: 'customer-behavior-analytics',
+      title: "Customer Behavior Analytics",
+      description: "Advanced customer insights and personalized recommendation engine",
+      category: 'ai',
+      status: 'planned',
+      progress: 40,
+      estimatedRelease: 'Q2 2030',
+      features: [
+        "Customer behavior tracking",
+        "Personalized recommendations",
+        "Purchase pattern analysis",
+        "Customer segmentation",
+        "Lifetime value prediction"
+      ],
+      icon: Users,
+      color: 'from-pink-500 to-pink-600',
+      detailedDescription: "Advanced customer behavior analytics with personalized recommendations, purchase pattern analysis, and customer segmentation for enhanced customer experience.",
+      benefits: [
+        "Behavior tracking",
+        "Personalized recommendations",
+        "Pattern analysis",
+        "Customer segmentation"
+      ]
+    },
+    {
+      id: 'financial-forecasting',
+      title: "Financial Forecasting",
+      description: "AI-powered financial planning and forecasting tools for businesses",
+      category: 'ai',
+      status: 'research',
+      progress: 35,
+      estimatedRelease: 'Q1 2030',
+      features: [
+        "Cash flow forecasting",
+        "Revenue prediction",
+        "Expense optimization",
+        "Investment recommendations",
+        "Financial risk assessment"
+      ],
+      icon: DollarSign,
+      color: 'from-green-500 to-green-600',
+      detailedDescription: "AI-powered financial forecasting tools providing cash flow predictions, revenue forecasting, and investment recommendations for better financial planning.",
+      benefits: [
+        "Cash flow forecasting",
+        "Revenue prediction",
+        "Expense optimization",
+        "Investment guidance"
+      ]
+    },
+
+    // Additional Security & Compliance Features
+    {
+      id: 'blockchain-integration',
+      title: "Blockchain Integration",
+      description: "Transparent and secure blockchain-based transactions and record keeping",
+      category: 'platform',
+      status: 'research',
+      progress: 20,
+      estimatedRelease: 'Q4 2030',
+      features: [
+        "Transparent transactions",
+        "Smart contract automation",
+        "Decentralized record keeping",
+        "Cryptocurrency support",
+        "Supply chain transparency"
+      ],
+      icon: Shield,
+      color: 'from-gray-500 to-gray-600',
+      detailedDescription: "Advanced blockchain integration providing transparent transactions, smart contract automation, and decentralized record keeping for enhanced security and transparency.",
+      benefits: [
+        "Transparent transactions",
+        "Smart contracts",
+        "Decentralized records",
+        "Supply chain transparency"
+      ]
+    },
+    {
+      id: 'advanced-fraud-detection',
+      title: "Advanced Fraud Detection",
+      description: "AI-powered security monitoring and fraud prevention system",
+      category: 'platform',
+      status: 'planned',
+      progress: 50,
+      estimatedRelease: 'Q2 2030',
+      features: [
+        "Real-time fraud monitoring",
+        "AI pattern recognition",
+        "Risk scoring algorithms",
+        "Automated fraud prevention",
+        "Security alerts"
+      ],
+      icon: Shield,
+      color: 'from-red-500 to-red-600',
+      detailedDescription: "Advanced AI-powered fraud detection system with real-time monitoring, pattern recognition, and automated prevention to protect users and transactions.",
+      benefits: [
+        "Real-time monitoring",
+        "AI pattern recognition",
+        "Risk scoring",
+        "Automated prevention"
+      ]
+    },
+    {
+      id: 'regulatory-compliance-suite',
+      title: "Regulatory Compliance Suite",
+      description: "Automated compliance reporting and regulatory adherence tools",
+      category: 'enterprise',
+      status: 'planned',
+      progress: 30,
+      estimatedRelease: 'Q1 2030',
+      features: [
+        "Automated compliance reporting",
+        "Regulatory updates",
+        "Audit trail management",
+        "Policy enforcement",
+        "Compliance monitoring"
+      ],
+      icon: Building,
+      color: 'from-blue-500 to-blue-600',
+      detailedDescription: "Comprehensive regulatory compliance suite with automated reporting, regulatory updates, and audit trail management for enterprise compliance.",
+      benefits: [
+        "Automated reporting",
+        "Regulatory updates",
+        "Audit trails",
+        "Policy enforcement"
+      ]
+    },
+    {
+      id: 'data-privacy-tools',
+      title: "Data Privacy Tools",
+      description: "GDPR and local privacy law compliance with data protection features",
+      category: 'enterprise',
+      status: 'planned',
+      progress: 40,
+      estimatedRelease: 'Q2 2030',
+      features: [
+        "GDPR compliance",
+        "Data encryption",
+        "Privacy controls",
+        "Data deletion tools",
+        "Consent management"
+      ],
+      icon: Shield,
+      color: 'from-purple-500 to-purple-600',
+      detailedDescription: "Comprehensive data privacy tools ensuring GDPR and local privacy law compliance with data encryption, privacy controls, and consent management.",
+      benefits: [
+        "GDPR compliance",
+        "Data encryption",
+        "Privacy controls",
+        "Consent management"
+      ]
+    },
+
+    // Additional Platform & Integration Features
+    {
+      id: 'api-marketplace',
+      title: "API Marketplace",
+      description: "Third-party integrations and plugins marketplace for developers",
+      category: 'platform',
+      status: 'planned',
+      progress: 35,
+      estimatedRelease: 'Q2 2030',
+      features: [
+        "Third-party integrations",
+        "Developer tools",
+        "Plugin marketplace",
+        "API documentation",
+        "Integration testing"
+      ],
+      icon: Layers,
+      color: 'from-indigo-500 to-indigo-600',
+      detailedDescription: "Comprehensive API marketplace providing third-party integrations, developer tools, and plugin marketplace for enhanced platform extensibility.",
+      benefits: [
+        "Third-party integrations",
+        "Developer tools",
+        "Plugin marketplace",
+        "API documentation"
+      ]
+    },
+    {
+      id: 'social-commerce-integration',
+      title: "Social Commerce Integration",
+      description: "Direct selling through social media platforms with integrated tools",
+      category: 'platform',
+      status: 'planned',
+      progress: 45,
+      estimatedRelease: 'Q2 2030',
+      features: [
+        "Social media selling",
+        "Instagram shop integration",
+        "Facebook marketplace",
+        "Social proof tools",
+        "Influencer collaboration"
+      ],
+      icon: Globe,
+      color: 'from-pink-500 to-pink-600',
+      detailedDescription: "Advanced social commerce integration enabling direct selling through social media platforms with Instagram shop, Facebook marketplace, and influencer collaboration tools.",
+      benefits: [
+        "Social media selling",
+        "Instagram integration",
+        "Facebook marketplace",
+        "Influencer tools"
+      ]
+    },
+    {
+      id: 'iot-device-integration',
+      title: "IoT Device Integration",
+      description: "Smart devices for inventory and delivery tracking automation",
+      category: 'platform',
+      status: 'research',
+      progress: 15,
+      estimatedRelease: 'Q1 2030',
+      features: [
+        "Smart inventory tracking",
+        "IoT sensors integration",
+        "Automated delivery tracking",
+        "Real-time monitoring",
+        "Predictive maintenance"
+      ],
+      icon: Package,
+      color: 'from-cyan-500 to-cyan-600',
+      detailedDescription: "Advanced IoT device integration for smart inventory tracking, automated delivery monitoring, and predictive maintenance using connected sensors and devices.",
+      benefits: [
+        "Smart tracking",
+        "IoT sensors",
+        "Automated monitoring",
+        "Predictive maintenance"
+      ]
+    },
+
+    // Additional Mobile & Access Features
+    {
+      id: 'offline-first-architecture',
+      title: "Offline-First Architecture",
+      description: "Complete offline functionality with seamless synchronization",
+      category: 'mobile',
+      status: 'in-development',
+      progress: 80,
+      estimatedRelease: 'Q3 2030',
+      features: [
+        "Complete offline operation",
+        "Data synchronization",
+        "Offline payments",
+        "Local data storage",
+        "Seamless online/offline transition"
+      ],
+      icon: WifiOff,
+      color: 'from-orange-500 to-orange-600',
+      detailedDescription: "Revolutionary offline-first architecture ensuring complete functionality without internet connection, with seamless synchronization when connectivity is restored.",
+      benefits: [
+        "Complete offline operation",
+        "Data synchronization",
+        "Offline payments",
+        "Seamless transitions"
+      ]
+    },
+    {
+      id: 'progressive-web-app',
+      title: "Progressive Web App",
+      description: "App-like experience on any device with native functionality",
+      category: 'mobile',
+      status: 'in-development',
+      progress: 70,
+      estimatedRelease: 'Q3 2030',
+      features: [
+        "App-like experience",
+        "Native functionality",
+        "Cross-platform compatibility",
+        "Offline capabilities",
+        "Push notifications"
+      ],
+      icon: Smartphone,
+      color: 'from-blue-500 to-blue-600',
+      detailedDescription: "Advanced Progressive Web App providing native app-like experience across all devices with offline capabilities and push notifications.",
+      benefits: [
+        "App-like experience",
+        "Native functionality",
+        "Cross-platform",
+        "Push notifications"
+      ]
+    },
+    {
+      id: 'push-notification-hub',
+      title: "Push Notification Hub",
+      description: "Personalized notifications and alerts across all platforms",
+      category: 'mobile',
+      status: 'planned',
+      progress: 50,
+      estimatedRelease: 'Q1 2030',
+      features: [
+        "Personalized notifications",
+        "Multi-platform alerts",
+        "Smart notification timing",
+        "Custom notification preferences",
+        "Engagement tracking"
+      ],
+      icon: Bell,
+      color: 'from-purple-500 to-purple-600',
+      detailedDescription: "Intelligent push notification hub with personalized alerts, smart timing, and multi-platform support for enhanced user engagement.",
+      benefits: [
+        "Personalized notifications",
+        "Multi-platform alerts",
+        "Smart timing",
+        "Engagement tracking"
+      ]
+    },
+
+    // Additional Enterprise Features
+    {
+      id: 'advanced-reporting-suite',
+      title: "Advanced Reporting Suite",
+      description: "Comprehensive business reporting and analytics platform",
+      category: 'enterprise',
+      status: 'planned',
+      progress: 40,
+      estimatedRelease: 'Q1 2030',
+      features: [
+        "Comprehensive reporting",
+        "Custom report builder",
+        "Data export capabilities",
+        "Scheduled reports",
+        "Advanced analytics"
+      ],
+      icon: Layers,
+      color: 'from-blue-500 to-blue-600',
+      detailedDescription: "Advanced reporting suite with comprehensive business reports, custom report builder, and advanced analytics for enterprise decision making.",
+      benefits: [
+        "Comprehensive reports",
+        "Custom builder",
+        "Data export",
+        "Advanced analytics"
+      ]
+    },
+    {
+      id: 'multi-location-management',
+      title: "Multi-Location Management",
+      description: "Centralized management for multiple business locations",
+      category: 'enterprise',
+      status: 'planned',
+      progress: 35,
+      estimatedRelease: 'Q1 2030',
+      features: [
+        "Centralized management",
+        "Location-specific settings",
+        "Unified reporting",
+        "Cross-location analytics",
+        "Standardized operations"
+      ],
+      icon: Building,
+      color: 'from-gray-500 to-gray-600',
+      detailedDescription: "Comprehensive multi-location management system with centralized control, location-specific settings, and unified reporting across all business locations.",
+      benefits: [
+        "Centralized management",
+        "Location settings",
+        "Unified reporting",
+        "Cross-location analytics"
+      ]
+    },
+    {
+      id: 'employee-management-tools',
+      title: "Employee Management Tools",
+      description: "HR and payroll integration with employee management features",
+      category: 'enterprise',
+      status: 'planned',
+      progress: 30,
+      estimatedRelease: 'Q1 2030',
+      features: [
+        "HR management",
+        "Payroll integration",
+        "Employee onboarding",
+        "Performance tracking",
+        "Benefits management"
+      ],
+      icon: Users,
+      color: 'from-green-500 to-green-600',
+      detailedDescription: "Comprehensive employee management tools with HR management, payroll integration, and performance tracking for enterprise workforce management.",
+      benefits: [
+        "HR management",
+        "Payroll integration",
+        "Employee onboarding",
+        "Performance tracking"
+      ]
     }
   ]
 
@@ -537,7 +1422,9 @@ const LearnMoreV3Page = () => {
     switch (status) {
       case 'completed': return 'bg-green-100 text-green-800 border-green-200'
       case 'in-development': return 'bg-orange-100 text-orange-800 border-orange-200'
+      case 'beta-testing': return 'bg-purple-100 text-purple-800 border-purple-200'
       case 'planned': return 'bg-blue-100 text-blue-800 border-blue-200'
+      case 'research': return 'bg-yellow-100 text-yellow-800 border-yellow-200'
       default: return 'bg-gray-100 text-gray-800 border-gray-200'
     }
   }
@@ -546,7 +1433,9 @@ const LearnMoreV3Page = () => {
     switch (status) {
       case 'completed': return 'Completed'
       case 'in-development': return 'In Development'
+      case 'beta-testing': return 'Beta Testing'
       case 'planned': return 'Planned'
+      case 'research': return 'Research'
       default: return 'Unknown'
     }
   }
@@ -661,48 +1550,56 @@ const LearnMoreV3Page = () => {
                     <div className={`p-3 sm:p-4 bg-gradient-to-r ${feature.color} rounded-xl flex-shrink-0`}>
                       <feature.icon className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
                     </div>
-                    <div className="flex-1">
-                      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2">
-                        <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2 sm:mb-0">
+                    <div className="flex-1 min-w-0">
+                      <div className="mb-3">
+                        <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3">
                           {feature.title}
                         </h3>
-                        <div className="flex items-center space-x-3">
-                          <span className={`px-3 py-1 rounded-full text-xs sm:text-sm font-semibold border ${getStatusColor(feature.status)}`}>
-                            {getStatusText(feature.status)}
-                          </span>
-                          <span className="text-sm sm:text-base text-gray-500 bg-gray-100 px-2 py-1 rounded-full">
-                            {feature.estimatedRelease}
-                          </span>
-                        </div>
+                        <p className="text-gray-600 text-sm sm:text-base mb-4">
+                          {feature.description}
+                        </p>
                       </div>
-                      <p className="text-gray-600 text-sm sm:text-base mb-4">
-                        {feature.description}
-                      </p>
+                      
+                      {/* Status and Timeline - Better organized layout */}
+                      <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3 mb-4">
+                        <span className={`inline-flex items-center px-3 py-1 rounded-full text-xs sm:text-sm font-semibold border w-fit ${getStatusColor(feature.status)}`}>
+                          {getStatusText(feature.status)}
+                        </span>
+                        <span className="inline-flex items-center text-sm sm:text-base text-gray-600 bg-gray-50 px-3 py-1 rounded-full w-fit border border-gray-200">
+                          <span className="text-gray-500 mr-1">📅</span>
+                          {feature.estimatedRelease}
+                        </span>
+                      </div>
                     </div>
                   </div>
 
                   {/* Progress Bar */}
                   <div className="mb-6">
-                    <div className="flex justify-between items-center mb-2">
+                    <div className="flex justify-between items-center mb-3">
                       <span className="text-sm font-medium text-gray-700">Development Progress</span>
-                      <span className="text-sm font-semibold text-gray-900">{feature.progress}%</span>
+                      <span className="text-sm font-bold text-gray-900 bg-gray-100 px-2 py-1 rounded-full">
+                        {feature.progress}%
+                      </span>
                     </div>
-                    <div className="w-full bg-gray-200 rounded-full h-2 sm:h-3">
+                    <div className="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
                       <div 
-                        className={`bg-gradient-to-r ${feature.color} h-2 sm:h-3 rounded-full transition-all duration-1000 ease-out`}
+                        className={`bg-gradient-to-r ${feature.color} h-3 rounded-full transition-all duration-1000 ease-out shadow-sm`}
                         style={{ width: `${feature.progress}%` }}
                       />
                     </div>
                   </div>
 
                   {/* Feature List */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3 mb-6">
-                    {feature.features.map((item, itemIndex) => (
-                      <div key={itemIndex} className="flex items-center space-x-2">
-                        <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
-                        <span className="text-sm sm:text-base text-gray-700">{item}</span>
-                      </div>
-                    ))}
+                  <div className="mb-6">
+                    <h4 className="text-sm font-semibold text-gray-800 mb-3 uppercase tracking-wide">Key Features</h4>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3">
+                      {feature.features.map((item, itemIndex) => (
+                        <div key={itemIndex} className="flex items-start space-x-2">
+                          <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
+                          <span className="text-sm sm:text-base text-gray-700 leading-relaxed">{item}</span>
+                        </div>
+                      ))}
+                    </div>
                   </div>
 
                   {/* Detailed Description */}
@@ -717,13 +1614,13 @@ const LearnMoreV3Page = () => {
 
                   {/* Benefits */}
                   {feature.benefits && (
-                    <div>
-                      <h4 className="text-lg font-semibold text-gray-900 mb-3">Key Benefits</h4>
+                    <div className="bg-gray-50 rounded-lg p-4 border border-gray-100">
+                      <h4 className="text-sm font-semibold text-gray-800 mb-3 uppercase tracking-wide">Key Benefits</h4>
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3">
                         {feature.benefits.map((benefit, benefitIndex) => (
-                          <div key={benefitIndex} className="flex items-center space-x-2">
-                            <Star className="w-4 h-4 text-orange-500 flex-shrink-0" />
-                            <span className="text-sm sm:text-base text-gray-700">{benefit}</span>
+                          <div key={benefitIndex} className="flex items-start space-x-2">
+                            <Star className="w-4 h-4 text-orange-500 flex-shrink-0 mt-0.5" />
+                            <span className="text-sm sm:text-base text-gray-700 leading-relaxed">{benefit}</span>
                           </div>
                         ))}
                       </div>
