@@ -49,11 +49,13 @@ import {
   ChevronRight
 } from 'lucide-react'
 import Button from '@/components/ui/Button'
+import DownloadChoiceModal from '@/components/ui/DownloadChoiceModal'
 
 const HeroSection = () => {
   const [currentSlide, setCurrentSlide] = useState(0)
   const [currentFeature, setCurrentFeature] = useState(0)
   const [showNotification, setShowNotification] = useState(false)
+  const [isDownloadModalOpen, setIsDownloadModalOpen] = useState(false)
 
   const features = [
     { icon: Globe, text: 'Pan-African Reach' },
@@ -237,7 +239,7 @@ const HeroSection = () => {
                     if (slides[currentSlide].secondaryCta === "Watch Demo") {
                       window.location.href = '/demo'
                     } else if (slides[currentSlide].secondaryCta === "Download App") {
-                      // Handle download app action
+                      setIsDownloadModalOpen(true)
                     } else if (slides[currentSlide].secondaryCta === "Learn More") {
                       // Handle learn more action
                     }
@@ -342,6 +344,12 @@ const HeroSection = () => {
           />
         </motion.div>
       </motion.div>
+
+      {/* Download Choice Modal */}
+      <DownloadChoiceModal
+        isOpen={isDownloadModalOpen}
+        onClose={() => setIsDownloadModalOpen(false)}
+      />
     </div>
   )
 }

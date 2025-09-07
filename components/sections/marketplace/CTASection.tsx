@@ -1,6 +1,6 @@
 "use client"
 
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { 
   ShoppingCart, 
@@ -10,10 +10,12 @@ import {
   Play
 } from 'lucide-react'
 import Button from '@/components/ui/Button'
+import DownloadChoiceModal from '@/components/ui/DownloadChoiceModal'
 
 const CTASection = () => {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-100px" })
+  const [isDownloadModalOpen, setIsDownloadModalOpen] = useState(false)
 
   return (
     <section className="py-16 sm:py-20 bg-gradient-to-r from-orange-500 via-red-500 to-pink-500 text-white">
@@ -103,6 +105,7 @@ const CTASection = () => {
                 size="lg"
                 icon={Download}
                 className="backdrop-blur-xl shadow-2xl hover:shadow-white/10"
+                onClick={() => setIsDownloadModalOpen(true)}
               >
                 Download App
               </Button>
@@ -119,6 +122,12 @@ const CTASection = () => {
           </motion.div>
         </motion.div>
       </div>
+
+      {/* Download Choice Modal */}
+      <DownloadChoiceModal
+        isOpen={isDownloadModalOpen}
+        onClose={() => setIsDownloadModalOpen(false)}
+      />
     </section>
   )
 }

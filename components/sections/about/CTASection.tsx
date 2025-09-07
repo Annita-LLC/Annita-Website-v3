@@ -2,12 +2,14 @@
 
 import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 import { Download, ArrowRight } from 'lucide-react'
+import DownloadChoiceModal from '@/components/ui/DownloadChoiceModal'
 
 const CTASection = () => {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true })
+  const [isDownloadModalOpen, setIsDownloadModalOpen] = useState(false)
 
   return (
     <section className="py-16 sm:py-20 bg-gradient-to-br from-gray-50 to-white" ref={ref}>
@@ -28,13 +30,13 @@ const CTASection = () => {
               and streamline their operations across Africa.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a 
-                href="/download"
+              <button 
+                onClick={() => setIsDownloadModalOpen(true)}
                 className="inline-flex items-center justify-center bg-white text-orange-600 px-8 py-3 rounded-lg font-semibold hover:bg-orange-50 transition-colors duration-200"
               >
                 <Download className="w-5 h-5 mr-2" />
                 Download App
-              </a>
+              </button>
               <a 
                 href="/contact-sales"
                 className="inline-flex items-center justify-center border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-orange-600 transition-colors duration-200"
@@ -46,6 +48,12 @@ const CTASection = () => {
           </motion.div>
         </div>
       </div>
+
+      {/* Download Choice Modal */}
+      <DownloadChoiceModal
+        isOpen={isDownloadModalOpen}
+        onClose={() => setIsDownloadModalOpen(false)}
+      />
     </section>
   )
 }
