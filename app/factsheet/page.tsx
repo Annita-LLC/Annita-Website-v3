@@ -128,8 +128,8 @@ const FactsheetPage = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white">
-      {/* Hero Section */}
-      <section className="py-16 sm:py-20 lg:py-24 bg-gradient-to-r from-orange-500 to-red-500 text-white">
+      {/* Page Header */}
+      <section className="pt-20 pb-8 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             ref={ref}
@@ -142,15 +142,15 @@ const FactsheetPage = () => {
               <BarChart3 className="w-4 h-4 mr-2" />
               Official Factsheet
             </div>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
               Annita LLC Factsheet
             </h1>
-            <p className="text-xl sm:text-2xl text-orange-100 mb-8 max-w-3xl mx-auto">
+            <p className="text-lg sm:text-xl text-gray-600 mb-4 max-w-3xl mx-auto">
               Comprehensive overview of our business performance, growth trajectory, and key achievements.
             </p>
-            <div className="flex items-center justify-center space-x-2 text-gray-200">
-              <Calendar className="w-5 h-5" />
-              <span>Last Updated: December 2024</span>
+            <div className="flex items-center justify-center space-x-2 text-gray-500">
+              <Calendar className="w-4 h-4" />
+              <span className="text-sm">Last Updated: December 2024</span>
             </div>
           </motion.div>
         </div>
