@@ -490,6 +490,38 @@ export const databaseService = {
     
     if (error) throw error
     return data
+  },
+
+  // Add user to waitlist
+  async addToWaitlist(data: {
+    name: string
+    email: string
+    phone?: string
+    business?: string
+    interest?: string
+    ip_address?: string
+    user_agent?: string
+  }) {
+    const supabase = getSupabaseClient()
+    const { data: result, error } = await supabase
+      .from('waitlist')
+      .insert([data])
+      .select()
+    
+    if (error) throw error
+    return result[0]
+  },
+
+  // Get waitlist statistics
+  async getWaitlistStats() {
+    const supabase = getSupabaseClient()
+    const { data, error } = await supabase
+      .from('waitlist')
+      .select('interest, created_at')
+      .order('created_at', { ascending: false })
+    
+    if (error) throw error
+    return data
   }
 }
 

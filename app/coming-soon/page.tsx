@@ -1337,7 +1337,10 @@ const ComingSoonPage = () => {
                     ))}
                   </div>
 
-                  <button className="mt-6 w-full bg-purple-600 text-white py-3 rounded-lg font-semibold hover:bg-purple-700 transition-colors duration-200 flex items-center justify-center">
+                  <button 
+                    onClick={() => window.open('/learn-more-v3', '_blank')}
+                    className="mt-6 w-full bg-purple-600 text-white py-3 rounded-lg font-semibold hover:bg-purple-700 transition-colors duration-200 flex items-center justify-center"
+                  >
                     Learn More
                     <ArrowRight className="w-4 h-4 ml-2" />
                   </button>

@@ -395,8 +395,28 @@ CREATE POLICY "Allow insert for all users" ON download_requests FOR INSERT WITH 
 CREATE POLICY "Allow insert for all users" ON newsletter_subscriptions FOR INSERT WITH CHECK (true);
 CREATE POLICY "Allow insert for all users" ON file_uploads FOR INSERT WITH CHECK (true);
 CREATE POLICY "Allow insert for all users" ON investor_downloads FOR INSERT WITH CHECK (true);
+CREATE POLICY "Allow insert for all users" ON waitlist FOR INSERT WITH CHECK (true);
 
 -- Allow read access for admin dashboard (using service role key)
+-- 8. WAITLIST TABLE
+DROP TABLE IF EXISTS waitlist CASCADE;
+CREATE TABLE waitlist (
+    id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
+    name VARCHAR(200) NOT NULL,
+    email VARCHAR(255) NOT NULL UNIQUE,
+    phone VARCHAR(20),
+    business VARCHAR(200),
+    interest VARCHAR(50) DEFAULT 'general',
+    ip_address INET,
+    user_agent TEXT,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
+    updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
+);
+
+-- Create index on email for faster lookups
+CREATE INDEX idx_waitlist_email ON waitlist(email);
+CREATE INDEX idx_waitlist_created_at ON waitlist(created_at);
+
 -- These policies are for when you build an admin dashboard
 -- For now, data access is through Supabase dashboard or direct SQL queries
 

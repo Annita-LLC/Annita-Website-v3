@@ -25,24 +25,42 @@ const WaitlistForm = ({ isOpen, onClose }: WaitlistFormProps) => {
     e.preventDefault()
     setIsSubmitting(true)
     
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 2000))
-    
-    setIsSubmitting(false)
-    setIsSubmitted(true)
-    
-    // Reset form after 3 seconds
-    setTimeout(() => {
-      setIsSubmitted(false)
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        business: '',
-        interest: 'general'
+    try {
+      const response = await fetch('/api/waitlist', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
       })
-      onClose()
-    }, 3000)
+
+      const result = await response.json()
+
+      if (!response.ok) {
+        throw new Error(result.error || 'Failed to join waitlist')
+      }
+
+      setIsSubmitting(false)
+      setIsSubmitted(true)
+      
+      // Reset form after 3 seconds
+      setTimeout(() => {
+        setIsSubmitted(false)
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          business: '',
+          interest: 'general'
+        })
+        onClose()
+      }, 3000)
+    } catch (error: any) {
+      console.error('Waitlist submission error:', error)
+      setIsSubmitting(false)
+      // You could add error state handling here if needed
+      alert(error.message || 'Failed to join waitlist. Please try again.')
+    }
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
