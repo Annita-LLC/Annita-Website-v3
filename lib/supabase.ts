@@ -525,6 +525,9 @@ export const databaseService = {
   }
 }
 
+// Direct exports for commonly used functions
+export const addToWaitlist = databaseService.addToWaitlist.bind(databaseService)
+
 // Error handling utility
 export class DatabaseError extends Error {
   constructor(message: string, public code?: string) {
