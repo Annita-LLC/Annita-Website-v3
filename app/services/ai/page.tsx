@@ -1,7 +1,6 @@
 'use client'
 
 import { Metadata } from 'next'
-import { useState } from 'react'
 import { 
   Brain, 
   TrendingUp, 
@@ -154,6 +153,7 @@ const AIPage = () => {
                 size="lg"
                 icon={Play}
                 className="text-base sm:text-lg font-bold shadow-2xl hover:shadow-purple-500/25 transform hover:-translate-y-1 transition-all duration-300"
+                onClick={() => window.location.href = '/demo'}
               >
                 Try Business AI
               </Button>

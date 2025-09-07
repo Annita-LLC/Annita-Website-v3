@@ -233,6 +233,15 @@ const HeroSection = () => {
                   size="lg"
                     icon={slides[currentSlide].secondaryIcon}
                   className="text-base sm:text-lg font-bold backdrop-blur-xl shadow-2xl hover:shadow-white/10 transform hover:-translate-y-1 transition-all duration-300"
+                  onClick={() => {
+                    if (slides[currentSlide].secondaryCta === "Watch Demo") {
+                      window.location.href = '/demo'
+                    } else if (slides[currentSlide].secondaryCta === "Download App") {
+                      // Handle download app action
+                    } else if (slides[currentSlide].secondaryCta === "Learn More") {
+                      // Handle learn more action
+                    }
+                  }}
                 >
                     {slides[currentSlide].secondaryCta}
                 </Button>

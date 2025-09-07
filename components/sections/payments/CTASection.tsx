@@ -121,6 +121,7 @@ const CTASection = () => {
                 size="lg"
                 icon={Play}
                 className="backdrop-blur-xl shadow-2xl hover:shadow-white/10"
+                onClick={() => window.location.href = '/demo'}
               >
                 Watch Demo
               </Button>

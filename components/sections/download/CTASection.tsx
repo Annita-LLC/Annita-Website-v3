@@ -69,6 +69,7 @@ const CTASection = () => {
               size="xl"
               icon={Play}
               className="text-lg font-bold backdrop-blur-xl shadow-2xl hover:shadow-white/10 transform hover:-translate-y-1 transition-all duration-300"
+              onClick={() => window.location.href = '/demo'}
             >
               Watch Demo
             </Button>

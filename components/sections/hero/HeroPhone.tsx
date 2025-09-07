@@ -123,7 +123,10 @@ const HeroPhone = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
                   
                   {/* Floating Content */}
-                  <div className="absolute inset-0 flex items-center justify-center p-2 sm:p-3 md:p-4">
+                  <div 
+                    className="absolute inset-0 flex items-center justify-center p-2 sm:p-3 md:p-4 cursor-pointer"
+                    onClick={() => window.location.href = '/demo'}
+                  >
                     <motion.div
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}

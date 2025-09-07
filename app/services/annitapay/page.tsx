@@ -147,7 +147,10 @@ const AnnitaPayPage = () => {
                     <Download className="w-5 h-5 mr-2" />
                     Download App
                   </button>
-                  <button className="border-2 border-orange-600 text-orange-600 px-8 py-4 rounded-lg font-semibold hover:bg-orange-50 transition-colors duration-200 flex items-center justify-center">
+                  <button 
+                    className="border-2 border-orange-600 text-orange-600 px-8 py-4 rounded-lg font-semibold hover:bg-orange-50 transition-colors duration-200 flex items-center justify-center"
+                    onClick={() => window.location.href = '/demo'}
+                  >
                     <Play className="w-5 h-5 mr-2" />
                     Watch Demo
                   </button>

@@ -218,7 +218,10 @@ const AdsPage = () => {
                     <Download className="w-5 h-5 mr-2" />
                     Start Advertising
                   </button>
-                  <button className="border-2 border-purple-600 text-purple-600 px-8 py-4 rounded-lg font-semibold hover:bg-purple-50 transition-colors duration-200 flex items-center justify-center">
+                  <button 
+                    className="border-2 border-purple-600 text-purple-600 px-8 py-4 rounded-lg font-semibold hover:bg-purple-50 transition-colors duration-200 flex items-center justify-center"
+                    onClick={() => window.location.href = '/demo'}
+                  >
                     <Play className="w-5 h-5 mr-2" />
                     Watch Demo
                   </button>
