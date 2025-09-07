@@ -51,7 +51,6 @@ const Navigation = () => {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
   const [dropdownTimeout, setDropdownTimeout] = useState<NodeJS.Timeout | null>(null)
   const [isDownloadModalOpen, setIsDownloadModalOpen] = useState(false)
-  const [isSearchModalOpen, setIsSearchModalOpen] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -196,20 +195,16 @@ const Navigation = () => {
                               <div className="grid gap-3">
                                 {item.dropdown.map((dropdownItem) => (
                                   'isSearchToggle' in dropdownItem && dropdownItem.isSearchToggle ? (
-                                    <button
-                                      key={dropdownItem.name}
-                                      onClick={() => {
-                                        setIsSearchModalOpen(true)
-                                        setActiveDropdown(null)
-                                      }}
-                                      className="w-full flex items-start space-x-3 p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200 text-left"
-                                    >
-                                      <dropdownItem.icon className="w-5 h-5 text-primary-600 dark:text-primary-400 mt-0.5 flex-shrink-0" />
-                                      <div className="flex-1">
-                                        <div className="font-medium text-gray-900 dark:text-white mb-1">{dropdownItem.name}</div>
-                                        <div className="text-sm text-gray-500 dark:text-gray-400">{dropdownItem.description}</div>
+                                    <div key={dropdownItem.name} className="p-3">
+                                      <div className="flex items-start space-x-3">
+                                        <dropdownItem.icon className="w-5 h-5 text-primary-600 dark:text-primary-400 mt-0.5 flex-shrink-0" />
+                                        <div className="flex-1">
+                                          <div className="font-medium text-gray-900 dark:text-white mb-2">{dropdownItem.name}</div>
+                                          <div className="text-sm text-gray-500 dark:text-gray-400 mb-3">{dropdownItem.description}</div>
+                                          <GlobalSearch />
+                                        </div>
                                       </div>
-                                    </button>
+                                    </div>
                                   ) : 'isThemeToggle' in dropdownItem && dropdownItem.isThemeToggle ? (
                                      <div key={dropdownItem.name} className="p-3">
                                        <div className="flex items-start space-x-3">
@@ -387,18 +382,10 @@ const Navigation = () => {
                                 >
                                   {item.dropdown.map((dropdownItem) => (
                                     'isSearchToggle' in dropdownItem && dropdownItem.isSearchToggle ? (
-                                      <button
-                                        key={dropdownItem.name}
-                                        onClick={() => {
-                                          setIsSearchModalOpen(true)
-                                          setIsOpen(false)
-                                          setActiveDropdown(null)
-                                        }}
-                                        className="w-full flex items-center space-x-3 p-2 text-left hover:bg-gray-50 dark:hover:bg-gray-800 rounded-lg transition-colors"
-                                      >
-                                        <Search className="w-4 h-4 text-gray-600 dark:text-gray-300" />
-                                        <span className="text-sm text-gray-600 dark:text-gray-300">{dropdownItem.name}</span>
-                                      </button>
+                                      <div key={dropdownItem.name} className="p-2">
+                                        <div className="text-sm text-gray-600 dark:text-gray-300 mb-2">{dropdownItem.name}</div>
+                                        <GlobalSearch />
+                                      </div>
                                     ) : 'isThemeToggle' in dropdownItem && dropdownItem.isThemeToggle ? (
                                       <div key={dropdownItem.name} className="p-2">
                                         <div className="text-sm text-gray-600 dark:text-gray-300 mb-2">{dropdownItem.name}</div>
@@ -487,14 +474,6 @@ const Navigation = () => {
         onClose={() => setIsDownloadModalOpen(false)}
       />
 
-      {/* Search Modal */}
-      {isSearchModalOpen && (
-        <div className="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm" onClick={() => setIsSearchModalOpen(false)}>
-          <div className="absolute top-20 left-1/2 transform -translate-x-1/2 w-full max-w-2xl mx-4" onClick={(e: React.MouseEvent) => e.stopPropagation()}>
-            <GlobalSearch />
-          </div>
-        </div>
-      )}
 
     </>
   )
