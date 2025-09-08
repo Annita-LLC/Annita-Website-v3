@@ -9,7 +9,7 @@ import ProgramStructure from '@/components/sections/the100/ProgramStructure'
 import Opportunities from '@/components/sections/the100/Opportunities'
 import ApplicationForms from '@/components/sections/the100/ApplicationForms'
 import PartnerCollaboration from '@/components/sections/the100/PartnerCollaboration'
-
+import ImpactSection from '@/components/sections/the100/ImpactSection'
 import ContactSection from '@/components/sections/the100/ContactSection'
 
 const The100Page = () => {
@@ -138,7 +138,7 @@ const The100Page = () => {
           {activeTab === 'opportunities' && <Opportunities />}
           {activeTab === 'apply' && <ApplicationForms />}
           {activeTab === 'partners' && <PartnerCollaboration />}
-  
+          {activeTab === 'impact' && <ImpactSection />}
           {activeTab === 'contact' && <ContactSection />}
         </div>
       </div>

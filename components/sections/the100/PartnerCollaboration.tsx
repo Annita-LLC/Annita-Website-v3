@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef } from 'react'
-import { Building, Users, Target, Award, Globe, DollarSign, BookOpen, Heart } from 'lucide-react'
+import { Building, Users, Target, Award, Globe, DollarSign, BookOpen, Heart, GraduationCap, Briefcase, Lightbulb, Handshake, Star, Zap, Shield, Camera, Mic, Laptop, Phone } from 'lucide-react'
 
 const PartnerCollaboration = () => {
   const ref = useRef(null)
@@ -57,35 +57,105 @@ const PartnerCollaboration = () => {
         "Contribute to community growth"
       ],
       color: "purple"
+    },
+    {
+      icon: GraduationCap,
+      title: "Educational Partner",
+      description: "Provide training, courses, or educational resources",
+      benefits: [
+        "Expand your educational reach",
+        "Build relationships with future professionals",
+        "Showcase your expertise",
+        "Contribute to skill development"
+      ],
+      color: "indigo"
+    },
+    {
+      icon: Briefcase,
+      title: "Employment Partner",
+      description: "Offer job opportunities and career guidance",
+      benefits: [
+        "Access to pre-trained talent",
+        "Reduced recruitment costs",
+        "Direct pipeline to skilled workers",
+        "Community impact recognition"
+      ],
+      color: "teal"
+    },
+    {
+      icon: Lightbulb,
+      title: "Innovation Partner",
+      description: "Support innovative projects and startup incubation",
+      benefits: [
+        "Access to innovative ideas",
+        "Early-stage investment opportunities",
+        "Technology transfer possibilities",
+        "Innovation ecosystem building"
+      ],
+      color: "yellow"
+    },
+    {
+      icon: Handshake,
+      title: "Strategic Alliance",
+      description: "Form long-term strategic partnerships",
+      benefits: [
+        "Mutual business growth",
+        "Shared resources and expertise",
+        "Market expansion opportunities",
+        "Long-term relationship building"
+      ],
+      color: "pink"
+    },
+    {
+      icon: Star,
+      title: "Recognition Partner",
+      description: "Provide awards, recognition, and certification",
+      benefits: [
+        "Brand association with excellence",
+        "Recognition program expansion",
+        "Community goodwill building",
+        "Award program credibility"
+      ],
+      color: "red"
+    },
+    {
+      icon: Zap,
+      title: "Technology Partner",
+      description: "Provide technology solutions and digital tools",
+      benefits: [
+        "Showcase your technology",
+        "Access to user feedback",
+        "Product development insights",
+        "Technology adoption promotion"
+      ],
+      color: "cyan"
+    },
+    {
+      icon: Shield,
+      title: "Security & Compliance",
+      description: "Provide security, legal, or compliance support",
+      benefits: [
+        "Professional service exposure",
+        "Client relationship building",
+        "Industry expertise demonstration",
+        "Risk management support"
+      ],
+      color: "slate"
+    },
+    {
+      icon: Camera,
+      title: "Media & Marketing",
+      description: "Support with marketing, media, and communications",
+      benefits: [
+        "Creative portfolio expansion",
+        "Brand visibility opportunities",
+        "Content creation showcase",
+        "Marketing expertise demonstration"
+      ],
+      color: "emerald"
     }
   ]
 
-  const currentPartners = [
-    {
-      name: "Liberia Bank for Development and Investment",
-      logo: "🏦",
-      type: "Financial Partner",
-      contribution: "Mini-grant funding and financial literacy training"
-    },
-    {
-      name: "Liberia Chamber of Commerce",
-      logo: "🏢",
-      type: "Network Partner",
-      contribution: "Business networking and mentorship opportunities"
-    },
-    {
-      name: "Liberia Business Association",
-      logo: "📈",
-      type: "Industry Partner",
-      contribution: "Industry insights and internship placements"
-    },
-    {
-      name: "Liberia Youth Network",
-      logo: "🌍",
-      type: "Community Partner",
-      contribution: "Community outreach and participant recruitment"
-    }
-  ]
 
   return (
     <section className="py-16 sm:py-20" ref={ref}>
@@ -168,7 +238,7 @@ const PartnerCollaboration = () => {
             <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 text-center mb-12">
               Partnership Opportunities
             </h3>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
               {partnershipTypes.map((type, index) => (
                 <motion.div
                   key={index}
@@ -181,13 +251,29 @@ const PartnerCollaboration = () => {
                     type.color === 'blue' ? 'bg-gradient-to-br from-blue-50 to-blue-100' :
                     type.color === 'green' ? 'bg-gradient-to-br from-green-50 to-green-100' :
                     type.color === 'orange' ? 'bg-gradient-to-br from-orange-50 to-orange-100' :
-                    'bg-gradient-to-br from-purple-50 to-purple-100'
+                    type.color === 'purple' ? 'bg-gradient-to-br from-purple-50 to-purple-100' :
+                    type.color === 'indigo' ? 'bg-gradient-to-br from-indigo-50 to-indigo-100' :
+                    type.color === 'teal' ? 'bg-gradient-to-br from-teal-50 to-teal-100' :
+                    type.color === 'yellow' ? 'bg-gradient-to-br from-yellow-50 to-yellow-100' :
+                    type.color === 'pink' ? 'bg-gradient-to-br from-pink-50 to-pink-100' :
+                    type.color === 'red' ? 'bg-gradient-to-br from-red-50 to-red-100' :
+                    type.color === 'cyan' ? 'bg-gradient-to-br from-cyan-50 to-cyan-100' :
+                    type.color === 'slate' ? 'bg-gradient-to-br from-slate-50 to-slate-100' :
+                    'bg-gradient-to-br from-emerald-50 to-emerald-100'
                   }`}>
                     <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-6 ${
                       type.color === 'blue' ? 'bg-blue-600' :
                       type.color === 'green' ? 'bg-green-600' :
                       type.color === 'orange' ? 'bg-orange-600' :
-                      'bg-purple-600'
+                      type.color === 'purple' ? 'bg-purple-600' :
+                      type.color === 'indigo' ? 'bg-indigo-600' :
+                      type.color === 'teal' ? 'bg-teal-600' :
+                      type.color === 'yellow' ? 'bg-yellow-600' :
+                      type.color === 'pink' ? 'bg-pink-600' :
+                      type.color === 'red' ? 'bg-red-600' :
+                      type.color === 'cyan' ? 'bg-cyan-600' :
+                      type.color === 'slate' ? 'bg-slate-600' :
+                      'bg-emerald-600'
                     }`}>
                       <type.icon className="w-8 h-8 text-white" />
                     </div>
@@ -203,7 +289,15 @@ const PartnerCollaboration = () => {
                             type.color === 'blue' ? 'bg-blue-600' :
                             type.color === 'green' ? 'bg-green-600' :
                             type.color === 'orange' ? 'bg-orange-600' :
-                            'bg-purple-600'
+                            type.color === 'purple' ? 'bg-purple-600' :
+                            type.color === 'indigo' ? 'bg-indigo-600' :
+                            type.color === 'teal' ? 'bg-teal-600' :
+                            type.color === 'yellow' ? 'bg-yellow-600' :
+                            type.color === 'pink' ? 'bg-pink-600' :
+                            type.color === 'red' ? 'bg-red-600' :
+                            type.color === 'cyan' ? 'bg-cyan-600' :
+                            type.color === 'slate' ? 'bg-slate-600' :
+                            'bg-emerald-600'
                           }`}></div>
                           <span className="text-gray-700 text-sm">{benefit}</span>
                         </li>
@@ -215,7 +309,7 @@ const PartnerCollaboration = () => {
             </div>
           </motion.div>
 
-          {/* Current Partners */}
+          {/* Looking for Partners */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -223,27 +317,39 @@ const PartnerCollaboration = () => {
             className="mb-16"
           >
             <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 text-center mb-12">
-              Our Current Partners
+              We're Looking for Partners
             </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {currentPartners.map((partner, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={isInView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ duration: 0.6, delay: 1.4 + index * 0.1 }}
-                  className="bg-white p-6 rounded-xl shadow-lg border border-gray-100"
-                >
-                  <div className="flex items-center space-x-4">
-                    <div className="text-4xl">{partner.logo}</div>
-                    <div>
-                      <h4 className="text-lg font-semibold text-gray-900">{partner.name}</h4>
-                      <p className="text-orange-600 font-medium text-sm">{partner.type}</p>
-                      <p className="text-gray-600 text-sm mt-1">{partner.contribution}</p>
+            <div className="bg-gradient-to-br from-orange-50 to-orange-100 p-12 rounded-2xl border border-orange-200 text-center">
+              <div className="w-20 h-20 bg-orange-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                <Heart className="w-10 h-10 text-white" />
+              </div>
+              <h4 className="text-2xl font-bold text-gray-900 mb-4">Open for Partnership</h4>
+              <p className="text-lg text-gray-700 max-w-3xl mx-auto leading-relaxed mb-6">
+                We are currently open and actively looking for strategic partners to help us launch 
+                The 100 program next year. We're seeking organizations that share our vision of 
+                empowering Liberian youth and building the next generation of business leaders.
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+                <div className="bg-white p-6 rounded-xl shadow-sm">
+                  <div className="text-3xl mb-3">🏦</div>
+                  <h5 className="font-semibold text-gray-900 mb-2">Financial Partners</h5>
+                  <p className="text-sm text-gray-600">Support mini-grants and program funding</p>
+                </div>
+                <div className="bg-white p-6 rounded-xl shadow-sm">
+                  <div className="text-3xl mb-3">🏢</div>
+                  <h5 className="font-semibold text-gray-900 mb-2">Corporate Partners</h5>
+                  <p className="text-sm text-gray-600">Provide internships and mentorship</p>
+                </div>
+                <div className="bg-white p-6 rounded-xl shadow-sm">
+                  <div className="text-3xl mb-3">🌍</div>
+                  <h5 className="font-semibold text-gray-900 mb-2">Community Partners</h5>
+                  <p className="text-sm text-gray-600">Support outreach and recruitment</p>
+                </div>
+              </div>
+              <div className="mt-8 inline-flex items-center px-6 py-3 bg-orange-600 text-white rounded-lg font-semibold">
+                <span className="animate-pulse mr-2">●</span>
+                Launching Next Year - Join Us!
                     </div>
-                  </div>
-                </motion.div>
-              ))}
             </div>
           </motion.div>
 

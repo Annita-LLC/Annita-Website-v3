@@ -39,7 +39,8 @@ import {
   Image,
   Rocket,
   FileBarChart,
-  Search
+  Search,
+  Lightbulb
 } from 'lucide-react'
 import { ThemeToggle, SimpleThemeToggle } from '@/components/ui/ThemeToggle'
 import DownloadChoiceModal from '@/components/ui/DownloadChoiceModal'
@@ -91,10 +92,12 @@ const Navigation = () => {
       name: 'Company', 
       href: '#',
                           dropdown: [
+                      { name: 'Ideas & Recommendations', href: '/ideas', icon: Lightbulb, description: 'Share ideas and feedback' },
                       { name: 'About Us', href: '/about', icon: Users, description: 'Our story and mission' },
+                      { name: 'CSR', href: '/company/csr', icon: Heart, description: 'Corporate social responsibility and impact' },
                       { name: 'Demo', href: '/demo', icon: Play, description: 'Interactive demo of Annita 3.0' },
-                      { name: 'The 100', href: '/the100', icon: Target, description: 'Youth empowerment initiative' },
                       { name: 'Investors', href: '/investors', icon: DollarSign, description: 'Investment opportunities and company info' },
+                      { name: 'The 100', href: '/the100', icon: Target, description: 'Youth empowerment initiative' },
                       { name: 'Official Factsheet', href: '/official-factsheet', icon: FileBarChart, description: 'Company metrics, revenue, and growth data' },
                       { name: 'Pricing', href: '/pricing', icon: DollarSign, description: 'Transparent pricing plans' },
                       { name: 'Business Model', href: '/business-model', icon: Building2, description: 'Our revenue model and strategy' },

@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef } from 'react'
-import { Briefcase, Users, DollarSign, Target, Award, Globe } from 'lucide-react'
+import { Briefcase, Users, DollarSign, Target, Award, Globe, GraduationCap, BookOpen, Trophy, Handshake, Lightbulb, Star } from 'lucide-react'
 
 const Opportunities = () => {
   const ref = useRef(null)
@@ -48,29 +48,74 @@ const Opportunities = () => {
         "Access to business networks"
       ],
       color: "green"
+    },
+    {
+      icon: GraduationCap,
+      title: "Educational Scholarships",
+      description: "Financial support for continuing education and skill development",
+      benefits: [
+        "Tuition assistance for relevant courses",
+        "Certification program funding",
+        "Online learning platform access",
+        "Study materials and resources",
+        "Academic mentorship support"
+      ],
+      color: "purple"
+    },
+    {
+      icon: Trophy,
+      title: "Recognition & Awards",
+      description: "Celebrate achievements and outstanding performance",
+      benefits: [
+        "Monthly performance awards",
+        "Annual achievement recognition",
+        "Public recognition opportunities",
+        "Certificate of completion",
+        "Portfolio building support"
+      ],
+      color: "yellow"
+    },
+    {
+      icon: Handshake,
+      title: "Partnership Opportunities",
+      description: "Collaborate with Annita LLC and partner organizations",
+      benefits: [
+        "Joint venture opportunities",
+        "Strategic partnership development",
+        "Cross-promotional activities",
+        "Shared resource access",
+        "Long-term collaboration potential"
+      ],
+      color: "indigo"
+    },
+    {
+      icon: Lightbulb,
+      title: "Innovation Support",
+      description: "Resources and support for innovative projects and ideas",
+      benefits: [
+        "Innovation lab access",
+        "Prototype development support",
+        "Technology resources",
+        "Creative project funding",
+        "Innovation mentorship"
+      ],
+      color: "pink"
+    },
+    {
+      icon: Star,
+      title: "Leadership Development",
+      description: "Build leadership skills and take on leadership roles",
+      benefits: [
+        "Leadership training programs",
+        "Team leadership opportunities",
+        "Public speaking training",
+        "Management skill development",
+        "Leadership certification"
+      ],
+      color: "teal"
     }
   ]
 
-  const successStories = [
-    {
-      name: "Sarah Johnson",
-      role: "Tech Entrepreneur",
-      story: "Through The 100 program, I received a mini-grant to launch my software development company. Today, I employ 5 people and serve clients across Liberia.",
-      achievement: "Founded TechLib Solutions"
-    },
-    {
-      name: "Michael Doe",
-      role: "Marketing Specialist",
-      story: "The internship at Annita LLC gave me the skills and confidence to start my own digital marketing agency. I now work with major brands in Liberia.",
-      achievement: "Launched Digital Marketing Agency"
-    },
-    {
-      name: "Grace Williams",
-      role: "Business Consultant",
-      story: "As an affiliate, I learned valuable sales and networking skills. I've since started my own consulting business helping other entrepreneurs.",
-      achievement: "Established Consulting Firm"
-    }
-  ]
 
   return (
     <section className="py-16 sm:py-20" ref={ref}>
@@ -97,7 +142,7 @@ const Opportunities = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 mb-16"
           >
             {opportunities.map((opportunity, index) => (
               <motion.div
@@ -110,12 +155,22 @@ const Opportunities = () => {
                 <div className={`p-8 ${
                   opportunity.color === 'orange' ? 'bg-gradient-to-br from-orange-50 to-orange-100' :
                   opportunity.color === 'blue' ? 'bg-gradient-to-br from-blue-50 to-blue-100' :
-                  'bg-gradient-to-br from-green-50 to-green-100'
+                  opportunity.color === 'green' ? 'bg-gradient-to-br from-green-50 to-green-100' :
+                  opportunity.color === 'purple' ? 'bg-gradient-to-br from-purple-50 to-purple-100' :
+                  opportunity.color === 'yellow' ? 'bg-gradient-to-br from-yellow-50 to-yellow-100' :
+                  opportunity.color === 'indigo' ? 'bg-gradient-to-br from-indigo-50 to-indigo-100' :
+                  opportunity.color === 'pink' ? 'bg-gradient-to-br from-pink-50 to-pink-100' :
+                  'bg-gradient-to-br from-teal-50 to-teal-100'
                 }`}>
                   <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-6 ${
                     opportunity.color === 'orange' ? 'bg-orange-600' :
                     opportunity.color === 'blue' ? 'bg-blue-600' :
-                    'bg-green-600'
+                    opportunity.color === 'green' ? 'bg-green-600' :
+                    opportunity.color === 'purple' ? 'bg-purple-600' :
+                    opportunity.color === 'yellow' ? 'bg-yellow-600' :
+                    opportunity.color === 'indigo' ? 'bg-indigo-600' :
+                    opportunity.color === 'pink' ? 'bg-pink-600' :
+                    'bg-teal-600'
                   }`}>
                     <opportunity.icon className="w-8 h-8 text-white" />
                   </div>
@@ -130,7 +185,12 @@ const Opportunities = () => {
                         <div className={`w-2 h-2 rounded-full mt-2 flex-shrink-0 ${
                           opportunity.color === 'orange' ? 'bg-orange-600' :
                           opportunity.color === 'blue' ? 'bg-blue-600' :
-                          'bg-green-600'
+                          opportunity.color === 'green' ? 'bg-green-600' :
+                          opportunity.color === 'purple' ? 'bg-purple-600' :
+                          opportunity.color === 'yellow' ? 'bg-yellow-600' :
+                          opportunity.color === 'indigo' ? 'bg-indigo-600' :
+                          opportunity.color === 'pink' ? 'bg-pink-600' :
+                          'bg-teal-600'
                         }`}></div>
                         <span className="text-gray-700 text-sm">{benefit}</span>
                       </li>
@@ -141,7 +201,7 @@ const Opportunities = () => {
             ))}
           </motion.div>
 
-          {/* Success Stories */}
+          {/* Success Stories - Coming Soon */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -151,28 +211,20 @@ const Opportunities = () => {
             <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 text-center mb-12">
               Success Stories
             </h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {successStories.map((story, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={isInView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ duration: 0.6, delay: 1.0 + index * 0.2 }}
-                  className="bg-white p-6 rounded-xl shadow-lg border border-gray-100"
-                >
-                  <div className="text-center mb-4">
-                    <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-3">
-                      <Award className="w-8 h-8 text-orange-600" />
-                    </div>
-                    <h4 className="text-lg font-semibold text-gray-900">{story.name}</h4>
-                    <p className="text-orange-600 font-medium">{story.role}</p>
-                  </div>
-                  <p className="text-gray-700 text-sm mb-4 leading-relaxed">{story.story}</p>
-                  <div className="bg-orange-50 p-3 rounded-lg">
-                    <p className="text-orange-700 font-semibold text-sm">{story.achievement}</p>
-                  </div>
-                </motion.div>
-              ))}
+            <div className="bg-gradient-to-br from-orange-50 to-orange-100 p-12 rounded-2xl border border-orange-200 text-center">
+              <div className="w-20 h-20 bg-orange-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                <Award className="w-10 h-10 text-white" />
+              </div>
+              <h4 className="text-2xl font-bold text-gray-900 mb-4">Coming Soon</h4>
+              <p className="text-lg text-gray-700 max-w-2xl mx-auto leading-relaxed">
+                We're excited to share the success stories of our first cohort of participants! 
+                The 100 program hasn't kicked off yet, but we're preparing to launch and will 
+                showcase the amazing achievements of our participants once the program begins.
+              </p>
+              <div className="mt-6 inline-flex items-center px-4 py-2 bg-orange-600 text-white rounded-lg font-semibold">
+                <span className="animate-pulse mr-2">●</span>
+                Program Launching Soon
+              </div>
             </div>
           </motion.div>
 

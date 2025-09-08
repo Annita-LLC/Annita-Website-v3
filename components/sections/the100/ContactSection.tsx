@@ -1,16 +1,17 @@
 "use client"
 
 import { useState } from 'react'
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef } from 'react'
-import { Mail, Phone, MapPin, Clock, Send, CheckCircle, AlertCircle } from 'lucide-react'
+import { Mail, Phone, MapPin, Clock, Send, CheckCircle, AlertCircle, ChevronDown, ChevronUp } from 'lucide-react'
 
 const ContactSection = () => {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
+  const [expandedFAQ, setExpandedFAQ] = useState<number | null>(null)
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -22,6 +23,10 @@ const ContactSection = () => {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value })
+  }
+
+  const toggleFAQ = (index: number) => {
+    setExpandedFAQ(expandedFAQ === index ? null : index)
   }
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -288,10 +293,36 @@ const ContactSection = () => {
                     initial={{ opacity: 0, y: 20 }}
                     animate={isInView ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 0.6, delay: 1.0 + index * 0.1 }}
-                    className="bg-white p-6 rounded-xl shadow-lg border border-gray-100"
+                    className="bg-white rounded-xl shadow-lg border border-gray-100 overflow-hidden"
                   >
-                    <h4 className="text-lg font-semibold text-gray-900 mb-3">{faq.question}</h4>
-                    <p className="text-gray-700 text-sm leading-relaxed">{faq.answer}</p>
+                    <button
+                      onClick={() => toggleFAQ(index)}
+                      className="w-full p-6 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200"
+                    >
+                      <h4 className="text-lg font-semibold text-gray-900 pr-4">{faq.question}</h4>
+                      <div className="flex-shrink-0">
+                        {expandedFAQ === index ? (
+                          <ChevronUp className="w-5 h-5 text-orange-600" />
+                        ) : (
+                          <ChevronDown className="w-5 h-5 text-gray-400" />
+                        )}
+                      </div>
+                    </button>
+                    <AnimatePresence>
+                      {expandedFAQ === index && (
+                        <motion.div
+                          initial={{ height: 0, opacity: 0 }}
+                          animate={{ height: 'auto', opacity: 1 }}
+                          exit={{ height: 0, opacity: 0 }}
+                          transition={{ duration: 0.3, ease: 'easeInOut' }}
+                          className="overflow-hidden"
+                        >
+                          <div className="px-6 pb-6">
+                            <p className="text-gray-700 text-sm leading-relaxed">{faq.answer}</p>
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
                   </motion.div>
                 ))}
               </div>
