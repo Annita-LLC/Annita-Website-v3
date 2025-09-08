@@ -278,6 +278,9 @@ const Navigation = () => {
 
             {/* CTA Buttons */}
             <div className="hidden lg:flex items-center space-x-3 xl:space-x-4">
+              <div className="relative">
+                <GlobalSearch />
+              </div>
               <button 
                 onClick={() => setIsDownloadModalOpen(true)}
                 className="btn-primary"

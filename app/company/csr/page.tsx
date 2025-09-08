@@ -176,7 +176,7 @@ const CSRPage = () => {
         canonical="/company/csr"
       />
 
-      <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white">
+      <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white" ref={ref}>
         {/* Hero Section */}
         <section className="relative py-20 bg-gradient-to-r from-orange-600 to-orange-700 text-white overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-r from-orange-600/90 to-orange-700/90"></div>
