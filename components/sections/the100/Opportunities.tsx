@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef } from 'react'
-import { Briefcase, Users, DollarSign, Target, Award, Globe, GraduationCap, BookOpen, Trophy, Handshake, Lightbulb, Star } from 'lucide-react'
+import { Briefcase, Users, DollarSign, Target, Award, Globe, GraduationCap, BookOpen, Trophy, Users2, Lightbulb, Star } from 'lucide-react'
 
 const Opportunities = () => {
   const ref = useRef(null)
@@ -76,7 +76,7 @@ const Opportunities = () => {
       color: "yellow"
     },
     {
-      icon: Handshake,
+      icon: Users2,
       title: "Partnership Opportunities",
       description: "Collaborate with Annita LLC and partner organizations",
       benefits: [

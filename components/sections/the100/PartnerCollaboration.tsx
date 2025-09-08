@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef } from 'react'
-import { Building, Users, Target, Award, Globe, DollarSign, BookOpen, Heart, GraduationCap, Briefcase, Lightbulb, Handshake, Star, Zap, Shield, Camera, Mic, Laptop, Phone } from 'lucide-react'
+import { Building, Users, Target, Award, Globe, DollarSign, BookOpen, Heart, GraduationCap, Briefcase, Lightbulb, Users2, Star, Zap, Shield, Camera, Mic, Laptop, Phone } from 'lucide-react'
 
 const PartnerCollaboration = () => {
   const ref = useRef(null)
@@ -95,7 +95,7 @@ const PartnerCollaboration = () => {
       color: "yellow"
     },
     {
-      icon: Handshake,
+      icon: Users2,
       title: "Strategic Alliance",
       description: "Form long-term strategic partnerships",
       benefits: [

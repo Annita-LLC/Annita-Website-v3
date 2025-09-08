@@ -19,7 +19,7 @@ import {
   Building,
   Zap,
   Star,
-  Handshake,
+  Users2,
   TrendingUp,
   MapPin,
   Calendar,
@@ -161,7 +161,7 @@ const CSRPage = () => {
       description: "Promoting technological advancement and digital transformation across Africa"
     },
     {
-      icon: Handshake,
+      icon: Users2,
       title: "Community Building",
       description: "Fostering strong, connected communities that support each other's growth and development"
     }
@@ -436,7 +436,7 @@ const CSRPage = () => {
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <button className="bg-white text-orange-600 px-8 py-3 rounded-lg font-semibold hover:bg-orange-50 transition-colors duration-200 flex items-center justify-center">
-                    <Handshake className="w-5 h-5 mr-2" />
+                    <Users2 className="w-5 h-5 mr-2" />
                     Partner With Us
                   </button>
                   <button className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-orange-600 transition-colors duration-200 flex items-center justify-center">
