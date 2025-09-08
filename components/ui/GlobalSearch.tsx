@@ -159,11 +159,11 @@ export default function GlobalSearch() {
       {/* Search Trigger Button */}
       <button
         onClick={() => setIsOpen(true)}
-        className="flex items-center space-x-2 px-3 py-2 bg-gray-100 dark:bg-gray-800 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-200"
+        className="flex items-center space-x-2 px-2 sm:px-3 py-2 bg-gray-100 dark:bg-gray-800 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-200 min-w-0"
       >
-        <Search className="w-4 h-4 text-gray-500" />
+        <Search className="w-4 h-4 text-gray-500 flex-shrink-0" />
         <span className="hidden sm:block text-sm text-gray-500">Search...</span>
-        <kbd className="hidden sm:inline-flex items-center px-2 py-1 bg-gray-200 dark:bg-gray-700 rounded text-xs text-gray-500">
+        <kbd className="hidden lg:inline-flex items-center px-2 py-1 bg-gray-200 dark:bg-gray-700 rounded text-xs text-gray-500">
           ⌘K
         </kbd>
       </button>
@@ -183,32 +183,32 @@ export default function GlobalSearch() {
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: -20 }}
               transition={{ duration: 0.2 }}
-              className="absolute top-20 left-1/2 transform -translate-x-1/2 w-full max-w-2xl mx-4"
+              className="absolute top-4 sm:top-20 left-1/2 transform -translate-x-1/2 w-[calc(100%-2rem)] sm:w-full max-w-2xl mx-4 sm:mx-4"
               onClick={(e: React.MouseEvent) => e.stopPropagation()}
             >
               <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-2xl border border-gray-200 dark:border-gray-700 overflow-hidden">
                 {/* Search Input */}
-                <div className="flex items-center px-4 py-3 border-b border-gray-200 dark:border-gray-700">
-                  <Search className="w-5 h-5 text-gray-400 mr-3" />
+                <div className="flex items-center px-3 sm:px-4 py-3 border-b border-gray-200 dark:border-gray-700">
+                  <Search className="w-5 h-5 text-gray-400 mr-3 flex-shrink-0" />
                   <input
                     ref={inputRef}
                     type="text"
                     value={query}
                     onChange={(e) => setQuery(e.target.value)}
                     placeholder="Search for features, pages, or services..."
-                    className="flex-1 bg-transparent text-gray-900 dark:text-white placeholder-gray-500 focus:outline-none"
+                    className="flex-1 bg-transparent text-gray-900 dark:text-white placeholder-gray-500 focus:outline-none text-base sm:text-sm"
                     autoComplete="off"
                   />
                   <button
                     onClick={() => setIsOpen(false)}
-                    className="p-1 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition-colors"
+                    className="p-1 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition-colors flex-shrink-0"
                   >
                     <X className="w-4 h-4 text-gray-400" />
                   </button>
                 </div>
 
                 {/* Search Results */}
-                <div ref={resultsRef} className="max-h-96 overflow-y-auto">
+                <div ref={resultsRef} className="max-h-80 sm:max-h-96 overflow-y-auto">
                   {query.trim() ? (
                     results.length > 0 ? (
                       <div className="py-2">
@@ -223,23 +223,23 @@ export default function GlobalSearch() {
                             >
                               <button
                                 onClick={() => handleResultClick(result)}
-                                className={`w-full flex items-center space-x-3 px-4 py-3 text-left hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors ${
+                                className={`w-full flex items-center space-x-3 px-3 sm:px-4 py-3 sm:py-3 text-left hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors touch-manipulation ${
                                   index === selectedIndex ? 'bg-gray-50 dark:bg-gray-700' : ''
                                 }`}
                               >
-                                <div className="p-2 bg-orange-100 dark:bg-orange-900/20 rounded-lg">
+                                <div className="p-2 bg-orange-100 dark:bg-orange-900/20 rounded-lg flex-shrink-0">
                                   <Icon className="w-4 h-4 text-orange-600 dark:text-orange-400" />
                                 </div>
                                 <div className="flex-1 min-w-0">
-                                  <div className="font-medium text-gray-900 dark:text-white truncate">
+                                  <div className="font-medium text-gray-900 dark:text-white truncate text-sm sm:text-base">
                                     {result.title}
                                   </div>
-                                  <div className="text-sm text-gray-500 dark:text-gray-400 truncate">
+                                  <div className="text-xs sm:text-sm text-gray-500 dark:text-gray-400 truncate">
                                     {result.description}
                                   </div>
                                 </div>
-                                <div className="flex items-center space-x-2">
-                                  <span className="text-xs text-gray-400 bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded">
+                                <div className="flex items-center space-x-2 flex-shrink-0">
+                                  <span className="text-xs text-gray-400 bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded hidden sm:inline">
                                     {result.category}
                                   </span>
                                   <ArrowRight className="w-4 h-4 text-gray-400" />
@@ -250,15 +250,15 @@ export default function GlobalSearch() {
                         })}
                       </div>
                     ) : (
-                      <div className="py-8 text-center">
-                        <Search className="w-12 h-12 text-gray-300 mx-auto mb-4" />
-                        <p className="text-gray-500 dark:text-gray-400">No results found for "{query}"</p>
+                      <div className="py-6 sm:py-8 text-center px-4">
+                        <Search className="w-10 h-10 sm:w-12 sm:h-12 text-gray-300 mx-auto mb-3 sm:mb-4" />
+                        <p className="text-sm sm:text-base text-gray-500 dark:text-gray-400">No results found for "{query}"</p>
                       </div>
                     )
                   ) : (
                     <div className="py-4">
                       {recentSearches.length > 0 && (
-                        <div className="px-4 py-2">
+                        <div className="px-3 sm:px-4 py-2">
                           <div className="flex items-center justify-between mb-3">
                             <div className="flex items-center space-x-2">
                               <Clock className="w-4 h-4 text-gray-400" />
@@ -266,7 +266,7 @@ export default function GlobalSearch() {
                             </div>
                             <button
                               onClick={clearRecentSearches}
-                              className="text-xs text-gray-500 hover:text-gray-700 dark:hover:text-gray-300"
+                              className="text-xs text-gray-500 hover:text-gray-700 dark:hover:text-gray-300 touch-manipulation"
                             >
                               Clear
                             </button>
@@ -276,24 +276,24 @@ export default function GlobalSearch() {
                               <button
                                 key={index}
                                 onClick={() => handleRecentClick(search)}
-                                className="w-full flex items-center space-x-3 px-3 py-2 text-left hover:bg-gray-50 dark:hover:bg-gray-700 rounded-lg transition-colors"
+                                className="w-full flex items-center space-x-3 px-3 py-2 text-left hover:bg-gray-50 dark:hover:bg-gray-700 rounded-lg transition-colors touch-manipulation"
                               >
-                                <Clock className="w-4 h-4 text-gray-400" />
-                                <span className="text-sm text-gray-600 dark:text-gray-400">{search}</span>
+                                <Clock className="w-4 h-4 text-gray-400 flex-shrink-0" />
+                                <span className="text-sm text-gray-600 dark:text-gray-400 truncate">{search}</span>
                               </button>
                             ))}
                           </div>
                         </div>
                       )}
                       
-                      <div className="px-4 py-2">
+                      <div className="px-3 sm:px-4 py-2">
                         <div className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-3">Popular Searches</div>
-                        <div className="grid grid-cols-2 gap-2">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                           {['AnnitaPay', 'Marketplace', 'AI Assistant', 'Logistics'].map((term) => (
                             <button
                               key={term}
                               onClick={() => handleRecentClick(term)}
-                              className="text-left px-3 py-2 text-sm text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-700 rounded-lg transition-colors"
+                              className="text-left px-3 py-2 text-sm text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-700 rounded-lg transition-colors touch-manipulation"
                             >
                               {term}
                             </button>
@@ -305,14 +305,14 @@ export default function GlobalSearch() {
                 </div>
 
                 {/* Footer */}
-                <div className="px-4 py-3 bg-gray-50 dark:bg-gray-700/50 border-t border-gray-200 dark:border-gray-700">
-                  <div className="flex items-center justify-between text-xs text-gray-500">
-                    <div className="flex items-center space-x-4">
-                      <span>↑↓ Navigate</span>
-                      <span>↵ Select</span>
+                <div className="px-3 sm:px-4 py-3 bg-gray-50 dark:bg-gray-700/50 border-t border-gray-200 dark:border-gray-700">
+                  <div className="flex flex-col sm:flex-row items-center justify-between text-xs text-gray-500 space-y-1 sm:space-y-0">
+                    <div className="flex items-center space-x-2 sm:space-x-4">
+                      <span className="hidden sm:inline">↑↓ Navigate</span>
+                      <span className="hidden sm:inline">↵ Select</span>
                       <span>Esc Close</span>
                     </div>
-                    <span>⌘K to search</span>
+                    <span className="hidden sm:inline">⌘K to search</span>
                   </div>
                 </div>
               </div>
