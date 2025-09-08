@@ -173,7 +173,7 @@ const CSRPage = () => {
         title="Corporate Social Responsibility - Annita LLC"
         description="Learn about Annita's commitment to social impact across Liberia and Africa. Discover our current initiatives and future plans for youth empowerment, economic inclusion, and community development."
         keywords={["CSR", "corporate social responsibility", "social impact", "youth empowerment", "Africa", "Liberia", "community development", "economic inclusion"]}
-        canonicalUrl="/company/csr"
+        canonical="/company/csr"
       />
 
       <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white">

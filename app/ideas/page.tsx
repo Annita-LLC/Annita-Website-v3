@@ -229,7 +229,7 @@ const IdeasPage = () => {
         title="Ideas & Recommendations - Annita LLC"
         description="Share your ideas, suggestions, and feedback to help shape the future of Annita. Submit feature requests, business ideas, and community initiatives."
         keywords={["ideas", "recommendations", "feedback", "feature requests", "suggestions", "community", "innovation", "Annita"]}
-        canonicalUrl="/ideas"
+        canonical="/ideas"
       />
 
       <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white">
