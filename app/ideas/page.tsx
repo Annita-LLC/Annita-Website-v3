@@ -228,7 +228,7 @@ const IdeasPage = () => {
       <SEOHead
         title="Ideas & Recommendations - Annita LLC"
         description="Share your ideas, suggestions, and feedback to help shape the future of Annita. Submit feature requests, business ideas, and community initiatives."
-        keywords="ideas, recommendations, feedback, feature requests, suggestions, community, innovation, Annita"
+        keywords={["ideas", "recommendations", "feedback", "feature requests", "suggestions", "community", "innovation", "Annita"]}
         canonicalUrl="/ideas"
       />
 
