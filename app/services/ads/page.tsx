@@ -214,7 +214,10 @@ const AdsPage = () => {
                   and AI-powered optimization to grow your business across Africa.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <button className="bg-purple-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-purple-700 transition-colors duration-200 flex items-center justify-center">
+                  <button 
+                    onClick={() => window.open('https://annita.company.site/products', '_blank')}
+                    className="bg-purple-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-purple-700 transition-colors duration-200 flex items-center justify-center"
+                  >
                     <Download className="w-5 h-5 mr-2" />
                     Start Advertising
                   </button>

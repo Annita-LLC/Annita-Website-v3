@@ -211,11 +211,17 @@ const LogisticsPage = () => {
                   express delivery, and global shipping solutions.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <button className="bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-200 flex items-center justify-center">
+                  <button 
+                    onClick={() => window.open('https://annita.company.site/products', '_blank')}
+                    className="bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-200 flex items-center justify-center"
+                  >
                     <Download className="w-5 h-5 mr-2" />
                     Track Package
                   </button>
-                  <button className="border-2 border-blue-600 text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-blue-50 transition-colors duration-200 flex items-center justify-center">
+                  <button 
+                    onClick={() => window.open('https://annita.company.site/products', '_blank')}
+                    className="border-2 border-blue-600 text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-blue-50 transition-colors duration-200 flex items-center justify-center"
+                  >
                     <Play className="w-5 h-5 mr-2" />
                     Schedule Pickup
                   </button>
@@ -252,7 +258,10 @@ const LogisticsPage = () => {
                         <span>Tomorrow, 2:00 PM</span>
                       </div>
                     </div>
-                    <button className="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-200">
+                    <button 
+                      onClick={() => window.open('https://annita.company.site/products', '_blank')}
+                      className="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-200"
+                    >
                       Track Package
                     </button>
                   </div>

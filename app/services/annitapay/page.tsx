@@ -181,7 +181,10 @@ const AnnitaPayPage = () => {
                       <span className="text-gray-600">Amount</span>
                       <span className="font-semibold text-orange-600">$50.00</span>
                     </div>
-                    <button className="w-full bg-orange-600 text-white py-3 rounded-lg font-semibold hover:bg-orange-700 transition-colors duration-200">
+                    <button 
+                      onClick={() => window.open('https://annita.company.site/products', '_blank')}
+                      className="w-full bg-orange-600 text-white py-3 rounded-lg font-semibold hover:bg-orange-700 transition-colors duration-200"
+                    >
                       Send Money
                     </button>
                   </div>

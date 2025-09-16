@@ -178,9 +178,24 @@ const ShoppingPage = () => {
                       <Search className="w-5 h-5 text-gray-400 absolute right-3 top-1/2 transform -translate-y-1/2" />
                     </div>
                     <div className="flex items-center space-x-2">
-                      <button className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm">Electronics</button>
-                      <button className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">Fashion</button>
-                      <button className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">Home</button>
+                      <button 
+                        onClick={() => window.open('https://annita.company.site/products?category=electronics', '_blank')}
+                        className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm hover:bg-blue-200 transition-colors duration-200"
+                      >
+                        Electronics
+                      </button>
+                      <button 
+                        onClick={() => window.open('https://annita.company.site/products?category=fashion', '_blank')}
+                        className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm hover:bg-gray-200 transition-colors duration-200"
+                      >
+                        Fashion
+                      </button>
+                      <button 
+                        onClick={() => window.open('https://annita.company.site/products?category=home', '_blank')}
+                        className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm hover:bg-gray-200 transition-colors duration-200"
+                      >
+                        Home
+                      </button>
                     </div>
                     <div className="text-sm text-gray-600">
                       <p>🔍 "wireless headphones" - 2,450 results</p>

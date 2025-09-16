@@ -330,11 +330,17 @@ const CSRPage = () => {
 
                   {/* CTA Buttons */}
                   <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                    <button className="bg-white text-orange-600 px-6 py-3 rounded-lg font-semibold hover:bg-orange-50 transition-all duration-200 flex items-center justify-center shadow-lg">
+                    <button 
+                      onClick={() => window.open('https://www.youtube.com/watch?v=your-impact-video', '_blank')}
+                      className="bg-white text-orange-600 px-6 py-3 rounded-lg font-semibold hover:bg-orange-50 transition-all duration-200 flex items-center justify-center shadow-lg"
+                    >
                       <Play className="w-5 h-5 mr-2" />
                       Watch Our Impact
                     </button>
-                    <button className="border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-orange-600 transition-all duration-200 flex items-center justify-center">
+                    <button 
+                      onClick={() => window.open('/documents/csr-report-2024.pdf', '_blank')}
+                      className="border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-orange-600 transition-all duration-200 flex items-center justify-center"
+                    >
                       <Download className="w-5 h-5 mr-2" />
                       Download Report
                     </button>
@@ -869,7 +875,10 @@ const CSRPage = () => {
                       </div>
                     </div>
                     
-                    <button className="w-full bg-orange-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-orange-700 transition-colors duration-200 flex items-center justify-center">
+                    <button 
+                      onClick={() => window.open(report.downloadUrl, '_blank')}
+                      className="w-full bg-orange-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-orange-700 transition-colors duration-200 flex items-center justify-center"
+                    >
                       <Download className="w-5 h-5 mr-2" />
                       Download Report
                     </button>
@@ -908,11 +917,17 @@ const CSRPage = () => {
                   </p>
                   
                   <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                    <button className="bg-white text-orange-600 px-8 py-4 rounded-lg font-semibold hover:bg-orange-50 transition-all duration-200 flex items-center justify-center shadow-lg hover:shadow-xl">
+                    <button 
+                      onClick={() => window.open('/contact-sales', '_blank')}
+                      className="bg-white text-orange-600 px-8 py-4 rounded-lg font-semibold hover:bg-orange-50 transition-all duration-200 flex items-center justify-center shadow-lg hover:shadow-xl"
+                    >
                       <Users2 className="w-5 h-5 mr-2" />
                       Partner With Us
                     </button>
-                    <button className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-orange-600 transition-all duration-200 flex items-center justify-center">
+                    <button 
+                      onClick={() => window.open('/contact-us', '_blank')}
+                      className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-orange-600 transition-all duration-200 flex items-center justify-center"
+                    >
                       <Heart className="w-5 h-5 mr-2" />
                       Support Our Mission
                     </button>
@@ -962,7 +977,10 @@ const CSRPage = () => {
                   <div className="mt-8 pt-6 border-t border-white/20">
                     <div className="text-center">
                       <div className="text-sm text-orange-200 mb-2">Ready to make an impact?</div>
-                      <button className="w-full bg-orange-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-orange-400 transition-colors duration-200">
+                      <button 
+                        onClick={() => window.open('/contact-us?subject=CSR%20Inquiry', '_blank')}
+                        className="w-full bg-orange-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-orange-400 transition-colors duration-200"
+                      >
                         Contact Our CSR Team
                       </button>
                     </div>
