@@ -30,7 +30,50 @@ import {
   DollarSign,
   Shield,
   ChevronDown,
-  ChevronUp
+  ChevronUp,
+  Play,
+  Download,
+  BarChart3,
+  PieChart,
+  Activity,
+  Calendar,
+  MapPin,
+  ExternalLink,
+  Share2,
+  Bookmark,
+  Flag,
+  Edit,
+  Trash2,
+  Copy,
+  Link,
+  Image,
+  FileText,
+  Video,
+  Mic,
+  Camera,
+  Upload,
+  X,
+  Check,
+  ArrowRight,
+  ArrowLeft,
+  RefreshCw,
+  Settings,
+  Bell,
+  User,
+  Mail,
+  Phone,
+  MessageCircle,
+  ThumbsDown,
+  Reply,
+  MoreHorizontal,
+  Tag,
+  Hash,
+  TrendingDown,
+  Minus,
+  Maximize2,
+  Minimize2,
+  List,
+  Grid3X3
 } from 'lucide-react'
 
 const IdeasPage = () => {
@@ -43,6 +86,11 @@ const IdeasPage = () => {
   const [selectedCategory, setSelectedCategory] = useState('all')
   const [sortBy, setSortBy] = useState('recent')
   const [expandedIdea, setExpandedIdea] = useState<number | null>(null)
+  const [viewMode, setViewMode] = useState<'grid' | 'list'>('list')
+  const [showFilters, setShowFilters] = useState(false)
+  const [selectedTags, setSelectedTags] = useState<string[]>([])
+  const [bookmarkedIdeas, setBookmarkedIdeas] = useState<number[]>([])
+  const [showAnalytics, setShowAnalytics] = useState(false)
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -51,7 +99,13 @@ const IdeasPage = () => {
     description: '',
     impact: 'medium',
     targetAudience: '',
-    contactPreference: 'email'
+    contactPreference: 'email',
+    tags: '',
+    attachments: [] as File[],
+    estimatedEffort: 'medium',
+    businessValue: 'medium',
+    technicalFeasibility: 'medium',
+    priority: 'medium'
   })
 
   const categories = [
@@ -77,71 +131,154 @@ const IdeasPage = () => {
       id: 1,
       title: "Mobile App for The 100 Program",
       description: "Create a dedicated mobile app for The 100 program participants to track their progress, access resources, and connect with mentors.",
+      detailedDescription: "This comprehensive mobile application would provide participants with personalized dashboards, progress tracking, resource libraries, mentor matching, and community features. The app would include offline capabilities for areas with limited connectivity.",
       category: "features",
       impact: "high",
       votes: 45,
       comments: 12,
       status: "under-review",
       author: "Sarah M.",
+      authorAvatar: "/images/avatars/sarah.jpg",
       date: "2024-01-15",
-      targetAudience: "Program participants"
+      targetAudience: "Program participants",
+      tags: ["mobile", "education", "mentorship", "tracking"],
+      estimatedEffort: "high",
+      businessValue: "high",
+      technicalFeasibility: "medium",
+      priority: "high",
+      progress: 25,
+      budget: "$150,000",
+      timeline: "6 months",
+      team: ["Mobile Dev", "UX Designer", "Backend Dev"],
+      attachments: ["mockup1.jpg", "requirements.pdf"],
+      location: "Monrovia, Liberia",
+      relatedIdeas: [2, 4]
     },
     {
       id: 2,
       title: "AI-Powered Business Plan Generator",
       description: "Develop an AI tool that helps entrepreneurs create comprehensive business plans based on their industry and goals.",
+      detailedDescription: "An intelligent system that uses machine learning to analyze market data, industry trends, and user inputs to generate professional business plans. Includes financial projections, market analysis, and competitive intelligence.",
       category: "features",
       impact: "high",
       votes: 38,
       comments: 8,
       status: "planned",
       author: "Michael K.",
+      authorAvatar: "/images/avatars/michael.jpg",
       date: "2024-01-12",
-      targetAudience: "Entrepreneurs"
+      targetAudience: "Entrepreneurs",
+      tags: ["AI", "business", "automation", "planning"],
+      estimatedEffort: "high",
+      businessValue: "high",
+      technicalFeasibility: "medium",
+      priority: "medium",
+      progress: 10,
+      budget: "$200,000",
+      timeline: "8 months",
+      team: ["AI Engineer", "Data Scientist", "Business Analyst"],
+      attachments: ["prototype.mp4", "research.pdf"],
+      location: "Lagos, Nigeria",
+      relatedIdeas: [1, 3]
     },
     {
       id: 3,
       title: "Rural Connectivity Initiative",
       description: "Partner with telecom companies to improve internet connectivity in rural areas to support digital commerce.",
+      detailedDescription: "A comprehensive partnership program to deploy satellite internet, mobile hotspots, and community internet centers in underserved rural areas across West Africa.",
       category: "partnerships",
       impact: "critical",
       votes: 52,
       comments: 15,
       status: "in-progress",
       author: "Grace W.",
+      authorAvatar: "/images/avatars/grace.jpg",
       date: "2024-01-10",
-      targetAudience: "Rural communities"
+      targetAudience: "Rural communities",
+      tags: ["connectivity", "rural", "partnership", "infrastructure"],
+      estimatedEffort: "critical",
+      businessValue: "critical",
+      technicalFeasibility: "medium",
+      priority: "critical",
+      progress: 60,
+      budget: "$2,000,000",
+      timeline: "18 months",
+      team: ["Partnership Manager", "Technical Lead", "Community Manager"],
+      attachments: ["proposal.pdf", "map.jpg"],
+      location: "West Africa",
+      relatedIdeas: [2, 5]
     },
     {
       id: 4,
       title: "Women Entrepreneurship Focus Group",
       description: "Create a dedicated support group and resources specifically for women entrepreneurs in our platform.",
+      detailedDescription: "A comprehensive program including mentorship networks, funding opportunities, skill development workshops, and networking events specifically designed for women entrepreneurs.",
       category: "community",
       impact: "high",
       votes: 41,
       comments: 20,
       status: "implemented",
       author: "Aisha B.",
+      authorAvatar: "/images/avatars/aisha.jpg",
       date: "2024-01-08",
-      targetAudience: "Women entrepreneurs"
+      targetAudience: "Women entrepreneurs",
+      tags: ["women", "entrepreneurship", "community", "mentorship"],
+      estimatedEffort: "medium",
+      businessValue: "high",
+      technicalFeasibility: "high",
+      priority: "high",
+      progress: 100,
+      budget: "$75,000",
+      timeline: "4 months",
+      team: ["Community Manager", "Program Coordinator", "Marketing Specialist"],
+      attachments: ["program-guide.pdf", "testimonials.mp4"],
+      location: "Pan-African",
+      relatedIdeas: [1, 5]
     },
     {
       id: 5,
       title: "Offline Mode Improvements",
       description: "Enhance the offline functionality to allow more features to work without internet connection.",
+      detailedDescription: "Implement advanced offline capabilities including data synchronization, offline-first architecture, and progressive web app features to serve users in areas with unreliable internet.",
       category: "improvements",
       impact: "medium",
       votes: 29,
       comments: 6,
       status: "under-review",
       author: "David L.",
+      authorAvatar: "/images/avatars/david.jpg",
       date: "2024-01-05",
-      targetAudience: "All users"
+      targetAudience: "All users",
+      tags: ["offline", "performance", "accessibility", "PWA"],
+      estimatedEffort: "medium",
+      businessValue: "medium",
+      technicalFeasibility: "high",
+      priority: "medium",
+      progress: 15,
+      budget: "$50,000",
+      timeline: "3 months",
+      team: ["Frontend Dev", "Backend Dev", "QA Engineer"],
+      attachments: ["technical-spec.pdf"],
+      location: "Global",
+      relatedIdeas: [1, 3]
     }
   ])
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value })
+  }
+
+  const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files) {
+      setFormData({ ...formData, attachments: [...formData.attachments, ...Array.from(e.target.files)] })
+    }
+  }
+
+  const removeAttachment = (index: number) => {
+    setFormData({ 
+      ...formData, 
+      attachments: formData.attachments.filter((_, i) => i !== index) 
+    })
   }
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -167,7 +304,13 @@ const IdeasPage = () => {
         description: '',
         impact: 'medium',
         targetAudience: '',
-        contactPreference: 'email'
+        contactPreference: 'email',
+        tags: '',
+        attachments: [],
+        estimatedEffort: 'medium',
+        businessValue: 'medium',
+        technicalFeasibility: 'medium',
+        priority: 'medium'
       })
     }, 3000)
   }
@@ -180,6 +323,47 @@ const IdeasPage = () => {
     setIdeas(ideas.map(idea => 
       idea.id === id ? { ...idea, votes: idea.votes + 1 } : idea
     ))
+  }
+
+  const toggleBookmark = (id: number) => {
+    setBookmarkedIdeas(prev => 
+      prev.includes(id) 
+        ? prev.filter(bookmarkId => bookmarkId !== id)
+        : [...prev, id]
+    )
+  }
+
+  const shareIdea = (idea: any) => {
+    if (navigator.share) {
+      navigator.share({
+        title: idea.title,
+        text: idea.description,
+        url: window.location.href
+      })
+    } else {
+      // Fallback to copying to clipboard
+      navigator.clipboard.writeText(`${idea.title} - ${idea.description}`)
+    }
+  }
+
+  const getPriorityColor = (priority: string) => {
+    switch (priority) {
+      case 'critical': return 'text-red-600 bg-red-100'
+      case 'high': return 'text-orange-600 bg-orange-100'
+      case 'medium': return 'text-blue-600 bg-blue-100'
+      case 'low': return 'text-gray-600 bg-gray-100'
+      default: return 'text-gray-600 bg-gray-100'
+    }
+  }
+
+  const getEffortColor = (effort: string) => {
+    switch (effort) {
+      case 'critical': return 'text-red-600'
+      case 'high': return 'text-orange-600'
+      case 'medium': return 'text-blue-600'
+      case 'low': return 'text-green-600'
+      default: return 'text-gray-600'
+    }
   }
 
   const filteredIdeas = ideas.filter(idea => {
@@ -234,28 +418,110 @@ const IdeasPage = () => {
 
       <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white">
         {/* Hero Section */}
-        <section className="relative py-20 bg-gradient-to-r from-orange-600 to-orange-700 text-white overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-r from-orange-600/90 to-orange-700/90"></div>
+        <section className="relative py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-orange-600 via-orange-700 to-red-600 text-white overflow-hidden">
+          {/* Animated Background Elements */}
+          <div className="absolute inset-0">
+            <div className="absolute top-10 left-10 w-20 h-20 bg-white/10 rounded-full animate-pulse"></div>
+            <div className="absolute top-32 right-20 w-16 h-16 bg-white/5 rounded-full animate-bounce"></div>
+            <div className="absolute bottom-20 left-1/4 w-12 h-12 bg-white/10 rounded-full animate-pulse delay-1000"></div>
+            <div className="absolute bottom-32 right-1/3 w-8 h-8 bg-white/5 rounded-full animate-bounce delay-500"></div>
+          </div>
+          
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div className="max-w-4xl mx-auto text-center">
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8 }}
-                className="mb-8"
-              >
-                <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/20 text-white text-sm font-medium mb-6">
-                  <Lightbulb className="w-4 h-4 mr-2" />
-                  Your Voice Matters
-                </div>
-                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
-                  Ideas & <span className="text-orange-200">Recommendations</span>
-                </h1>
-                <p className="text-xl sm:text-2xl text-orange-100 max-w-3xl mx-auto leading-relaxed">
-                  Help shape the future of Annita! Share your ideas, suggestions, and feedback. 
-                  Together, we can build something amazing for Africa.
-                </p>
-              </motion.div>
+            <div className="max-w-6xl mx-auto">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                {/* Left Column - Main Content */}
+                <motion.div
+                  initial={{ opacity: 0, x: -30 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.8 }}
+                  className="text-center lg:text-left"
+                >
+                  <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/20 backdrop-blur-sm text-white text-sm font-medium mb-6">
+                    <Lightbulb className="w-4 h-4 mr-2" />
+                    Your Voice Matters
+                  </div>
+                  <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 leading-tight">
+                    Ideas & <span className="text-orange-200">Recommendations</span>
+                  </h1>
+                  <p className="text-lg sm:text-xl text-orange-100 max-w-2xl mx-auto lg:mx-0 leading-relaxed mb-8">
+                    Help shape the future of Annita! Share your ideas, suggestions, and feedback. 
+                    Together, we can build something amazing for Africa.
+                  </p>
+                  
+                  {/* Quick Stats */}
+                  <div className="grid grid-cols-2 gap-4 mb-8">
+                    <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
+                      <div className="text-2xl font-bold">{ideas.length}</div>
+                      <div className="text-sm text-orange-200">Ideas Submitted</div>
+                    </div>
+                    <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
+                      <div className="text-2xl font-bold">{ideas.reduce((sum, idea) => sum + idea.votes, 0)}</div>
+                      <div className="text-sm text-orange-200">Total Votes</div>
+                    </div>
+                  </div>
+
+                  {/* CTA Buttons */}
+                  <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                    <button 
+                      onClick={() => setActiveTab('submit')}
+                      className="bg-white text-orange-600 px-6 py-3 rounded-lg font-semibold hover:bg-orange-50 transition-all duration-200 flex items-center justify-center shadow-lg"
+                    >
+                      <Plus className="w-5 h-5 mr-2" />
+                      Submit Your Idea
+                    </button>
+                    <button 
+                      onClick={() => setActiveTab('browse')}
+                      className="border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-orange-600 transition-all duration-200 flex items-center justify-center"
+                    >
+                      <Eye className="w-5 h-5 mr-2" />
+                      Browse Ideas
+                    </button>
+                  </div>
+                </motion.div>
+
+                {/* Right Column - Interactive Elements */}
+                <motion.div
+                  initial={{ opacity: 0, x: 30 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.8, delay: 0.2 }}
+                  className="relative"
+                >
+                  {/* Ideas Overview */}
+                  <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
+                    <h3 className="text-xl font-semibold mb-4 text-center">Community Ideas</h3>
+                    <div className="space-y-4">
+                      {ideas.slice(0, 3).map((idea, index) => (
+                        <motion.div
+                          key={idea.id}
+                          initial={{ opacity: 0, y: 20 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 0.6, delay: 0.4 + index * 0.1 }}
+                          className="flex items-center justify-between p-3 bg-white/10 rounded-lg"
+                        >
+                          <div className="flex items-center space-x-3">
+                            <div className="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center">
+                              <Lightbulb className="w-4 h-4" />
+                            </div>
+                            <div>
+                              <div className="text-sm font-medium">{idea.title}</div>
+                              <div className="text-xs text-orange-200">{idea.votes} votes</div>
+                            </div>
+                          </div>
+                          <div className={`px-2 py-1 rounded-full text-xs font-medium ${
+                            idea.status === 'implemented' ? 'bg-green-100 text-green-700' :
+                            idea.status === 'in-progress' ? 'bg-blue-100 text-blue-700' :
+                            idea.status === 'planned' ? 'bg-purple-100 text-purple-700' :
+                            'bg-yellow-100 text-yellow-700'
+                          }`}>
+                            {idea.status.replace('-', ' ')}
+                          </div>
+                        </motion.div>
+                      ))}
+                    </div>
+                  </div>
+                </motion.div>
+              </div>
             </div>
           </div>
         </section>
@@ -263,26 +529,59 @@ const IdeasPage = () => {
         {/* Navigation Tabs */}
         <div className="sticky top-0 z-40 bg-white/95 backdrop-blur-sm border-b border-gray-200 shadow-sm">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <nav className="flex space-x-1 overflow-x-auto">
-              {[
-                { id: 'submit', label: 'Submit Idea', icon: Plus },
-                { id: 'browse', label: 'Browse Ideas', icon: Eye },
-                { id: 'status', label: 'Implementation Status', icon: Clock }
-              ].map((tab) => (
-                <button
-                  key={tab.id}
-                  onClick={() => setActiveTab(tab.id)}
-                  className={`px-4 py-3 text-sm font-medium whitespace-nowrap transition-colors duration-200 flex items-center space-x-2 ${
-                    activeTab === tab.id
-                      ? 'text-orange-600 border-b-2 border-orange-600 bg-orange-50'
-                      : 'text-gray-600 hover:text-orange-600 hover:bg-orange-50'
-                  }`}
-                >
-                  <tab.icon className="w-4 h-4" />
-                  <span>{tab.label}</span>
-                </button>
-              ))}
-            </nav>
+            <div className="flex items-center justify-between">
+              <nav className="flex space-x-1 overflow-x-auto">
+                {[
+                  { id: 'submit', label: 'Submit Idea', icon: Plus },
+                  { id: 'browse', label: 'Browse Ideas', icon: Eye },
+                  { id: 'status', label: 'Implementation Status', icon: Clock },
+                  { id: 'analytics', label: 'Analytics', icon: BarChart3 }
+                ].map((tab) => (
+                  <button
+                    key={tab.id}
+                    onClick={() => setActiveTab(tab.id)}
+                    className={`px-4 py-3 text-sm font-medium whitespace-nowrap transition-colors duration-200 flex items-center space-x-2 ${
+                      activeTab === tab.id
+                        ? 'text-orange-600 border-b-2 border-orange-600 bg-orange-50'
+                        : 'text-gray-600 hover:text-orange-600 hover:bg-orange-50'
+                    }`}
+                  >
+                    <tab.icon className="w-4 h-4" />
+                    <span>{tab.label}</span>
+                  </button>
+                ))}
+              </nav>
+              
+              {/* View Controls */}
+              {activeTab === 'browse' && (
+                <div className="flex items-center space-x-2 ml-4">
+                  <button
+                    onClick={() => setViewMode('list')}
+                    className={`p-2 rounded-lg transition-colors duration-200 ${
+                      viewMode === 'list' ? 'bg-orange-100 text-orange-600' : 'text-gray-400 hover:text-gray-600'
+                    }`}
+                  >
+                    <List className="w-4 h-4" />
+                  </button>
+                  <button
+                    onClick={() => setViewMode('grid')}
+                    className={`p-2 rounded-lg transition-colors duration-200 ${
+                      viewMode === 'grid' ? 'bg-orange-100 text-orange-600' : 'text-gray-400 hover:text-gray-600'
+                    }`}
+                  >
+                    <Grid3X3 className="w-4 h-4" />
+                  </button>
+                  <button
+                    onClick={() => setShowFilters(!showFilters)}
+                    className={`p-2 rounded-lg transition-colors duration-200 ${
+                      showFilters ? 'bg-orange-100 text-orange-600' : 'text-gray-400 hover:text-gray-600'
+                    }`}
+                  >
+                    <Filter className="w-4 h-4" />
+                  </button>
+                </div>
+              )}
+            </div>
           </div>
         </div>
 
@@ -309,7 +608,7 @@ const IdeasPage = () => {
                       </p>
                     </div>
 
-                    <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
+                    <div className="bg-white p-6 lg:p-8 rounded-2xl shadow-lg border border-gray-100">
                       {/* Success/Error Messages */}
                       {submitStatus === 'success' && (
                         <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg flex items-center space-x-3">
@@ -388,6 +687,51 @@ const IdeasPage = () => {
                           </div>
                         </div>
 
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                          <div>
+                            <label className="block text-sm font-medium text-gray-700 mb-2">Estimated Effort</label>
+                            <select
+                              name="estimatedEffort"
+                              value={formData.estimatedEffort}
+                              onChange={handleChange}
+                              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                            >
+                              <option value="low">Low Effort</option>
+                              <option value="medium">Medium Effort</option>
+                              <option value="high">High Effort</option>
+                              <option value="critical">Critical Effort</option>
+                            </select>
+                          </div>
+                          <div>
+                            <label className="block text-sm font-medium text-gray-700 mb-2">Business Value</label>
+                            <select
+                              name="businessValue"
+                              value={formData.businessValue}
+                              onChange={handleChange}
+                              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                            >
+                              <option value="low">Low Value</option>
+                              <option value="medium">Medium Value</option>
+                              <option value="high">High Value</option>
+                              <option value="critical">Critical Value</option>
+                            </select>
+                          </div>
+                          <div>
+                            <label className="block text-sm font-medium text-gray-700 mb-2">Technical Feasibility</label>
+                            <select
+                              name="technicalFeasibility"
+                              value={formData.technicalFeasibility}
+                              onChange={handleChange}
+                              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                            >
+                              <option value="low">Low Feasibility</option>
+                              <option value="medium">Medium Feasibility</option>
+                              <option value="high">High Feasibility</option>
+                              <option value="critical">Critical Feasibility</option>
+                            </select>
+                          </div>
+                        </div>
+
                         <div>
                           <label className="block text-sm font-medium text-gray-700 mb-2">Idea Title *</label>
                           <input
@@ -414,6 +758,19 @@ const IdeasPage = () => {
                         </div>
 
                         <div>
+                          <label className="block text-sm font-medium text-gray-700 mb-2">Tags</label>
+                          <input
+                            type="text"
+                            name="tags"
+                            value={formData.tags}
+                            onChange={handleChange}
+                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                            placeholder="Enter tags separated by commas (e.g., mobile, AI, accessibility)"
+                          />
+                          <p className="text-sm text-gray-500 mt-1">Tags help categorize and find your idea</p>
+                        </div>
+
+                        <div>
                           <label className="block text-sm font-medium text-gray-700 mb-2">Detailed Description *</label>
                           <textarea
                             name="description"
@@ -424,6 +781,46 @@ const IdeasPage = () => {
                             className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
                             placeholder="Describe your idea in detail. What problem does it solve? How would it work? What benefits would it provide?"
                           />
+                        </div>
+
+                        <div>
+                          <label className="block text-sm font-medium text-gray-700 mb-2">Attachments</label>
+                          <div className="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center hover:border-orange-400 transition-colors duration-200">
+                            <input
+                              type="file"
+                              multiple
+                              onChange={handleFileUpload}
+                              className="hidden"
+                              id="file-upload"
+                              accept=".pdf,.doc,.docx,.jpg,.jpeg,.png,.gif,.mp4,.mov"
+                            />
+                            <label htmlFor="file-upload" className="cursor-pointer">
+                              <Upload className="w-8 h-8 text-gray-400 mx-auto mb-2" />
+                              <p className="text-sm text-gray-600 mb-1">Click to upload files or drag and drop</p>
+                              <p className="text-xs text-gray-500">PDF, DOC, images, videos (max 10MB each)</p>
+                            </label>
+                          </div>
+                          
+                          {formData.attachments.length > 0 && (
+                            <div className="mt-4 space-y-2">
+                              {formData.attachments.map((file, index) => (
+                                <div key={index} className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                                  <div className="flex items-center space-x-3">
+                                    <FileText className="w-5 h-5 text-gray-400" />
+                                    <span className="text-sm text-gray-700">{file.name}</span>
+                                    <span className="text-xs text-gray-500">({(file.size / 1024 / 1024).toFixed(2)} MB)</span>
+                                  </div>
+                                  <button
+                                    type="button"
+                                    onClick={() => removeAttachment(index)}
+                                    className="text-red-500 hover:text-red-700"
+                                  >
+                                    <X className="w-4 h-4" />
+                                  </button>
+                                </div>
+                              ))}
+                            </div>
+                          )}
                         </div>
 
                         <div>
@@ -466,9 +863,20 @@ const IdeasPage = () => {
                       Community <span className="text-orange-600">Ideas</span>
                     </h2>
                     
-                    {/* Filters and Search */}
+                    {/* Advanced Filters and Search */}
                     <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-100 mb-8">
-                      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                      <div className="flex items-center justify-between mb-4">
+                        <h3 className="text-lg font-semibold text-gray-900">Search & Filter Ideas</h3>
+                        <button
+                          onClick={() => setShowFilters(!showFilters)}
+                          className="flex items-center space-x-2 text-orange-600 hover:text-orange-700"
+                        >
+                          <Filter className="w-4 h-4" />
+                          <span className="text-sm">Advanced Filters</span>
+                        </button>
+                      </div>
+                      
+                      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
                         <div className="relative">
                           <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
                           <input
@@ -476,13 +884,13 @@ const IdeasPage = () => {
                             placeholder="Search ideas..."
                             value={searchTerm}
                             onChange={(e) => setSearchTerm(e.target.value)}
-                            className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                            className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
                           />
                         </div>
                         <select
                           value={selectedCategory}
                           onChange={(e) => setSelectedCategory(e.target.value)}
-                          className="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                          className="px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
                         >
                           {categories.map((category) => (
                             <option key={category.id} value={category.id}>
@@ -493,64 +901,181 @@ const IdeasPage = () => {
                         <select
                           value={sortBy}
                           onChange={(e) => setSortBy(e.target.value)}
-                          className="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                          className="px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
                         >
                           <option value="recent">Most Recent</option>
                           <option value="votes">Most Popular</option>
                           <option value="impact">Highest Impact</option>
+                          <option value="effort">Lowest Effort</option>
+                          <option value="feasibility">Highest Feasibility</option>
                         </select>
                       </div>
+
+                      {/* Advanced Filters */}
+                      {showFilters && (
+                        <motion.div
+                          initial={{ opacity: 0, height: 0 }}
+                          animate={{ opacity: 1, height: 'auto' }}
+                          exit={{ opacity: 0, height: 0 }}
+                          className="border-t border-gray-200 pt-4"
+                        >
+                          <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+                            <div>
+                              <label className="block text-sm font-medium text-gray-700 mb-2">Status</label>
+                              <select className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm">
+                                <option value="">All Status</option>
+                                <option value="implemented">Implemented</option>
+                                <option value="in-progress">In Progress</option>
+                                <option value="planned">Planned</option>
+                                <option value="under-review">Under Review</option>
+                              </select>
+                            </div>
+                            <div>
+                              <label className="block text-sm font-medium text-gray-700 mb-2">Impact Level</label>
+                              <select className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm">
+                                <option value="">All Impact Levels</option>
+                                <option value="critical">Critical</option>
+                                <option value="high">High</option>
+                                <option value="medium">Medium</option>
+                                <option value="low">Low</option>
+                              </select>
+                            </div>
+                            <div>
+                              <label className="block text-sm font-medium text-gray-700 mb-2">Effort Level</label>
+                              <select className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm">
+                                <option value="">All Effort Levels</option>
+                                <option value="low">Low Effort</option>
+                                <option value="medium">Medium Effort</option>
+                                <option value="high">High Effort</option>
+                                <option value="critical">Critical Effort</option>
+                              </select>
+                            </div>
+                            <div>
+                              <label className="block text-sm font-medium text-gray-700 mb-2">Tags</label>
+                              <input
+                                type="text"
+                                placeholder="Filter by tags..."
+                                className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                              />
+                            </div>
+                          </div>
+                        </motion.div>
+                      )}
                     </div>
 
-                    {/* Ideas List */}
-                    <div className="space-y-4">
+                    {/* Ideas List/Grid */}
+                    <div className={viewMode === 'grid' ? 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6' : 'space-y-4'}>
                       {sortedIdeas.map((idea, index) => (
                         <motion.div
                           key={idea.id}
                           initial={{ opacity: 0, y: 20 }}
                           animate={{ opacity: 1, y: 0 }}
                           transition={{ duration: 0.6, delay: index * 0.1 }}
-                          className="bg-white rounded-xl shadow-lg border border-gray-100 overflow-hidden"
+                          className="bg-white rounded-xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-shadow duration-300"
                         >
                           <div className="p-6">
                             <div className="flex items-start justify-between mb-4">
                               <div className="flex-1">
-                                <div className="flex items-center space-x-3 mb-2">
-                                  <h3 className="text-lg font-semibold text-gray-900">{idea.title}</h3>
-                                  <span className={`px-2 py-1 rounded-full text-xs font-medium ${getStatusColor(idea.status)}`}>
-                                    {idea.status.replace('-', ' ')}
-                                  </span>
+                                <div className="flex items-start space-x-3 mb-3">
+                                  <div className="w-10 h-10 bg-gradient-to-br from-orange-400 to-orange-600 rounded-full flex items-center justify-center text-white font-bold text-sm flex-shrink-0">
+                                    {idea.author.split(' ').map(n => n[0]).join('')}
+                                  </div>
+                                  <div className="flex-1 min-w-0">
+                                    <div className="flex items-center space-x-2 mb-1">
+                                      <h3 className="text-lg font-semibold text-gray-900 truncate">{idea.title}</h3>
+                                      <span className={`px-2 py-1 rounded-full text-xs font-medium ${getStatusColor(idea.status)}`}>
+                                        {idea.status.replace('-', ' ')}
+                                      </span>
+                                    </div>
+                                    <div className="flex items-center space-x-2 text-sm text-gray-500 mb-2">
+                                      <span>By {idea.author}</span>
+                                      <span>•</span>
+                                      <span>{new Date(idea.date).toLocaleDateString()}</span>
+                                    </div>
+                                  </div>
                                 </div>
-                                <p className="text-gray-600 text-sm mb-3">{idea.description}</p>
-                                <div className="flex items-center space-x-4 text-sm text-gray-500">
-                                  <span>By {idea.author}</span>
-                                  <span>•</span>
-                                  <span>{new Date(idea.date).toLocaleDateString()}</span>
-                                  <span>•</span>
-                                  <span className={getImpactColor(idea.impact)}>
-                                    {idea.impact.charAt(0).toUpperCase() + idea.impact.slice(1)} Impact
-                                  </span>
+                                
+                                <p className="text-gray-600 text-sm mb-4 leading-relaxed">{idea.description}</p>
+                                
+                                {/* Tags */}
+                                <div className="flex flex-wrap gap-2 mb-4">
+                                  {idea.tags?.slice(0, 3).map((tag, idx) => (
+                                    <span key={idx} className="px-2 py-1 bg-gray-100 text-gray-600 rounded-full text-xs">
+                                      #{tag}
+                                    </span>
+                                  ))}
+                                  {idea.tags?.length > 3 && (
+                                    <span className="px-2 py-1 bg-gray-100 text-gray-600 rounded-full text-xs">
+                                      +{idea.tags.length - 3} more
+                                    </span>
+                                  )}
+                                </div>
+
+                                {/* Metrics */}
+                                <div className="grid grid-cols-2 gap-4 mb-4">
+                                  <div className="text-center p-2 bg-gray-50 rounded-lg">
+                                    <div className="text-lg font-bold text-orange-600">{idea.votes}</div>
+                                    <div className="text-xs text-gray-500">Votes</div>
+                                  </div>
+                                  <div className="text-center p-2 bg-gray-50 rounded-lg">
+                                    <div className="text-lg font-bold text-blue-600">{idea.comments}</div>
+                                    <div className="text-xs text-gray-500">Comments</div>
+                                  </div>
+                                </div>
+
+                                {/* Progress Bar */}
+                                <div className="mb-4">
+                                  <div className="flex justify-between text-sm text-gray-600 mb-1">
+                                    <span>Progress</span>
+                                    <span>{idea.progress}%</span>
+                                  </div>
+                                  <div className="w-full bg-gray-200 rounded-full h-2">
+                                    <div 
+                                      className="bg-orange-600 h-2 rounded-full transition-all duration-1000"
+                                      style={{ width: `${idea.progress}%` }}
+                                    ></div>
+                                  </div>
                                 </div>
                               </div>
-                              <div className="flex items-center space-x-2 ml-4">
+                            </div>
+                            
+                            {/* Action Buttons */}
+                            <div className="flex items-center justify-between pt-4 border-t border-gray-100">
+                              <div className="flex items-center space-x-2">
                                 <button
                                   onClick={() => voteOnIdea(idea.id)}
-                                  className="flex items-center space-x-1 px-3 py-1 bg-orange-100 text-orange-600 rounded-lg hover:bg-orange-200 transition-colors duration-200"
+                                  className="flex items-center space-x-1 px-3 py-2 bg-orange-100 text-orange-600 rounded-lg hover:bg-orange-200 transition-colors duration-200"
                                 >
                                   <ThumbsUp className="w-4 h-4" />
-                                  <span>{idea.votes}</span>
+                                  <span className="text-sm font-medium">Vote</span>
                                 </button>
                                 <button
-                                  onClick={() => toggleIdea(idea.id)}
-                                  className="p-2 text-gray-400 hover:text-gray-600 transition-colors duration-200"
+                                  onClick={() => toggleBookmark(idea.id)}
+                                  className={`p-2 rounded-lg transition-colors duration-200 ${
+                                    bookmarkedIdeas.includes(idea.id)
+                                      ? 'bg-orange-100 text-orange-600'
+                                      : 'text-gray-400 hover:text-gray-600 hover:bg-gray-100'
+                                  }`}
                                 >
-                                  {expandedIdea === idea.id ? (
-                                    <ChevronUp className="w-4 h-4" />
-                                  ) : (
-                                    <ChevronDown className="w-4 h-4" />
-                                  )}
+                                  <Bookmark className="w-4 h-4" />
+                                </button>
+                                <button
+                                  onClick={() => shareIdea(idea)}
+                                  className="p-2 text-gray-400 hover:text-gray-600 hover:bg-gray-100 rounded-lg transition-colors duration-200"
+                                >
+                                  <Share2 className="w-4 h-4" />
                                 </button>
                               </div>
+                              <button
+                                onClick={() => toggleIdea(idea.id)}
+                                className="p-2 text-gray-400 hover:text-gray-600 transition-colors duration-200"
+                              >
+                                {expandedIdea === idea.id ? (
+                                  <ChevronUp className="w-4 h-4" />
+                                ) : (
+                                  <ChevronDown className="w-4 h-4" />
+                                )}
+                              </button>
                             </div>
                             
                             <AnimatePresence>
@@ -563,20 +1088,57 @@ const IdeasPage = () => {
                                   className="overflow-hidden"
                                 >
                                   <div className="pt-4 border-t border-gray-100">
+                                    <p className="text-gray-700 text-sm mb-4 leading-relaxed">{idea.detailedDescription}</p>
+                                    
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                                       <div>
                                         <h4 className="font-medium text-gray-900 mb-1">Target Audience</h4>
                                         <p className="text-sm text-gray-600">{idea.targetAudience}</p>
                                       </div>
                                       <div>
-                                        <h4 className="font-medium text-gray-900 mb-1">Category</h4>
-                                        <p className="text-sm text-gray-600 capitalize">{idea.category.replace('-', ' ')}</p>
+                                        <h4 className="font-medium text-gray-900 mb-1">Location</h4>
+                                        <p className="text-sm text-gray-600">{idea.location}</p>
+                                      </div>
+                                      <div>
+                                        <h4 className="font-medium text-gray-900 mb-1">Budget</h4>
+                                        <p className="text-sm text-gray-600">{idea.budget}</p>
+                                      </div>
+                                      <div>
+                                        <h4 className="font-medium text-gray-900 mb-1">Timeline</h4>
+                                        <p className="text-sm text-gray-600">{idea.timeline}</p>
                                       </div>
                                     </div>
+
+                                    <div className="mb-4">
+                                      <h4 className="font-medium text-gray-900 mb-2">Team Required</h4>
+                                      <div className="flex flex-wrap gap-2">
+                                        {idea.team?.map((role, idx) => (
+                                          <span key={idx} className="px-2 py-1 bg-blue-100 text-blue-700 rounded-full text-xs">
+                                            {role}
+                                          </span>
+                                        ))}
+                                      </div>
+                                    </div>
+
+                                    <div className="mb-4">
+                                      <h4 className="font-medium text-gray-900 mb-2">All Tags</h4>
+                                      <div className="flex flex-wrap gap-2">
+                                        {idea.tags?.map((tag, idx) => (
+                                          <span key={idx} className="px-2 py-1 bg-gray-100 text-gray-600 rounded-full text-xs">
+                                            #{tag}
+                                          </span>
+                                        ))}
+                                      </div>
+                                    </div>
+
                                     <div className="flex items-center space-x-4 text-sm text-gray-500">
                                       <div className="flex items-center space-x-1">
                                         <MessageSquare className="w-4 h-4" />
                                         <span>{idea.comments} comments</span>
+                                      </div>
+                                      <div className="flex items-center space-x-1">
+                                        <MapPin className="w-4 h-4" />
+                                        <span>{idea.location}</span>
                                       </div>
                                     </div>
                                   </div>
@@ -586,6 +1148,121 @@ const IdeasPage = () => {
                           </div>
                         </motion.div>
                       ))}
+                    </div>
+                  </div>
+                </motion.div>
+              )}
+
+              {/* Analytics Tab */}
+              {activeTab === 'analytics' && (
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8 }}
+                >
+                  <div className="text-center mb-12">
+                    <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
+                      Ideas <span className="text-orange-600">Analytics</span>
+                    </h2>
+                    <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                      Track trends, engagement, and impact of community ideas over time.
+                    </p>
+                  </div>
+
+                  {/* Analytics Dashboard */}
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                    {[
+                      { title: 'Total Ideas', value: ideas.length, icon: Lightbulb, color: 'orange' },
+                      { title: 'Total Votes', value: ideas.reduce((sum, idea) => sum + idea.votes, 0), icon: ThumbsUp, color: 'blue' },
+                      { title: 'Total Comments', value: ideas.reduce((sum, idea) => sum + idea.comments, 0), icon: MessageSquare, color: 'green' },
+                      { title: 'Implementation Rate', value: '24%', icon: CheckCircle, color: 'purple' }
+                    ].map((stat, index) => (
+                      <motion.div
+                        key={stat.title}
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: index * 0.1 }}
+                        className="bg-white p-6 rounded-xl shadow-lg border border-gray-100 text-center"
+                      >
+                        <div className={`w-12 h-12 rounded-xl flex items-center justify-center mx-auto mb-4 ${
+                          stat.color === 'orange' ? 'bg-orange-100' :
+                          stat.color === 'blue' ? 'bg-blue-100' :
+                          stat.color === 'green' ? 'bg-green-100' :
+                          'bg-purple-100'
+                        }`}>
+                          <stat.icon className={`w-6 h-6 ${
+                            stat.color === 'orange' ? 'text-orange-600' :
+                            stat.color === 'blue' ? 'text-blue-600' :
+                            stat.color === 'green' ? 'text-green-600' :
+                            'text-purple-600'
+                          }`} />
+                        </div>
+                        <h3 className="text-2xl font-bold text-gray-900 mb-2">{stat.value}</h3>
+                        <p className="text-gray-600">{stat.title}</p>
+                      </motion.div>
+                    ))}
+                  </div>
+
+                  {/* Charts and Trends */}
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-100">
+                      <h3 className="text-lg font-semibold text-gray-900 mb-4">Ideas by Category</h3>
+                      <div className="space-y-3">
+                        {categories.slice(1).map((category) => {
+                          const count = ideas.filter(idea => idea.category === category.id).length
+                          const percentage = (count / ideas.length) * 100
+                          return (
+                            <div key={category.id} className="flex items-center justify-between">
+                              <div className="flex items-center space-x-3">
+                                <category.icon className="w-4 h-4 text-gray-400" />
+                                <span className="text-sm text-gray-700">{category.name}</span>
+                              </div>
+                              <div className="flex items-center space-x-3">
+                                <div className="w-20 bg-gray-200 rounded-full h-2">
+                                  <div 
+                                    className="bg-orange-600 h-2 rounded-full"
+                                    style={{ width: `${percentage}%` }}
+                                  ></div>
+                                </div>
+                                <span className="text-sm font-medium text-gray-900 w-8">{count}</span>
+                              </div>
+                            </div>
+                          )
+                        })}
+                      </div>
+                    </div>
+
+                    <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-100">
+                      <h3 className="text-lg font-semibold text-gray-900 mb-4">Implementation Status</h3>
+                      <div className="space-y-3">
+                        {[
+                          { status: 'implemented', count: ideas.filter(i => i.status === 'implemented').length, color: 'green' },
+                          { status: 'in-progress', count: ideas.filter(i => i.status === 'in-progress').length, color: 'blue' },
+                          { status: 'planned', count: ideas.filter(i => i.status === 'planned').length, color: 'purple' },
+                          { status: 'under-review', count: ideas.filter(i => i.status === 'under-review').length, color: 'yellow' }
+                        ].map((stat) => {
+                          const percentage = (stat.count / ideas.length) * 100
+                          return (
+                            <div key={stat.status} className="flex items-center justify-between">
+                              <span className="text-sm text-gray-700 capitalize">{stat.status.replace('-', ' ')}</span>
+                              <div className="flex items-center space-x-3">
+                                <div className="w-20 bg-gray-200 rounded-full h-2">
+                                  <div 
+                                    className={`h-2 rounded-full ${
+                                      stat.color === 'green' ? 'bg-green-600' :
+                                      stat.color === 'blue' ? 'bg-blue-600' :
+                                      stat.color === 'purple' ? 'bg-purple-600' :
+                                      'bg-yellow-600'
+                                    }`}
+                                    style={{ width: `${percentage}%` }}
+                                  ></div>
+                                </div>
+                                <span className="text-sm font-medium text-gray-900 w-8">{stat.count}</span>
+                              </div>
+                            </div>
+                          )
+                        })}
+                      </div>
                     </div>
                   </div>
                 </motion.div>
@@ -687,38 +1364,103 @@ const IdeasPage = () => {
         </div>
 
         {/* Call to Action */}
-        <section className="py-16 sm:py-20 bg-gradient-to-r from-orange-600 to-orange-700 text-white">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-4xl mx-auto text-center">
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8 }}
-              >
-                <h2 className="text-3xl sm:text-4xl font-bold mb-6">
-                  Together, We Build the Future
-                </h2>
-                <p className="text-xl text-orange-100 mb-8 max-w-2xl mx-auto">
-                  Your ideas and feedback are the foundation of our innovation. 
-                  Join our community of thinkers, creators, and changemakers.
-                </p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <button 
-                    onClick={() => setActiveTab('submit')}
-                    className="bg-white text-orange-600 px-8 py-3 rounded-lg font-semibold hover:bg-orange-50 transition-colors duration-200 flex items-center justify-center"
-                  >
-                    <Plus className="w-5 h-5 mr-2" />
-                    Submit Your Idea
-                  </button>
-                  <button 
-                    onClick={() => setActiveTab('browse')}
-                    className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-orange-600 transition-colors duration-200 flex items-center justify-center"
-                  >
-                    <Eye className="w-5 h-5 mr-2" />
-                    Browse Ideas
-                  </button>
-                </div>
-              </motion.div>
+        <section className="py-16 sm:py-20 bg-gradient-to-br from-orange-600 via-orange-700 to-red-600 text-white relative overflow-hidden">
+          {/* Background Elements */}
+          <div className="absolute inset-0">
+            <div className="absolute top-10 left-10 w-32 h-32 bg-white/5 rounded-full animate-pulse"></div>
+            <div className="absolute bottom-10 right-10 w-24 h-24 bg-white/5 rounded-full animate-bounce"></div>
+            <div className="absolute top-1/2 left-1/4 w-16 h-16 bg-white/5 rounded-full animate-pulse delay-1000"></div>
+          </div>
+          
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div className="max-w-6xl mx-auto">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                {/* Left Column - Main CTA */}
+                <motion.div
+                  initial={{ opacity: 0, x: -30 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.8 }}
+                  className="text-center lg:text-left"
+                >
+                  <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 leading-tight">
+                    Together, We Build the <span className="text-orange-200">Future</span>
+                  </h2>
+                  <p className="text-lg sm:text-xl text-orange-100 mb-8 leading-relaxed">
+                    Your ideas and feedback are the foundation of our innovation. 
+                    Join our community of thinkers, creators, and changemakers.
+                  </p>
+                  
+                  <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                    <button 
+                      onClick={() => setActiveTab('submit')}
+                      className="bg-white text-orange-600 px-8 py-4 rounded-lg font-semibold hover:bg-orange-50 transition-all duration-200 flex items-center justify-center shadow-lg hover:shadow-xl"
+                    >
+                      <Plus className="w-5 h-5 mr-2" />
+                      Submit Your Idea
+                    </button>
+                    <button 
+                      onClick={() => setActiveTab('browse')}
+                      className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-orange-600 transition-all duration-200 flex items-center justify-center"
+                    >
+                      <Eye className="w-5 h-5 mr-2" />
+                      Browse Ideas
+                    </button>
+                  </div>
+                </motion.div>
+
+                {/* Right Column - Community Stats */}
+                <motion.div
+                  initial={{ opacity: 0, x: 30 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.8, delay: 0.2 }}
+                  className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20"
+                >
+                  <h3 className="text-2xl font-bold mb-6 text-center">Community Impact</h3>
+                  <div className="space-y-6">
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center space-x-3">
+                        <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center">
+                          <Lightbulb className="w-5 h-5" />
+                        </div>
+                        <span className="font-medium">Ideas Submitted</span>
+                      </div>
+                      <span className="text-2xl font-bold">{ideas.length}</span>
+                    </div>
+                    
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center space-x-3">
+                        <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center">
+                          <ThumbsUp className="w-5 h-5" />
+                        </div>
+                        <span className="font-medium">Total Votes</span>
+                      </div>
+                      <span className="text-2xl font-bold">{ideas.reduce((sum, idea) => sum + idea.votes, 0)}</span>
+                    </div>
+                    
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center space-x-3">
+                        <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center">
+                          <CheckCircle className="w-5 h-5" />
+                        </div>
+                        <span className="font-medium">Implemented</span>
+                      </div>
+                      <span className="text-2xl font-bold">{ideas.filter(i => i.status === 'implemented').length}</span>
+                    </div>
+                  </div>
+                  
+                  <div className="mt-8 pt-6 border-t border-white/20">
+                    <div className="text-center">
+                      <div className="text-sm text-orange-200 mb-2">Ready to make an impact?</div>
+                      <button 
+                        onClick={() => setActiveTab('submit')}
+                        className="w-full bg-orange-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-orange-400 transition-colors duration-200"
+                      >
+                        Start Sharing Ideas
+                      </button>
+                    </div>
+                  </div>
+                </motion.div>
+              </div>
             </div>
           </div>
         </section>

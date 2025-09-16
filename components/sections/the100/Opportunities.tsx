@@ -214,7 +214,7 @@ const Opportunities = () => {
             <div className="bg-gradient-to-br from-orange-50 to-orange-100 p-12 rounded-2xl border border-orange-200 text-center">
               <div className="w-20 h-20 bg-orange-600 rounded-full flex items-center justify-center mx-auto mb-6">
                 <Award className="w-10 h-10 text-white" />
-              </div>
+                    </div>
               <h4 className="text-2xl font-bold text-gray-900 mb-4">Coming Soon</h4>
               <p className="text-lg text-gray-700 max-w-2xl mx-auto leading-relaxed">
                 We're excited to share the success stories of our first cohort of participants! 
@@ -224,7 +224,7 @@ const Opportunities = () => {
               <div className="mt-6 inline-flex items-center px-4 py-2 bg-orange-600 text-white rounded-lg font-semibold">
                 <span className="animate-pulse mr-2">●</span>
                 Program Launching Soon
-              </div>
+                  </div>
             </div>
           </motion.div>
 

@@ -37,8 +37,24 @@ const HeroSection = () => {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "0px" })
   const [currentSlide, setCurrentSlide] = useState(0)
+  const [currentVideo, setCurrentVideo] = useState(0)
   const [isWaitlistOpen, setIsWaitlistOpen] = useState(false)
   const [isDownloadModalOpen, setIsDownloadModalOpen] = useState(false)
+
+  const videos = [
+    {
+      id: 1,
+      title: "Annita 3.0 Preview",
+      description: "See what's coming in our next major update",
+      src: "https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fweb.facebook.com%2Freel%2F1141319817913700%2F&show_text=false&width=560&t=0"
+    },
+    {
+      id: 2,
+      title: "Annita Platform Demo",
+      description: "Experience our current marketplace features",
+      src: "https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fweb.facebook.com%2Fannitallc%2Fposts%2Fpfbid0w721YvqYafVyFfF1KRK3yqYwi3kA5m39B4uBt8S9vLHA878dHnyf6GuHDkpx8E37l&show_text=false&width=500"
+    }
+  ]
 
   const slides = [
     {
@@ -120,6 +136,18 @@ const HeroSection = () => {
 
   const goToSlide = (index: number) => {
     setCurrentSlide(index)
+  }
+
+  const nextVideo = () => {
+    setCurrentVideo((prev) => (prev + 1) % videos.length)
+  }
+
+  const prevVideo = () => {
+    setCurrentVideo((prev) => (prev - 1 + videos.length) % videos.length)
+  }
+
+  const goToVideo = (index: number) => {
+    setCurrentVideo(index)
   }
 
   return (
@@ -299,7 +327,7 @@ const HeroSection = () => {
         </div>
           </motion.div>
 
-          {/* Right Content - Video */}
+          {/* Right Content - Video Slideshow */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
@@ -307,21 +335,85 @@ const HeroSection = () => {
             className="flex-1 flex justify-center lg:justify-end mt-8 sm:mt-12 lg:mt-0 w-full"
           >
             <div className="relative w-full max-w-[320px] sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl">
+              {/* Video Container */}
               <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-gradient-to-br from-gray-50 to-white p-2 sm:p-3 md:p-4 lg:p-6 backdrop-blur-sm border border-gray-100">
                 <div className="absolute inset-0 bg-gradient-to-br from-orange-500/5 to-blue-500/5 rounded-2xl"></div>
+                
+                {/* Video Title */}
+                <div className="relative z-10 mb-4">
+                  <AnimatePresence mode="wait">
+                    <motion.div
+                      key={`video-title-${currentVideo}`}
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -10 }}
+                      transition={{ duration: 0.4 }}
+                      className="text-center"
+                    >
+                      <h3 className="text-lg font-semibold text-gray-900 mb-1">
+                        {videos[currentVideo].title}
+                      </h3>
+                      <p className="text-sm text-gray-600">
+                        {videos[currentVideo].description}
+                      </p>
+                    </motion.div>
+                  </AnimatePresence>
+                </div>
+
+                {/* Video Content */}
                 <div className="relative z-10">
                   <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
-                    <iframe 
-                      src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fweb.facebook.com%2Freel%2F1141319817913700%2F&show_text=false&width=560&t=0" 
-                      className="absolute top-0 left-0 w-full h-full rounded-xl"
-                      style={{border:'none',overflow:'hidden'}} 
-                      scrolling="no" 
-                      frameBorder="0" 
-                      allowFullScreen={true} 
-                      allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-                    />
+                    <AnimatePresence mode="wait">
+                      <motion.div
+                        key={`video-${currentVideo}`}
+                        initial={{ opacity: 0, scale: 0.95 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        exit={{ opacity: 0, scale: 1.05 }}
+                        transition={{ duration: 0.5 }}
+                        className="absolute top-0 left-0 w-full h-full"
+                      >
+                        <iframe 
+                          src={videos[currentVideo].src}
+                          className="w-full h-full rounded-xl"
+                          style={{border:'none',overflow:'hidden'}} 
+                          scrolling="no" 
+                          frameBorder="0" 
+                          allowFullScreen={true} 
+                          allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                        />
+                      </motion.div>
+                    </AnimatePresence>
                   </div>
                 </div>
+
+                {/* Video Navigation Arrows */}
+                <button
+                  onClick={prevVideo}
+                  className="absolute left-2 top-1/2 transform -translate-y-1/2 z-20 p-2 rounded-full bg-white/90 backdrop-blur-sm text-gray-700 hover:bg-white transition-all duration-300 shadow-lg"
+                >
+                  <ChevronLeft className="w-4 h-4" />
+                </button>
+                <button
+                  onClick={nextVideo}
+                  className="absolute right-2 top-1/2 transform -translate-y-1/2 z-20 p-2 rounded-full bg-white/90 backdrop-blur-sm text-gray-700 hover:bg-white transition-all duration-300 shadow-lg"
+                >
+                  <ChevronRight className="w-4 h-4" />
+                </button>
+              </div>
+
+              {/* Video Indicators */}
+              <div className="flex justify-center mt-4 space-x-2">
+                {videos.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => goToVideo(index)}
+                    className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                      index === currentVideo 
+                        ? 'bg-orange-500 scale-125' 
+                        : 'bg-gray-400 hover:bg-gray-600'
+                    }`}
+                  />
+                ))}
               </div>
             </div>
           </motion.div>
