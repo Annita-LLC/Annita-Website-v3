@@ -37,7 +37,6 @@ const searchData: SearchResult[] = [
   { id: 'investors', title: 'Investors', description: 'Investment opportunities and company info', href: '/investors', category: 'Company', icon: FileText },
   { id: 'pricing', title: 'Pricing', description: 'Transparent pricing plans', href: '/pricing', category: 'Company', icon: FileText },
   { id: 'business-model', title: 'Business Model', description: 'Our revenue model and strategy', href: '/business-model', category: 'Company', icon: FileText },
-  { id: 'coming-soon', title: 'Coming Soon', description: 'Upcoming features and updates', href: '/coming-soon', category: 'Company', icon: FileText },
   { id: 'awards', title: 'Awards & Recognition', description: 'Our achievements and recognition', href: '/awards', category: 'Company', icon: FileText },
   { id: 'gallery', title: 'Gallery', description: 'Photos, videos, and media', href: '/gallery', category: 'Company', icon: FileText },
   { id: 'careers', title: 'Careers', description: 'Join our team', href: '/careers', category: 'Company', icon: Users },

@@ -342,7 +342,7 @@ export default function DownloadPage() {
                   <div className="relative mx-auto group">
                     <div className="relative overflow-hidden rounded-2xl shadow-2xl border-2 border-gray-100 bg-gradient-to-br from-gray-50 to-white p-2">
                       <img 
-                        src="/plain.jpg" 
+                        src="/images/DEMO-Images/plain.jpg" 
                         alt="Annita App Demo Preview" 
                         className="w-full h-auto rounded-xl transition-transform duration-300 group-hover:scale-105"
                       />

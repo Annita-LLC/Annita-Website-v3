@@ -25,7 +25,6 @@ const routeMap: Record<string, string> = {
   '/investors': 'Investors',
   '/pricing': 'Pricing',
   '/business-model': 'Business Model',
-  '/coming-soon': 'Coming Soon',
   '/awards': 'Awards & Recognition',
   '/gallery': 'Gallery',
   '/careers': 'Careers',
