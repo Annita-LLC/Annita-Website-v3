@@ -75,10 +75,10 @@ export default function DownloadPage() {
       icon: Apple,
       color: 'from-blue-500 to-purple-500',
       store: 'App Store',
-      rating: '4.8',
-      downloads: '10K+',
-      size: '45.2 MB',
-      version: '1.0.0',
+      rating: 'Pending',
+      downloads: 'Pending',
+      size: 'TBD',
+      version: 'Coming Soon',
       requirements: 'iOS 14.0 or later',
       devices: ['iPhone', 'iPad', 'iPod touch']
     },
@@ -89,10 +89,10 @@ export default function DownloadPage() {
       icon: Play,
       color: 'from-green-500 to-emerald-500',
       store: 'Google Play',
-      rating: '4.7',
-      downloads: '15K+',
-      size: '38.7 MB',
-      version: '1.0.0',
+      rating: 'Pending',
+      downloads: 'Pending',
+      size: 'TBD',
+      version: 'Coming Soon',
       requirements: 'Android 8.0 or later',
       devices: ['Smartphone', 'Tablet']
     }
@@ -108,7 +108,7 @@ export default function DownloadPage() {
     {
       icon: CreditCard,
       title: 'AnnitaPay Integration',
-      description: 'Send, receive, and manage payments with zero fees',
+      description: 'Send, receive, and manage payments with competitive rates',
       category: 'Payments'
     },
     {
@@ -174,9 +174,9 @@ export default function DownloadPage() {
   ]
 
   const appStats = [
-    { label: 'Total Downloads', value: '25K+', icon: Download, color: 'from-blue-500 to-blue-600' },
-    { label: 'Active Users', value: '18K+', icon: Users, color: 'from-green-500 to-green-600' },
-    { label: 'Average Rating', value: '4.7★', icon: Star, color: 'from-yellow-500 to-yellow-600' },
+    { label: 'Total Downloads', value: 'Pending', icon: Download, color: 'from-blue-500 to-blue-600' },
+    { label: 'Active Users', value: 'Pending', icon: Users, color: 'from-green-500 to-green-600' },
+    { label: 'Average Rating', value: 'Pending', icon: Star, color: 'from-yellow-500 to-yellow-600' },
     { label: 'Countries', value: '2', icon: Globe, color: 'from-purple-500 to-purple-600' }
   ]
 
@@ -207,8 +207,8 @@ export default function DownloadPage() {
   return (
     <>
       <SEOHead
-        title="Download Annita - Africa's All-in-One Digital Platform"
-        description="Download Annita's mobile app and access Africa's all-in-one digital platform. Secure payments, marketplace shopping, AI tools, real-time tracking, and more. Available on iOS and Android with real-time stats and ratings."
+        title="Join Annita Waitlist - Africa's All-in-One Digital Platform"
+        description="Join Annita's waitlist for early access to Africa's all-in-one digital platform. Coming soon with secure payments, marketplace shopping, AI tools, real-time tracking, and more. Be the first to experience our mobile app on iOS and Android."
         keywords={[
           'download Annita',
           'Annita mobile app',
@@ -277,50 +277,50 @@ export default function DownloadPage() {
                 transition={{ duration: 0.8 }}
                 className="text-center lg:text-left"
               >
-                <div className="inline-flex items-center px-4 py-2 rounded-full bg-orange-100 text-orange-700 text-sm font-medium mb-6">
-                  <Download className="w-4 h-4 mr-2" />
-                  Mobile App Available
-                </div>
-                
-                <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-                  Download <span className="text-orange-500">Annita</span> App
-                </h1>
-                <p className="text-lg sm:text-xl text-gray-600 mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-                  Get Africa's all-in-one digital platform on your mobile device. 
-                  Secure payments, marketplace shopping, AI tools, and real-time tracking.
-                </p>
+              <div className="inline-flex items-center px-3 sm:px-4 py-2 rounded-full bg-orange-100 text-orange-700 text-xs sm:text-sm font-medium mb-4 sm:mb-6">
+                <Download className="w-3 h-3 sm:w-4 sm:h-4 mr-2" />
+                Mobile App Coming Soon
+              </div>
+              
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight">
+                Join <span className="text-orange-500">Annita</span> Waitlist
+              </h1>
+              <p className="text-base sm:text-lg md:text-xl text-gray-600 mb-6 sm:mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                Join our waitlist for Africa's all-in-one digital platform. 
+                Coming soon with secure payments, marketplace shopping, AI tools, and real-time tracking.
+              </p>
                 
                 {/* Quick Stats */}
-                <div className="grid grid-cols-2 gap-3 sm:gap-4 mb-8">
+                <div className="grid grid-cols-2 gap-2 sm:gap-3 md:gap-4 mb-6 sm:mb-8">
                   {appStats.slice(0, 2).map((stat, index) => (
                     <motion.div
                       key={index}
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.6, delay: 0.4 + index * 0.1 }}
-                      className="bg-white/80 backdrop-blur-sm rounded-lg p-3 sm:p-4 shadow-sm border border-orange-200"
+                      className="bg-white/80 backdrop-blur-sm rounded-lg p-2 sm:p-3 md:p-4 shadow-sm border border-orange-200"
                     >
-                      <div className="text-xl sm:text-2xl font-bold text-gray-900">{stat.value}</div>
-                      <div className="text-xs sm:text-sm text-gray-600">{stat.label}</div>
+                      <div className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900">{stat.value}</div>
+                      <div className="text-xs sm:text-sm text-gray-600 leading-tight">{stat.label}</div>
                     </motion.div>
                   ))}
                 </div>
 
                 {/* CTA Buttons */}
-                <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start">
+                <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 md:gap-4 justify-center lg:justify-start">
                   <button 
                     onClick={() => setShowFeatures(true)}
-                    className="bg-orange-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-orange-700 transition-all duration-200 flex items-center justify-center shadow-lg"
+                    className="bg-orange-600 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-semibold hover:bg-orange-700 transition-all duration-200 flex items-center justify-center shadow-lg text-sm sm:text-base"
                   >
-                    <Eye className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
+                    <Eye className="w-4 h-4 mr-2" />
                     View Features
                   </button>
                   <button 
                     onClick={() => document.getElementById('download-form')?.scrollIntoView({ behavior: 'smooth' })}
-                    className="border-2 border-orange-600 text-orange-600 px-6 py-3 rounded-lg font-semibold hover:bg-orange-50 transition-all duration-200 flex items-center justify-center"
+                    className="border-2 border-orange-600 text-orange-600 px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-semibold hover:bg-orange-50 transition-all duration-200 flex items-center justify-center text-sm sm:text-base"
                   >
-                    <Download className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
-                    Download Now
+                    <Download className="w-4 h-4 mr-2" />
+                    Join Waitlist
                   </button>
                 </div>
               </motion.div>
@@ -332,26 +332,25 @@ export default function DownloadPage() {
                 transition={{ duration: 0.8, delay: 0.2 }}
                 className="relative"
               >
-                <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-6 sm:p-8 border border-orange-200 shadow-2xl">
-                  <div className="text-center mb-6">
-                    <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2">App Preview</h3>
-                    <p className="text-sm text-gray-600">Experience the future of digital commerce</p>
+                <div className="bg-white/80 backdrop-blur-sm rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 border border-orange-200 shadow-2xl">
+                  <div className="text-center mb-4 sm:mb-6">
+                    <h3 className="text-base sm:text-lg md:text-xl font-semibold text-gray-900 mb-1 sm:mb-2">App Preview</h3>
+                    <p className="text-xs sm:text-sm text-gray-600">Experience the future of digital commerce</p>
                   </div>
                   
-                  {/* Mock Phone */}
-                  <div className="relative mx-auto w-48 h-96 bg-gray-900 rounded-3xl p-2 shadow-2xl">
-                    <div className="w-full h-full bg-gradient-to-br from-orange-500 to-red-500 rounded-2xl flex flex-col items-center justify-center text-white p-4">
-                      <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mb-4">
-                        <Smartphone className="w-8 h-8" />
-                      </div>
-                      <h4 className="text-lg font-bold mb-2">Annita</h4>
-                      <p className="text-xs text-center opacity-90">All-in-One Platform</p>
-                      <div className="mt-6 space-y-2">
-                        <div className="w-20 h-2 bg-white/30 rounded-full"></div>
-                        <div className="w-16 h-2 bg-white/20 rounded-full"></div>
-                        <div className="w-24 h-2 bg-white/25 rounded-full"></div>
-                      </div>
+                  {/* Real Demo Image */}
+                  <div className="relative mx-auto group">
+                    <div className="relative overflow-hidden rounded-2xl shadow-2xl border-2 border-gray-100 bg-gradient-to-br from-gray-50 to-white p-2">
+                      <img 
+                        src="/plain.jpg" 
+                        alt="Annita App Demo Preview" 
+                        className="w-full h-auto rounded-xl transition-transform duration-300 group-hover:scale-105"
+                      />
+                      {/* Overlay gradient for depth */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent rounded-xl pointer-events-none"></div>
                     </div>
+                    {/* Decorative elements */}
+                    <div className="absolute -inset-1 bg-gradient-to-r from-orange-500/20 to-red-500/20 rounded-3xl blur-sm -z-10"></div>
                   </div>
                   
                   {/* Floating Elements */}
@@ -385,23 +384,23 @@ export default function DownloadPage() {
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8 }}
-              className="text-center mb-16"
+              className="text-center mb-12 sm:mb-16"
             >
-              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4 sm:mb-6">
                 Powerful Features for <span className="text-orange-500">Every Need</span>
               </h2>
-              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                Discover why thousands of users choose Annita for their digital needs. 
+              <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                Discover what makes Annita the perfect choice for African businesses. 
                 From secure payments to AI-powered insights, we've got you covered.
               </p>
             </motion.div>
 
             {/* Feature Categories */}
-            <div className="flex flex-wrap justify-center gap-2 mb-8">
+            <div className="flex flex-wrap justify-center gap-2 mb-6 sm:mb-8">
               {featureCategories.map((category, index) => (
                 <button
                   key={index}
-                  className="px-4 py-2 rounded-full text-sm font-medium transition-colors duration-200 bg-gray-100 text-gray-700 hover:bg-orange-100 hover:text-orange-700"
+                  className="px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-colors duration-200 bg-gray-100 text-gray-700 hover:bg-orange-100 hover:text-orange-700"
                 >
                   {category.name} ({category.count})
                 </button>
@@ -409,27 +408,27 @@ export default function DownloadPage() {
             </div>
 
             {/* Features Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-12 sm:mb-16">
               {appFeatures.map((feature, index) => (
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
                   animate={isInView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="bg-white rounded-xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300"
+                  className="bg-white rounded-xl p-4 sm:p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300"
                 >
-                  <div className="flex items-start space-x-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-500 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <feature.icon className="w-6 h-6 text-white" />
+                  <div className="flex items-start space-x-3 sm:space-x-4">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-orange-500 to-red-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <feature.icon className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                     </div>
                     <div className="flex-1 min-w-0">
-                      <div className="flex items-center justify-between mb-2">
-                        <h3 className="text-lg font-semibold text-gray-900">{feature.title}</h3>
-                        <span className="px-2 py-1 bg-orange-100 text-orange-700 rounded-full text-xs font-medium">
+                      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2 gap-1 sm:gap-2">
+                        <h3 className="text-base sm:text-lg font-semibold text-gray-900 leading-tight">{feature.title}</h3>
+                        <span className="px-2 py-1 bg-orange-100 text-orange-700 rounded-full text-xs font-medium self-start sm:self-auto">
                           {feature.category}
                         </span>
                       </div>
-                      <p className="text-sm text-gray-600 leading-relaxed">{feature.description}</p>
+                      <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">{feature.description}</p>
                     </div>
                   </div>
                 </motion.div>
@@ -441,17 +440,17 @@ export default function DownloadPage() {
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="bg-gradient-to-r from-orange-500 to-red-500 rounded-2xl p-8 text-white"
+              className="bg-gradient-to-r from-orange-500 to-red-500 rounded-2xl p-6 sm:p-8 text-white"
             >
-              <h3 className="text-2xl sm:text-3xl font-bold text-center mb-8">App Statistics</h3>
-              <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-center mb-6 sm:mb-8">App Statistics</h3>
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
                 {appStats.map((stat, index) => (
                   <div key={index} className="text-center">
-                    <div className="w-16 h-16 bg-white/20 rounded-xl flex items-center justify-center mx-auto mb-4">
-                      <stat.icon className="w-8 h-8" />
+                    <div className="w-12 h-12 sm:w-16 sm:h-16 bg-white/20 rounded-xl flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                      <stat.icon className="w-6 h-6 sm:w-8 sm:h-8" />
                     </div>
-                    <div className="text-2xl sm:text-3xl font-bold mb-2">{stat.value}</div>
-                    <div className="text-sm text-orange-100">{stat.label}</div>
+                    <div className="text-lg sm:text-2xl md:text-3xl font-bold mb-1 sm:mb-2">{stat.value}</div>
+                    <div className="text-xs sm:text-sm text-orange-100 leading-tight">{stat.label}</div>
                   </div>
                 ))}
               </div>
@@ -472,32 +471,32 @@ export default function DownloadPage() {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.8 }}
                   >
-                    <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6">
-                      Choose Your Platform
-                    </h2>
-                    <p className="text-lg text-gray-600 mb-8">
-                      Download Annita for your preferred platform and start your digital journey today.
-                    </p>
+                  <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-4 sm:mb-6">
+                    Join Our Waitlist
+                  </h2>
+                  <p className="text-base sm:text-lg text-gray-600 mb-6 sm:mb-8 leading-relaxed">
+                    Be the first to know when Annita launches. Join our waitlist for early access and exclusive updates.
+                  </p>
 
                     {/* Platform Requirements */}
-                    <div className="bg-white rounded-xl p-6 shadow-lg border border-gray-200 mb-8">
-                      <h3 className="text-lg font-semibold text-gray-900 mb-4">
+                    <div className="bg-white rounded-xl p-4 sm:p-6 shadow-lg border border-gray-200 mb-6 sm:mb-8">
+                      <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-3 sm:mb-4">
                         System Requirements
                       </h3>
-                      <div className="space-y-4">
+                      <div className="space-y-3 sm:space-y-4">
                         {platforms.map((platform, index) => (
-                          <div key={index} className="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
-                            <div className="flex items-center space-x-3">
-                              <div className={`w-10 h-10 bg-gradient-to-br ${platform.color} rounded-lg flex items-center justify-center`}>
-                                <platform.icon className="w-5 h-5 text-white" />
+                          <div key={index} className="flex items-center justify-between p-3 sm:p-4 bg-gray-50 rounded-lg">
+                            <div className="flex items-center space-x-2 sm:space-x-3">
+                              <div className={`w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br ${platform.color} rounded-lg flex items-center justify-center`}>
+                                <platform.icon className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
                               </div>
                               <div>
-                                <div className="font-medium text-gray-900">{platform.name}</div>
-                                <div className="text-sm text-gray-600">{platform.requirements}</div>
+                                <div className="text-sm sm:text-base font-medium text-gray-900">{platform.name}</div>
+                                <div className="text-xs sm:text-sm text-gray-600">{platform.requirements}</div>
                               </div>
                             </div>
                             <div className="text-right">
-                              <div className="text-sm font-medium text-gray-900">{platform.size}</div>
+                              <div className="text-xs sm:text-sm font-medium text-gray-900">{platform.size}</div>
                               <div className="text-xs text-gray-500">v{platform.version}</div>
                             </div>
                           </div>
@@ -506,42 +505,42 @@ export default function DownloadPage() {
                     </div>
 
                     {/* Key Benefits */}
-                    <div className="bg-white rounded-xl p-6 shadow-lg border border-gray-200 mb-8">
-                      <h3 className="text-lg font-semibold text-gray-900 mb-4">
-                        Why Choose Annita App?
+                    <div className="bg-white rounded-xl p-4 sm:p-6 shadow-lg border border-gray-200 mb-6 sm:mb-8">
+                      <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-3 sm:mb-4">
+                        Why Join Annita Waitlist?
                       </h3>
-                      <div className="space-y-4">
+                      <div className="space-y-3 sm:space-y-4">
                         {appFeatures.slice(0, 6).map((feature, index) => (
-                          <div key={index} className="flex items-start space-x-3">
-                            <div className="w-8 h-8 bg-gradient-to-br from-orange-500 to-red-500 rounded-lg flex items-center justify-center flex-shrink-0">
-                              <feature.icon className="w-4 h-4 text-white" />
+                          <div key={index} className="flex items-start space-x-2 sm:space-x-3">
+                            <div className="w-6 h-6 sm:w-8 sm:h-8 bg-gradient-to-br from-orange-500 to-red-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                              <feature.icon className="w-3 h-3 sm:w-4 sm:h-4 text-white" />
                             </div>
                             <div>
-                              <div className="font-medium text-gray-900 text-sm">{feature.title}</div>
-                              <div className="text-xs text-gray-600">{feature.description}</div>
+                              <div className="text-xs sm:text-sm font-medium text-gray-900 leading-tight">{feature.title}</div>
+                              <div className="text-xs text-gray-600 leading-relaxed">{feature.description}</div>
                             </div>
                           </div>
                         ))}
                       </div>
                     </div>
 
-                    {/* Contact Information */}
-                    <div className="bg-white rounded-xl p-6 shadow-lg border border-gray-200">
-                      <h3 className="text-lg font-semibold text-gray-900 mb-4">
+                  {/* Contact Information */}
+                    <div className="bg-white rounded-xl p-4 sm:p-6 shadow-lg border border-gray-200">
+                      <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-3 sm:mb-4">
                         Need Help?
                       </h3>
-                      <div className="space-y-3">
-                        <div className="flex items-center space-x-3">
-                          <Mail className="w-5 h-5 text-orange-500" />
-                          <span className="text-gray-600">annitallc@gmail.com</span>
+                      <div className="space-y-2 sm:space-y-3">
+                        <div className="flex items-center space-x-2 sm:space-x-3">
+                          <Mail className="w-4 h-4 sm:w-5 sm:h-5 text-orange-500 flex-shrink-0" />
+                          <span className="text-sm sm:text-base text-gray-600">annitallc@gmail.com</span>
                         </div>
-                        <div className="flex items-center space-x-3">
-                          <Phone className="w-5 h-5 text-orange-500" />
-                          <span className="text-gray-600">+231 77 505 7227</span>
+                        <div className="flex items-center space-x-2 sm:space-x-3">
+                          <Phone className="w-4 h-4 sm:w-5 sm:h-5 text-orange-500 flex-shrink-0" />
+                          <span className="text-sm sm:text-base text-gray-600">+231 77 505 7227</span>
                         </div>
-                        <div className="flex items-center space-x-3">
-                          <MessageSquare className="w-5 h-5 text-orange-500" />
-                          <span className="text-gray-600">Live chat available</span>
+                        <div className="flex items-center space-x-2 sm:space-x-3">
+                          <MessageSquare className="w-4 h-4 sm:w-5 sm:h-5 text-orange-500 flex-shrink-0" />
+                          <span className="text-sm sm:text-base text-gray-600">Live chat available</span>
                         </div>
                       </div>
                     </div>
@@ -556,35 +555,35 @@ export default function DownloadPage() {
                   id="download-form"
                   className="bg-white rounded-xl shadow-lg p-6 sm:p-8 border border-gray-200"
                 >
-                  <h3 className="text-xl sm:text-2xl font-semibold text-gray-900 mb-6">Download App</h3>
+                  <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-gray-900 mb-4 sm:mb-6">Join Waitlist</h3>
                   
-                  <form onSubmit={handleSubmit} className="space-y-6">
+                  <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
                     {/* Platform Selection */}
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-3">
-                        Select Platform *
+                      <label className="block text-sm font-medium text-gray-700 mb-2 sm:mb-3">
+                        Preferred Platform *
                       </label>
-                      <div className="grid grid-cols-1 gap-4">
+                      <div className="grid grid-cols-1 gap-3 sm:gap-4">
                         {platforms.map((platform) => (
                           <button
                             key={platform.id}
                             type="button"
                             onClick={() => handlePlatformSelect(platform.id)}
-                            className={`p-4 sm:p-6 rounded-xl border-2 transition-all duration-200 text-left hover:shadow-md ${
+                            className={`p-3 sm:p-4 md:p-6 rounded-xl border-2 transition-all duration-200 text-left hover:shadow-md ${
                               selectedPlatform === platform.id
                                 ? 'border-orange-500 bg-orange-50 shadow-md'
                                 : 'border-gray-200 hover:border-gray-300 bg-white'
                             }`}
                           >
                             <div className="flex items-center justify-between">
-                              <div className="flex items-center space-x-4">
-                                <div className={`w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br ${platform.color} rounded-xl flex items-center justify-center`}>
-                                  <platform.icon className="w-6 h-6 sm:w-7 sm:h-7 text-white" />
+                              <div className="flex items-center space-x-3 sm:space-x-4">
+                                <div className={`w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 bg-gradient-to-br ${platform.color} rounded-xl flex items-center justify-center`}>
+                                  <platform.icon className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-white" />
                                 </div>
                                 <div className="flex-1 min-w-0">
                                   <div className="font-semibold text-gray-900 text-sm sm:text-base">{platform.name}</div>
                                   <div className="text-xs sm:text-sm text-gray-600">{platform.description}</div>
-                                  <div className="flex items-center space-x-3 mt-2">
+                                  <div className="flex items-center space-x-2 sm:space-x-3 mt-1 sm:mt-2">
                                     <div className="flex items-center space-x-1">
                                       <Star className="w-3 h-3 sm:w-4 sm:h-4 text-yellow-500 fill-current" />
                                       <span className="text-xs text-gray-600">{platform.rating}</span>
@@ -611,39 +610,39 @@ export default function DownloadPage() {
                         required
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
-                        className="w-full px-4 py-3 sm:py-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200 text-sm sm:text-base"
+                        className="w-full px-3 sm:px-4 py-2 sm:py-3 md:py-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200 text-sm sm:text-base"
                         placeholder="your.email@example.com"
                       />
-                      <p className="text-xs sm:text-sm text-gray-500 mt-2">
-                        We'll send you the download link and keep you updated with new features
+                      <p className="text-xs sm:text-sm text-gray-500 mt-1 sm:mt-2">
+                        We'll notify you when the app launches and keep you updated with new features
                       </p>
                     </div>
 
                     {/* Download Buttons */}
                     {selectedPlatform && (
-                      <div className="space-y-4">
-                        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+                      <div className="space-y-3 sm:space-y-4">
+                        <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 md:gap-4">
                           {selectedPlatform === 'ios' && (
                             <a 
                               href="#"
-                              className="flex items-center justify-center px-4 sm:px-6 py-3 sm:py-4 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors duration-200 shadow-lg"
+                              className="flex items-center justify-center px-3 sm:px-4 md:px-6 py-2 sm:py-3 md:py-4 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors duration-200 shadow-lg"
                             >
-                              <Apple className="w-5 h-5 sm:w-6 sm:h-6 mr-2 sm:mr-3" />
+                              <Apple className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 mr-2 sm:mr-3" />
                               <div className="text-left">
                                 <div className="text-xs">Download on the</div>
-                                <div className="font-semibold text-sm sm:text-base">App Store</div>
+                                <div className="font-semibold text-xs sm:text-sm md:text-base">App Store</div>
                               </div>
                             </a>
                           )}
                           {selectedPlatform === 'android' && (
                             <a 
                               href="#"
-                              className="flex items-center justify-center px-4 sm:px-6 py-3 sm:py-4 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors duration-200 shadow-lg"
+                              className="flex items-center justify-center px-3 sm:px-4 md:px-6 py-2 sm:py-3 md:py-4 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors duration-200 shadow-lg"
                             >
-                              <Play className="w-5 h-5 sm:w-6 sm:h-6 mr-2 sm:mr-3" />
+                              <Play className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 mr-2 sm:mr-3" />
                               <div className="text-left">
                                 <div className="text-xs">GET IT ON</div>
-                                <div className="font-semibold text-sm sm:text-base">Google Play</div>
+                                <div className="font-semibold text-xs sm:text-sm md:text-base">Google Play</div>
                               </div>
                             </a>
                           )}
@@ -654,7 +653,7 @@ export default function DownloadPage() {
                     <button
                       type="submit"
                       disabled={isSubmitting || !selectedPlatform || !email}
-                      className="w-full inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-orange-500 text-white font-semibold rounded-lg hover:bg-orange-600 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 shadow-lg text-sm sm:text-base"
+                      className="w-full inline-flex items-center justify-center px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 bg-orange-500 text-white font-semibold rounded-lg hover:bg-orange-600 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 shadow-lg text-sm sm:text-base"
                     >
                       {isSubmitting ? (
                         <>
@@ -664,21 +663,21 @@ export default function DownloadPage() {
                       ) : (
                         <>
                           <Download className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
-                          Get Download Link
+                          Join Waitlist
                         </>
                       )}
                     </button>
                   </form>
 
                   {/* QR Code Section */}
-                  <div className="mt-8 pt-8 border-t border-gray-200">
-                    <h4 className="text-lg font-semibold text-gray-900 mb-4">Quick Download</h4>
+                  <div className="mt-6 sm:mt-8 pt-6 sm:pt-8 border-t border-gray-200">
+                    <h4 className="text-base sm:text-lg font-semibold text-gray-900 mb-3 sm:mb-4">Coming Soon</h4>
                     <div className="text-center">
-                      <div className="w-24 h-24 sm:w-32 sm:h-32 bg-gray-100 rounded-lg flex items-center justify-center mx-auto mb-4">
-                        <QrCode className="w-16 h-16 sm:w-20 sm:h-20 text-gray-400" />
+                      <div className="w-20 h-20 sm:w-24 sm:h-24 md:w-32 md:h-32 bg-gray-100 rounded-lg flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                        <QrCode className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 text-gray-400" />
                       </div>
                       <p className="text-xs sm:text-sm text-gray-600">
-                        Scan QR code with your phone camera to download
+                        QR code will be available when the app launches
                       </p>
                     </div>
                   </div>
@@ -707,7 +706,7 @@ export default function DownloadPage() {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4"
               >
-                Download Link Sent!
+                You're on the Waitlist!
               </motion.h2>
               
               <motion.p
@@ -716,7 +715,7 @@ export default function DownloadPage() {
                 transition={{ duration: 0.6, delay: 0.3 }}
                 className="text-gray-600 mb-8 text-sm sm:text-base"
               >
-                We've sent the download link to your email address. Check your inbox and spam folder.
+                Thank you for joining our waitlist! We'll notify you as soon as the app is available for download.
               </motion.p>
               
               <motion.div
@@ -729,15 +728,15 @@ export default function DownloadPage() {
                 <div className="space-y-4 text-left">
                   <div className="flex items-center">
                     <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center text-sm font-bold mr-4 flex-shrink-0">1</div>
-                    <span className="text-gray-600 text-sm sm:text-base">Check your email for the download link</span>
+                    <span className="text-gray-600 text-sm sm:text-base">We'll notify you when the app launches</span>
                   </div>
                   <div className="flex items-center">
                     <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center text-sm font-bold mr-4 flex-shrink-0">2</div>
-                    <span className="text-gray-600 text-sm sm:text-base">Click the link to download the app</span>
+                    <span className="text-gray-600 text-sm sm:text-base">Get early access to download the app</span>
                   </div>
                   <div className="flex items-center">
                     <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center text-sm font-bold mr-4 flex-shrink-0">3</div>
-                    <span className="text-gray-600 text-sm sm:text-base">Install and start using Annita</span>
+                    <span className="text-gray-600 text-sm sm:text-base">Be among the first to experience Annita</span>
                   </div>
                 </div>
               </motion.div>
@@ -763,7 +762,7 @@ export default function DownloadPage() {
                   }}
                   className="inline-flex items-center justify-center px-6 py-3 border-2 border-orange-500 text-orange-500 font-semibold rounded-lg hover:bg-orange-50 transition-colors duration-200 text-sm sm:text-base"
                 >
-                  Download Another
+                  Join Another Waitlist
                 </button>
               </motion.div>
             </div>
@@ -786,8 +785,8 @@ export default function DownloadPage() {
                 Ready to Transform Your Business?
               </h3>
               <p className="text-orange-100 mb-6 sm:mb-8 max-w-2xl mx-auto text-sm sm:text-base lg:text-lg leading-relaxed">
-                Join thousands of MSMEs already using Annita to grow their revenue, reach new customers, 
-                and streamline their operations across Africa.
+                Join our waitlist and be among the first to experience Annita's all-in-one platform 
+                designed specifically for African businesses.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
                 <a 
@@ -795,7 +794,7 @@ export default function DownloadPage() {
                   className="inline-flex items-center justify-center bg-white text-orange-600 px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold hover:bg-orange-50 transition-colors duration-200 shadow-lg text-sm sm:text-base"
                 >
                   <Download className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
-                  Download App
+                  Join Waitlist
                 </a>
                 <a 
                   href="/contact-sales"

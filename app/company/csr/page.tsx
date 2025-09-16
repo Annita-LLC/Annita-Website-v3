@@ -559,11 +559,11 @@ const CSRPage = () => {
                               <div className="flex flex-col sm:flex-row sm:items-center gap-2 mb-2">
                                 <h3 className="text-base sm:text-lg lg:text-xl font-semibold text-gray-900 leading-tight">{initiative.title}</h3>
                                 <span className={`px-2 py-1 rounded-full text-xs font-medium whitespace-nowrap ${
-                                  initiative.status === 'Active' ? 'bg-green-100 text-green-700' : 'bg-orange-100 text-orange-700'
-                                }`}>
-                                  {initiative.status}
-                                </span>
-                              </div>
+                              initiative.status === 'Active' ? 'bg-green-100 text-green-700' : 'bg-orange-100 text-orange-700'
+                            }`}>
+                              {initiative.status}
+                            </span>
+                          </div>
                               <p className="text-gray-700 text-sm sm:text-base mb-3 leading-relaxed">{initiative.description}</p>
                             </div>
                             <button
@@ -822,15 +822,15 @@ const CSRPage = () => {
                     >
                       <Users2 className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
                       CSR Partnership
-                    </button>
+                  </button>
                     <button 
                       onClick={() => window.open('/contact-us?subject=CSR%20Donation%20Inquiry', '_blank')}
                       className="border-2 border-white text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold hover:bg-white hover:text-orange-600 transition-all duration-200 flex items-center justify-center text-sm sm:text-base"
                     >
                       <Heart className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
-                      Support Our Mission
-                    </button>
-                  </div>
+                    Support Our Mission
+                  </button>
+                </div>
               </motion.div>
 
                 {/* Right Column - Contact Options */}

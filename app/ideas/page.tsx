@@ -323,23 +323,23 @@ const IdeasPage = () => {
             <div className="max-w-6xl mx-auto">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 {/* Left Column - Main Content */}
-                <motion.div
+              <motion.div
                   initial={{ opacity: 0, x: -30 }}
                   animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.8 }}
+                transition={{ duration: 0.8 }}
                   className="text-center lg:text-left"
-                >
+              >
                   <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/20 backdrop-blur-sm text-white text-sm font-medium mb-6">
-                    <Lightbulb className="w-4 h-4 mr-2" />
-                    Your Voice Matters
-                  </div>
+                  <Lightbulb className="w-4 h-4 mr-2" />
+                  Your Voice Matters
+                </div>
                   <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 leading-tight">
-                    Ideas & <span className="text-orange-200">Recommendations</span>
-                  </h1>
+                  Ideas & <span className="text-orange-200">Recommendations</span>
+                </h1>
                   <p className="text-lg sm:text-xl text-orange-100 max-w-2xl mx-auto lg:mx-0 leading-relaxed mb-8">
-                    Help shape the future of Annita! Share your ideas, suggestions, and feedback. 
-                    Together, we can build something amazing for Africa.
-                  </p>
+                  Help shape the future of Annita! Share your ideas, suggestions, and feedback. 
+                  Together, we can build something amazing for Africa.
+                </p>
                   
                   {/* Quick Stats */}
                   <div className="grid grid-cols-2 gap-4 mb-8">
@@ -370,7 +370,7 @@ const IdeasPage = () => {
                       Browse Ideas
                     </button>
                   </div>
-                </motion.div>
+              </motion.div>
 
                 {/* Right Column - Interactive Elements */}
                 <motion.div
@@ -400,27 +400,27 @@ const IdeasPage = () => {
         <div className="sticky top-0 z-40 bg-white/95 backdrop-blur-sm border-b border-gray-200 shadow-sm">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-center justify-between">
-              <nav className="flex space-x-1 overflow-x-auto">
-                {[
-                  { id: 'submit', label: 'Submit Idea', icon: Plus },
-                  { id: 'browse', label: 'Browse Ideas', icon: Eye },
+            <nav className="flex space-x-1 overflow-x-auto">
+              {[
+                { id: 'submit', label: 'Submit Idea', icon: Plus },
+                { id: 'browse', label: 'Browse Ideas', icon: Eye },
                   { id: 'status', label: 'Implementation Status', icon: Clock },
                   { id: 'analytics', label: 'Analytics', icon: BarChart3 }
-                ].map((tab) => (
-                  <button
-                    key={tab.id}
-                    onClick={() => setActiveTab(tab.id)}
-                    className={`px-4 py-3 text-sm font-medium whitespace-nowrap transition-colors duration-200 flex items-center space-x-2 ${
-                      activeTab === tab.id
-                        ? 'text-orange-600 border-b-2 border-orange-600 bg-orange-50'
-                        : 'text-gray-600 hover:text-orange-600 hover:bg-orange-50'
-                    }`}
-                  >
-                    <tab.icon className="w-4 h-4" />
-                    <span>{tab.label}</span>
-                  </button>
-                ))}
-              </nav>
+              ].map((tab) => (
+                <button
+                  key={tab.id}
+                  onClick={() => setActiveTab(tab.id)}
+                  className={`px-4 py-3 text-sm font-medium whitespace-nowrap transition-colors duration-200 flex items-center space-x-2 ${
+                    activeTab === tab.id
+                      ? 'text-orange-600 border-b-2 border-orange-600 bg-orange-50'
+                      : 'text-gray-600 hover:text-orange-600 hover:bg-orange-50'
+                  }`}
+                >
+                  <tab.icon className="w-4 h-4" />
+                  <span>{tab.label}</span>
+                </button>
+              ))}
+            </nav>
               
               {/* View Controls */}
               {activeTab === 'browse' && (
@@ -853,7 +853,7 @@ const IdeasPage = () => {
                       </div>
                     ) : (
                       <div className={viewMode === 'grid' ? 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6' : 'space-y-4'}>
-                        {sortedIdeas.map((idea, index) => (
+                      {sortedIdeas.map((idea, index) => (
                         <motion.div
                           key={idea.id}
                           initial={{ opacity: 0, y: 20 }}
@@ -871,14 +871,14 @@ const IdeasPage = () => {
                                   <div className="flex-1 min-w-0">
                                     <div className="flex items-center space-x-2 mb-1">
                                       <h3 className="text-lg font-semibold text-gray-900 truncate">{idea.title}</h3>
-                                      <span className={`px-2 py-1 rounded-full text-xs font-medium ${getStatusColor(idea.status)}`}>
-                                        {idea.status.replace('-', ' ')}
-                                      </span>
-                                    </div>
+                                  <span className={`px-2 py-1 rounded-full text-xs font-medium ${getStatusColor(idea.status)}`}>
+                                    {idea.status.replace('-', ' ')}
+                                  </span>
+                                </div>
                                     <div className="flex items-center space-x-2 text-sm text-gray-500 mb-2">
-                                      <span>By {idea.author}</span>
-                                      <span>•</span>
-                                      <span>{new Date(idea.date).toLocaleDateString()}</span>
+                                  <span>By {idea.author}</span>
+                                  <span>•</span>
+                                  <span>{new Date(idea.date).toLocaleDateString()}</span>
                                     </div>
                                   </div>
                                 </div>
@@ -890,7 +890,7 @@ const IdeasPage = () => {
                                   {idea.tags?.slice(0, 3).map((tag, idx) => (
                                     <span key={idx} className="px-2 py-1 bg-gray-100 text-gray-600 rounded-full text-xs">
                                       #{tag}
-                                    </span>
+                                  </span>
                                   ))}
                                   {idea.tags?.length > 3 && (
                                     <span className="px-2 py-1 bg-gray-100 text-gray-600 rounded-full text-xs">
@@ -904,7 +904,7 @@ const IdeasPage = () => {
                                   <div className="text-center p-2 bg-gray-50 rounded-lg">
                                     <div className="text-lg font-bold text-orange-600">{idea.votes}</div>
                                     <div className="text-xs text-gray-500">Votes</div>
-                                  </div>
+                              </div>
                                   <div className="text-center p-2 bg-gray-50 rounded-lg">
                                     <div className="text-lg font-bold text-blue-600">{idea.comments}</div>
                                     <div className="text-xs text-gray-500">Comments</div>
@@ -954,16 +954,16 @@ const IdeasPage = () => {
                                   <Share2 className="w-4 h-4" />
                                 </button>
                               </div>
-                              <button
-                                onClick={() => toggleIdea(idea.id)}
-                                className="p-2 text-gray-400 hover:text-gray-600 transition-colors duration-200"
-                              >
-                                {expandedIdea === idea.id ? (
-                                  <ChevronUp className="w-4 h-4" />
-                                ) : (
-                                  <ChevronDown className="w-4 h-4" />
-                                )}
-                              </button>
+                                <button
+                                  onClick={() => toggleIdea(idea.id)}
+                                  className="p-2 text-gray-400 hover:text-gray-600 transition-colors duration-200"
+                                >
+                                  {expandedIdea === idea.id ? (
+                                    <ChevronUp className="w-4 h-4" />
+                                  ) : (
+                                    <ChevronDown className="w-4 h-4" />
+                                  )}
+                                </button>
                             </div>
                             
                             <AnimatePresence>
@@ -990,7 +990,7 @@ const IdeasPage = () => {
                                       <div>
                                         <h4 className="font-medium text-gray-900 mb-1">Budget</h4>
                                         <p className="text-sm text-gray-600">{idea.budget}</p>
-                                      </div>
+                                    </div>
                                       <div>
                                         <h4 className="font-medium text-gray-900 mb-1">Timeline</h4>
                                         <p className="text-sm text-gray-600">{idea.timeline}</p>
@@ -1035,7 +1035,7 @@ const IdeasPage = () => {
                             </AnimatePresence>
                           </div>
                         </motion.div>
-                        ))}
+                      ))}
                       </div>
                     )}
                   </div>
@@ -1229,7 +1229,7 @@ const IdeasPage = () => {
                     <div className="text-center py-12">
                       <div className="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-6">
                         <CheckCircle className="w-10 h-10 text-gray-400" />
-                      </div>
+                          </div>
                       <h4 className="text-lg font-medium text-gray-900 mb-2">No Implementations Yet</h4>
                       <p className="text-gray-600 mb-6 max-w-md mx-auto">
                         Once ideas are submitted and implemented, they'll appear here. Be the first to submit an idea!
@@ -1262,37 +1262,37 @@ const IdeasPage = () => {
             <div className="max-w-6xl mx-auto">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 {/* Left Column - Main CTA */}
-                <motion.div
+              <motion.div
                   initial={{ opacity: 0, x: -30 }}
                   animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.8 }}
+                transition={{ duration: 0.8 }}
                   className="text-center lg:text-left"
-                >
+              >
                   <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 leading-tight">
                     Together, We Build the <span className="text-orange-200">Future</span>
-                  </h2>
+                </h2>
                   <p className="text-lg sm:text-xl text-orange-100 mb-8 leading-relaxed">
-                    Your ideas and feedback are the foundation of our innovation. 
-                    Join our community of thinkers, creators, and changemakers.
-                  </p>
+                  Your ideas and feedback are the foundation of our innovation. 
+                  Join our community of thinkers, creators, and changemakers.
+                </p>
                   
                   <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                    <button 
-                      onClick={() => setActiveTab('submit')}
+                  <button 
+                    onClick={() => setActiveTab('submit')}
                       className="bg-white text-orange-600 px-8 py-4 rounded-lg font-semibold hover:bg-orange-50 transition-all duration-200 flex items-center justify-center shadow-lg hover:shadow-xl"
-                    >
-                      <Plus className="w-5 h-5 mr-2" />
-                      Submit Your Idea
-                    </button>
-                    <button 
-                      onClick={() => setActiveTab('browse')}
+                  >
+                    <Plus className="w-5 h-5 mr-2" />
+                    Submit Your Idea
+                  </button>
+                  <button 
+                    onClick={() => setActiveTab('browse')}
                       className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-orange-600 transition-all duration-200 flex items-center justify-center"
-                    >
-                      <Eye className="w-5 h-5 mr-2" />
-                      Browse Ideas
-                    </button>
-                  </div>
-                </motion.div>
+                  >
+                    <Eye className="w-5 h-5 mr-2" />
+                    Browse Ideas
+                  </button>
+                </div>
+              </motion.div>
 
                 {/* Right Column - Community Stats */}
                 <motion.div

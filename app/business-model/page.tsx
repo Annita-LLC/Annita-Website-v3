@@ -344,18 +344,18 @@ export default function BusinessModelPage() {
                 transition={{ duration: 0.8 }}
                 className="text-center lg:text-left"
               >
-                <div className="inline-flex items-center px-4 py-2 rounded-full bg-orange-100 text-orange-700 text-sm font-medium mb-6">
-                  <TrendingUp className="w-4 h-4 mr-2" />
-                  Advanced Business Model
-                </div>
-                
+              <div className="inline-flex items-center px-4 py-2 rounded-full bg-orange-100 text-orange-700 text-sm font-medium mb-6">
+                <TrendingUp className="w-4 h-4 mr-2" />
+                Advanced Business Model
+              </div>
+              
                 <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-                  Our Revenue <span className="text-orange-500">Strategy</span>
-                </h1>
+                Our Revenue <span className="text-orange-500">Strategy</span>
+              </h1>
                 <p className="text-lg sm:text-xl text-gray-600 mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-                  Annita Advanced Payment & Revenue System with AI-powered logistics 
-                  and flexible vendor models for sustainable growth.
-                </p>
+                Annita Advanced Payment & Revenue System with AI-powered logistics 
+                and flexible vendor models for sustainable growth.
+              </p>
                 
                 {/* Quick Stats */}
                 <div className="grid grid-cols-2 gap-3 sm:gap-4 mb-8">
@@ -575,95 +575,95 @@ export default function BusinessModelPage() {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.8 }}
                   >
-                    <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6">
+                  <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6">
                       Business Model Options
-                    </h2>
-                    <p className="text-lg text-gray-600 mb-8">
-                      Choose the revenue model that best fits your business strategy and growth plans.
-                    </p>
+                  </h2>
+                  <p className="text-lg text-gray-600 mb-8">
+                    Choose the revenue model that best fits your business strategy and growth plans.
+                  </p>
 
-                    {/* Business Models */}
-                    <div className="space-y-6">
-                      {businessModels.map((model) => (
-                        <button
-                          key={model.id}
-                          onClick={() => handleModelSelect(model.id)}
+                  {/* Business Models */}
+                  <div className="space-y-6">
+                    {businessModels.map((model) => (
+                      <button
+                        key={model.id}
+                        onClick={() => handleModelSelect(model.id)}
                           className={`w-full p-4 sm:p-6 rounded-xl border-2 transition-all duration-200 text-left hover:shadow-md ${
-                            selectedModel === model.id
+                          selectedModel === model.id
                               ? 'border-orange-500 bg-orange-50 shadow-md'
-                              : 'border-gray-200 hover:border-gray-300 bg-white'
-                          }`}
-                        >
-                          <div className="flex items-center space-x-4 mb-4">
+                            : 'border-gray-200 hover:border-gray-300 bg-white'
+                        }`}
+                      >
+                        <div className="flex items-center space-x-4 mb-4">
                             <div className={`w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br ${model.color} rounded-xl flex items-center justify-center`}>
                               <model.icon className="w-6 h-6 sm:w-7 sm:h-7 text-white" />
-                            </div>
+                          </div>
                             <div className="flex-1 min-w-0">
                               <h3 className="text-lg sm:text-xl font-bold text-gray-900">{model.name}</h3>
-                              <p className="text-sm text-gray-600">{model.description}</p>
-                            </div>
+                            <p className="text-sm text-gray-600">{model.description}</p>
                           </div>
-                          
-                          <div className="space-y-3">
-                            <div>
+                        </div>
+                        
+                        <div className="space-y-3">
+                          <div>
                               <h4 className="font-semibold text-gray-900 mb-2 text-sm sm:text-base">Key Features:</h4>
-                              <ul className="space-y-1">
-                                {model.features.map((feature, index) => (
+                            <ul className="space-y-1">
+                              {model.features.map((feature, index) => (
                                   <li key={index} className="flex items-center text-xs sm:text-sm text-gray-600">
                                     <CheckCircle className="w-3 h-3 sm:w-4 sm:h-4 text-green-500 mr-2 flex-shrink-0" />
-                                    {feature}
-                                  </li>
-                                ))}
-                              </ul>
-                            </div>
-                            <div className="bg-gray-50 p-3 rounded-lg">
+                                  {feature}
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                          <div className="bg-gray-50 p-3 rounded-lg">
                               <p className="text-xs sm:text-sm font-medium text-gray-700 mb-1">Example:</p>
                               <p className="text-xs sm:text-sm text-gray-600">{model.example}</p>
                             </div>
-                          </div>
-                        </button>
-                      ))}
-                    </div>
+                        </div>
+                      </button>
+                    ))}
+                  </div>
 
-                    {/* Payment Flow */}
+                  {/* Payment Flow */}
                     <div className="mt-8 bg-white rounded-xl p-4 sm:p-6 shadow-lg border border-gray-200">
-                      <h3 className="text-lg font-semibold text-gray-900 mb-4">
-                        Payment Flow Process
-                      </h3>
-                      <div className="space-y-4">
-                        {paymentFlowSteps.map((step) => (
-                          <div key={step.step} className="flex items-start space-x-3">
-                            <div className={`w-8 h-8 ${step.bgColor} rounded-full flex items-center justify-center flex-shrink-0`}>
-                              <span className={`text-sm font-bold ${step.color}`}>{step.step}</span>
-                            </div>
+                    <h3 className="text-lg font-semibold text-gray-900 mb-4">
+                      Payment Flow Process
+                    </h3>
+                    <div className="space-y-4">
+                      {paymentFlowSteps.map((step) => (
+                        <div key={step.step} className="flex items-start space-x-3">
+                          <div className={`w-8 h-8 ${step.bgColor} rounded-full flex items-center justify-center flex-shrink-0`}>
+                            <span className={`text-sm font-bold ${step.color}`}>{step.step}</span>
+                          </div>
                             <div className="flex-1 min-w-0">
                               <h4 className="font-medium text-gray-900 text-sm sm:text-base">{step.title}</h4>
                               <p className="text-xs sm:text-sm text-gray-600">{step.description}</p>
                             </div>
-                          </div>
-                        ))}
-                      </div>
+                        </div>
+                      ))}
                     </div>
+                  </div>
 
-                    {/* Key Benefits */}
+                  {/* Key Benefits */}
                     <div className="mt-8 bg-white rounded-xl p-4 sm:p-6 shadow-lg border border-gray-200">
-                      <h3 className="text-lg font-semibold text-gray-900 mb-4">
-                        Key Benefits
-                      </h3>
+                    <h3 className="text-lg font-semibold text-gray-900 mb-4">
+                      Key Benefits
+                    </h3>
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
-                        <div className="flex items-center space-x-3">
+                      <div className="flex items-center space-x-3">
                           <Shield className="w-4 h-4 sm:w-5 sm:h-5 text-green-500 flex-shrink-0" />
                           <span className="text-xs sm:text-sm text-gray-600">Maximum trust for customers</span>
-                        </div>
-                        <div className="flex items-center space-x-3">
+                      </div>
+                      <div className="flex items-center space-x-3">
                           <DollarSign className="w-4 h-4 sm:w-5 sm:h-5 text-green-500 flex-shrink-0" />
                           <span className="text-xs sm:text-sm text-gray-600">Fair and timely vendor payout</span>
-                        </div>
-                        <div className="flex items-center space-x-3">
+                      </div>
+                      <div className="flex items-center space-x-3">
                           <Truck className="w-4 h-4 sm:w-5 sm:h-5 text-green-500 flex-shrink-0" />
                           <span className="text-xs sm:text-sm text-gray-600">Real-time logistics commission</span>
-                        </div>
-                        <div className="flex items-center space-x-3">
+                      </div>
+                      <div className="flex items-center space-x-3">
                           <Lock className="w-4 h-4 sm:w-5 sm:h-5 text-green-500 flex-shrink-0" />
                           <span className="text-xs sm:text-sm text-gray-600">Protection from fraud</span>
                         </div>
