@@ -76,6 +76,34 @@ import {
   Grid3X3
 } from 'lucide-react'
 
+interface Idea {
+  id: number
+  title: string
+  description: string
+  detailedDescription: string
+  category: string
+  impact: string
+  votes: number
+  comments: number
+  status: string
+  author: string
+  authorAvatar: string
+  date: string
+  targetAudience: string
+  tags: string[]
+  estimatedEffort: string
+  businessValue: string
+  technicalFeasibility: string
+  priority: string
+  progress: number
+  budget: string
+  timeline: string
+  team: string[]
+  attachments: string[]
+  location: string
+  relatedIdeas: number[]
+}
+
 const IdeasPage = () => {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true })
@@ -126,7 +154,7 @@ const IdeasPage = () => {
   ]
 
   // Ideas data (will be populated as users submit ideas)
-  const [ideas, setIdeas] = useState([])
+  const [ideas, setIdeas] = useState<Idea[]>([])
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value })
