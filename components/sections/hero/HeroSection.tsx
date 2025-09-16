@@ -124,6 +124,13 @@ const HeroSection = () => {
     return () => clearInterval(interval)
   }, [slides.length])
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentVideo((prev) => (prev + 1) % videos.length)
+    }, 3000)
+    return () => clearInterval(interval)
+  }, [videos.length])
+
   const goToSlide = (index: number) => {
     setCurrentSlide(index)
   }

@@ -2,13 +2,15 @@
 
 import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 import SEOHead from '@/components/seo/SEOHead'
 import { Cookie, Shield, Settings, Eye, Clock, Globe, Mail, Phone } from 'lucide-react'
+import CookieSettingsManager from '@/components/ui/CookieSettingsManager'
 
 const CookiesPage = () => {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true })
+  const [isCookieSettingsOpen, setIsCookieSettingsOpen] = useState(false)
 
   const lastUpdated = "March 15, 2024"
   const effectiveDate = "March 15, 2024"
@@ -294,6 +296,20 @@ const CookiesPage = () => {
                     <Settings className="w-8 h-8 text-orange-500" />
                     Managing Your Cookie Preferences
                   </h2>
+                  
+                  {/* Cookie Settings Button */}
+                  <div className="mb-6">
+                    <button
+                      onClick={() => setIsCookieSettingsOpen(true)}
+                      className="bg-orange-600 hover:bg-orange-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors duration-200 flex items-center gap-2"
+                    >
+                      <Settings className="w-5 h-5" />
+                      Open Cookie Settings
+                    </button>
+                    <p className="text-sm text-gray-600 mt-2">
+                      Click the button above to customize your cookie preferences and manage which types of cookies you want to allow.
+                    </p>
+                  </div>
                   <div className="space-y-6">
                     <div>
                       <h3 className="text-xl font-semibold text-gray-900 mb-3">Browser Settings</h3>
@@ -401,6 +417,12 @@ const CookiesPage = () => {
         </div>
       </section>
     </div>
+
+    {/* Cookie Settings Manager */}
+    <CookieSettingsManager
+      isOpen={isCookieSettingsOpen}
+      onClose={() => setIsCookieSettingsOpen(false)}
+    />
     </>
   )
 }

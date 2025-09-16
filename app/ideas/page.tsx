@@ -125,144 +125,8 @@ const IdeasPage = () => {
     { value: 'critical', label: 'Critical', description: 'Essential for success' }
   ]
 
-  // Sample ideas data (in a real app, this would come from a database)
-  const [ideas, setIdeas] = useState([
-    {
-      id: 1,
-      title: "Mobile App for The 100 Program",
-      description: "Create a dedicated mobile app for The 100 program participants to track their progress, access resources, and connect with mentors.",
-      detailedDescription: "This comprehensive mobile application would provide participants with personalized dashboards, progress tracking, resource libraries, mentor matching, and community features. The app would include offline capabilities for areas with limited connectivity.",
-      category: "features",
-      impact: "high",
-      votes: 45,
-      comments: 12,
-      status: "under-review",
-      author: "Sarah M.",
-      authorAvatar: "/images/avatars/sarah.jpg",
-      date: "2024-01-15",
-      targetAudience: "Program participants",
-      tags: ["mobile", "education", "mentorship", "tracking"],
-      estimatedEffort: "high",
-      businessValue: "high",
-      technicalFeasibility: "medium",
-      priority: "high",
-      progress: 25,
-      budget: "$150,000",
-      timeline: "6 months",
-      team: ["Mobile Dev", "UX Designer", "Backend Dev"],
-      attachments: ["mockup1.jpg", "requirements.pdf"],
-      location: "Monrovia, Liberia",
-      relatedIdeas: [2, 4]
-    },
-    {
-      id: 2,
-      title: "AI-Powered Business Plan Generator",
-      description: "Develop an AI tool that helps entrepreneurs create comprehensive business plans based on their industry and goals.",
-      detailedDescription: "An intelligent system that uses machine learning to analyze market data, industry trends, and user inputs to generate professional business plans. Includes financial projections, market analysis, and competitive intelligence.",
-      category: "features",
-      impact: "high",
-      votes: 38,
-      comments: 8,
-      status: "planned",
-      author: "Michael K.",
-      authorAvatar: "/images/avatars/michael.jpg",
-      date: "2024-01-12",
-      targetAudience: "Entrepreneurs",
-      tags: ["AI", "business", "automation", "planning"],
-      estimatedEffort: "high",
-      businessValue: "high",
-      technicalFeasibility: "medium",
-      priority: "medium",
-      progress: 10,
-      budget: "$200,000",
-      timeline: "8 months",
-      team: ["AI Engineer", "Data Scientist", "Business Analyst"],
-      attachments: ["prototype.mp4", "research.pdf"],
-      location: "Lagos, Nigeria",
-      relatedIdeas: [1, 3]
-    },
-    {
-      id: 3,
-      title: "Rural Connectivity Initiative",
-      description: "Partner with telecom companies to improve internet connectivity in rural areas to support digital commerce.",
-      detailedDescription: "A comprehensive partnership program to deploy satellite internet, mobile hotspots, and community internet centers in underserved rural areas across West Africa.",
-      category: "partnerships",
-      impact: "critical",
-      votes: 52,
-      comments: 15,
-      status: "in-progress",
-      author: "Grace W.",
-      authorAvatar: "/images/avatars/grace.jpg",
-      date: "2024-01-10",
-      targetAudience: "Rural communities",
-      tags: ["connectivity", "rural", "partnership", "infrastructure"],
-      estimatedEffort: "critical",
-      businessValue: "critical",
-      technicalFeasibility: "medium",
-      priority: "critical",
-      progress: 60,
-      budget: "$2,000,000",
-      timeline: "18 months",
-      team: ["Partnership Manager", "Technical Lead", "Community Manager"],
-      attachments: ["proposal.pdf", "map.jpg"],
-      location: "West Africa",
-      relatedIdeas: [2, 5]
-    },
-    {
-      id: 4,
-      title: "Women Entrepreneurship Focus Group",
-      description: "Create a dedicated support group and resources specifically for women entrepreneurs in our platform.",
-      detailedDescription: "A comprehensive program including mentorship networks, funding opportunities, skill development workshops, and networking events specifically designed for women entrepreneurs.",
-      category: "community",
-      impact: "high",
-      votes: 41,
-      comments: 20,
-      status: "implemented",
-      author: "Aisha B.",
-      authorAvatar: "/images/avatars/aisha.jpg",
-      date: "2024-01-08",
-      targetAudience: "Women entrepreneurs",
-      tags: ["women", "entrepreneurship", "community", "mentorship"],
-      estimatedEffort: "medium",
-      businessValue: "high",
-      technicalFeasibility: "high",
-      priority: "high",
-      progress: 100,
-      budget: "$75,000",
-      timeline: "4 months",
-      team: ["Community Manager", "Program Coordinator", "Marketing Specialist"],
-      attachments: ["program-guide.pdf", "testimonials.mp4"],
-      location: "Pan-African",
-      relatedIdeas: [1, 5]
-    },
-    {
-      id: 5,
-      title: "Offline Mode Improvements",
-      description: "Enhance the offline functionality to allow more features to work without internet connection.",
-      detailedDescription: "Implement advanced offline capabilities including data synchronization, offline-first architecture, and progressive web app features to serve users in areas with unreliable internet.",
-      category: "improvements",
-      impact: "medium",
-      votes: 29,
-      comments: 6,
-      status: "under-review",
-      author: "David L.",
-      authorAvatar: "/images/avatars/david.jpg",
-      date: "2024-01-05",
-      targetAudience: "All users",
-      tags: ["offline", "performance", "accessibility", "PWA"],
-      estimatedEffort: "medium",
-      businessValue: "medium",
-      technicalFeasibility: "high",
-      priority: "medium",
-      progress: 15,
-      budget: "$50,000",
-      timeline: "3 months",
-      team: ["Frontend Dev", "Backend Dev", "QA Engineer"],
-      attachments: ["technical-spec.pdf"],
-      location: "Global",
-      relatedIdeas: [1, 3]
-    }
-  ])
+  // Ideas data (will be populated as users submit ideas)
+  const [ideas, setIdeas] = useState([])
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value })
@@ -452,11 +316,11 @@ const IdeasPage = () => {
                   {/* Quick Stats */}
                   <div className="grid grid-cols-2 gap-4 mb-8">
                     <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
-                      <div className="text-2xl font-bold">{ideas.length}</div>
+                      <div className="text-2xl font-bold">0</div>
                       <div className="text-sm text-orange-200">Ideas Submitted</div>
                     </div>
                     <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
-                      <div className="text-2xl font-bold">{ideas.reduce((sum, idea) => sum + idea.votes, 0)}</div>
+                      <div className="text-2xl font-bold">0</div>
                       <div className="text-sm text-orange-200">Total Votes</div>
                     </div>
                   </div>
@@ -490,34 +354,12 @@ const IdeasPage = () => {
                   {/* Ideas Overview */}
                   <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
                     <h3 className="text-xl font-semibold mb-4 text-center">Community Ideas</h3>
-                    <div className="space-y-4">
-                      {ideas.slice(0, 3).map((idea, index) => (
-                        <motion.div
-                          key={idea.id}
-                          initial={{ opacity: 0, y: 20 }}
-                          animate={{ opacity: 1, y: 0 }}
-                          transition={{ duration: 0.6, delay: 0.4 + index * 0.1 }}
-                          className="flex items-center justify-between p-3 bg-white/10 rounded-lg"
-                        >
-                          <div className="flex items-center space-x-3">
-                            <div className="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center">
-                              <Lightbulb className="w-4 h-4" />
-                            </div>
-                            <div>
-                              <div className="text-sm font-medium">{idea.title}</div>
-                              <div className="text-xs text-orange-200">{idea.votes} votes</div>
-                            </div>
-                          </div>
-                          <div className={`px-2 py-1 rounded-full text-xs font-medium ${
-                            idea.status === 'implemented' ? 'bg-green-100 text-green-700' :
-                            idea.status === 'in-progress' ? 'bg-blue-100 text-blue-700' :
-                            idea.status === 'planned' ? 'bg-purple-100 text-purple-700' :
-                            'bg-yellow-100 text-yellow-700'
-                          }`}>
-                            {idea.status.replace('-', ' ')}
-                          </div>
-                        </motion.div>
-                      ))}
+                    <div className="text-center py-8">
+                      <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <Lightbulb className="w-8 h-8 text-orange-200" />
+                      </div>
+                      <p className="text-orange-200 text-sm mb-2">No ideas submitted yet</p>
+                      <p className="text-orange-100 text-xs">Be the first to share your idea!</p>
                     </div>
                   </div>
                 </motion.div>
@@ -964,8 +806,26 @@ const IdeasPage = () => {
                     </div>
 
                     {/* Ideas List/Grid */}
-                    <div className={viewMode === 'grid' ? 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6' : 'space-y-4'}>
-                      {sortedIdeas.map((idea, index) => (
+                    {sortedIdeas.length === 0 ? (
+                      <div className="text-center py-16">
+                        <div className="w-24 h-24 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                          <Lightbulb className="w-12 h-12 text-orange-600" />
+                        </div>
+                        <h3 className="text-2xl font-bold text-gray-900 mb-4">No Ideas Yet</h3>
+                        <p className="text-gray-600 mb-8 max-w-md mx-auto">
+                          Be the first to share your brilliant idea! Your suggestions help us improve and innovate for the benefit of all our users.
+                        </p>
+                        <button 
+                          onClick={() => setActiveTab('submit')}
+                          className="bg-orange-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-orange-700 transition-colors duration-200 flex items-center justify-center mx-auto"
+                        >
+                          <Plus className="w-5 h-5 mr-2" />
+                          Submit Your First Idea
+                        </button>
+                      </div>
+                    ) : (
+                      <div className={viewMode === 'grid' ? 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6' : 'space-y-4'}>
+                        {sortedIdeas.map((idea, index) => (
                         <motion.div
                           key={idea.id}
                           initial={{ opacity: 0, y: 20 }}
@@ -1147,8 +1007,9 @@ const IdeasPage = () => {
                             </AnimatePresence>
                           </div>
                         </motion.div>
-                      ))}
-                    </div>
+                        ))}
+                      </div>
+                    )}
                   </div>
                 </motion.div>
               )}
@@ -1173,9 +1034,9 @@ const IdeasPage = () => {
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
                     {[
                       { title: 'Total Ideas', value: ideas.length, icon: Lightbulb, color: 'orange' },
-                      { title: 'Total Votes', value: ideas.reduce((sum, idea) => sum + idea.votes, 0), icon: ThumbsUp, color: 'blue' },
-                      { title: 'Total Comments', value: ideas.reduce((sum, idea) => sum + idea.comments, 0), icon: MessageSquare, color: 'green' },
-                      { title: 'Implementation Rate', value: '24%', icon: CheckCircle, color: 'purple' }
+                      { title: 'Total Votes', value: ideas.length > 0 ? ideas.reduce((sum, idea) => sum + idea.votes, 0) : 0, icon: ThumbsUp, color: 'blue' },
+                      { title: 'Total Comments', value: ideas.length > 0 ? ideas.reduce((sum, idea) => sum + idea.comments, 0) : 0, icon: MessageSquare, color: 'green' },
+                      { title: 'Implementation Rate', value: '0%', icon: CheckCircle, color: 'purple' }
                     ].map((stat, index) => (
                       <motion.div
                         key={stat.title}
@@ -1207,62 +1068,80 @@ const IdeasPage = () => {
                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                     <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-100">
                       <h3 className="text-lg font-semibold text-gray-900 mb-4">Ideas by Category</h3>
-                      <div className="space-y-3">
-                        {categories.slice(1).map((category) => {
-                          const count = ideas.filter(idea => idea.category === category.id).length
-                          const percentage = (count / ideas.length) * 100
-                          return (
-                            <div key={category.id} className="flex items-center justify-between">
-                              <div className="flex items-center space-x-3">
-                                <category.icon className="w-4 h-4 text-gray-400" />
-                                <span className="text-sm text-gray-700">{category.name}</span>
-                              </div>
-                              <div className="flex items-center space-x-3">
-                                <div className="w-20 bg-gray-200 rounded-full h-2">
-                                  <div 
-                                    className="bg-orange-600 h-2 rounded-full"
-                                    style={{ width: `${percentage}%` }}
-                                  ></div>
+                      {ideas.length === 0 ? (
+                        <div className="text-center py-8">
+                          <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <BarChart3 className="w-8 h-8 text-gray-400" />
+                          </div>
+                          <p className="text-gray-500">No data available yet</p>
+                        </div>
+                      ) : (
+                        <div className="space-y-3">
+                          {categories.slice(1).map((category) => {
+                            const count = ideas.filter(idea => idea.category === category.id).length
+                            const percentage = ideas.length > 0 ? (count / ideas.length) * 100 : 0
+                            return (
+                              <div key={category.id} className="flex items-center justify-between">
+                                <div className="flex items-center space-x-3">
+                                  <category.icon className="w-4 h-4 text-gray-400" />
+                                  <span className="text-sm text-gray-700">{category.name}</span>
                                 </div>
-                                <span className="text-sm font-medium text-gray-900 w-8">{count}</span>
+                                <div className="flex items-center space-x-3">
+                                  <div className="w-20 bg-gray-200 rounded-full h-2">
+                                    <div 
+                                      className="bg-orange-600 h-2 rounded-full"
+                                      style={{ width: `${percentage}%` }}
+                                    ></div>
+                                  </div>
+                                  <span className="text-sm font-medium text-gray-900 w-8">{count}</span>
+                                </div>
                               </div>
-                            </div>
-                          )
-                        })}
-                      </div>
+                            )
+                          })}
+                        </div>
+                      )}
                     </div>
 
                     <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-100">
                       <h3 className="text-lg font-semibold text-gray-900 mb-4">Implementation Status</h3>
-                      <div className="space-y-3">
-                        {[
-                          { status: 'implemented', count: ideas.filter(i => i.status === 'implemented').length, color: 'green' },
-                          { status: 'in-progress', count: ideas.filter(i => i.status === 'in-progress').length, color: 'blue' },
-                          { status: 'planned', count: ideas.filter(i => i.status === 'planned').length, color: 'purple' },
-                          { status: 'under-review', count: ideas.filter(i => i.status === 'under-review').length, color: 'yellow' }
-                        ].map((stat) => {
-                          const percentage = (stat.count / ideas.length) * 100
-                          return (
-                            <div key={stat.status} className="flex items-center justify-between">
-                              <span className="text-sm text-gray-700 capitalize">{stat.status.replace('-', ' ')}</span>
-                              <div className="flex items-center space-x-3">
-                                <div className="w-20 bg-gray-200 rounded-full h-2">
-                                  <div 
-                                    className={`h-2 rounded-full ${
-                                      stat.color === 'green' ? 'bg-green-600' :
-                                      stat.color === 'blue' ? 'bg-blue-600' :
-                                      stat.color === 'purple' ? 'bg-purple-600' :
-                                      'bg-yellow-600'
-                                    }`}
-                                    style={{ width: `${percentage}%` }}
-                                  ></div>
+                      {ideas.length === 0 ? (
+                        <div className="text-center py-8">
+                          <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <PieChart className="w-8 h-8 text-gray-400" />
+                          </div>
+                          <p className="text-gray-500">No data available yet</p>
+                        </div>
+                      ) : (
+                        <div className="space-y-3">
+                          {[
+                            { status: 'implemented', count: ideas.filter(i => i.status === 'implemented').length, color: 'green' },
+                            { status: 'in-progress', count: ideas.filter(i => i.status === 'in-progress').length, color: 'blue' },
+                            { status: 'planned', count: ideas.filter(i => i.status === 'planned').length, color: 'purple' },
+                            { status: 'under-review', count: ideas.filter(i => i.status === 'under-review').length, color: 'yellow' }
+                          ].map((stat) => {
+                            const percentage = ideas.length > 0 ? (stat.count / ideas.length) * 100 : 0
+                            return (
+                              <div key={stat.status} className="flex items-center justify-between">
+                                <span className="text-sm text-gray-700 capitalize">{stat.status.replace('-', ' ')}</span>
+                                <div className="flex items-center space-x-3">
+                                  <div className="w-20 bg-gray-200 rounded-full h-2">
+                                    <div 
+                                      className={`h-2 rounded-full ${
+                                        stat.color === 'green' ? 'bg-green-600' :
+                                        stat.color === 'blue' ? 'bg-blue-600' :
+                                        stat.color === 'purple' ? 'bg-purple-600' :
+                                        'bg-yellow-600'
+                                      }`}
+                                      style={{ width: `${percentage}%` }}
+                                    ></div>
+                                  </div>
+                                  <span className="text-sm font-medium text-gray-900 w-8">{stat.count}</span>
                                 </div>
-                                <span className="text-sm font-medium text-gray-900 w-8">{stat.count}</span>
                               </div>
-                            </div>
-                          )
-                        })}
-                      </div>
+                            )
+                          })}
+                        </div>
+                      )}
                     </div>
                   </div>
                 </motion.div>
@@ -1286,10 +1165,10 @@ const IdeasPage = () => {
 
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
                     {[
-                      { status: 'implemented', count: 12, label: 'Implemented', color: 'green' },
-                      { status: 'in-progress', count: 8, label: 'In Progress', color: 'blue' },
-                      { status: 'planned', count: 15, label: 'Planned', color: 'purple' },
-                      { status: 'under-review', count: 23, label: 'Under Review', color: 'yellow' }
+                      { status: 'implemented', count: 0, label: 'Implemented', color: 'green' },
+                      { status: 'in-progress', count: 0, label: 'In Progress', color: 'blue' },
+                      { status: 'planned', count: 0, label: 'Planned', color: 'purple' },
+                      { status: 'under-review', count: 0, label: 'Under Review', color: 'yellow' }
                     ].map((stat, index) => (
                       <motion.div
                         key={stat.status}
@@ -1319,42 +1198,21 @@ const IdeasPage = () => {
 
                   <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
                     <h3 className="text-xl font-semibold text-gray-900 mb-6">Recent Implementations</h3>
-                    <div className="space-y-4">
-                      {[
-                        {
-                          title: "Women Entrepreneurship Focus Group",
-                          description: "Created dedicated support group and resources for women entrepreneurs",
-                          date: "2024-01-20",
-                          author: "Aisha B."
-                        },
-                        {
-                          title: "Enhanced Search Functionality",
-                          description: "Improved search with filters and better results ranking",
-                          date: "2024-01-18",
-                          author: "David L."
-                        },
-                        {
-                          title: "Mobile Payment Integration",
-                          description: "Added support for mobile money payments across Africa",
-                          date: "2024-01-15",
-                          author: "Michael K."
-                        }
-                      ].map((item, index) => (
-                        <div key={index} className="flex items-start space-x-4 p-4 bg-gray-50 rounded-lg">
-                          <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
-                            <CheckCircle className="w-4 h-4 text-green-600" />
-                          </div>
-                          <div className="flex-1">
-                            <h4 className="font-medium text-gray-900 mb-1">{item.title}</h4>
-                            <p className="text-sm text-gray-600 mb-2">{item.description}</p>
-                            <div className="flex items-center space-x-2 text-xs text-gray-500">
-                              <span>By {item.author}</span>
-                              <span>•</span>
-                              <span>Implemented {new Date(item.date).toLocaleDateString()}</span>
-                            </div>
-                          </div>
-                        </div>
-                      ))}
+                    <div className="text-center py-12">
+                      <div className="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <CheckCircle className="w-10 h-10 text-gray-400" />
+                      </div>
+                      <h4 className="text-lg font-medium text-gray-900 mb-2">No Implementations Yet</h4>
+                      <p className="text-gray-600 mb-6 max-w-md mx-auto">
+                        Once ideas are submitted and implemented, they'll appear here. Be the first to submit an idea!
+                      </p>
+                      <button 
+                        onClick={() => setActiveTab('submit')}
+                        className="bg-orange-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-orange-700 transition-colors duration-200 flex items-center justify-center mx-auto"
+                      >
+                        <Plus className="w-5 h-5 mr-2" />
+                        Submit Your First Idea
+                      </button>
                     </div>
                   </div>
                 </motion.div>
@@ -1424,7 +1282,7 @@ const IdeasPage = () => {
                         </div>
                         <span className="font-medium">Ideas Submitted</span>
                       </div>
-                      <span className="text-2xl font-bold">{ideas.length}</span>
+                      <span className="text-2xl font-bold">0</span>
                     </div>
                     
                     <div className="flex items-center justify-between">
@@ -1434,7 +1292,7 @@ const IdeasPage = () => {
                         </div>
                         <span className="font-medium">Total Votes</span>
                       </div>
-                      <span className="text-2xl font-bold">{ideas.reduce((sum, idea) => sum + idea.votes, 0)}</span>
+                      <span className="text-2xl font-bold">0</span>
                     </div>
                     
                     <div className="flex items-center justify-between">
@@ -1444,7 +1302,7 @@ const IdeasPage = () => {
                         </div>
                         <span className="font-medium">Implemented</span>
                       </div>
-                      <span className="text-2xl font-bold">{ideas.filter(i => i.status === 'implemented').length}</span>
+                      <span className="text-2xl font-bold">0</span>
                     </div>
                   </div>
                   

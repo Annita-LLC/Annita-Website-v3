@@ -156,33 +156,6 @@ const FactsheetPage = () => {
         </div>
       </section>
 
-      {/* Executive Summary */}
-      <section className="py-16 sm:py-20 bg-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-6xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8 }}
-              className="text-center mb-16"
-            >
-              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
-                Executive Summary
-              </h2>
-              <div className="bg-gradient-to-r from-orange-50 to-red-50 rounded-2xl p-8 sm:p-12 border border-orange-200">
-                <p className="text-lg sm:text-xl text-gray-700 leading-relaxed max-w-4xl mx-auto">
-                  Annita LLC has demonstrated exceptional growth since its 2021 launch, achieving
-                  <span className="font-semibold text-orange-600"> 3,000+ total sellers onboarded</span> and
-                  <span className="font-semibold text-orange-600"> $17,000 annual revenue in 2024</span>.
-                  With a <span className="font-semibold text-green-600">90% customer satisfaction rate</span> and
-                  <span className="font-semibold text-green-600"> 75% repeat purchase rate</span>,
-                  Annita is positioned as Africa's premier offline-capable e-commerce platform.
-                </p>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
 
       {/* Key Metrics */}
       <section className="py-16 sm:py-20 bg-gray-50">

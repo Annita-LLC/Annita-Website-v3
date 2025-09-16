@@ -198,15 +198,9 @@ const Navigation = () => {
                               <div className="grid gap-3">
                                 {item.dropdown.map((dropdownItem) => (
                                   'isSearchToggle' in dropdownItem && dropdownItem.isSearchToggle ? (
-                                    <div key={dropdownItem.name} className="p-3">
-                                      <div className="flex items-start space-x-3">
-                                        <dropdownItem.icon className="w-5 h-5 text-primary-600 dark:text-primary-400 mt-0.5 flex-shrink-0" />
-                                        <div className="flex-1">
-                                          <div className="font-medium text-gray-900 dark:text-white mb-2">{dropdownItem.name}</div>
-                                          <div className="text-sm text-gray-500 dark:text-gray-400 mb-3">{dropdownItem.description}</div>
-                                          <GlobalSearch />
-                                        </div>
-                                      </div>
+                                    <div key={dropdownItem.name} className="p-2">
+                                      <div className="text-sm text-gray-600 dark:text-gray-300 mb-2">{dropdownItem.name}</div>
+                                      <GlobalSearch />
                                     </div>
                                   ) : 'isThemeToggle' in dropdownItem && dropdownItem.isThemeToggle ? (
                                      <div key={dropdownItem.name} className="p-3">

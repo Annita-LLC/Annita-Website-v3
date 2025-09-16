@@ -7,32 +7,19 @@ import {
   Shield, 
   Lock, 
   TrendingUp, 
-  DollarSign, 
   ArrowRight,
   CheckCircle,
   Sparkles,
   Zap,
-  Target,
-  Award,
-  Users,
   Activity,
-  Send,
-  Download,
-  Wallet,
-  Banknote,
-  Smartphone,
   Globe,
-  Clock
+  Send,
+  Download
 } from 'lucide-react'
 import Button from '@/components/ui/Button'
 
 const AnnitaPayFeature = () => {
   const [currentBalance, setCurrentBalance] = useState(1250.00)
-  const [recentTransactions, setRecentTransactions] = useState([
-    { id: 1, type: 'received', amount: 150.00, from: 'John Doe', time: '2 min ago', status: 'completed' },
-    { id: 2, type: 'sent', amount: 75.50, to: 'Sarah Smith', time: '5 min ago', status: 'completed' },
-    { id: 3, type: 'received', amount: 300.00, from: 'Business Inc', time: '12 min ago', status: 'completed' }
-  ])
   const [liveStats, setLiveStats] = useState({
     totalTransactions: 15420,
     activeUsers: 8923,
@@ -60,7 +47,6 @@ const AnnitaPayFeature = () => {
     'Mobile money integration'
   ]
 
-  const currencies = ['USD', 'EUR', 'GBP', 'NGN', 'GHS', 'KES', 'ZAR']
 
   return (
     <motion.div
@@ -236,69 +222,7 @@ const AnnitaPayFeature = () => {
               </button>
             </div>
 
-            {/* Recent Transactions */}
-            <div className="space-y-2">
-              <div className="text-sm font-medium text-gray-700 mb-2">Recent Transactions</div>
-              {recentTransactions.map((transaction, index) => (
-                <motion.div
-                  key={transaction.id}
-                  initial={{ opacity: 0, x: 20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="flex items-center justify-between p-2 bg-gray-50 rounded-lg"
-                >
-                  <div className="flex items-center space-x-2">
-                    <div className={`w-8 h-8 rounded-full flex items-center justify-center ${
-                      transaction.type === 'received' ? 'bg-green-100' : 'bg-blue-100'
-                    }`}>
-                      {transaction.type === 'received' ? (
-                        <Download className="w-4 h-4 text-green-600" />
-                      ) : (
-                        <Send className="w-4 h-4 text-blue-600" />
-                      )}
-                    </div>
-                    <div>
-                      <div className="text-sm font-medium text-gray-900">
-                        {transaction.type === 'received' ? transaction.from : transaction.to}
-                      </div>
-                      <div className="text-xs text-gray-500 flex items-center">
-                        <Clock className="w-3 h-3 mr-1" />
-                        {transaction.time}
-                      </div>
-                    </div>
-                  </div>
-                  <div className="text-right">
-                    <div className={`text-sm font-bold ${
-                      transaction.type === 'received' ? 'text-green-600' : 'text-blue-600'
-                    }`}>
-                      {transaction.type === 'received' ? '+' : '-'}${transaction.amount}
-                    </div>
-                    <div className="text-xs text-green-600 flex items-center">
-                      <CheckCircle className="w-3 h-3 mr-1" />
-                      {transaction.status}
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
 
-            {/* Currency Support */}
-            <div className="mt-4 pt-4 border-t border-gray-200">
-              <div className="text-sm font-medium text-gray-700 mb-2">Supported Currencies</div>
-              <div className="flex flex-wrap gap-1">
-                {currencies.map((currency, index) => (
-                  <motion.span
-                    key={currency}
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.3, delay: index * 0.1 }}
-                    className="px-2 py-1 bg-gray-100 rounded text-xs text-gray-600"
-                  >
-                    {currency}
-                  </motion.span>
-                ))}
-              </div>
-            </div>
           </div>
         </div>
 
