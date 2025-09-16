@@ -15,8 +15,6 @@ import {
   Globe,
   Shield,
   CheckCircle,
-  ChevronRight,
-  ChevronLeft,
   Heart,
   Eye,
   Activity,
@@ -122,28 +120,12 @@ const HeroSection = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length)
-    }, 5000)
+    }, 3000)
     return () => clearInterval(interval)
   }, [slides.length])
 
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % slides.length)
-  }
-
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length)
-  }
-
   const goToSlide = (index: number) => {
     setCurrentSlide(index)
-  }
-
-  const nextVideo = () => {
-    setCurrentVideo((prev) => (prev + 1) % videos.length)
-  }
-
-  const prevVideo = () => {
-    setCurrentVideo((prev) => (prev - 1 + videos.length) % videos.length)
   }
 
   const goToVideo = (index: number) => {
@@ -339,26 +321,6 @@ const HeroSection = () => {
               <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-gradient-to-br from-gray-50 to-white p-2 sm:p-3 md:p-4 lg:p-6 backdrop-blur-sm border border-gray-100">
                 <div className="absolute inset-0 bg-gradient-to-br from-orange-500/5 to-blue-500/5 rounded-2xl"></div>
                 
-                {/* Video Title */}
-                <div className="relative z-10 mb-4">
-                  <AnimatePresence mode="wait">
-                    <motion.div
-                      key={`video-title-${currentVideo}`}
-                      initial={{ opacity: 0, y: 10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: -10 }}
-                      transition={{ duration: 0.4 }}
-                      className="text-center"
-                    >
-                      <h3 className="text-lg font-semibold text-gray-900 mb-1">
-                        {videos[currentVideo].title}
-                      </h3>
-                      <p className="text-sm text-gray-600">
-                        {videos[currentVideo].description}
-                      </p>
-                    </motion.div>
-                  </AnimatePresence>
-                </div>
 
                 {/* Video Content */}
                 <div className="relative z-10">
@@ -386,19 +348,6 @@ const HeroSection = () => {
                   </div>
                 </div>
 
-                {/* Video Navigation Arrows */}
-                <button
-                  onClick={prevVideo}
-                  className="absolute left-2 top-1/2 transform -translate-y-1/2 z-20 p-2 rounded-full bg-white/90 backdrop-blur-sm text-gray-700 hover:bg-white transition-all duration-300 shadow-lg"
-                >
-                  <ChevronLeft className="w-4 h-4" />
-                </button>
-                <button
-                  onClick={nextVideo}
-                  className="absolute right-2 top-1/2 transform -translate-y-1/2 z-20 p-2 rounded-full bg-white/90 backdrop-blur-sm text-gray-700 hover:bg-white transition-all duration-300 shadow-lg"
-                >
-                  <ChevronRight className="w-4 h-4" />
-                </button>
               </div>
 
               {/* Video Indicators */}
@@ -420,19 +369,6 @@ const HeroSection = () => {
         </div>
       </div>
 
-      {/* Navigation Arrows */}
-      <button
-        onClick={prevSlide}
-        className="absolute left-4 top-1/2 transform -translate-y-1/2 z-20 p-2 rounded-full bg-white/10 backdrop-blur-sm text-gray-700 hover:bg-white/20 transition-all duration-300 shadow-lg"
-      >
-        <ChevronLeft className="w-6 h-6" />
-      </button>
-      <button
-        onClick={nextSlide}
-        className="absolute right-4 top-1/2 transform -translate-y-1/2 z-20 p-2 rounded-full bg-white/10 backdrop-blur-sm text-gray-700 hover:bg-white/20 transition-all duration-300 shadow-lg"
-      >
-        <ChevronRight className="w-6 h-6" />
-      </button>
 
       {/* Slide Indicators */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 flex space-x-2">

@@ -5,23 +5,17 @@ import { motion, useInView } from 'framer-motion'
 import { 
   ShoppingCart, 
   Search, 
-  Star, 
-  Heart, 
-  Eye, 
   TrendingUp, 
   Users, 
   Package,
   ArrowRight,
   CheckCircle,
   Sparkles,
-  Zap,
-  Target,
-  Award
+  Zap
 } from 'lucide-react'
 import Button from '@/components/ui/Button'
 
 const MarketplaceFeature = () => {
-  const [currentProduct, setCurrentProduct] = useState(0)
   const [isHovered, setIsHovered] = useState(false)
   const [liveStats, setLiveStats] = useState({
     activeUsers: 1247,
@@ -43,12 +37,6 @@ const MarketplaceFeature = () => {
     return () => clearInterval(interval)
   }, [])
 
-  const products = [
-    { name: 'Organic Coffee Beans', price: '$12.99', rating: 4.8, sales: 234, image: '☕' },
-    { name: 'Handcrafted Jewelry', price: '$45.00', rating: 4.9, sales: 156, image: '💍' },
-    { name: 'Traditional Fabric', price: '$28.50', rating: 4.7, sales: 89, image: '🧵' },
-    { name: 'Artisan Soap', price: '$8.99', rating: 4.6, sales: 312, image: '🧼' }
-  ]
 
   const features = [
     'Easy onboarding for offline vendors',
@@ -216,58 +204,7 @@ const MarketplaceFeature = () => {
               />
             </div>
 
-            {/* Live Product Showcase */}
-            <div className="space-y-3">
-              {products.map((product, index) => (
-                <motion.div
-                  key={product.name}
-                  initial={{ opacity: 0, x: 20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.2 }}
-                  className={`bg-gray-50 rounded-lg p-3 cursor-pointer transition-all duration-300 ${
-                    currentProduct === index ? 'ring-2 ring-blue-500 bg-blue-50' : 'hover:bg-gray-100'
-                  }`}
-                  onClick={() => setCurrentProduct(index)}
-                >
-                  <div className="flex items-center space-x-3">
-                    <div className="text-2xl">{product.image}</div>
-                    <div className="flex-1">
-                      <div className="font-medium text-gray-900">{product.name}</div>
-                      <div className="flex items-center space-x-2 text-sm">
-                        <div className="flex items-center">
-                          <Star className="w-3 h-3 text-yellow-400 fill-current" />
-                          <span className="ml-1 text-gray-600">{product.rating}</span>
-                        </div>
-                        <span className="text-gray-500">•</span>
-                        <span className="text-gray-600">{product.sales} sold</span>
-                      </div>
-                    </div>
-                    <div className="text-right">
-                      <div className="font-bold text-green-600">{product.price}</div>
-                      <div className="flex space-x-1 mt-1">
-                        <Heart className="w-3 h-3 text-gray-400 hover:text-red-500 cursor-pointer" />
-                        <Eye className="w-3 h-3 text-gray-400 hover:text-blue-500 cursor-pointer" />
-                      </div>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
 
-            {/* Bottom Stats */}
-            <div className="flex items-center justify-between mt-4 pt-4 border-t border-gray-200">
-              <div className="flex items-center space-x-4 text-sm">
-                <div className="flex items-center">
-                  <Target className="w-4 h-4 text-blue-500 mr-1" />
-                  <span className="text-gray-600">{liveStats.vendors} Vendors</span>
-                </div>
-                <div className="flex items-center">
-                  <Award className="w-4 h-4 text-green-500 mr-1" />
-                  <span className="text-gray-600">Verified</span>
-                </div>
-              </div>
-              <div className="text-sm font-medium text-blue-600">View All</div>
-            </div>
           </div>
         </div>
 

@@ -298,23 +298,23 @@ const CSRPage = () => {
             <div className="max-w-6xl mx-auto">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 {/* Left Column - Main Content */}
-                <motion.div
+              <motion.div
                   initial={{ opacity: 0, x: -30 }}
                   animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.8 }}
+                transition={{ duration: 0.8 }}
                   className="text-center lg:text-left"
-                >
+              >
                   <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/20 backdrop-blur-sm text-white text-sm font-medium mb-6">
-                    <Heart className="w-4 h-4 mr-2" />
-                    Making a Difference Across Africa
-                  </div>
+                  <Heart className="w-4 h-4 mr-2" />
+                  Making a Difference Across Africa
+                </div>
                   <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 leading-tight">
-                    Corporate Social <span className="text-orange-200">Responsibility</span>
-                  </h1>
+                  Corporate Social <span className="text-orange-200">Responsibility</span>
+                </h1>
                   <p className="text-lg sm:text-xl text-orange-100 max-w-2xl mx-auto lg:mx-0 leading-relaxed mb-8">
-                    At Annita, we believe in creating positive change that extends far beyond business success. 
-                    Our commitment to social impact drives everything we do across Liberia and Africa.
-                  </p>
+                  At Annita, we believe in creating positive change that extends far beyond business success. 
+                  Our commitment to social impact drives everything we do across Liberia and Africa.
+                </p>
                   
                   {/* Quick Stats */}
                   <div className="grid grid-cols-2 gap-4 mb-8">
@@ -377,7 +377,7 @@ const CSRPage = () => {
                       ))}
                     </div>
                   </div>
-                </motion.div>
+              </motion.div>
               </div>
             </div>
           </div>
@@ -588,15 +588,15 @@ const CSRPage = () => {
                         </div>
                         <div className="flex-1">
                           <div className="flex items-start justify-between mb-3">
-                            <div className="flex-1">
-                              <div className="flex items-center space-x-2 mb-2">
+                        <div className="flex-1">
+                          <div className="flex items-center space-x-2 mb-2">
                                 <h3 className="text-lg lg:text-xl font-semibold text-gray-900">{initiative.title}</h3>
-                                <span className={`px-2 py-1 rounded-full text-xs font-medium ${
-                                  initiative.status === 'Active' ? 'bg-green-100 text-green-700' : 'bg-orange-100 text-orange-700'
-                                }`}>
-                                  {initiative.status}
-                                </span>
-                              </div>
+                            <span className={`px-2 py-1 rounded-full text-xs font-medium ${
+                              initiative.status === 'Active' ? 'bg-green-100 text-green-700' : 'bg-orange-100 text-orange-700'
+                            }`}>
+                              {initiative.status}
+                            </span>
+                          </div>
                               <p className="text-gray-700 text-sm lg:text-base mb-3">{initiative.description}</p>
                             </div>
                             <button
@@ -613,9 +613,9 @@ const CSRPage = () => {
 
                           {/* Basic Info */}
                           <div className="grid grid-cols-2 gap-4 mb-4">
-                            <div className="flex items-center text-sm text-gray-600">
-                              <Target className="w-4 h-4 mr-1" />
-                              <span className="font-medium">{initiative.impact}</span>
+                          <div className="flex items-center text-sm text-gray-600">
+                            <Target className="w-4 h-4 mr-1" />
+                            <span className="font-medium">{initiative.impact}</span>
                             </div>
                             <div className="flex items-center text-sm text-gray-600">
                               <MapPin className="w-4 h-4 mr-1" />
@@ -912,27 +912,27 @@ const CSRPage = () => {
                     Join Us in Making a <span className="text-orange-200">Difference</span>
                   </h2>
                   <p className="text-lg sm:text-xl text-orange-100 mb-8 leading-relaxed">
-                    Together, we can create lasting positive change across Africa. 
-                    Whether you're an individual, organization, or business, there are many ways to get involved.
-                  </p>
+                  Together, we can create lasting positive change across Africa. 
+                  Whether you're an individual, organization, or business, there are many ways to get involved.
+                </p>
                   
                   <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                     <button 
                       onClick={() => window.open('/contact-sales', '_blank')}
                       className="bg-white text-orange-600 px-8 py-4 rounded-lg font-semibold hover:bg-orange-50 transition-all duration-200 flex items-center justify-center shadow-lg hover:shadow-xl"
                     >
-                      <Users2 className="w-5 h-5 mr-2" />
-                      Partner With Us
-                    </button>
+                    <Users2 className="w-5 h-5 mr-2" />
+                    Partner With Us
+                  </button>
                     <button 
                       onClick={() => window.open('/contact-us', '_blank')}
                       className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-orange-600 transition-all duration-200 flex items-center justify-center"
                     >
-                      <Heart className="w-5 h-5 mr-2" />
-                      Support Our Mission
-                    </button>
-                  </div>
-                </motion.div>
+                    <Heart className="w-5 h-5 mr-2" />
+                    Support Our Mission
+                  </button>
+                </div>
+              </motion.div>
 
                 {/* Right Column - Contact Options */}
                 <motion.div
