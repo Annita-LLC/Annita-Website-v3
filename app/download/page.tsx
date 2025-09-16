@@ -1,8 +1,7 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import { motion, useInView } from 'framer-motion'
-import { useRef } from 'react'
 import SEOHead from '@/components/seo/SEOHead'
 import { 
   Download,
@@ -57,6 +56,32 @@ export default function DownloadPage() {
   const [selectedPlatform, setSelectedPlatform] = useState('')
   const [email, setEmail] = useState('')
   const [showFeatures, setShowFeatures] = useState(false)
+  const [currentImageIndex, setCurrentImageIndex] = useState(0)
+
+  // Demo images array
+  const demoImages = [
+    '/images/DEMO-Images/plain.jpg',
+    '/images/DEMO-Images/detail-3_1691366360328.jpg',
+    '/images/DEMO-Images/detail-8_1691366352083.jpg',
+    '/images/DEMO-Images/detail-image-03.jpg',
+    '/images/DEMO-Images/detail-image-2.jpg',
+    '/images/DEMO-Images/detail-image-4.jpg',
+    '/images/DEMO-Images/detail-image-5.jpg',
+    '/images/DEMO-Images/detail-image-6.jpg',
+    '/images/DEMO-Images/shot7_1737053810391.png',
+    '/images/DEMO-Images/shot8_1737053808898.png'
+  ]
+
+  // Auto-rotate images
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => 
+        prevIndex === demoImages.length - 1 ? 0 : prevIndex + 1
+      )
+    }, 3000) // Change image every 3 seconds
+
+    return () => clearInterval(interval)
+  }, [demoImages.length])
   const { submitForm, isSubmitting, isSubmitted, error, success, reset } = useFormSubmission({
     validateForm: formValidations.download,
     onSuccess: (data) => {
@@ -338,16 +363,25 @@ export default function DownloadPage() {
                     <p className="text-xs sm:text-sm text-gray-600">Experience the future of digital commerce</p>
                   </div>
                   
-                  {/* Real Demo Image */}
+                  {/* Demo Images Slideshow */}
                   <div className="relative mx-auto group">
                     <div className="relative overflow-hidden rounded-2xl shadow-2xl border-2 border-gray-100 bg-gradient-to-br from-gray-50 to-white p-2">
-                      <img 
-                        src="/images/DEMO-Images/plain.jpg" 
-                        alt="Annita App Demo Preview" 
+                      <motion.img 
+                        key={currentImageIndex}
+                        src={demoImages[currentImageIndex]} 
+                        alt={`Annita App Demo Preview ${currentImageIndex + 1}`}
                         className="w-full h-auto rounded-xl transition-transform duration-300 group-hover:scale-105"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ duration: 0.5 }}
                       />
                       {/* Overlay gradient for depth */}
                       <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent rounded-xl pointer-events-none"></div>
+                      
+                      {/* Image counter indicator */}
+                      <div className="absolute top-3 right-3 bg-black/50 text-white text-xs px-2 py-1 rounded-full">
+                        {currentImageIndex + 1} / {demoImages.length}
+                      </div>
                     </div>
                     {/* Decorative elements */}
                     <div className="absolute -inset-1 bg-gradient-to-r from-orange-500/20 to-red-500/20 rounded-3xl blur-sm -z-10"></div>
