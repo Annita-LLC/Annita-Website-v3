@@ -41,10 +41,12 @@ const AnnitaPayFeature = () => {
   }, [])
 
   const features = [
-    'Secure escrow transactions',
-    'Fraud reduction system',
-    'Multi-currency support',
-    'Mobile money integration'
+    'Escrow payment protection until delivery confirmed',
+    'Multi-currency support for 30+ African currencies',
+    'Real-time conversion tracking and exchange rates',
+    'Institutional backing through African bank partnerships',
+    'Comprehensive due diligence through Smile ID',
+    'Integrated financing solutions for trade operations'
   ]
 
 
@@ -92,9 +94,10 @@ const AnnitaPayFeature = () => {
           transition={{ duration: 0.6, delay: 0.5 }}
           className="text-gray-600 mb-6 leading-relaxed"
         >
-          A comprehensive payment solution with escrow services and digital wallet. 
-          Secure transactions with <span className="text-orange-600 font-semibold">AI-powered fraud detection</span> 
-          and multi-currency support across Africa.
+          Integrated financing solutions with escrow protection for seamless trade operations. 
+          Trade confidently in <span className="text-orange-600 font-semibold">over 30 African currencies</span> 
+          with <span className="text-orange-600 font-semibold">real-time conversion tracking</span> 
+          and institutional backing through strategic partnerships with leading African banks.
         </motion.p>
 
         {/* Live Security Stats */}
@@ -158,7 +161,10 @@ const AnnitaPayFeature = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.9 }}
         >
-          <Button className="group">
+          <Button 
+            className="group"
+            onClick={() => window.open('https://annita.company.site/products', '_blank')}
+          >
             Get Started
             <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
           </Button>

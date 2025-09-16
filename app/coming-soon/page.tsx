@@ -1131,8 +1131,16 @@ const ComingSoonPage = () => {
       />
 
       <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white">
-        {/* Custom Hero Section */}
+        {/* Enhanced Hero Section */}
         <section className="py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-orange-500 via-red-500 to-pink-500 text-white relative overflow-hidden">
+          {/* Animated Background Elements */}
+          <div className="absolute inset-0">
+            <div className="absolute top-10 left-10 w-20 h-20 bg-white/10 rounded-full animate-pulse"></div>
+            <div className="absolute top-32 right-20 w-16 h-16 bg-white/5 rounded-full animate-bounce"></div>
+            <div className="absolute bottom-20 left-1/4 w-12 h-12 bg-white/8 rounded-full animate-pulse"></div>
+            <div className="absolute bottom-32 right-1/3 w-24 h-24 bg-white/6 rounded-full animate-bounce"></div>
+          </div>
+          
           {/* Background Pattern */}
           <div className="absolute inset-0 opacity-10">
             <div className="absolute inset-0" style={{
@@ -1140,31 +1148,31 @@ const ComingSoonPage = () => {
             }} />
           </div>
           
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
+          <div className="container mx-auto px-3 sm:px-4 lg:px-6 xl:px-8 relative">
             <motion.div
               ref={ref}
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8 }}
-              className="max-w-4xl mx-auto text-center"
+              className="max-w-5xl mx-auto text-center"
             >
-              <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/20 backdrop-blur-sm text-white text-sm font-medium mb-6">
-                <Bell className="w-4 h-4 mr-2" />
+              <div className="inline-flex items-center px-4 sm:px-6 py-2 sm:py-3 rounded-full bg-white/20 backdrop-blur-sm text-white text-sm sm:text-base font-medium mb-6 sm:mb-8">
+                <Bell className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
                 Coming Soon
               </div>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 sm:mb-8 leading-tight">
                 The Future is Almost Here
               </h1>
-              <p className="text-xl sm:text-2xl text-orange-100 mb-8 max-w-3xl mx-auto leading-relaxed">
+              <p className="text-lg sm:text-xl md:text-2xl text-orange-100 mb-8 sm:mb-12 max-w-4xl mx-auto leading-relaxed">
                 Get ready for Annita 3.0 - the most revolutionary digital platform Africa has ever seen. 
                 Offline-capable, AI-powered, and built for everyone.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+              <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center mb-8 sm:mb-12">
                 <Button
                   variant="white"
                   size="lg"
                   icon={Star}
-                  className="text-lg font-bold"
+                  className="text-base sm:text-lg font-bold px-6 sm:px-8 py-3 sm:py-4"
                   onClick={() => setIsWaitlistOpen(true)}
                 >
                   Join Waitlist
@@ -1173,20 +1181,20 @@ const ComingSoonPage = () => {
                   variant="glass"
                   size="lg"
                   icon={Download}
-                  className="text-lg font-bold backdrop-blur-xl text-white border-white/30"
+                  className="text-base sm:text-lg font-bold backdrop-blur-xl text-white border-white/30 px-6 sm:px-8 py-3 sm:py-4"
                   onClick={() => setIsDownloadModalOpen(true)}
                 >
                   Try V1.0 Now
                 </Button>
               </div>
-              <div className="flex items-center justify-center space-x-6 text-orange-100">
-                <div className="flex items-center space-x-2">
-                  <Clock className="w-5 h-5" />
-                  <span className="text-sm sm:text-base">Expected Launch: Q2 2025</span>
+              <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-8 lg:space-x-12 text-orange-100">
+                <div className="flex items-center space-x-2 sm:space-x-3">
+                  <Clock className="w-4 h-4 sm:w-5 sm:h-5" />
+                  <span className="text-sm sm:text-base lg:text-lg">Expected Launch: Q2 2025</span>
                 </div>
-                <div className="flex items-center space-x-2">
-                  <Users className="w-5 h-5" />
-                  <span className="text-sm sm:text-base">500+ Early Access Users</span>
+                <div className="flex items-center space-x-2 sm:space-x-3">
+                  <Users className="w-4 h-4 sm:w-5 sm:h-5" />
+                  <span className="text-sm sm:text-base lg:text-lg">500+ Early Access Users</span>
                 </div>
               </div>
             </motion.div>
@@ -1250,186 +1258,216 @@ const ComingSoonPage = () => {
           </div>
         </section>
 
-        {/* Category Filter */}
-        <section className="py-8 bg-white border-b border-gray-200">
+        {/* Enhanced Category Filter */}
+        <section className="py-8 sm:py-12 bg-white border-b border-gray-200">
           <div className="container mx-auto px-3 sm:px-4 lg:px-6 xl:px-8">
-            <div className="flex flex-wrap justify-center gap-2 sm:gap-4">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6 }}
+              className="text-center mb-8"
+            >
+              <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
+                Filter by <span className="text-purple-600">Category</span>
+              </h2>
+              <p className="text-gray-600 max-w-2xl mx-auto">
+                Explore upcoming features organized by category to find what interests you most.
+              </p>
+            </motion.div>
+            <div className="flex flex-wrap justify-center gap-2 sm:gap-3 lg:gap-4">
               {categories.map((category) => (
-                <button
+                <motion.button
                   key={category.id}
                   onClick={() => setActiveCategory(category.id)}
-                  className={`flex items-center px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className={`flex items-center px-4 sm:px-6 py-2 sm:py-3 rounded-full text-sm sm:text-base font-medium transition-all duration-200 ${
                     activeCategory === category.id
-                      ? 'bg-purple-600 text-white shadow-lg'
-                      : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                      ? 'bg-purple-600 text-white shadow-lg shadow-purple-200'
+                      : 'bg-gray-100 text-gray-700 hover:bg-gray-200 hover:shadow-md'
                   }`}
                 >
-                  <category.icon className="w-4 h-4 mr-2" />
+                  <category.icon className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
                   {category.name}
-                </button>
+                </motion.button>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Upcoming Features */}
-        <section className="py-16 sm:py-20" ref={ref}>
+        {/* Enhanced Upcoming Features */}
+        <section className="py-16 sm:py-20 lg:py-24" ref={ref}>
           <div className="container mx-auto px-3 sm:px-4 lg:px-6 xl:px-8">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8 }}
-              className="text-center mb-16"
+              className="text-center mb-16 sm:mb-20"
             >
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 mb-6 sm:mb-8">
                 Upcoming <span className="text-purple-600">Features</span>
               </h2>
-              <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
-                Explore the innovative features we're developing to enhance your Annita experience.
+              <p className="text-lg sm:text-xl lg:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+                Explore the innovative features we're developing to enhance your Annita experience and transform how you do business.
               </p>
             </motion.div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-10">
               {filteredFeatures.map((feature, index) => (
                 <motion.div
                   key={feature.id}
                   initial={{ opacity: 0, y: 20 }}
                   animate={isInView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
-                  className="bg-white p-8 rounded-3xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300"
+                  whileHover={{ y: -5 }}
+                  className="bg-white p-6 sm:p-8 lg:p-10 rounded-3xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300"
                 >
-                  <div className="flex items-start justify-between mb-6">
-                    <div className={`w-16 h-16 bg-gradient-to-br ${feature.color} rounded-2xl flex items-center justify-center`}>
-                      <feature.icon className="w-8 h-8 text-white" />
+                  <div className="flex items-start justify-between mb-6 sm:mb-8">
+                    <div className={`w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br ${feature.color} rounded-2xl flex items-center justify-center shadow-lg`}>
+                      <feature.icon className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
                     </div>
                     <div className="text-right">
-                      <span className={`px-3 py-1 rounded-full text-xs font-medium ${getStatusColor(feature.status)}`}>
+                      <span className={`px-3 sm:px-4 py-1 sm:py-2 rounded-full text-xs sm:text-sm font-medium ${getStatusColor(feature.status)}`}>
                         {getStatusText(feature.status)}
                       </span>
-                      <div className="text-sm text-gray-500 mt-1">{feature.estimatedRelease}</div>
+                      <div className="text-sm sm:text-base text-gray-500 mt-1 sm:mt-2">{feature.estimatedRelease}</div>
                     </div>
                   </div>
 
-                  <h3 className="text-2xl font-bold text-gray-900 mb-3">{feature.title}</h3>
-                  <p className="text-gray-600 mb-6 leading-relaxed">{feature.description}</p>
+                  <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-3 sm:mb-4">{feature.title}</h3>
+                  <p className="text-gray-600 mb-6 sm:mb-8 leading-relaxed text-sm sm:text-base lg:text-lg">{feature.description}</p>
 
-                  {/* Progress Bar */}
-                  <div className="mb-6">
-                    <div className="flex justify-between text-sm text-gray-600 mb-2">
-                      <span>Progress</span>
-                      <span>{feature.progress}%</span>
+                  {/* Enhanced Progress Bar */}
+                  <div className="mb-6 sm:mb-8">
+                    <div className="flex justify-between text-sm sm:text-base text-gray-600 mb-2 sm:mb-3">
+                      <span className="font-medium">Development Progress</span>
+                      <span className="font-bold text-purple-600">{feature.progress}%</span>
                     </div>
-                    <div className="w-full bg-gray-200 rounded-full h-2">
-                      <div 
-                        className="bg-gradient-to-r from-purple-500 to-pink-500 h-2 rounded-full transition-all duration-500"
-                        style={{ width: `${feature.progress}%` }}
-                      ></div>
+                    <div className="w-full bg-gray-200 rounded-full h-2 sm:h-3">
+                      <motion.div 
+                        className="bg-gradient-to-r from-purple-500 to-pink-500 h-2 sm:h-3 rounded-full transition-all duration-1000"
+                        initial={{ width: 0 }}
+                        animate={isInView ? { width: `${feature.progress}%` } : { width: 0 }}
+                        transition={{ duration: 1, delay: 0.5 + index * 0.1 }}
+                      ></motion.div>
                     </div>
                   </div>
 
-                  {/* Features List */}
-                  <div className="space-y-2">
+                  {/* Enhanced Features List */}
+                  <div className="space-y-2 sm:space-y-3 mb-6 sm:mb-8">
                     {feature.features.map((item, featureIndex) => (
-                      <div key={featureIndex} className="flex items-center space-x-2">
-                        <CheckCircle className="w-4 h-4 text-purple-600 flex-shrink-0" />
-                        <span className="text-sm text-gray-700">{item}</span>
-                      </div>
+                      <motion.div 
+                        key={featureIndex} 
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={isInView ? { opacity: 1, x: 0 } : {}}
+                        transition={{ duration: 0.4, delay: 0.8 + index * 0.1 + featureIndex * 0.05 }}
+                        className="flex items-center space-x-2 sm:space-x-3"
+                      >
+                        <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-purple-600 flex-shrink-0" />
+                        <span className="text-sm sm:text-base text-gray-700">{item}</span>
+                      </motion.div>
                     ))}
                   </div>
 
-                  <button 
+                  <motion.button 
                     onClick={() => window.open('/learn-more-v3', '_blank')}
-                    className="mt-6 w-full bg-purple-600 text-white py-3 rounded-lg font-semibold hover:bg-purple-700 transition-colors duration-200 flex items-center justify-center"
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    className="w-full bg-purple-600 text-white py-3 sm:py-4 rounded-lg font-semibold hover:bg-purple-700 transition-colors duration-200 flex items-center justify-center text-sm sm:text-base"
                   >
                     Learn More
-                    <ArrowRight className="w-4 h-4 ml-2" />
-                  </button>
+                    <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 ml-2" />
+                  </motion.button>
                 </motion.div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Recent Updates */}
-        <section className="py-16 sm:py-20 bg-gradient-to-r from-gray-50 to-white">
+        {/* Enhanced Recent Updates */}
+        <section className="py-16 sm:py-20 lg:py-24 bg-gradient-to-r from-gray-50 to-white">
           <div className="container mx-auto px-3 sm:px-4 lg:px-6 xl:px-8">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8 }}
-              className="text-center mb-16"
+              className="text-center mb-16 sm:mb-20"
             >
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 mb-6 sm:mb-8">
                 Recent <span className="text-purple-600">Updates</span>
               </h2>
-              <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
-                See what we've recently launched to improve your Annita experience.
+              <p className="text-lg sm:text-xl lg:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+                See what we've recently launched to improve your Annita experience and celebrate our milestones.
               </p>
             </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="bg-white p-6 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300"
+                whileHover={{ y: -5 }}
+                className="bg-white p-6 sm:p-8 rounded-2xl sm:rounded-3xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300"
               >
-                <div className="flex items-center justify-between mb-4">
-                  <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center">
-                    <CheckCircle className="w-6 h-6 text-green-600" />
+                <div className="flex items-center justify-between mb-4 sm:mb-6">
+                  <div className="w-12 h-12 sm:w-16 sm:h-16 bg-green-100 rounded-xl sm:rounded-2xl flex items-center justify-center">
+                    <CheckCircle className="w-6 h-6 sm:w-8 sm:h-8 text-green-600" />
                   </div>
-                  <span className="text-sm text-gray-500">March 2024</span>
+                  <span className="text-sm sm:text-base text-gray-500 font-medium">March 2024</span>
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">Major Awards & Recognition</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">Won Orange Social Venture Prize (1st Place) and Named Top 50 Businesses in Africa by AU</p>
+                <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2 sm:mb-3">Major Awards & Recognition</h3>
+                <p className="text-gray-600 text-sm sm:text-base leading-relaxed">Won Orange Social Venture Prize (1st Place) and Named Top 50 Businesses in Africa by AU</p>
               </motion.div>
 
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: 0.3 }}
-                className="bg-white p-6 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300"
+                whileHover={{ y: -5 }}
+                className="bg-white p-6 sm:p-8 rounded-2xl sm:rounded-3xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300"
               >
-                <div className="flex items-center justify-between mb-4">
-                  <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center">
-                    <CheckCircle className="w-6 h-6 text-green-600" />
+                <div className="flex items-center justify-between mb-4 sm:mb-6">
+                  <div className="w-12 h-12 sm:w-16 sm:h-16 bg-green-100 rounded-xl sm:rounded-2xl flex items-center justify-center">
+                    <CheckCircle className="w-6 h-6 sm:w-8 sm:h-8 text-green-600" />
                   </div>
-                  <span className="text-sm text-gray-500">May 2023</span>
+                  <span className="text-sm sm:text-base text-gray-500 font-medium">May 2023</span>
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">Cross-Border MSME Onboarding</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">Expanded beyond local markets to serve MSMEs across borders</p>
+                <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2 sm:mb-3">Cross-Border MSME Onboarding</h3>
+                <p className="text-gray-600 text-sm sm:text-base leading-relaxed">Expanded beyond local markets to serve MSMEs across borders</p>
               </motion.div>
 
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: 0.4 }}
-                className="bg-white p-6 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300"
+                whileHover={{ y: -5 }}
+                className="bg-white p-6 sm:p-8 rounded-2xl sm:rounded-3xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300"
               >
-                <div className="flex items-center justify-between mb-4">
-                  <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center">
-                    <CheckCircle className="w-6 h-6 text-green-600" />
+                <div className="flex items-center justify-between mb-4 sm:mb-6">
+                  <div className="w-12 h-12 sm:w-16 sm:h-16 bg-green-100 rounded-xl sm:rounded-2xl flex items-center justify-center">
+                    <CheckCircle className="w-6 h-6 sm:w-8 sm:h-8 text-green-600" />
                   </div>
-                  <span className="text-sm text-gray-500">June 2022</span>
+                  <span className="text-sm sm:text-base text-gray-500 font-medium">June 2022</span>
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">Product Validation & First Paying Users</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">Achieved product-market fit with our first paying customers</p>
+                <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2 sm:mb-3">Product Validation & First Paying Users</h3>
+                <p className="text-gray-600 text-sm sm:text-base leading-relaxed">Achieved product-market fit with our first paying customers</p>
               </motion.div>
 
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: 0.5 }}
-                className="bg-white p-6 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300"
+                whileHover={{ y: -5 }}
+                className="bg-white p-6 sm:p-8 rounded-2xl sm:rounded-3xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300"
               >
-                <div className="flex items-center justify-between mb-4">
-                  <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center">
-                    <CheckCircle className="w-6 h-6 text-green-600" />
+                <div className="flex items-center justify-between mb-4 sm:mb-6">
+                  <div className="w-12 h-12 sm:w-16 sm:h-16 bg-green-100 rounded-xl sm:rounded-2xl flex items-center justify-center">
+                    <CheckCircle className="w-6 h-6 sm:w-8 sm:h-8 text-green-600" />
                   </div>
-                  <span className="text-sm text-gray-500">August 2021</span>
+                  <span className="text-sm sm:text-base text-gray-500 font-medium">August 2021</span>
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">MVP Launch</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">Launched Multi-Vendor marketplace with ads and logistics</p>
+                <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2 sm:mb-3">MVP Launch</h3>
+                <p className="text-gray-600 text-sm sm:text-base leading-relaxed">Launched Multi-Vendor marketplace with ads and logistics</p>
               </motion.div>
             </div>
           </div>

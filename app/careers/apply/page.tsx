@@ -110,20 +110,28 @@ export default function ApplyPage() {
         description="Join our team and help shape the future of Africa's digital economy. Submit your application today."
       />
 
-      {/* Hero Section */}
-      <section className="bg-gradient-to-br from-orange-50 to-red-50 py-16 sm:py-20 lg:py-24">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto">
+      {/* Enhanced Hero Section */}
+      <section className="bg-gradient-to-br from-orange-50 to-red-50 py-16 sm:py-20 lg:py-24 relative overflow-hidden">
+        {/* Animated Background Elements */}
+        <div className="absolute inset-0">
+          <div className="absolute top-10 left-10 w-20 h-20 bg-orange-200/30 rounded-full animate-pulse"></div>
+          <div className="absolute top-32 right-20 w-16 h-16 bg-red-200/20 rounded-full animate-bounce"></div>
+          <div className="absolute bottom-20 left-1/4 w-12 h-12 bg-orange-300/25 rounded-full animate-pulse"></div>
+          <div className="absolute bottom-32 right-1/3 w-24 h-24 bg-red-300/15 rounded-full animate-bounce"></div>
+        </div>
+        
+        <div className="container mx-auto px-3 sm:px-4 lg:px-6 xl:px-8 relative">
+          <div className="max-w-5xl mx-auto">
             <div className="text-center">
-              <div className="inline-flex items-center px-4 py-2 rounded-full bg-orange-100 text-orange-700 text-sm font-medium mb-6">
-                <Briefcase className="w-4 h-4 mr-2" />
+              <div className="inline-flex items-center px-4 sm:px-6 py-2 sm:py-3 rounded-full bg-orange-100 text-orange-700 text-sm sm:text-base font-medium mb-6 sm:mb-8">
+                <Briefcase className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
                 Submit Your Application
               </div>
               
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-900 mb-6 sm:mb-8 leading-tight">
                 Apply for a <span className="text-orange-500">Position</span>
               </h1>
-              <p className="text-lg sm:text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+              <p className="text-lg sm:text-xl md:text-2xl text-gray-600 mb-8 sm:mb-12 max-w-4xl mx-auto leading-relaxed">
                 Join our mission to empower Africa's MSMEs through innovative technology. 
                 Tell us about yourself and why you'd be a great fit for our team.
               </p>
@@ -133,30 +141,30 @@ export default function ApplyPage() {
       </section>
 
       {!isSubmitted ? (
-        <div className="py-16 sm:py-20">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-4xl mx-auto">
-              <div className="bg-white rounded-xl shadow-soft p-6 lg:p-12 border border-gray-200">
-                <div className="text-center mb-8">
-                  <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-4">
+        <div className="py-16 sm:py-20 lg:py-24">
+          <div className="container mx-auto px-3 sm:px-4 lg:px-6 xl:px-8">
+            <div className="max-w-5xl mx-auto">
+              <div className="bg-white rounded-2xl sm:rounded-3xl shadow-lg p-6 sm:p-8 lg:p-12 xl:p-16 border border-gray-200">
+                <div className="text-center mb-8 sm:mb-12">
+                  <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">
                     Submit Your Application
                   </h2>
-                  <p className="text-gray-600">
+                  <p className="text-lg sm:text-xl text-gray-600 leading-relaxed">
                     Tell us about yourself and why you'd be a great fit for our team
                   </p>
                 </div>
 
-                <form onSubmit={handleSubmit} className="space-y-8">
-                  {/* Personal Information */}
-                  <div className="space-y-6">
-                    <h3 className="text-xl font-semibold text-gray-900 flex items-center">
-                      <User className="w-5 h-5 mr-2 text-orange-600" />
+                <form onSubmit={handleSubmit} className="space-y-10 sm:space-y-12">
+                  {/* Enhanced Personal Information */}
+                  <div className="space-y-6 sm:space-y-8">
+                    <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 flex items-center">
+                      <User className="w-6 h-6 sm:w-8 sm:h-8 mr-3 text-orange-600" />
                       Personal Information
                     </h3>
                     
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
                       <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                        <label className="block text-sm sm:text-base font-medium text-gray-700 mb-2 sm:mb-3">
                           First Name *
                         </label>
                         <input
@@ -164,13 +172,13 @@ export default function ApplyPage() {
                           required
                           value={formData.first_name}
                           onChange={(e) => handleInputChange('first_name', e.target.value)}
-                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200"
+                          className="w-full px-4 sm:px-6 py-3 sm:py-4 border border-gray-300 rounded-lg sm:rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200 text-sm sm:text-base"
                           placeholder="Enter your first name"
                         />
                       </div>
                       
                       <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                        <label className="block text-sm sm:text-base font-medium text-gray-700 mb-2 sm:mb-3">
                           Last Name *
                         </label>
                         <input
@@ -178,7 +186,7 @@ export default function ApplyPage() {
                           required
                           value={formData.last_name}
                           onChange={(e) => handleInputChange('last_name', e.target.value)}
-                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200"
+                          className="w-full px-4 sm:px-6 py-3 sm:py-4 border border-gray-300 rounded-lg sm:rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200 text-sm sm:text-base"
                           placeholder="Enter your last name"
                         />
                       </div>
@@ -510,22 +518,22 @@ export default function ApplyPage() {
                     </div>
                   </div>
 
-                  {/* Submit Button */}
-                  <div className="pt-6 border-t border-gray-200">
-                    <div className="flex flex-col sm:flex-row gap-4">
+                  {/* Enhanced Submit Button */}
+                  <div className="pt-8 sm:pt-12 border-t border-gray-200">
+                    <div className="flex flex-col sm:flex-row gap-4 sm:gap-6">
                       <button
                         type="submit"
                         disabled={isSubmitting}
-                        className="flex-1 inline-flex items-center justify-center px-8 py-4 bg-orange-500 text-white font-semibold rounded-lg hover:bg-orange-600 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200"
+                        className="flex-1 inline-flex items-center justify-center px-8 sm:px-10 py-4 sm:py-5 bg-orange-500 text-white font-semibold rounded-lg sm:rounded-xl hover:bg-orange-600 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 text-base sm:text-lg shadow-lg"
                       >
                         {isSubmitting ? (
                           <>
-                            <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div>
+                            <div className="animate-spin rounded-full h-5 w-5 sm:h-6 sm:w-6 border-b-2 border-white mr-2"></div>
                             Submitting...
                           </>
                         ) : (
                           <>
-                            <Send className="w-5 h-5 mr-2" />
+                            <Send className="w-5 h-5 sm:w-6 sm:h-6 mr-2" />
                             Submit Application
                           </>
                         )}
@@ -533,14 +541,14 @@ export default function ApplyPage() {
                       <Link href="/careers">
                         <button
                           type="button"
-                          className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 border-2 border-gray-300 text-gray-700 font-semibold rounded-lg hover:bg-gray-50 transition-all duration-200"
+                          className="w-full sm:w-auto inline-flex items-center justify-center px-8 sm:px-10 py-4 sm:py-5 border-2 border-gray-300 text-gray-700 font-semibold rounded-lg sm:rounded-xl hover:bg-gray-50 transition-all duration-200 text-base sm:text-lg"
                         >
-                          <ArrowLeft className="w-5 h-5 mr-2" />
+                          <ArrowLeft className="w-5 h-5 sm:w-6 sm:h-6 mr-2" />
                           Back to Careers
                         </button>
                       </Link>
                     </div>
-                    <p className="text-sm text-gray-500 mt-4 text-center">
+                    <p className="text-sm sm:text-base text-gray-500 mt-6 sm:mt-8 text-center">
                       By submitting this application, you agree to our{' '}
                       <Link href="/privacy" className="text-orange-600 hover:underline">
                         Privacy Policy
@@ -612,32 +620,32 @@ export default function ApplyPage() {
         </div>
       )}
 
-      {/* Home Page CTA Section */}
-      <section className="py-16 sm:py-20 bg-gradient-to-br from-gray-50 to-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center p-8 bg-gradient-to-r from-orange-500 to-orange-600 rounded-2xl text-white">
-              <h3 className="text-2xl sm:text-3xl font-bold mb-4">
+      {/* Enhanced CTA Section */}
+      <section className="py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-gray-50 to-white">
+        <div className="container mx-auto px-3 sm:px-4 lg:px-6 xl:px-8">
+          <div className="max-w-5xl mx-auto">
+            <div className="text-center p-8 sm:p-12 lg:p-16 bg-gradient-to-r from-orange-500 to-orange-600 rounded-3xl text-white shadow-2xl">
+              <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 sm:mb-8">
                 Ready to Transform Your Business?
               </h3>
-              <p className="text-orange-100 mb-6 max-w-2xl mx-auto">
+              <p className="text-lg sm:text-xl lg:text-2xl text-orange-100 mb-8 sm:mb-12 max-w-4xl mx-auto leading-relaxed">
                 Join thousands of MSMEs already using Annita to grow their revenue, reach new customers, 
                 and streamline their operations across Africa.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center">
                 <a 
                   href="/download"
-                  className="inline-flex items-center justify-center bg-white text-orange-600 px-8 py-3 rounded-lg font-semibold hover:bg-orange-50 transition-colors duration-200"
+                  className="inline-flex items-center justify-center bg-white text-orange-600 px-8 sm:px-10 py-3 sm:py-4 rounded-lg sm:rounded-xl font-semibold hover:bg-orange-50 transition-colors duration-200 text-base sm:text-lg shadow-lg"
                 >
-                  <Download className="w-5 h-5 mr-2" />
+                  <Download className="w-5 h-5 sm:w-6 sm:h-6 mr-2" />
                   Download App
                 </a>
                 <a 
                   href="/contact-sales"
-                  className="inline-flex items-center justify-center border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-orange-600 transition-colors duration-200"
+                  className="inline-flex items-center justify-center border-2 border-white text-white px-8 sm:px-10 py-3 sm:py-4 rounded-lg sm:rounded-xl font-semibold hover:bg-white hover:text-orange-600 transition-colors duration-200 text-base sm:text-lg"
                 >
                   Contact Sales
-                  <ArrowRight className="w-5 h-5 ml-2" />
+                  <ArrowRight className="w-5 h-5 sm:w-6 sm:h-6 ml-2" />
                 </a>
               </div>
             </div>

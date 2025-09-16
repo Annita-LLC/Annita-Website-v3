@@ -73,22 +73,22 @@ const FeaturesSection = () => {
     {
       icon: TrendingUp,
       title: 'Grow Your Business',
-      description: 'Increase revenue by up to 300% with our platform'
+      description: 'Increase revenue by up to 300% with our African-focused platform'
     },
     {
       icon: Globe,
-      title: 'Reach Global Markets',
-      description: 'Access customers across 54 African countries'
+      title: 'Pan-African Network',
+      description: 'Access suppliers from all 54 African countries in one unified marketplace'
     },
     {
       icon: Shield,
-      title: 'Secure & Reliable',
-      description: 'Bank-level security with 99.9% uptime guarantee'
+      title: 'Escrow Protection',
+      description: 'Funds held securely until delivery confirmed - boosting trust and safety'
     },
     {
       icon: Users,
-      title: '24/7 Support',
-      description: 'Round-the-clock assistance for your success'
+      title: 'KYC-Verified Suppliers',
+      description: 'All suppliers thoroughly vetted and verified for quality and reliability'
     }
   ]
 
@@ -103,11 +103,12 @@ const FeaturesSection = () => {
           className="text-center mb-12 sm:mb-16"
         >
           <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-orange-600 mb-4 sm:mb-6">
-            Complete <span className="text-orange-500">Digital Ecosystem</span>
+            Complete <span className="text-orange-500">African Business Ecosystem</span>
           </h2>
           <p className="text-lg sm:text-xl text-gray-600 max-w-4xl mx-auto">
-            Everything MSMEs need to succeed in the digital economy, integrated into one powerful platform 
-            designed specifically for Africa's unique challenges and opportunities.
+            Built specifically for African businesses with features that address real challenges in cross-border trade, 
+            institutional backing, and seamless integration across African markets. Unlike generic marketplaces, 
+            Annita connects you with authentic African suppliers and grows your business across the continent.
           </p>
         </motion.div>
 

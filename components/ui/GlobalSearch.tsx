@@ -35,7 +35,6 @@ const searchData: SearchResult[] = [
   { id: 'demo', title: 'Demo', description: 'Interactive demo of Annita 3.0', href: '/demo', category: 'Company', icon: FileText },
   { id: 'the100', title: 'The 100', description: 'Youth empowerment initiative', href: '/the100', category: 'Company', icon: Users },
   { id: 'investors', title: 'Investors', description: 'Investment opportunities and company info', href: '/investors', category: 'Company', icon: FileText },
-  { id: 'factsheet', title: 'Official Factsheet', description: 'Company metrics, revenue, and growth data', href: '/official-factsheet', category: 'Company', icon: FileText },
   { id: 'pricing', title: 'Pricing', description: 'Transparent pricing plans', href: '/pricing', category: 'Company', icon: FileText },
   { id: 'business-model', title: 'Business Model', description: 'Our revenue model and strategy', href: '/business-model', category: 'Company', icon: FileText },
   { id: 'coming-soon', title: 'Coming Soon', description: 'Upcoming features and updates', href: '/coming-soon', category: 'Company', icon: FileText },

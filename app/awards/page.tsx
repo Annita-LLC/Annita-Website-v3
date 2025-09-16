@@ -165,20 +165,28 @@ export default function AwardsPage() {
         canonical="/awards"
       />
 
-      {/* Hero Section */}
-      <section className="bg-gradient-to-br from-orange-50 to-red-50 py-16 sm:py-20 lg:py-24">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto">
+      {/* Enhanced Hero Section */}
+      <section className="bg-gradient-to-br from-orange-50 to-red-50 py-16 sm:py-20 lg:py-24 relative overflow-hidden">
+        {/* Animated Background Elements */}
+        <div className="absolute inset-0">
+          <div className="absolute top-10 left-10 w-20 h-20 bg-orange-200/30 rounded-full animate-pulse"></div>
+          <div className="absolute top-32 right-20 w-16 h-16 bg-red-200/20 rounded-full animate-bounce"></div>
+          <div className="absolute bottom-20 left-1/4 w-12 h-12 bg-orange-300/25 rounded-full animate-pulse"></div>
+          <div className="absolute bottom-32 right-1/3 w-24 h-24 bg-red-300/15 rounded-full animate-bounce"></div>
+        </div>
+        
+        <div className="container mx-auto px-3 sm:px-4 lg:px-6 xl:px-8 relative">
+          <div className="max-w-5xl mx-auto">
             <div className="text-center">
-              <div className="inline-flex items-center px-4 py-2 rounded-full bg-orange-100 text-orange-700 text-sm font-medium mb-6">
-                <Award className="w-4 h-4 mr-2" />
+              <div className="inline-flex items-center px-4 sm:px-6 py-2 sm:py-3 rounded-full bg-orange-100 text-orange-700 text-sm sm:text-base font-medium mb-6 sm:mb-8">
+                <Award className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
                 Awards & Recognition
               </div>
               
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-900 mb-6 sm:mb-8 leading-tight">
                 Our <span className="text-orange-500">Achievements</span>
               </h1>
-              <p className="text-lg sm:text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+              <p className="text-lg sm:text-xl md:text-2xl text-gray-600 mb-8 sm:mb-12 max-w-4xl mx-auto leading-relaxed">
                 Celebrating our achievements and the impact we've made across Africa 
                 through innovative technology and digital transformation.
               </p>
@@ -187,88 +195,92 @@ export default function AwardsPage() {
         </div>
       </section>
 
-      <div className="py-16 sm:py-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto">
-            {/* Awards Information */}
+      <div className="py-16 sm:py-20 lg:py-24">
+        <div className="container mx-auto px-3 sm:px-4 lg:px-6 xl:px-8">
+          <div className="max-w-6xl mx-auto">
+            {/* Enhanced Awards Information */}
             <div>
-              <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6">
-                Awards & Recognition
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 sm:mb-8 text-center">
+                Awards & <span className="text-orange-500">Recognition</span>
               </h2>
-              <p className="text-lg text-gray-600 mb-8">
+              <p className="text-lg sm:text-xl text-gray-600 mb-8 sm:mb-12 text-center max-w-4xl mx-auto leading-relaxed">
                 Discover our prestigious awards and recognitions that showcase our commitment 
                 to innovation and impact across Africa.
               </p>
 
-              {/* Stats */}
-              <div className="grid grid-cols-2 gap-4 mb-8">
+              {/* Enhanced Stats */}
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-12 sm:mb-16">
                 {stats.map((stat, index) => (
-                  <div key={index} className="bg-white rounded-xl p-4 shadow-soft border border-gray-200 text-center">
-                    <div className="w-10 h-10 bg-gradient-to-br from-orange-500 to-red-500 rounded-lg flex items-center justify-center mx-auto mb-2">
-                      <stat.icon className="w-5 h-5 text-white" />
+                  <div key={index} className="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 shadow-lg border border-gray-200 text-center hover:shadow-xl transition-shadow duration-300">
+                    <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-orange-500 to-red-500 rounded-lg sm:rounded-xl flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                      <stat.icon className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
                     </div>
-                    <div className="text-lg font-bold text-gray-900">{stat.value}</div>
-                    <div className="text-sm text-gray-600">{stat.label}</div>
+                    <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-1 sm:mb-2">{stat.value}</div>
+                    <div className="text-sm sm:text-base text-gray-600">{stat.label}</div>
                   </div>
                 ))}
               </div>
 
-              {/* Awards List */}
-              <div className="space-y-6">
-                {awards.map((award) => (
+              {/* Enhanced Awards List */}
+              <div className="space-y-8 sm:space-y-10">
+                {awards.map((award, index) => (
                   <div
                     key={award.id}
-                    className="w-full p-6 rounded-xl border-2 border-gray-200 bg-white"
+                    className="w-full p-6 sm:p-8 lg:p-10 rounded-2xl sm:rounded-3xl border-2 border-gray-200 bg-white hover:border-orange-300 hover:shadow-xl transition-all duration-300"
                   >
-                    <div className="flex items-center justify-between mb-4">
-                      <div className="flex items-center space-x-4">
-                        <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-500 rounded-lg flex items-center justify-center">
-                          <Award className="w-6 h-6 text-white" />
+                    <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-6 sm:mb-8">
+                      <div className="flex items-center space-x-4 sm:space-x-6 mb-4 sm:mb-0">
+                        <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-orange-500 to-red-500 rounded-xl sm:rounded-2xl flex items-center justify-center shadow-lg">
+                          <Award className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
                         </div>
                         <div>
-                          <h3 className="text-lg font-bold text-gray-900">{award.title}</h3>
-                          <p className="text-sm text-gray-600">{award.organization}</p>
+                          <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-2">{award.title}</h3>
+                          <p className="text-sm sm:text-base text-gray-600">{award.organization}</p>
                         </div>
                       </div>
                       <div className="text-right">
-                        <div className="text-sm font-bold text-orange-600">{award.year}</div>
+                        <div className="text-lg sm:text-xl font-bold text-orange-600 mb-1">{award.year}</div>
                         {award.featured && (
-                          <div className="text-xs text-orange-500">Featured</div>
+                          <div className="inline-flex items-center px-3 py-1 rounded-full text-xs sm:text-sm font-medium bg-orange-100 text-orange-700">
+                            ⭐ Featured
+                          </div>
                         )}
                       </div>
                     </div>
                     
-                    <p className="text-sm text-gray-600 mb-3">{award.description}</p>
+                    <p className="text-base sm:text-lg text-gray-600 mb-6 sm:mb-8 leading-relaxed">{award.description}</p>
                     
-                    <div className="bg-gray-50 p-3 rounded-lg">
-                      <div className="flex items-center space-x-2">
-                        <TrendingUp className="w-4 h-4 text-orange-500" />
-                        <span className="text-sm font-medium text-gray-700">Impact:</span>
+                    <div className="bg-gradient-to-r from-orange-50 to-red-50 p-4 sm:p-6 rounded-xl sm:rounded-2xl border border-orange-200">
+                      <div className="flex items-center space-x-2 sm:space-x-3 mb-2">
+                        <TrendingUp className="w-5 h-5 sm:w-6 sm:h-6 text-orange-500" />
+                        <span className="text-sm sm:text-base font-semibold text-gray-700">Impact:</span>
                       </div>
-                      <p className="text-sm text-gray-600 mt-1">{award.impact}</p>
+                      <p className="text-sm sm:text-base text-gray-600 leading-relaxed">{award.impact}</p>
                     </div>
 
                     {/* LinkedIn Embed */}
                     {award.linkedinUrl && (
-                      <LinkedInEmbed url={award.linkedinUrl} />
+                      <div className="mt-6 sm:mt-8">
+                        <LinkedInEmbed url={award.linkedinUrl} />
+                      </div>
                     )}
                   </div>
                 ))}
               </div>
 
-              {/* LinkedIn Posts */}
-              <div className="mt-8 bg-white rounded-xl p-6 shadow-soft border border-gray-200">
-                <h3 className="text-lg font-semibold text-gray-900 mb-4">
+              {/* Enhanced LinkedIn Posts */}
+              <div className="mt-12 sm:mt-16 bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-10 shadow-lg border border-gray-200">
+                <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4 sm:mb-6">
                   Latest LinkedIn Updates
                 </h3>
-                <p className="text-gray-600 mb-4">
+                <p className="text-base sm:text-lg text-gray-600 mb-6 sm:mb-8 leading-relaxed">
                   Follow our journey and stay updated with our latest achievements and announcements.
                 </p>
-                <div className="space-y-3">
+                <div className="space-y-4 sm:space-y-6">
                   {awards.slice(0, 2).map((award) => (
-                    <div key={award.id} className="flex items-center space-x-3">
-                      <Linkedin className="w-5 h-5 text-blue-600" />
-                      <span className="text-sm text-gray-600">{award.title}</span>
+                    <div key={award.id} className="flex items-center space-x-3 sm:space-x-4 p-3 sm:p-4 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors duration-200">
+                      <Linkedin className="w-6 h-6 sm:w-8 sm:h-8 text-blue-600" />
+                      <span className="text-sm sm:text-base text-gray-700 font-medium">{award.title}</span>
                     </div>
                   ))}
                 </div>
@@ -278,32 +290,32 @@ export default function AwardsPage() {
         </div>
       </div>
 
-      {/* Home Page CTA Section */}
-      <section className="py-16 sm:py-20 bg-gradient-to-br from-gray-50 to-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center p-8 bg-gradient-to-r from-orange-500 to-orange-600 rounded-2xl text-white">
-              <h3 className="text-2xl sm:text-3xl font-bold mb-4">
+      {/* Enhanced CTA Section */}
+      <section className="py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-gray-50 to-white">
+        <div className="container mx-auto px-3 sm:px-4 lg:px-6 xl:px-8">
+          <div className="max-w-5xl mx-auto">
+            <div className="text-center p-8 sm:p-12 lg:p-16 bg-gradient-to-r from-orange-500 to-orange-600 rounded-3xl text-white shadow-2xl">
+              <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 sm:mb-8">
                 Ready to Transform Your Business?
               </h3>
-              <p className="text-orange-100 mb-6 max-w-2xl mx-auto">
+              <p className="text-lg sm:text-xl lg:text-2xl text-orange-100 mb-8 sm:mb-12 max-w-4xl mx-auto leading-relaxed">
                 Join thousands of MSMEs already using Annita to grow their revenue, reach new customers, 
                 and streamline their operations across Africa.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center">
                 <a 
                   href="/download"
-                  className="inline-flex items-center justify-center bg-white text-orange-600 px-8 py-3 rounded-lg font-semibold hover:bg-orange-50 transition-colors duration-200"
+                  className="inline-flex items-center justify-center bg-white text-orange-600 px-8 sm:px-10 py-3 sm:py-4 rounded-lg sm:rounded-xl font-semibold hover:bg-orange-50 transition-colors duration-200 text-base sm:text-lg shadow-lg"
                 >
-                  <Download className="w-5 h-5 mr-2" />
+                  <Download className="w-5 h-5 sm:w-6 sm:h-6 mr-2" />
                   Download App
                 </a>
                 <a 
                   href="/contact-sales"
-                  className="inline-flex items-center justify-center border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-orange-600 transition-colors duration-200"
+                  className="inline-flex items-center justify-center border-2 border-white text-white px-8 sm:px-10 py-3 sm:py-4 rounded-lg sm:rounded-xl font-semibold hover:bg-white hover:text-orange-600 transition-colors duration-200 text-base sm:text-lg"
                 >
                   Contact Sales
-                  <ArrowRight className="w-5 h-5 ml-2" />
+                  <ArrowRight className="w-5 h-5 sm:w-6 sm:h-6 ml-2" />
                 </a>
               </div>
             </div>

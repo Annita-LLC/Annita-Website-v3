@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import { Suspense } from 'react'
 import HeroSection from '@/components/sections/hero/HeroSection'
 import FeaturesSection from '@/components/sections/FeaturesSection'
+import AfricanBusinessFeatures from '@/components/sections/AfricanBusinessFeatures'
 import V3AnnouncementSection from '@/components/sections/V3AnnouncementSection'
 // import AboutSection from '@/components/sections/AboutSection'
 
@@ -93,7 +94,7 @@ export default function HomePage() {
     <>
       <SEOHead
         title="Annita - Africa's First AI-Powered All-in-One Digital Platform"
-        description="Annita is Africa's first all-in-one digital platform, combining e-commerce, fintech, Artificial Intelligence, communication, marketing, logistics, and more into a single ecosystem. We empower MSMEs and individuals with innovative AI-powered solutions, connectivity, and convenience."
+        description="Built specifically for African businesses with features that address real challenges in cross-border trade, institutional backing, and seamless integration across African markets. Unlike generic marketplaces, Annita connects you with authentic African suppliers and grows your business across the continent."
         keywords={[
           'Annita',
           'Africa digital platform',
@@ -135,7 +136,37 @@ export default function HomePage() {
           'digital economy',
           'African entrepreneurship',
           'business tools',
-          'digital services'
+          'digital services',
+          'KYC verified businesses',
+          'Smile ID verification',
+          'escrow payment protection',
+          'RFQ based sourcing',
+          'multi-currency support',
+          'African currencies',
+          'pan-African network',
+          'AfCFTA regions',
+          'institutional backing',
+          'African bank partnerships',
+          'trade finance',
+          'connected ecosystem',
+          'continental trade tools',
+          'verified suppliers',
+          'authentic African suppliers',
+          'quality assurance',
+          'comprehensive certifications',
+          'real-time conversion tracking',
+          'integrated financing solutions',
+          'African marketplace',
+          'cross-border trade facilitation',
+          'African business ecosystem',
+          'verified users',
+          'due diligence',
+          'secure transactions',
+          'African business features',
+          'generic marketplace alternative',
+          'African-focused platform',
+          'continental integration',
+          'African trade platform'
         ]}
         canonical="/"
         ogImage="/home-og-image.jpg"
@@ -147,6 +178,10 @@ export default function HomePage() {
       
       <Suspense fallback={<LoadingSpinner />}>
         <FeaturesSection />
+      </Suspense>
+      
+      <Suspense fallback={<LoadingSpinner />}>
+        <AfricanBusinessFeatures />
       </Suspense>
       
       <Suspense fallback={<LoadingSpinner />}>

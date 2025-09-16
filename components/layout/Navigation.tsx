@@ -98,7 +98,6 @@ const Navigation = () => {
                       { name: 'Demo', href: '/demo', icon: Play, description: 'Interactive demo of Annita 3.0' },
                       { name: 'Investors', href: '/investors', icon: DollarSign, description: 'Investment opportunities and company info' },
                       { name: 'The 100', href: '/the100', icon: Target, description: 'Youth empowerment initiative' },
-                      { name: 'Official Factsheet', href: '/official-factsheet', icon: FileBarChart, description: 'Company metrics, revenue, and growth data' },
                       { name: 'Pricing', href: '/pricing', icon: DollarSign, description: 'Transparent pricing plans' },
                       { name: 'Business Model', href: '/business-model', icon: Building2, description: 'Our revenue model and strategy' },
                       { name: 'Coming Soon', href: '/coming-soon', icon: Rocket, description: 'Upcoming features and updates' },

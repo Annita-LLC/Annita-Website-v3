@@ -60,7 +60,7 @@ const HeroSection = () => {
       badge: "🚨 Something BIG is Coming",
       title: "Annita 3.0 - The Future",
       titleHighlight: "of Business in Africa",
-      subtitle: "Offline-ready, AI-powered, and built for everyone - whether you're in a city or rural village.",
+      subtitle: "Built specifically for African businesses with features that address real challenges in cross-border trade, institutional backing, and seamless integration across African markets.",
       cta: "Join Waitlist",
       ctaIcon: Star,
       secondaryCta: "See V1.0 Now",
@@ -72,7 +72,7 @@ const HeroSection = () => {
       badge: "Live Marketplace V1.0",
       title: "Real Vendors, Real Sales",
       titleHighlight: "Right Now",
-      subtitle: "3,000+ vendors already selling on our platform. Experience the working marketplace today.",
+      subtitle: "3,000+ KYC-verified vendors across Africa. All suppliers undergo comprehensive due diligence through Smile ID to ensure secure transactions.",
       cta: "Visit Marketplace",
       ctaIcon: Globe,
       secondaryCta: "Start Selling",
@@ -81,10 +81,10 @@ const HeroSection = () => {
     },
     {
       id: 3,
-      badge: "Offline-Ready V3.0",
-      title: "Work Without Internet",
-      titleHighlight: "Anywhere in Africa",
-      subtitle: "Sell, receive payments, manage business, and grow savings - even with unstable connectivity.",
+      badge: "Pan-African Network",
+      title: "Connect Across All",
+      titleHighlight: "54 African Countries",
+      subtitle: "Access suppliers from all AfCFTA regions in East, West, Central, Southern, and North Africa. Trade confidently in over 30 African currencies.",
       cta: "Learn More",
       ctaIcon: WifiOff,
       secondaryCta: "See Features",
@@ -93,10 +93,10 @@ const HeroSection = () => {
     },
     {
       id: 4,
-      badge: "AI Business Assistant",
-      title: "Smart Help for Your Hustle",
-      titleHighlight: "Your Hustle",
-      subtitle: "Get automated insights, guidance, and support to run your business smarter with AI.",
+      badge: "Escrow Protection",
+      title: "Secure Transactions",
+      titleHighlight: "Built for Trust",
+      subtitle: "Funds are held securely until delivery is confirmed. Integrated financing solutions with escrow protection for seamless trade operations.",
       cta: "Discover AI",
       ctaIcon: Brain,
       secondaryCta: "Try V1.0",
@@ -108,7 +108,7 @@ const HeroSection = () => {
       badge: "Built in Liberia",
       title: "Rising with the Continent",
       titleHighlight: "the Continent",
-      subtitle: "Africa's all-in-one digital home. For MSMEs, vendors, freelancers, and individuals everywhere.",
+      subtitle: "Unlike generic marketplaces, Annita is built for African businesses featuring institutional backing and connected ecosystem for seamless integration.",
       cta: "Join Movement",
       ctaIcon: Globe,
       secondaryCta: "Partner With Us",
@@ -302,11 +302,15 @@ const HeroSection = () => {
               >
                 <div className="flex items-center">
                   <Users className="w-4 h-4 mr-2" />
-                  <span>3,000+ Active Vendors</span>
+                  <span>3,000+ KYC-Verified Vendors</span>
                 </div>
                 <div className="flex items-center">
                   <Globe className="w-4 h-4 mr-2" />
-                  <span>Live Marketplace V1.0</span>
+                  <span>54 African Countries</span>
+                </div>
+                <div className="flex items-center">
+                  <Shield className="w-4 h-4 mr-2" />
+                  <span>Escrow Protection</span>
                 </div>
                 <div className="flex items-center">
                   <Star className="w-4 h-4 mr-2" />

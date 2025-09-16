@@ -39,10 +39,12 @@ const MarketplaceFeature = () => {
 
 
   const features = [
-    'Easy onboarding for offline vendors',
-    'Product listings and search',
-    'Multivendor support',
-    'Rural penetration through agent networks'
+    'KYC-verified businesses through Smile ID',
+    'Escrow payment protection for secure transactions',
+    'RFQ-based sourcing with multiple responses',
+    'Multi-currency support for 30+ African currencies',
+    'Pan-African network across all AfCFTA regions',
+    'Quality assurance and comprehensive certifications'
   ]
 
   return (
@@ -89,9 +91,11 @@ const MarketplaceFeature = () => {
           transition={{ duration: 0.6, delay: 0.5 }}
           className="text-gray-600 mb-6 leading-relaxed"
         >
-          Africa's simplest multivendor marketplace for MSMEs and individuals. 
-          Easy onboarding, product listings, and search functionality with 
-          <span className="text-orange-600 font-semibold"> AI-powered recommendations</span>.
+          Unlike generic marketplaces, Annita is built for African businesses featuring 
+          <span className="text-orange-600 font-semibold"> KYC-verified suppliers</span>, 
+          <span className="text-orange-600 font-semibold"> escrow payment protection</span>, and 
+          <span className="text-orange-600 font-semibold"> RFQ-based sourcing</span>. 
+          Connect with authentic African suppliers and grow your business across the continent.
         </motion.p>
 
         {/* Live Stats */}
@@ -155,7 +159,10 @@ const MarketplaceFeature = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.9 }}
         >
-          <Button className="group">
+          <Button 
+            className="group"
+            onClick={() => window.open('https://annita.company.site/products', '_blank')}
+          >
             Explore Marketplace
             <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
           </Button>
