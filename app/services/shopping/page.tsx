@@ -136,8 +136,9 @@ const ShoppingPage = () => {
                   Shop <span className="text-blue-600">Smarter</span> with Annita
             </h1>
                 <p className="text-lg sm:text-xl text-gray-600 mb-8 leading-relaxed">
-                  Discover millions of products with AI-powered search, fast delivery, and secure payments. 
-                  Find the best deals on everything you need.
+                  Comprehensive multivendor marketplace with KYC-verified suppliers, escrow payment protection, 
+                  and RFQ-based sourcing. Smart search with AI-powered recommendations, secure multi-currency 
+                  payments, real-time tracking, and fast delivery across all African countries.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <button 

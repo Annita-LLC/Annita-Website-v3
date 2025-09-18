@@ -77,7 +77,7 @@ const AnnitaPayPage = () => {
     "offers": {
       "@type": "Offer",
       "price": "0",
-      "priceCurrency": "USD"
+      // "priceCurrency": "USD" // Pricing available on pricing page
     },
     "aggregateRating": {
       "@type": "AggregateRating",
@@ -137,8 +137,11 @@ const AnnitaPayPage = () => {
                   Send Money <span className="text-orange-600">Instantly</span> with AnnitaPay
                 </h1>
                 <p className="text-lg sm:text-xl text-gray-600 mb-8 leading-relaxed">
-                  Experience the future of personal finance with AnnitaPay. Send and receive money instantly, 
-                  securely, and globally with our advanced digital payment platform.
+                  Multi-currency support for 54 African currencies + major global currencies. 
+                  Real-time settlements with instant cross-border transactions. Digital currency 
+                  integration including CBDCs and stablecoins. Mobile POS solution for merchants 
+                  without hardware requirements. Community-driven financial inclusion and economic 
+                  empowerment. Enhanced security with blockchain-based transparency.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <button 

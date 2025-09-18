@@ -156,7 +156,7 @@ const ERPSystemPage = () => {
     "offers": {
       "@type": "Offer",
       "price": "Contact for pricing",
-      "priceCurrency": "USD"
+      // "priceCurrency": "USD" // Pricing available on pricing page
     },
     "aggregateRating": {
       "@type": "AggregateRating",
@@ -216,8 +216,10 @@ const ERPSystemPage = () => {
                   Complete <span className="text-indigo-600">Business</span> Management
                 </h1>
                 <p className="text-lg sm:text-xl text-gray-600 mb-8 leading-relaxed">
-                  Comprehensive ERP system that integrates all your business processes into one 
-                  powerful platform. Streamline operations and drive growth with enterprise-grade solutions.
+                  Complete business management suite with integrated modules for finance, HR, inventory, 
+                  customer relationship management, and supply chain. Real-time analytics, automated workflows, 
+                  multi-location support, and comprehensive reporting. Streamline operations, reduce costs, 
+                  and improve efficiency with our cloud-based ERP solution.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <button 

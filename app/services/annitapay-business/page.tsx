@@ -77,7 +77,7 @@ const AnnitaPayBusinessPage = () => {
       description: "In-store payment solutions",
       shortDescription: "Transform any device into a powerful POS system. Accept cards, mobile payments, and manage inventory seamlessly.",
       features: ["Mobile POS", "Receipt printing", "Inventory integration"],
-      pricing: "From $29/month"
+      // pricing: "From $29/month" // Pricing available on pricing page
     },
     {
       name: "Recurring Billing",
@@ -163,7 +163,7 @@ const AnnitaPayBusinessPage = () => {
     "offers": {
       "@type": "Offer",
       "price": "2.9",
-      "priceCurrency": "USD"
+      // "priceCurrency": "USD" // Pricing available on pricing page
     },
     "aggregateRating": {
       "@type": "AggregateRating",
@@ -223,8 +223,9 @@ const AnnitaPayBusinessPage = () => {
                   Business <span className="text-blue-600">Payments</span> Made Simple
                 </h1>
                 <p className="text-lg sm:text-xl text-gray-600 mb-8 leading-relaxed">
-                  Comprehensive payment solutions designed for businesses of all sizes. 
-                  Accept payments globally, manage subscriptions, and grow your revenue with confidence.
+                  Enterprise-grade payment solutions with multi-currency support for 54 African currencies plus major global currencies. 
+                  Real-time settlements, digital currency integration including CBDCs and stablecoins, mobile POS solutions, 
+                  bulk payment processing, and comprehensive financial management tools with advanced analytics.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <button className="bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-200 flex items-center justify-center">

@@ -205,8 +205,9 @@ const ConnectPage = () => {
                   Connect <span className="text-blue-600">Seamlessly</span>
                 </h1>
                 <p className="text-lg sm:text-xl text-gray-600 mb-8 leading-relaxed">
-                  Unified communication and marketing platform with messaging, email marketing, 
-                  video conferencing, and customer support tools.
+                  AI-driven marketing insights, targeted advertising, customer engagement tools, and comprehensive analytics. 
+                  Lower customer acquisition costs with data-backed marketing strategies. Campaign performance tracking, 
+                  social media management, email marketing automation, and SMS campaigns with real-time analytics.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <button 

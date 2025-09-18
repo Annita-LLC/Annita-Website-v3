@@ -143,8 +143,10 @@ const AIPage = () => {
               Annita <span className="text-orange-500">AI</span>
             </h1>
             <p className="text-lg sm:text-xl text-gray-200 mb-6 sm:mb-8 max-w-2xl mx-auto">
-              AI-powered business tools to help your business grow, optimize operations, 
-              and make data-driven decisions with unprecedented precision.
+              AI-powered insights, automated customer support, predictive analytics, and smart 
+              inventory management. Let artificial intelligence optimize your business operations 
+              with Natural Language Processing, Computer Vision, Predictive Analytics, and 
+              Machine Learning capabilities.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">

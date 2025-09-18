@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 import { Suspense } from 'react'
 import HeroSection from '@/components/sections/hero/HeroSection'
 import FeaturesSection from '@/components/sections/FeaturesSection'
-import AfricanBusinessFeatures from '@/components/sections/AfricanBusinessFeatures'
+// import AfricanBusinessFeatures from '@/components/sections/AfricanBusinessFeatures'
 import V3AnnouncementSection from '@/components/sections/V3AnnouncementSection'
 // import AboutSection from '@/components/sections/AboutSection'
 
@@ -94,7 +94,7 @@ export default function HomePage() {
     <>
       <SEOHead
         title="Annita - Africa's First AI-Powered All-in-One Digital Platform"
-        description="Built specifically for African businesses with features that address real challenges in cross-border trade, institutional backing, and seamless integration across African markets. Unlike generic marketplaces, Annita connects you with authentic African suppliers and grows your business across the continent."
+        description="Built for African businesses. Cross-border trade, institutional backing, seamless integration. Connect with authentic African suppliers and grow your business."
         keywords={[
           'Annita',
           'Africa digital platform',
@@ -180,9 +180,7 @@ export default function HomePage() {
         <FeaturesSection />
       </Suspense>
       
-      <Suspense fallback={<LoadingSpinner />}>
-        <AfricanBusinessFeatures />
-      </Suspense>
+      {/* AfricanBusinessFeatures moved to service pages for detailed content */}
       
       <Suspense fallback={<LoadingSpinner />}>
         <V3AnnouncementSection />

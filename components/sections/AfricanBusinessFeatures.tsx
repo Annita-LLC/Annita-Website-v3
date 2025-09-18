@@ -36,35 +36,35 @@ const AfricanBusinessFeatures = () => {
     {
       icon: Building2,
       title: 'Institutional Backing',
-      description: 'Ensuring institutional trust and access to trade finance through strategic partnerships with leading African banks.',
+      description: 'Strategic partnerships with leading African banks for trade finance.',
       color: 'from-blue-500 to-blue-600',
       bgColor: 'from-blue-50 to-blue-100'
     },
     {
       icon: Network,
       title: 'Connected Ecosystem',
-      description: 'Linked to continental trade tools and platforms for seamless integration across African markets.',
+      description: 'Seamless integration across African markets.',
       color: 'from-green-500 to-green-600',
       bgColor: 'from-green-50 to-green-100'
     },
     {
       icon: FileCheck,
       title: 'Verified Users',
-      description: 'All participants undergo comprehensive due diligence through Smile ID to ensure secure transactions.',
+      description: 'Comprehensive due diligence through Smile ID for secure transactions.',
       color: 'from-purple-500 to-purple-600',
       bgColor: 'from-purple-50 to-purple-100'
     },
     {
       icon: MapPin,
       title: 'Logistics & Order Management',
-      description: 'Comprehensive supply chain and order tracking solutions integrated into the platform.',
+      description: 'Comprehensive supply chain and order tracking solutions.',
       color: 'from-orange-500 to-orange-600',
       bgColor: 'from-orange-50 to-orange-100'
     },
     {
       icon: Banknote,
       title: 'Finance-Ready',
-      description: 'Integrated financing solutions with escrow protection for seamless trade operations.',
+      description: 'Integrated financing solutions with escrow protection.',
       color: 'from-emerald-500 to-emerald-600',
       bgColor: 'from-emerald-50 to-emerald-100'
     }

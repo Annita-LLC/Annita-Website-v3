@@ -206,31 +206,6 @@ const MobilePOSFeature = () => {
           </div>
         </motion.div>
 
-        {/* Call to Action */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.8 }}
-          className="text-center"
-        >
-          <div className="bg-gradient-to-r from-orange-500 to-red-500 rounded-3xl p-8 text-white">
-            <h3 className="text-2xl lg:text-3xl font-bold mb-4">
-              Start Accepting Payments Today
-            </h3>
-            <p className="text-lg mb-6 opacity-90">
-              No setup fees, no hardware costs, no long-term contracts. 
-              Get started in minutes and start accepting payments immediately.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white text-orange-600 px-8 py-3 rounded-xl font-bold hover:bg-gray-100 transition-colors duration-300">
-                Get Started Free
-              </button>
-              <button className="border-2 border-white text-white px-8 py-3 rounded-xl font-bold hover:bg-white hover:text-orange-600 transition-colors duration-300">
-                Watch Demo
-              </button>
-            </div>
-          </div>
-        </motion.div>
       </div>
     </section>
   )

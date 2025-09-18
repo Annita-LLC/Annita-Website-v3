@@ -61,44 +61,44 @@ const LogisticsPage = () => {
     { 
       name: "Express Delivery", 
       icon: "🚚", 
-      description: "Same-day and next-day delivery",
-      features: ["Fast delivery", "Real-time tracking", "Priority handling"],
-      price: "From $5"
+      description: "Same-day and next-day delivery across all major cities",
+      features: ["Ultra-fast delivery", "Real-time GPS tracking", "Priority handling", "SMS notifications", "Delivery confirmation"],
+      details: "Our express delivery service ensures your packages reach their destination within 24 hours. With dedicated couriers and optimized routes, we guarantee fast and secure delivery."
     },
     { 
       name: "Standard Shipping", 
       icon: "📦", 
-      description: "Reliable 2-5 day delivery",
-      features: ["Cost-effective", "Wide coverage", "Package protection"],
-      price: "From $3"
+      description: "Reliable 2-5 day delivery with comprehensive coverage",
+      features: ["Wide network coverage", "Package protection", "Insurance included", "Delivery scheduling", "Proof of delivery"],
+      details: "Perfect for regular shipments with our extensive network covering urban and rural areas. Includes full insurance coverage and flexible delivery options."
     },
     { 
-      name: "International", 
+      name: "International Shipping", 
       icon: "🌍", 
-      description: "Global shipping solutions",
-      features: ["Worldwide delivery", "Customs handling", "Multi-language support"],
-      price: "From $15"
+      description: "Global shipping solutions with customs expertise",
+      features: ["Worldwide delivery", "Customs clearance", "Multi-language support", "Documentation assistance", "Tracking across borders"],
+      details: "Seamless international shipping with our global network. We handle all customs documentation and provide end-to-end tracking for international shipments."
     },
     { 
-      name: "Bulk Shipping", 
+      name: "Bulk & Business Shipping", 
       icon: "🏭", 
-      description: "Large volume and business shipping",
-      features: ["Volume discounts", "Dedicated support", "Custom solutions"],
-      price: "Custom pricing"
+      description: "Large volume and enterprise shipping solutions",
+      features: ["Volume optimization", "Dedicated account manager", "Custom logistics solutions", "Scheduled pickups", "Business reporting"],
+      details: "Tailored solutions for businesses with high shipping volumes. Includes dedicated support, custom packaging, and detailed analytics for your logistics operations."
     },
     { 
-      name: "Warehouse", 
+      name: "Warehouse & Fulfillment", 
       icon: "🏢", 
-      description: "Storage and fulfillment services",
-      features: ["Secure storage", "Order fulfillment", "Inventory management"],
-      price: "From $10/month"
+      description: "Complete storage and order fulfillment services",
+      features: ["Secure climate-controlled storage", "Automated order fulfillment", "Real-time inventory management", "Quality control", "Returns processing"],
+      details: "Full-service warehousing with automated fulfillment systems. We store, pack, and ship your products with complete inventory visibility and quality assurance."
     },
     { 
-      name: "Returns", 
+      name: "Returns & Exchanges", 
       icon: "↩️", 
-      description: "Easy returns and exchanges",
-      features: ["Free returns", "Quick processing", "Refund guarantee"],
-      price: "Free"
+      description: "Streamlined returns and exchange processing",
+      features: ["Easy return initiation", "Free return shipping", "Quick processing", "Refund guarantee", "Exchange options"],
+      details: "Customer-friendly returns process with free return shipping and quick processing. We handle the entire returns workflow to ensure customer satisfaction."
     }
   ]
 
@@ -358,7 +358,7 @@ const LogisticsPage = () => {
                       </li>
                     ))}
                   </ul>
-                  <div className="text-blue-600 font-semibold text-lg">{service.price}</div>
+                  <p className="text-sm text-gray-600 leading-relaxed">{service.details}</p>
                 </motion.div>
               ))}
             </div>

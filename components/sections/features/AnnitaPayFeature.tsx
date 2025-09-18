@@ -176,87 +176,32 @@ const AnnitaPayFeature = () => {
         </motion.div>
       </div>
 
-      {/* Interactive Visual */}
+      {/* Demo Image Visual */}
       <motion.div
         initial={{ opacity: 0, scale: 0.9 }}
         whileInView={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.8, delay: 0.4 }}
         className="relative"
       >
-        <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-3xl p-6 lg:p-8 relative overflow-hidden">
-          {/* Animated background elements */}
-          <div className="absolute top-4 right-4 w-20 h-20 bg-green-200 rounded-full opacity-20 animate-pulse"></div>
-          <div className="absolute bottom-8 left-6 w-16 h-16 bg-emerald-200 rounded-full opacity-30 animate-pulse delay-1000"></div>
+        <div className="bg-white/80 backdrop-blur-sm rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 border border-orange-200 shadow-2xl">
+          <div className="text-center mb-4 sm:mb-6">
+            <h3 className="text-base sm:text-lg md:text-xl font-semibold text-gray-900 mb-1 sm:mb-2">AnnitaPay Demo</h3>
+            <p className="text-xs sm:text-sm text-gray-600">Secure • Encrypted • Protected</p>
+          </div>
           
-          {/* Main interface */}
-          <div className="bg-white rounded-2xl p-4 sm:p-6 shadow-soft border border-gray-200 relative z-10">
-            {/* Header */}
-            <div className="flex items-center justify-between mb-4 sm:mb-6">
-              <div className="flex items-center space-x-3">
-                <div className="w-10 h-10 bg-gradient-to-br from-green-500 to-emerald-500 rounded-xl flex items-center justify-center">
-                  <CreditCard className="w-5 h-5 text-white" />
-                </div>
-                <div>
-                  <img 
-                    src="/images/DEMO-Images/AnnitaPay.jpg" 
-                    alt="AnnitaPay Demo" 
-                    className="w-32 h-8 object-contain rounded-lg shadow-sm border border-gray-200"
-                  />
-                  <div className="text-sm text-gray-500 mt-1">Secure • Encrypted • Protected</div>
-                </div>
-              </div>
-              <div className="flex space-x-2">
-                <div className="w-3 h-3 bg-red-400 rounded-full"></div>
-                <div className="w-3 h-3 bg-yellow-400 rounded-full"></div>
-                <div className="w-3 h-3 bg-green-400 rounded-full"></div>
-              </div>
+          {/* Large Demo Image */}
+          <div className="relative mx-auto group">
+            <div className="relative overflow-hidden rounded-2xl shadow-2xl border-2 border-gray-100 bg-gradient-to-br from-gray-50 to-white p-2">
+              <img 
+                src="/images/DEMO-Images/AnnitaPay.jpg" 
+                alt="AnnitaPay Demo" 
+                className="w-full h-auto rounded-xl transition-transform duration-300 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent rounded-xl pointer-events-none"></div>
             </div>
-
-            {/* Balance Card */}
-            <div className="bg-gradient-to-r from-green-500 to-emerald-500 rounded-xl p-4 text-white mb-4">
-              <div className="flex items-center justify-between mb-2">
-                <span className="text-sm opacity-90">Available Balance</span>
-                <Shield className="w-4 h-4" />
-              </div>
-              <div className="text-2xl font-bold mb-1">${currentBalance.toFixed(2)}</div>
-              <div className="text-xs opacity-90 flex items-center">
-                <Lock className="w-3 h-3 mr-1" />
-                Secure • Encrypted • Protected
-              </div>
-            </div>
-
-            {/* Action Buttons */}
-            <div className="grid grid-cols-2 gap-3 mb-4">
-              <button className="bg-gray-100 rounded-lg p-3 text-center text-sm font-medium hover:bg-gray-200 transition-colors flex items-center justify-center">
-                <Send className="w-4 h-4 mr-2" />
-                Send Money
-              </button>
-              <button className="bg-gray-100 rounded-lg p-3 text-center text-sm font-medium hover:bg-gray-200 transition-colors flex items-center justify-center">
-                <Download className="w-4 h-4 mr-2" />
-                Request
-              </button>
-            </div>
-
-
+            <div className="absolute -inset-1 bg-gradient-to-r from-orange-500/20 to-red-500/20 rounded-3xl blur-sm -z-10"></div>
           </div>
         </div>
-
-        {/* Floating elements */}
-        <motion.div
-          animate={{ y: [-10, 10, -10] }}
-          transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute -top-4 -right-4 w-8 h-8 bg-green-500 rounded-full flex items-center justify-center"
-        >
-          <Shield className="w-4 h-4 text-white" />
-        </motion.div>
-        
-        <motion.div
-          animate={{ y: [10, -10, 10] }}
-          transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute -bottom-4 -left-4 w-6 h-6 bg-emerald-500 rounded-full flex items-center justify-center"
-        >
-          <Activity className="w-3 h-3 text-white" />
-        </motion.div>
       </motion.div>
     </motion.div>
   )

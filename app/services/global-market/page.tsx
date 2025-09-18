@@ -22,7 +22,8 @@ import {
   Star,
   MapPin,
   Clock,
-  BarChart3
+  BarChart3,
+  Search
 } from 'lucide-react'
 
 const GlobalMarketPage = () => {
@@ -192,8 +193,9 @@ const GlobalMarketPage = () => {
                   Go <span className="text-blue-600">Global</span> with Annita
                 </h1>
                 <p className="text-lg sm:text-xl text-gray-600 mb-8 leading-relaxed">
-                  Connect with buyers and sellers worldwide. Access global markets, 
-                  secure transactions, and comprehensive logistics for international trade.
+                  Built specifically for African businesses with features that address real challenges in cross-border trade, 
+                  institutional backing, and seamless integration across African markets. Unlike generic marketplaces, 
+                  Annita connects you with authentic African suppliers and grows your business across the continent.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <button className="bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-200 flex items-center justify-center">
@@ -245,7 +247,7 @@ const GlobalMarketPage = () => {
                       </div>
                       <div className="text-right">
                         <div className="text-xl font-bold text-green-600">$500M+</div>
-                        <div className="text-sm text-gray-600">USD</div>
+                        <div className="text-sm text-gray-600">Volume</div>
                       </div>
                     </div>
                   </div>
@@ -255,8 +257,127 @@ const GlobalMarketPage = () => {
           </div>
         </section>
 
+        {/* African Business Features Section */}
+        <section className="py-16 sm:py-20 bg-gradient-to-br from-orange-50 to-red-50" ref={ref}>
+          <div className="container mx-auto px-3 sm:px-4 lg:px-6 xl:px-8">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.8 }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+                Built for <span className="text-orange-600">African Businesses</span>
+              </h2>
+              <p className="text-lg sm:text-xl text-gray-600 max-w-4xl mx-auto">
+                Unlike generic marketplaces, Annita is built for African businesses featuring: 
+                KYC-Verified Businesses, Escrow Payment Protection, RFQ-Based Sourcing, 
+                Multi-Currency Support, Pan-African Network.
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="bg-white p-6 rounded-2xl shadow-lg border border-orange-100"
+              >
+                <div className="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center mb-4">
+                  <Users className="w-6 h-6 text-orange-600" />
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-3">KYC-Verified Businesses</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  All suppliers and buyers complete identity & document checks through Smile ID. 
+                  Comprehensive due diligence ensures secure transactions.
+                </p>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                className="bg-white p-6 rounded-2xl shadow-lg border border-orange-100"
+              >
+                <div className="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center mb-4">
+                  <Shield className="w-6 h-6 text-orange-600" />
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-3">Escrow Payment Protection</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  Funds held securely until delivery confirmed. Integrated financing solutions 
+                  with escrow protection for seamless trade operations.
+                </p>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.6, delay: 0.4 }}
+                className="bg-white p-6 rounded-2xl shadow-lg border border-orange-100"
+              >
+                <div className="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center mb-4">
+                  <Search className="w-6 h-6 text-orange-600" />
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-3">RFQ-Based Sourcing</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  Request for Quotation system for efficient supplier discovery. 
+                  Streamlined procurement process for African businesses.
+                </p>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.6, delay: 0.5 }}
+                className="bg-white p-6 rounded-2xl shadow-lg border border-orange-100"
+              >
+                <div className="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center mb-4">
+                  <DollarSign className="w-6 h-6 text-orange-600" />
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-3">Multi-Currency Support</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  Support for 54+ African currencies plus major global currencies. 
+                  Real-time conversion tracking and competitive rates.
+                </p>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.6, delay: 0.6 }}
+                className="bg-white p-6 rounded-2xl shadow-lg border border-orange-100"
+              >
+                <div className="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center mb-4">
+                  <Globe className="w-6 h-6 text-orange-600" />
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-3">Pan-African Network</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  Access suppliers from all AfCFTA regions. Trade confidently across 
+                  East, West, Central, Southern, and North Africa.
+                </p>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.6, delay: 0.7 }}
+                className="bg-white p-6 rounded-2xl shadow-lg border border-orange-100"
+              >
+                <div className="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center mb-4">
+                  <Building className="w-6 h-6 text-orange-600" />
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-3">Institutional Backing</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  Strategic partnerships with leading African banks for trade finance. 
+                  Connected ecosystem for seamless integration.
+                </p>
+              </motion.div>
+            </div>
+          </div>
+        </section>
+
         {/* Features Section */}
-        <section className="py-16 sm:py-20" ref={ref}>
+        <section className="py-16 sm:py-20">
           <div className="container mx-auto px-3 sm:px-4 lg:px-6 xl:px-8">
             <motion.div
               initial={{ opacity: 0, y: 30 }}

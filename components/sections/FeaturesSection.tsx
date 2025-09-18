@@ -73,22 +73,22 @@ const FeaturesSection = () => {
     {
       icon: TrendingUp,
       title: 'Grow Your Business',
-      description: 'Increase revenue by up to 300% with our African-focused platform'
+      description: 'African-focused platform for maximum growth'
     },
     {
       icon: Globe,
       title: 'Pan-African Network',
-      description: 'Access suppliers from all 54 African countries in one unified marketplace'
+      description: 'Access suppliers from all 54 African countries'
     },
     {
       icon: Shield,
       title: 'Escrow Protection',
-      description: 'Funds held securely until delivery confirmed - boosting trust and safety'
+      description: 'Funds held securely until delivery confirmed'
     },
     {
       icon: Users,
       title: 'KYC-Verified Suppliers',
-      description: 'All suppliers thoroughly vetted and verified for quality and reliability'
+      description: 'All suppliers thoroughly vetted and verified'
     }
   ]
 
@@ -106,9 +106,8 @@ const FeaturesSection = () => {
             Complete <span className="text-orange-500">African Business Ecosystem</span>
           </h2>
           <p className="text-lg sm:text-xl text-gray-600 max-w-4xl mx-auto">
-            Built specifically for African businesses with features that address real challenges in cross-border trade, 
-            institutional backing, and seamless integration across African markets. Unlike generic marketplaces, 
-            Annita connects you with authentic African suppliers and grows your business across the continent.
+            Built for African businesses. Cross-border trade, institutional backing, seamless integration. 
+            Connect with authentic African suppliers and grow your business.
           </p>
         </motion.div>
 

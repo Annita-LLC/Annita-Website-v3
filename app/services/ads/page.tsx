@@ -210,8 +210,9 @@ const AdsPage = () => {
                   Reach <span className="text-purple-600">Millions</span> of Customers
                 </h1>
                 <p className="text-lg sm:text-xl text-gray-600 mb-8 leading-relaxed">
-                  Powerful advertising platform with precise targeting, multi-platform reach, 
-                  and AI-powered optimization to grow your business across Africa.
+                  Advanced advertising platform with AI-powered targeting, real-time optimization, and comprehensive analytics. 
+                  Sponsored ads, targeted marketing campaigns, and visibility boosts for sellers. Multi-channel advertising 
+                  across social media, email, SMS, and display networks with detailed performance tracking.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <button 
