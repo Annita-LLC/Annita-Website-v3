@@ -300,18 +300,18 @@ export default function PricingPage() {
                 transition={{ duration: 0.8 }}
                 className="text-center lg:text-left"
               >
-                <div className="inline-flex items-center px-4 py-2 rounded-full bg-orange-100 text-orange-700 text-sm font-medium mb-6">
-                  <DollarSign className="w-4 h-4 mr-2" />
-                  Transparent Pricing
-                </div>
-                
+              <div className="inline-flex items-center px-4 py-2 rounded-full bg-orange-100 text-orange-700 text-sm font-medium mb-6">
+                <DollarSign className="w-4 h-4 mr-2" />
+                Transparent Pricing
+              </div>
+              
                 <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-                  Choose Your <span className="text-orange-500">Plan</span>
-                </h1>
+                Choose Your <span className="text-orange-500">Plan</span>
+              </h1>
                 <p className="text-lg sm:text-xl text-gray-600 mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-                  Transparent pricing with our clear markup base model. Choose the perfect plan 
-                  for your business with no hidden fees.
-                </p>
+                Transparent pricing with our clear markup base model. Choose the perfect plan 
+                for your business with no hidden fees.
+              </p>
                 
                 {/* Quick Stats */}
                 <div className="grid grid-cols-2 gap-3 sm:gap-4 mb-8">
@@ -560,43 +560,43 @@ export default function PricingPage() {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.8 }}
                   >
-                    <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6">
+                  <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6">
                       Compare Plans
-                    </h2>
-                    <p className="text-lg text-gray-600 mb-8">
-                      Choose the plan that best fits your business needs. All plans include a 14-day free trial.
-                    </p>
+                  </h2>
+                  <p className="text-lg text-gray-600 mb-8">
+                    Choose the plan that best fits your business needs. All plans include a 14-day free trial.
+                  </p>
 
-                    {/* Billing Toggle */}
-                    <div className="mb-8">
-                      <div className="flex justify-center">
-                        <div className="bg-gray-100 rounded-2xl p-1 flex items-center">
-                          <button
-                            onClick={() => setBillingCycle('monthly')}
+                  {/* Billing Toggle */}
+                  <div className="mb-8">
+                    <div className="flex justify-center">
+                      <div className="bg-gray-100 rounded-2xl p-1 flex items-center">
+                        <button
+                          onClick={() => setBillingCycle('monthly')}
                             className={`px-4 sm:px-6 py-2 sm:py-3 rounded-xl text-sm font-medium transition-all duration-200 ${
-                              billingCycle === 'monthly'
-                                ? 'bg-white text-orange-600 shadow-md'
-                                : 'text-gray-600 hover:text-gray-900'
-                            }`}
-                          >
-                            Monthly
-                          </button>
-                          <button
-                            onClick={() => setBillingCycle('yearly')}
+                            billingCycle === 'monthly'
+                              ? 'bg-white text-orange-600 shadow-md'
+                              : 'text-gray-600 hover:text-gray-900'
+                          }`}
+                        >
+                          Monthly
+                        </button>
+                        <button
+                          onClick={() => setBillingCycle('yearly')}
                             className={`px-4 sm:px-6 py-2 sm:py-3 rounded-xl text-sm font-medium transition-all duration-200 ${
-                              billingCycle === 'yearly'
-                                ? 'bg-white text-orange-600 shadow-md'
-                                : 'text-gray-600 hover:text-gray-900'
-                            }`}
-                          >
-                            Yearly
-                            <span className="ml-2 bg-orange-100 text-orange-600 text-xs px-2 py-1 rounded-full">
-                              Save 17%
-                            </span>
-                          </button>
-                        </div>
+                            billingCycle === 'yearly'
+                              ? 'bg-white text-orange-600 shadow-md'
+                              : 'text-gray-600 hover:text-gray-900'
+                          }`}
+                        >
+                          Yearly
+                          <span className="ml-2 bg-orange-100 text-orange-600 text-xs px-2 py-1 rounded-full">
+                            Save 17%
+                          </span>
+                        </button>
                       </div>
                     </div>
+                  </div>
 
                     {/* FAQ Section */}
                     <div className="bg-white rounded-xl p-4 sm:p-6 shadow-lg border border-gray-200 mb-8">
@@ -606,7 +606,7 @@ export default function PricingPage() {
                       <div className="space-y-4">
                         {faqs.slice(0, 3).map((faq, index) => (
                           <div key={index} className="border-b border-gray-100 pb-4 last:border-b-0">
-                            <button
+                      <button
                               onClick={() => setExpandedFAQ(expandedFAQ === index.toString() ? '' : index.toString())}
                               className="flex items-center justify-between w-full text-left"
                             >
@@ -622,29 +622,29 @@ export default function PricingPage() {
                             )}
                           </div>
                         ))}
-                      </div>
-                    </div>
+                          </div>
+                  </div>
 
-                    {/* Markup Model Info */}
+                  {/* Markup Model Info */}
                     <div className="bg-white rounded-xl p-4 sm:p-6 shadow-lg border border-gray-200">
-                      <h3 className="text-lg font-semibold text-gray-900 mb-4">
-                        Markup Base Model
-                      </h3>
+                    <h3 className="text-lg font-semibold text-gray-900 mb-4">
+                      Markup Base Model
+                    </h3>
                       <p className="text-gray-600 mb-4 text-sm sm:text-base">
-                        Vendors can choose between subscription plans or a markup model (5-15%).
-                      </p>
-                      <div className="space-y-2">
-                        <div className="flex items-center space-x-2">
+                      Vendors can choose between subscription plans or a markup model (5-15%).
+                    </p>
+                    <div className="space-y-2">
+                      <div className="flex items-center space-x-2">
                           <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
-                          <span className="text-sm text-gray-600">No transaction fees</span>
-                        </div>
-                        <div className="flex items-center space-x-2">
+                        <span className="text-sm text-gray-600">No transaction fees</span>
+                      </div>
+                      <div className="flex items-center space-x-2">
                           <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
-                          <span className="text-sm text-gray-600">Transparent pricing</span>
-                        </div>
-                        <div className="flex items-center space-x-2">
+                        <span className="text-sm text-gray-600">Transparent pricing</span>
+                      </div>
+                      <div className="flex items-center space-x-2">
                           <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
-                          <span className="text-sm text-gray-600">Flexible switching</span>
+                        <span className="text-sm text-gray-600">Flexible switching</span>
                         </div>
                       </div>
                     </div>

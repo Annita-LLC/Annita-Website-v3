@@ -6,6 +6,7 @@ import { useInView } from 'framer-motion'
 import { useRef } from 'react'
 import SEOHead from '@/components/seo/SEOHead'
 import CTASection from '@/components/sections/CTASection'
+import MobilePOSFeature from '@/components/sections/MobilePOSFeature'
 import {
   Building,
   CreditCard,
@@ -479,6 +480,9 @@ const AnnitaPayBusinessPage = () => {
             </div>
           </div>
         </section>
+
+        {/* Mobile POS Feature Section */}
+        <MobilePOSFeature />
 
         {/* CTA Section */}
         <CTASection />

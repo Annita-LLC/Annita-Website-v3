@@ -6,6 +6,7 @@ import { useInView } from 'framer-motion'
 import { useRef } from 'react'
 import SEOHead from '@/components/seo/SEOHead'
 import CTASection from '@/components/sections/CTASection'
+import CommunityFeatures from '@/components/sections/CommunityFeatures'
 import DownloadChoiceModal from '@/components/ui/DownloadChoiceModal'
 import { 
   CreditCard, 
@@ -302,7 +303,8 @@ const AnnitaPayPage = () => {
           </div>
         </section>
 
-
+        {/* Community Features Section */}
+        <CommunityFeatures />
 
         {/* CTA Section */}
         <CTASection />

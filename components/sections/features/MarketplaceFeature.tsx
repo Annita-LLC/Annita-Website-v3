@@ -190,8 +190,12 @@ const MarketplaceFeature = () => {
                   <ShoppingCart className="w-5 h-5 text-white" />
                 </div>
                 <div>
-                  <div className="font-semibold text-gray-900">Annita Marketplace</div>
-                  <div className="text-sm text-gray-500">Multivendor Platform</div>
+                  <img 
+                    src="/images/DEMO-Images/Annita Marketplace.jpg" 
+                    alt="Annita Marketplace Demo" 
+                    className="w-32 h-8 object-contain rounded-lg shadow-sm border border-gray-200"
+                  />
+                  <div className="text-sm text-gray-500 mt-1">Multivendor Platform</div>
                 </div>
               </div>
               <div className="flex space-x-2">

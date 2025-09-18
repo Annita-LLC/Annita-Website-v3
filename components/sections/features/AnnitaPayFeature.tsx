@@ -42,8 +42,12 @@ const AnnitaPayFeature = () => {
 
   const features = [
     'Escrow payment protection until delivery confirmed',
-    'Multi-currency support for 30+ African currencies',
-    'Real-time conversion tracking and exchange rates',
+    'Multi-currency support for 54 African currencies + major global currencies',
+    'Real-time settlements with instant cross-border transactions',
+    'Digital currency integration including CBDCs and stablecoins',
+    'Mobile POS solution for merchants without hardware requirements',
+    'Community-driven financial inclusion and economic empowerment',
+    'Enhanced security with blockchain-based transparency',
     'Institutional backing through African bank partnerships',
     'Comprehensive due diligence through Smile ID',
     'Integrated financing solutions for trade operations'
@@ -94,10 +98,11 @@ const AnnitaPayFeature = () => {
           transition={{ duration: 0.6, delay: 0.5 }}
           className="text-gray-600 mb-6 leading-relaxed"
         >
-          Integrated financing solutions with escrow protection for seamless trade operations. 
-          Trade confidently in <span className="text-orange-600 font-semibold">over 30 African currencies</span> 
-          with <span className="text-orange-600 font-semibold">real-time conversion tracking</span> 
-          and institutional backing through strategic partnerships with leading African banks.
+          Comprehensive financial platform with real-time settlements and escrow protection for seamless trade operations. 
+          Trade confidently in <span className="text-orange-600 font-semibold">54+ African currencies</span> 
+          with <span className="text-orange-600 font-semibold">instant cross-border transactions</span>, 
+          digital currency integration including CBDCs, mobile POS solutions, and community-driven financial inclusion. 
+          Enhanced with blockchain transparency and institutional backing through strategic partnerships with leading African banks.
         </motion.p>
 
         {/* Live Security Stats */}
@@ -192,8 +197,12 @@ const AnnitaPayFeature = () => {
                   <CreditCard className="w-5 h-5 text-white" />
                 </div>
                 <div>
-                  <div className="font-semibold text-gray-900">AnnitaPay</div>
-                  <div className="text-sm text-gray-500">Secure • Encrypted • Protected</div>
+                  <img 
+                    src="/images/DEMO-Images/AnnitaPay.jpg" 
+                    alt="AnnitaPay Demo" 
+                    className="w-32 h-8 object-contain rounded-lg shadow-sm border border-gray-200"
+                  />
+                  <div className="text-sm text-gray-500 mt-1">Secure • Encrypted • Protected</div>
                 </div>
               </div>
               <div className="flex space-x-2">

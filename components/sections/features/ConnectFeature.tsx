@@ -205,8 +205,12 @@ const ConnectFeature = () => {
                   <MessageSquare className="w-5 h-5 text-white" />
                 </div>
                 <div>
-                  <div className="font-semibold text-gray-900">Annita Connect</div>
-                  <div className="text-sm text-gray-500">Marketing Dashboard</div>
+                  <img 
+                    src="/images/DEMO-Images/Annita Connect.webp" 
+                    alt="Annita Connect Demo" 
+                    className="w-32 h-8 object-contain rounded-lg shadow-sm border border-gray-200"
+                  />
+                  <div className="text-sm text-gray-500 mt-1">Marketing Dashboard</div>
                 </div>
               </div>
               <div className="flex space-x-2">
