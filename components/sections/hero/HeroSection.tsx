@@ -293,30 +293,6 @@ const HeroSection = () => {
               </motion.div>
               </AnimatePresence>
 
-              {/* Trust indicators */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.5 }}
-                className="mt-12 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-6 text-sm text-gray-500"
-              >
-                <div className="flex items-center">
-                  <Users className="w-4 h-4 mr-2" />
-                  <span>3,000+ KYC-Verified Vendors</span>
-                </div>
-                <div className="flex items-center">
-                  <Globe className="w-4 h-4 mr-2" />
-                  <span>54 African Countries</span>
-                </div>
-                <div className="flex items-center">
-                  <Shield className="w-4 h-4 mr-2" />
-                  <span>Escrow Protection</span>
-                </div>
-                <div className="flex items-center">
-                  <Star className="w-4 h-4 mr-2" />
-                  <span>V3.0 Coming Soon</span>
-                </div>
-          </motion.div>
         </div>
           </motion.div>
 

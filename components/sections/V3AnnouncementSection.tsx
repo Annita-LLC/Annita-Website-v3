@@ -191,7 +191,7 @@ const V3AnnouncementSection = () => {
                 ))}
               </div>
 
-              {/* V3.0 CTA */}
+              {/* V3.0 Text Content */}
               <div className="text-center">
                 <div className="bg-gradient-to-r from-orange-500/20 to-purple-500/20 rounded-2xl p-8 border border-orange-500/30">
                   <h3 className="text-2xl sm:text-3xl font-bold mb-4">
@@ -200,26 +200,6 @@ const V3AnnouncementSection = () => {
                   <p className="text-lg text-gray-300 mb-6">
                     For MSMEs, vendors, freelancers, market women, students, and individuals.
                   </p>
-                  <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                    <Button
-                      variant="gradient"
-                      size="lg"
-                      icon={Star}
-                      className="text-lg font-bold"
-                      onClick={() => setIsWaitlistOpen(true)}
-                    >
-                      Join the Waitlist
-                    </Button>
-                    <Button
-                      variant="outline"
-                      size="lg"
-                      icon={ExternalLink}
-                      className="text-lg font-bold border-white/30 text-white hover:bg-white/10"
-                      onClick={() => window.open('/learn-more-v3', '_blank')}
-                    >
-                      Learn More
-                    </Button>
-                  </div>
                 </div>
               </div>
             </motion.div>

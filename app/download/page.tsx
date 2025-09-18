@@ -532,37 +532,37 @@ export default function DownloadPage() {
                             <div className="text-right">
                               <div className="text-xs sm:text-sm font-medium text-gray-900">{platform.size}</div>
                               <div className="text-xs text-gray-500">v{platform.version}</div>
-                            </div>
-                          </div>
-                        ))}
+                        </div>
                       </div>
-                    </div>
+                    ))}
+                      </div>
+                  </div>
 
                     {/* Key Benefits */}
                     <div className="bg-white rounded-xl p-4 sm:p-6 shadow-lg border border-gray-200 mb-6 sm:mb-8">
                       <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-3 sm:mb-4">
                         Why Join Annita Waitlist?
-                      </h3>
+                    </h3>
                       <div className="space-y-3 sm:space-y-4">
                         {appFeatures.slice(0, 6).map((feature, index) => (
                           <div key={index} className="flex items-start space-x-2 sm:space-x-3">
                             <div className="w-6 h-6 sm:w-8 sm:h-8 bg-gradient-to-br from-orange-500 to-red-500 rounded-lg flex items-center justify-center flex-shrink-0">
                               <feature.icon className="w-3 h-3 sm:w-4 sm:h-4 text-white" />
-                            </div>
-                            <div>
+                          </div>
+                          <div>
                               <div className="text-xs sm:text-sm font-medium text-gray-900 leading-tight">{feature.title}</div>
                               <div className="text-xs text-gray-600 leading-relaxed">{feature.description}</div>
-                            </div>
                           </div>
-                        ))}
-                      </div>
+                        </div>
+                      ))}
                     </div>
+                  </div>
 
                   {/* Contact Information */}
                     <div className="bg-white rounded-xl p-4 sm:p-6 shadow-lg border border-gray-200">
                       <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-3 sm:mb-4">
-                        Need Help?
-                      </h3>
+                      Need Help?
+                    </h3>
                       <div className="space-y-2 sm:space-y-3">
                         <div className="flex items-center space-x-2 sm:space-x-3">
                           <Mail className="w-4 h-4 sm:w-5 sm:h-5 text-orange-500 flex-shrink-0" />
@@ -571,11 +571,11 @@ export default function DownloadPage() {
                         <div className="flex items-center space-x-2 sm:space-x-3">
                           <Phone className="w-4 h-4 sm:w-5 sm:h-5 text-orange-500 flex-shrink-0" />
                           <span className="text-sm sm:text-base text-gray-600">+231 77 505 7227</span>
-                        </div>
+                      </div>
                         <div className="flex items-center space-x-2 sm:space-x-3">
                           <MessageSquare className="w-4 h-4 sm:w-5 sm:h-5 text-orange-500 flex-shrink-0" />
                           <span className="text-sm sm:text-base text-gray-600">Live chat available</span>
-                        </div>
+                      </div>
                       </div>
                     </div>
                   </motion.div>

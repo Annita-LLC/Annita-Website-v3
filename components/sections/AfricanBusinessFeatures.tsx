@@ -253,43 +253,6 @@ const AfricanBusinessFeatures = () => {
           </div>
         </motion.div>
 
-        {/* CTA Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 0.8 }}
-          className="text-center bg-gradient-to-r from-orange-500 to-orange-600 rounded-3xl p-8 sm:p-12"
-        >
-          <div className="max-w-3xl mx-auto">
-            <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-4 sm:mb-6">
-              Ready to Grow Your Business Across Africa?
-            </h3>
-            <p className="text-lg sm:text-xl text-orange-100 mb-8 sm:mb-10">
-              Join thousands of African businesses already using Annita to expand their reach, 
-              secure their transactions, and grow their revenue.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center">
-              <Button
-                variant="secondary"
-                size="lg"
-                className="bg-white text-orange-600 hover:bg-orange-50 border-white"
-                onClick={() => window.open('https://annita.company.site/products', '_blank')}
-              >
-                <Users className="w-5 h-5 mr-2" />
-                Start Selling
-              </Button>
-              <Button
-                variant="outline"
-                size="lg"
-                className="border-white text-white hover:bg-white hover:text-orange-600"
-                onClick={() => window.open('https://annita.company.site/products', '_blank')}
-              >
-                <Search className="w-5 h-5 mr-2" />
-                Find Suppliers
-              </Button>
-            </div>
-          </div>
-        </motion.div>
       </div>
     </section>
   )
