@@ -8,9 +8,10 @@ import Button from './Button'
 interface WaitlistFormProps {
   isOpen: boolean
   onClose: () => void
+  onSuccess?: () => void
 }
 
-const WaitlistForm = ({ isOpen, onClose }: WaitlistFormProps) => {
+const WaitlistForm = ({ isOpen, onClose, onSuccess }: WaitlistFormProps) => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -42,6 +43,11 @@ const WaitlistForm = ({ isOpen, onClose }: WaitlistFormProps) => {
 
       setIsSubmitting(false)
       setIsSubmitted(true)
+      
+      // Call onSuccess callback if provided
+      if (onSuccess) {
+        onSuccess()
+      }
       
       // Reset form after 3 seconds
       setTimeout(() => {
