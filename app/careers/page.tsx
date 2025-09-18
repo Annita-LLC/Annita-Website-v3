@@ -252,96 +252,96 @@ export default function CareersPage() {
             <div className="max-w-7xl mx-auto">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 sm:gap-16">
                 {/* Enhanced Careers Information */}
-                <div>
+                                 <div>
                   <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6 sm:mb-8">
                     Future <span className="text-orange-500 dark:text-orange-400">Opportunities</span>
-                  </h2>
+                   </h2>
                   <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-300 mb-8 sm:mb-12 leading-relaxed">
-                    While we don't have any open positions at the moment, we're always looking for 
-                    passionate individuals who share our vision. Submit your application and we'll 
-                    contact you when opportunities arise.
-                  </p>
+                     While we don't have any open positions at the moment, we're always looking for 
+                     passionate individuals who share our vision. Submit your application and we'll 
+                     contact you when opportunities arise.
+                   </p>
 
                   {/* Enhanced Team Stats */}
                   <div className="grid grid-cols-2 gap-4 sm:gap-6 mb-12 sm:mb-16">
-                    {teamStats.map((stat, index) => (
+                     {teamStats.map((stat, index) => (
                       <div key={index} className="bg-white dark:bg-gray-800 rounded-xl sm:rounded-2xl p-4 sm:p-6 shadow-lg border border-gray-200 dark:border-gray-700 text-center hover:shadow-xl transition-shadow duration-300">
                         <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-orange-600 dark:text-orange-400 mb-2">{stat.number}</div>
                         <div className="text-sm sm:text-base text-gray-600 dark:text-gray-400">{stat.label}</div>
-                      </div>
-                    ))}
-                  </div>
+                       </div>
+                     ))}
+                   </div>
 
                   {/* Enhanced Departments */}
                   <div className="space-y-6 sm:space-y-8">
                     {departments.map((department) => (
-                      <button
-                        key={department.id}
-                        onClick={() => handleDepartmentSelect(department.id)}
+                                             <button
+                         key={department.id}
+                         onClick={() => handleDepartmentSelect(department.id)}
                         className={`w-full p-6 sm:p-8 lg:p-10 rounded-2xl sm:rounded-3xl border-2 transition-all duration-300 text-left hover:shadow-lg ${
-                          selectedPosition === department.id
+                           selectedPosition === department.id
                             ? 'border-orange-500 dark:border-orange-400 bg-orange-50 dark:bg-orange-900/20 shadow-lg'
-                            : 'border-gray-200 dark:border-gray-700 hover:border-gray-300 dark:hover:border-gray-600 bg-white dark:bg-gray-800'
-                        }`}
-                      >
+                             : 'border-gray-200 dark:border-gray-700 hover:border-gray-300 dark:hover:border-gray-600 bg-white dark:bg-gray-800'
+                         }`}
+                       >
                         <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-6 sm:mb-8">
                           <div className="flex items-center space-x-4 sm:space-x-6 mb-4 sm:mb-0">
                             <div className={`w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br ${department.color} rounded-xl sm:rounded-2xl flex items-center justify-center shadow-lg`}>
                               <department.icon className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
-                            </div>
-                            <div>
+                             </div>
+                             <div>
                               <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-2">{department.title}</h3>
                               <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400">Department</p>
-                            </div>
-                          </div>
-                          <div className="text-right">
+                             </div>
+                           </div>
+                           <div className="text-right">
                             <div className="text-lg sm:text-xl font-bold text-orange-600 dark:text-orange-400 mb-1">Future Role</div>
                             <div className="text-xs sm:text-sm text-gray-500 dark:text-gray-400">Remote / Liberia</div>
-                          </div>
-                        </div>
-                        
+                           </div>
+                         </div>
+                         
                         <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 mb-4 sm:mb-6 leading-relaxed">{department.description}</p>
                         
                         <div className="flex flex-col sm:flex-row sm:items-center space-y-2 sm:space-y-0 sm:space-x-6 text-xs sm:text-sm text-gray-500 dark:text-gray-400">
                           <div className="flex items-center space-x-2">
                             <Clock className="w-4 h-4" />
-                            <span>Various levels</span>
-                          </div>
+                             <span>Various levels</span>
+                           </div>
                           <div className="flex items-center space-x-2">
                             <MapPin className="w-4 h-4" />
-                            <span>Remote / Liberia</span>
-                          </div>
-                        </div>
-                      </button>
+                             <span>Remote / Liberia</span>
+                           </div>
+                         </div>
+                       </button>
                     ))}
                   </div>
 
                   {/* Enhanced Values */}
                   <div className="mt-12 sm:mt-16 bg-white dark:bg-gray-800 rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-10 shadow-lg border border-gray-200 dark:border-gray-700">
                     <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-6 sm:mb-8">
-                      Our Values
-                    </h3>
+                       Our Values
+                     </h3>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
-                      {values.map((value, index) => (
+                       {values.map((value, index) => (
                         <div key={index} className="flex items-start space-x-3 sm:space-x-4">
                           <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-orange-500 to-red-500 rounded-lg sm:rounded-xl flex items-center justify-center flex-shrink-0">
                             <value.icon className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
-                          </div>
-                          <div>
+                           </div>
+                           <div>
                             <h4 className="text-base sm:text-lg font-semibold text-gray-900 dark:text-white mb-1">{value.title}</h4>
                             <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400 leading-relaxed">{value.description}</p>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
+                           </div>
+                         </div>
+                       ))}
+                     </div>
+                   </div>
                 </div>
 
                 {/* Enhanced Contact Form */}
                 <div className="bg-white dark:bg-gray-800 rounded-2xl sm:rounded-3xl shadow-lg p-6 sm:p-8 lg:p-10 border border-gray-200 dark:border-gray-700">
                   <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-6 sm:mb-8">
-                    {selectedPosition ? `Apply for ${departments.find(d => d.id === selectedPosition)?.title} Role` : 'Submit Your Application'}
-                  </h3>
+                     {selectedPosition ? `Apply for ${departments.find(d => d.id === selectedPosition)?.title} Role` : 'Submit Your Application'}
+                   </h3>
                   
                   <form onSubmit={handleSubmit} className="space-y-6">
                                          {!selectedPosition && (
@@ -353,33 +353,33 @@ export default function CareersPage() {
                      )}
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
-                      <div>
+                                             <div>
                         <label className="block text-sm sm:text-base font-medium text-gray-700 dark:text-gray-300 mb-2 sm:mb-3">
-                          Full Name *
-                        </label>
-                        <input
-                          type="text"
-                          required
-                          value={formData.name}
-                          onChange={(e) => handleInputChange('name', e.target.value)}
+                           Full Name *
+                         </label>
+                         <input
+                           type="text"
+                           required
+                           value={formData.name}
+                           onChange={(e) => handleInputChange('name', e.target.value)}
                           className="w-full px-4 sm:px-6 py-3 sm:py-4 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white rounded-lg sm:rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200 text-sm sm:text-base"
-                          placeholder="Your full name"
-                        />
-                      </div>
+                           placeholder="Your full name"
+                         />
+                       </div>
                       
-                      <div>
+                                             <div>
                         <label className="block text-sm sm:text-base font-medium text-gray-700 dark:text-gray-300 mb-2 sm:mb-3">
-                          Email Address *
-                        </label>
-                        <input
-                          type="email"
-                          required
-                          value={formData.email}
-                          onChange={(e) => handleInputChange('email', e.target.value)}
+                           Email Address *
+                         </label>
+                         <input
+                           type="email"
+                           required
+                           value={formData.email}
+                           onChange={(e) => handleInputChange('email', e.target.value)}
                           className="w-full px-4 sm:px-6 py-3 sm:py-4 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white rounded-lg sm:rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200 text-sm sm:text-base"
-                          placeholder="your.email@company.com"
-                        />
-                      </div>
+                           placeholder="your.email@company.com"
+                         />
+                       </div>
                     </div>
 
                                          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -587,12 +587,12 @@ export default function CareersPage() {
           <div className="max-w-5xl mx-auto">
             <div className="text-center p-8 sm:p-12 lg:p-16 bg-gradient-to-r from-orange-500 to-orange-600 rounded-3xl text-white shadow-2xl">
               <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 sm:mb-8">
-                Ready to Transform Your Business?
-              </h3>
+                 Ready to Transform Your Business?
+               </h3>
               <p className="text-lg sm:text-xl lg:text-2xl text-orange-100 mb-8 sm:mb-12 max-w-4xl mx-auto leading-relaxed">
-                Join thousands of MSMEs already using Annita to grow their revenue, reach new customers, 
-                and streamline their operations across Africa.
-              </p>
+                 Join thousands of MSMEs already using Annita to grow their revenue, reach new customers, 
+                 and streamline their operations across Africa.
+               </p>
               <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center">
                 <a 
                   href="/download"
