@@ -38,78 +38,90 @@ const AnnitaPayBusinessPage = () => {
   const features = [
     {
       icon: Building,
-      title: "Business Payments",
-      description: "Comprehensive payment solutions for businesses of all sizes",
+      title: "Merchant Services",
+      description: "Smart payment tools for small businesses to large enterprises with instant settlement and real-time dashboards",
       color: "blue"
     },
     {
       icon: Shield,
-      title: "Enterprise Security",
-      description: "Bank-grade security with advanced fraud protection",
+      title: "Bank & PSP Partnerships",
+      description: "Interconnected with local banks, mobile money operators, and global financial rails",
       color: "green"
     },
     {
       icon: Zap,
-      title: "Instant Processing",
-      description: "Real-time payment processing and settlement",
+      title: "Bridge-Powered Stablecoin Infrastructure",
+      description: "Orchestrate, issue, and convert stablecoins with seamless API control and lower FX costs",
       color: "orange"
     },
     {
       icon: Globe,
-      title: "Global Reach",
-      description: "Accept payments from customers worldwide",
+      title: "Cross-Border Transactions",
+      description: "Send and receive money instantly across countries, 24/7, at a fraction of traditional cost",
       color: "purple"
+    },
+    {
+      icon: Smartphone,
+      title: "Online + Offline Support",
+      description: "Works with or without internet. USSD & SMS-based systems for unbanked or low-connectivity regions",
+      color: "indigo"
+    },
+    {
+      icon: Users,
+      title: "Pan-African Agent Network",
+      description: "Agents across rural and urban areas for cash-in, cash-out, and merchant support",
+      color: "teal"
     }
   ]
 
   const businessSolutions = [
     {
-      name: "Payment Gateway",
+      name: "Digital Wallets",
       icon: "💳",
-      description: "Secure online payment processing",
-      shortDescription: "Accept payments globally with bank-grade security and instant processing. Perfect for e-commerce and online businesses.",
-      features: ["Multi-currency support", "PCI DSS compliant", "Real-time processing"],
-      pricing: "2.9% + $0.30"
+      description: "Secure, multi-currency wallets built for scale",
+      shortDescription: "Store, send, receive local currency, USD, and stablecoins with offline access via USSD and QR codes.",
+      features: ["Multi-currency support", "Offline access via USSD", "Gasless blockchain transactions", "Built-in biometric security"],
+      pricing: "Competitive rates"
     },
     {
-      name: "Point of Sale",
+      name: "Merchant Services",
       icon: "🏪",
-      description: "In-store payment solutions",
-      shortDescription: "Transform any device into a powerful POS system. Accept cards, mobile payments, and manage inventory seamlessly.",
-      features: ["Mobile POS", "Receipt printing", "Inventory integration"],
-      // pricing: "From $29/month" // Pricing available on pricing page
+      description: "Smart payment tools for businesses",
+      shortDescription: "Instant settlement and real-time dashboards with QR/NFC payments, recurring billing, and POS device compatibility.",
+      features: ["Instant settlement", "QR/NFC payments", "POS device compatibility", "Bulk payouts"],
+      pricing: "Competitive rates"
     },
     {
-      name: "Recurring Billing",
-      icon: "🔄",
-      description: "Automated subscription payments",
-      shortDescription: "Automate your subscription business with intelligent billing cycles, retry logic, and customer lifecycle management.",
-      features: ["Flexible billing cycles", "Failed payment retry", "Customer management"],
-      pricing: "1.5% + $0.10"
+      name: "Stablecoin Infrastructure",
+      icon: "🪙",
+      description: "Bridge-powered stablecoin services",
+      shortDescription: "Orchestrate, issue, and convert stablecoins with seamless API control and lower FX costs.",
+      features: ["Orchestration API", "Issue branded stablecoins", "Cross-chain capabilities", "Global payments"],
+      pricing: "Competitive rates"
     },
     {
-      name: "Invoice Management",
-      icon: "📄",
-      description: "Professional invoicing system",
-      shortDescription: "Create, send, and track professional invoices with automated reminders and payment reconciliation.",
-      features: ["Custom templates", "Payment tracking", "Automated reminders"],
-      pricing: "$19/month"
+      name: "Card Infrastructure",
+      icon: "💳",
+      description: "Create cards usable online and in-store",
+      shortDescription: "Debit/reward cards with business expense control and global reach with local compliance.",
+      features: ["Debit/reward cards", "Business expense control", "Global reach", "Local compliance"],
+      pricing: "Competitive rates"
     },
     {
-      name: "Business Analytics",
-      icon: "📊",
-      description: "Comprehensive business insights",
-      shortDescription: "Make data-driven decisions with real-time analytics, customer insights, and performance dashboards.",
-      features: ["Revenue tracking", "Customer analytics", "Performance reports"],
-      pricing: "$49/month"
+      name: "Cross-Border Payments",
+      icon: "🌍",
+      description: "Send global payments with local FX integration",
+      shortDescription: "Instant settlement with no hidden fees and compliant with local KYC/AML requirements.",
+      features: ["Instant settlement", "No hidden fees", "Local KYC/AML compliance", "Global reach"],
+      pricing: "Competitive rates"
     },
     {
-      name: "API Integration",
+      name: "API & SDK Integration",
       icon: "🔌",
       description: "Seamless platform integration",
-      shortDescription: "Integrate payments into your existing systems with powerful APIs, webhooks, and developer tools.",
-      features: ["RESTful APIs", "Webhooks", "SDK support"],
-      pricing: "$99/month"
+      shortDescription: "RESTful and GraphQL APIs with developer-ready SDKs for Android, iOS, and Web integration.",
+      features: ["RESTful APIs", "GraphQL APIs", "Android/iOS SDKs", "Web SDKs"],
+      pricing: "Competitive rates"
     }
   ]
 
@@ -145,12 +157,12 @@ const AnnitaPayBusinessPage = () => {
   ]
 
   const benefits = [
-    "Reduce payment processing costs by up to 50%",
-    "Accept payments in 180+ countries and 135+ currencies",
-    "Advanced fraud detection and prevention",
-    "Real-time settlement and instant payouts",
-    "Comprehensive reporting and analytics",
-    "24/7 dedicated business support"
+    "Bank-grade security with biometric login and two-factor auth",
+    "Interconnected with local banks and global financial rails",
+    "Works online and offline with USSD & SMS-based systems",
+    "Pan-African agent network for cash-in, cash-out, and merchant support",
+    "Multi-currency wallets and physical/virtual cards usable globally",
+    "Instant cross-border transactions at a fraction of traditional cost"
   ]
 
   const structuredData = {
@@ -220,12 +232,12 @@ const AnnitaPayBusinessPage = () => {
                   Business Payment Solutions
                 </div>
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-900 mb-6">
-                  Business <span className="text-blue-600">Payments</span> Made Simple
+                  AnnitaPay™ <span className="text-blue-600">Business</span> - Enterprise Solutions
                 </h1>
                 <p className="text-lg sm:text-xl text-gray-600 mb-8 leading-relaxed">
-                  Enterprise-grade payment solutions with multi-currency support for 54 African currencies plus major global currencies. 
-                  Real-time settlements, digital currency integration including CBDCs and stablecoins, mobile POS solutions, 
-                  bulk payment processing, and comprehensive financial management tools with advanced analytics.
+                  High-performance digital finance infrastructure for enterprises and institutions. 
+                  Real-time, secure, and compliant services to store, send, receive, issue, and manage money globally. 
+                  Built as a cornerstone of the Annita Ecosystem—Africa's first all-in-one super app.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <button className="bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-200 flex items-center justify-center">
@@ -305,7 +317,7 @@ const AnnitaPayBusinessPage = () => {
               </p>
             </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {features.map((feature, index) => (
                 <motion.div
                   key={index}
@@ -318,13 +330,17 @@ const AnnitaPayBusinessPage = () => {
                     feature.color === 'blue' ? 'bg-blue-100' :
                     feature.color === 'green' ? 'bg-green-100' :
                     feature.color === 'orange' ? 'bg-orange-100' :
-                    'bg-purple-100'
+                    feature.color === 'purple' ? 'bg-purple-100' :
+                    feature.color === 'indigo' ? 'bg-indigo-100' :
+                    'bg-teal-100'
                   }`}>
                     <feature.icon className={`w-6 h-6 ${
                       feature.color === 'blue' ? 'text-blue-600' :
                       feature.color === 'green' ? 'text-green-600' :
                       feature.color === 'orange' ? 'text-orange-600' :
-                      'text-purple-600'
+                      feature.color === 'purple' ? 'text-purple-600' :
+                      feature.color === 'indigo' ? 'text-indigo-600' :
+                      'text-teal-600'
                     }`} />
                   </div>
                   <h3 className="text-xl font-semibold text-gray-900 mb-3">{feature.title}</h3>
@@ -432,11 +448,12 @@ const AnnitaPayBusinessPage = () => {
                 transition={{ duration: 0.8 }}
               >
                 <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-                  Why Choose <span className="text-blue-600">AnnitaPay Business</span>
+                  Our <span className="text-blue-600">Vision</span>
                 </h2>
                 <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                  AnnitaPay Business is designed to help your business grow with secure, 
-                  reliable, and cost-effective payment solutions.
+                  To become Africa's financial operating system, enabling any individual or business 
+                  to participate in the global economy without friction—regardless of borders, 
+                  infrastructure, or background.
                 </p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   {benefits.map((benefit, index) => (

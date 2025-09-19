@@ -619,7 +619,7 @@ export default function BusinessModelPage() {
                           <div className="bg-gray-50 p-3 rounded-lg">
                               <p className="text-xs sm:text-sm font-medium text-gray-700 mb-1">Example:</p>
                               <p className="text-xs sm:text-sm text-gray-600">{model.example}</p>
-                            </div>
+                          </div>
                         </div>
                       </button>
                     ))}
@@ -639,7 +639,7 @@ export default function BusinessModelPage() {
                             <div className="flex-1 min-w-0">
                               <h4 className="font-medium text-gray-900 text-sm sm:text-base">{step.title}</h4>
                               <p className="text-xs sm:text-sm text-gray-600">{step.description}</p>
-                            </div>
+                          </div>
                         </div>
                       ))}
                     </div>

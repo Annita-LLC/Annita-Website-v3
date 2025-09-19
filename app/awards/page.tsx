@@ -261,7 +261,7 @@ export default function AwardsPage() {
                     {/* LinkedIn Embed */}
                     {award.linkedinUrl && (
                       <div className="mt-6 sm:mt-8">
-                        <LinkedInEmbed url={award.linkedinUrl} />
+                      <LinkedInEmbed url={award.linkedinUrl} />
                       </div>
                     )}
                   </div>

@@ -204,7 +204,7 @@ const LogisticsFeature = () => {
             <div className="text-center mb-4 sm:mb-6">
               <h3 className="text-base sm:text-lg md:text-xl font-semibold text-gray-900 mb-1 sm:mb-2">Annita Logistics Demo</h3>
               <p className="text-xs sm:text-sm text-gray-600">Real-time Tracking</p>
-            </div>
+                </div>
             
             {/* Large Demo Image */}
             <div className="relative mx-auto group">
@@ -215,101 +215,10 @@ const LogisticsFeature = () => {
                   className="w-full h-auto rounded-xl transition-transform duration-300 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent rounded-xl pointer-events-none"></div>
-              </div>
+                </div>
               <div className="absolute -inset-1 bg-gradient-to-r from-orange-500/20 to-red-500/20 rounded-3xl blur-sm -z-10"></div>
             </div>
 
-            {/* Active Delivery Card */}
-            <div className="bg-blue-50 rounded-xl p-4 border border-blue-200 mb-4">
-              <div className="flex items-center space-x-3 mb-3">
-                <Truck className="w-5 h-5 text-blue-600" />
-                <span className="font-medium text-blue-900">Active Delivery</span>
-              </div>
-              <div className="space-y-2">
-                <div className="flex justify-between text-sm">
-                  <span className="text-gray-600">Order #{currentDelivery.id}</span>
-                  <span className="text-green-600 font-medium">In Transit</span>
-                </div>
-                <div className="w-full bg-gray-200 rounded-full h-2">
-                  <motion.div 
-                    className="bg-blue-600 h-2 rounded-full"
-                    initial={{ width: 0 }}
-                    animate={{ width: `${currentDelivery.progress}%` }}
-                    transition={{ duration: 2, delay: 0.5 }}
-                  ></motion.div>
-                </div>
-                <div className="text-xs text-gray-500">Estimated delivery: {currentDelivery.estimatedTime}</div>
-              </div>
-            </div>
-
-            {/* Driver Info */}
-            <div className="bg-gray-50 rounded-lg p-3 mb-4">
-              <div className="flex items-center justify-between">
-                <div className="flex items-center space-x-2">
-                  <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
-                    <Users className="w-4 h-4 text-blue-600" />
-                  </div>
-                  <div>
-                    <div className="text-sm font-medium text-gray-900">{currentDelivery.driver}</div>
-                    <div className="text-xs text-gray-500">{currentDelivery.vehicle}</div>
-                  </div>
-                </div>
-                <div className="text-right">
-                  <div className="text-xs text-gray-500">Current Location</div>
-                  <div className="text-sm font-medium text-gray-900">{currentDelivery.location}</div>
-                </div>
-              </div>
-            </div>
-
-            {/* Delivery Timeline */}
-            <div className="space-y-3">
-              <div className="text-sm font-medium text-gray-700">Delivery Progress</div>
-              {deliverySteps.map((step, index) => (
-                <motion.div
-                  key={step.step}
-                  initial={{ opacity: 0, x: 20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="flex items-center space-x-3"
-                >
-                  <div className={`w-6 h-6 rounded-full flex items-center justify-center ${
-                    step.status === 'completed' ? 'bg-green-500' : 
-                    step.status === 'active' ? 'bg-blue-500' : 'bg-gray-300'
-                  }`}>
-                    {step.status === 'completed' ? (
-                      <CheckCircle className="w-4 h-4 text-white" />
-                    ) : step.status === 'active' ? (
-                      <Activity className="w-4 h-4 text-white animate-pulse" />
-                    ) : (
-                      <Clock className="w-4 h-4 text-white" />
-                    )}
-                  </div>
-                  <div className="flex-1">
-                    <div className={`text-sm font-medium ${
-                      step.status === 'completed' ? 'text-green-600' :
-                      step.status === 'active' ? 'text-blue-600' : 'text-gray-500'
-                    }`}>
-                      {step.step}
-                    </div>
-                    <div className="text-xs text-gray-500">{step.time}</div>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-
-            {/* Live Stats */}
-            <div className="mt-4 pt-4 border-t border-gray-200">
-              <div className="grid grid-cols-2 gap-4 text-center">
-                <div>
-                  <div className="text-lg font-bold text-orange-600">{liveStats.activeDeliveries}</div>
-                  <div className="text-xs text-gray-500">Active Deliveries</div>
-                </div>
-                <div>
-                  <div className="text-lg font-bold text-blue-600">{liveStats.drivers}</div>
-                  <div className="text-xs text-gray-500">Available Drivers</div>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
 

@@ -41,16 +41,12 @@ const AnnitaPayFeature = () => {
   }, [])
 
   const features = [
-    'Escrow payment protection until delivery confirmed',
-    'Multi-currency support for 54 African currencies + major global currencies',
+    'Multi-currency support for 54+ African currencies',
     'Real-time settlements with instant cross-border transactions',
-    'Digital currency integration including CBDCs and stablecoins',
-    'Mobile POS solution for merchants without hardware requirements',
-    'Community-driven financial inclusion and economic empowerment',
-    'Enhanced security with blockchain-based transparency',
-    'Institutional backing through African bank partnerships',
-    'Comprehensive due diligence through Smile ID',
-    'Integrated financing solutions for trade operations'
+    'Escrow payment protection for secure transactions',
+    'Digital currency integration including CBDCs',
+    'Mobile POS solutions for merchants',
+    'Institutional backing through African bank partnerships'
   ]
 
 
@@ -88,7 +84,7 @@ const AnnitaPayFeature = () => {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="text-lg font-medium text-primary-600 mb-4 flex items-center"
         >
-          Secure Payment Gateway
+          Africa's Unified Financial Engine
           <Shield className="w-5 h-5 ml-2 text-green-500" />
         </motion.div>
         
@@ -98,11 +94,9 @@ const AnnitaPayFeature = () => {
           transition={{ duration: 0.6, delay: 0.5 }}
           className="text-gray-600 mb-6 leading-relaxed"
         >
-          Comprehensive financial platform with real-time settlements and escrow protection for seamless trade operations. 
-          Trade confidently in <span className="text-orange-600 font-semibold">54+ African currencies</span> 
-          with <span className="text-orange-600 font-semibold">instant cross-border transactions</span>, 
-          digital currency integration including CBDCs, mobile POS solutions, and community-driven financial inclusion. 
-          Enhanced with blockchain transparency and institutional backing through strategic partnerships with leading African banks.
+          AnnitaPay enables MSMEs and individuals to <span className="text-orange-600 font-semibold">move, store, issue, and grow money</span> 
+          seamlessly without borders. Trade confidently in <span className="text-orange-600 font-semibold">54+ African currencies</span> 
+          with <span className="text-orange-600 font-semibold">real-time settlements</span> and escrow protection.
         </motion.p>
 
         {/* Live Security Stats */}
@@ -187,8 +181,8 @@ const AnnitaPayFeature = () => {
           <div className="text-center mb-4 sm:mb-6">
             <h3 className="text-base sm:text-lg md:text-xl font-semibold text-gray-900 mb-1 sm:mb-2">AnnitaPay Demo</h3>
             <p className="text-xs sm:text-sm text-gray-600">Secure • Encrypted • Protected</p>
-          </div>
-          
+            </div>
+
           {/* Large Demo Image */}
           <div className="relative mx-auto group">
             <div className="relative overflow-hidden rounded-2xl shadow-2xl border-2 border-gray-100 bg-gradient-to-br from-gray-50 to-white p-2">
@@ -198,10 +192,10 @@ const AnnitaPayFeature = () => {
                 className="w-full h-auto rounded-xl transition-transform duration-300 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent rounded-xl pointer-events-none"></div>
-            </div>
+              </div>
             <div className="absolute -inset-1 bg-gradient-to-r from-orange-500/20 to-red-500/20 rounded-3xl blur-sm -z-10"></div>
-          </div>
-        </div>
+                    </div>
+                  </div>
       </motion.div>
     </motion.div>
   )

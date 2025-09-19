@@ -263,7 +263,7 @@ const AIFeature = () => {
             <div className="text-center mb-4 sm:mb-6">
               <h3 className="text-base sm:text-lg md:text-xl font-semibold text-gray-900 mb-1 sm:mb-2">Annita AI Demo</h3>
               <p className="text-xs sm:text-sm text-gray-600">Intelligent Assistant</p>
-            </div>
+                </div>
             
             {/* Large Demo Image */}
             <div className="relative mx-auto group">
@@ -274,128 +274,10 @@ const AIFeature = () => {
                   className="w-full h-auto rounded-xl transition-transform duration-300 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent rounded-xl pointer-events-none"></div>
-              </div>
+                </div>
               <div className="absolute -inset-1 bg-gradient-to-r from-orange-500/20 to-red-500/20 rounded-3xl blur-sm -z-10"></div>
             </div>
 
-            {/* AI Processing Status */}
-            {aiProcessing && (
-              <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                className="bg-gradient-to-r from-teal-500 to-cyan-500 rounded-lg p-4 text-white mb-4"
-              >
-                <div className="flex items-center justify-between mb-2">
-                  <div className="flex items-center space-x-2">
-                    <Activity className="w-4 h-4 animate-spin" />
-                    <span className="text-sm font-medium">AI Processing</span>
-                  </div>
-                  <span className="text-xs opacity-90">{processingProgress.toFixed(0)}%</span>
-                </div>
-                <div className="w-full bg-white/20 rounded-full h-2 mb-2">
-                  <motion.div 
-                    className="bg-white h-2 rounded-full"
-                    initial={{ width: 0 }}
-                    animate={{ width: `${processingProgress}%` }}
-                    transition={{ duration: 0.5 }}
-                  ></motion.div>
-                </div>
-                <div className="text-xs opacity-90">{currentTask}</div>
-              </motion.div>
-            )}
-
-            {/* Live AI Insights */}
-            <div className="bg-gradient-to-r from-orange-50 to-yellow-50 rounded-lg p-3 border border-orange-200 mb-4">
-              <div className="flex items-center space-x-2 mb-2">
-                <Lightbulb className="w-4 h-4 text-orange-600" />
-                <span className="text-sm font-medium text-orange-900">Live AI Insights</span>
-              </div>
-              <motion.div
-                key={currentInsight}
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-                className="text-xs text-orange-800"
-              >
-                {aiInsights[currentInsight]}
-              </motion.div>
-            </div>
-
-            {/* AI Capabilities */}
-            <div className="space-y-3 mb-4">
-              <div className="text-sm font-medium text-gray-700">AI Capabilities</div>
-              {aiCapabilities.map((capability, index) => (
-                <motion.div
-                  key={capability.name}
-                  initial={{ opacity: 0, x: 20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="flex items-center justify-between p-2 bg-gray-50 rounded-lg"
-                >
-                  <div className="flex items-center space-x-2">
-                    <div className="w-8 h-8 bg-teal-100 rounded-full flex items-center justify-center">
-                      <capability.icon className="w-4 h-4 text-teal-600" />
-                    </div>
-                    <div>
-                      <div className="text-sm font-medium text-gray-900">{capability.name}</div>
-                      <div className="text-xs text-gray-500">{capability.status}</div>
-                    </div>
-                  </div>
-                  <div className="text-right">
-                    <div className="text-sm font-bold text-teal-600">{capability.efficiency}%</div>
-                    <div className="text-xs text-gray-500">efficiency</div>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-
-            {/* AI Controls */}
-            <div className="flex space-x-2 mb-4">
-              <button className="flex-1 bg-teal-600 text-white rounded-lg py-2 text-sm font-medium flex items-center justify-center">
-                <Play className="w-4 h-4 mr-2" />
-                Start AI
-              </button>
-              <button className="flex-1 bg-gray-100 text-gray-700 rounded-lg py-2 text-sm font-medium flex items-center justify-center">
-                <Settings className="w-4 h-4 mr-2" />
-                Configure
-              </button>
-            </div>
-
-            {/* Real-time Stats */}
-            <div className="mt-4 pt-4 border-t border-gray-200">
-              <div className="grid grid-cols-2 gap-4 text-center">
-                <div>
-                  <div className="text-lg font-bold text-teal-600">{liveStats.activeAI}</div>
-                  <div className="text-xs text-gray-500">Active AI Models</div>
-                </div>
-                <div>
-                  <div className="text-lg font-bold text-purple-600">{liveStats.energyEfficiency.toFixed(1)}%</div>
-                  <div className="text-xs text-gray-500">Energy Efficient</div>
-                </div>
-              </div>
-            </div>
-
-            {/* Neural Network Visualization */}
-            <div className="mt-4 pt-4 border-t border-gray-200">
-              <div className="text-xs text-gray-500 mb-2">Neural Network Status</div>
-              <div className="flex space-x-1">
-                {[...Array(8)].map((_, i) => (
-                  <motion.div
-                    key={i}
-                    animate={{ 
-                      scale: [1, 1.2, 1],
-                      opacity: [0.5, 1, 0.5]
-                    }}
-                    transition={{ 
-                      duration: 2, 
-                      repeat: Infinity, 
-                      delay: i * 0.2 
-                    }}
-                    className="w-2 h-2 bg-teal-400 rounded-full"
-                  />
-                ))}
-              </div>
-            </div>
           </div>
         </div>
 

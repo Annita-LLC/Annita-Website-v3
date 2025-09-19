@@ -31,38 +31,84 @@ const AnnitaPayPage = () => {
 
   const features = [
     {
-      icon: Shield,
-      title: "Bank-Grade Security",
-      description: "256-bit encryption and multi-factor authentication protect your transactions",
-      color: "green"
-    },
-    {
-      icon: Zap,
-      title: "Instant Transfers",
-      description: "Send and receive money instantly across Liberia and beyond",
-      color: "orange"
-    },
-    {
       icon: Globe,
-      title: "Global Reach",
-      description: "Connect with users worldwide through our secure network",
+      title: "One Global Account",
+      description: "One AnnitaPay account works across all countries—no need to register multiple times",
       color: "blue"
     },
     {
+      icon: Shield,
+      title: "Bank-Grade Security",
+      description: "Encrypted at rest and in transit, with biometric login, two-factor auth, and fraud prevention",
+      color: "green"
+    },
+    {
+      icon: Users,
+      title: "Pan-African Agent Network",
+      description: "Agents across rural and urban areas for cash-in, cash-out, and merchant support",
+      color: "orange"
+    },
+    {
       icon: Smartphone,
-      title: "Mobile-First",
-      description: "Optimized for mobile devices with seamless user experience",
+      title: "Online + Offline Support",
+      description: "Works with or without internet. USSD & SMS-based systems for unbanked or low-connectivity regions",
       color: "purple"
+    },
+    {
+      icon: CreditCard,
+      title: "Cards & Wallets",
+      description: "Multi-currency wallets and physical/virtual cards usable globally",
+      color: "indigo"
+    },
+    {
+      icon: Zap,
+      title: "Cross-Border Transactions",
+      description: "Send and receive money instantly across countries, 24/7, at a fraction of traditional cost",
+      color: "teal"
     }
   ]
 
   const benefits = [
-    "No hidden fees or charges",
-    "24/7 customer support",
-    "Real-time transaction tracking",
-    "Multi-currency support",
-    "Business integration tools",
-    "Advanced fraud protection"
+    "Store, send, receive local currency, USD, and stablecoins",
+    "Offline access via USSD and QR codes",
+    "Gasless blockchain transactions (Bridge-powered)",
+    "Built-in biometric and PIN security",
+    "Instant settlement and real-time dashboards",
+    "QR/NFC payments and recurring billing"
+  ]
+
+  const coreProducts = [
+    {
+      title: "Digital Wallets",
+      description: "Secure, multi-currency wallets built for scale",
+      features: [
+        "Store, send, receive local currency, USD, and stablecoins",
+        "Offline access via USSD and QR codes", 
+        "Gasless blockchain transactions (Bridge-powered)",
+        "Built-in biometric and PIN security"
+      ]
+    },
+    {
+      title: "Bridge-Powered Stablecoin Infrastructure",
+      description: "Next-gen stablecoin services through a unified orchestration layer",
+      features: [
+        "Orchestration API for global stablecoin movement",
+        "Issue your own branded stablecoin backed by real assets",
+        "Launch thousands of digital wallets securely",
+        "Create cards usable online and in-store",
+        "Send global payments with local FX integration"
+      ]
+    },
+    {
+      title: "Offline Functionality",
+      description: "Designed for Africa - bridging the digital divide",
+      features: [
+        "USSD Banking — no internet required for payments",
+        "SMS Notifications — instant alerts for transactions",
+        "Agent-Enabled Operations — verified field agents",
+        "Edge Syncing — offline transactions sync when online"
+      ]
+    }
   ]
 
 
@@ -134,14 +180,12 @@ const AnnitaPayPage = () => {
                   Personal Digital Payments
                 </div>
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-900 mb-6">
-                  Send Money <span className="text-orange-600">Instantly</span> with AnnitaPay
+                  AnnitaPay™ - <span className="text-orange-600">Africa's Unified Financial Engine</span>
                 </h1>
                 <p className="text-lg sm:text-xl text-gray-600 mb-8 leading-relaxed">
-                  Multi-currency support for 54 African currencies + major global currencies. 
-                  Real-time settlements with instant cross-border transactions. Digital currency 
-                  integration including CBDCs and stablecoins. Mobile POS solution for merchants 
-                  without hardware requirements. Community-driven financial inclusion and economic 
-                  empowerment. Enhanced security with blockchain-based transparency.
+                  Move, Store, Issue, and Grow Money Without Borders. A high-performance digital finance 
+                  infrastructure powering seamless money movement across Africa and the world. Built as a 
+                  cornerstone of the Annita Ecosystem—Africa's first all-in-one super app.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <button 
@@ -216,7 +260,7 @@ const AnnitaPayPage = () => {
               </p>
             </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {features.map((feature, index) => (
                 <motion.div
                   key={index}
@@ -229,17 +273,63 @@ const AnnitaPayPage = () => {
                     feature.color === 'green' ? 'bg-green-100' :
                     feature.color === 'orange' ? 'bg-orange-100' :
                     feature.color === 'blue' ? 'bg-blue-100' :
-                    'bg-purple-100'
+                    feature.color === 'purple' ? 'bg-purple-100' :
+                    feature.color === 'indigo' ? 'bg-indigo-100' :
+                    'bg-teal-100'
                   }`}>
                     <feature.icon className={`w-6 h-6 ${
                       feature.color === 'green' ? 'text-green-600' :
                       feature.color === 'orange' ? 'text-orange-600' :
                       feature.color === 'blue' ? 'text-blue-600' :
-                      'text-purple-600'
+                      feature.color === 'purple' ? 'text-purple-600' :
+                      feature.color === 'indigo' ? 'text-indigo-600' :
+                      'text-teal-600'
                     }`} />
                   </div>
                   <h3 className="text-xl font-semibold text-gray-900 mb-3">{feature.title}</h3>
                   <p className="text-gray-600 text-sm leading-relaxed">{feature.description}</p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Core Products Section */}
+        <section className="py-16 sm:py-20 bg-white">
+          <div className="container mx-auto px-3 sm:px-4 lg:px-6 xl:px-8">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.8 }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+                Core <span className="text-orange-600">Products</span>
+              </h2>
+              <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
+                Comprehensive financial solutions designed for Africa's unique needs and challenges.
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+              {coreProducts.map((product, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={isInView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
+                  className="bg-gradient-to-br from-gray-50 to-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300"
+                >
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">{product.title}</h3>
+                  <p className="text-gray-600 mb-6 leading-relaxed">{product.description}</p>
+                  <ul className="space-y-3">
+                    {product.features.map((feature, featureIndex) => (
+                      <li key={featureIndex} className="flex items-start space-x-3">
+                        <CheckCircle className="w-5 h-5 text-orange-600 flex-shrink-0 mt-0.5" />
+                        <span className="text-gray-700 text-sm">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </motion.div>
               ))}
             </div>
@@ -256,11 +346,12 @@ const AnnitaPayPage = () => {
                 transition={{ duration: 0.8 }}
               >
                 <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-                  Everything You Need for <span className="text-orange-600">Personal Payments</span>
+                  Our <span className="text-orange-600">Vision</span>
                 </h2>
                 <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                  AnnitaPay is designed to make your financial life easier. From instant transfers 
-                  to secure storage, we've got you covered.
+                  To become Africa's financial operating system, enabling any individual or business 
+                  to participate in the global economy without friction—regardless of borders, 
+                  infrastructure, or background.
                 </p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   {benefits.map((benefit, index) => (

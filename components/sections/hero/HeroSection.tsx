@@ -44,6 +44,9 @@ const HeroSection = () => {
   const [currentVideo, setCurrentVideo] = useState(0)
   const [isWaitlistOpen, setIsWaitlistOpen] = useState(false)
   const [isDownloadModalOpen, setIsDownloadModalOpen] = useState(false)
+  const [isPaused, setIsPaused] = useState(false)
+  const slideIntervalRef = useRef<NodeJS.Timeout | null>(null)
+  const videoIntervalRef = useRef<NodeJS.Timeout | null>(null)
 
   const videos = [
     {
@@ -120,22 +123,108 @@ const HeroSection = () => {
       secondaryCta: "Partner With Us",
       secondaryIcon: Heart,
       background: "from-yellow-50 via-white to-orange-50/30"
+    },
+    {
+      id: 6,
+      badge: "AI-Powered",
+      title: "Smart Business",
+      titleHighlight: "Intelligence",
+      subtitle: "AI-driven insights and automation to optimize your business operations and growth.",
+      cta: "Discover AI",
+      ctaIcon: Brain,
+      secondaryCta: "Try AI Now",
+      secondaryIcon: Zap,
+      background: "from-teal-50 via-white to-cyan-50/30"
+    },
+    {
+      id: 7,
+      badge: "Offline Ready",
+      title: "Works Without",
+      titleHighlight: "Internet",
+      subtitle: "Continue trading and managing your business even with limited connectivity.",
+      cta: "Learn More",
+      ctaIcon: WifiOff,
+      secondaryCta: "See Features",
+      secondaryIcon: Smartphone,
+      background: "from-indigo-50 via-white to-purple-50/30"
+    },
+    {
+      id: 8,
+      badge: "Multi-Currency",
+      title: "54+ African",
+      titleHighlight: "Currencies",
+      subtitle: "Trade confidently in local currencies with real-time conversion and settlements.",
+      cta: "Start Trading",
+      ctaIcon: DollarSign,
+      secondaryCta: "View Rates",
+      secondaryIcon: CreditCard,
+      background: "from-emerald-50 via-white to-green-50/30"
+    },
+    {
+      id: 9,
+      badge: "Logistics Network",
+      title: "Same-Day",
+      titleHighlight: "Delivery",
+      subtitle: "Comprehensive logistics network across Africa with real-time tracking.",
+      cta: "Track Delivery",
+      ctaIcon: Truck,
+      secondaryCta: "Find Drivers",
+      secondaryIcon: MapPin,
+      background: "from-orange-50 via-white to-red-50/30"
+    },
+    {
+      id: 10,
+      badge: "Marketing Suite",
+      title: "Grow Your",
+      titleHighlight: "Business",
+      subtitle: "AI-powered marketing tools and analytics to reach more customers effectively.",
+      cta: "Start Marketing",
+      ctaIcon: BarChart3,
+      secondaryCta: "View Analytics",
+      secondaryIcon: TrendingUp,
+      background: "from-pink-50 via-white to-rose-50/30"
     }
   ]
 
+  // Start/stop slide interval based on pause state
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % slides.length)
-    }, 3000)
-    return () => clearInterval(interval)
-  }, [slides.length])
+    if (!isPaused) {
+      slideIntervalRef.current = setInterval(() => {
+        setCurrentSlide((prev) => (prev + 1) % slides.length)
+      }, 3000)
+    } else {
+      if (slideIntervalRef.current) {
+        clearInterval(slideIntervalRef.current)
+        slideIntervalRef.current = null
+      }
+    }
+    
+    return () => {
+      if (slideIntervalRef.current) {
+        clearInterval(slideIntervalRef.current)
+      }
+    }
+  }, [isPaused, slides.length])
 
+  // Start/stop video interval based on pause state
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentVideo((prev) => (prev + 1) % videos.length)
-    }, 3000)
-    return () => clearInterval(interval)
-  }, [videos.length])
+    if (!isPaused) {
+      videoIntervalRef.current = setInterval(() => {
+        setCurrentVideo((prev) => (prev + 1) % videos.length)
+      }, 3000)
+    } else {
+      if (videoIntervalRef.current) {
+        clearInterval(videoIntervalRef.current)
+        videoIntervalRef.current = null
+      }
+    }
+    
+    return () => {
+      if (videoIntervalRef.current) {
+        clearInterval(videoIntervalRef.current)
+      }
+    }
+  }, [isPaused, videos.length])
 
   const goToSlide = (index: number) => {
     setCurrentSlide(index)
@@ -143,6 +232,14 @@ const HeroSection = () => {
 
   const goToVideo = (index: number) => {
     setCurrentVideo(index)
+  }
+
+  const handleVideoInteraction = () => {
+    setIsPaused(true)
+    // Resume after 5 seconds of no interaction
+    setTimeout(() => {
+      setIsPaused(false)
+    }, 5000)
   }
 
   return (
@@ -166,6 +263,8 @@ const HeroSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
             className="flex-1 text-center lg:text-left lg:pr-16"
+            onMouseEnter={() => setIsPaused(true)}
+            onMouseLeave={() => setIsPaused(false)}
           >
             <div className="max-w-2xl mx-auto lg:mx-0">
               {/* Badge */}
@@ -308,6 +407,8 @@ const HeroSection = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
             className="flex-1 flex justify-center lg:justify-end mt-8 sm:mt-12 lg:mt-0 w-full"
+            onMouseEnter={() => setIsPaused(true)}
+            onMouseLeave={() => setIsPaused(false)}
           >
             <div className="relative w-full max-w-[320px] sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl">
               {/* Video Container */}
@@ -335,6 +436,9 @@ const HeroSection = () => {
                           frameBorder="0" 
                           allowFullScreen={true} 
                           allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                          onLoad={handleVideoInteraction}
+                          onMouseEnter={handleVideoInteraction}
+                          onFocus={handleVideoInteraction}
                         />
                       </motion.div>
                     </AnimatePresence>

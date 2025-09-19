@@ -201,7 +201,7 @@ const ConnectFeature = () => {
             <div className="text-center mb-4 sm:mb-6">
               <h3 className="text-base sm:text-lg md:text-xl font-semibold text-gray-900 mb-1 sm:mb-2">Annita Connect Demo</h3>
               <p className="text-xs sm:text-sm text-gray-600">Marketing Dashboard</p>
-            </div>
+                </div>
             
             {/* Large Demo Image */}
             <div className="relative mx-auto group">
@@ -212,7 +212,7 @@ const ConnectFeature = () => {
                   className="w-full h-auto rounded-xl transition-transform duration-300 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent rounded-xl pointer-events-none"></div>
-              </div>
+                </div>
               <div className="absolute -inset-1 bg-gradient-to-r from-orange-500/20 to-red-500/20 rounded-3xl blur-sm -z-10"></div>
             </div>
 
