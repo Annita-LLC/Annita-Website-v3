@@ -27,7 +27,85 @@ import {
   Receipt,
   Lock,
   Smartphone,
-  Database
+  Database,
+  Banknote,
+  Smartphone2,
+  Wifi,
+  WifiOff,
+  QrCode,
+  Fingerprint,
+  Eye,
+  EyeOff,
+  Settings,
+  Network,
+  Cpu,
+  Server,
+  Cloud,
+  Key,
+  FileText,
+  AlertTriangle,
+  CheckCircle2,
+  XCircle,
+  Info,
+  HelpCircle,
+  MessageSquare,
+  Phone,
+  Mail,
+  ExternalLink,
+  ChevronRight,
+  Sparkles,
+  Target,
+  Award,
+  Heart,
+  Lightbulb,
+  Rocket,
+  Layers,
+  Workflow,
+  GitBranch,
+  Code,
+  Terminal,
+  Monitor,
+  Smartphone3,
+  Tablet,
+  Laptop,
+  Building2,
+  Brain,
+  Bot,
+  Cog,
+  Wrench,
+  Tool,
+  Hammer,
+  Settings2,
+  Sliders,
+  ToggleLeft,
+  ToggleRight,
+  Power,
+  Battery,
+  Signal,
+  Wifi2,
+  Bluetooth,
+  Radio,
+  Satellite,
+  Antenna,
+  Router,
+  HardDrive,
+  MemoryStick,
+  Cpu2,
+  Microchip,
+  CircuitBoard,
+  Plug,
+  Cable,
+  Usb,
+  Hdmi,
+  Ethernet,
+  Wifi3,
+  Wifi4,
+  Wifi5,
+  Wifi6,
+  Wifi7,
+  Wifi8,
+  Wifi9,
+  Wifi10
 } from 'lucide-react'
 
 const AnnitaPayBusinessPage = () => {
@@ -163,6 +241,126 @@ const AnnitaPayBusinessPage = () => {
     "Pan-African agent network for cash-in, cash-out, and merchant support",
     "Multi-currency wallets and physical/virtual cards usable globally",
     "Instant cross-border transactions at a fraction of traditional cost"
+  ]
+
+  const enterpriseFeatures = [
+    {
+      title: "Enterprise API Suite",
+      description: "Comprehensive APIs for seamless business integration",
+      features: [
+        "RESTful and GraphQL APIs",
+        "Real-time webhooks and notifications",
+        "Bulk payment processing",
+        "Advanced reporting and analytics",
+        "White-label solutions",
+        "Custom integration support"
+      ],
+      icon: Code,
+      color: "blue"
+    },
+    {
+      title: "Advanced Analytics Dashboard",
+      description: "Real-time business intelligence and insights",
+      features: [
+        "Revenue tracking and forecasting",
+        "Customer behavior analysis",
+        "Transaction pattern recognition",
+        "Fraud detection metrics",
+        "Performance benchmarking",
+        "Custom reporting tools"
+      ],
+      icon: BarChart3,
+      color: "green"
+    },
+    {
+      title: "Multi-Channel Payment Processing",
+      description: "Accept payments across all channels and devices",
+      features: [
+        "Online payment gateway",
+        "Mobile POS solutions",
+        "QR code payments",
+        "NFC contactless payments",
+        "Recurring billing automation",
+        "Invoice management system"
+      ],
+      icon: CreditCard,
+      color: "orange"
+    },
+    {
+      title: "Compliance & Risk Management",
+      description: "Built-in compliance tools for regulatory requirements",
+      features: [
+        "KYC/AML automation",
+        "Transaction monitoring",
+        "Regulatory reporting",
+        "Risk assessment tools",
+        "Audit trail management",
+        "Compliance dashboards"
+      ],
+      icon: Shield,
+      color: "purple"
+    }
+  ]
+
+  const technicalSpecifications = [
+    {
+      category: "Performance",
+      specs: [
+        { name: "Transaction Processing", value: "10,000+ TPS", icon: Zap },
+        { name: "API Response Time", value: "< 100ms", icon: Clock },
+        { name: "Uptime SLA", value: "99.99%", icon: Activity },
+        { name: "Global Latency", value: "< 50ms", icon: Globe }
+      ]
+    },
+    {
+      category: "Security",
+      specs: [
+        { name: "Encryption Standard", value: "AES-256", icon: Lock },
+        { name: "Authentication", value: "Multi-Factor", icon: Key },
+        { name: "Compliance", value: "PCI DSS Level 1", icon: Shield },
+        { name: "Fraud Detection", value: "AI-Powered", icon: Brain }
+      ]
+    },
+    {
+      category: "Scalability",
+      specs: [
+        { name: "Concurrent Users", value: "1M+", icon: Users },
+        { name: "Transaction Volume", value: "Unlimited", icon: TrendingUp },
+        { name: "Geographic Coverage", value: "54 Countries", icon: MapPin },
+        { name: "Currency Support", value: "100+", icon: DollarSign }
+      ]
+    }
+  ]
+
+  const integrationOptions = [
+    {
+      platform: "E-commerce Platforms",
+      description: "Seamless integration with popular e-commerce solutions",
+      integrations: ["Shopify", "WooCommerce", "Magento", "PrestaShop", "OpenCart", "Custom Solutions"],
+      icon: Monitor,
+      color: "blue"
+    },
+    {
+      platform: "Mobile Applications",
+      description: "Native SDKs for iOS and Android development",
+      integrations: ["iOS SDK", "Android SDK", "React Native", "Flutter", "Xamarin", "Cordova"],
+      icon: Smartphone3,
+      color: "green"
+    },
+    {
+      platform: "Enterprise Systems",
+      description: "Integration with enterprise resource planning and CRM systems",
+      integrations: ["SAP", "Oracle", "Salesforce", "Microsoft Dynamics", "NetSuite", "Custom ERP"],
+      icon: Building2,
+      color: "orange"
+    },
+    {
+      platform: "Banking Systems",
+      description: "Direct integration with banking and financial infrastructure",
+      integrations: ["SWIFT", "ACH", "SEPA", "Local Banking APIs", "Mobile Money", "Cryptocurrency"],
+      icon: Banknote,
+      color: "purple"
+    }
   ]
 
   const structuredData = {
@@ -391,6 +589,174 @@ const AnnitaPayBusinessPage = () => {
                     ))}
                   </ul>
                   <div className="text-blue-600 font-semibold text-sm">{solution.pricing}</div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Enterprise Features Section */}
+        <section className="py-16 sm:py-20 bg-white">
+          <div className="container mx-auto px-3 sm:px-4 lg:px-6 xl:px-8">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.8 }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+                Enterprise <span className="text-blue-600">Features</span>
+              </h2>
+              <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
+                Advanced tools and capabilities designed for large-scale business operations and enterprise requirements.
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              {enterpriseFeatures.map((feature, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={isInView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
+                  className="bg-gradient-to-br from-gray-50 to-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300"
+                >
+                  <div className="flex items-center mb-6">
+                    <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mr-4 ${
+                      feature.color === 'blue' ? 'bg-blue-100' :
+                      feature.color === 'green' ? 'bg-green-100' :
+                      feature.color === 'orange' ? 'bg-orange-100' :
+                      'bg-purple-100'
+                    }`}>
+                      <feature.icon className={`w-8 h-8 ${
+                        feature.color === 'blue' ? 'text-blue-600' :
+                        feature.color === 'green' ? 'text-green-600' :
+                        feature.color === 'orange' ? 'text-orange-600' :
+                        'text-purple-600'
+                      }`} />
+                    </div>
+                    <div>
+                      <h3 className="text-2xl font-bold text-gray-900">{feature.title}</h3>
+                      <p className="text-gray-600">{feature.description}</p>
+                    </div>
+                  </div>
+                  <ul className="space-y-3">
+                    {feature.features.map((item, itemIndex) => (
+                      <li key={itemIndex} className="flex items-center space-x-3">
+                        <CheckCircle className="w-5 h-5 text-blue-600 flex-shrink-0" />
+                        <span className="text-gray-700">{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Technical Specifications Section */}
+        <section className="py-16 sm:py-20 bg-gradient-to-br from-blue-50 to-blue-100">
+          <div className="container mx-auto px-3 sm:px-4 lg:px-6 xl:px-8">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.8 }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+                Technical <span className="text-blue-600">Specifications</span>
+              </h2>
+              <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
+                Enterprise-grade performance metrics and technical capabilities that power your business operations.
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+              {technicalSpecifications.map((category, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={isInView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
+                  className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300"
+                >
+                  <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">{category.category}</h3>
+                  <div className="space-y-4">
+                    {category.specs.map((spec, specIndex) => (
+                      <div key={specIndex} className="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
+                        <div className="flex items-center space-x-3">
+                          <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
+                            <spec.icon className="w-5 h-5 text-blue-600" />
+                          </div>
+                          <div>
+                            <div className="font-semibold text-gray-900">{spec.name}</div>
+                          </div>
+                        </div>
+                        <div className="text-right">
+                          <div className="font-bold text-blue-600">{spec.value}</div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Integration Options Section */}
+        <section className="py-16 sm:py-20 bg-white">
+          <div className="container mx-auto px-3 sm:px-4 lg:px-6 xl:px-8">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.8 }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+                Integration <span className="text-blue-600">Options</span>
+              </h2>
+              <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
+                Seamlessly integrate AnnitaPay Business with your existing systems and platforms.
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {integrationOptions.map((option, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={isInView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
+                  className="bg-gradient-to-br from-gray-50 to-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300"
+                >
+                  <div className="flex items-center mb-6">
+                    <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mr-4 ${
+                      option.color === 'blue' ? 'bg-blue-100' :
+                      option.color === 'green' ? 'bg-green-100' :
+                      option.color === 'orange' ? 'bg-orange-100' :
+                      'bg-purple-100'
+                    }`}>
+                      <option.icon className={`w-8 h-8 ${
+                        option.color === 'blue' ? 'text-blue-600' :
+                        option.color === 'green' ? 'text-green-600' :
+                        option.color === 'orange' ? 'text-orange-600' :
+                        'text-purple-600'
+                      }`} />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold text-gray-900">{option.platform}</h3>
+                      <p className="text-gray-600 text-sm">{option.description}</p>
+                    </div>
+                  </div>
+                  <div className="grid grid-cols-2 gap-2">
+                    {option.integrations.map((integration, integrationIndex) => (
+                      <div key={integrationIndex} className="flex items-center space-x-2 p-2 bg-white rounded-lg border border-gray-200">
+                        <CheckCircle className="w-4 h-4 text-blue-600 flex-shrink-0" />
+                        <span className="text-sm text-gray-700">{integration}</span>
+                      </div>
+                    ))}
+                  </div>
                 </motion.div>
               ))}
             </div>

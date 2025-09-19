@@ -2,12 +2,12 @@
 
 import { useState, useEffect } from 'react'
 import { motion, useInView } from 'framer-motion'
-import { 
-  Clock, 
+import {
+  Clock,
   Rocket, 
-  Star, 
-  Users, 
-  Globe, 
+  Star,
+  Users,
+  Globe,
   Zap,
   ArrowLeft,
   Mail,
@@ -157,7 +157,7 @@ const ComingSoonPage = () => {
               </motion.button>
 
               {/* Main Content */}
-              <motion.div
+            <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.3 }}
@@ -165,13 +165,13 @@ const ComingSoonPage = () => {
               >
                 <div className="inline-flex items-center bg-orange-100 text-orange-800 px-4 py-2 rounded-full text-sm font-medium mb-6">
                   <Clock className="w-4 h-4 mr-2" />
-                  Coming Soon
-                </div>
+                Coming Soon
+              </div>
 
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
                   Something Amazing is
                   <span className="text-orange-600 block">Coming Soon</span>
-                </h1>
+              </h1>
 
                 <p className="text-xl text-gray-600 mb-8 leading-relaxed">
                   We're working hard to bring you revolutionary features that will transform 
@@ -179,33 +179,33 @@ const ComingSoonPage = () => {
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-                  <Button
+                <Button
                     onClick={handleJoinWaitlist}
                     className="group"
-                    size="lg"
-                  >
+                  size="lg"
+                >
                     <Bell className="w-5 h-5 mr-2" />
-                    Join Waitlist
+                  Join Waitlist
                     <Star className="w-5 h-5 ml-2 group-hover:rotate-12 transition-transform" />
-                  </Button>
-                  <Button
+                </Button>
+                <Button
                     variant="outline"
                     onClick={() => router.push('/')}
-                    size="lg"
-                  >
+                  size="lg"
+                >
                     <Globe className="w-5 h-5 mr-2" />
                     Explore Current Features
-                  </Button>
-                </div>
+                </Button>
+              </div>
               </motion.div>
-            </div>
-          </div>
-        </motion.div>
+                </div>
+              </div>
+            </motion.div>
 
         {/* Features Preview */}
         <motion.section
           ref={ref}
-          initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
           className="py-16 lg:py-24 bg-white"
@@ -214,7 +214,7 @@ const ComingSoonPage = () => {
             <div className="text-center mb-16">
               <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
                 What's <span className="text-orange-600">Coming</span>
-              </h2>
+                </h2>
               <p className="text-lg text-gray-600 max-w-3xl mx-auto">
                 Revolutionary features designed specifically for African businesses. 
                 Get ready for the most comprehensive digital platform on the continent.
@@ -224,7 +224,7 @@ const ComingSoonPage = () => {
             {/* Stats */}
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
               {stats.map((stat, index) => (
-                <motion.div
+              <motion.div
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
                   animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -235,12 +235,12 @@ const ComingSoonPage = () => {
                     <stat.icon className="w-8 h-8 text-orange-600 mx-auto mb-3" />
                     <div className="text-2xl lg:text-3xl font-bold text-gray-900 mb-1">
                       {stat.value}
-                    </div>
+                  </div>
                     <div className="text-sm text-gray-600">
                       {stat.label}
-                    </div>
                   </div>
-                </motion.div>
+                </div>
+              </motion.div>
               ))}
             </div>
 
@@ -274,15 +274,15 @@ const ComingSoonPage = () => {
 
         {/* CTA Section */}
         <motion.section
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
+              initial={{ opacity: 0, y: 30 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.8 }}
           className="py-16 lg:py-24 bg-gradient-to-r from-orange-500 to-red-500"
-        >
+            >
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
               Be the First to Experience the Future
-            </h2>
+              </h2>
             <p className="text-xl text-white/90 mb-8">
               Join thousands of African businesses already on our waitlist. 
               Get early access to revolutionary features and exclusive updates.
@@ -306,8 +306,8 @@ const ComingSoonPage = () => {
               >
                 Contact Us
               </Button>
-            </div>
-          </div>
+                  </div>
+                </div>
         </motion.section>
 
         {/* Waitlist Modal */}
@@ -319,21 +319,21 @@ const ComingSoonPage = () => {
 
         {/* Success Message */}
         {showSuccess && (
-          <motion.div
+              <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4"
             onClick={() => setShowSuccess(false)}
           >
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               className="bg-white rounded-2xl p-8 max-w-md w-full text-center"
               onClick={(e: React.MouseEvent) => e.stopPropagation()}
             >
               <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <CheckCircle className="w-8 h-8 text-green-600" />
-              </div>
+                  </div>
               <h3 className="text-2xl font-bold text-gray-900 mb-2">
                 You're on the Waitlist!
               </h3>
@@ -343,7 +343,7 @@ const ComingSoonPage = () => {
               <Button onClick={() => setShowSuccess(false)}>
                 Awesome!
               </Button>
-            </motion.div>
+              </motion.div>
           </motion.div>
         )}
       </div>

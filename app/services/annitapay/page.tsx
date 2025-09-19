@@ -6,7 +6,6 @@ import { useInView } from 'framer-motion'
 import { useRef } from 'react'
 import SEOHead from '@/components/seo/SEOHead'
 import CTASection from '@/components/sections/CTASection'
-import CommunityFeatures from '@/components/sections/CommunityFeatures'
 import DownloadChoiceModal from '@/components/ui/DownloadChoiceModal'
 import { 
   CreditCard, 
@@ -20,7 +19,55 @@ import {
   ArrowRight,
   Star,
   Download,
-  Play
+  Play,
+  Lock,
+  DollarSign,
+  Banknote,
+  Smartphone2,
+  Wifi,
+  WifiOff,
+  QrCode,
+  Fingerprint,
+  Eye,
+  EyeOff,
+  Settings,
+  BarChart3,
+  Activity,
+  Clock,
+  MapPin,
+  Building2,
+  Network,
+  Database,
+  Cpu,
+  Server,
+  Cloud,
+  Key,
+  FileText,
+  AlertTriangle,
+  CheckCircle2,
+  XCircle,
+  Info,
+  HelpCircle,
+  MessageSquare,
+  Phone,
+  Mail,
+  ExternalLink,
+  ChevronRight,
+  Sparkles,
+  Target,
+  Award,
+  Heart,
+  Lightbulb,
+  Rocket,
+  Layers,
+  Workflow,
+  GitBranch,
+  Code,
+  Terminal,
+  Monitor,
+  Smartphone3,
+  Tablet,
+  Laptop
 } from 'lucide-react'
 
 const AnnitaPayPage = () => {
@@ -108,6 +155,115 @@ const AnnitaPayPage = () => {
         "Agent-Enabled Operations — verified field agents",
         "Edge Syncing — offline transactions sync when online"
       ]
+    }
+  ]
+
+  const platformArchitecture = [
+    {
+      component: "API Layer",
+      description: "RESTful and GraphQL APIs for custom integrations",
+      icon: Code,
+      color: "blue"
+    },
+    {
+      component: "SDKs",
+      description: "Developer-ready SDKs for Android, iOS, and Web",
+      icon: Smartphone3,
+      color: "green"
+    },
+    {
+      component: "Core Banking",
+      description: "Modular ledgers and settlement engine",
+      icon: Database,
+      color: "orange"
+    },
+    {
+      component: "Compliance",
+      description: "Built-in KYC, AML, and fraud systems",
+      icon: Shield,
+      color: "purple"
+    },
+    {
+      component: "AI Engine",
+      description: "Fraud detection, credit scoring, and behavioral analytics",
+      icon: Cpu,
+      color: "indigo"
+    },
+    {
+      component: "Dev Console",
+      description: "Full sandbox environment for partners and fintechs",
+      icon: Terminal,
+      color: "teal"
+    }
+  ]
+
+  const securityFeatures = [
+    {
+      feature: "End-to-End Encryption",
+      description: "256-bit AES encryption for all data transmission and storage",
+      icon: Lock,
+      level: "Maximum"
+    },
+    {
+      feature: "Biometric Authentication",
+      description: "Fingerprint, face ID, and voice recognition for secure access",
+      icon: Fingerprint,
+      level: "Advanced"
+    },
+    {
+      feature: "Multi-Factor Authentication",
+      description: "SMS, email, and authenticator app-based 2FA protection",
+      icon: Key,
+      level: "Enhanced"
+    },
+    {
+      feature: "Fraud Detection AI",
+      description: "Machine learning algorithms detect and prevent fraudulent transactions",
+      icon: AlertTriangle,
+      level: "Intelligent"
+    },
+    {
+      feature: "Real-time Monitoring",
+      description: "24/7 transaction monitoring with instant fraud alerts",
+      icon: Activity,
+      level: "Continuous"
+    },
+    {
+      feature: "Regulatory Compliance",
+      description: "Full compliance with PCI DSS, GDPR, and local financial regulations",
+      icon: FileText,
+      level: "Certified"
+    }
+  ]
+
+  const advancedCapabilities = [
+    {
+      title: "Smart Contract Integration",
+      description: "Automated financial agreements with blockchain technology",
+      features: ["Self-executing contracts", "Automated settlements", "Transparent transactions", "Reduced intermediaries"],
+      icon: GitBranch,
+      color: "blue"
+    },
+    {
+      title: "AI-Powered Insights",
+      description: "Personalized financial recommendations and spending analysis",
+      features: ["Spending pattern analysis", "Budget optimization", "Investment suggestions", "Risk assessment"],
+      icon: Brain,
+      color: "green"
+    },
+    {
+      title: "Cross-Chain Interoperability",
+      description: "Seamless transactions across multiple blockchain networks",
+      features: ["Multi-chain support", "Atomic swaps", "Cross-chain bridges", "Universal compatibility"],
+      icon: Network,
+      color: "orange"
+    },
+    {
+      title: "Quantum-Resistant Security",
+      description: "Future-proof encryption resistant to quantum computing attacks",
+      features: ["Post-quantum cryptography", "Advanced key management", "Future-proof security", "Military-grade protection"],
+      icon: Shield,
+      color: "purple"
     }
   ]
 
@@ -336,6 +492,158 @@ const AnnitaPayPage = () => {
           </div>
         </section>
 
+        {/* Platform Architecture Section */}
+        <section className="py-16 sm:py-20 bg-gradient-to-br from-gray-50 to-white">
+          <div className="container mx-auto px-3 sm:px-4 lg:px-6 xl:px-8">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.8 }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+                Platform <span className="text-orange-600">Architecture</span>
+              </h2>
+              <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
+                Built on enterprise-grade infrastructure with modular components designed for scale, security, and performance.
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {platformArchitecture.map((component, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={isInView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
+                  className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300 group"
+                >
+                  <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-6 ${
+                    component.color === 'blue' ? 'bg-blue-100' :
+                    component.color === 'green' ? 'bg-green-100' :
+                    component.color === 'orange' ? 'bg-orange-100' :
+                    component.color === 'purple' ? 'bg-purple-100' :
+                    component.color === 'indigo' ? 'bg-indigo-100' :
+                    'bg-teal-100'
+                  } group-hover:scale-110 transition-transform duration-300`}>
+                    <component.icon className={`w-8 h-8 ${
+                      component.color === 'blue' ? 'text-blue-600' :
+                      component.color === 'green' ? 'text-green-600' :
+                      component.color === 'orange' ? 'text-orange-600' :
+                      component.color === 'purple' ? 'text-purple-600' :
+                      component.color === 'indigo' ? 'text-indigo-600' :
+                      'text-teal-600'
+                    }`} />
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-4">{component.component}</h3>
+                  <p className="text-gray-600 leading-relaxed">{component.description}</p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Security Features Section */}
+        <section className="py-16 sm:py-20 bg-white">
+          <div className="container mx-auto px-3 sm:px-4 lg:px-6 xl:px-8">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.8 }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+                Advanced <span className="text-orange-600">Security</span>
+              </h2>
+              <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
+                Bank-grade security with multiple layers of protection to keep your money and data safe.
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {securityFeatures.map((security, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={isInView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
+                  className="bg-gradient-to-br from-gray-50 to-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300"
+                >
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center">
+                      <security.icon className="w-6 h-6 text-orange-600" />
+                    </div>
+                    <span className="px-3 py-1 bg-orange-100 text-orange-700 text-xs font-semibold rounded-full">
+                      {security.level}
+                    </span>
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-3">{security.feature}</h3>
+                  <p className="text-gray-600 leading-relaxed">{security.description}</p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Advanced Capabilities Section */}
+        <section className="py-16 sm:py-20 bg-gradient-to-br from-orange-50 to-orange-100">
+          <div className="container mx-auto px-3 sm:px-4 lg:px-6 xl:px-8">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.8 }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+                Advanced <span className="text-orange-600">Capabilities</span>
+              </h2>
+              <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
+                Cutting-edge technology and innovative features that set AnnitaPay apart from traditional financial services.
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              {advancedCapabilities.map((capability, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={isInView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
+                  className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300"
+                >
+                  <div className="flex items-center mb-6">
+                    <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mr-4 ${
+                      capability.color === 'blue' ? 'bg-blue-100' :
+                      capability.color === 'green' ? 'bg-green-100' :
+                      capability.color === 'orange' ? 'bg-orange-100' :
+                      'bg-purple-100'
+                    }`}>
+                      <capability.icon className={`w-8 h-8 ${
+                        capability.color === 'blue' ? 'text-blue-600' :
+                        capability.color === 'green' ? 'text-green-600' :
+                        capability.color === 'orange' ? 'text-orange-600' :
+                        'text-purple-600'
+                      }`} />
+                    </div>
+                    <div>
+                      <h3 className="text-2xl font-bold text-gray-900">{capability.title}</h3>
+                      <p className="text-gray-600">{capability.description}</p>
+                    </div>
+                  </div>
+                  <ul className="space-y-3">
+                    {capability.features.map((feature, featureIndex) => (
+                      <li key={featureIndex} className="flex items-center space-x-3">
+                        <CheckCircle className="w-5 h-5 text-orange-600 flex-shrink-0" />
+                        <span className="text-gray-700">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* Benefits Section */}
         <section className="py-16 sm:py-20 bg-gradient-to-r from-orange-50 to-orange-100">
           <div className="container mx-auto px-3 sm:px-4 lg:px-6 xl:px-8">
@@ -397,8 +705,6 @@ const AnnitaPayPage = () => {
           </div>
         </section>
 
-        {/* Community Features Section */}
-        <CommunityFeatures />
 
         {/* CTA Section */}
         <CTASection />
