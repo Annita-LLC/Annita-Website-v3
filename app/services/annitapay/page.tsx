@@ -23,7 +23,6 @@ import {
   Lock,
   DollarSign,
   Banknote,
-  Smartphone2,
   Wifi,
   WifiOff,
   QrCode,
@@ -65,9 +64,9 @@ import {
   Code,
   Terminal,
   Monitor,
-  Smartphone3,
   Tablet,
-  Laptop
+  Laptop,
+  Brain
 } from 'lucide-react'
 
 const AnnitaPayPage = () => {
@@ -168,7 +167,7 @@ const AnnitaPayPage = () => {
     {
       component: "SDKs",
       description: "Developer-ready SDKs for Android, iOS, and Web",
-      icon: Smartphone3,
+      icon: Smartphone,
       color: "green"
     },
     {
