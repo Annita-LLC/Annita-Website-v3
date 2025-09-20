@@ -1,16 +1,13 @@
 'use client'
 
-import { useState, useEffect, lazy, Suspense } from 'react'
+import { useState, useEffect } from 'react'
 import SEOHead from '@/components/seo/SEOHead'
-import LoadingSpinner from '@/components/ui/LoadingSpinner'
 import WelcomeLoader from '@/components/ui/WelcomeLoader'
-
-// Lazy load components for better performance
-const HeroSection = lazy(() => import('@/components/sections/hero/HeroSection'))
-const FeaturesSection = lazy(() => import('@/components/sections/FeaturesSection'))
-const V3AnnouncementSection = lazy(() => import('@/components/sections/V3AnnouncementSection'))
-const TrustedPartnersSection = lazy(() => import('@/components/sections/TrustedPartnersSection'))
-const CTASection = lazy(() => import('@/components/sections/CTASection'))
+import HeroSection from '@/components/sections/hero/HeroSection'
+import FeaturesSection from '@/components/sections/FeaturesSection'
+import V3AnnouncementSection from '@/components/sections/V3AnnouncementSection'
+import TrustedPartnersSection from '@/components/sections/TrustedPartnersSection'
+import CTASection from '@/components/sections/CTASection'
 
 export default function HomePage() {
   const [showWelcome, setShowWelcome] = useState(false)
@@ -169,32 +166,11 @@ export default function HomePage() {
         ogImage="/home-og-image.jpg"
         structuredData={homeStructuredData}
       />
-      <Suspense fallback={<LoadingSpinner />}>
-        <HeroSection />
-      </Suspense>
-      
-      <Suspense fallback={<LoadingSpinner />}>
-        <FeaturesSection />
-      </Suspense>
-      
-      {/* AfricanBusinessFeatures moved to service pages for detailed content */}
-      
-      <Suspense fallback={<LoadingSpinner />}>
-        <V3AnnouncementSection />
-      </Suspense>
-      
-      {/* AboutSection removed - team section moved to /about page */}
-      
-
-      
-      <Suspense fallback={<LoadingSpinner />}>
-        <TrustedPartnersSection />
-      </Suspense>
-      
-      
-      <Suspense fallback={<LoadingSpinner />}>
-        <CTASection />
-      </Suspense>
+      <HeroSection />
+      <FeaturesSection />
+      <V3AnnouncementSection />
+      <TrustedPartnersSection />
+      <CTASection />
     </>
   )
 }

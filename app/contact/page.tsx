@@ -1,15 +1,11 @@
 "use client"
 
-import { useRef } from 'react'
-import { motion, useInView } from 'framer-motion'
 import SEOHead from '@/components/seo/SEOHead'
 import HeroSection from '@/components/sections/contact/HeroSection'
 import ContactMethodsSection from '@/components/sections/contact/ContactMethodsSection'
 import ContactFormSection from '@/components/sections/contact/ContactFormSection'
 
 const ContactPage = () => {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: "-100px" })
 
   const contactStructuredData = {
     "@context": "https://schema.org",

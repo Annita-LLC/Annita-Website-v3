@@ -1,7 +1,5 @@
 'use client'
 
-import { useRef } from 'react'
-import { motion, useInView } from 'framer-motion'
 import SEOHead from '@/components/seo/SEOHead'
 import HeroSection from '@/components/sections/about/HeroSection'
 import MissionVisionSection from '@/components/sections/about/MissionVisionSection'
@@ -11,8 +9,6 @@ import TeamSection from '@/components/sections/about/TeamSection'
 import CTASection from '@/components/sections/about/CTASection'
 
 const AboutPage = () => {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: "-100px" })
 
   const structuredData = {
     "@context": "https://schema.org",

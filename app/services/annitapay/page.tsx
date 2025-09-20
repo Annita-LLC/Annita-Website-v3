@@ -1,79 +1,36 @@
 "use client"
 
-import { useState, memo } from 'react'
-import { motion } from 'framer-motion'
-import { useInView } from 'framer-motion'
-import { useRef } from 'react'
+import { useState } from 'react'
 import SEOHead from '@/components/seo/SEOHead'
 import CTASection from '@/components/sections/CTASection'
 import DownloadChoiceModal from '@/components/ui/DownloadChoiceModal'
 import { 
   CreditCard, 
   Shield, 
-  Zap, 
   Globe, 
   Smartphone, 
   Users, 
   TrendingUp, 
   CheckCircle,
-  ArrowRight,
-  Star,
   Download,
   Play,
   Lock,
-  DollarSign,
-  Banknote,
-  Wifi,
-  WifiOff,
-  QrCode,
   Fingerprint,
-  Eye,
-  EyeOff,
-  Settings,
-  BarChart3,
   Activity,
-  Clock,
-  MapPin,
-  Building2,
-  Network,
   Database,
   Cpu,
-  Server,
-  Cloud,
   Key,
   FileText,
   AlertTriangle,
-  CheckCircle2,
-  XCircle,
-  Info,
-  HelpCircle,
-  MessageSquare,
-  Phone,
-  Mail,
-  ExternalLink,
-  ChevronRight,
-  Sparkles,
-  Target,
-  Award,
-  Heart,
-  Lightbulb,
-  Rocket,
-  Layers,
-  Workflow,
+  Network,
   GitBranch,
   Code,
   Terminal,
-  Monitor,
-  Tablet,
-  Laptop,
   Brain
 } from 'lucide-react'
 
 const AnnitaPayPage = () => {
   const [isDownloadModalOpen, setIsDownloadModalOpen] = useState(false)
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true })
-  const [activeFeature, setActiveFeature] = useState(0)
 
   const features = [
     {
@@ -325,11 +282,7 @@ const AnnitaPayPage = () => {
 
           <div className="container mx-auto px-3 sm:px-4 lg:px-6 xl:px-8 relative z-10">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <motion.div
-                initial={{ opacity: 0, x: -30 }}
-                animate={isInView ? { opacity: 1, x: 0 } : {}}
-                transition={{ duration: 0.8 }}
-              >
+              <div>
                 <div className="inline-flex items-center px-4 py-2 rounded-full bg-orange-100 text-orange-700 text-sm font-medium mb-6">
                   <CreditCard className="w-4 h-4 mr-2" />
                   Personal Digital Payments
@@ -358,7 +311,7 @@ const AnnitaPayPage = () => {
                     Watch Demo
                   </button>
                 </div>
-              </motion.div>
+              </div>
 
               <motion.div
                 initial={{ opacity: 0, x: 30 }}

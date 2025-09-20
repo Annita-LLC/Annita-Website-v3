@@ -1,9 +1,6 @@
 "use client"
 
 import { useState } from 'react'
-import { motion } from 'framer-motion'
-import { useInView } from 'framer-motion'
-import { useRef } from 'react'
 import SEOHead from '@/components/seo/SEOHead'
 import CTASection from '@/components/sections/CTASection'
 import { 
@@ -12,22 +9,15 @@ import {
   MapPin, 
   Clock, 
   Shield, 
-  Zap, 
   Globe, 
   TrendingUp,
   CheckCircle,
-  ArrowRight,
   Download,
   Play,
-  Star,
-  BarChart3,
-  Users,
-  Activity
+  BarChart3
 } from 'lucide-react'
 
 const LogisticsPage = () => {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true })
   const [activeService, setActiveService] = useState('delivery')
 
   const features = [
@@ -194,11 +184,7 @@ const LogisticsPage = () => {
 
           <div className="container mx-auto px-3 sm:px-4 lg:px-6 xl:px-8 relative z-10">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <motion.div
-                initial={{ opacity: 0, x: -30 }}
-                animate={isInView ? { opacity: 1, x: 0 } : {}}
-                transition={{ duration: 0.8 }}
-              >
+              <div>
                 <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-100 text-blue-700 text-sm font-medium mb-6">
                   <Truck className="w-4 h-4 mr-2" />
                   Supply Chain & Delivery
@@ -226,7 +212,7 @@ const LogisticsPage = () => {
                     Schedule Pickup
                   </button>
                 </div>
-              </motion.div>
+              </div>
 
               <motion.div
                 initial={{ opacity: 0, x: 30 }}
