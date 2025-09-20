@@ -314,12 +314,7 @@ const AnnitaPayPage = () => {
                 </div>
               </div>
 
-              <motion.div
-                initial={{ opacity: 0, x: 30 }}
-                animate={isInView ? { opacity: 1, x: 0 } : {}}
-                transition={{ duration: 0.8, delay: 0.2 }}
-                className="relative"
-              >
+              <div className="relative">
                 <div className="bg-white p-8 rounded-3xl shadow-2xl border border-gray-100">
                   <div className="w-16 h-16 bg-orange-100 rounded-2xl flex items-center justify-center mb-6">
                     <CreditCard className="w-8 h-8 text-orange-600" />
@@ -346,7 +341,7 @@ const AnnitaPayPage = () => {
                     </button>
                   </div>
                 </div>
-              </motion.div>
+              </div>
             </div>
           </div>
         </section>
@@ -354,12 +349,7 @@ const AnnitaPayPage = () => {
         {/* Features Section */}
         <section className="py-16 sm:py-20" ref={ref}>
           <div className="container mx-auto px-3 sm:px-4 lg:px-6 xl:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8 }}
-              className="text-center mb-16"
-            >
+            <div className="text-center mb-16">
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
                 Why Choose <span className="text-orange-600">AnnitaPay</span>
               </h2>
@@ -367,15 +357,12 @@ const AnnitaPayPage = () => {
                 Built with cutting-edge technology and security, AnnitaPay provides the most reliable 
                 and user-friendly payment experience.
               </p>
-            </motion.div>
+            </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {features.map((feature, index) => (
-                <motion.div
+                <div
                   key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={isInView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
                   className="bg-white p-6 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300"
                 >
                   <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-4 ${
@@ -397,7 +384,7 @@ const AnnitaPayPage = () => {
                   </div>
                   <h3 className="text-xl font-semibold text-gray-900 mb-3">{feature.title}</h3>
                   <p className="text-gray-600 text-sm leading-relaxed">{feature.description}</p>
-                </motion.div>
+                </div>
               ))}
             </div>
           </div>
@@ -406,27 +393,19 @@ const AnnitaPayPage = () => {
         {/* Core Products Section */}
         <section className="py-16 sm:py-20 bg-white">
           <div className="container mx-auto px-3 sm:px-4 lg:px-6 xl:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8 }}
-              className="text-center mb-16"
-            >
+            <div className="text-center mb-16">
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
                 Core <span className="text-orange-600">Products</span>
               </h2>
               <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
                 Comprehensive financial solutions designed for Africa's unique needs and challenges.
               </p>
-            </motion.div>
+            </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
               {coreProducts.map((product, index) => (
-                <motion.div
+                <div
                   key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={isInView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
                   className="bg-gradient-to-br from-gray-50 to-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300"
                 >
                   <h3 className="text-2xl font-bold text-gray-900 mb-4">{product.title}</h3>
@@ -439,7 +418,7 @@ const AnnitaPayPage = () => {
                       </li>
                     ))}
                   </ul>
-                </motion.div>
+                </div>
               ))}
             </div>
           </div>
@@ -448,27 +427,19 @@ const AnnitaPayPage = () => {
         {/* Platform Architecture Section */}
         <section className="py-16 sm:py-20 bg-gradient-to-br from-gray-50 to-white">
           <div className="container mx-auto px-3 sm:px-4 lg:px-6 xl:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8 }}
-              className="text-center mb-16"
-            >
+            <div className="text-center mb-16">
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
                 Platform <span className="text-orange-600">Architecture</span>
               </h2>
               <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
                 Built on enterprise-grade infrastructure with modular components designed for scale, security, and performance.
               </p>
-            </motion.div>
+            </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {platformArchitecture.map((component, index) => (
-                <motion.div
+                <div
                   key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={isInView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
                   className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300 group"
                 >
                   <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-6 ${
@@ -490,7 +461,7 @@ const AnnitaPayPage = () => {
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 mb-4">{component.component}</h3>
                   <p className="text-gray-600 leading-relaxed">{component.description}</p>
-                </motion.div>
+                </div>
               ))}
             </div>
           </div>
@@ -499,27 +470,19 @@ const AnnitaPayPage = () => {
         {/* Security Features Section */}
         <section className="py-16 sm:py-20 bg-white">
           <div className="container mx-auto px-3 sm:px-4 lg:px-6 xl:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8 }}
-              className="text-center mb-16"
-            >
+            <div className="text-center mb-16">
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
                 Advanced <span className="text-orange-600">Security</span>
               </h2>
               <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
                 Bank-grade security with multiple layers of protection to keep your money and data safe.
               </p>
-            </motion.div>
+            </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {securityFeatures.map((security, index) => (
-                <motion.div
+                <div
                   key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={isInView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
                   className="bg-gradient-to-br from-gray-50 to-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300"
                 >
                   <div className="flex items-center justify-between mb-4">
@@ -532,7 +495,7 @@ const AnnitaPayPage = () => {
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 mb-3">{security.feature}</h3>
                   <p className="text-gray-600 leading-relaxed">{security.description}</p>
-                </motion.div>
+                </div>
               ))}
             </div>
           </div>
@@ -541,27 +504,19 @@ const AnnitaPayPage = () => {
         {/* Advanced Capabilities Section */}
         <section className="py-16 sm:py-20 bg-gradient-to-br from-orange-50 to-orange-100">
           <div className="container mx-auto px-3 sm:px-4 lg:px-6 xl:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8 }}
-              className="text-center mb-16"
-            >
+            <div className="text-center mb-16">
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
                 Advanced <span className="text-orange-600">Capabilities</span>
               </h2>
               <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
                 Cutting-edge technology and innovative features that set AnnitaPay apart from traditional financial services.
               </p>
-            </motion.div>
+            </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               {advancedCapabilities.map((capability, index) => (
-                <motion.div
+                <div
                   key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={isInView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
                   className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300"
                 >
                   <div className="flex items-center mb-6">
@@ -591,7 +546,7 @@ const AnnitaPayPage = () => {
                       </li>
                     ))}
                   </ul>
-                </motion.div>
+                </div>
               ))}
             </div>
           </div>
@@ -601,11 +556,7 @@ const AnnitaPayPage = () => {
         <section className="py-16 sm:py-20 bg-gradient-to-r from-orange-50 to-orange-100">
           <div className="container mx-auto px-3 sm:px-4 lg:px-6 xl:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <motion.div
-                initial={{ opacity: 0, x: -30 }}
-                animate={isInView ? { opacity: 1, x: 0 } : {}}
-                transition={{ duration: 0.8 }}
-              >
+              <div>
                 <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
                   Our <span className="text-orange-600">Vision</span>
                 </h2>
@@ -622,14 +573,9 @@ const AnnitaPayPage = () => {
                     </div>
                   ))}
                 </div>
-              </motion.div>
+              </div>
 
-              <motion.div
-                initial={{ opacity: 0, x: 30 }}
-                animate={isInView ? { opacity: 1, x: 0 } : {}}
-                transition={{ duration: 0.8, delay: 0.2 }}
-                className="relative"
-              >
+              <div className="relative">
                 <div className="bg-white p-8 rounded-3xl shadow-2xl">
                   <div className="text-center mb-6">
                     <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -653,7 +599,7 @@ const AnnitaPayPage = () => {
                     </div>
                   </div>
                 </div>
-              </motion.div>
+              </div>
             </div>
           </div>
         </section>
