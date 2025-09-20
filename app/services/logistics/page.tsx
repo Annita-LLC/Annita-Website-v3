@@ -253,7 +253,7 @@ const LogisticsPage = () => {
         </section>
 
         {/* Features Section */}
-        <section className="py-16 sm:py-20" ref={ref}>
+        <section className="py-16 sm:py-20">
           <div className="container mx-auto px-3 sm:px-4 lg:px-6 xl:px-8">
             <div className="text-center mb-16">
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
