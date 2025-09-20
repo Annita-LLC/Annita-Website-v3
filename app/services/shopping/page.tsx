@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from 'react'
+import { useState, memo } from 'react'
 import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef } from 'react'
@@ -333,4 +333,4 @@ const ShoppingPage = () => {
   )
 }
 
-export default ShoppingPage
+export default memo(ShoppingPage)

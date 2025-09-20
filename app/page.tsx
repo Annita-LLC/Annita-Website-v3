@@ -1,19 +1,16 @@
 'use client'
 
-import { useState, useEffect } from 'react'
-import { Suspense } from 'react'
-import HeroSection from '@/components/sections/hero/HeroSection'
-import FeaturesSection from '@/components/sections/FeaturesSection'
-// import AfricanBusinessFeatures from '@/components/sections/AfricanBusinessFeatures'
-import V3AnnouncementSection from '@/components/sections/V3AnnouncementSection'
-// import AboutSection from '@/components/sections/AboutSection'
-
-import TrustedPartnersSection from '@/components/sections/TrustedPartnersSection'
-
-import CTASection from '@/components/sections/CTASection'
+import { useState, useEffect, lazy, Suspense } from 'react'
+import SEOHead from '@/components/seo/SEOHead'
 import LoadingSpinner from '@/components/ui/LoadingSpinner'
 import WelcomeLoader from '@/components/ui/WelcomeLoader'
-import SEOHead from '@/components/seo/SEOHead'
+
+// Lazy load components for better performance
+const HeroSection = lazy(() => import('@/components/sections/hero/HeroSection'))
+const FeaturesSection = lazy(() => import('@/components/sections/FeaturesSection'))
+const V3AnnouncementSection = lazy(() => import('@/components/sections/V3AnnouncementSection'))
+const TrustedPartnersSection = lazy(() => import('@/components/sections/TrustedPartnersSection'))
+const CTASection = lazy(() => import('@/components/sections/CTASection'))
 
 export default function HomePage() {
   const [showWelcome, setShowWelcome] = useState(false)
@@ -194,9 +191,6 @@ export default function HomePage() {
         <TrustedPartnersSection />
       </Suspense>
       
-      <Suspense fallback={<LoadingSpinner />}>
-
-      </Suspense>
       
       <Suspense fallback={<LoadingSpinner />}>
         <CTASection />

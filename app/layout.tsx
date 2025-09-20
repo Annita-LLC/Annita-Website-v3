@@ -8,6 +8,8 @@ import Footer from '@/components/layout/Footer'
 import CookieConsent from '@/components/ui/CookieConsent'
 import FloatingCookieButton from '@/components/ui/FloatingCookieButton'
 import OfflineBanner from '@/components/ui/OfflineBanner'
+import PerformanceOptimizer from '@/components/ui/PerformanceOptimizer'
+import PerformanceMonitor from '@/components/ui/PerformanceMonitor'
 import { ThemeProvider } from '@/lib/theme'
 
 const zenDots = Zen_Dots({ 
@@ -205,17 +207,20 @@ export default function RootLayout({
       </head>
       <body className={`${zenDots.variable} ${lora.variable} antialiased`}>
         <ThemeProvider>
-          <div className="min-h-screen flex flex-col">
-            <Navigation />
-            <main className="flex-1">
-              {children}
-            </main>
-            <Footer />
-          </div>
+          <PerformanceOptimizer>
+            <div className="min-h-screen flex flex-col">
+              <Navigation />
+              <main className="flex-1">
+                {children}
+              </main>
+              <Footer />
+            </div>
+          </PerformanceOptimizer>
           <Analytics />
           <CookieConsent />
           <FloatingCookieButton />
           <OfflineBanner />
+          <PerformanceMonitor />
           <Toaster
             position="top-right"
             toastOptions={{

@@ -419,4 +419,59 @@ html {
       transition-duration: 0.01ms !important;
     }
   }
+
+  /* Performance Optimizations */
+  .performance-optimized * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .performance-optimized .animate-pulse,
+  .performance-optimized .animate-bounce,
+  .performance-optimized .animate-spin {
+    animation: none !important;
+  }
+
+  /* Optimize images for better performance */
+  img {
+    content-visibility: auto;
+    contain-intrinsic-size: 300px 200px;
+  }
+
+  /* Optimize scrolling performance */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
+  /* Optimize font loading */
+  @font-face {
+    font-family: 'Zen Dots';
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Lora';
+    font-display: swap;
+  }
+
+  /* Optimize critical rendering path */
+  .critical-content {
+    content-visibility: auto;
+    contain-intrinsic-size: 0 500px;
+  }
+
+  /* Optimize animations for low-end devices */
+  @media (max-width: 768px) {
+    .mobile-optimized * {
+      animation-duration: 0.1s !important;
+      transition-duration: 0.1s !important;
+    }
+  }
 }

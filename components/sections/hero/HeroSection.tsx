@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef, memo } from 'react'
 import { motion, useInView, AnimatePresence } from 'framer-motion'
 import { 
   ArrowRight, 
@@ -186,12 +186,12 @@ const HeroSection = () => {
     }
   ]
 
-  // Start/stop slide interval based on pause state
+  // Start/stop slide interval based on pause state - reduced frequency for better performance
   useEffect(() => {
     if (!isPaused) {
       slideIntervalRef.current = setInterval(() => {
         setCurrentSlide((prev) => (prev + 1) % slides.length)
-      }, 3000)
+      }, 5000) // Increased from 3000ms to 5000ms
     } else {
       if (slideIntervalRef.current) {
         clearInterval(slideIntervalRef.current)
@@ -206,12 +206,12 @@ const HeroSection = () => {
     }
   }, [isPaused, slides.length])
 
-  // Start/stop video interval based on pause state
+  // Start/stop video interval based on pause state - reduced frequency for better performance
   useEffect(() => {
     if (!isPaused) {
       videoIntervalRef.current = setInterval(() => {
         setCurrentVideo((prev) => (prev + 1) % videos.length)
-      }, 3000)
+      }, 5000) // Increased from 3000ms to 5000ms
     } else {
       if (videoIntervalRef.current) {
         clearInterval(videoIntervalRef.current)
@@ -497,4 +497,4 @@ const HeroSection = () => {
   )
 }
 
-export default HeroSection
+export default memo(HeroSection)

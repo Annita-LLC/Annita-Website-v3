@@ -1,6 +1,6 @@
 'use client'
 
-import { useRef } from 'react'
+import { useRef, memo } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { 
   ShoppingCart, 
@@ -178,4 +178,4 @@ const FeaturesSection = () => {
   )
 }
 
-export default FeaturesSection
+export default memo(FeaturesSection)

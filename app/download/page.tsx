@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useRef, useEffect } from 'react'
+import { useState, useRef, useEffect, memo } from 'react'
 import { motion, useInView } from 'framer-motion'
 import SEOHead from '@/components/seo/SEOHead'
 import { 
@@ -50,7 +50,7 @@ import {
 import Link from 'next/link'
 import { useFormSubmission, formValidations } from '@/lib/hooks/useFormSubmission'
 
-export default function DownloadPage() {
+function DownloadPage() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true })
   const [selectedPlatform, setSelectedPlatform] = useState('')
@@ -72,13 +72,13 @@ export default function DownloadPage() {
     '/images/DEMO-Images/shot8_1737053808898.png'
   ]
 
-  // Auto-rotate images
+  // Auto-rotate images - optimized for performance
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImageIndex((prevIndex) => 
         prevIndex === demoImages.length - 1 ? 0 : prevIndex + 1
       )
-    }, 3000) // Change image every 3 seconds
+    }, 4000) // Increased to 4 seconds for better performance
 
     return () => clearInterval(interval)
   }, [demoImages.length])
@@ -845,3 +845,5 @@ export default function DownloadPage() {
     </>
   )
 }
+
+export default memo(DownloadPage)
