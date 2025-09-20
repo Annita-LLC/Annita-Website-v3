@@ -42,11 +42,9 @@ const AnnitaPayFeature = () => {
 
   const features = [
     'Multi-currency support for 54+ African currencies',
-    'Real-time settlements with instant cross-border transactions',
     'Escrow payment protection for secure transactions',
-    'Digital currency integration including CBDCs',
     'Mobile POS solutions for merchants',
-    'Institutional backing through African bank partnerships'
+    'Bridge-Powered Stablecoin Infrastructure'
   ]
 
 
@@ -94,9 +92,7 @@ const AnnitaPayFeature = () => {
           transition={{ duration: 0.6, delay: 0.5 }}
           className="text-gray-600 mb-6 leading-relaxed"
         >
-          AnnitaPay enables MSMEs and individuals to <span className="text-orange-600 font-semibold">move, store, issue, and grow money</span> 
-          seamlessly without borders. Trade confidently in <span className="text-orange-600 font-semibold">54+ African currencies</span> 
-          with <span className="text-orange-600 font-semibold">real-time settlements</span> and escrow protection.
+          AnnitaPay enables MSMEs and individuals to move, store, issue, and grow money seamlessly without borders. Trade confidently in 54+ African currencies with real-time settlements and escrow protection.
         </motion.p>
 
         {/* Live Security Stats */}

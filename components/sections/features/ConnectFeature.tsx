@@ -4,68 +4,26 @@ import { useState, useEffect } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { 
   MessageSquare, 
-  BarChart3, 
   Target, 
-  Users, 
   ArrowRight,
   CheckCircle,
-  Sparkles,
-  Zap,
-  Award,
   Activity,
   TrendingUp,
-  Globe,
-  Shield,
-  Mail,
-  Phone,
-  Video,
-  Camera,
-  Heart,
-  Share,
-  Eye,
-  MousePointer,
-  Lightbulb
+  Heart
 } from 'lucide-react'
 import Button from '@/components/ui/Button'
 
 const ConnectFeature = () => {
-  const [campaignStats, setCampaignStats] = useState({
-    reach: 2400,
-    engagement: 89,
-    conversions: 156,
-    revenue: 12500
-  })
   const [liveMetrics, setLiveMetrics] = useState({
     activeCampaigns: 23,
-    totalReach: 45600,
-    avgEngagement: 92.5,
-    customerSatisfaction: 98.2
+    avgEngagement: 92.5
   })
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCampaignStats(prev => ({
-        reach: prev.reach + Math.floor(Math.random() * 10),
-        engagement: prev.engagement + (Math.random() * 2 - 1),
-        conversions: prev.conversions + Math.floor(Math.random() * 3),
-        revenue: prev.revenue + Math.floor(Math.random() * 50)
-      }))
-    }, 3000)
-
-    return () => clearInterval(interval)
-  }, [])
 
   const features = [
     'Targeted advertising',
     'Customer engagement tools',
     'AI-driven insights',
     'Analytics and reporting'
-  ]
-
-  const marketingChannels = [
-    { name: 'Social Media', icon: Share, reach: 1200, engagement: 94, color: 'blue' },
-    { name: 'Email Marketing', icon: Mail, reach: 800, engagement: 87, color: 'green' },
-    { name: 'SMS Campaigns', icon: Phone, reach: 400, engagement: 91, color: 'orange' }
   ]
 
   return (
@@ -216,102 +174,6 @@ const ConnectFeature = () => {
               <div className="absolute -inset-1 bg-gradient-to-r from-orange-500/20 to-red-500/20 rounded-3xl blur-sm -z-10"></div>
             </div>
 
-            {/* Campaign Performance */}
-            <div className="bg-purple-50 rounded-lg p-3 border border-purple-200 mb-4">
-              <div className="flex items-center space-x-2 mb-2">
-                <BarChart3 className="w-4 h-4 text-purple-600" />
-                <span className="text-sm font-medium text-purple-900">Campaign Performance</span>
-              </div>
-              <div className="grid grid-cols-2 gap-4 text-xs">
-                <div>
-                  <div className="text-gray-600">Reach</div>
-                  <div className="font-semibold text-purple-900">{campaignStats.reach.toLocaleString()}</div>
-                </div>
-                <div>
-                  <div className="text-gray-600">Engagement</div>
-                  <div className="font-semibold text-purple-900">{campaignStats.engagement.toFixed(1)}%</div>
-                </div>
-                <div>
-                  <div className="text-gray-600">Conversions</div>
-                  <div className="font-semibold text-purple-900">{campaignStats.conversions}</div>
-                </div>
-                <div>
-                  <div className="text-gray-600">Revenue</div>
-                  <div className="font-semibold text-purple-900">${campaignStats.revenue.toLocaleString()}</div>
-                </div>
-              </div>
-            </div>
-
-            {/* Marketing Channels */}
-            <div className="space-y-3 mb-4">
-              <div className="text-sm font-medium text-gray-700">Active Channels</div>
-              {marketingChannels.map((channel, index) => (
-                <motion.div
-                  key={channel.name}
-                  initial={{ opacity: 0, x: 20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="flex items-center justify-between p-2 bg-gray-50 rounded-lg"
-                >
-                  <div className="flex items-center space-x-2">
-                    <div className={`w-8 h-8 rounded-full flex items-center justify-center ${
-                      channel.color === 'blue' ? 'bg-blue-100' :
-                      channel.color === 'green' ? 'bg-green-100' : 'bg-orange-100'
-                    }`}>
-                      <channel.icon className={`w-4 h-4 ${
-                        channel.color === 'blue' ? 'text-blue-600' :
-                        channel.color === 'green' ? 'text-green-600' : 'text-orange-600'
-                      }`} />
-                    </div>
-                    <div>
-                      <div className="text-sm font-medium text-gray-900">{channel.name}</div>
-                      <div className="text-xs text-gray-500">{channel.reach} reach</div>
-                    </div>
-                  </div>
-                  <div className="text-right">
-                    <div className="text-sm font-bold text-green-600">{channel.engagement}%</div>
-                    <div className="text-xs text-gray-500">engagement</div>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-
-            {/* Action Buttons */}
-            <div className="flex space-x-2 mb-4">
-              <button className="flex-1 bg-purple-600 text-white rounded-lg py-2 text-sm font-medium flex items-center justify-center">
-                <MousePointer className="w-4 h-4 mr-2" />
-                Create Ad
-              </button>
-              <button className="flex-1 bg-gray-100 text-gray-700 rounded-lg py-2 text-sm font-medium flex items-center justify-center">
-                <BarChart3 className="w-4 h-4 mr-2" />
-                Analytics
-              </button>
-            </div>
-
-            {/* AI Insights */}
-            <div className="bg-gradient-to-r from-orange-50 to-yellow-50 rounded-lg p-3 border border-orange-200">
-              <div className="flex items-center space-x-2 mb-2">
-                <Lightbulb className="w-4 h-4 text-orange-600" />
-                <span className="text-sm font-medium text-orange-900">AI Insight</span>
-              </div>
-              <div className="text-xs text-orange-800">
-                "Your email campaigns perform 23% better on Tuesdays. Consider scheduling more campaigns for optimal engagement."
-              </div>
-            </div>
-
-            {/* Bottom Stats */}
-            <div className="mt-4 pt-4 border-t border-gray-200">
-              <div className="flex items-center justify-between text-sm">
-                <div className="flex items-center">
-                  <Eye className="w-4 h-4 text-gray-500 mr-1" />
-                  <span className="text-gray-600">{liveMetrics.totalReach.toLocaleString()} total reach</span>
-                </div>
-                <div className="flex items-center">
-                  <Heart className="w-4 h-4 text-red-500 mr-1" />
-                  <span className="text-gray-600">{liveMetrics.customerSatisfaction}% satisfaction</span>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
 
