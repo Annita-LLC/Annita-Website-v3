@@ -214,12 +214,7 @@ const LogisticsPage = () => {
                 </div>
               </div>
 
-              <motion.div
-                initial={{ opacity: 0, x: 30 }}
-                animate={isInView ? { opacity: 1, x: 0 } : {}}
-                transition={{ duration: 0.8, delay: 0.2 }}
-                className="relative"
-              >
+              <div className="relative">
                 <div className="bg-white p-8 rounded-3xl shadow-2xl border border-gray-100">
                   <div className="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mb-6">
                     <Truck className="w-8 h-8 text-blue-600" />
@@ -252,7 +247,7 @@ const LogisticsPage = () => {
                     </button>
                   </div>
                 </div>
-              </motion.div>
+              </div>
             </div>
           </div>
         </section>
@@ -260,12 +255,7 @@ const LogisticsPage = () => {
         {/* Features Section */}
         <section className="py-16 sm:py-20" ref={ref}>
           <div className="container mx-auto px-3 sm:px-4 lg:px-6 xl:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8 }}
-              className="text-center mb-16"
-            >
+            <div className="text-center mb-16">
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
                 Complete <span className="text-blue-600">Logistics</span> Solutions
               </h2>
@@ -273,15 +263,12 @@ const LogisticsPage = () => {
                 From local delivery to international shipping, we provide comprehensive 
                 logistics services to meet all your supply chain needs.
               </p>
-            </motion.div>
+            </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {features.map((feature, index) => (
-                <motion.div
+                <div
                   key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={isInView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
                   className="bg-white p-6 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300"
                 >
                   <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-4 ${
@@ -299,7 +286,7 @@ const LogisticsPage = () => {
                   </div>
                   <h3 className="text-xl font-semibold text-gray-900 mb-3">{feature.title}</h3>
                   <p className="text-gray-600 text-sm leading-relaxed">{feature.description}</p>
-                </motion.div>
+                </div>
               ))}
             </div>
           </div>
@@ -308,27 +295,19 @@ const LogisticsPage = () => {
         {/* Services Section */}
         <section className="py-16 sm:py-20 bg-gradient-to-r from-blue-50 to-blue-100">
           <div className="container mx-auto px-3 sm:px-4 lg:px-6 xl:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8 }}
-              className="text-center mb-16"
-            >
+            <div className="text-center mb-16">
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
                 Our <span className="text-blue-600">Services</span>
               </h2>
               <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
                 Choose from our range of logistics services designed to meet your specific needs.
               </p>
-            </motion.div>
+            </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {services.map((service, index) => (
-                <motion.div
+                <div
                   key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={isInView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
                   className="bg-white p-6 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300 cursor-pointer group"
                 >
                   <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">
@@ -345,7 +324,7 @@ const LogisticsPage = () => {
                     ))}
                   </ul>
                   <p className="text-sm text-gray-600 leading-relaxed">{service.details}</p>
-                </motion.div>
+                </div>
               ))}
             </div>
           </div>
@@ -354,27 +333,19 @@ const LogisticsPage = () => {
         {/* Delivery Statistics Section */}
         <section className="py-16 sm:py-20">
           <div className="container mx-auto px-3 sm:px-4 lg:px-6 xl:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8 }}
-              className="text-center mb-16"
-            >
+            <div className="text-center mb-16">
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
                 Delivery <span className="text-blue-600">Performance</span>
               </h2>
               <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
                 Real-time statistics showing our commitment to fast and reliable delivery.
               </p>
-            </motion.div>
+            </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {deliveryStats.map((stat, index) => (
-                <motion.div
+                <div
                   key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={isInView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
                   className="bg-white p-6 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300"
                 >
                   <div className="text-center">
@@ -388,7 +359,7 @@ const LogisticsPage = () => {
                       <span className="text-green-600 text-sm font-medium">{stat.change}</span>
                     </div>
                   </div>
-                </motion.div>
+                </div>
               ))}
             </div>
           </div>
@@ -398,11 +369,7 @@ const LogisticsPage = () => {
         <section className="py-16 sm:py-20 bg-gradient-to-r from-gray-50 to-white">
           <div className="container mx-auto px-3 sm:px-4 lg:px-6 xl:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <motion.div
-                initial={{ opacity: 0, x: -30 }}
-                animate={isInView ? { opacity: 1, x: 0 } : {}}
-                transition={{ duration: 0.8 }}
-              >
+              <div>
                 <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
                   Why Choose <span className="text-blue-600">Annita Logistics</span>
                 </h2>
@@ -418,14 +385,9 @@ const LogisticsPage = () => {
                     </div>
                   ))}
                 </div>
-              </motion.div>
+              </div>
 
-              <motion.div
-                initial={{ opacity: 0, x: 30 }}
-                animate={isInView ? { opacity: 1, x: 0 } : {}}
-                transition={{ duration: 0.8, delay: 0.2 }}
-                className="relative"
-              >
+              <div className="relative">
                 <div className="bg-white p-8 rounded-3xl shadow-2xl">
                   <div className="text-center mb-6">
                     <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -449,7 +411,7 @@ const LogisticsPage = () => {
                     </div>
                   </div>
                 </div>
-              </motion.div>
+              </div>
             </div>
           </div>
         </section>
