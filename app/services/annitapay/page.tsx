@@ -618,4 +618,4 @@ const AnnitaPayPage = () => {
   )
 }
 
-export default memo(AnnitaPayPage)
+export default AnnitaPayPage
