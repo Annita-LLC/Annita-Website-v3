@@ -14,7 +14,8 @@ import {
   CheckCircle,
   Download,
   Play,
-  BarChart3
+  BarChart3,
+  Bike
 } from 'lucide-react'
 
 const LogisticsPage = () => {
@@ -44,6 +45,12 @@ const LogisticsPage = () => {
       title: "Secure Handling",
       description: "Insurance and secure package handling",
       color: "purple"
+    },
+    {
+      icon: Bike,
+      title: "Bike Delivery",
+      description: "Eco-friendly urban delivery with real-time tracking",
+      color: "green"
     }
   ]
 

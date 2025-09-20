@@ -88,15 +88,10 @@ const Navigation = () => {
         { name: 'Annita Global Market', href: '/services/global-market', icon: Globe, description: 'International marketplace' },
         { name: 'AnnitaPay Business', href: '/services/annitapay-business', icon: Building, description: 'Business payment solutions' },
         { name: 'Annita AI', href: '/services/ai', icon: Zap, description: 'AI-powered business tools' },
-        { name: 'Annita Logistics Network', href: '/services/logistics', icon: Truck, description: 'Supply chain & delivery' },
+        { name: 'Annita Logistics Network', href: '/services/logistics', icon: Truck, description: 'Supply chain, delivery & bike delivery services' },
         { name: 'Annita Ads', href: '/services/ads', icon: Target, description: 'Advertising platform' },
         { name: 'Annita ERP System', href: '/services/erp', icon: Database, description: 'Enterprise resource planning' },
-        { name: 'Annita DeFi Platform', href: '/services/defi', icon: TrendingUp, description: 'Complete DeFi suite with staking, lending, and borrowing' },
-        { name: 'Annita SDEX', href: '/services/sdex', icon: BarChart3, description: 'Decentralized exchange with real-time trading and yield farming' },
         { name: 'Annita Email Service', href: '/services/email', icon: Mail, description: 'Professional email hosting with custom domains' },
-        { name: 'Annita Support Hub', href: '/services/support', icon: Headphones, description: '24/7 helpdesk with ticket management and live chat' },
-        { name: 'Annita FX Service', href: '/services/fx', icon: DollarSign, description: '174+ currencies forex data API with real-time rates' },
-        { name: 'Annita Bike Delivery', href: '/services/bike-delivery', icon: Bike, description: 'Eco-friendly urban delivery with real-time tracking' },
       ]
     },
 

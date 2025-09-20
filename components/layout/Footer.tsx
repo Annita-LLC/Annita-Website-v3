@@ -48,12 +48,7 @@ const Footer = () => {
         { name: 'Annita Logistics Network', href: '/services/logistics' },
         { name: 'Annita Ads', href: '/services/ads' },
         { name: 'Annita ERP System', href: '/services/erp' },
-        { name: 'Annita DeFi Platform', href: '/services/defi' },
-        { name: 'Annita SDEX', href: '/services/sdex' },
         { name: 'Annita Email Service', href: '/services/email' },
-        { name: 'Annita Support Hub', href: '/services/support' },
-        { name: 'Annita FX Service', href: '/services/fx' },
-        { name: 'Annita Bike Delivery', href: '/services/bike-delivery' }
       ]
     },
     {
