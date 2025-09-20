@@ -26,7 +26,8 @@ import {
   GitBranch,
   Code,
   Terminal,
-  Brain
+  Brain,
+  Zap
 } from 'lucide-react'
 
 const AnnitaPayPage = () => {
