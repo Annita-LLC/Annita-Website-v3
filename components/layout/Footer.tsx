@@ -18,6 +18,7 @@ import {
   Users,
   Briefcase,
   Award,
+  Download,
 } from 'lucide-react'
 
 const Footer = () => {
@@ -29,31 +30,63 @@ const Footer = () => {
       links: [
         { name: 'Live Marketplace V1.0', href: 'https://annita.company.site/products', isExternal: true },
         { name: 'AnnitaPay', href: '/services/annitapay' },
-        { name: 'Annita Marketplace', href: '/services/shopping' },
         { name: 'Annita AI', href: '/ai/personal' },
-        
+        { name: 'Annita Marketplace', href: '/services/shopping' },
+        { name: 'Annita Messaging', href: '/services/messaging' },
+        { name: 'Annita Streaming', href: '/services/streaming' },
+        { name: 'Annita Creator Studio', href: '/services/creator-studio' },
+        { name: 'Annita Voice & Video', href: '/services/voice-video' }
       ]
     },
     {
       title: 'Business',
       links: [
+        { name: 'Live Marketplace V1.0', href: 'https://annita.company.site/products', isExternal: true },
         { name: 'Annita Global Market', href: '/services/global-market' },
         { name: 'AnnitaPay Business', href: '/services/annitapay-business' },
         { name: 'Annita AI', href: '/services/ai' },
         { name: 'Annita Logistics Network', href: '/services/logistics' },
         { name: 'Annita Ads', href: '/services/ads' },
-        { name: 'Annita ERP System', href: '/services/erp' }
+        { name: 'Annita ERP System', href: '/services/erp' },
+        { name: 'Annita DeFi Platform', href: '/services/defi' },
+        { name: 'Annita SDEX', href: '/services/sdex' },
+        { name: 'Annita Email Service', href: '/services/email' },
+        { name: 'Annita Support Hub', href: '/services/support' },
+        { name: 'Annita FX Service', href: '/services/fx' },
+        { name: 'Annita Bike Delivery', href: '/services/bike-delivery' }
       ]
     },
-
     {
-      title: 'Resources',
+      title: 'Company',
+      links: [
+        { name: 'Ideas & Recommendations', href: '/ideas' },
+        { name: 'About Us', href: '/about' },
+        { name: 'CSR', href: '/company/csr' },
+        { name: 'Demo', href: '/demo' },
+        { name: 'Investors', href: '/investors' },
+        { name: 'The 100', href: '/the100' },
+        { name: 'Pricing', href: '/pricing' },
+        { name: 'Business Model', href: '/business-model' },
+        { name: 'Awards & Recognition', href: '/awards' },
+        { name: 'Gallery', href: '/gallery' },
+        { name: 'Careers', href: '/careers' },
+        { name: 'Apply Now', href: '/careers/apply' }
+      ]
+    },
+    {
+      title: 'Support',
       links: [
         { name: 'Contact Us', href: '/contact-us' },
-
-        
-        { name: 'Careers', href: '/careers' },
-        { name: 'About', href: '/about' }
+        { name: 'Contact Sales', href: '/contact-sales' },
+        { name: 'Report Issues', href: '/support/report-issues' },
+        { name: 'Join Waitlist', href: '/download' }
+      ]
+    },
+    {
+      title: 'Partners',
+      links: [
+        { name: 'Become a Partner', href: '/partners' },
+        { name: 'Partner Application', href: '/partners/apply' }
       ]
     },
     {
@@ -62,6 +95,7 @@ const Footer = () => {
         { name: 'Privacy Policy', href: '/privacy' },
         { name: 'Terms of Service', href: '/terms' },
         { name: 'Cookie Policy', href: '/cookies' },
+        { name: 'Security', href: '/legal/security' }
       ]
     }
   ]
@@ -149,6 +183,17 @@ const Footer = () => {
                   </a>
                 ))}
               </div>
+            </div>
+
+            {/* Download App Button */}
+            <div className="mb-4 sm:mb-6">
+              <Link 
+                href="/download"
+                className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-orange-500 to-orange-600 text-white font-semibold rounded-lg hover:from-orange-600 hover:to-orange-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+              >
+                <Download className="w-4 h-4 mr-2" />
+                Join Waitlist
+              </Link>
             </div>
           </div>
 

@@ -6,7 +6,6 @@ import { Toaster } from 'react-hot-toast'
 import Navigation from '@/components/layout/Navigation'
 import Footer from '@/components/layout/Footer'
 import CookieConsent from '@/components/ui/CookieConsent'
-import FloatingCookieButton from '@/components/ui/FloatingCookieButton'
 import OfflineBanner from '@/components/ui/OfflineBanner'
 import PerformanceOptimizer from '@/components/ui/PerformanceOptimizer'
 import PerformanceMonitor from '@/components/ui/PerformanceMonitor'
@@ -218,7 +217,6 @@ export default function RootLayout({
           </PerformanceOptimizer>
           <Analytics />
           <CookieConsent />
-          <FloatingCookieButton />
           <OfflineBanner />
           <PerformanceMonitor />
           <Toaster

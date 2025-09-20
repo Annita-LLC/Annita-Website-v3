@@ -48,28 +48,30 @@ import {
   Tablet
 } from 'lucide-react'
 import Link from 'next/link'
-import { useFormSubmission, formValidations } from '@/lib/hooks/useFormSubmission'
+import WaitlistForm from '@/components/ui/WaitlistForm'
 
 function DownloadPage() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true })
-  const [selectedPlatform, setSelectedPlatform] = useState('')
-  const [email, setEmail] = useState('')
-  const [showFeatures, setShowFeatures] = useState(false)
+  const [isWaitlistOpen, setIsWaitlistOpen] = useState(false)
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
 
-  // Demo images array
+  // Demo images array - All available demo images
   const demoImages = [
     '/images/DEMO-Images/plain.jpg',
-    '/images/DEMO-Images/detail-3_1691366360328.jpg',
-    '/images/DEMO-Images/detail-8_1691366352083.jpg',
-    '/images/DEMO-Images/detail-image-03.jpg',
     '/images/DEMO-Images/detail-image-2.jpg',
     '/images/DEMO-Images/detail-image-4.jpg',
     '/images/DEMO-Images/detail-image-5.jpg',
     '/images/DEMO-Images/detail-image-6.jpg',
     '/images/DEMO-Images/shot7_1737053810391.png',
-    '/images/DEMO-Images/shot8_1737053808898.png'
+    '/images/DEMO-Images/shot8_1737053808898.png',
+    '/images/DEMO-Images/08-1800x1360_1752227930605.webp',
+    '/images/DEMO-Images/8_1678546978732.webp',
+    '/images/DEMO-Images/Annita AI.jpg',
+    '/images/DEMO-Images/Annita Connect.webp',
+    '/images/DEMO-Images/Annita Logistics.webp',
+    '/images/DEMO-Images/Annita Marketplace.jpg',
+    '/images/DEMO-Images/AnnitaPay.jpg'
   ]
 
   // Auto-rotate images - optimized for performance
@@ -82,15 +84,6 @@ function DownloadPage() {
 
     return () => clearInterval(interval)
   }, [demoImages.length])
-  const { submitForm, isSubmitting, isSubmitted, error, success, reset } = useFormSubmission({
-    validateForm: formValidations.download,
-    onSuccess: (data) => {
-      console.log('download form submitted successfully:', data)
-    },
-    onError: (error) => {
-      console.error('download form submission failed:', error)
-    }
-  })
 
   const platforms = [
     {
@@ -213,21 +206,6 @@ function DownloadPage() {
     { name: 'Business', count: appFeatures.filter(f => f.category === 'Business').length }
   ]
 
-  const handlePlatformSelect = (platformId: string) => {
-    setSelectedPlatform(platformId)
-  }
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    if (!selectedPlatform || !email) return
-    
-    const formData = {
-      email: email,
-      platform: selectedPlatform
-    }
-    
-    await submitForm('download', formData)
-  }
 
   return (
     <>
@@ -314,6 +292,14 @@ function DownloadPage() {
                 Join our waitlist for Africa's all-in-one digital platform. 
                 Coming soon with secure payments, marketplace shopping, AI tools, and real-time tracking.
               </p>
+              <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6 sm:mb-8">
+                <p className="text-sm sm:text-base text-blue-800">
+                  <strong>Interested in trying our current platform?</strong> Check out our 
+                  <a href="https://annita.company.site/products" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 underline ml-1">
+                    Live Marketplace V1.0
+                  </a> with 3,000+ vendors already active!
+                </p>
+              </div>
                 
                 {/* Quick Stats */}
                 <div className="grid grid-cols-2 gap-2 sm:gap-3 md:gap-4 mb-6 sm:mb-8">
@@ -334,14 +320,14 @@ function DownloadPage() {
                 {/* CTA Buttons */}
                 <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 md:gap-4 justify-center lg:justify-start">
                   <button 
-                    onClick={() => setShowFeatures(true)}
+                    onClick={() => {}}
                     className="bg-orange-600 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-semibold hover:bg-orange-700 transition-all duration-200 flex items-center justify-center shadow-lg text-sm sm:text-base"
                   >
                     <Eye className="w-4 h-4 mr-2" />
                     View Features
                   </button>
                   <button 
-                    onClick={() => document.getElementById('download-form')?.scrollIntoView({ behavior: 'smooth' })}
+                    onClick={() => setIsWaitlistOpen(true)}
                     className="border-2 border-orange-600 text-orange-600 px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-semibold hover:bg-orange-50 transition-all duration-200 flex items-center justify-center text-sm sm:text-base"
                   >
                     <Download className="w-4 h-4 mr-2" />
@@ -493,7 +479,7 @@ function DownloadPage() {
         </div>
       </section>
 
-      {!isSubmitted ? (
+      <div>
         <div className="py-16 sm:py-20 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-6xl mx-auto">
@@ -591,117 +577,20 @@ function DownloadPage() {
                 >
                   <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-gray-900 mb-4 sm:mb-6">Join Waitlist</h3>
                   
-                  <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
-                    {/* Platform Selection */}
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2 sm:mb-3">
-                        Preferred Platform *
-                      </label>
-                      <div className="grid grid-cols-1 gap-3 sm:gap-4">
-                        {platforms.map((platform) => (
-                          <button
-                            key={platform.id}
-                            type="button"
-                            onClick={() => handlePlatformSelect(platform.id)}
-                            className={`p-3 sm:p-4 md:p-6 rounded-xl border-2 transition-all duration-200 text-left hover:shadow-md ${
-                              selectedPlatform === platform.id
-                                ? 'border-orange-500 bg-orange-50 shadow-md'
-                                : 'border-gray-200 hover:border-gray-300 bg-white'
-                            }`}
-                          >
-                            <div className="flex items-center justify-between">
-                              <div className="flex items-center space-x-3 sm:space-x-4">
-                                <div className={`w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 bg-gradient-to-br ${platform.color} rounded-xl flex items-center justify-center`}>
-                                  <platform.icon className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-white" />
-                                </div>
-                                <div className="flex-1 min-w-0">
-                                  <div className="font-semibold text-gray-900 text-sm sm:text-base">{platform.name}</div>
-                                  <div className="text-xs sm:text-sm text-gray-600">{platform.description}</div>
-                                  <div className="flex items-center space-x-2 sm:space-x-3 mt-1 sm:mt-2">
-                                    <div className="flex items-center space-x-1">
-                                      <Star className="w-3 h-3 sm:w-4 sm:h-4 text-yellow-500 fill-current" />
-                                      <span className="text-xs text-gray-600">{platform.rating}</span>
-                                    </div>
-                                    <span className="text-xs text-gray-500">•</span>
-                                    <span className="text-xs text-gray-600">{platform.downloads} downloads</span>
-                                  </div>
-                                </div>
-                              </div>
-                              <div className="text-xs text-gray-500 hidden sm:block">{platform.store}</div>
-                            </div>
-                          </button>
-                        ))}
-                      </div>
-                    </div>
-
-                    {/* Email for Download Link */}
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
-                        Email Address *
-                      </label>
-                      <input
-                        type="email"
-                        required
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                        className="w-full px-3 sm:px-4 py-2 sm:py-3 md:py-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200 text-sm sm:text-base"
-                        placeholder="your.email@example.com"
-                      />
-                      <p className="text-xs sm:text-sm text-gray-500 mt-1 sm:mt-2">
-                        We'll notify you when the app launches and keep you updated with new features
-                      </p>
-                    </div>
-
-                    {/* Download Buttons */}
-                    {selectedPlatform && (
-                      <div className="space-y-3 sm:space-y-4">
-                        <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 md:gap-4">
-                          {selectedPlatform === 'ios' && (
-                            <a 
-                              href="#"
-                              className="flex items-center justify-center px-3 sm:px-4 md:px-6 py-2 sm:py-3 md:py-4 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors duration-200 shadow-lg"
-                            >
-                              <Apple className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 mr-2 sm:mr-3" />
-                              <div className="text-left">
-                                <div className="text-xs">Download on the</div>
-                                <div className="font-semibold text-xs sm:text-sm md:text-base">App Store</div>
-                              </div>
-                            </a>
-                          )}
-                          {selectedPlatform === 'android' && (
-                            <a 
-                              href="#"
-                              className="flex items-center justify-center px-3 sm:px-4 md:px-6 py-2 sm:py-3 md:py-4 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors duration-200 shadow-lg"
-                            >
-                              <Play className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 mr-2 sm:mr-3" />
-                              <div className="text-left">
-                                <div className="text-xs">GET IT ON</div>
-                                <div className="font-semibold text-xs sm:text-sm md:text-base">Google Play</div>
-                              </div>
-                            </a>
-                          )}
-                        </div>
-                      </div>
-                    )}
+                  <div className="text-center">
+                    <p className="text-gray-600 mb-6 sm:mb-8">
+                      Be the first to know when Annita 3.0 launches. Get early access and exclusive updates.
+                    </p>
 
                     <button
-                      type="submit"
-                      disabled={isSubmitting || !selectedPlatform || !email}
-                      className="w-full inline-flex items-center justify-center px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 bg-orange-500 text-white font-semibold rounded-lg hover:bg-orange-600 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 shadow-lg text-sm sm:text-base"
+                      onClick={() => setIsWaitlistOpen(true)}
+                      className="w-full bg-gradient-to-r from-orange-500 to-orange-600 text-white py-3 sm:py-4 rounded-lg font-semibold hover:from-orange-600 hover:to-orange-700 transition-all duration-200 flex items-center justify-center text-sm sm:text-base"
                     >
-                      {isSubmitting ? (
-                        <>
-                          <div className="animate-spin rounded-full h-4 w-4 sm:h-5 sm:w-5 border-b-2 border-white mr-2"></div>
-                          Processing...
-                        </>
-                      ) : (
-                        <>
-                          <Download className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
-                          Join Waitlist
-                        </>
-                      )}
+                      <Download className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
+                      Join Waitlist
                     </button>
-                  </form>
+
+                  </div>
 
                   {/* QR Code Section */}
                   <div className="mt-6 sm:mt-8 pt-6 sm:pt-8 border-t border-gray-200">
@@ -789,20 +678,16 @@ function DownloadPage() {
                   Need Help?
                 </Link>
                 <button
-                  onClick={() => {
-                    reset()
-                    setSelectedPlatform('')
-                    setEmail('')
-                  }}
+                  onClick={() => setIsWaitlistOpen(true)}
                   className="inline-flex items-center justify-center px-6 py-3 border-2 border-orange-500 text-orange-500 font-semibold rounded-lg hover:bg-orange-50 transition-colors duration-200 text-sm sm:text-base"
                 >
-                  Join Another Waitlist
+                  Join Waitlist
                 </button>
               </motion.div>
             </div>
           </div>
         </div>
-      )}
+      </div>
 
       {/* Final CTA Section */}
       <section className="py-16 sm:py-20 bg-gradient-to-br from-gray-50 to-white">
@@ -842,6 +727,16 @@ function DownloadPage() {
           </div>
         </div>
       </section>
+
+      {/* Waitlist Form Modal */}
+      <WaitlistForm
+        isOpen={isWaitlistOpen}
+        onClose={() => setIsWaitlistOpen(false)}
+        onSuccess={() => {
+          setIsWaitlistOpen(false)
+          // You can add a success notification here if needed
+        }}
+      />
     </>
   )
 }

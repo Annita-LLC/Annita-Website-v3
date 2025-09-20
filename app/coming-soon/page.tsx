@@ -55,7 +55,7 @@ const ComingSoonPage = () => {
         ogImage="/coming-soon-og.jpg"
       />
 
-      <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-orange-50">
+      <div className="min-h-screen bg-gradient-to-br from-gray-50 to-orange-50">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
