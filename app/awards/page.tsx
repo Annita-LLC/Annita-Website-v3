@@ -10,52 +10,11 @@ import {
   ExternalLink, 
   Linkedin,
   ArrowRight,
-  Download
+  Download,
+  Globe,
+  Star
 } from 'lucide-react'
 import Link from 'next/link'
-
-// LinkedIn Embed Component
-const LinkedInEmbed = ({ url }: { url: string }) => {
-  if (!url) return null
-
-  // Convert LinkedIn post URL to embed URL
-  const getEmbedUrl = (postUrl: string) => {
-    // Handle different LinkedIn URL formats
-    if (postUrl.includes('/posts/')) {
-      const postId = postUrl.split('/posts/')[1]?.split('?')[0]
-      return `https://www.linkedin.com/embed/feed/update/urn:li:activity:${postId}/`
-    }
-    return postUrl
-  }
-
-  return (
-    <div className="mt-4">
-      <div className="flex items-center gap-2 mb-3">
-        <Linkedin className="w-4 h-4 text-blue-600" />
-        <span className="text-sm font-medium text-gray-700">LinkedIn Post</span>
-        <a 
-          href={url} 
-          target="_blank" 
-          rel="noopener noreferrer"
-          className="text-blue-600 hover:text-blue-800 transition-colors"
-        >
-          <ExternalLink className="w-3 h-3" />
-        </a>
-      </div>
-      <div className="bg-gray-50 rounded-lg p-4 border border-gray-200">
-        <iframe
-          src={getEmbedUrl(url)}
-          width="100%"
-          height="400"
-          frameBorder="0"
-          allowFullScreen
-          title="LinkedIn Post"
-          className="rounded-lg"
-        />
-      </div>
-    </div>
-  )
-}
 
 export default function AwardsPage() {
 
@@ -165,31 +124,42 @@ export default function AwardsPage() {
         canonical="/awards"
       />
 
-      {/* Enhanced Hero Section */}
-      <section className="bg-gradient-to-br from-orange-50 to-red-50 py-16 sm:py-20 lg:py-24 relative overflow-hidden">
-        {/* Animated Background Elements */}
-        <div className="absolute inset-0">
-          <div className="absolute top-10 left-10 w-20 h-20 bg-orange-200/30 rounded-full animate-pulse"></div>
-          <div className="absolute top-32 right-20 w-16 h-16 bg-red-200/20 rounded-full animate-bounce"></div>
-          <div className="absolute bottom-20 left-1/4 w-12 h-12 bg-orange-300/25 rounded-full animate-pulse"></div>
-          <div className="absolute bottom-32 right-1/3 w-24 h-24 bg-red-300/15 rounded-full animate-bounce"></div>
-        </div>
-        
-        <div className="container mx-auto px-3 sm:px-4 lg:px-6 xl:px-8 relative">
-          <div className="max-w-5xl mx-auto">
-            <div className="text-center">
-              <div className="inline-flex items-center px-4 sm:px-6 py-2 sm:py-3 rounded-full bg-orange-100 text-orange-700 text-sm sm:text-base font-medium mb-6 sm:mb-8">
-                <Award className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
+      {/* Hero Section */}
+      <section className="py-16 sm:py-20 bg-gradient-to-br from-gray-50 to-orange-50">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-16">
+              <div className="inline-flex items-center px-4 py-2 rounded-full bg-orange-100 text-orange-700 text-sm font-medium mb-6">
+                <Award className="w-4 h-4 mr-2" />
                 Awards & Recognition
               </div>
               
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-900 mb-6 sm:mb-8 leading-tight">
-                Our <span className="text-orange-500">Achievements</span>
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 mb-6">
+                Our <span className="text-orange-600">Achievements</span>
               </h1>
-              <p className="text-lg sm:text-xl md:text-2xl text-gray-600 mb-8 sm:mb-12 max-w-4xl mx-auto leading-relaxed">
+              <p className="text-lg text-gray-600 max-w-3xl mx-auto mb-8">
                 Celebrating our achievements and the impact we've made across Africa 
                 through innovative technology and digital transformation.
               </p>
+              
+              <div className="flex flex-col sm:flex-row gap-4">
+                <a
+                  href="https://annita.company.site/products"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-gradient-to-r from-orange-600 to-orange-700 text-white px-8 py-4 rounded-xl font-semibold hover:from-orange-700 hover:to-orange-800 transition-all duration-200 flex items-center justify-center shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                >
+                  <Globe className="w-5 h-5 mr-2" />
+                  Try V1.0 Now
+                </a>
+                <a
+                  href="/download"
+                  className="border-2 border-orange-600 text-orange-600 px-8 py-4 rounded-xl font-semibold hover:bg-orange-50 transition-all duration-200 flex items-center justify-center transform hover:-translate-y-1"
+                >
+                  <Download className="w-5 h-5 mr-2" />
+                  Join V3.0 Waitlist
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -258,64 +228,58 @@ export default function AwardsPage() {
                       <p className="text-sm sm:text-base text-gray-600 leading-relaxed">{award.impact}</p>
                     </div>
 
-                    {/* LinkedIn Embed */}
+                    {/* LinkedIn Link */}
                     {award.linkedinUrl && (
                       <div className="mt-6 sm:mt-8">
-                      <LinkedInEmbed url={award.linkedinUrl} />
+                        <a 
+                          href={award.linkedinUrl} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-200"
+                        >
+                          <Linkedin className="w-4 h-4 mr-2" />
+                          View LinkedIn Post
+                          <ExternalLink className="w-3 h-3 ml-2" />
+                        </a>
                       </div>
                     )}
                   </div>
                 ))}
               </div>
 
-              {/* Enhanced LinkedIn Posts */}
-              <div className="mt-12 sm:mt-16 bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-10 shadow-lg border border-gray-200">
-                <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4 sm:mb-6">
-                  Latest LinkedIn Updates
-                </h3>
-                <p className="text-base sm:text-lg text-gray-600 mb-6 sm:mb-8 leading-relaxed">
-                  Follow our journey and stay updated with our latest achievements and announcements.
-                </p>
-                <div className="space-y-4 sm:space-y-6">
-                  {awards.slice(0, 2).map((award) => (
-                    <div key={award.id} className="flex items-center space-x-3 sm:space-x-4 p-3 sm:p-4 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors duration-200">
-                      <Linkedin className="w-6 h-6 sm:w-8 sm:h-8 text-blue-600" />
-                      <span className="text-sm sm:text-base text-gray-700 font-medium">{award.title}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Enhanced CTA Section */}
-      <section className="py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-gray-50 to-white">
-        <div className="container mx-auto px-3 sm:px-4 lg:px-6 xl:px-8">
-          <div className="max-w-5xl mx-auto">
-            <div className="text-center p-8 sm:p-12 lg:p-16 bg-gradient-to-r from-orange-500 to-orange-600 rounded-3xl text-white shadow-2xl">
-              <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 sm:mb-8">
+      {/* CTA Section */}
+      <section className="py-16 sm:py-20 bg-gradient-to-br from-gray-50 to-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center p-8 sm:p-12 bg-gradient-to-r from-orange-500 to-orange-600 rounded-3xl text-white shadow-2xl">
+              <h3 className="text-3xl sm:text-4xl font-bold mb-6">
                 Ready to Transform Your Business?
               </h3>
-              <p className="text-lg sm:text-xl lg:text-2xl text-orange-100 mb-8 sm:mb-12 max-w-4xl mx-auto leading-relaxed">
+              <p className="text-lg text-orange-100 mb-8 max-w-4xl mx-auto">
                 Join thousands of MSMEs already using Annita to grow their revenue, reach new customers, 
                 and streamline their operations across Africa.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a 
-                  href="/download"
-                  className="inline-flex items-center justify-center bg-white text-orange-600 px-8 sm:px-10 py-3 sm:py-4 rounded-lg sm:rounded-xl font-semibold hover:bg-orange-50 transition-colors duration-200 text-base sm:text-lg shadow-lg"
+                  href="https://annita.company.site/products"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center bg-white text-orange-600 px-8 py-4 rounded-xl font-semibold hover:bg-orange-50 transition-colors duration-200 shadow-lg"
                 >
-                  <Download className="w-5 h-5 sm:w-6 sm:h-6 mr-2" />
-                  Download App
+                  <Globe className="w-5 h-5 mr-2" />
+                  Try V1.0 Now
                 </a>
                 <a 
-                  href="/contact-sales"
-                  className="inline-flex items-center justify-center border-2 border-white text-white px-8 sm:px-10 py-3 sm:py-4 rounded-lg sm:rounded-xl font-semibold hover:bg-white hover:text-orange-600 transition-colors duration-200 text-base sm:text-lg"
+                  href="/download"
+                  className="inline-flex items-center justify-center border-2 border-white text-white px-8 py-4 rounded-xl font-semibold hover:bg-white hover:text-orange-600 transition-colors duration-200"
                 >
-                  Contact Sales
-                  <ArrowRight className="w-5 h-5 sm:w-6 sm:h-6 ml-2" />
+                  <Download className="w-5 h-5 mr-2" />
+                  Join V3.0 Waitlist
                 </a>
               </div>
             </div>

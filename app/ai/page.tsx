@@ -175,40 +175,41 @@ const AILandingPage = () => {
       />
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 text-white overflow-hidden">
-        <div className="absolute inset-0 bg-black/20"></div>
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 relative z-10">
-          <div className="max-w-4xl mx-auto text-center">
-            <div className="inline-flex items-center px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white text-xs sm:text-sm font-medium mb-4 sm:mb-6">
-              <Brain className="w-3 h-3 sm:w-4 sm:h-4 mr-1.5 sm:mr-2" />
-              AI-Powered Solutions
-            </div>
-            
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 sm:mb-6">
-              Choose Your <span className="text-orange-500">AI Experience</span>
-            </h1>
-            <p className="text-lg sm:text-xl text-gray-200 mb-6 sm:mb-8 max-w-2xl mx-auto">
-              Whether you're looking to enhance your personal life or transform your business, 
-              Annita's AI solutions are designed to meet your specific needs.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
-              <Button
-                variant="gradient"
-                size="lg"
-                icon={Play}
-                className="text-base sm:text-lg font-bold shadow-2xl hover:shadow-purple-500/25 transform hover:-translate-y-1 transition-all duration-300"
-              >
-                Get Started Free
-              </Button>
-              <Button
-                variant="glass"
-                size="lg"
-                icon={Download}
-                className="text-base sm:text-lg font-bold backdrop-blur-xl shadow-2xl hover:shadow-white/10 transform hover:-translate-y-1 transition-all duration-300"
-              >
-                Download App
-              </Button>
+      <section className="py-16 sm:py-20 bg-gradient-to-br from-gray-50 to-orange-50">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-16">
+              <div className="inline-flex items-center px-4 py-2 rounded-full bg-orange-100 text-orange-700 text-sm font-medium mb-6">
+                <Brain className="w-4 h-4 mr-2" />
+                AI-Powered Solutions
+              </div>
+              
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 mb-6">
+                Choose Your <span className="text-orange-600">AI Experience</span>
+              </h1>
+              <p className="text-lg text-gray-600 max-w-3xl mx-auto mb-8">
+                Whether you're looking to enhance your personal life or transform your business, 
+                Annita's AI solutions are designed to meet your specific needs.
+              </p>
+              
+              <div className="flex flex-col sm:flex-row gap-4">
+                <a
+                  href="https://annita.company.site/products"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-gradient-to-r from-orange-600 to-orange-700 text-white px-8 py-4 rounded-xl font-semibold hover:from-orange-700 hover:to-orange-800 transition-all duration-200 flex items-center justify-center shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                >
+                  <Globe className="w-5 h-5 mr-2" />
+                  Try V1.0 Now
+                </a>
+                <a
+                  href="/download"
+                  className="border-2 border-orange-600 text-orange-600 px-8 py-4 rounded-xl font-semibold hover:bg-orange-50 transition-all duration-200 flex items-center justify-center transform hover:-translate-y-1"
+                >
+                  <Download className="w-5 h-5 mr-2" />
+                  Join V3.0 Waitlist
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -445,34 +446,36 @@ const AILandingPage = () => {
         </div>
       </section>
 
-      {/* Download CTA Section */}
-      <section className="py-16 sm:py-20 bg-gradient-to-r from-orange-600 to-red-600 text-white">
+      {/* CTA Section */}
+      <section className="py-16 sm:py-20 bg-gradient-to-br from-gray-50 to-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-orange-400 mb-4 sm:mb-6">
-              Ready to Experience AI?
-            </h2>
-            <p className="text-lg sm:text-xl text-white/90 mb-6 sm:mb-8 max-w-2xl mx-auto">
-              Download the Annita app to access both Personal and Business AI features. 
-              Transform your life and business with the power of artificial intelligence.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
-              <Button
-                variant="white"
-                size="lg"
-                icon={Download}
-                className="text-base sm:text-lg font-bold shadow-2xl hover:shadow-white/25 transform hover:-translate-y-1 transition-all duration-300"
-              >
-                Download App Now
-              </Button>
-              <Button
-                variant="outline"
-                size="lg"
-                icon={Play}
-                className="text-base sm:text-lg font-bold border-white text-white hover:bg-white hover:text-orange-600"
-              >
-                Learn More
-              </Button>
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center p-8 sm:p-12 bg-gradient-to-r from-orange-500 to-orange-600 rounded-3xl text-white shadow-2xl">
+              <h3 className="text-3xl sm:text-4xl font-bold mb-6">
+                Ready to Experience AI?
+              </h3>
+              <p className="text-lg text-orange-100 mb-8 max-w-4xl mx-auto">
+                Download the Annita app to access both Personal and Business AI features. 
+                Transform your life and business with the power of artificial intelligence.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <a 
+                  href="https://annita.company.site/products"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center bg-white text-orange-600 px-8 py-4 rounded-xl font-semibold hover:bg-orange-50 transition-colors duration-200 shadow-lg"
+                >
+                  <Globe className="w-5 h-5 mr-2" />
+                  Try V1.0 Now
+                </a>
+                <a 
+                  href="/download"
+                  className="inline-flex items-center justify-center border-2 border-white text-white px-8 py-4 rounded-xl font-semibold hover:bg-white hover:text-orange-600 transition-colors duration-200"
+                >
+                  <Download className="w-5 h-5 mr-2" />
+                  Join V3.0 Waitlist
+                </a>
+              </div>
             </div>
           </div>
         </div>

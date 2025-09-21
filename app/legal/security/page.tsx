@@ -8,7 +8,9 @@ import {
   ArrowRight,
   Zap,
   Users,
-  Globe
+  Globe,
+  Download,
+  ExternalLink
 } from 'lucide-react'
 import Button from '@/components/ui/Button'
 
@@ -82,18 +84,41 @@ const SecurityPage = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white">
       {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-to-r from-blue-600 to-cyan-600 text-white">
+      <section className="py-16 sm:py-20 bg-gradient-to-br from-gray-50 to-orange-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center">
-            <div className="w-20 h-20 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-6">
-              <Shield className="w-10 h-10" />
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-16">
+              <div className="inline-flex items-center px-4 py-2 rounded-full bg-orange-100 text-orange-700 text-sm font-medium mb-6">
+                <Shield className="w-4 h-4 mr-2" />
+                Security
+              </div>
+              
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 mb-6">
+                <span className="text-orange-600">Security</span>
+              </h1>
+              <p className="text-lg text-gray-600 max-w-3xl mx-auto mb-8">
+                Your security is our top priority. Learn about our comprehensive protection measures.
+              </p>
+              
+              <div className="flex flex-col sm:flex-row gap-4">
+                <a
+                  href="https://annita.company.site/products"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-gradient-to-r from-orange-600 to-orange-700 text-white px-8 py-4 rounded-xl font-semibold hover:from-orange-700 hover:to-orange-800 transition-all duration-200 flex items-center justify-center shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                >
+                  <ExternalLink className="w-5 h-5 mr-2" />
+                  Try V1.0 Now
+                </a>
+                <a
+                  href="/download"
+                  className="border-2 border-orange-600 text-orange-600 px-8 py-4 rounded-xl font-semibold hover:bg-orange-50 transition-all duration-200 flex items-center justify-center transform hover:-translate-y-1"
+                >
+                  <Download className="w-5 h-5 mr-2" />
+                  Join V3.0 Waitlist
+                </a>
+              </div>
             </div>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
-              <span className="text-orange-500">Security</span>
-            </h1>
-            <p className="text-xl sm:text-2xl text-white/90 mb-8">
-              Your security is our top priority. Learn about our comprehensive protection measures.
-            </p>
           </div>
         </div>
       </section>
