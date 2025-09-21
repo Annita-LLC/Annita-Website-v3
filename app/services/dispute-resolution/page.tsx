@@ -5,7 +5,6 @@ import SEOHead from '@/components/seo/SEOHead'
 import CTASection from '@/components/sections/CTASection'
 import { 
   Scale, 
-  Handshake, 
   Users, 
   Clock, 
   CheckCircle,
@@ -33,7 +32,7 @@ const DisputeResolutionPage = () => {
       color: "blue"
     },
     {
-      icon: Handshake,
+      icon: Users,
       title: "Quick Resolution",
       description: "Fast and efficient dispute resolution process",
       color: "green"

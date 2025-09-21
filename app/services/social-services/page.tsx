@@ -6,7 +6,6 @@ import CTASection from '@/components/sections/CTASection'
 import { 
   Heart, 
   Users, 
-  HandHeart, 
   Home, 
   CheckCircle,
   Play,
@@ -39,7 +38,7 @@ const SocialServicesPage = () => {
       color: "green"
     },
     {
-      icon: HandHeart,
+      icon: Heart,
       title: "Welfare Services",
       description: "Comprehensive welfare and social assistance",
       color: "orange"

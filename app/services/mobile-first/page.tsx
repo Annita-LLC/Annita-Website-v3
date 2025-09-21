@@ -5,7 +5,6 @@ import SEOHead from '@/components/seo/SEOHead'
 import CTASection from '@/components/sections/CTASection'
 import { 
   Smartphone, 
-  Touch, 
   Zap, 
   Users, 
   CheckCircle,
@@ -33,7 +32,7 @@ const MobileFirstPage = () => {
       color: "blue"
     },
     {
-      icon: Touch,
+      icon: Smartphone,
       title: "Touch-Friendly Interface",
       description: "Intuitive touch interface for mobile users",
       color: "green"
