@@ -18,7 +18,6 @@ import {
   Clock,
   Users as UsersIcon,
   DollarSign,
-  Tower,
   Radio
 } from 'lucide-react'
 
