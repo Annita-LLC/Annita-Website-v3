@@ -8,7 +8,6 @@ import {
   Globe, 
   CheckCircle, 
   TrendingUp, 
-  CheckCircle,
   Play,
   ExternalLink,
   Star,
