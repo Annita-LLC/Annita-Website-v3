@@ -18,7 +18,6 @@ import {
   Clock,
   Users as UsersIcon,
   DollarSign,
-  Translate,
   BookOpen
 } from 'lucide-react'
 
