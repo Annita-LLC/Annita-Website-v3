@@ -18,7 +18,6 @@ import {
   Clock,
   Users,
   DollarSign,
-  Security,
   Monitor
 } from 'lucide-react'
 
