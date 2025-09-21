@@ -1,7 +1,6 @@
 'use client'
 
 import { useState } from 'react'
-import { Metadata } from 'next'
 import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
 import { 
@@ -27,10 +26,6 @@ import {
 import Button from '@/components/ui/Button'
 import WaitlistForm from '@/components/ui/WaitlistForm'
 
-export const metadata: Metadata = {
-  title: 'Partners - Join Annita\'s Ecosystem',
-  description: 'Partner with Annita to grow your business. Become a technology partner, reseller, or integration partner in Africa\'s fastest-growing digital ecosystem.',
-}
 
 const PartnersPage = () => {
   const ref = useRef(null)

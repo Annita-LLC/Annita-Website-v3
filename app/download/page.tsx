@@ -203,6 +203,7 @@ function DownloadPage() {
     { name: 'Security', count: appFeatures.filter(f => f.category === 'Security').length },
     { name: 'Payments', count: appFeatures.filter(f => f.category === 'Payments').length },
     { name: 'Commerce', count: appFeatures.filter(f => f.category === 'Commerce').length },
+    { name: 'Communication', count: appFeatures.filter(f => f.category === 'Communication').length },
     { name: 'Business', count: appFeatures.filter(f => f.category === 'Business').length }
   ]
 
@@ -301,21 +302,6 @@ function DownloadPage() {
                 </p>
               </div>
                 
-                {/* Quick Stats */}
-                <div className="grid grid-cols-2 gap-2 sm:gap-3 md:gap-4 mb-6 sm:mb-8">
-                  {appStats.slice(0, 2).map((stat, index) => (
-                    <motion.div
-                      key={index}
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.6, delay: 0.4 + index * 0.1 }}
-                      className="bg-white/80 backdrop-blur-sm rounded-lg p-2 sm:p-3 md:p-4 shadow-sm border border-orange-200"
-                    >
-                      <div className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900">{stat.value}</div>
-                      <div className="text-xs sm:text-sm text-gray-600 leading-tight">{stat.label}</div>
-                    </motion.div>
-                  ))}
-                </div>
 
                 {/* CTA Buttons */}
                 <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 md:gap-4 justify-center lg:justify-start">
@@ -455,26 +441,6 @@ function DownloadPage() {
               ))}
             </div>
 
-            {/* App Stats */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              className="bg-gradient-to-r from-orange-500 to-red-500 rounded-2xl p-6 sm:p-8 text-white"
-            >
-              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-center mb-6 sm:mb-8">App Statistics</h3>
-              <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-                {appStats.map((stat, index) => (
-                  <div key={index} className="text-center">
-                    <div className="w-12 h-12 sm:w-16 sm:h-16 bg-white/20 rounded-xl flex items-center justify-center mx-auto mb-3 sm:mb-4">
-                      <stat.icon className="w-6 h-6 sm:w-8 sm:h-8" />
-                    </div>
-                    <div className="text-lg sm:text-2xl md:text-3xl font-bold mb-1 sm:mb-2">{stat.value}</div>
-                    <div className="text-xs sm:text-sm text-orange-100 leading-tight">{stat.label}</div>
-                  </div>
-                ))}
-              </div>
-            </motion.div>
           </div>
         </div>
       </section>
@@ -498,31 +464,6 @@ function DownloadPage() {
                     Be the first to know when Annita launches. Join our waitlist for early access and exclusive updates.
                   </p>
 
-                    {/* Platform Requirements */}
-                    <div className="bg-white rounded-xl p-4 sm:p-6 shadow-lg border border-gray-200 mb-6 sm:mb-8">
-                      <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-3 sm:mb-4">
-                        System Requirements
-                      </h3>
-                      <div className="space-y-3 sm:space-y-4">
-                        {platforms.map((platform, index) => (
-                          <div key={index} className="flex items-center justify-between p-3 sm:p-4 bg-gray-50 rounded-lg">
-                            <div className="flex items-center space-x-2 sm:space-x-3">
-                              <div className={`w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br ${platform.color} rounded-lg flex items-center justify-center`}>
-                                <platform.icon className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
-                              </div>
-                              <div>
-                                <div className="text-sm sm:text-base font-medium text-gray-900">{platform.name}</div>
-                                <div className="text-xs sm:text-sm text-gray-600">{platform.requirements}</div>
-                              </div>
-                            </div>
-                            <div className="text-right">
-                              <div className="text-xs sm:text-sm font-medium text-gray-900">{platform.size}</div>
-                              <div className="text-xs text-gray-500">v{platform.version}</div>
-                        </div>
-                      </div>
-                    ))}
-                      </div>
-                  </div>
 
                     {/* Key Benefits */}
                     <div className="bg-white rounded-xl p-4 sm:p-6 shadow-lg border border-gray-200 mb-6 sm:mb-8">
@@ -592,18 +533,6 @@ function DownloadPage() {
 
                   </div>
 
-                  {/* QR Code Section */}
-                  <div className="mt-6 sm:mt-8 pt-6 sm:pt-8 border-t border-gray-200">
-                    <h4 className="text-base sm:text-lg font-semibold text-gray-900 mb-3 sm:mb-4">Coming Soon</h4>
-                    <div className="text-center">
-                      <div className="w-20 h-20 sm:w-24 sm:h-24 md:w-32 md:h-32 bg-gray-100 rounded-lg flex items-center justify-center mx-auto mb-3 sm:mb-4">
-                        <QrCode className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 text-gray-400" />
-                      </div>
-                      <p className="text-xs sm:text-sm text-gray-600">
-                        QR code will be available when the app launches
-                      </p>
-                    </div>
-                  </div>
                 </motion.div>
               </div>
             </div>

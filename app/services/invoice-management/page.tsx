@@ -8,7 +8,6 @@ import {
   Send, 
   CheckCircle, 
   TrendingUp, 
-  CheckCircle,
   Play,
   ExternalLink,
   Star,

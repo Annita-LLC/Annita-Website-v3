@@ -8,7 +8,6 @@ import {
   Clock, 
   Shield, 
   CheckCircle, 
-  CheckCircle,
   Play,
   ExternalLink,
   Star,

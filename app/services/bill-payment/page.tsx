@@ -8,7 +8,6 @@ import {
   Zap, 
   Shield, 
   CheckCircle, 
-  CheckCircle,
   Play,
   ExternalLink,
   Star,

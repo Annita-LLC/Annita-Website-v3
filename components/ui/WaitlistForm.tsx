@@ -236,13 +236,39 @@ const WaitlistForm = ({ isOpen, onClose, onSuccess }: WaitlistFormProps) => {
                   <div className="p-4 bg-green-100 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
                     <CheckCircle className="w-8 h-8 text-green-600" />
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">Welcome to the Waitlist!</h3>
-                  <p className="text-gray-600 mb-4">
-                    You're now on the list for Annita 3.0. We'll notify you as soon as it's ready!
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">You're on the Waitlist!</h3>
+                  <p className="text-gray-600 mb-6">
+                    Thank you for joining our waitlist! We'll notify you as soon as the app is available for download.
                   </p>
-                  <div className="text-sm text-gray-500">
-                    <p>🎉 You're #{Math.floor(Math.random() * 1000) + 1} on the waitlist</p>
-                    <p>📧 Check your email for confirmation</p>
+                  
+                  <div className="text-left mb-6">
+                    <h4 className="font-semibold text-gray-900 mb-3">What's next?</h4>
+                    <div className="space-y-2 text-sm text-gray-600">
+                      <div className="flex items-start gap-3">
+                        <span className="flex-shrink-0 w-6 h-6 bg-orange-100 text-orange-600 rounded-full flex items-center justify-center text-xs font-semibold">1</span>
+                        <span>We'll notify you when the app launches</span>
+                      </div>
+                      <div className="flex items-start gap-3">
+                        <span className="flex-shrink-0 w-6 h-6 bg-orange-100 text-orange-600 rounded-full flex items-center justify-center text-xs font-semibold">2</span>
+                        <span>Get early access to download the app</span>
+                      </div>
+                      <div className="flex items-start gap-3">
+                        <span className="flex-shrink-0 w-6 h-6 bg-orange-100 text-orange-600 rounded-full flex items-center justify-center text-xs font-semibold">3</span>
+                        <span>Be among the first to experience Annita</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="border-t border-gray-100 pt-4">
+                    <p className="text-sm text-gray-500 mb-3">Need Help?</p>
+                    <Button
+                      onClick={onClose}
+                      variant="outline"
+                      size="sm"
+                      className="w-full"
+                    >
+                      Join Waitlist
+                    </Button>
                   </div>
                 </motion.div>
               )}
