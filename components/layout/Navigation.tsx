@@ -77,7 +77,7 @@ import {
   Palette,
   Headphones as HeadphonesIcon,
   Landmark,
-  Link,
+  Link as LinkIcon,
   HandHeart,
   UserCheck as UserCheckIcon,
   BookOpen
@@ -187,7 +187,7 @@ const Navigation = () => {
         { name: 'Simple User Interface', href: '/services/simple-ui', icon: Palette, description: 'Simple and intuitive design' },
         { name: 'Local Support', href: '/services/local-support', icon: HeadphonesIcon, description: 'Local customer support' },
         { name: 'Government Services', href: '/services/government-services', icon: Landmark, description: 'Government service integration' },
-        { name: 'Banking Integration', href: '/services/banking-integration', icon: Link, description: 'Bank integration services' },
+        { name: 'Banking Integration', href: '/services/banking-integration', icon: LinkIcon, description: 'Bank integration services' },
         { name: 'Social Services', href: '/services/social-services', icon: Heart, description: 'Social services access' },
         { name: 'Community Features', href: '/services/community-features', icon: Users, description: 'Build communities' },
       ]
