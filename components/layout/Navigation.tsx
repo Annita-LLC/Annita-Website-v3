@@ -78,7 +78,6 @@ import {
   Headphones as HeadphonesIcon,
   Landmark,
   Link as LinkIcon,
-  HandHeart,
   UserCheck as UserCheckIcon,
   BookOpen
 } from 'lucide-react'
