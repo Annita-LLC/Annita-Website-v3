@@ -586,8 +586,8 @@ function DownloadPage() {
                       onClick={() => setIsWaitlistOpen(true)}
                       className="w-full bg-gradient-to-r from-orange-500 to-orange-600 text-white py-3 sm:py-4 rounded-lg font-semibold hover:from-orange-600 hover:to-orange-700 transition-all duration-200 flex items-center justify-center text-sm sm:text-base"
                     >
-                      <Download className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
-                      Join Waitlist
+                          <Download className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
+                          Join Waitlist
                     </button>
 
                   </div>

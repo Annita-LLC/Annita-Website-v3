@@ -103,49 +103,6 @@ const EmailPage = () => {
     }
   ]
 
-  const pricingPlans = [
-    {
-      name: "Starter",
-      price: "$5",
-      period: "per user/month",
-      features: [
-        "10GB email storage",
-        "Custom domain support",
-        "Basic spam protection",
-        "Mobile apps",
-        "Email support"
-      ],
-      popular: false
-    },
-    {
-      name: "Professional",
-      price: "$12",
-      period: "per user/month",
-      features: [
-        "50GB email storage",
-        "Advanced security features",
-        "Calendar integration",
-        "Contact management",
-        "Priority support",
-        "Email analytics"
-      ],
-      popular: true
-    },
-    {
-      name: "Enterprise",
-      price: "$25",
-      period: "per user/month",
-      features: [
-        "Unlimited storage",
-        "Advanced threat protection",
-        "Custom integrations",
-        "Dedicated support",
-        "Compliance tools",
-        "Advanced analytics"
-      ],
-      popular: false
-    }
-  ]
 
   const securityFeatures = [
     {
@@ -212,29 +169,16 @@ const EmailPage = () => {
                   and powerful collaboration tools designed for African businesses.
                 </p>
 
-                {/* Key Features */}
-                <div className="grid grid-cols-2 gap-4 mb-8">
-                  {features.map((feature, index) => (
-                    <div key={index} className="flex items-center space-x-3">
-                      <div className={`w-10 h-10 bg-${feature.color}-100 rounded-lg flex items-center justify-center`}>
-                        <feature.icon className={`w-5 h-5 text-${feature.color}-600`} />
-                      </div>
-                      <div>
-                        <div className="font-semibold text-gray-900 text-sm">{feature.title}</div>
-                        <div className="text-xs text-gray-600">{feature.description}</div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
 
                 {/* CTA Buttons */}
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <button className="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-all duration-200 flex items-center justify-center">
-                    <Play className="w-4 h-4 mr-2" />
-                    Start Free Trial
+                  <button className="bg-gradient-to-r from-blue-600 to-cyan-600 text-white px-8 py-4 rounded-xl font-semibold hover:from-blue-700 hover:to-cyan-700 transition-all duration-200 flex items-center justify-center shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                    <Mail className="w-5 h-5 mr-2" />
+                    Join Waitlist
                   </button>
-                  <button className="border-2 border-blue-600 text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-all duration-200 flex items-center justify-center">
-                    View Pricing
+                  <button className="border-2 border-blue-600 text-blue-600 px-8 py-4 rounded-xl font-semibold hover:bg-blue-50 transition-all duration-200 flex items-center justify-center transform hover:-translate-y-1">
+                    <Globe className="w-5 h-5 mr-2" />
+                    Try V1.0 Now
                   </button>
                 </div>
               </div>
@@ -263,6 +207,38 @@ const EmailPage = () => {
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Key Features Section */}
+      <section className="py-16 sm:py-20 bg-gradient-to-br from-gray-50 to-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
+                Why Choose <span className="text-blue-600">Annita Email</span>?
+              </h2>
+              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+                Built specifically for African businesses with enterprise-grade features and local support.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {features.map((feature, index) => (
+                <div key={index} className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300">
+                  <div className="flex items-start space-x-4">
+                    <div className={`w-16 h-16 bg-${feature.color}-100 rounded-2xl flex items-center justify-center flex-shrink-0`}>
+                      <feature.icon className={`w-8 h-8 text-${feature.color}-600`} />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-semibold text-gray-900 mb-3">{feature.title}</h3>
+                      <p className="text-gray-600 leading-relaxed">{feature.description}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -327,60 +303,6 @@ const EmailPage = () => {
         </div>
       </section>
 
-      {/* Pricing Section */}
-      <section className="py-16 sm:py-20 bg-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
-                Simple, Transparent <span className="text-blue-600">Pricing</span>
-              </h2>
-              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                Choose the plan that fits your business needs. All plans include our core features.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {pricingPlans.map((plan, index) => (
-                <div key={index} className={`bg-white rounded-2xl shadow-lg border-2 p-8 relative ${
-                  plan.popular ? 'border-blue-500' : 'border-gray-200'
-                }`}>
-                  {plan.popular && (
-                    <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                      <span className="bg-blue-500 text-white px-4 py-2 rounded-full text-sm font-medium">
-                        Most Popular
-                      </span>
-                    </div>
-                  )}
-                  
-                  <div className="text-center mb-8">
-                    <h3 className="text-2xl font-bold text-gray-900 mb-2">{plan.name}</h3>
-                    <div className="text-4xl font-bold text-blue-600 mb-2">{plan.price}</div>
-                    <div className="text-gray-600">{plan.period}</div>
-                  </div>
-
-                  <ul className="space-y-4 mb-8">
-                    {plan.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-center space-x-3">
-                        <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
-                        <span className="text-gray-700">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-
-                  <button className={`w-full py-3 rounded-lg font-semibold transition-all duration-200 ${
-                    plan.popular
-                      ? 'bg-blue-600 text-white hover:bg-blue-700'
-                      : 'border-2 border-blue-600 text-blue-600 hover:bg-blue-50'
-                  }`}>
-                    {plan.popular ? 'Get Started' : 'Choose Plan'}
-                  </button>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* CTA Section */}
       <CTASection />

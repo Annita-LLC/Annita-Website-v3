@@ -166,11 +166,11 @@ export default function HomePage() {
         ogImage="/home-og-image.jpg"
         structuredData={homeStructuredData}
       />
-      <HeroSection />
-      <FeaturesSection />
-      <V3AnnouncementSection />
-      <TrustedPartnersSection />
-      <CTASection />
+        <HeroSection />
+        <FeaturesSection />
+        <V3AnnouncementSection />
+        <TrustedPartnersSection />
+        <CTASection />
     </>
   )
 }

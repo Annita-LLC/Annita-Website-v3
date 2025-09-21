@@ -288,8 +288,8 @@ const AnnitaPayPage = () => {
                   <CreditCard className="w-4 h-4 mr-2" />
                   Personal Digital Payments
                 </div>
-                <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-900 mb-6">
-                  AnnitaPay™ - <span className="text-orange-600">Africa's Unified Financial Engine</span>
+                <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 mb-6">
+                  AnnitaPay - <span className="text-orange-600">Africa's Unified Financial Engine</span>
                 </h1>
                 <p className="text-lg sm:text-xl text-gray-600 mb-8 leading-relaxed">
                   Move, Store, Issue, and Grow Money Without Borders. A high-performance digital finance 

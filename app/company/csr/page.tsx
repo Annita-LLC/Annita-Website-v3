@@ -216,22 +216,6 @@ const CSRPage = () => {
   ]
 
 
-  const annualReports = [
-    {
-      year: "2024",
-      title: "Annual Impact Report 2024",
-      description: "Comprehensive overview of our social impact initiatives and achievements",
-      downloadUrl: "/documents/csr-report-2024.pdf",
-      highlights: ["10,000+ people impacted", "$2M+ economic value generated", "15+ countries reached"]
-    },
-    {
-      year: "2023",
-      title: "Annual Impact Report 2023",
-      description: "Our first full year of operations and impact measurement",
-      downloadUrl: "/documents/csr-report-2023.pdf",
-      highlights: ["5,000+ people impacted", "$1M+ economic value generated", "8+ countries reached"]
-    }
-  ]
 
   const filterOptions = [
     { value: 'all', label: 'All Programs' },
@@ -724,69 +708,6 @@ const CSRPage = () => {
           </div>
         </section>
 
-        {/* Annual Reports */}
-        <section className="py-16 sm:py-20 bg-white">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-6xl mx-auto">
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.8 }}
-                className="text-center mb-16"
-              >
-                <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
-                  Annual <span className="text-orange-600">Reports</span>
-                </h2>
-                <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                  Download our comprehensive impact reports to learn more about our achievements and future plans.
-                </p>
-              </motion.div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                {annualReports.map((report, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={isInView ? { opacity: 1, y: 0 } : {}}
-                    transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
-                    className="bg-gradient-to-br from-orange-50 to-red-50 rounded-2xl p-8 border border-orange-100 hover:shadow-lg transition-shadow duration-300"
-                  >
-                    <div className="flex items-start justify-between mb-4">
-                      <div>
-                        <div className="text-sm font-medium text-orange-600 mb-1">{report.year}</div>
-                        <h3 className="text-xl font-semibold text-gray-900 mb-2">{report.title}</h3>
-                        <p className="text-gray-600 text-sm leading-relaxed">{report.description}</p>
-                      </div>
-                      <div className="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                        <Download className="w-6 h-6 text-orange-600" />
-                      </div>
-                    </div>
-                    
-                    <div className="mb-6">
-                      <div className="text-sm font-medium text-gray-900 mb-2">Key Highlights</div>
-                      <div className="space-y-1">
-                        {report.highlights.map((highlight, idx) => (
-                          <div key={idx} className="flex items-center text-sm text-gray-600">
-                            <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
-                            <span>{highlight}</span>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                    
-                    <button 
-                      onClick={() => window.open(report.downloadUrl, '_blank')}
-                      className="w-full bg-orange-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-orange-700 transition-colors duration-200 flex items-center justify-center"
-                    >
-                      <Download className="w-5 h-5 mr-2" />
-                      Download Report
-                    </button>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
 
         {/* Call to Action */}
         <section className="py-16 sm:py-20 bg-gradient-to-br from-orange-600 via-orange-700 to-red-600 text-white relative overflow-hidden">
