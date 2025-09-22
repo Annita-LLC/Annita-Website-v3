@@ -37,7 +37,8 @@ import {
   Keyboard,
   Mic,
   Camera,
-  Headphones
+  Headphones,
+  ShoppingCart
 } from 'lucide-react'
 import Button from '@/components/ui/Button'
 
