@@ -738,9 +738,9 @@ const IdentityVerificationPage = () => {
               </button>
             </div>
             <WaitlistForm 
+              isOpen={showWaitlist}
+              onClose={() => setShowWaitlist(false)}
               onSuccess={() => setShowWaitlist(false)}
-              title="Get Early Access"
-              description="Be among the first to experience our advanced identity verification platform."
             />
           </div>
         </div>
