@@ -46,7 +46,7 @@ import {
   Laptop,
   Tablet
 } from 'lucide-react'
-import SEOHead from '@/components/SEOHead'
+import SEOHead from '@/components/seo/SEOHead'
 import Button from '@/components/ui/Button'
 import WaitlistForm from '@/components/ui/WaitlistForm'
 
