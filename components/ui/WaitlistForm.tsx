@@ -267,7 +267,7 @@ const WaitlistForm = ({ isOpen, onClose, onSuccess }: WaitlistFormProps) => {
                       size="sm"
                       className="w-full"
                     >
-                      Join Waitlist
+                      Close
                     </Button>
                   </div>
                 </motion.div>
