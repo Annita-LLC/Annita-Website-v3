@@ -220,7 +220,16 @@ const LogisticsNetworkPage = () => {
       <SEOHead 
         title="Logistics Network - Comprehensive Delivery Solutions | Annita"
         description="Transform your delivery operations with Annita's comprehensive logistics network. AI-powered route optimization, real-time tracking, and secure package handling across 54+ African countries."
-        keywords="logistics network, delivery solutions, route optimization, package tracking, supply chain, last-mile delivery, cross-border shipping, warehouse management"
+        keywords={[
+          "logistics network",
+          "delivery solutions",
+          "route optimization",
+          "package tracking",
+          "supply chain",
+          "last-mile delivery",
+          "cross-border shipping",
+          "warehouse management"
+        ]}
       />
 
       {/* Hero Section */}

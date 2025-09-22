@@ -309,7 +309,16 @@ const IdentityVerificationPage = () => {
       <SEOHead 
         title="Identity Verification - Secure Digital Identity Solutions | Annita"
         description="Advanced identity verification with biometric authentication, document verification, and fraud detection. GDPR-compliant, secure, and fast verification across 54+ African countries."
-        keywords="identity verification, biometric authentication, document verification, KYC, AML, fraud detection, digital identity, security compliance"
+        keywords={[
+          "identity verification",
+          "biometric authentication", 
+          "document verification",
+          "KYC",
+          "AML",
+          "fraud detection",
+          "digital identity",
+          "security compliance"
+        ]}
       />
 
       {/* Hero Section */}
