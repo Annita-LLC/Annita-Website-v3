@@ -100,67 +100,61 @@ const V3AnnouncementSection = () => {
   ]
 
   return (
-    <section className="py-20 bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 text-white overflow-hidden">
-      {/* Background Elements */}
-      <div className="absolute inset-0">
-        <div className="absolute top-20 left-10 w-32 h-32 bg-orange-500/20 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 right-10 w-40 h-40 bg-blue-500/20 rounded-full blur-3xl"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"></div>
-      </div>
-
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-16"
-        >
-          <div className="inline-flex items-center px-4 py-2 bg-orange-500/20 text-orange-300 rounded-full text-sm font-medium mb-6 border border-orange-500/30">
-            <Zap className="w-4 h-4 mr-2" />
-            🚨 Something BIG is coming to Africa
-          </div>
-          
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-            Annita <span className="text-orange-500">3.0</span>
-            <br />
-            <span className="text-2xl sm:text-3xl lg:text-4xl text-blue-300">
+    <section className="py-16 sm:py-20 bg-gradient-to-br from-gray-50 to-orange-50">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto">
+          {/* Header */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-16"
+          >
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-orange-100 text-orange-700 text-sm font-medium mb-6">
+              <Zap className="w-4 h-4 mr-2" />
+              🚨 Something BIG is coming to Africa
+            </div>
+            
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 mb-6">
+              Annita <span className="text-orange-600">3.0</span>
+            </h2>
+            
+            <h3 className="text-xl sm:text-2xl lg:text-3xl text-gray-700 mb-6">
               The Future of Business in Africa
-            </span>
-          </h2>
-          
-          <p className="text-xl sm:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-            Smarter. Faster. Offline-ready. Inclusive.
-            <br />
-            <span className="text-orange-400 font-semibold">Built for everyone, everywhere.</span>
-          </p>
-        </motion.div>
+            </h3>
+            
+            <p className="text-lg text-gray-600 max-w-4xl mx-auto mb-8">
+              Smarter. Faster. Offline-ready. Inclusive.
+              <br />
+              <span className="text-orange-600 font-semibold">Built for everyone, everywhere.</span>
+            </p>
+          </motion.div>
 
-        {/* Tab Navigation */}
-        <div className="flex justify-center mb-12">
-          <div className="bg-gray-800/50 backdrop-blur-sm rounded-full p-2 border border-gray-700">
-            <button
-              onClick={() => setActiveTab('coming')}
-              className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
-                activeTab === 'coming'
-                  ? 'bg-orange-500 text-white shadow-lg'
-                  : 'text-gray-300 hover:text-white'
-              }`}
-            >
-              What's Coming (V3.0)
-            </button>
-            <button
-              onClick={() => setActiveTab('current')}
-              className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
-                activeTab === 'current'
-                  ? 'bg-green-500 text-white shadow-lg'
-                  : 'text-gray-300 hover:text-white'
-              }`}
-            >
-              What We Have Now (V1.0)
-            </button>
+          {/* Tab Navigation */}
+          <div className="flex justify-center mb-12">
+            <div className="bg-white rounded-full p-2 shadow-lg border border-gray-200">
+              <button
+                onClick={() => setActiveTab('coming')}
+                className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
+                  activeTab === 'coming'
+                    ? 'bg-orange-600 text-white shadow-lg'
+                    : 'text-gray-600 hover:text-gray-900'
+                }`}
+              >
+                What's Coming (V3.0)
+              </button>
+              <button
+                onClick={() => setActiveTab('current')}
+                className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
+                  activeTab === 'current'
+                    ? 'bg-green-600 text-white shadow-lg'
+                    : 'text-gray-600 hover:text-gray-900'
+                }`}
+              >
+                What We Have Now (V1.0)
+              </button>
+            </div>
           </div>
-        </div>
 
         {/* Content */}
         <AnimatePresence mode="wait">
@@ -180,24 +174,24 @@ const V3AnnouncementSection = () => {
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
-                    className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:border-white/20 transition-all duration-300 group"
+                    className="bg-white rounded-2xl p-6 shadow-lg border border-gray-200 hover:shadow-xl transition-all duration-300 group"
                   >
                     <div className={`w-12 h-12 bg-gradient-to-r ${feature.color} rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
                       <feature.icon className="w-6 h-6 text-white" />
                     </div>
-                    <h3 className="text-xl font-bold mb-2">{feature.title}</h3>
-                    <p className="text-gray-300">{feature.description}</p>
+                    <h3 className="text-xl font-bold mb-2 text-gray-900">{feature.title}</h3>
+                    <p className="text-gray-600">{feature.description}</p>
                   </motion.div>
                 ))}
               </div>
 
               {/* V3.0 Text Content */}
               <div className="text-center">
-                <div className="bg-gradient-to-r from-orange-500/20 to-purple-500/20 rounded-2xl p-8 border border-orange-500/30">
-                  <h3 className="text-2xl sm:text-3xl font-bold mb-4">
+                <div className="bg-gradient-to-r from-orange-50 to-orange-100 rounded-2xl p-8 border border-orange-200">
+                  <h3 className="text-2xl sm:text-3xl font-bold mb-4 text-gray-900">
                     One Platform. All Your Business Needs — Online or Offline.
                   </h3>
-                  <p className="text-lg text-gray-300 mb-6">
+                  <p className="text-lg text-gray-600 mb-6">
                     For MSMEs, vendors, freelancers, market women, students, and individuals.
                   </p>
                 </div>
@@ -219,20 +213,20 @@ const V3AnnouncementSection = () => {
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
-                    className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:border-green-500/50 transition-all duration-300 group cursor-pointer"
+                    className="bg-white rounded-2xl p-6 shadow-lg border border-gray-200 hover:shadow-xl transition-all duration-300 group cursor-pointer"
                     onClick={() => window.open(feature.link, '_blank')}
                   >
                     <div className="flex items-center justify-between mb-4">
                       <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-emerald-500 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                         <feature.icon className="w-6 h-6 text-white" />
                       </div>
-                      <span className="px-3 py-1 bg-green-500/20 text-green-300 rounded-full text-xs font-medium border border-green-500/30">
+                      <span className="px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-medium border border-green-200">
                         {feature.status}
                       </span>
                     </div>
-                    <h3 className="text-xl font-bold mb-2">{feature.title}</h3>
-                    <p className="text-gray-300 mb-4">{feature.description}</p>
-                    <div className="flex items-center text-green-400 text-sm font-medium group-hover:text-green-300">
+                    <h3 className="text-xl font-bold mb-2 text-gray-900">{feature.title}</h3>
+                    <p className="text-gray-600 mb-4">{feature.description}</p>
+                    <div className="flex items-center text-green-600 text-sm font-medium group-hover:text-green-700">
                       <span>Try it now</span>
                       <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
                     </div>
@@ -242,11 +236,11 @@ const V3AnnouncementSection = () => {
 
               {/* Current Platform CTA */}
               <div className="text-center">
-                <div className="bg-gradient-to-r from-green-500/20 to-blue-500/20 rounded-2xl p-8 border border-green-500/30">
-                  <h3 className="text-2xl sm:text-3xl font-bold mb-4">
+                <div className="bg-gradient-to-r from-green-50 to-green-100 rounded-2xl p-8 border border-green-200">
+                  <h3 className="text-2xl sm:text-3xl font-bold mb-4 text-gray-900">
                     Experience Annita V1.0 Right Now
                   </h3>
-                  <p className="text-lg text-gray-300 mb-6">
+                  <p className="text-lg text-gray-600 mb-6">
                     See what we've built. Real vendors. Real customers. Real transactions.
                   </p>
                   <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -263,7 +257,7 @@ const V3AnnouncementSection = () => {
                       variant="outline"
                       size="lg"
                       icon={TrendingUp}
-                      className="text-lg font-bold border-white/30 text-white hover:bg-white/10"
+                      className="text-lg font-bold border-gray-300 text-gray-700 hover:bg-gray-50"
                     >
                       View Success Stories
                     </Button>
@@ -274,28 +268,29 @@ const V3AnnouncementSection = () => {
           )}
         </AnimatePresence>
 
-        {/* Bottom Message */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-          className="text-center mt-16"
-        >
-          <div className="bg-gradient-to-r from-orange-500/10 to-purple-500/10 rounded-2xl p-8 border border-orange-500/20">
-            <h3 className="text-2xl sm:text-3xl font-bold mb-4">
-              📣 This is Africa's all-in-one digital home.
-            </h3>
-            <p className="text-lg text-gray-300 mb-6">
-              Built in Liberia. Rising with the continent.
-            </p>
-            <p className="text-xl font-semibold text-orange-400">
-              It's time for true digital freedom — without limits, without barriers.
-            </p>
-            <div className="mt-6 text-2xl font-bold">
-              Simplify. Scale. Succeed.
+          {/* Bottom Message */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="text-center mt-16"
+          >
+            <div className="bg-gradient-to-r from-orange-50 to-orange-100 rounded-2xl p-8 border border-orange-200">
+              <h3 className="text-2xl sm:text-3xl font-bold mb-4 text-gray-900">
+                📣 This is Africa's all-in-one digital home.
+              </h3>
+              <p className="text-lg text-gray-600 mb-6">
+                Built in Liberia. Rising with the continent.
+              </p>
+              <p className="text-xl font-semibold text-orange-600">
+                It's time for true digital freedom — without limits, without barriers.
+              </p>
+              <div className="mt-6 text-2xl font-bold text-gray-900">
+                Simplify. Scale. Succeed.
+              </div>
             </div>
-          </div>
-        </motion.div>
+          </motion.div>
+        </div>
       </div>
 
       {/* Waitlist Form Modal */}

@@ -169,28 +169,6 @@ const Navigation = () => {
         { name: 'Contract Management', href: '/services/contract-management', icon: Gavel, description: 'Manage business contracts' },
       ]
     },
-    { 
-      name: 'Cross-Cutting Solutions', 
-      href: '#',
-      dropdown: [
-        { name: 'Offline Functionality', href: '/services/offline-functionality', icon: WifiOff, description: 'Works without internet connection' },
-        { name: 'Low-Bandwidth Optimization', href: '/services/low-bandwidth', icon: Wifi, description: 'Optimized for slow connections' },
-        { name: 'Multi-Language Support', href: '/services/multi-language', icon: Languages, description: 'Support for multiple languages' },
-        { name: 'Mobile-First Design', href: '/services/mobile-first', icon: Smartphone, description: 'Designed for mobile devices' },
-        { name: 'Identity Verification', href: '/services/identity-verification', icon: Fingerprint, description: 'Secure identity verification' },
-        { name: 'Fraud Protection', href: '/services/fraud-protection', icon: AlertTriangle, description: 'Advanced fraud protection' },
-        { name: 'Data Privacy', href: '/services/data-privacy', icon: Lock, description: 'Protect user data privacy' },
-        { name: 'Dispute Resolution', href: '/services/dispute-resolution', icon: Scale, description: 'Fair dispute resolution' },
-        { name: 'Rural Connectivity', href: '/services/rural-connectivity', icon: MapPin, description: 'Connect rural areas' },
-        { name: 'Affordable Pricing', href: '/services/affordable-pricing', icon: DollarSign, description: 'Low-cost pricing options' },
-        { name: 'Simple User Interface', href: '/services/simple-ui', icon: Palette, description: 'Simple and intuitive design' },
-        { name: 'Local Support', href: '/services/local-support', icon: HeadphonesIcon, description: 'Local customer support' },
-        { name: 'Government Services', href: '/services/government-services', icon: Landmark, description: 'Government service integration' },
-        { name: 'Banking Integration', href: '/services/banking-integration', icon: LinkIcon, description: 'Bank integration services' },
-        { name: 'Social Services', href: '/services/social-services', icon: Heart, description: 'Social services access' },
-        { name: 'Community Features', href: '/services/community-features', icon: Users, description: 'Build communities' },
-      ]
-    },
 
     { 
       name: 'Company', 
