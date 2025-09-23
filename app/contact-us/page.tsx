@@ -18,7 +18,8 @@ import {
   Star,
   ArrowRight,
   Download,
-  ExternalLink
+  ExternalLink,
+  Award
 } from 'lucide-react'
 import Link from 'next/link'
 import { useFormSubmission, formValidations } from '@/lib/hooks/useFormSubmission'
