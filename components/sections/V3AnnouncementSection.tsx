@@ -256,10 +256,11 @@ const V3AnnouncementSection = () => {
                     <Button
                       variant="outline"
                       size="lg"
-                      icon={TrendingUp}
-                      className="text-lg font-bold border-gray-300 text-gray-700 hover:bg-gray-50"
+                      icon={Star}
+                      className="text-lg font-bold border-orange-300 text-orange-700 hover:bg-orange-50"
+                      onClick={() => setIsWaitlistOpen(true)}
                     >
-                      View Success Stories
+                      Join Waitlist
                     </Button>
                   </div>
                 </div>

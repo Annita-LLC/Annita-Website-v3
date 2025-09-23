@@ -122,24 +122,24 @@ const TrustedPartnersSection = () => {
         }
         
         .animate-scroll {
-          animation: scroll 60s linear infinite;
+          animation: scroll 20s linear infinite;
         }
         
         @media (min-width: 640px) {
           .animate-scroll {
-            animation-duration: 50s;
+            animation-duration: 18s;
           }
         }
         
         @media (min-width: 768px) {
           .animate-scroll {
-            animation-duration: 45s;
+            animation-duration: 16s;
           }
         }
         
         @media (min-width: 1024px) {
           .animate-scroll {
-            animation-duration: 40s;
+            animation-duration: 14s;
           }
         }
         

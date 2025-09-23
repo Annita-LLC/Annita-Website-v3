@@ -80,7 +80,7 @@ function DownloadPage() {
       setCurrentImageIndex((prevIndex) => 
         prevIndex === demoImages.length - 1 ? 0 : prevIndex + 1
       )
-    }, 4000) // Increased to 4 seconds for better performance
+    }, 2000) // Fast rotation for better engagement
 
     return () => clearInterval(interval)
   }, [demoImages.length])
@@ -265,10 +265,10 @@ function DownloadPage() {
       <section className="relative bg-gradient-to-br from-orange-50 via-orange-100 to-red-50 py-16 sm:py-20 lg:py-24 overflow-hidden">
         {/* Animated Background Elements */}
         <div className="absolute inset-0">
-          <div className="absolute top-10 left-10 w-20 h-20 bg-orange-200/30 rounded-full animate-pulse"></div>
-          <div className="absolute top-32 right-20 w-16 h-16 bg-red-200/20 rounded-full animate-bounce"></div>
-          <div className="absolute bottom-20 left-1/4 w-12 h-12 bg-orange-300/25 rounded-full animate-pulse delay-1000"></div>
-          <div className="absolute bottom-32 right-1/3 w-8 h-8 bg-red-300/20 rounded-full animate-bounce delay-500"></div>
+          <div className="absolute top-10 left-10 w-20 h-20 bg-orange-200/30 rounded-full animate-pulse" style={{ animationDuration: '1.5s' }}></div>
+          <div className="absolute top-32 right-20 w-16 h-16 bg-red-200/20 rounded-full animate-bounce" style={{ animationDuration: '1s' }}></div>
+          <div className="absolute bottom-20 left-1/4 w-12 h-12 bg-orange-300/25 rounded-full animate-pulse delay-1000" style={{ animationDuration: '1.5s' }}></div>
+          <div className="absolute bottom-32 right-1/3 w-8 h-8 bg-red-300/20 rounded-full animate-bounce delay-500" style={{ animationDuration: '1s' }}></div>
         </div>
         
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -361,16 +361,16 @@ function DownloadPage() {
                   
                   {/* Floating Elements */}
                   <motion.div
-                    animate={{ y: [-10, 10, -10] }}
-                    transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                    animate={{ y: [-8, 8, -8] }}
+                    transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
                     className="absolute -top-4 -right-4 w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center"
                   >
                     <Shield className="w-4 h-4 text-white" />
                   </motion.div>
                   
                   <motion.div
-                    animate={{ y: [10, -10, 10] }}
-                    transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                    animate={{ y: [8, -8, 8] }}
+                    transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
                     className="absolute -bottom-4 -left-4 w-6 h-6 bg-red-500 rounded-full flex items-center justify-center"
                   >
                     <Zap className="w-3 h-3 text-white" />
@@ -445,178 +445,6 @@ function DownloadPage() {
         </div>
       </section>
 
-      <div>
-        <div className="py-16 sm:py-20 bg-gray-50">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-6xl mx-auto">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                {/* App Information */}
-                <div>
-                  <motion.div
-                    initial={{ opacity: 0, x: -30 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.8 }}
-                  >
-                  <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-4 sm:mb-6">
-                    Join Our Waitlist
-                  </h2>
-                  <p className="text-base sm:text-lg text-gray-600 mb-6 sm:mb-8 leading-relaxed">
-                    Be the first to know when Annita launches. Join our waitlist for early access and exclusive updates.
-                  </p>
-
-
-                    {/* Key Benefits */}
-                    <div className="bg-white rounded-xl p-4 sm:p-6 shadow-lg border border-gray-200 mb-6 sm:mb-8">
-                      <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-3 sm:mb-4">
-                        Why Join Annita Waitlist?
-                    </h3>
-                      <div className="space-y-3 sm:space-y-4">
-                        {appFeatures.slice(0, 6).map((feature, index) => (
-                          <div key={index} className="flex items-start space-x-2 sm:space-x-3">
-                            <div className="w-6 h-6 sm:w-8 sm:h-8 bg-gradient-to-br from-orange-500 to-red-500 rounded-lg flex items-center justify-center flex-shrink-0">
-                              <feature.icon className="w-3 h-3 sm:w-4 sm:h-4 text-white" />
-                          </div>
-                          <div>
-                              <div className="text-xs sm:text-sm font-medium text-gray-900 leading-tight">{feature.title}</div>
-                              <div className="text-xs text-gray-600 leading-relaxed">{feature.description}</div>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Contact Information */}
-                    <div className="bg-white rounded-xl p-4 sm:p-6 shadow-lg border border-gray-200">
-                      <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-3 sm:mb-4">
-                      Need Help?
-                    </h3>
-                      <div className="space-y-2 sm:space-y-3">
-                        <div className="flex items-center space-x-2 sm:space-x-3">
-                          <Mail className="w-4 h-4 sm:w-5 sm:h-5 text-orange-500 flex-shrink-0" />
-                          <span className="text-sm sm:text-base text-gray-600">annitallc@gmail.com</span>
-                        </div>
-                        <div className="flex items-center space-x-2 sm:space-x-3">
-                          <Phone className="w-4 h-4 sm:w-5 sm:h-5 text-orange-500 flex-shrink-0" />
-                          <span className="text-sm sm:text-base text-gray-600">+231 77 505 7227</span>
-                      </div>
-                        <div className="flex items-center space-x-2 sm:space-x-3">
-                          <MessageSquare className="w-4 h-4 sm:w-5 sm:h-5 text-orange-500 flex-shrink-0" />
-                          <span className="text-sm sm:text-base text-gray-600">Live chat available</span>
-                      </div>
-                      </div>
-                    </div>
-                  </motion.div>
-                </div>
-
-                {/* Download Form */}
-                <motion.div
-                  initial={{ opacity: 0, x: 30 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.8, delay: 0.2 }}
-                  id="download-form"
-                  className="bg-white rounded-xl shadow-lg p-6 sm:p-8 border border-gray-200"
-                >
-                  <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-gray-900 mb-4 sm:mb-6">Join Waitlist</h3>
-                  
-                  <div className="text-center">
-                    <p className="text-gray-600 mb-6 sm:mb-8">
-                      Be the first to know when Annita 3.0 launches. Get early access and exclusive updates.
-                    </p>
-
-                    <button
-                      onClick={() => setIsWaitlistOpen(true)}
-                      className="w-full bg-gradient-to-r from-orange-500 to-orange-600 text-white py-3 sm:py-4 rounded-lg font-semibold hover:from-orange-600 hover:to-orange-700 transition-all duration-200 flex items-center justify-center text-sm sm:text-base"
-                    >
-                          <Download className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
-                          Join Waitlist
-                    </button>
-
-                  </div>
-
-                </motion.div>
-              </div>
-            </div>
-          </div>
-        </div>
-      ) : (
-        /* Success Message */
-        <div className="py-16 sm:py-20 bg-gradient-to-br from-green-50 to-emerald-50">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-2xl mx-auto text-center">
-              <motion.div
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.6 }}
-                className="w-20 h-20 sm:w-24 sm:h-24 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6"
-              >
-                <CheckCircle className="w-10 h-10 sm:w-12 sm:h-12 text-green-600" />
-              </motion.div>
-              
-              <motion.h2
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4"
-              >
-                You're on the Waitlist!
-              </motion.h2>
-              
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.3 }}
-                className="text-gray-600 mb-8 text-sm sm:text-base"
-              >
-                Thank you for joining our waitlist! We'll notify you as soon as the app is available for download.
-              </motion.p>
-              
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.4 }}
-                className="bg-white rounded-xl p-6 sm:p-8 mb-8 shadow-lg border border-green-200"
-              >
-                <h3 className="font-semibold text-gray-900 mb-4 text-lg">What's next?</h3>
-                <div className="space-y-4 text-left">
-                  <div className="flex items-center">
-                    <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center text-sm font-bold mr-4 flex-shrink-0">1</div>
-                    <span className="text-gray-600 text-sm sm:text-base">We'll notify you when the app launches</span>
-                  </div>
-                  <div className="flex items-center">
-                    <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center text-sm font-bold mr-4 flex-shrink-0">2</div>
-                    <span className="text-gray-600 text-sm sm:text-base">Get early access to download the app</span>
-                  </div>
-                  <div className="flex items-center">
-                    <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center text-sm font-bold mr-4 flex-shrink-0">3</div>
-                    <span className="text-gray-600 text-sm sm:text-base">Be among the first to experience Annita</span>
-                  </div>
-                </div>
-              </motion.div>
-              
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.5 }}
-                className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center"
-              >
-                <Link
-                  href="/contact-us"
-                  className="inline-flex items-center justify-center px-6 py-3 bg-orange-500 text-white font-semibold rounded-lg hover:bg-orange-600 transition-colors duration-200 text-sm sm:text-base"
-                >
-                  <MessageSquare className="w-4 h-4 mr-2" />
-                  Need Help?
-                </Link>
-                <button
-                  onClick={() => setIsWaitlistOpen(true)}
-                  className="inline-flex items-center justify-center px-6 py-3 border-2 border-orange-500 text-orange-500 font-semibold rounded-lg hover:bg-orange-50 transition-colors duration-200 text-sm sm:text-base"
-                >
-                  Join Waitlist
-                </button>
-              </motion.div>
-            </div>
-          </div>
-        </div>
-      </div>
 
       {/* Final CTA Section */}
       <section className="py-16 sm:py-20 bg-gradient-to-br from-gray-50 to-white">

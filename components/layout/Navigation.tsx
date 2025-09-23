@@ -174,19 +174,7 @@ const Navigation = () => {
       name: 'Company', 
       href: '#',
       dropdown: [
-        { name: 'Ideas & Recommendations', href: '/ideas', icon: Lightbulb, description: 'Share ideas and feedback' },
-        { name: 'About Us', href: '/about', icon: Users, description: 'Our story and mission' },
-        { name: 'CSR', href: '/company/csr', icon: Heart, description: 'Corporate social responsibility and impact' },
-        { name: 'Demo', href: '/demo', icon: Play, description: 'Interactive demo of Annita 3.0' },
-        { name: 'Investors', href: '/investors', icon: DollarSign, description: 'Investment opportunities and company info' },
-        { name: 'The 100', href: '/the100', icon: Target, description: 'Youth empowerment initiative' },
-        { name: 'Pricing', href: '/pricing', icon: DollarSign, description: 'Transparent pricing plans' },
-        { name: 'Business Model', href: '/business-model', icon: Building2, description: 'Our revenue model and strategy' },
-        { name: 'Awards & Recognition', href: '/awards', icon: Award, description: 'Our achievements and recognition' },
-        { name: 'Gallery', href: '/gallery', icon: Image, description: 'Photos, videos, and media' },
-        { name: 'Careers', href: '/careers', icon: Briefcase, description: 'Join our team' },
-        { name: 'Apply Now', href: '/careers/apply', icon: UserPlus, description: 'Submit your application' },
-        // Cross-Cutting Solutions Submenu
+        // Cross-Cutting Solutions Submenu - Now First
         { 
           name: 'Cross-Cutting Solutions', 
           href: '#', 
@@ -211,6 +199,18 @@ const Navigation = () => {
             { name: 'Community Features', href: '/services/community-features', icon: Users, description: 'Build communities' },
           ]
         },
+        { name: 'Ideas & Tips', href: '/ideas', icon: Lightbulb, description: 'Share ideas and feedback' },
+        { name: 'About Us', href: '/about', icon: Users, description: 'Our story and mission' },
+        { name: 'CSR', href: '/company/csr', icon: Heart, description: 'Corporate social responsibility and impact' },
+        { name: 'Demo', href: '/demo', icon: Play, description: 'Interactive demo of Annita 3.0' },
+        { name: 'Investors', href: '/investors', icon: DollarSign, description: 'Investment opportunities and company info' },
+        { name: 'The 100', href: '/the100', icon: Target, description: 'Youth empowerment initiative' },
+        { name: 'Pricing', href: '/pricing', icon: DollarSign, description: 'Transparent pricing plans' },
+        { name: 'Business Model', href: '/business-model', icon: Building2, description: 'Our revenue model and strategy' },
+        { name: 'Awards & Recognition', href: '/awards', icon: Award, description: 'Our achievements and recognition' },
+        { name: 'Gallery', href: '/gallery', icon: Image, description: 'Photos, videos, and media' },
+        { name: 'Careers', href: '/careers', icon: Briefcase, description: 'Join our team' },
+        { name: 'Apply Now', href: '/careers/apply', icon: UserPlus, description: 'Submit your application' },
       ]
     },
     { 
@@ -318,6 +318,45 @@ const Navigation = () => {
                                          </div>
                                        </div>
                                      </div>
+                                  ) : 'dropdown' in dropdownItem && dropdownItem.dropdown ? (
+                                    <div key={dropdownItem.name} className="relative">
+                                      <div className="flex items-start space-x-3 p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200 cursor-pointer"
+                                           onClick={() => setActiveDropdown(activeDropdown === dropdownItem.name ? null : dropdownItem.name)}>
+                                        <dropdownItem.icon className="w-5 h-5 text-primary-600 dark:text-primary-400 mt-0.5 flex-shrink-0" />
+                                        <div className="flex-1">
+                                          <div className="font-medium text-gray-900 dark:text-white">{dropdownItem.name}</div>
+                                          <div className="text-sm text-gray-500 dark:text-gray-400">{dropdownItem.description}</div>
+                                        </div>
+                                        <ChevronRight className={`w-4 h-4 text-gray-400 transition-transform duration-200 ${activeDropdown === dropdownItem.name ? 'rotate-90' : ''}`} />
+                                      </div>
+                                      
+                                      <AnimatePresence>
+                                        {activeDropdown === dropdownItem.name && (
+                                          <motion.div
+                                            initial={{ opacity: 0, height: 0 }}
+                                            animate={{ opacity: 1, height: 'auto' }}
+                                            exit={{ opacity: 0, height: 0 }}
+                                            transition={{ duration: 0.2 }}
+                                            className="ml-8 mt-2 space-y-1"
+                                          >
+                                            {dropdownItem.dropdown.map((nestedItem) => (
+                                              <Link
+                                                key={nestedItem.name}
+                                                href={nestedItem.href}
+                                                className="flex items-start space-x-3 p-2 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200"
+                                                onClick={() => setActiveDropdown(null)}
+                                              >
+                                                <nestedItem.icon className="w-4 h-4 text-primary-600 dark:text-primary-400 mt-0.5 flex-shrink-0" />
+                                                <div>
+                                                  <div className="font-medium text-gray-900 dark:text-white text-sm">{nestedItem.name}</div>
+                                                  <div className="text-xs text-gray-500 dark:text-gray-400">{nestedItem.description}</div>
+                                                </div>
+                                              </Link>
+                                            ))}
+                                          </motion.div>
+                                        )}
+                                      </AnimatePresence>
+                                    </div>
                                   ) : 'isExternal' in dropdownItem && dropdownItem.isExternal ? (
                                     <a
                                       key={dropdownItem.name}
@@ -492,6 +531,42 @@ const Navigation = () => {
                                       <div key={dropdownItem.name} className="p-2">
                                         <div className="text-sm text-gray-600 dark:text-gray-300 mb-2">{dropdownItem.name}</div>
                                         <SimpleThemeToggle />
+                                      </div>
+                                    ) : 'dropdown' in dropdownItem && dropdownItem.dropdown ? (
+                                      <div key={dropdownItem.name}>
+                                        <button
+                                          onClick={() => setActiveDropdown(activeDropdown === dropdownItem.name ? null : dropdownItem.name)}
+                                          className="flex items-center justify-between w-full p-2 text-sm text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-50 dark:hover:bg-gray-800 rounded-lg transition-colors"
+                                        >
+                                          <span>{dropdownItem.name}</span>
+                                          <ChevronRight className={`w-4 h-4 transition-transform duration-200 ${activeDropdown === dropdownItem.name ? 'rotate-90' : ''}`} />
+                                        </button>
+                                        
+                                        <AnimatePresence>
+                                          {activeDropdown === dropdownItem.name && (
+                                            <motion.div
+                                              initial={{ opacity: 0, height: 0 }}
+                                              animate={{ opacity: 1, height: 'auto' }}
+                                              exit={{ opacity: 0, height: 0 }}
+                                              transition={{ duration: 0.2 }}
+                                              className="ml-4 mt-1 space-y-1"
+                                            >
+                                              {dropdownItem.dropdown.map((nestedItem) => (
+                                                <Link
+                                                  key={nestedItem.name}
+                                                  href={nestedItem.href}
+                                                  className="block p-2 text-xs text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-800 rounded-lg transition-colors"
+                                                  onClick={() => {
+                                                    setIsOpen(false)
+                                                    setActiveDropdown(null)
+                                                  }}
+                                                >
+                                                  {nestedItem.name}
+                                                </Link>
+                                              ))}
+                                            </motion.div>
+                                          )}
+                                        </AnimatePresence>
                                       </div>
                                     ) : 'isExternal' in dropdownItem && dropdownItem.isExternal ? (
                                       <a

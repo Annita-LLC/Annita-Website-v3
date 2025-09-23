@@ -1,4 +1,7 @@
+'use client'
+
 import { Metadata } from 'next'
+import { useState } from 'react'
 import { 
   UserPlus,
   Building2,
@@ -16,9 +19,11 @@ import {
   Zap,
   Code,
   Play,
-  Download
+  Download,
+  ExternalLink
 } from 'lucide-react'
 import Button from '@/components/ui/Button'
+import WaitlistForm from '@/components/ui/WaitlistForm'
 
 export const metadata: Metadata = {
   title: 'Partner Application - Annita',
@@ -26,6 +31,7 @@ export const metadata: Metadata = {
 }
 
 const PartnerApplyPage = () => {
+  const [isWaitlistOpen, setIsWaitlistOpen] = useState(false)
   const benefits = [
     {
       icon: TrendingUp,
@@ -79,40 +85,69 @@ const PartnerApplyPage = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="py-16 sm:py-20 bg-gradient-to-br from-gray-50 to-orange-50">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-20 sm:py-24 lg:py-28 bg-gradient-to-br from-gray-50 via-orange-50 to-orange-100 overflow-hidden">
+        {/* Background Elements */}
+        <div className="absolute inset-0">
+          <div className="absolute top-20 left-10 w-20 h-20 bg-orange-200/30 rounded-full animate-pulse"></div>
+          <div className="absolute top-40 right-20 w-16 h-16 bg-orange-300/20 rounded-full animate-bounce"></div>
+          <div className="absolute bottom-20 left-1/4 w-12 h-12 bg-orange-400/25 rounded-full animate-pulse delay-1000"></div>
+          <div className="absolute bottom-40 right-1/3 w-8 h-8 bg-orange-500/20 rounded-full animate-bounce delay-500"></div>
+        </div>
+        
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
-              <div className="inline-flex items-center px-4 py-2 rounded-full bg-orange-100 text-orange-700 text-sm font-medium mb-6">
-                <UserPlus className="w-4 h-4 mr-2" />
+            <div className="text-center">
+              {/* Badge */}
+              <div className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-orange-100 to-orange-200 text-orange-700 text-sm font-semibold mb-8 shadow-lg border border-orange-200">
+                <UserPlus className="w-5 h-5 mr-2" />
                 Partner Program
               </div>
               
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 mb-6">
-                Join Our <span className="text-orange-600">Partner Network</span>
+              {/* Main Heading */}
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-900 mb-8 leading-tight">
+                Join Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-orange-700">Partner Network</span>
               </h1>
-              <p className="text-lg text-gray-600 max-w-3xl mx-auto mb-8">
+              
+              {/* Description */}
+              <p className="text-xl sm:text-2xl text-gray-600 max-w-4xl mx-auto mb-12 leading-relaxed">
                 Grow your business with Annita's comprehensive e-commerce platform. 
                 Access new markets, increase revenue, and build lasting partnerships.
               </p>
               
-              <div className="flex flex-col sm:flex-row gap-4">
+              {/* CTA Buttons */}
+              <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
                 <a
                   href="#application-form"
-                  className="bg-gradient-to-r from-orange-600 to-orange-700 text-white px-8 py-4 rounded-xl font-semibold hover:from-orange-700 hover:to-orange-800 transition-all duration-200 flex items-center justify-center shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                  className="group bg-gradient-to-r from-orange-600 to-orange-700 text-white px-10 py-5 rounded-2xl font-bold text-lg hover:from-orange-700 hover:to-orange-800 transition-all duration-300 flex items-center justify-center shadow-2xl hover:shadow-orange-500/25 transform hover:-translate-y-2 hover:scale-105"
                 >
-                  <UserPlus className="w-5 h-5 mr-2" />
+                  <UserPlus className="w-6 h-6 mr-3 group-hover:scale-110 transition-transform duration-300" />
                   Apply Now
                 </a>
                 <a
                   href="https://annita.company.site/products"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="border-2 border-orange-600 text-orange-600 px-8 py-4 rounded-xl font-semibold hover:bg-orange-50 transition-all duration-200 flex items-center justify-center transform hover:-translate-y-1"
+                  className="group border-2 border-orange-600 text-orange-600 px-10 py-5 rounded-2xl font-bold text-lg hover:bg-orange-600 hover:text-white transition-all duration-300 flex items-center justify-center shadow-lg hover:shadow-xl transform hover:-translate-y-2 hover:scale-105"
                 >
-                  <Globe className="w-5 h-5 mr-2" />
+                  <Globe className="w-6 h-6 mr-3 group-hover:scale-110 transition-transform duration-300" />
                   Try V1.0 Now
                 </a>
+              </div>
+              
+              {/* Trust Indicators */}
+              <div className="mt-16 flex flex-col sm:flex-row items-center justify-center gap-8 text-sm text-gray-500">
+                <div className="flex items-center gap-2">
+                  <CheckCircle className="w-5 h-5 text-green-500" />
+                  <span>Trusted by 1000+ Partners</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <CheckCircle className="w-5 h-5 text-green-500" />
+                  <span>24/7 Partner Support</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <CheckCircle className="w-5 h-5 text-green-500" />
+                  <span>Revenue Sharing Model</span>
+                </div>
               </div>
             </div>
           </div>
@@ -414,36 +449,45 @@ const PartnerApplyPage = () => {
 
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-br from-blue-900 via-indigo-900 to-purple-900 text-white">
+      <section className="py-16 sm:py-20 bg-gradient-to-br from-gray-50 to-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl sm:text-4xl font-bold mb-6">
-              Ready to Grow Together?
-            </h2>
-            <p className="text-xl text-gray-200 mb-8">
-              Join hundreds of successful partners already working with Annita
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button
-                variant="gradient"
-                size="xl"
-                icon={Play}
-                className="text-lg font-bold shadow-2xl hover:shadow-blue-500/25 transform hover:-translate-y-1 transition-all duration-300"
-              >
-                Get Started Free
-              </Button>
-              <Button
-                variant="glass"
-                size="xl"
-                icon={Download}
-                className="text-lg font-bold backdrop-blur-xl shadow-2xl hover:shadow-white/10 transform hover:-translate-y-1 transition-all duration-300"
-              >
-                Download App
-              </Button>
+          <div className="max-w-4xl mx-auto">
+            {/* Call to Action */}
+            <div className="text-center p-8 bg-gradient-to-r from-orange-500 to-orange-600 rounded-2xl text-white">
+              <h3 className="text-2xl sm:text-3xl font-bold mb-4">
+                Ready to Grow Together?
+              </h3>
+              <p className="text-orange-100 mb-6 max-w-2xl mx-auto">
+                Join hundreds of successful partners already working with Annita. Experience our live marketplace V1.0 today, and join the waitlist for the revolutionary V3.0.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <a 
+                  href="https://annita.company.site/products"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center bg-white text-orange-600 px-8 py-3 rounded-lg font-semibold hover:bg-orange-50 transition-colors duration-200"
+                >
+                  <ExternalLink className="w-5 h-5 mr-2" />
+                  Try Marketplace V1.0
+                </a>
+                <button 
+                  onClick={() => setIsWaitlistOpen(true)}
+                  className="inline-flex items-center justify-center border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-orange-600 transition-colors duration-200"
+                >
+                  <Star className="w-5 h-5 mr-2" />
+                  Join V3.0 Waitlist
+                </button>
+              </div>
             </div>
           </div>
         </div>
       </section>
+
+      {/* Waitlist Form Modal */}
+      <WaitlistForm 
+        isOpen={isWaitlistOpen} 
+        onClose={() => setIsWaitlistOpen(false)} 
+      />
     </div>
   )
 }

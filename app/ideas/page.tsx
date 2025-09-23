@@ -302,9 +302,9 @@ const IdeasPage = () => {
   return (
     <>
       <SEOHead
-        title="Ideas & Recommendations - Annita LLC"
+        title="Ideas & Tips - Annita LLC"
         description="Share your ideas, suggestions, and feedback to help shape the future of Annita. Submit feature requests, business ideas, and community initiatives."
-        keywords={["ideas", "recommendations", "feedback", "feature requests", "suggestions", "community", "innovation", "Annita"]}
+        keywords={["ideas", "tips", "feedback", "feature requests", "suggestions", "community", "innovation", "Annita"]}
         canonical="/ideas"
       />
 
@@ -334,7 +334,7 @@ const IdeasPage = () => {
                   Your Voice Matters
                 </div>
                   <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 leading-tight">
-                  Ideas & <span className="text-orange-200">Recommendations</span>
+                  Ideas & <span className="text-orange-200">Tips</span>
                 </h1>
                   <p className="text-lg sm:text-xl text-orange-100 max-w-2xl mx-auto lg:mx-0 leading-relaxed mb-8">
                   Help shape the future of Annita! Share your ideas, suggestions, and feedback. 
