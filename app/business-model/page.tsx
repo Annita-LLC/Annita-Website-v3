@@ -49,7 +49,6 @@ import {
   XCircle,
   Info,
   HelpCircle,
-  ExternalLink,
   ChevronRight,
   ChevronDown,
   Plus,

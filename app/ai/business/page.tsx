@@ -32,28 +32,28 @@ const BusinessAIPage = () => {
   const [isDownloadModalOpen, setIsDownloadModalOpen] = useState(false)
   const businessFeatures = [
     {
-      icon: TrendingUp,
-      title: 'Predictive Analytics',
-      description: 'Forecast market trends and customer behavior with AI-powered insights',
+      icon: Shield,
+      title: 'AI-Powered Customer Verification',
+      description: 'Advanced document verification with computer vision and OCR technology. Complete verification in under 5 minutes with 99.5% accuracy',
       color: 'from-green-500 to-emerald-500'
+    },
+    {
+      icon: Target,
+      title: 'Intelligent Fraud Detection',
+      description: 'Real-time fraud monitoring with machine learning algorithms. Detect suspicious activities with 95% accuracy across all transactions',
+      color: 'from-red-500 to-pink-500'
+    },
+    {
+      icon: BarChart3,
+      title: 'Advanced Business Analytics',
+      description: 'Comprehensive business intelligence with predictive analytics, revenue forecasting, and market trend identification',
+      color: 'from-blue-500 to-cyan-500'
     },
     {
       icon: Users,
       title: 'Customer Intelligence',
-      description: 'Understand your customers better with AI-driven segmentation and analysis',
-      color: 'from-blue-500 to-cyan-500'
-    },
-    {
-      icon: Target,
-      title: 'Smart Automation',
-      description: 'Automate repetitive tasks and workflows to increase efficiency',
-      color: 'from-purple-500 to-pink-500'
-    },
-    {
-      icon: BarChart3,
-      title: 'Real-time Analytics',
-      description: 'Monitor your business performance with live dashboards and insights',
-      color: 'from-orange-500 to-red-500'
+      description: 'AI-driven customer segmentation, behavior analysis, and risk assessment for better business decisions',
+      color: 'from-purple-500 to-indigo-500'
     },
     {
       icon: MessageSquare,
@@ -62,69 +62,75 @@ const BusinessAIPage = () => {
       color: 'from-indigo-500 to-purple-500'
     },
     {
-      icon: Shield,
-      title: 'Fraud Detection',
-      description: 'Protect your business with AI-powered security and fraud prevention',
-      color: 'from-red-500 to-pink-500'
+      icon: FileText,
+      title: 'Secure Data Management',
+      description: 'End-to-end encryption, secure cloud storage, and compliance with international data protection standards',
+      color: 'from-gray-500 to-slate-500'
+    },
+    {
+      icon: Globe,
+      title: 'Multi-Language Support',
+      description: 'Available in 10+ African languages with offline functionality for areas with limited connectivity',
+      color: 'from-teal-500 to-cyan-500'
     }
   ]
 
   const dailyUseCases = [
     {
-      title: 'E-commerce Optimization',
-      description: 'Increase sales with AI-powered product recommendations and pricing optimization',
-      icon: ShoppingBag,
+      title: 'Customer Onboarding & Verification',
+      description: 'Streamline customer verification with AI-powered document processing and risk assessment',
+      icon: Shield,
       benefits: [
-        '30% increase in conversion rates',
-        '25% reduction in cart abandonment',
-        '40% improvement in customer lifetime value',
-        'Smart inventory management'
+        '99.5% accuracy in document verification',
+        '5-minute verification process (vs 2-3 days manual)',
+        'Real-time facial recognition matching',
+        'Comprehensive risk assessment scoring'
       ]
     },
     {
-      title: 'Customer Service Enhancement',
-      description: 'Provide 24/7 support with intelligent chatbots and automated responses',
-      icon: MessageSquare,
+      title: 'Fraud Detection & Prevention',
+      description: 'Protect your business with real-time fraud monitoring and risk assessment',
+      icon: Target,
       benefits: [
-        '80% faster response times',
-        '60% reduction in support costs',
-        '95% customer satisfaction rate',
-        'Multi-language support'
+        '95% accuracy in fraud detection',
+        '80% reduction in financial losses',
+        'Real-time transaction monitoring',
+        'Automated risk assessment'
       ]
     },
     {
-      title: 'Financial Management',
-      description: 'Optimize cash flow and reduce financial risks with AI insights',
-      icon: TrendingUp,
+      title: 'Business Analytics & Insights',
+      description: 'Make data-driven decisions with comprehensive business intelligence',
+      icon: BarChart3,
       benefits: [
-        '50% faster financial reporting',
-        '35% reduction in late payments',
-        '90% accuracy in cash flow predictions',
-        'Automated expense tracking'
+        'Real-time performance monitoring',
+        'Predictive revenue forecasting',
+        'Customer behavior analysis',
+        'Market trend identification'
       ]
     },
     {
-      title: 'Supply Chain Optimization',
-      description: 'Streamline logistics and inventory management with predictive analytics',
-      icon: Package,
+      title: 'Compliance & Security',
+      description: 'Ensure regulatory compliance with secure data management',
+      icon: Shield,
       benefits: [
-        '40% reduction in inventory costs',
-        '60% faster delivery times',
-        '85% improvement in demand forecasting',
-        'Real-time tracking and alerts'
+        'End-to-end data encryption',
+        'International compliance standards',
+        'Audit trails for all activities',
+        'Role-based access control'
       ]
     }
   ]
 
   const businessBenefits = [
-    'Increase revenue by up to 300% with AI insights',
-    'Reduce operational costs by 40% through automation',
-    'Improve customer satisfaction by 95%',
-    'Make data-driven decisions with real-time analytics',
-    'Scale operations efficiently with smart automation',
-    'Protect your business with AI-powered security',
-    'Optimize marketing campaigns for better ROI',
-    'Streamline supply chain and logistics operations'
+    '99.5% accuracy in customer verification (vs manual 2-3 days)',
+    '95% fraud detection accuracy reducing losses by 80%',
+    '5-minute customer onboarding process',
+    'Real-time business analytics and insights',
+    'Enterprise-level security and compliance',
+    'Multi-language support for African markets',
+    'Offline functionality for limited connectivity areas',
+    'Cross-platform integration with Annita ecosystem'
   ]
 
   return (
@@ -136,15 +142,16 @@ const BusinessAIPage = () => {
           <div className="max-w-4xl mx-auto text-center">
             <div className="inline-flex items-center px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white text-xs sm:text-sm font-medium mb-4 sm:mb-6">
               <Brain className="w-3 h-3 sm:w-4 sm:h-4 mr-1.5 sm:mr-2" />
-              Business AI Intelligence
+              Intelligent Business Analytics & Fraud Detection
             </div>
             
             <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 sm:mb-6">
-              AI That <span className="text-orange-500">Understands</span> Your Business
+              Annita AI for <span className="text-orange-500">MSMEs</span>
             </h1>
-            <p className="text-lg sm:text-xl text-gray-200 mb-6 sm:mb-8 max-w-2xl mx-auto">
-              Leverage the power of artificial intelligence to make data-driven decisions, 
-              optimize operations, and grow your business with unprecedented precision.
+            <p className="text-lg sm:text-xl text-gray-200 mb-6 sm:mb-8 max-w-3xl mx-auto">
+              Africa's first comprehensive AI platform for Micro, Small, and Medium Enterprises. 
+              Experience AI-powered customer verification (99.5% accuracy), intelligent fraud detection (95% accuracy), 
+              and advanced business analytics designed specifically for African markets.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">

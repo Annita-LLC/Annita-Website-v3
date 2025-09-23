@@ -33,57 +33,59 @@ const AILandingPage = () => {
     {
       icon: Smartphone,
       title: 'Personal Assistant',
-      description: 'Manage daily tasks and schedule'
+      description: 'AI-powered daily task management and schedule optimization'
     },
     {
       icon: Heart,
       title: 'Health & Wellness',
-      description: 'Fitness and nutrition coaching'
+      description: 'Personalized fitness coaching and nutrition guidance'
     },
     {
       icon: BookOpen,
       title: 'Learning Companion',
-      description: 'Study assistance and skill development'
+      description: 'Intelligent study assistance and skill development'
     },
     {
       icon: Camera,
       title: 'Creative Assistant',
-      description: 'Content creation and photo editing'
+      description: 'AI-enhanced content creation and photo editing'
     }
   ]
 
   const businessFeatures = [
     {
-      icon: TrendingUp,
-      title: 'Predictive Analytics',
-      description: 'Forecast trends and customer behavior'
+      icon: Shield,
+      title: 'AI-Powered Customer Verification',
+      description: 'Advanced document verification with 99.5% accuracy in under 5 minutes'
+    },
+    {
+      icon: Target,
+      title: 'Intelligent Fraud Detection',
+      description: 'Real-time fraud monitoring with 95% accuracy across all transactions'
+    },
+    {
+      icon: BarChart3,
+      title: 'Advanced Business Analytics',
+      description: 'Comprehensive insights and predictive analytics for business growth'
     },
     {
       icon: Users,
       title: 'Customer Intelligence',
-      description: 'AI-driven customer segmentation'
-    },
-    {
-      icon: Target,
-      title: 'Smart Automation',
-      description: 'Automate workflows and tasks'
-    },
-    {
-      icon: BarChart3,
-      title: 'Real-time Analytics',
-      description: 'Live business performance monitoring'
+      description: 'AI-driven customer segmentation and behavior analysis'
     }
   ]
 
   const benefits = [
-    'Advanced AI algorithms',
-    'Real-time processing',
-    'Secure and private',
-    'Mobile-optimized',
-    '24/7 availability',
-    'Continuous learning',
-    'Multi-language support',
-    'Easy integration'
+    '99.5% accuracy in customer verification',
+    '95% fraud detection accuracy',
+    'Real-time processing and monitoring',
+    'Enterprise-level security',
+    'Mobile-first design',
+    '24/7 AI availability',
+    'Multi-language support (10+ African languages)',
+    'Offline functionality',
+    'Cross-platform integration',
+    'Compliance with international standards'
   ]
 
   const aiStructuredData = {
@@ -125,49 +127,50 @@ const AILandingPage = () => {
   return (
     <>
       <SEOHead
-        title="AI Solutions - Personal & Business"
-        description="Choose between Annita's Personal AI Assistant for daily life or Business AI for enterprise solutions. Transform your life or business with cutting-edge AI technology. Advanced AI algorithms, real-time processing, and secure automation for personal and business needs."
+        title="Annita AI: Intelligent Business Analytics & Fraud Detection for MSMEs"
+        description="Annita AI is Africa's first comprehensive AI platform for MSMEs and individuals. Features AI-powered customer verification (99.5% accuracy), intelligent fraud detection (95% accuracy), advanced business analytics, and secure data management. Transform your business with cutting-edge AI technology designed for African markets."
         keywords={[
           'Annita AI',
-          'AI solutions',
-          'personal AI assistant',
-          'business AI',
-          'artificial intelligence',
-          'AI technology',
-          'predictive analytics',
-          'customer intelligence',
-          'smart automation',
-          'real-time analytics',
-          'AI algorithms',
-          'machine learning',
-          'deep learning',
-          'natural language processing',
-          'computer vision',
-          'AI automation',
-          'business intelligence',
-          'data analytics',
-          'AI-powered solutions',
-          'enterprise AI',
-          'personal AI',
-          'AI assistant',
-          'virtual assistant',
-          'chatbot',
-          'AI platform',
-          'African AI',
-          'AI innovation',
-          'digital transformation AI',
-          'AI business tools',
-          'AI productivity',
-          'AI efficiency',
-          'AI optimization',
-          'AI insights',
-          'AI decision making',
-          'AI forecasting',
-          'AI trends',
-          'AI development',
-          'AI integration',
-          'AI security',
-          'AI privacy'
+          'AI business analytics',
+          'fraud detection AI',
+          'customer verification AI',
+          'MSME AI solutions',
+          'African AI platform',
+          'business intelligence AI',
+          'AI-powered verification',
+          'intelligent fraud detection',
+          'AI document verification',
+          'business analytics AI',
+          'AI customer onboarding',
+          'real-time fraud monitoring',
+          'AI business insights',
+          'machine learning business',
+          'AI automation MSME',
+          'predictive analytics AI',
+          'AI risk assessment',
+          'business AI platform',
+          'AI financial analytics',
+          'customer intelligence AI',
+          'AI transaction monitoring',
+          'business AI tools',
+          'AI data analytics',
+          'enterprise AI solutions',
+          'AI compliance tools',
+          'AI security platform',
+          'mobile AI application',
+          'offline AI functionality',
+          'multi-language AI',
+          'African business AI',
+          'AI ecosystem integration',
+          'AI-powered decision making',
+          'business AI optimization',
+          'AI productivity tools',
+          'AI efficiency solutions',
+          'AI business transformation',
+          'AI innovation Africa',
+          'AI digital transformation',
+          'AI business growth',
+          'AI competitive advantage'
         ]}
         canonical="/ai"
         ogImage="/ai-og-image.jpg"
@@ -181,15 +184,16 @@ const AILandingPage = () => {
             <div className="text-center mb-16">
               <div className="inline-flex items-center px-4 py-2 rounded-full bg-orange-100 text-orange-700 text-sm font-medium mb-6">
                 <Brain className="w-4 h-4 mr-2" />
-                AI-Powered Solutions
+                Intelligent Business Analytics & Fraud Detection
               </div>
               
               <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 mb-6">
-                Choose Your <span className="text-orange-600">AI Experience</span>
+                Annita AI: <span className="text-orange-600">Transform Your Business</span>
               </h1>
-              <p className="text-lg text-gray-600 max-w-3xl mx-auto mb-8">
-                Whether you're looking to enhance your personal life or transform your business, 
-                Annita's AI solutions are designed to meet your specific needs.
+              <p className="text-lg text-gray-600 max-w-4xl mx-auto mb-8">
+                Africa's first comprehensive AI platform for MSMEs and individuals. 
+                Experience AI-powered customer verification (99.5% accuracy), intelligent fraud detection (95% accuracy), 
+                and advanced business analytics designed specifically for African markets.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4">
