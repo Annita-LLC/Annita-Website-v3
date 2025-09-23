@@ -25,7 +25,8 @@ import {
   Download,
   ArrowRight,
   ExternalLink,
-  Star
+  Star,
+  Award
 } from 'lucide-react'
 import Link from 'next/link'
 import { useFormSubmission, formValidations } from '@/lib/hooks/useFormSubmission'
