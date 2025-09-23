@@ -1,6 +1,5 @@
 'use client'
 
-import { Metadata } from 'next'
 import { useState } from 'react'
 import { 
   UserPlus,
@@ -24,11 +23,7 @@ import {
 } from 'lucide-react'
 import Button from '@/components/ui/Button'
 import WaitlistForm from '@/components/ui/WaitlistForm'
-
-export const metadata: Metadata = {
-  title: 'Partner Application - Annita',
-  description: 'Join Annita\'s partner network and grow your business with our comprehensive e-commerce platform.',
-}
+import SEOHead from '@/components/seo/SEOHead'
 
 const PartnerApplyPage = () => {
   const [isWaitlistOpen, setIsWaitlistOpen] = useState(false)
@@ -83,7 +78,25 @@ const PartnerApplyPage = () => {
 
 
   return (
-    <div className="min-h-screen">
+    <>
+      <SEOHead
+        title="Partner Application - Annita"
+        description="Join Annita's partner network and grow your business with our comprehensive e-commerce platform."
+        keywords={[
+          'partner application',
+          'business partnership',
+          'Annita partners',
+          'partner network',
+          'business collaboration',
+          'partner program',
+          'business growth',
+          'e-commerce platform',
+          'digital partnership',
+          'business opportunities'
+        ]}
+        canonical="/partners/apply"
+      />
+      <div className="min-h-screen">
       {/* Hero Section */}
       <section className="py-20 sm:py-24 lg:py-28 bg-gradient-to-br from-gray-50 via-orange-50 to-orange-100 overflow-hidden">
         {/* Background Elements */}
@@ -455,12 +468,12 @@ const PartnerApplyPage = () => {
             {/* Call to Action */}
             <div className="text-center p-8 bg-gradient-to-r from-orange-500 to-orange-600 rounded-2xl text-white">
               <h3 className="text-2xl sm:text-3xl font-bold mb-4">
-                Ready to Grow Together?
+              Ready to Grow Together?
               </h3>
               <p className="text-orange-100 mb-6 max-w-2xl mx-auto">
                 Join hundreds of successful partners already working with Annita. Experience our live marketplace V1.0 today, and join the waitlist for the revolutionary V3.0.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a 
                   href="https://annita.company.site/products"
                   target="_blank"
@@ -488,7 +501,8 @@ const PartnerApplyPage = () => {
         isOpen={isWaitlistOpen} 
         onClose={() => setIsWaitlistOpen(false)} 
       />
-    </div>
+      </div>
+    </>
   )
 }
 
