@@ -16,6 +16,7 @@ import {
   Settings,
   Download,
   ChevronDown,
+  ChevronRight,
   Code,
   Building2,
   Video,
