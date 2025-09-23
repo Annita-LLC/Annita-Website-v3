@@ -23,10 +23,13 @@ import {
   Camera,
   ArrowLeft,
   Download,
-  ArrowRight
+  ArrowRight,
+  ExternalLink,
+  Star
 } from 'lucide-react'
 import Link from 'next/link'
 import { useFormSubmission, formValidations } from '@/lib/hooks/useFormSubmission'
+import WaitlistForm from '@/components/ui/WaitlistForm'
 
 export default function ReportIssuesPage() {
   const [formData, setFormData] = useState({
@@ -42,6 +45,7 @@ export default function ReportIssuesPage() {
     email: '',
     attachments: [] as File[]
   })
+  const [isWaitlistOpen, setIsWaitlistOpen] = useState(false)
 
   const { submitForm, isSubmitting, isSubmitted, error, success, reset } = useFormSubmission({
     validateForm: formValidations.support,
@@ -161,22 +165,61 @@ export default function ReportIssuesPage() {
       />
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-orange-50 to-red-50 py-16 sm:py-20 lg:py-24">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto">
+      <section className="relative bg-gradient-to-br from-orange-50 via-white to-orange-50 py-20 sm:py-24 lg:py-28 overflow-hidden">
+        {/* Background Elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute -top-40 -right-40 w-80 h-80 bg-orange-200 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
+          <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-red-200 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse" style={{animationDelay: '2s'}}></div>
+        </div>
+        
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
+          <div className="max-w-5xl mx-auto">
             <div className="text-center">
-              <div className="inline-flex items-center px-4 py-2 rounded-full bg-orange-100 text-orange-700 text-sm font-medium mb-6">
-                <Bug className="w-4 h-4 mr-2" />
-                Issue Reporting
+              <div className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-orange-100 to-orange-200 text-orange-700 text-sm font-semibold mb-8 shadow-lg border border-orange-200">
+                <Bug className="w-5 h-5 mr-2" />
+                Community Support
               </div>
               
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-                Report Issues
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-900 mb-6 sm:mb-8 leading-tight">
+                Help Us <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-orange-600">Improve</span>
               </h1>
-              <p className="text-lg sm:text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-                Help us improve Annita by reporting bugs, issues, or suggesting new features. 
-                Your feedback is crucial for making our platform better for everyone.
+              <p className="text-xl sm:text-2xl text-gray-600 mb-8 sm:mb-12 max-w-4xl mx-auto leading-relaxed">
+                Your feedback drives our innovation. Report bugs, suggest features, or share your ideas 
+                to help us build the best platform for African businesses.
               </p>
+              
+              {/* Trust Indicators */}
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 max-w-4xl mx-auto">
+                <div className="flex items-center justify-center space-x-3 p-4 bg-white/60 backdrop-blur-sm rounded-xl border border-orange-100">
+                  <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
+                    <CheckCircle className="w-5 h-5 text-green-600" />
+                  </div>
+                  <div className="text-left">
+                    <div className="font-semibold text-gray-900">Quick Response</div>
+                    <div className="text-sm text-gray-600">Within 24 hours</div>
+                  </div>
+                </div>
+                
+                <div className="flex items-center justify-center space-x-3 p-4 bg-white/60 backdrop-blur-sm rounded-xl border border-orange-100">
+                  <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
+                    <Clock className="w-5 h-5 text-blue-600" />
+                  </div>
+                  <div className="text-left">
+                    <div className="font-semibold text-gray-900">Priority Handling</div>
+                    <div className="text-sm text-gray-600">Critical issues first</div>
+                  </div>
+                </div>
+                
+                <div className="flex items-center justify-center space-x-3 p-4 bg-white/60 backdrop-blur-sm rounded-xl border border-orange-100">
+                  <div className="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center">
+                    <Award className="w-5 h-5 text-purple-600" />
+                  </div>
+                  <div className="text-left">
+                    <div className="font-semibold text-gray-900">Community Impact</div>
+                    <div className="text-sm text-gray-600">Your voice matters</div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -518,32 +561,40 @@ export default function ReportIssuesPage() {
           <div className="max-w-4xl mx-auto">
             <div className="text-center p-8 bg-gradient-to-r from-orange-500 to-orange-600 rounded-2xl text-white">
               <h3 className="text-2xl sm:text-3xl font-bold mb-4">
-                Ready to Transform Your Business?
+                🚨 Something BIG is Coming - Annita 3.0
               </h3>
               <p className="text-orange-100 mb-6 max-w-2xl mx-auto">
-                Join thousands of MSMEs already using Annita to grow their revenue, reach new customers, 
-                and streamline their operations across Africa.
+                Experience our live marketplace V1.0 today, and join the waitlist for the revolutionary V3.0 - 
+                offline-ready, AI-powered, and built for everyone in Africa.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a 
-                  href="/download"
+                  href="https://annita.company.site/products"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center justify-center bg-white text-orange-600 px-8 py-3 rounded-lg font-semibold hover:bg-orange-50 transition-colors duration-200"
                 >
-                  <Download className="w-5 h-5 mr-2" />
-                  Download App
+                  <ExternalLink className="w-5 h-5 mr-2" />
+                  Try Marketplace V1.0
                 </a>
-                <a 
-                  href="/contact-sales"
+                <button 
+                  onClick={() => setIsWaitlistOpen(true)}
                   className="inline-flex items-center justify-center border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-orange-600 transition-colors duration-200"
                 >
-                  Contact Sales
-                  <ArrowRight className="w-5 h-5 ml-2" />
-                </a>
+                  <Star className="w-5 h-5 mr-2" />
+                  Join V3.0 Waitlist
+                </button>
               </div>
             </div>
           </div>
         </div>
       </section>
+
+      {/* Waitlist Form Modal */}
+      <WaitlistForm 
+        isOpen={isWaitlistOpen} 
+        onClose={() => setIsWaitlistOpen(false)} 
+      />
     </>
   )
 }

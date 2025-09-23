@@ -321,8 +321,12 @@ const Navigation = () => {
                                      </div>
                                   ) : 'dropdown' in dropdownItem && dropdownItem.dropdown ? (
                                     <div key={dropdownItem.name} className="relative">
-                                      <div className="flex items-start space-x-3 p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200 cursor-pointer"
-                                           onClick={() => setActiveDropdown(activeDropdown === dropdownItem.name ? null : dropdownItem.name)}>
+                                      <div 
+                                        className="flex items-start space-x-3 p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200 cursor-pointer"
+                                        onMouseEnter={() => handleDropdownMouseEnter(dropdownItem.name)}
+                                        onMouseLeave={handleDropdownMouseLeave}
+                                        onClick={() => setActiveDropdown(activeDropdown === dropdownItem.name ? null : dropdownItem.name)}
+                                      >
                                         <dropdownItem.icon className="w-5 h-5 text-primary-600 dark:text-primary-400 mt-0.5 flex-shrink-0" />
                                         <div className="flex-1">
                                           <div className="font-medium text-gray-900 dark:text-white">{dropdownItem.name}</div>
@@ -339,6 +343,8 @@ const Navigation = () => {
                                             exit={{ opacity: 0, height: 0 }}
                                             transition={{ duration: 0.2 }}
                                             className="ml-8 mt-2 space-y-1"
+                                            onMouseEnter={() => handleDropdownMouseEnter(dropdownItem.name)}
+                                            onMouseLeave={handleDropdownMouseLeave}
                                           >
                                             {dropdownItem.dropdown.map((nestedItem) => (
                                               <Link

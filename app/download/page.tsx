@@ -45,7 +45,8 @@ import {
   Fingerprint,
   Smartphone as PhoneIcon,
   Monitor,
-  Tablet
+  Tablet,
+  FileText
 } from 'lucide-react'
 import Link from 'next/link'
 import WaitlistForm from '@/components/ui/WaitlistForm'
@@ -120,74 +121,114 @@ function DownloadPage() {
     {
       icon: Shield,
       title: 'Bank-Grade Security',
-      description: '256-bit encryption, biometric authentication, and fraud protection',
-      category: 'Security'
+      description: '256-bit encryption, biometric authentication, and advanced fraud protection',
+      category: 'Security',
+      color: 'from-red-500 to-red-600'
     },
     {
       icon: CreditCard,
       title: 'AnnitaPay Integration',
-      description: 'Send, receive, and manage payments with competitive rates',
-      category: 'Payments'
+      description: 'Send, receive, and manage payments with competitive rates across Africa',
+      category: 'Payments',
+      color: 'from-green-500 to-green-600'
     },
     {
       icon: ShoppingCart,
       title: 'Marketplace Shopping',
-      description: 'Browse and buy from thousands of African vendors',
-      category: 'Commerce'
+      description: 'Browse and buy from thousands of verified African vendors',
+      category: 'Commerce',
+      color: 'from-blue-500 to-blue-600'
     },
     {
       icon: Truck,
       title: 'Real-time Tracking',
-      description: 'Track deliveries and logistics with live updates',
-      category: 'Logistics'
+      description: 'Track deliveries and logistics with live GPS updates',
+      category: 'Logistics',
+      color: 'from-purple-500 to-purple-600'
     },
     {
       icon: BarChart3,
       title: 'Business Analytics',
-      description: 'Comprehensive insights and performance metrics',
-      category: 'Analytics'
+      description: 'Comprehensive insights and performance metrics dashboard',
+      category: 'Analytics',
+      color: 'from-indigo-500 to-indigo-600'
     },
     {
       icon: MessageCircle,
       title: 'Communication Hub',
       description: 'Chat, video calls, and team collaboration tools',
-      category: 'Communication'
+      category: 'Communication',
+      color: 'from-cyan-500 to-cyan-600'
     },
     {
       icon: Bell,
       title: 'Smart Notifications',
       description: 'Personalized alerts and important updates',
-      category: 'Notifications'
+      category: 'Notifications',
+      color: 'from-yellow-500 to-yellow-600'
     },
     {
       icon: WifiOff,
       title: 'Offline Mode',
-      description: 'Access key features even without internet',
-      category: 'Accessibility'
+      description: 'Access key features even without internet connection',
+      category: 'Accessibility',
+      color: 'from-gray-500 to-gray-600'
     },
     {
       icon: Globe,
-      title: 'Multi-Language',
-      description: 'Available in 10+ African languages',
-      category: 'Localization'
+      title: 'Multi-Language Support',
+      description: 'Available in 10+ African languages and dialects',
+      category: 'Localization',
+      color: 'from-teal-500 to-teal-600'
     },
     {
       icon: Target,
       title: 'AI-Powered Tools',
       description: 'Smart recommendations and automated workflows',
-      category: 'AI'
+      category: 'AI',
+      color: 'from-pink-500 to-pink-600'
     },
     {
       icon: Building,
       title: 'Business Management',
       description: 'Complete suite of business tools and resources',
-      category: 'Business'
+      category: 'Business',
+      color: 'from-orange-500 to-orange-600'
     },
     {
       icon: Heart,
       title: 'Community Features',
       description: 'Connect with local businesses and customers',
-      category: 'Community'
+      category: 'Community',
+      color: 'from-rose-500 to-rose-600'
+    },
+    {
+      icon: Smartphone,
+      title: 'Mobile-First Design',
+      description: 'Optimized for smartphones with intuitive interface',
+      category: 'Mobile',
+      color: 'from-emerald-500 to-emerald-600'
+    },
+    {
+      icon: Users,
+      title: 'User Management',
+      description: 'Advanced user roles, permissions, and team collaboration',
+      category: 'Management',
+      color: 'from-violet-500 to-violet-600'
+    },
+    {
+      icon: FileText,
+      title: 'Document Management',
+      description: 'Store, organize, and share documents securely',
+      category: 'Documents',
+      color: 'from-amber-500 to-amber-600'
+    },
+    {
+      icon: Settings,
+      title: 'Customization',
+      description: 'Personalize your experience with flexible settings',
+      category: 'Customization',
+      color: 'from-slate-500 to-slate-600'
     }
   ]
 
@@ -204,7 +245,11 @@ function DownloadPage() {
     { name: 'Payments', count: appFeatures.filter(f => f.category === 'Payments').length },
     { name: 'Commerce', count: appFeatures.filter(f => f.category === 'Commerce').length },
     { name: 'Communication', count: appFeatures.filter(f => f.category === 'Communication').length },
-    { name: 'Business', count: appFeatures.filter(f => f.category === 'Business').length }
+    { name: 'Business', count: appFeatures.filter(f => f.category === 'Business').length },
+    { name: 'AI', count: appFeatures.filter(f => f.category === 'AI').length },
+    { name: 'Analytics', count: appFeatures.filter(f => f.category === 'Analytics').length },
+    { name: 'Mobile', count: appFeatures.filter(f => f.category === 'Mobile').length },
+    { name: 'Management', count: appFeatures.filter(f => f.category === 'Management').length }
   ]
 
 
@@ -383,63 +428,109 @@ function DownloadPage() {
       </section>
 
       {/* Features Section */}
-      <section className="py-16 sm:py-20 bg-white" ref={ref}>
+      <section className="py-20 sm:py-24 lg:py-28 bg-gradient-to-br from-gray-50 via-white to-orange-50" ref={ref}>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-6xl mx-auto">
+          <div className="max-w-7xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8 }}
-              className="text-center mb-12 sm:mb-16"
+              className="text-center mb-16 sm:mb-20"
             >
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4 sm:mb-6">
-                Powerful Features for <span className="text-orange-500">Every Need</span>
+              <div className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-orange-100 to-orange-200 text-orange-700 text-sm font-semibold mb-8 shadow-lg border border-orange-200">
+                <Zap className="w-5 h-5 mr-2" />
+                Comprehensive Platform
+              </div>
+              
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 mb-6 sm:mb-8 leading-tight">
+                Powerful Features for <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-orange-600">Every Need</span>
               </h2>
-              <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
+              <p className="text-lg sm:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
                 Discover what makes Annita the perfect choice for African businesses. 
-                From secure payments to AI-powered insights, we've got you covered.
+                From secure payments to AI-powered insights, we've got you covered with our comprehensive suite of services.
               </p>
             </motion.div>
 
             {/* Feature Categories */}
-            <div className="flex flex-wrap justify-center gap-2 mb-6 sm:mb-8">
+            <div className="flex flex-wrap justify-center gap-3 mb-12 sm:mb-16">
               {featureCategories.map((category, index) => (
-                <button
+                <motion.button
                   key={index}
-                  className="px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-colors duration-200 bg-gray-100 text-gray-700 hover:bg-orange-100 hover:text-orange-700"
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={isInView ? { opacity: 1, scale: 1 } : {}}
+                  transition={{ duration: 0.5, delay: 0.1 + index * 0.05 }}
+                  className="group px-4 sm:px-6 py-2.5 sm:py-3 rounded-full text-sm sm:text-base font-semibold transition-all duration-300 bg-white text-gray-700 hover:bg-gradient-to-r hover:from-orange-500 hover:to-orange-600 hover:text-white shadow-lg hover:shadow-xl transform hover:-translate-y-1 border border-gray-200 hover:border-transparent"
                 >
-                  {category.name} ({category.count})
-                </button>
+                  <span className="flex items-center gap-2">
+                    {category.name}
+                    <span className="px-2 py-0.5 bg-gray-100 group-hover:bg-white/20 rounded-full text-xs font-bold">
+                      {category.count}
+                    </span>
+                  </span>
+                </motion.button>
               ))}
             </div>
 
             {/* Features Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-12 sm:mb-16">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 sm:gap-8 mb-16 sm:mb-20">
               {appFeatures.map((feature, index) => (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 30 }}
                   animate={isInView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="bg-white rounded-xl p-4 sm:p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300"
+                  transition={{ duration: 0.6, delay: 0.2 + index * 0.05 }}
+                  className="group bg-white rounded-2xl p-6 sm:p-8 shadow-lg border border-gray-100 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 hover:scale-105"
                 >
-                  <div className="flex items-start space-x-3 sm:space-x-4">
-                    <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-orange-500 to-red-500 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <feature.icon className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+                  <div className="flex flex-col items-center text-center">
+                    <div className={`w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br ${feature.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
+                      <feature.icon className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
                     </div>
-                    <div className="flex-1 min-w-0">
-                      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2 gap-1 sm:gap-2">
-                        <h3 className="text-base sm:text-lg font-semibold text-gray-900 leading-tight">{feature.title}</h3>
-                        <span className="px-2 py-1 bg-orange-100 text-orange-700 rounded-full text-xs font-medium self-start sm:self-auto">
-                          {feature.category}
-                        </span>
-                      </div>
-                      <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">{feature.description}</p>
+                    
+                    <div className="mb-4">
+                      <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2 leading-tight">{feature.title}</h3>
+                      <p className="text-sm sm:text-base text-gray-600 leading-relaxed">{feature.description}</p>
+                    </div>
+                    
+                    <div className="mt-auto">
+                      <span className={`inline-flex items-center px-3 py-1.5 rounded-full text-xs font-semibold bg-gradient-to-r ${feature.color} text-white shadow-sm`}>
+                        {feature.category}
+                      </span>
                     </div>
                   </div>
                 </motion.div>
               ))}
             </div>
+
+            {/* Stats Section */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.8, delay: 0.5 }}
+              className="bg-gradient-to-r from-orange-500 to-orange-600 rounded-3xl p-8 sm:p-12 text-white text-center shadow-2xl"
+            >
+              <h3 className="text-2xl sm:text-3xl font-bold mb-6">Everything You Need in One Platform</h3>
+              <p className="text-orange-100 text-lg sm:text-xl mb-8 max-w-3xl mx-auto">
+                Join thousands of businesses already using Annita to streamline their operations and grow their revenue.
+              </p>
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-8">
+                <div>
+                  <div className="text-3xl sm:text-4xl font-bold mb-2">{appFeatures.length}+</div>
+                  <div className="text-orange-200 text-sm sm:text-base">Features</div>
+                </div>
+                <div>
+                  <div className="text-3xl sm:text-4xl font-bold mb-2">10+</div>
+                  <div className="text-orange-200 text-sm sm:text-base">Languages</div>
+                </div>
+                <div>
+                  <div className="text-3xl sm:text-4xl font-bold mb-2">54+</div>
+                  <div className="text-orange-200 text-sm sm:text-base">Countries</div>
+                </div>
+                <div>
+                  <div className="text-3xl sm:text-4xl font-bold mb-2">24/7</div>
+                  <div className="text-orange-200 text-sm sm:text-base">Support</div>
+                </div>
+              </div>
+            </motion.div>
 
           </div>
         </div>
@@ -455,30 +546,32 @@ function DownloadPage() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
-              className="text-center p-6 sm:p-8 lg:p-12 bg-gradient-to-r from-orange-500 to-orange-600 rounded-2xl text-white shadow-2xl"
+              className="text-center p-8 bg-gradient-to-r from-orange-500 to-orange-600 rounded-2xl text-white"
             >
-              <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 sm:mb-6">
-                Ready to Transform Your Business?
+              <h3 className="text-2xl sm:text-3xl font-bold mb-4">
+                🚨 Something BIG is Coming - Annita 3.0
               </h3>
-              <p className="text-orange-100 mb-6 sm:mb-8 max-w-2xl mx-auto text-sm sm:text-base lg:text-lg leading-relaxed">
-                Join our waitlist and be among the first to experience Annita's all-in-one platform 
-                designed specifically for African businesses.
+              <p className="text-orange-100 mb-6 max-w-2xl mx-auto">
+                Experience our live marketplace V1.0 today, and join the waitlist for the revolutionary V3.0 - 
+                offline-ready, AI-powered, and built for everyone in Africa.
               </p>
-              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a 
-                  href="/download"
-                  className="inline-flex items-center justify-center bg-white text-orange-600 px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold hover:bg-orange-50 transition-colors duration-200 shadow-lg text-sm sm:text-base"
+                  href="https://annita.company.site/products"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center bg-white text-orange-600 px-8 py-3 rounded-lg font-semibold hover:bg-orange-50 transition-colors duration-200"
                 >
-                  <Download className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
-                  Join Waitlist
+                  <ExternalLink className="w-5 h-5 mr-2" />
+                  Try Marketplace V1.0
                 </a>
-                <a 
-                  href="/contact-sales"
-                  className="inline-flex items-center justify-center border-2 border-white text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold hover:bg-white hover:text-orange-600 transition-colors duration-200 text-sm sm:text-base"
+                <button 
+                  onClick={() => setIsWaitlistOpen(true)}
+                  className="inline-flex items-center justify-center border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-orange-600 transition-colors duration-200"
                 >
-                  Contact Sales
-                  <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 ml-2" />
-                </a>
+                  <Star className="w-5 h-5 mr-2" />
+                  Join V3.0 Waitlist
+                </button>
               </div>
             </motion.div>
           </div>

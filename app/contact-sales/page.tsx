@@ -131,22 +131,61 @@ export default function ContactSalesPage() {
       />
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-orange-50 to-red-50 py-16 sm:py-20 lg:py-24">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto">
+      <section className="relative bg-gradient-to-br from-orange-50 via-white to-orange-50 py-20 sm:py-24 lg:py-28 overflow-hidden">
+        {/* Background Elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute -top-40 -right-40 w-80 h-80 bg-orange-200 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
+          <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-red-200 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse" style={{animationDelay: '2s'}}></div>
+        </div>
+        
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
+          <div className="max-w-5xl mx-auto">
             <div className="text-center">
-              <div className="inline-flex items-center px-4 py-2 rounded-full bg-orange-100 text-orange-700 text-sm font-medium mb-6">
-                <Phone className="w-4 h-4 mr-2" />
-                Sales Team
+              <div className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-orange-100 to-orange-200 text-orange-700 text-sm font-semibold mb-8 shadow-lg border border-orange-200">
+                <Phone className="w-5 h-5 mr-2" />
+                Expert Sales Team
               </div>
               
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-                Let's <span className="text-orange-500">Grow</span> Together
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-900 mb-6 sm:mb-8 leading-tight">
+                Let's <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-orange-600">Grow</span> Together
               </h1>
-              <p className="text-lg sm:text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-                Ready to transform your business? Our sales team is here to help you 
-                find the perfect solution and get you started on your growth journey.
+              <p className="text-xl sm:text-2xl text-gray-600 mb-8 sm:mb-12 max-w-4xl mx-auto leading-relaxed">
+                Ready to transform your business? Our expert sales team is here to help you 
+                find the perfect solution and accelerate your growth journey across Africa.
               </p>
+              
+              {/* Trust Indicators */}
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 max-w-4xl mx-auto">
+                <div className="flex items-center justify-center space-x-3 p-4 bg-white/60 backdrop-blur-sm rounded-xl border border-orange-100">
+                  <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
+                    <CheckCircle className="w-5 h-5 text-green-600" />
+                  </div>
+                  <div className="text-left">
+                    <div className="font-semibold text-gray-900">Free Consultation</div>
+                    <div className="text-sm text-gray-600">No obligation</div>
+                  </div>
+                </div>
+                
+                <div className="flex items-center justify-center space-x-3 p-4 bg-white/60 backdrop-blur-sm rounded-xl border border-orange-100">
+                  <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
+                    <Clock className="w-5 h-5 text-blue-600" />
+                  </div>
+                  <div className="text-left">
+                    <div className="font-semibold text-gray-900">Quick Response</div>
+                    <div className="text-sm text-gray-600">Within 2 hours</div>
+                  </div>
+                </div>
+                
+                <div className="flex items-center justify-center space-x-3 p-4 bg-white/60 backdrop-blur-sm rounded-xl border border-orange-100">
+                  <div className="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center">
+                    <Award className="w-5 h-5 text-purple-600" />
+                  </div>
+                  <div className="text-left">
+                    <div className="font-semibold text-gray-900">Custom Solutions</div>
+                    <div className="text-sm text-gray-600">Tailored for you</div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

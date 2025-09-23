@@ -31,9 +31,10 @@ import {
   Download,
   Eye,
   EyeOff,
+  ExternalLink,
+  Star,
   Calculator,
   Percent,
-  Star,
   Crown,
   Sparkles,
   TrendingDown,
@@ -56,6 +57,7 @@ import {
   Calendar
 } from 'lucide-react'
 import Link from 'next/link'
+import WaitlistForm from '@/components/ui/WaitlistForm'
 import { useFormSubmission, formValidations } from '@/lib/hooks/useFormSubmission'
 
 export default function BusinessModelPage() {
@@ -73,6 +75,7 @@ export default function BusinessModelPage() {
     revenue: '',
     message: ''
   })
+  const [isWaitlistOpen, setIsWaitlistOpen] = useState(false)
   const { submitForm, isSubmitting, isSubmitted, error, success, reset } = useFormSubmission({
     validateForm: formValidations.business,
     onSuccess: (data) => {
@@ -951,32 +954,40 @@ export default function BusinessModelPage() {
               className="text-center p-6 sm:p-8 lg:p-12 bg-gradient-to-r from-orange-500 to-orange-600 rounded-2xl text-white shadow-2xl"
             >
               <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 sm:mb-6">
-                Ready to Transform Your Business?
+                🚨 Something BIG is Coming - Annita 3.0
               </h3>
               <p className="text-orange-100 mb-6 sm:mb-8 max-w-2xl mx-auto text-sm sm:text-base lg:text-lg leading-relaxed">
-                Join thousands of MSMEs already using Annita to grow their revenue, reach new customers, 
-                and streamline their operations across Africa.
+                Experience our live marketplace V1.0 today, and join the waitlist for the revolutionary V3.0 - 
+                offline-ready, AI-powered, and built for everyone in Africa.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
                 <a 
-                  href="/download"
+                  href="https://annita.company.site/products"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center justify-center bg-white text-orange-600 px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold hover:bg-orange-50 transition-colors duration-200 shadow-lg text-sm sm:text-base"
                 >
-                  <Download className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
-                  Download App
+                  <ExternalLink className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
+                  Try Marketplace V1.0
                 </a>
-                <a 
-                  href="/contact-sales"
+                <button 
+                  onClick={() => setIsWaitlistOpen(true)}
                   className="inline-flex items-center justify-center border-2 border-white text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold hover:bg-white hover:text-orange-600 transition-colors duration-200 text-sm sm:text-base"
                 >
-                  Contact Sales
-                  <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 ml-2" />
-                </a>
+                  <Star className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
+                  Join V3.0 Waitlist
+                </button>
               </div>
             </motion.div>
           </div>
         </div>
       </section>
+
+      {/* Waitlist Form Modal */}
+      <WaitlistForm 
+        isOpen={isWaitlistOpen} 
+        onClose={() => setIsWaitlistOpen(false)} 
+      />
     </>
   )
 }
