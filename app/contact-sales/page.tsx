@@ -132,58 +132,89 @@ export default function ContactSalesPage() {
       />
 
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-orange-50 via-white to-orange-50 py-20 sm:py-24 lg:py-28 overflow-hidden">
-        {/* Background Elements */}
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute -top-40 -right-40 w-80 h-80 bg-orange-200 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
-          <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-red-200 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse" style={{animationDelay: '2s'}}></div>
+      <section className="relative py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-orange-600 via-orange-700 to-red-600 text-white overflow-hidden">
+        {/* Animated Background Elements */}
+        <div className="absolute inset-0">
+          <div className="absolute top-10 left-10 w-20 h-20 bg-white/10 rounded-full animate-pulse"></div>
+          <div className="absolute top-32 right-20 w-16 h-16 bg-white/5 rounded-full animate-bounce"></div>
+          <div className="absolute bottom-20 left-1/4 w-12 h-12 bg-white/10 rounded-full animate-pulse delay-1000"></div>
+          <div className="absolute bottom-32 right-1/3 w-8 h-8 bg-white/5 rounded-full animate-bounce delay-500"></div>
         </div>
         
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <div className="max-w-5xl mx-auto">
-            <div className="text-center">
-              <div className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-orange-100 to-orange-200 text-orange-700 text-sm font-semibold mb-8 shadow-lg border border-orange-200">
-                <Phone className="w-5 h-5 mr-2" />
-                Expert Sales Team
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              {/* Left Column - Main Content */}
+              <div className="text-center lg:text-left">
+                <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/20 backdrop-blur-sm text-white text-sm font-medium mb-6">
+                  <Phone className="w-4 h-4 mr-2" />
+                  Expert Sales Team
+                </div>
+                <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 leading-tight">
+                  Let's <span className="text-orange-200">Grow</span> Together
+                </h1>
+                <p className="text-lg sm:text-xl text-orange-100 max-w-2xl mx-auto lg:mx-0 leading-relaxed mb-8">
+                  Ready to transform your business? Our expert sales team is here to help you 
+                  find the perfect solution and accelerate your growth journey across Africa.
+                </p>
+                
+                {/* Quick Stats */}
+                <div className="grid grid-cols-3 gap-3 sm:gap-4 mb-6 sm:mb-8">
+                  <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3 sm:p-4">
+                    <div className="text-xl sm:text-2xl font-bold">Free</div>
+                    <div className="text-xs sm:text-sm text-orange-200">Consultation</div>
+                  </div>
+                  <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3 sm:p-4">
+                    <div className="text-xl sm:text-2xl font-bold">2hrs</div>
+                    <div className="text-xs sm:text-sm text-orange-200">Response</div>
+                  </div>
+                  <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3 sm:p-4">
+                    <div className="text-xl sm:text-2xl font-bold">Custom</div>
+                    <div className="text-xs sm:text-sm text-orange-200">Solutions</div>
+                  </div>
+                </div>
+
+                {/* CTA Buttons */}
+                <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start">
+                  <button 
+                    onClick={() => document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' })}
+                    className="bg-white text-orange-600 px-4 sm:px-6 py-2.5 sm:py-3 rounded-lg font-semibold hover:bg-orange-50 transition-all duration-200 flex items-center justify-center shadow-lg text-sm sm:text-base"
+                  >
+                    <MessageSquare className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
+                    Get Started
+                  </button>
+                  <button 
+                    onClick={() => window.open('tel:+231775057227', '_blank')}
+                    className="border-2 border-white text-white px-4 sm:px-6 py-2.5 sm:py-3 rounded-lg font-semibold hover:bg-white hover:text-orange-600 transition-all duration-200 flex items-center justify-center text-sm sm:text-base"
+                  >
+                    <Phone className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
+                    Call Now
+                  </button>
+                </div>
               </div>
-              
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-900 mb-6 sm:mb-8 leading-tight">
-                Let's <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-orange-600">Grow</span> Together
-              </h1>
-              <p className="text-xl sm:text-2xl text-gray-600 mb-8 sm:mb-12 max-w-4xl mx-auto leading-relaxed">
-                Ready to transform your business? Our expert sales team is here to help you 
-                find the perfect solution and accelerate your growth journey across Africa.
-              </p>
-              
-              {/* Trust Indicators */}
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 max-w-4xl mx-auto">
-                <div className="flex items-center justify-center space-x-3 p-4 bg-white/60 backdrop-blur-sm rounded-xl border border-orange-100">
-                  <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
-                    <CheckCircle className="w-5 h-5 text-green-600" />
-                  </div>
-                  <div className="text-left">
-                    <div className="font-semibold text-gray-900">Free Consultation</div>
-                    <div className="text-sm text-gray-600">No obligation</div>
-                  </div>
-                </div>
-                
-                <div className="flex items-center justify-center space-x-3 p-4 bg-white/60 backdrop-blur-sm rounded-xl border border-orange-100">
-                  <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
-                    <Clock className="w-5 h-5 text-blue-600" />
-                  </div>
-                  <div className="text-left">
-                    <div className="font-semibold text-gray-900">Quick Response</div>
-                    <div className="text-sm text-gray-600">Within 2 hours</div>
-                  </div>
-                </div>
-                
-                <div className="flex items-center justify-center space-x-3 p-4 bg-white/60 backdrop-blur-sm rounded-xl border border-orange-100">
-                  <div className="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center">
-                    <Award className="w-5 h-5 text-purple-600" />
-                  </div>
-                  <div className="text-left">
-                    <div className="font-semibold text-gray-900">Custom Solutions</div>
-                    <div className="text-sm text-gray-600">Tailored for you</div>
+
+              {/* Right Column - Interactive Elements */}
+              <div className="relative">
+                {/* Sales Excellence Visualization */}
+                <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 sm:p-6 border border-white/20">
+                  <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4 text-center">Sales Excellence</h3>
+                  <div className="space-y-3 sm:space-y-4">
+                    <div className="flex items-center justify-between p-3 bg-white/10 rounded-lg">
+                      <span className="text-orange-200">Free Consultation</span>
+                      <span className="font-semibold text-white">No obligation</span>
+                    </div>
+                    <div className="flex items-center justify-between p-3 bg-white/10 rounded-lg">
+                      <span className="text-orange-200">Quick Response</span>
+                      <span className="font-semibold text-white">Within 2 hours</span>
+                    </div>
+                    <div className="flex items-center justify-between p-3 bg-white/10 rounded-lg">
+                      <span className="text-orange-200">Custom Solutions</span>
+                      <span className="font-semibold text-white">Tailored for you</span>
+                    </div>
+                    <div className="flex items-center justify-between p-3 bg-white/10 rounded-lg">
+                      <span className="text-orange-200">Success Rate</span>
+                      <span className="font-semibold text-white">99%</span>
+                    </div>
                   </div>
                 </div>
               </div>

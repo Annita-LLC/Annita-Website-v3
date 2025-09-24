@@ -4,77 +4,106 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 import SEOHead from '@/components/seo/SEOHead'
 import { 
-  PenTool, 
-  Image, 
-  Video, 
-  FileText, 
+  Monitor, 
   Palette, 
   Zap, 
+  Globe, 
+  Smartphone, 
+  Code,
+  Clock,
+  CheckCircle,
   Star,
-  Globe,
-  Download,
   ExternalLink,
-  Shield,
-  Brain,
-  Camera,
-  Mic,
-  Monitor
+  Download,
+  Building,
+  Users,
+  Lock,
+  Activity,
+  BarChart3,
+  Settings,
+  Terminal,
+  Key,
+  Server,
+  Layout,
+  Image,
+  Type,
+  MousePointer
 } from 'lucide-react'
 import Link from 'next/link'
 import WaitlistForm from '@/components/ui/WaitlistForm'
 
-const CreatorStudioPage = () => {
+const WebsiteBuilderPage = () => {
   const [isWaitlistOpen, setIsWaitlistOpen] = useState(false)
 
   const features = [
     {
-      icon: Brain,
-      title: "AI Content Generation",
-      description: "Generate text, images, and videos with AI assistance",
-      features: ["Text generation", "Image creation", "Video editing", "Content optimization"]
+      icon: MousePointer,
+      title: "Drag & Drop Builder",
+      description: "Intuitive drag-and-drop interface for easy website creation",
+      features: ["Visual editor", "Real-time preview", "Component library", "Responsive design"]
     },
     {
-      icon: PenTool,
-      title: "Creative Tools",
-      description: "Professional design and editing tools",
-      features: ["Graphic design", "Video editing", "Audio editing", "Templates"]
+      icon: Palette,
+      title: "Custom Design",
+      description: "Professional templates and custom branding options",
+      features: ["100+ templates", "Custom colors", "Brand integration", "Logo upload"]
     },
     {
-      icon: Image,
-      title: "Image Processing",
-      description: "Advanced image editing and enhancement",
-      features: ["Photo editing", "Filters", "Resizing", "Format conversion"]
+      icon: Smartphone,
+      title: "Mobile Responsive",
+      description: "Automatically optimized for all devices and screen sizes",
+      features: ["Mobile-first", "Tablet optimized", "Desktop ready", "Touch friendly"]
     },
     {
-      icon: Video,
-      title: "Video Production",
-      description: "Complete video creation and editing suite",
-      features: ["Video editing", "Transitions", "Effects", "Export options"]
+      icon: Zap,
+      title: "AI-Powered Tools",
+      description: "Smart content generation and optimization features",
+      features: ["AI content", "SEO optimization", "Performance boost", "Auto-updates"]
+    }
+  ]
+
+  const templates = [
+    {
+      category: "Business",
+      count: "25+",
+      description: "Professional business websites",
+      features: ["About pages", "Contact forms", "Service listings", "Team sections"]
+    },
+    {
+      category: "E-commerce",
+      count: "20+",
+      description: "Online store templates",
+      features: ["Product catalogs", "Shopping cart", "Payment integration", "Inventory management"]
+    },
+    {
+      category: "Portfolio",
+      count: "15+",
+      description: "Creative portfolio sites",
+      features: ["Gallery displays", "Project showcases", "Resume sections", "Contact forms"]
     }
   ]
 
   const stats = [
-    { label: "AI Models", value: "10+", icon: Brain },
-    { label: "Templates", value: "500+", icon: PenTool },
-    { label: "Formats", value: "20+", icon: FileText },
-    { label: "Languages", value: "10+", icon: Globe }
+    { label: "Templates", value: "100+", icon: Layout },
+    { label: "Build Time", value: "30 min", icon: Clock },
+    { label: "Mobile Ready", value: "100%", icon: Smartphone },
+    { label: "SEO Score", value: "95+", icon: BarChart3 }
   ]
 
   return (
     <>
       <SEOHead
-        title="Annita Creator Studio - AI-Powered Content Creation"
-        description="Create professional content with AI-powered tools for text, images, and videos. Perfect for African creators and businesses."
+        title="Annita Website Builder - Professional Website Creation"
+        description="Build professional websites with drag-and-drop tools. 100+ templates, mobile responsive, AI-powered features, and no coding required."
         keywords={[
-          'content creation',
-          'AI tools',
-          'video editing',
-          'image editing',
-          'text generation',
-          'creative tools',
-          'content studio'
+          'website builder',
+          'drag and drop',
+          'website templates',
+          'mobile responsive',
+          'AI website builder',
+          'professional websites'
         ]}
-        canonical="/services/creator-studio"
+        canonical="/services/website-builder"
       />
 
       {/* Hero Section */}
@@ -93,34 +122,34 @@ const CreatorStudioPage = () => {
               {/* Left Column - Main Content */}
               <div className="text-center lg:text-left">
                 <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/20 backdrop-blur-sm text-white text-sm font-medium mb-6">
-                  <PenTool className="w-4 h-4 mr-2" />
-                  AI Content Creation
+                  <Monitor className="w-4 h-4 mr-2" />
+                  Website Creation
                 </div>
                 <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 leading-tight">
-                  Annita <span className="text-orange-200">Creator Studio</span>
+                  Annita <span className="text-orange-200">Website Builder</span>
                 </h1>
                 <p className="text-lg sm:text-xl text-orange-100 max-w-2xl mx-auto lg:mx-0 leading-relaxed mb-8">
-                  AI-powered content generation for text, images, and videos. 
-                  Create professional content with advanced tools designed for African creators.
+                  Build professional websites with drag-and-drop tools. 
+                  100+ templates, mobile responsive, AI-powered features, and no coding required.
                 </p>
                 
                 {/* Quick Stats */}
                 <div className="grid grid-cols-2 gap-3 sm:gap-4 mb-6 sm:mb-8">
                   <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3 sm:p-4">
-                    <div className="text-xl sm:text-2xl font-bold">AI</div>
-                    <div className="text-xs sm:text-sm text-orange-200">Powered</div>
-                  </div>
-                  <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3 sm:p-4">
-                    <div className="text-xl sm:text-2xl font-bold">500+</div>
+                    <div className="text-xl sm:text-2xl font-bold">100+</div>
                     <div className="text-xs sm:text-sm text-orange-200">Templates</div>
                   </div>
                   <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3 sm:p-4">
-                    <div className="text-xl sm:text-2xl font-bold">20+</div>
-                    <div className="text-xs sm:text-sm text-orange-200">Formats</div>
+                    <div className="text-xl sm:text-2xl font-bold">30 min</div>
+                    <div className="text-xs sm:text-sm text-orange-200">Build Time</div>
                   </div>
                   <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3 sm:p-4">
-                    <div className="text-xl sm:text-2xl font-bold">10+</div>
-                    <div className="text-xs sm:text-sm text-orange-200">Languages</div>
+                    <div className="text-xl sm:text-2xl font-bold">100%</div>
+                    <div className="text-xs sm:text-sm text-orange-200">Mobile Ready</div>
+                  </div>
+                  <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3 sm:p-4">
+                    <div className="text-xl sm:text-2xl font-bold">95+</div>
+                    <div className="text-xs sm:text-sm text-orange-200">SEO Score</div>
                   </div>
                 </div>
 
@@ -130,14 +159,14 @@ const CreatorStudioPage = () => {
                     onClick={() => setIsWaitlistOpen(true)}
                     className="bg-white text-orange-600 px-4 sm:px-6 py-2.5 sm:py-3 rounded-lg font-semibold hover:bg-orange-50 transition-all duration-200 flex items-center justify-center shadow-lg text-sm sm:text-base"
                   >
-                    <PenTool className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
-                    Start Creating
+                    <Monitor className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
+                    Start Building
                   </button>
                   <Link
                     href="/contact"
                     className="border-2 border-white text-white px-4 sm:px-6 py-2.5 sm:py-3 rounded-lg font-semibold hover:bg-white hover:text-orange-600 transition-all duration-200 flex items-center justify-center text-sm sm:text-base"
                   >
-                    <Brain className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
+                    <Users className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
                     Learn More
                   </Link>
                 </div>
@@ -145,21 +174,21 @@ const CreatorStudioPage = () => {
 
               {/* Right Column - Interactive Elements */}
               <div className="relative">
-                {/* Creator Excellence Visualization */}
+                {/* Website Builder Excellence Visualization */}
                 <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 sm:p-6 border border-white/20">
-                  <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4 text-center">Creator Excellence</h3>
+                  <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4 text-center">Website Builder Excellence</h3>
                   <div className="space-y-3 sm:space-y-4">
                     <div className="flex items-center justify-between p-3 bg-white/10 rounded-lg">
-                      <span className="text-orange-200">AI Content Generation</span>
-                      <span className="font-semibold text-white">Advanced</span>
-                    </div>
-                    <div className="flex items-center justify-between p-3 bg-white/10 rounded-lg">
-                      <span className="text-orange-200">500+ Templates</span>
+                      <span className="text-orange-200">100+ Templates</span>
                       <span className="font-semibold text-white">Professional</span>
                     </div>
                     <div className="flex items-center justify-between p-3 bg-white/10 rounded-lg">
-                      <span className="text-orange-200">20+ Formats</span>
-                      <span className="font-semibold text-white">Versatile</span>
+                      <span className="text-orange-200">Drag & Drop</span>
+                      <span className="font-semibold text-white">Easy</span>
+                    </div>
+                    <div className="flex items-center justify-between p-3 bg-white/10 rounded-lg">
+                      <span className="text-orange-200">Mobile Ready</span>
+                      <span className="font-semibold text-white">100%</span>
                     </div>
                     <div className="flex items-center justify-between p-3 bg-white/10 rounded-lg">
                       <span className="text-orange-200">Success Rate</span>
@@ -179,10 +208,10 @@ const CreatorStudioPage = () => {
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-                Advanced Content Creation Features
+                Advanced Website Builder Features
               </h2>
               <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                Everything you need to create professional content with AI assistance and advanced tools.
+                Everything you need to create professional websites without coding.
               </p>
             </div>
 
@@ -225,16 +254,59 @@ const CreatorStudioPage = () => {
         </div>
       </section>
 
-      {/* Stats Section */}
+      {/* Templates Section */}
       <section className="py-16 sm:py-20 bg-gradient-to-br from-gray-50 to-orange-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-                Creator Studio Performance
+                Professional Templates
               </h2>
               <p className="text-lg text-gray-600">
-                Powerful tools and AI assistance for content creators.
+                Choose from 100+ professionally designed templates.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {templates.map((template, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  className="bg-white rounded-2xl p-6 shadow-lg"
+                >
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2 flex items-center">
+                    <Layout className="w-5 h-5 mr-2 text-orange-600" />
+                    {template.category}
+                  </h3>
+                  <div className="text-2xl font-bold text-orange-600 mb-2">{template.count}</div>
+                  <p className="text-gray-600 mb-4">{template.description}</p>
+                  <ul className="space-y-2">
+                    {template.features.map((feature, featureIndex) => (
+                      <li key={featureIndex} className="flex items-center text-sm text-gray-600">
+                        <CheckCircle className="w-4 h-4 mr-2 text-green-500 flex-shrink-0" />
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Stats Section */}
+      <section className="py-16 sm:py-20 bg-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+                Website Builder Performance
+              </h2>
+              <p className="text-lg text-gray-600">
+                Fast, reliable, and professional website creation.
               </p>
             </div>
 
@@ -245,7 +317,7 @@ const CreatorStudioPage = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="bg-white rounded-2xl p-6 text-center shadow-lg"
+                  className="bg-gray-50 rounded-2xl p-6 text-center shadow-lg"
                 >
                   <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mx-auto mb-4">
                     <stat.icon className="w-6 h-6 text-orange-600" />
@@ -268,24 +340,24 @@ const CreatorStudioPage = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
-              Ready to Create Amazing Content?
+              Ready to Build Your Website?
             </h2>
             <p className="text-xl text-white/90 mb-8">
-              Start creating professional content with AI-powered tools and advanced features.
+              Create professional websites in minutes with our drag-and-drop builder.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button 
                 onClick={() => setIsWaitlistOpen(true)}
                 className="bg-white text-orange-600 px-8 py-4 rounded-lg font-semibold hover:bg-orange-50 transition-all duration-200 flex items-center justify-center shadow-lg"
               >
-                <PenTool className="w-5 h-5 mr-2" />
-                Start Creating
+                <Monitor className="w-5 h-5 mr-2" />
+                Start Building
               </button>
               <Link
                 href="/contact"
                 className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-orange-600 transition-all duration-200 flex items-center justify-center"
               >
-                <Brain className="w-5 h-5 mr-2" />
+                <Users className="w-5 h-5 mr-2" />
                 Learn More
               </Link>
             </div>
@@ -302,4 +374,4 @@ const CreatorStudioPage = () => {
   )
 }
 
-export default CreatorStudioPage
+export default WebsiteBuilderPage

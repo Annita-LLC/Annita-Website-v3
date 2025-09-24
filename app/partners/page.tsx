@@ -111,68 +111,90 @@ const PartnersPage = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white">
       {/* Hero Section */}
-      <section className="py-20 sm:py-24 lg:py-28 bg-gradient-to-br from-gray-50 via-orange-50 to-orange-100 overflow-hidden">
-        {/* Background Elements */}
+      <section className="relative py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-orange-600 via-orange-700 to-red-600 text-white overflow-hidden">
+        {/* Animated Background Elements */}
         <div className="absolute inset-0">
-          <div className="absolute top-20 left-10 w-20 h-20 bg-orange-200/30 rounded-full animate-pulse"></div>
-          <div className="absolute top-40 right-20 w-16 h-16 bg-orange-300/20 rounded-full animate-bounce"></div>
-          <div className="absolute bottom-20 left-1/4 w-12 h-12 bg-orange-400/25 rounded-full animate-pulse delay-1000"></div>
-          <div className="absolute bottom-40 right-1/3 w-8 h-8 bg-orange-500/20 rounded-full animate-bounce delay-500"></div>
+          <div className="absolute top-10 left-10 w-20 h-20 bg-white/10 rounded-full animate-pulse"></div>
+          <div className="absolute top-32 right-20 w-16 h-16 bg-white/5 rounded-full animate-bounce"></div>
+          <div className="absolute bottom-20 left-1/4 w-12 h-12 bg-white/10 rounded-full animate-pulse delay-1000"></div>
+          <div className="absolute bottom-32 right-1/3 w-8 h-8 bg-white/5 rounded-full animate-bounce delay-500"></div>
         </div>
         
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-6xl mx-auto">
-            <div className="text-center">
-              {/* Badge */}
-              <div className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-orange-100 to-orange-200 text-orange-700 text-sm font-semibold mb-8 shadow-lg border border-orange-200">
-                <Sparkles className="w-5 h-5 mr-2" />
-                Join Africa's Leading Digital Ecosystem
-              </div>
-              
-              {/* Main Heading */}
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-900 mb-8 leading-tight">
-                Partner with <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-orange-700">Annita</span>
-              </h1>
-              
-              {/* Description */}
-              <p className="text-xl sm:text-2xl text-gray-600 max-w-4xl mx-auto mb-12 leading-relaxed">
-                Transform how businesses operate across Africa. Join our ecosystem of innovators, 
-                entrepreneurs, and visionaries building the future of digital commerce.
-              </p>
-              
-              {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-                <a
-                  href="/partners/apply"
-                  className="group bg-gradient-to-r from-orange-600 to-orange-700 text-white px-10 py-5 rounded-2xl font-bold text-lg hover:from-orange-700 hover:to-orange-800 transition-all duration-300 flex items-center justify-center shadow-2xl hover:shadow-orange-500/25 transform hover:-translate-y-2 hover:scale-105"
-                >
-                  <UserPlus className="w-6 h-6 mr-3 group-hover:scale-110 transition-transform duration-300" />
-                  Become a Partner
-                </a>
-                <a
-                  href="https://annita.company.site/products"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group border-2 border-orange-600 text-orange-600 px-10 py-5 rounded-2xl font-bold text-lg hover:bg-orange-600 hover:text-white transition-all duration-300 flex items-center justify-center shadow-lg hover:shadow-xl transform hover:-translate-y-2 hover:scale-105"
-                >
-                  <ExternalLink className="w-6 h-6 mr-3 group-hover:scale-110 transition-transform duration-300" />
-                  Try V1.0 Now
-                </a>
-              </div>
-              
-              {/* Trust Indicators */}
-              <div className="mt-16 flex flex-col sm:flex-row items-center justify-center gap-8 text-sm text-gray-500">
-                <div className="flex items-center gap-2">
-                  <CheckCircle className="w-5 h-5 text-green-500" />
-                  <span>Trusted by 1000+ Partners</span>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              {/* Left Column - Main Content */}
+              <div className="text-center lg:text-left">
+                <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/20 backdrop-blur-sm text-white text-sm font-medium mb-6">
+                  <Sparkles className="w-4 h-4 mr-2" />
+                  Join Africa's Leading Digital Ecosystem
                 </div>
-                <div className="flex items-center gap-2">
-                  <CheckCircle className="w-5 h-5 text-green-500" />
-                  <span>24/7 Partner Support</span>
+                <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 leading-tight">
+                  Partner with <span className="text-orange-200">Annita</span>
+                </h1>
+                <p className="text-lg sm:text-xl text-orange-100 max-w-2xl mx-auto lg:mx-0 leading-relaxed mb-8">
+                  Transform how businesses operate across Africa. Join our ecosystem of innovators, 
+                  entrepreneurs, and visionaries building the future of digital commerce.
+                </p>
+                
+                {/* Quick Stats */}
+                <div className="grid grid-cols-3 gap-3 sm:gap-4 mb-6 sm:mb-8">
+                  <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3 sm:p-4">
+                    <div className="text-xl sm:text-2xl font-bold">1000+</div>
+                    <div className="text-xs sm:text-sm text-orange-200">Partners</div>
+                  </div>
+                  <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3 sm:p-4">
+                    <div className="text-xl sm:text-2xl font-bold">24/7</div>
+                    <div className="text-xs sm:text-sm text-orange-200">Support</div>
+                  </div>
+                  <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3 sm:p-4">
+                    <div className="text-xl sm:text-2xl font-bold">Revenue</div>
+                    <div className="text-xs sm:text-sm text-orange-200">Sharing</div>
+                  </div>
                 </div>
-                <div className="flex items-center gap-2">
-                  <CheckCircle className="w-5 h-5 text-green-500" />
-                  <span>Revenue Sharing Model</span>
+
+                {/* CTA Buttons */}
+                <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start">
+                  <button 
+                    onClick={() => window.location.href = '/partners/apply'}
+                    className="bg-white text-orange-600 px-4 sm:px-6 py-2.5 sm:py-3 rounded-lg font-semibold hover:bg-orange-50 transition-all duration-200 flex items-center justify-center shadow-lg text-sm sm:text-base"
+                  >
+                    <UserPlus className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
+                    Become a Partner
+                  </button>
+                  <button 
+                    onClick={() => window.open('https://annita.company.site/products', '_blank')}
+                    className="border-2 border-white text-white px-4 sm:px-6 py-2.5 sm:py-3 rounded-lg font-semibold hover:bg-white hover:text-orange-600 transition-all duration-200 flex items-center justify-center text-sm sm:text-base"
+                  >
+                    <ExternalLink className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
+                    Try V1.0 Now
+                  </button>
+                </div>
+              </div>
+
+              {/* Right Column - Interactive Elements */}
+              <div className="relative">
+                {/* Digital Ecosystem Visualization */}
+                <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 sm:p-6 border border-white/20">
+                  <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4 text-center">Digital Ecosystem</h3>
+                  <div className="space-y-3 sm:space-y-4">
+                    <div className="flex items-center justify-between p-3 bg-white/10 rounded-lg">
+                      <span className="text-orange-200">Trusted Partners</span>
+                      <span className="font-semibold text-white">1000+</span>
+                    </div>
+                    <div className="flex items-center justify-between p-3 bg-white/10 rounded-lg">
+                      <span className="text-orange-200">24/7 Support</span>
+                      <span className="font-semibold text-white">Always available</span>
+                    </div>
+                    <div className="flex items-center justify-between p-3 bg-white/10 rounded-lg">
+                      <span className="text-orange-200">Revenue Sharing</span>
+                      <span className="font-semibold text-white">Fair model</span>
+                    </div>
+                    <div className="flex items-center justify-between p-3 bg-white/10 rounded-lg">
+                      <span className="text-orange-200">Ecosystem Growth</span>
+                      <span className="font-semibold text-white">98%</span>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

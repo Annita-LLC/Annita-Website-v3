@@ -202,12 +202,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Content pages
   const contentPages = [
     {
-      url: `${baseUrl}/gallery`,
-      lastModified: currentDate,
-      changeFrequency: 'weekly' as const,
-      priority: 0.7,
-    },
-    {
       url: `${baseUrl}/awards`,
       lastModified: currentDate,
       changeFrequency: 'monthly' as const,

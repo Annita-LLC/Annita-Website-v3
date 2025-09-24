@@ -493,8 +493,8 @@ function DownloadPage() {
                     
                     <div className="mt-auto">
                       <span className={`inline-flex items-center px-3 py-1.5 rounded-full text-xs font-semibold bg-gradient-to-r ${feature.color} text-white shadow-sm`}>
-                        {feature.category}
-                      </span>
+                          {feature.category}
+                        </span>
                     </div>
                   </div>
                 </motion.div>

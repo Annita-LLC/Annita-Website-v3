@@ -406,51 +406,93 @@ const InvestorsPage = () => {
       />
       <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 dark:from-slate-900 dark:to-slate-800">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-r from-orange-500 via-red-500 to-purple-600 text-white">
-        <div className="absolute inset-0 bg-black/20"></div>
-        <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24">
-          <div className="max-w-4xl mx-auto text-center">
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6"
-            >
-              Investor Relations
-            </motion.h1>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-xl sm:text-2xl text-orange-100 mb-8 max-w-3xl mx-auto"
-            >
-              Join us in revolutionizing Africa's digital economy through our comprehensive 
-              e-commerce, fintech, and AI platform
-            </motion.p>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              className="flex flex-col sm:flex-row gap-4 justify-center"
-            >
-              <Button
-                variant="gradient"
-                size="lg"
-                onClick={() => handleDownload('/documents/annita-pitch-deck.pdf', 'Pitch Deck')}
-                className="flex items-center space-x-2"
-              >
-                <Download className="w-5 h-5" />
-                <span>Download Pitch Deck</span>
-              </Button>
-              <Button
-                variant="outline"
-                size="lg"
-                className="flex items-center space-x-2 border-white text-white hover:bg-white hover:text-orange-600"
-              >
-                <Calendar className="w-5 h-5" />
-                <span>Schedule a Call</span>
-              </Button>
-            </motion.div>
+      <section className="relative py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-orange-600 via-orange-700 to-red-600 text-white overflow-hidden">
+        {/* Animated Background Elements */}
+        <div className="absolute inset-0">
+          <div className="absolute top-10 left-10 w-20 h-20 bg-white/10 rounded-full animate-pulse"></div>
+          <div className="absolute top-32 right-20 w-16 h-16 bg-white/5 rounded-full animate-bounce"></div>
+          <div className="absolute bottom-20 left-1/4 w-12 h-12 bg-white/10 rounded-full animate-pulse delay-1000"></div>
+          <div className="absolute bottom-32 right-1/3 w-8 h-8 bg-white/5 rounded-full animate-bounce delay-500"></div>
+        </div>
+        
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              {/* Left Column - Main Content */}
+              <div className="text-center lg:text-left">
+                <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/20 backdrop-blur-sm text-white text-sm font-medium mb-6">
+                  <TrendingUp className="w-4 h-4 mr-2" />
+                  Investment Opportunities
+                </div>
+                <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 leading-tight">
+                  Investor <span className="text-orange-200">Relations</span>
+                </h1>
+                <p className="text-lg sm:text-xl text-orange-100 max-w-2xl mx-auto lg:mx-0 leading-relaxed mb-8">
+                  Join us in revolutionizing Africa's digital economy through our comprehensive 
+                  e-commerce, fintech, and AI platform
+                </p>
+                
+                {/* Quick Stats */}
+                <div className="grid grid-cols-3 gap-3 sm:gap-4 mb-6 sm:mb-8">
+                  <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3 sm:p-4">
+                    <div className="text-xl sm:text-2xl font-bold">$400K</div>
+                    <div className="text-xs sm:text-sm text-orange-200">Valuation</div>
+                  </div>
+                  <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3 sm:p-4">
+                    <div className="text-xl sm:text-2xl font-bold">25%</div>
+                    <div className="text-xs sm:text-sm text-orange-200">Equity</div>
+                  </div>
+                  <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3 sm:p-4">
+                    <div className="text-xl sm:text-2xl font-bold">Q1</div>
+                    <div className="text-xs sm:text-sm text-orange-200">2025</div>
+                  </div>
+                </div>
+
+                {/* CTA Buttons */}
+                <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start">
+                  <button 
+                    onClick={() => handleDownload('/documents/annita-pitch-deck.pdf', 'Pitch Deck')}
+                    className="bg-white text-orange-600 px-4 sm:px-6 py-2.5 sm:py-3 rounded-lg font-semibold hover:bg-orange-50 transition-all duration-200 flex items-center justify-center shadow-lg text-sm sm:text-base"
+                  >
+                    <Download className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
+                    Download Pitch Deck
+                  </button>
+                  <button 
+                    onClick={() => setShowContactForm(true)}
+                    className="border-2 border-white text-white px-4 sm:px-6 py-2.5 sm:py-3 rounded-lg font-semibold hover:bg-white hover:text-orange-600 transition-all duration-200 flex items-center justify-center text-sm sm:text-base"
+                  >
+                    <Calendar className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
+                    Schedule a Call
+                  </button>
+                </div>
+              </div>
+
+              {/* Right Column - Interactive Elements */}
+              <div className="relative">
+                {/* Investment Excellence Visualization */}
+                <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 sm:p-6 border border-white/20">
+                  <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4 text-center">Investment Excellence</h3>
+                  <div className="space-y-3 sm:space-y-4">
+                    <div className="flex items-center justify-between p-3 bg-white/10 rounded-lg">
+                      <span className="text-orange-200">Total Valuation</span>
+                      <span className="font-semibold text-white">$400,000</span>
+                    </div>
+                    <div className="flex items-center justify-between p-3 bg-white/10 rounded-lg">
+                      <span className="text-orange-200">Equity Available</span>
+                      <span className="font-semibold text-white">25%</span>
+                    </div>
+                    <div className="flex items-center justify-between p-3 bg-white/10 rounded-lg">
+                      <span className="text-orange-200">Investment Round</span>
+                      <span className="font-semibold text-white">Q1 2025</span>
+                    </div>
+                    <div className="flex items-center justify-between p-3 bg-white/10 rounded-lg">
+                      <span className="text-orange-200">Success Rate</span>
+                      <span className="font-semibold text-white">95%</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>

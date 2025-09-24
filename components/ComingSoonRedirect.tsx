@@ -11,9 +11,9 @@ const ComingSoonRedirect = ({ message = "This page is coming soon!" }: ComingSoo
   const router = useRouter()
 
   useEffect(() => {
-    // Redirect to coming soon page after a short delay
+    // Redirect to home page after a short delay
     const timer = setTimeout(() => {
-      router.push('/coming-soon')
+      router.push('/')
     }, 2000)
 
     return () => clearTimeout(timer)
@@ -29,7 +29,7 @@ const ComingSoonRedirect = ({ message = "This page is coming soon!" }: ComingSoo
         </div>
         <h1 className="text-2xl font-bold text-gray-900 mb-2">Coming Soon!</h1>
         <p className="text-gray-600 mb-4">{message}</p>
-        <p className="text-sm text-gray-500">Redirecting you to our coming soon page...</p>
+        <p className="text-sm text-gray-500">Redirecting you to our home page...</p>
         <div className="mt-4">
           <div className="w-8 h-8 border-2 border-orange-600 border-t-transparent rounded-full animate-spin mx-auto"></div>
         </div>

@@ -142,8 +142,8 @@ const BusinessAIPage = () => {
           <div className="absolute top-0 left-1/4 w-72 h-72 bg-orange-200 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob"></div>
           <div className="absolute top-0 right-1/4 w-72 h-72 bg-blue-200 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000"></div>
           <div className="absolute -bottom-8 left-1/3 w-72 h-72 bg-green-200 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-4000"></div>
-        </div>
-
+            </div>
+            
         <div className="container mx-auto px-3 sm:px-4 lg:px-6 xl:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -153,7 +153,7 @@ const BusinessAIPage = () => {
               </div>
               <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 mb-6">
                 Annita AI for <span className="text-orange-600">MSMEs</span>
-              </h1>
+            </h1>
               <p className="text-lg sm:text-xl text-gray-600 mb-8 leading-relaxed">
                 Africa's first comprehensive AI platform for Micro, Small, and Medium Enterprises. 
                 Experience AI-powered customer verification (99.5% accuracy), intelligent fraud detection (95% accuracy), 
@@ -161,18 +161,18 @@ const BusinessAIPage = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <button 
-                  onClick={() => window.location.href = '/demo'}
+                onClick={() => window.location.href = '/demo'}
                   className="bg-orange-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-orange-700 transition-colors duration-200 flex items-center justify-center"
-                >
+              >
                   <Play className="w-5 h-5 mr-2" />
-                  Try Business AI
+                Try Business AI
                 </button>
                 <button 
-                  onClick={() => setIsDownloadModalOpen(true)}
+                onClick={() => setIsDownloadModalOpen(true)}
                   className="border-2 border-orange-600 text-orange-600 px-8 py-4 rounded-lg font-semibold hover:bg-orange-50 transition-colors duration-200 flex items-center justify-center"
-                >
+              >
                   <Download className="w-5 h-5 mr-2" />
-                  Download App
+                Download App
                 </button>
               </div>
             </div>

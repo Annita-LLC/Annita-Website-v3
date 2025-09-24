@@ -63,7 +63,6 @@ const Footer = () => {
         { name: 'Pricing', href: '/pricing' },
         { name: 'Business Model', href: '/business-model' },
         { name: 'Awards & Recognition', href: '/awards' },
-        { name: 'Gallery', href: '/gallery' },
         { name: 'Careers', href: '/careers' },
         { name: 'Apply Now', href: '/careers/apply' }
       ]

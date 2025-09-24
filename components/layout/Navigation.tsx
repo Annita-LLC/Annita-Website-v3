@@ -102,7 +102,7 @@ const Navigation = () => {
   const navItems = [
     { name: 'Home', href: '/' },
     { 
-      name: 'Personal', 
+      name: 'Individual', 
       href: '#',
       dropdown: [
         { name: 'Live Marketplace V1.0', href: 'https://annita.company.site/products', icon: ShoppingCart, description: 'Current working marketplace with 3,000+ vendors', isExternal: true },
@@ -114,29 +114,29 @@ const Navigation = () => {
         { name: 'Annita Creator Studio', href: '/services/creator-studio', icon: PenTool, description: 'AI-powered content generation for text, images, and videos' },
         { name: 'Annita Voice & Video', href: '/services/voice-video', icon: Phone, description: 'HD VoIP with conference calling and screen sharing' },
         // Individual Solutions
-        { name: 'Personal Digital Wallet', href: '/services/personal-wallet', icon: Wallet, description: 'Personal digital wallet for individuals' },
-        { name: 'Savings & Investment Tools', href: '/services/savings-investment', icon: TrendingUpIcon, description: 'Personal savings and investment tools' },
-        { name: 'Bill Payment Services', href: '/services/bill-payment', icon: CreditCard, description: 'Pay bills and utilities easily' },
-        { name: 'Remittance Services', href: '/services/remittance', icon: Send, description: 'Send money to family and friends' },
-        { name: 'Micro-loans', href: '/services/micro-loans', icon: DollarSign, description: 'Small loans for personal needs' },
-        { name: 'Insurance Products', href: '/services/insurance', icon: Shield, description: 'Personal insurance products' },
-        { name: 'Unified Messaging', href: '/services/unified-messaging', icon: MessageSquare, description: 'Unified messaging platform' },
-        { name: 'Social Networking', href: '/services/social-networking', icon: Users, description: 'Connect with friends and family' },
-        { name: 'News & Information', href: '/services/news', icon: FileTextIcon, description: 'Latest news and information' },
-        { name: 'Language Translation', href: '/services/language-translation', icon: Languages, description: 'Translate between languages' },
-        { name: 'Online Learning Platform', href: '/services/online-learning', icon: GraduationCap, description: 'Learn new skills online' },
-        { name: 'Transportation Booking', href: '/services/transportation', icon: Truck, description: 'Book transportation services' },
-        { name: 'Food Delivery', href: '/services/food-delivery', icon: Package, description: 'Order food delivery' },
-        { name: 'Healthcare Services', href: '/services/healthcare', icon: Heart, description: 'Access healthcare services' },
-        { name: 'Entertainment', href: '/services/entertainment', icon: Play, description: 'Entertainment and media' },
-        { name: 'Financial Literacy Programs', href: '/services/financial-literacy', icon: BookOpen, description: 'Learn about financial management' },
-        { name: 'Digital Skills Training', href: '/services/digital-skills', icon: Monitor, description: 'Improve your digital skills' },
-        { name: 'Entrepreneurship Courses', href: '/services/entrepreneurship', icon: Rocket, description: 'Learn entrepreneurship skills' },
-        { name: 'Shopping Marketplace', href: '/services/shopping-marketplace', icon: Store, description: 'Consumer-focused shopping marketplace' },
+        { name: 'Annita Personal Wallet', href: '/services/personal-wallet', icon: Wallet, description: 'Personal digital wallet for individuals' },
+        { name: 'Annita Savings & Investment', href: '/services/savings-investment', icon: TrendingUpIcon, description: 'Personal savings and investment tools' },
+        { name: 'Annita Bill Payment', href: '/services/bill-payment', icon: CreditCard, description: 'Pay bills and utilities easily' },
+        { name: 'Annita Remittance', href: '/services/remittance', icon: Send, description: 'Send money to family and friends' },
+        { name: 'Annita Micro-loans', href: '/services/micro-loans', icon: DollarSign, description: 'Small loans for personal needs' },
+        { name: 'Annita Insurance', href: '/services/insurance', icon: Shield, description: 'Personal insurance products' },
+        { name: 'Annita Unified Messaging', href: '/services/unified-messaging', icon: MessageSquare, description: 'Unified messaging platform' },
+        { name: 'Annita Social Network', href: '/services/social-networking', icon: Users, description: 'Connect with friends and family' },
+        { name: 'Annita News', href: '/services/news', icon: FileTextIcon, description: 'Latest news and information' },
+        { name: 'Annita Translation', href: '/services/language-translation', icon: Languages, description: 'Translate between languages' },
+        { name: 'Annita Learning', href: '/services/online-learning', icon: GraduationCap, description: 'Learn new skills online' },
+        { name: 'Annita Transportation', href: '/services/transportation', icon: Truck, description: 'Book transportation services' },
+        { name: 'Annita Food Delivery', href: '/services/food-delivery', icon: Package, description: 'Order food delivery' },
+        { name: 'Annita Healthcare', href: '/services/healthcare', icon: Heart, description: 'Access healthcare services' },
+        { name: 'Annita Entertainment', href: '/services/entertainment', icon: Play, description: 'Entertainment and media' },
+        { name: 'Annita Financial Literacy', href: '/services/financial-literacy', icon: BookOpen, description: 'Learn about financial management' },
+        { name: 'Annita Digital Skills', href: '/services/digital-skills', icon: Monitor, description: 'Improve your digital skills' },
+        { name: 'Annita Entrepreneurship', href: '/services/entrepreneurship', icon: Rocket, description: 'Learn entrepreneurship skills' },
+        { name: 'Annita Shopping', href: '/services/shopping-marketplace', icon: Store, description: 'Consumer-focused shopping marketplace' },
       ]
     },
     { 
-      name: 'Business', 
+      name: 'MSMEs', 
       href: '#',
       dropdown: [
         { name: 'Live Marketplace V1.0', href: 'https://annita.company.site/products', icon: ShoppingCart, description: 'Current working marketplace with 3,000+ vendors', isExternal: true },
@@ -147,27 +147,31 @@ const Navigation = () => {
         { name: 'Annita Ads', href: '/services/ads', icon: Target, description: 'Advertising platform' },
         { name: 'Annita ERP System', href: '/services/erp', icon: Database, description: 'Enterprise resource planning' },
         { name: 'Annita Email Service', href: '/services/email', icon: Mail, description: 'Professional email hosting with custom domains' },
+        { name: 'Annita API', href: '/services/api', icon: Code, description: 'Developer API for integration and automation' },
+        { name: 'Annita White Label', href: '/services/white-label', icon: Building2, description: 'White label solutions for enterprise clients' },
+        { name: 'Annita Website Builder', href: '/services/website-builder', icon: Monitor, description: 'Build professional websites with drag-and-drop tools' },
+        { name: 'Annita App Builder', href: '/services/app-builder', icon: Smartphone, description: 'Create mobile apps without coding' },
         // MSME Solutions
-        { name: 'Multi-Currency Digital Wallets', href: '/services/multi-currency-wallet', icon: Wallet, description: 'Handle 54+ African currencies seamlessly' },
-        { name: 'Cross-Border Payment Processing', href: '/services/cross-border-payments', icon: Send, description: 'Process payments across borders' },
-        { name: 'Escrow Payment Protection', href: '/services/escrow-protection', icon: Shield, description: 'Secure escrow payment protection' },
-        { name: 'Mobile POS Solutions', href: '/services/mobile-pos', icon: Smartphone, description: 'Mobile point of sale solutions' },
-        { name: 'Trade Finance Integration', href: '/services/trade-finance', icon: TrendingUpIcon, description: 'Trade finance integration services' },
-        { name: 'Invoice Management', href: '/services/invoice-management', icon: FileTextIcon, description: 'Manage invoices efficiently' },
-        { name: 'Inventory Management Systems', href: '/services/inventory-management', icon: Package, description: 'Track and manage inventory' },
-        { name: 'Customer Relationship Management', href: '/services/crm', icon: Users, description: 'Manage customer relationships' },
-        { name: 'Supply Chain Optimization', href: '/services/supply-chain', icon: Truck, description: 'Optimize supply chain operations' },
-        { name: 'Order Management', href: '/services/order-management', icon: ShoppingCart, description: 'Manage orders efficiently' },
-        { name: 'Analytics Dashboard', href: '/services/analytics', icon: BarChart3Icon, description: 'Business analytics and insights' },
-        { name: 'Document Management', href: '/services/document-management', icon: FolderOpen, description: 'Manage business documents' },
-        { name: 'Digital Marketing Tools', href: '/services/digital-marketing', icon: Megaphone, description: 'Digital marketing solutions' },
-        { name: 'E-commerce Platform', href: '/services/ecommerce', icon: Store, description: 'Complete e-commerce platform' },
-        { name: 'Lead Generation', href: '/services/lead-generation', icon: Target, description: 'Generate business leads' },
-        { name: 'KYC Verification', href: '/services/kyc-verification', icon: UserCheck, description: 'Know Your Customer verification' },
-        { name: 'Brand Building Tools', href: '/services/brand-building', icon: Eye, description: 'Build and manage your brand' },
-        { name: 'Tax Management', href: '/services/tax-management', icon: FileCheck, description: 'Manage business taxes' },
-        { name: 'Regulatory Compliance', href: '/services/regulatory-compliance', icon: Scale, description: 'Ensure regulatory compliance' },
-        { name: 'Contract Management', href: '/services/contract-management', icon: Gavel, description: 'Manage business contracts' },
+        { name: 'Annita Multi-Currency Wallet', href: '/services/multi-currency-wallet', icon: Wallet, description: 'Handle 54+ African currencies seamlessly' },
+        { name: 'Annita Cross-Border Payments', href: '/services/cross-border-payments', icon: Send, description: 'Process payments across borders' },
+        { name: 'Annita Escrow Protection', href: '/services/escrow-protection', icon: Shield, description: 'Secure escrow payment protection' },
+        { name: 'Annita Mobile POS', href: '/services/mobile-pos', icon: Smartphone, description: 'Mobile point of sale solutions' },
+        { name: 'Annita Trade Finance', href: '/services/trade-finance', icon: TrendingUpIcon, description: 'Trade finance integration services' },
+        { name: 'Annita Invoice Management', href: '/services/invoice-management', icon: FileTextIcon, description: 'Manage invoices efficiently' },
+        { name: 'Annita Inventory Management', href: '/services/inventory-management', icon: Package, description: 'Track and manage inventory' },
+        { name: 'Annita CRM', href: '/services/crm', icon: Users, description: 'Manage customer relationships' },
+        { name: 'Annita Supply Chain', href: '/services/supply-chain', icon: Truck, description: 'Optimize supply chain operations' },
+        { name: 'Annita Order Management', href: '/services/order-management', icon: ShoppingCart, description: 'Manage orders efficiently' },
+        { name: 'Annita Analytics', href: '/services/analytics', icon: BarChart3Icon, description: 'Business analytics and insights' },
+        { name: 'Annita Document Management', href: '/services/document-management', icon: FolderOpen, description: 'Manage business documents' },
+        { name: 'Annita Digital Marketing', href: '/services/digital-marketing', icon: Megaphone, description: 'Digital marketing solutions' },
+        { name: 'Annita E-commerce', href: '/services/ecommerce', icon: Store, description: 'Complete e-commerce platform' },
+        { name: 'Annita Lead Generation', href: '/services/lead-generation', icon: Target, description: 'Generate business leads' },
+        { name: 'Annita KYC Verification', href: '/services/kyc-verification', icon: UserCheck, description: 'Know Your Customer verification' },
+        { name: 'Annita Brand Building', href: '/services/brand-building', icon: Eye, description: 'Build and manage your brand' },
+        { name: 'Annita Tax Management', href: '/services/tax-management', icon: FileCheck, description: 'Manage business taxes' },
+        { name: 'Annita Regulatory Compliance', href: '/services/regulatory-compliance', icon: Scale, description: 'Ensure regulatory compliance' },
+        { name: 'Annita Contract Management', href: '/services/contract-management', icon: Gavel, description: 'Manage business contracts' },
       ]
     },
 
@@ -175,41 +179,31 @@ const Navigation = () => {
       name: 'Company', 
       href: '#',
       dropdown: [
-        // Cross-Cutting Solutions Submenu - Now First
-        { 
-          name: 'Cross-Cutting Solutions', 
-          href: '#', 
-          icon: Settings, 
-          description: 'Universal solutions for all users',
-          dropdown: [
-            { name: 'Offline Functionality', href: '/services/offline-functionality', icon: WifiOff, description: 'Work without internet connection' },
-            { name: 'Low-Bandwidth Optimization', href: '/services/low-bandwidth', icon: Signal, description: 'Optimized for slow connections' },
-            { name: 'Multi-Language Support', href: '/services/multi-language', icon: Languages, description: 'Support for multiple languages' },
-            { name: 'Mobile-First Design', href: '/services/mobile-first', icon: Smartphone, description: 'Designed for mobile devices' },
-            { name: 'Identity Verification', href: '/services/identity-verification', icon: Fingerprint, description: 'Secure identity verification' },
-            { name: 'Fraud Protection', href: '/services/fraud-protection', icon: Shield, description: 'Advanced fraud protection' },
-            { name: 'Data Privacy', href: '/services/data-privacy', icon: Lock, description: 'Comprehensive data privacy' },
-            { name: 'Dispute Resolution', href: '/services/dispute-resolution', icon: Scale, description: 'Fair dispute resolution' },
-            { name: 'Rural Connectivity', href: '/services/rural-connectivity', icon: Radio, description: 'Connect rural communities' },
-            { name: 'Affordable Pricing', href: '/services/affordable-pricing', icon: DollarSign, description: 'Affordable for everyone' },
-            { name: 'Simple User Interface', href: '/services/simple-ui', icon: Monitor, description: 'Easy to use interface' },
-            { name: 'Local Support', href: '/services/local-support', icon: HeadphonesIcon, description: 'Local customer support' },
-            { name: 'Government Services', href: '/services/government-services', icon: Landmark, description: 'Government service integration' },
-            { name: 'Banking Integration', href: '/services/banking-integration', icon: LinkIcon, description: 'Seamless banking integration' },
-            { name: 'Social Services', href: '/services/social-services', icon: Heart, description: 'Social service integration' },
-            { name: 'Community Features', href: '/services/community-features', icon: Users, description: 'Build communities' },
-          ]
-        },
+        // Cross-Cutting Solutions - Now Individual Items
+        { name: 'Offline Functionality', href: '/services/offline-functionality', icon: WifiOff, description: 'Work without internet connection' },
+        { name: 'Low-Bandwidth Optimization', href: '/services/low-bandwidth', icon: Signal, description: 'Optimized for slow connections' },
+        { name: 'Multi-Language Support', href: '/services/multi-language', icon: Languages, description: 'Support for multiple languages' },
+        { name: 'Mobile-First Design', href: '/services/mobile-first', icon: Smartphone, description: 'Designed for mobile devices' },
+        { name: 'Identity Verification', href: '/services/identity-verification', icon: Fingerprint, description: 'Secure identity verification' },
+        { name: 'Fraud Protection', href: '/services/fraud-protection', icon: Shield, description: 'Advanced fraud protection' },
+        { name: 'Data Privacy', href: '/services/data-privacy', icon: Lock, description: 'Comprehensive data privacy' },
+        { name: 'Dispute Resolution', href: '/services/dispute-resolution', icon: Scale, description: 'Fair dispute resolution' },
+        { name: 'Rural Connectivity', href: '/services/rural-connectivity', icon: Radio, description: 'Connect rural communities' },
+        { name: 'Affordable Pricing', href: '/services/affordable-pricing', icon: DollarSign, description: 'Affordable for everyone' },
+        { name: 'Simple User Interface', href: '/services/simple-ui', icon: Monitor, description: 'Easy to use interface' },
+        { name: 'Local Support', href: '/services/local-support', icon: HeadphonesIcon, description: 'Local customer support' },
+        { name: 'Government Services', href: '/services/government-services', icon: Landmark, description: 'Government service integration' },
+        { name: 'Banking Integration', href: '/services/banking-integration', icon: LinkIcon, description: 'Seamless banking integration' },
+        { name: 'Social Services', href: '/services/social-services', icon: Heart, description: 'Social service integration' },
+        { name: 'Community Features', href: '/services/community-features', icon: Users, description: 'Build communities' },
         { name: 'Ideas & Tips', href: '/ideas', icon: Lightbulb, description: 'Share ideas and feedback' },
         { name: 'About Us', href: '/about', icon: Users, description: 'Our story and mission' },
         { name: 'CSR', href: '/company/csr', icon: Heart, description: 'Corporate social responsibility and impact' },
         { name: 'Demo', href: '/demo', icon: Play, description: 'Interactive demo of Annita 3.0' },
         { name: 'Investors', href: '/investors', icon: DollarSign, description: 'Investment opportunities and company info' },
         { name: 'The 100', href: '/the100', icon: Target, description: 'Youth empowerment initiative' },
-        { name: 'Pricing', href: '/pricing', icon: DollarSign, description: 'Transparent pricing plans' },
         { name: 'Business Model', href: '/business-model', icon: Building2, description: 'Our revenue model and strategy' },
         { name: 'Awards & Recognition', href: '/awards', icon: Award, description: 'Our achievements and recognition' },
-        { name: 'Gallery', href: '/gallery', icon: Image, description: 'Photos, videos, and media' },
         { name: 'Careers', href: '/careers', icon: Briefcase, description: 'Join our team' },
         { name: 'Apply Now', href: '/careers/apply', icon: UserPlus, description: 'Submit your application' },
       ]
@@ -319,51 +313,6 @@ const Navigation = () => {
                                          </div>
                                        </div>
                                      </div>
-                                  ) : 'dropdown' in dropdownItem && dropdownItem.dropdown ? (
-                                    <div key={dropdownItem.name} className="relative">
-                                      <div 
-                                        className="flex items-start space-x-3 p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200 cursor-pointer"
-                                        onMouseEnter={() => handleDropdownMouseEnter(dropdownItem.name)}
-                                        onMouseLeave={handleDropdownMouseLeave}
-                                        onClick={() => setActiveDropdown(activeDropdown === dropdownItem.name ? null : dropdownItem.name)}
-                                      >
-                                        <dropdownItem.icon className="w-5 h-5 text-primary-600 dark:text-primary-400 mt-0.5 flex-shrink-0" />
-                                        <div className="flex-1">
-                                          <div className="font-medium text-gray-900 dark:text-white">{dropdownItem.name}</div>
-                                          <div className="text-sm text-gray-500 dark:text-gray-400">{dropdownItem.description}</div>
-                                        </div>
-                                        <ChevronRight className={`w-4 h-4 text-gray-400 transition-transform duration-200 ${activeDropdown === dropdownItem.name ? 'rotate-90' : ''}`} />
-                                      </div>
-                                      
-                                      <AnimatePresence>
-                                        {activeDropdown === dropdownItem.name && (
-                                          <motion.div
-                                            initial={{ opacity: 0, height: 0 }}
-                                            animate={{ opacity: 1, height: 'auto' }}
-                                            exit={{ opacity: 0, height: 0 }}
-                                            transition={{ duration: 0.2 }}
-                                            className="ml-8 mt-2 space-y-1"
-                                            onMouseEnter={() => handleDropdownMouseEnter(dropdownItem.name)}
-                                            onMouseLeave={handleDropdownMouseLeave}
-                                          >
-                                            {dropdownItem.dropdown.map((nestedItem) => (
-                                              <Link
-                                                key={nestedItem.name}
-                                                href={nestedItem.href}
-                                                className="flex items-start space-x-3 p-2 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200"
-                                                onClick={() => setActiveDropdown(null)}
-                                              >
-                                                <nestedItem.icon className="w-4 h-4 text-primary-600 dark:text-primary-400 mt-0.5 flex-shrink-0" />
-                                                <div>
-                                                  <div className="font-medium text-gray-900 dark:text-white text-sm">{nestedItem.name}</div>
-                                                  <div className="text-xs text-gray-500 dark:text-gray-400">{nestedItem.description}</div>
-                                                </div>
-                                              </Link>
-                                            ))}
-                                          </motion.div>
-                                        )}
-                                      </AnimatePresence>
-                                    </div>
                                   ) : 'isExternal' in dropdownItem && dropdownItem.isExternal ? (
                                     <a
                                       key={dropdownItem.name}
@@ -538,42 +487,6 @@ const Navigation = () => {
                                       <div key={dropdownItem.name} className="p-2">
                                         <div className="text-sm text-gray-600 dark:text-gray-300 mb-2">{dropdownItem.name}</div>
                                         <SimpleThemeToggle />
-                                      </div>
-                                    ) : 'dropdown' in dropdownItem && dropdownItem.dropdown ? (
-                                      <div key={dropdownItem.name}>
-                                        <button
-                                          onClick={() => setActiveDropdown(activeDropdown === dropdownItem.name ? null : dropdownItem.name)}
-                                          className="flex items-center justify-between w-full p-2 text-sm text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-50 dark:hover:bg-gray-800 rounded-lg transition-colors"
-                                        >
-                                          <span>{dropdownItem.name}</span>
-                                          <ChevronRight className={`w-4 h-4 transition-transform duration-200 ${activeDropdown === dropdownItem.name ? 'rotate-90' : ''}`} />
-                                        </button>
-                                        
-                                        <AnimatePresence>
-                                          {activeDropdown === dropdownItem.name && (
-                                            <motion.div
-                                              initial={{ opacity: 0, height: 0 }}
-                                              animate={{ opacity: 1, height: 'auto' }}
-                                              exit={{ opacity: 0, height: 0 }}
-                                              transition={{ duration: 0.2 }}
-                                              className="ml-4 mt-1 space-y-1"
-                                            >
-                                              {dropdownItem.dropdown.map((nestedItem) => (
-                                                <Link
-                                                  key={nestedItem.name}
-                                                  href={nestedItem.href}
-                                                  className="block p-2 text-xs text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-800 rounded-lg transition-colors"
-                                                  onClick={() => {
-                                                    setIsOpen(false)
-                                                    setActiveDropdown(null)
-                                                  }}
-                                                >
-                                                  {nestedItem.name}
-                                                </Link>
-                                              ))}
-                                            </motion.div>
-                                          )}
-                                        </AnimatePresence>
                                       </div>
                                     ) : 'isExternal' in dropdownItem && dropdownItem.isExternal ? (
                                       <a

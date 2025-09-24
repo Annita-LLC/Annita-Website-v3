@@ -327,78 +327,95 @@ export default function BusinessModelPage() {
       />
 
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-orange-50 via-orange-100 to-red-50 py-16 sm:py-20 lg:py-24 overflow-hidden">
+      <section className="relative py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-orange-600 via-orange-700 to-red-600 text-white overflow-hidden">
         {/* Animated Background Elements */}
         <div className="absolute inset-0">
-          <div className="absolute top-10 left-10 w-20 h-20 bg-orange-200/30 rounded-full animate-pulse"></div>
-          <div className="absolute top-32 right-20 w-16 h-16 bg-red-200/20 rounded-full animate-bounce"></div>
-          <div className="absolute bottom-20 left-1/4 w-12 h-12 bg-orange-300/25 rounded-full animate-pulse delay-1000"></div>
-          <div className="absolute bottom-32 right-1/3 w-8 h-8 bg-red-300/20 rounded-full animate-bounce delay-500"></div>
+          <div className="absolute top-10 left-10 w-20 h-20 bg-white/10 rounded-full animate-pulse"></div>
+          <div className="absolute top-32 right-20 w-16 h-16 bg-white/5 rounded-full animate-bounce"></div>
+          <div className="absolute bottom-20 left-1/4 w-12 h-12 bg-white/10 rounded-full animate-pulse delay-1000"></div>
+          <div className="absolute bottom-32 right-1/3 w-8 h-8 bg-white/5 rounded-full animate-bounce delay-500"></div>
         </div>
         
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-6xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               {/* Left Column - Main Content */}
-              <motion.div
-                initial={{ opacity: 0, x: -30 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8 }}
-                className="text-center lg:text-left"
-              >
-              <div className="inline-flex items-center px-4 py-2 rounded-full bg-orange-100 text-orange-700 text-sm font-medium mb-6">
-                <TrendingUp className="w-4 h-4 mr-2" />
-                Advanced Business Model
-              </div>
-              
-                <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-                Our Revenue <span className="text-orange-500">Strategy</span>
-              </h1>
-                <p className="text-lg sm:text-xl text-gray-600 mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-                Annita Advanced Payment & Revenue System with AI-powered logistics 
-                and flexible vendor models for sustainable growth.
-              </p>
+              <div className="text-center lg:text-left">
+                <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/20 backdrop-blur-sm text-white text-sm font-medium mb-6">
+                  <TrendingUp className="w-4 h-4 mr-2" />
+                  Advanced Business Model
+                </div>
+                <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 leading-tight">
+                  Our <span className="text-orange-200">Revenue Model</span>
+                </h1>
+                <p className="text-lg sm:text-xl text-orange-100 max-w-2xl mx-auto lg:mx-0 leading-relaxed mb-8">
+                  Comprehensive revenue model for v1.0 marketplace and v3.0 app. All transactions are processed through our live platforms with transparent fee structures.
+                </p>
                 
                 {/* Quick Stats */}
-                <div className="grid grid-cols-2 gap-3 sm:gap-4 mb-8">
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: 0.4 }}
-                    className="bg-white/80 backdrop-blur-sm rounded-lg p-3 sm:p-4 shadow-sm border border-orange-200"
-                  >
-                    <div className="text-xl sm:text-2xl font-bold text-gray-900">5 Revenue Streams</div>
-                    <div className="text-xs sm:text-sm text-gray-600">Diversified Model</div>
-                  </motion.div>
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: 0.5 }}
-                    className="bg-white/80 backdrop-blur-sm rounded-lg p-3 sm:p-4 shadow-sm border border-orange-200"
-                  >
-                    <div className="text-xl sm:text-2xl font-bold text-gray-900">v1.0</div>
-                    <div className="text-xs sm:text-sm text-gray-600">Latest Model</div>
-                  </motion.div>
+                <div className="grid grid-cols-3 gap-3 sm:gap-4 mb-6 sm:mb-8">
+                  <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3 sm:p-4">
+                    <div className="text-xl sm:text-2xl font-bold">5</div>
+                    <div className="text-xs sm:text-sm text-orange-200">Revenue Streams</div>
+                  </div>
+                  <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3 sm:p-4">
+                    <div className="text-xl sm:text-2xl font-bold">v1.0</div>
+                    <div className="text-xs sm:text-sm text-orange-200">Latest Model</div>
+                  </div>
+                  <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3 sm:p-4">
+                    <div className="text-xl sm:text-2xl font-bold">AI</div>
+                    <div className="text-xs sm:text-sm text-orange-200">Powered</div>
+                  </div>
                 </div>
 
                 {/* CTA Buttons */}
                 <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start">
                   <button 
                     onClick={() => setShowRevenueDetails(true)}
-                    className="bg-orange-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-orange-700 transition-all duration-200 flex items-center justify-center shadow-lg"
+                    className="bg-white text-orange-600 px-4 sm:px-6 py-2.5 sm:py-3 rounded-lg font-semibold hover:bg-orange-50 transition-all duration-200 flex items-center justify-center shadow-lg text-sm sm:text-base"
                   >
                     <Eye className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
-                    View Revenue Model
+                    View Model
                   </button>
                   <button 
                     onClick={() => document.getElementById('business-form')?.scrollIntoView({ behavior: 'smooth' })}
-                    className="border-2 border-orange-600 text-orange-600 px-6 py-3 rounded-lg font-semibold hover:bg-orange-50 transition-all duration-200 flex items-center justify-center"
+                    className="border-2 border-white text-white px-4 sm:px-6 py-2.5 sm:py-3 rounded-lg font-semibold hover:bg-white hover:text-orange-600 transition-all duration-200 flex items-center justify-center text-sm sm:text-base"
                   >
                     <Calculator className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
                     Calculate Revenue
                   </button>
                 </div>
-              </motion.div>
+              </div>
+
+              {/* Right Column - Interactive Elements */}
+              <div className="relative">
+                {/* Business Model Visualization */}
+                <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 sm:p-6 border border-white/20">
+                  <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4 text-center">Revenue Strategy</h3>
+                  <div className="space-y-3 sm:space-y-4">
+                    <div className="flex items-center justify-between p-3 bg-white/10 rounded-lg">
+                      <span className="text-orange-200">5 Revenue Streams</span>
+                      <span className="font-semibold text-white">Diversified Model</span>
+                    </div>
+                    <div className="flex items-center justify-between p-3 bg-white/10 rounded-lg">
+                      <span className="text-orange-200">AI-Powered Logistics</span>
+                      <span className="font-semibold text-white">Advanced System</span>
+                    </div>
+                    <div className="flex items-center justify-between p-3 bg-white/10 rounded-lg">
+                      <span className="text-orange-200">Flexible Vendor Models</span>
+                      <span className="font-semibold text-white">Sustainable Growth</span>
+                    </div>
+                    <div className="flex items-center justify-between p-3 bg-white/10 rounded-lg">
+                      <span className="text-orange-200">Success Rate</span>
+                      <span className="font-semibold text-white">95%</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
               {/* Right Column - Revenue Visualization */}
               <motion.div
@@ -521,6 +538,32 @@ export default function BusinessModelPage() {
                 </motion.div>
               ))}
             </div>
+
+            {/* Platform Integration Notice */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="bg-gradient-to-r from-blue-500 to-cyan-500 rounded-2xl p-8 text-white mb-8"
+            >
+              <h3 className="text-2xl sm:text-3xl font-bold text-center mb-6">Platform Integration</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-white/20 rounded-xl flex items-center justify-center mx-auto mb-4">
+                    <Smartphone className="w-8 h-8" />
+                  </div>
+                  <h4 className="text-lg font-bold mb-2">Annita 3.0 App</h4>
+                  <p className="text-sm text-blue-100">All transactions processed through our mobile application with advanced AI features and offline capabilities.</p>
+                </div>
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-white/20 rounded-xl flex items-center justify-center mx-auto mb-4">
+                    <Globe className="w-8 h-8" />
+                  </div>
+                  <h4 className="text-lg font-bold mb-2">V1.0 Marketplace</h4>
+                  <p className="text-sm text-blue-100">Live marketplace platform with 3,000+ vendors currently processing transactions and generating revenue.</p>
+                </div>
+              </div>
+            </motion.div>
 
             {/* Revenue Model Summary */}
             <motion.div
@@ -953,11 +996,10 @@ export default function BusinessModelPage() {
               className="text-center p-6 sm:p-8 lg:p-12 bg-gradient-to-r from-orange-500 to-orange-600 rounded-2xl text-white shadow-2xl"
             >
               <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 sm:mb-6">
-                🚨 Something BIG is Coming - Annita 3.0
+                Experience Our Revenue Model in Action
               </h3>
               <p className="text-orange-100 mb-6 sm:mb-8 max-w-2xl mx-auto text-sm sm:text-base lg:text-lg leading-relaxed">
-                Experience our live marketplace V1.0 today, and join the waitlist for the revolutionary V3.0 - 
-                offline-ready, AI-powered, and built for everyone in Africa.
+                All transactions and revenue generation happen through our live platforms. Try our V1.0 marketplace today or join the waitlist for the revolutionary V3.0 app.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
                 <a 

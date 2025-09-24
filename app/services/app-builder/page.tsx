@@ -4,77 +4,109 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 import SEOHead from '@/components/seo/SEOHead'
 import { 
-  PenTool, 
-  Image, 
-  Video, 
-  FileText, 
+  Smartphone, 
   Palette, 
   Zap, 
+  Globe, 
+  Monitor, 
+  Code,
+  Clock,
+  CheckCircle,
   Star,
-  Globe,
-  Download,
   ExternalLink,
-  Shield,
-  Brain,
-  Camera,
-  Mic,
-  Monitor
+  Download,
+  Building,
+  Users,
+  Lock,
+  Activity,
+  BarChart3,
+  Settings,
+  Terminal,
+  Key,
+  Server,
+  Layout,
+  Image,
+  Type,
+  MousePointer,
+  Play,
+  Database,
+  Shield
 } from 'lucide-react'
 import Link from 'next/link'
 import WaitlistForm from '@/components/ui/WaitlistForm'
 
-const CreatorStudioPage = () => {
+const AppBuilderPage = () => {
   const [isWaitlistOpen, setIsWaitlistOpen] = useState(false)
 
   const features = [
     {
-      icon: Brain,
-      title: "AI Content Generation",
-      description: "Generate text, images, and videos with AI assistance",
-      features: ["Text generation", "Image creation", "Video editing", "Content optimization"]
+      icon: MousePointer,
+      title: "No-Code Builder",
+      description: "Create mobile apps without any coding knowledge",
+      features: ["Visual editor", "Drag & drop", "Pre-built components", "Real-time preview"]
     },
     {
-      icon: PenTool,
-      title: "Creative Tools",
-      description: "Professional design and editing tools",
-      features: ["Graphic design", "Video editing", "Audio editing", "Templates"]
+      icon: Smartphone,
+      title: "Cross-Platform",
+      description: "Build once, deploy to iOS and Android simultaneously",
+      features: ["iOS apps", "Android apps", "Web apps", "PWA support"]
     },
     {
-      icon: Image,
-      title: "Image Processing",
-      description: "Advanced image editing and enhancement",
-      features: ["Photo editing", "Filters", "Resizing", "Format conversion"]
+      icon: Zap,
+      title: "AI-Powered Features",
+      description: "Smart app generation and optimization with AI assistance",
+      features: ["AI suggestions", "Auto-optimization", "Smart layouts", "Content generation"]
     },
     {
-      icon: Video,
-      title: "Video Production",
-      description: "Complete video creation and editing suite",
-      features: ["Video editing", "Transitions", "Effects", "Export options"]
+      icon: Database,
+      title: "Backend Integration",
+      description: "Built-in backend services and database management",
+      features: ["User management", "Data storage", "API integration", "Cloud sync"]
+    }
+  ]
+
+  const appTypes = [
+    {
+      category: "Business Apps",
+      count: "30+",
+      description: "Professional business applications",
+      features: ["CRM systems", "Inventory management", "Employee portals", "Customer apps"]
+    },
+    {
+      category: "E-commerce Apps",
+      count: "25+",
+      description: "Mobile store applications",
+      features: ["Product catalogs", "Shopping cart", "Payment processing", "Order tracking"]
+    },
+    {
+      category: "Social Apps",
+      count: "20+",
+      description: "Social networking applications",
+      features: ["User profiles", "Messaging", "Content sharing", "Community features"]
     }
   ]
 
   const stats = [
-    { label: "AI Models", value: "10+", icon: Brain },
-    { label: "Templates", value: "500+", icon: PenTool },
-    { label: "Formats", value: "20+", icon: FileText },
-    { label: "Languages", value: "10+", icon: Globe }
+    { label: "App Templates", value: "75+", icon: Layout },
+    { label: "Build Time", value: "2 hours", icon: Clock },
+    { label: "Platforms", value: "iOS + Android", icon: Smartphone },
+    { label: "Success Rate", value: "98%", icon: BarChart3 }
   ]
 
   return (
     <>
       <SEOHead
-        title="Annita Creator Studio - AI-Powered Content Creation"
-        description="Create professional content with AI-powered tools for text, images, and videos. Perfect for African creators and businesses."
+        title="Annita App Builder - No-Code Mobile App Creation"
+        description="Create mobile apps without coding. Cross-platform iOS and Android apps with AI-powered features, backend integration, and professional templates."
         keywords={[
-          'content creation',
-          'AI tools',
-          'video editing',
-          'image editing',
-          'text generation',
-          'creative tools',
-          'content studio'
+          'app builder',
+          'no-code app',
+          'mobile app builder',
+          'iOS app builder',
+          'Android app builder',
+          'cross-platform apps'
         ]}
-        canonical="/services/creator-studio"
+        canonical="/services/app-builder"
       />
 
       {/* Hero Section */}
@@ -93,34 +125,34 @@ const CreatorStudioPage = () => {
               {/* Left Column - Main Content */}
               <div className="text-center lg:text-left">
                 <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/20 backdrop-blur-sm text-white text-sm font-medium mb-6">
-                  <PenTool className="w-4 h-4 mr-2" />
-                  AI Content Creation
+                  <Smartphone className="w-4 h-4 mr-2" />
+                  Mobile App Creation
                 </div>
                 <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 leading-tight">
-                  Annita <span className="text-orange-200">Creator Studio</span>
+                  Annita <span className="text-orange-200">App Builder</span>
                 </h1>
                 <p className="text-lg sm:text-xl text-orange-100 max-w-2xl mx-auto lg:mx-0 leading-relaxed mb-8">
-                  AI-powered content generation for text, images, and videos. 
-                  Create professional content with advanced tools designed for African creators.
+                  Create mobile apps without coding. Cross-platform iOS and Android apps 
+                  with AI-powered features, backend integration, and professional templates.
                 </p>
                 
                 {/* Quick Stats */}
                 <div className="grid grid-cols-2 gap-3 sm:gap-4 mb-6 sm:mb-8">
                   <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3 sm:p-4">
-                    <div className="text-xl sm:text-2xl font-bold">AI</div>
-                    <div className="text-xs sm:text-sm text-orange-200">Powered</div>
-                  </div>
-                  <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3 sm:p-4">
-                    <div className="text-xl sm:text-2xl font-bold">500+</div>
+                    <div className="text-xl sm:text-2xl font-bold">75+</div>
                     <div className="text-xs sm:text-sm text-orange-200">Templates</div>
                   </div>
                   <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3 sm:p-4">
-                    <div className="text-xl sm:text-2xl font-bold">20+</div>
-                    <div className="text-xs sm:text-sm text-orange-200">Formats</div>
+                    <div className="text-xl sm:text-2xl font-bold">2 hrs</div>
+                    <div className="text-xs sm:text-sm text-orange-200">Build Time</div>
                   </div>
                   <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3 sm:p-4">
-                    <div className="text-xl sm:text-2xl font-bold">10+</div>
-                    <div className="text-xs sm:text-sm text-orange-200">Languages</div>
+                    <div className="text-xl sm:text-2xl font-bold">iOS + Android</div>
+                    <div className="text-xs sm:text-sm text-orange-200">Platforms</div>
+                  </div>
+                  <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3 sm:p-4">
+                    <div className="text-xl sm:text-2xl font-bold">98%</div>
+                    <div className="text-xs sm:text-sm text-orange-200">Success Rate</div>
                   </div>
                 </div>
 
@@ -130,14 +162,14 @@ const CreatorStudioPage = () => {
                     onClick={() => setIsWaitlistOpen(true)}
                     className="bg-white text-orange-600 px-4 sm:px-6 py-2.5 sm:py-3 rounded-lg font-semibold hover:bg-orange-50 transition-all duration-200 flex items-center justify-center shadow-lg text-sm sm:text-base"
                   >
-                    <PenTool className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
-                    Start Creating
+                    <Smartphone className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
+                    Start Building
                   </button>
                   <Link
                     href="/contact"
                     className="border-2 border-white text-white px-4 sm:px-6 py-2.5 sm:py-3 rounded-lg font-semibold hover:bg-white hover:text-orange-600 transition-all duration-200 flex items-center justify-center text-sm sm:text-base"
                   >
-                    <Brain className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
+                    <Users className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
                     Learn More
                   </Link>
                 </div>
@@ -145,25 +177,25 @@ const CreatorStudioPage = () => {
 
               {/* Right Column - Interactive Elements */}
               <div className="relative">
-                {/* Creator Excellence Visualization */}
+                {/* App Builder Excellence Visualization */}
                 <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 sm:p-6 border border-white/20">
-                  <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4 text-center">Creator Excellence</h3>
+                  <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4 text-center">App Builder Excellence</h3>
                   <div className="space-y-3 sm:space-y-4">
                     <div className="flex items-center justify-between p-3 bg-white/10 rounded-lg">
-                      <span className="text-orange-200">AI Content Generation</span>
-                      <span className="font-semibold text-white">Advanced</span>
-                    </div>
-                    <div className="flex items-center justify-between p-3 bg-white/10 rounded-lg">
-                      <span className="text-orange-200">500+ Templates</span>
+                      <span className="text-orange-200">75+ Templates</span>
                       <span className="font-semibold text-white">Professional</span>
                     </div>
                     <div className="flex items-center justify-between p-3 bg-white/10 rounded-lg">
-                      <span className="text-orange-200">20+ Formats</span>
-                      <span className="font-semibold text-white">Versatile</span>
+                      <span className="text-orange-200">No-Code Builder</span>
+                      <span className="font-semibold text-white">Easy</span>
+                    </div>
+                    <div className="flex items-center justify-between p-3 bg-white/10 rounded-lg">
+                      <span className="text-orange-200">Cross-Platform</span>
+                      <span className="font-semibold text-white">iOS + Android</span>
                     </div>
                     <div className="flex items-center justify-between p-3 bg-white/10 rounded-lg">
                       <span className="text-orange-200">Success Rate</span>
-                      <span className="font-semibold text-white">95%</span>
+                      <span className="font-semibold text-white">98%</span>
                     </div>
                   </div>
                 </div>
@@ -179,10 +211,10 @@ const CreatorStudioPage = () => {
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-                Advanced Content Creation Features
+                Advanced App Builder Features
               </h2>
               <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                Everything you need to create professional content with AI assistance and advanced tools.
+                Everything you need to create professional mobile apps without coding.
               </p>
             </div>
 
@@ -225,16 +257,59 @@ const CreatorStudioPage = () => {
         </div>
       </section>
 
-      {/* Stats Section */}
+      {/* App Types Section */}
       <section className="py-16 sm:py-20 bg-gradient-to-br from-gray-50 to-orange-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-                Creator Studio Performance
+                App Templates
               </h2>
               <p className="text-lg text-gray-600">
-                Powerful tools and AI assistance for content creators.
+                Choose from 75+ professionally designed app templates.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {appTypes.map((appType, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  className="bg-white rounded-2xl p-6 shadow-lg"
+                >
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2 flex items-center">
+                    <Layout className="w-5 h-5 mr-2 text-orange-600" />
+                    {appType.category}
+                  </h3>
+                  <div className="text-2xl font-bold text-orange-600 mb-2">{appType.count}</div>
+                  <p className="text-gray-600 mb-4">{appType.description}</p>
+                  <ul className="space-y-2">
+                    {appType.features.map((feature, featureIndex) => (
+                      <li key={featureIndex} className="flex items-center text-sm text-gray-600">
+                        <CheckCircle className="w-4 h-4 mr-2 text-green-500 flex-shrink-0" />
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Stats Section */}
+      <section className="py-16 sm:py-20 bg-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+                App Builder Performance
+              </h2>
+              <p className="text-lg text-gray-600">
+                Fast, reliable, and professional mobile app creation.
               </p>
             </div>
 
@@ -245,7 +320,7 @@ const CreatorStudioPage = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="bg-white rounded-2xl p-6 text-center shadow-lg"
+                  className="bg-gray-50 rounded-2xl p-6 text-center shadow-lg"
                 >
                   <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mx-auto mb-4">
                     <stat.icon className="w-6 h-6 text-orange-600" />
@@ -268,24 +343,24 @@ const CreatorStudioPage = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
-              Ready to Create Amazing Content?
+              Ready to Build Your App?
             </h2>
             <p className="text-xl text-white/90 mb-8">
-              Start creating professional content with AI-powered tools and advanced features.
+              Create professional mobile apps in hours with our no-code builder.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button 
                 onClick={() => setIsWaitlistOpen(true)}
                 className="bg-white text-orange-600 px-8 py-4 rounded-lg font-semibold hover:bg-orange-50 transition-all duration-200 flex items-center justify-center shadow-lg"
               >
-                <PenTool className="w-5 h-5 mr-2" />
-                Start Creating
+                <Smartphone className="w-5 h-5 mr-2" />
+                Start Building
               </button>
               <Link
                 href="/contact"
                 className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-orange-600 transition-all duration-200 flex items-center justify-center"
               >
-                <Brain className="w-5 h-5 mr-2" />
+                <Users className="w-5 h-5 mr-2" />
                 Learn More
               </Link>
             </div>
@@ -302,4 +377,4 @@ const CreatorStudioPage = () => {
   )
 }
 
-export default CreatorStudioPage
+export default AppBuilderPage
