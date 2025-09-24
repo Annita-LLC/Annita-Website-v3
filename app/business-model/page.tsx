@@ -376,14 +376,16 @@ export default function BusinessModelPage() {
                     </div>
                     <div className="flex-1 min-w-0">
                       <div className="mb-2">
-                        <div className="flex items-center justify-between mb-1">
-                          <h3 className="text-lg font-semibold text-gray-900 flex-1">{component.name}</h3>
-                          <span className="px-3 py-1 bg-orange-100 text-orange-700 rounded-full text-xs font-medium whitespace-nowrap ml-2 flex-shrink-0">
-                            {component.rate}
-                          </span>
-                        </div>
+                        <h3 className="text-lg font-semibold text-gray-900 mb-1">{component.name}</h3>
                       </div>
-                      <p className="text-sm text-gray-600 mb-4">{component.description}</p>
+                      <p className="text-sm text-gray-600 mb-3">{component.description}</p>
+                      
+                      {/* Rate Bubble */}
+                      <div className="mb-4">
+                        <span className="px-3 py-1 bg-orange-100 text-orange-700 rounded-full text-xs font-medium">
+                          {component.rate}
+                        </span>
+                      </div>
                       
                       <div className="space-y-2">
                         {component.details.slice(0, 3).map((detail, detailIndex) => (
