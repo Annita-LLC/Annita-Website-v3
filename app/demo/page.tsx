@@ -22,7 +22,8 @@ import {
   Pause,
   PlayCircle,
   X,
-  Download
+  Download,
+  ShoppingCart
 } from 'lucide-react'
 import Link from 'next/link'
 import Button from '@/components/ui/Button'
@@ -552,8 +553,8 @@ const DemoPage = () => {
                   <div className="p-6">
                     <div className="flex items-center justify-between mb-4">
                       <h3 className="text-2xl font-bold text-gray-900">
-                        {demoImages[currentSlide].title}
-                      </h3>
+                      {demoImages[currentSlide].title}
+                    </h3>
                       {demoImages[currentSlide].version && (
                         <span className={`px-3 py-1 rounded-full text-sm font-semibold ${
                           demoImages[currentSlide].version.includes('V1.0') 
@@ -611,7 +612,7 @@ const DemoPage = () => {
                               : 'bg-white/80 text-gray-800 opacity-0 hover:opacity-100'
                           }`}>
                             <Play className="w-4 h-4 ml-0.5" />
-                          </div>
+                      </div>
                         </div>
                         {image.version && (
                           <div className="absolute top-2 right-2">
@@ -627,9 +628,9 @@ const DemoPage = () => {
                       </div>
                       <div className="p-3 bg-white">
                         <div className="flex items-center justify-between mb-1">
-                          <h4 className="text-sm font-medium text-gray-900 truncate">
-                            {image.title}
-                          </h4>
+                        <h4 className="text-sm font-medium text-gray-900 truncate">
+                          {image.title}
+                        </h4>
                           {image.version && (
                             <span className={`px-2 py-0.5 rounded-full text-xs font-semibold ${
                               image.version.includes('V1.0') 

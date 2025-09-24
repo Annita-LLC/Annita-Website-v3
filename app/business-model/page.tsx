@@ -249,15 +249,15 @@ export default function BusinessModelPage() {
               {/* Left Column - Main Content */}
               <div className="text-center lg:text-left">
                 <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/20 backdrop-blur-sm text-white text-sm font-medium mb-6">
-                  <TrendingUp className="w-4 h-4 mr-2" />
-                  Advanced Business Model
-                </div>
+                <TrendingUp className="w-4 h-4 mr-2" />
+                Advanced Business Model
+              </div>
                 <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 leading-tight">
                   Our <span className="text-orange-200">Revenue Model</span>
-                </h1>
+              </h1>
                 <p className="text-lg sm:text-xl text-orange-100 max-w-2xl mx-auto lg:mx-0 leading-relaxed mb-8">
                   Comprehensive revenue model for v1.0 marketplace and v3.0 app. All transactions are processed through our live platforms with transparent fee structures.
-                </p>
+              </p>
                 
                 {/* Quick Stats */}
                 <div className="grid grid-cols-3 gap-3 sm:gap-4 mb-6 sm:mb-8">
@@ -292,8 +292,8 @@ export default function BusinessModelPage() {
                     Calculate Revenue
                   </button>
                 </div>
-              </div>
-
+                  </div>
+                  
               {/* Right Column - Interactive Elements */}
               <div className="relative">
                 {/* Revenue Strategy Visualization */}
@@ -303,19 +303,19 @@ export default function BusinessModelPage() {
                     <div className="flex items-center justify-between p-3 bg-white/10 rounded-lg">
                       <span className="text-orange-200">5 Revenue Streams</span>
                       <span className="font-semibold text-white">Diversified</span>
-                    </div>
+                          </div>
                     <div className="flex items-center justify-between p-3 bg-white/10 rounded-lg">
                       <span className="text-orange-200">AI-Powered Logistics</span>
                       <span className="font-semibold text-white">Advanced</span>
-                    </div>
+                          </div>
                     <div className="flex items-center justify-between p-3 bg-white/10 rounded-lg">
                       <span className="text-orange-200">Flexible Vendor Models</span>
                       <span className="font-semibold text-white">Scalable</span>
-                    </div>
+                        </div>
                     <div className="flex items-center justify-between p-3 bg-white/10 rounded-lg">
                       <span className="text-orange-200">Success Rate</span>
                       <span className="font-semibold text-white">98%</span>
-                    </div>
+                        </div>
                   </div>
                 </div>
               </div>
@@ -455,16 +455,16 @@ export default function BusinessModelPage() {
 
       {/* Contact Section */}
       <section className="py-16 sm:py-20 bg-gray-50">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-6xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-6xl mx-auto">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
               {/* Revenue Information */}
-              <div>
-                <motion.div
-                  initial={{ opacity: 0, x: -30 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.8 }}
-                >
+                <div>
+                  <motion.div
+                    initial={{ opacity: 0, x: -30 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.8 }}
+                  >
                   <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6">
                     Revenue Model Overview
                   </h2>
@@ -485,27 +485,27 @@ export default function BusinessModelPage() {
                         <div className="w-10 h-10 bg-orange-100 rounded-lg flex items-center justify-center flex-shrink-0">
                           <benefit.icon className="w-5 h-5 text-orange-600" />
                         </div>
-                        <div>
+                          <div>
                           <h3 className="text-lg font-semibold text-gray-900 mb-2">{benefit.title}</h3>
                           <p className="text-gray-600">{benefit.description}</p>
                         </div>
                       </motion.div>
                     ))}
-                  </div>
-                </motion.div>
-              </div>
+                    </div>
+                  </motion.div>
+                </div>
 
               {/* Contact Information */}
-              <motion.div
-                initial={{ opacity: 0, x: 30 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-                className="bg-white rounded-xl shadow-lg p-4 sm:p-6 border border-gray-200"
-              >
-                <h3 className="text-xl sm:text-2xl font-semibold text-gray-900 mb-6">
+                <motion.div
+                  initial={{ opacity: 0, x: 30 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.8, delay: 0.2 }}
+                  className="bg-white rounded-xl shadow-lg p-4 sm:p-6 border border-gray-200"
+                >
+                  <h3 className="text-xl sm:text-2xl font-semibold text-gray-900 mb-6">
                   Contact Sales
-                </h3>
-                
+                  </h3>
+                  
                 <div className="space-y-6">
                   <p className="text-gray-600">
                     Ready to implement our revenue model? Contact our sales team to discuss how our revenue streams can benefit your business.
@@ -520,7 +520,7 @@ export default function BusinessModelPage() {
                       <Phone className="w-5 h-5 text-orange-500 flex-shrink-0" />
                       <span className="text-gray-600">+231 77 505 7227</span>
                     </div>
-                    <div className="flex items-center space-x-3">
+                      <div className="flex items-center space-x-3">
                       <MessageSquare className="w-5 h-5 text-orange-500 flex-shrink-0" />
                       <span className="text-gray-600">Live chat available</span>
                     </div>

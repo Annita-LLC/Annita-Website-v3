@@ -140,17 +140,17 @@ export default function AwardsPage() {
               {/* Left Column - Main Content */}
               <div className="text-center lg:text-left">
                 <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/20 backdrop-blur-sm text-white text-sm font-medium mb-6">
-                  <Award className="w-4 h-4 mr-2" />
-                  Awards & Recognition
-                </div>
+                <Award className="w-4 h-4 mr-2" />
+                Awards & Recognition
+              </div>
                 <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 leading-tight">
                   Our <span className="text-orange-200">Achievements</span>
-                </h1>
+              </h1>
                 <p className="text-lg sm:text-xl text-orange-100 max-w-2xl mx-auto lg:mx-0 leading-relaxed mb-8">
-                  Celebrating our achievements and the impact we've made across Africa 
-                  through innovative technology and digital transformation.
-                </p>
-                
+                Celebrating our achievements and the impact we've made across Africa 
+                through innovative technology and digital transformation.
+              </p>
+              
                 {/* Quick Stats */}
                 <div className="grid grid-cols-3 gap-3 sm:gap-4 mb-6 sm:mb-8">
                   <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3 sm:p-4">
@@ -169,22 +169,22 @@ export default function AwardsPage() {
 
                 {/* CTA Buttons */}
                 <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start">
-                  <a
-                    href="https://annita.company.site/products"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                <a
+                  href="https://annita.company.site/products"
+                  target="_blank"
+                  rel="noopener noreferrer"
                     className="bg-white text-orange-600 px-4 sm:px-6 py-2.5 sm:py-3 rounded-lg font-semibold hover:bg-orange-50 transition-all duration-200 flex items-center justify-center shadow-lg text-sm sm:text-base"
-                  >
+                >
                     <Globe className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
-                    Try V1.0 Now
-                  </a>
-                  <a
-                    href="/download"
+                  Try V1.0 Now
+                </a>
+                <a
+                  href="/download"
                     className="border-2 border-white text-white px-4 sm:px-6 py-2.5 sm:py-3 rounded-lg font-semibold hover:bg-white hover:text-orange-600 transition-all duration-200 flex items-center justify-center text-sm sm:text-base"
-                  >
+                >
                     <Download className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
-                    Join V3.0 Waitlist
-                  </a>
+                  Join V3.0 Waitlist
+                </a>
                 </div>
               </div>
 

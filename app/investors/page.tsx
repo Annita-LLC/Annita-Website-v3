@@ -428,8 +428,8 @@ const InvestorsPage = () => {
                   Investor <span className="text-orange-200">Relations</span>
                 </h1>
                 <p className="text-lg sm:text-xl text-orange-100 max-w-2xl mx-auto lg:mx-0 leading-relaxed mb-8">
-                  Join us in revolutionizing Africa's digital economy through our comprehensive 
-                  e-commerce, fintech, and AI platform
+              Join us in revolutionizing Africa's digital economy through our comprehensive 
+              e-commerce, fintech, and AI platform
                 </p>
                 
                 {/* Quick Stats */}
@@ -451,7 +451,7 @@ const InvestorsPage = () => {
                 {/* CTA Buttons */}
                 <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start">
                   <button 
-                    onClick={() => handleDownload('/documents/annita-pitch-deck.pdf', 'Pitch Deck')}
+                onClick={() => handleDownload('/documents/annita-pitch-deck.pdf', 'Pitch Deck')}
                     className="bg-white text-orange-600 px-4 sm:px-6 py-2.5 sm:py-3 rounded-lg font-semibold hover:bg-orange-50 transition-all duration-200 flex items-center justify-center shadow-lg text-sm sm:text-base"
                   >
                     <Download className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />

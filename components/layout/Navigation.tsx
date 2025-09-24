@@ -180,22 +180,22 @@ const Navigation = () => {
       href: '#',
       dropdown: [
         // Cross-Cutting Solutions - Now Individual Items
-        { name: 'Offline Functionality', href: '/services/offline-functionality', icon: WifiOff, description: 'Work without internet connection' },
-        { name: 'Low-Bandwidth Optimization', href: '/services/low-bandwidth', icon: Signal, description: 'Optimized for slow connections' },
-        { name: 'Multi-Language Support', href: '/services/multi-language', icon: Languages, description: 'Support for multiple languages' },
-        { name: 'Mobile-First Design', href: '/services/mobile-first', icon: Smartphone, description: 'Designed for mobile devices' },
-        { name: 'Identity Verification', href: '/services/identity-verification', icon: Fingerprint, description: 'Secure identity verification' },
-        { name: 'Fraud Protection', href: '/services/fraud-protection', icon: Shield, description: 'Advanced fraud protection' },
-        { name: 'Data Privacy', href: '/services/data-privacy', icon: Lock, description: 'Comprehensive data privacy' },
-        { name: 'Dispute Resolution', href: '/services/dispute-resolution', icon: Scale, description: 'Fair dispute resolution' },
-        { name: 'Rural Connectivity', href: '/services/rural-connectivity', icon: Radio, description: 'Connect rural communities' },
-        { name: 'Affordable Pricing', href: '/services/affordable-pricing', icon: DollarSign, description: 'Affordable for everyone' },
-        { name: 'Simple User Interface', href: '/services/simple-ui', icon: Monitor, description: 'Easy to use interface' },
-        { name: 'Local Support', href: '/services/local-support', icon: HeadphonesIcon, description: 'Local customer support' },
-        { name: 'Government Services', href: '/services/government-services', icon: Landmark, description: 'Government service integration' },
-        { name: 'Banking Integration', href: '/services/banking-integration', icon: LinkIcon, description: 'Seamless banking integration' },
-        { name: 'Social Services', href: '/services/social-services', icon: Heart, description: 'Social service integration' },
-        { name: 'Community Features', href: '/services/community-features', icon: Users, description: 'Build communities' },
+            { name: 'Offline Functionality', href: '/services/offline-functionality', icon: WifiOff, description: 'Work without internet connection' },
+            { name: 'Low-Bandwidth Optimization', href: '/services/low-bandwidth', icon: Signal, description: 'Optimized for slow connections' },
+            { name: 'Multi-Language Support', href: '/services/multi-language', icon: Languages, description: 'Support for multiple languages' },
+            { name: 'Mobile-First Design', href: '/services/mobile-first', icon: Smartphone, description: 'Designed for mobile devices' },
+            { name: 'Identity Verification', href: '/services/identity-verification', icon: Fingerprint, description: 'Secure identity verification' },
+            { name: 'Fraud Protection', href: '/services/fraud-protection', icon: Shield, description: 'Advanced fraud protection' },
+            { name: 'Data Privacy', href: '/services/data-privacy', icon: Lock, description: 'Comprehensive data privacy' },
+            { name: 'Dispute Resolution', href: '/services/dispute-resolution', icon: Scale, description: 'Fair dispute resolution' },
+            { name: 'Rural Connectivity', href: '/services/rural-connectivity', icon: Radio, description: 'Connect rural communities' },
+            { name: 'Affordable Pricing', href: '/services/affordable-pricing', icon: DollarSign, description: 'Affordable for everyone' },
+            { name: 'Simple User Interface', href: '/services/simple-ui', icon: Monitor, description: 'Easy to use interface' },
+            { name: 'Local Support', href: '/services/local-support', icon: HeadphonesIcon, description: 'Local customer support' },
+            { name: 'Government Services', href: '/services/government-services', icon: Landmark, description: 'Government service integration' },
+            { name: 'Banking Integration', href: '/services/banking-integration', icon: LinkIcon, description: 'Seamless banking integration' },
+            { name: 'Social Services', href: '/services/social-services', icon: Heart, description: 'Social service integration' },
+            { name: 'Community Features', href: '/services/community-features', icon: Users, description: 'Build communities' },
         { name: 'Ideas & Tips', href: '/ideas', icon: Lightbulb, description: 'Share ideas and feedback' },
         { name: 'About Us', href: '/about', icon: Users, description: 'Our story and mission' },
         { name: 'CSR', href: '/company/csr', icon: Heart, description: 'Corporate social responsibility and impact' },
@@ -312,7 +312,7 @@ const Navigation = () => {
                                            <SimpleThemeToggle />
                                          </div>
                                        </div>
-                                     </div>
+                                    </div>
                                   ) : 'isExternal' in dropdownItem && dropdownItem.isExternal ? (
                                     <a
                                       key={dropdownItem.name}
