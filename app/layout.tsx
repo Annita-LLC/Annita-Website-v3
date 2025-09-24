@@ -217,7 +217,7 @@ export default function RootLayout({
             </div>
           </PerformanceOptimizer>
           <Analytics />
-          <FundraisingPopup />
+          <FundraisingPopup onClose={() => {}} />
           <CookieConsent />
           <OfflineBanner />
           <PerformanceMonitor />
