@@ -84,39 +84,101 @@ const SecurityPage = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white">
       {/* Hero Section */}
-      <section className="py-16 sm:py-20 bg-gradient-to-br from-gray-50 to-orange-50">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
-              <div className="inline-flex items-center px-4 py-2 rounded-full bg-orange-100 text-orange-700 text-sm font-medium mb-6">
-                <Shield className="w-4 h-4 mr-2" />
+      <section className="relative py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-orange-600 via-orange-700 to-red-600 text-white overflow-hidden">
+        {/* Animated Background Elements */}
+        <div className="absolute inset-0">
+          <div className="absolute top-10 left-10 w-20 h-20 bg-white/10 rounded-full animate-pulse"></div>
+          <div className="absolute top-20 right-20 w-16 h-16 bg-white/10 rounded-full animate-bounce"></div>
+          <div className="absolute bottom-20 left-1/4 w-24 h-24 bg-white/10 rounded-full animate-pulse"></div>
+          <div className="absolute bottom-10 right-1/3 w-12 h-12 bg-white/10 rounded-full animate-bounce"></div>
+        </div>
+
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Content */}
+            <div>
+              {/* Badge */}
+              <div className="inline-flex items-center px-6 py-3 rounded-full bg-white/20 backdrop-blur-sm text-white text-sm font-semibold mb-8 shadow-lg border border-white/30">
+                <Shield className="w-5 h-5 mr-2" />
                 Security
               </div>
-              
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 mb-6">
-                <span className="text-orange-600">Security</span>
+
+              {/* Heading */}
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 leading-tight">
+                <span className="text-orange-200">Security</span>
               </h1>
-              <p className="text-lg text-gray-600 max-w-3xl mx-auto mb-8">
+
+              {/* Description */}
+              <p className="text-xl sm:text-2xl text-orange-100 mb-8 leading-relaxed max-w-2xl">
                 Your security is our top priority. Learn about our comprehensive protection measures.
               </p>
-              
+
+              {/* Quick Stats */}
+              <div className="grid grid-cols-3 gap-6 mb-8">
+                <div className="text-center">
+                  <div className="text-2xl sm:text-3xl font-bold text-white">256-bit</div>
+                  <div className="text-sm text-orange-200">Encryption</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-2xl sm:text-3xl font-bold text-white">99.9%</div>
+                  <div className="text-sm text-orange-200">Uptime</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-2xl sm:text-3xl font-bold text-white">24/7</div>
+                  <div className="text-sm text-orange-200">Monitoring</div>
+                </div>
+              </div>
+
+              {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-4">
                 <a
                   href="https://annita.company.site/products"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-gradient-to-r from-orange-600 to-orange-700 text-white px-8 py-4 rounded-xl font-semibold hover:from-orange-700 hover:to-orange-800 transition-all duration-200 flex items-center justify-center shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                  className="bg-white text-orange-600 px-8 py-4 rounded-xl font-bold hover:bg-orange-50 transition-all duration-200 flex items-center justify-center shadow-lg hover:shadow-xl transform hover:scale-105"
                 >
                   <ExternalLink className="w-5 h-5 mr-2" />
                   Try V1.0 Now
                 </a>
                 <a
                   href="/download"
-                  className="border-2 border-orange-600 text-orange-600 px-8 py-4 rounded-xl font-semibold hover:bg-orange-50 transition-all duration-200 flex items-center justify-center transform hover:-translate-y-1"
+                  className="border-2 border-white text-white px-8 py-4 rounded-xl font-bold hover:bg-white hover:text-orange-600 transition-all duration-200 flex items-center justify-center shadow-lg hover:shadow-xl transform hover:scale-105"
                 >
                   <Download className="w-5 h-5 mr-2" />
                   Join V3.0 Waitlist
                 </a>
+              </div>
+            </div>
+
+            {/* Visualization Card */}
+            <div className="relative">
+              <div className="bg-white/10 backdrop-blur-sm p-8 rounded-3xl shadow-2xl border border-white/20">
+                <div className="text-center mb-6">
+                  <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                    <Shield className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-white mb-2">Security Excellence</h3>
+                  <p className="text-orange-200">Bank-level protection for your data</p>
+                </div>
+                
+                <div className="space-y-4">
+                  <div className="flex items-center justify-between p-4 bg-white/10 rounded-xl">
+                    <span className="text-white">Bank-Level Encryption</span>
+                    <span className="font-bold text-green-300">✓</span>
+                  </div>
+                  <div className="flex items-center justify-between p-4 bg-white/10 rounded-xl">
+                    <span className="text-white">Multi-Factor Authentication</span>
+                    <span className="font-bold text-green-300">✓</span>
+                  </div>
+                  <div className="flex items-center justify-between p-4 bg-white/10 rounded-xl">
+                    <span className="text-white">Privacy Controls</span>
+                    <span className="font-bold text-green-300">✓</span>
+                  </div>
+                  <div className="flex items-center justify-between p-4 bg-white/10 rounded-xl">
+                    <span className="text-white">Real-Time Monitoring</span>
+                    <span className="font-bold text-green-300">✓</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

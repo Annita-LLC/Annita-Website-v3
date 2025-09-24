@@ -57,9 +57,9 @@ const InvestorsPage = () => {
     {
       round: 'First Fundraising Round',
       date: 'Q1 2025',
-      amount: '$100,000',
-      equity: '25%',
-      valuation: '$400,000',
+      amount: '$150,000',
+      equity: '15%',
+      valuation: '$1,000,000',
       investors: ['Open for Investment'],
       stage: 'Active',
       status: 'active'
@@ -67,8 +67,10 @@ const InvestorsPage = () => {
   ]
 
   const capTable = [
-    { stakeholder: 'Founders', ownership: '75%', shares: '75,000' },
-    { stakeholder: 'New Investors', ownership: '25%', shares: '25,000' },
+    { stakeholder: 'Founders', ownership: '68%', shares: '68,000' },
+    { stakeholder: 'Siah', ownership: '2%', shares: '2,000' },
+    { stakeholder: 'Lamber', ownership: '5%', shares: '5,000' },
+    { stakeholder: 'New Investors', ownership: '25%', shares: '20,000-25,000' },
     { stakeholder: 'Total', ownership: '100%', shares: '100,000' }
   ]
 
@@ -166,12 +168,13 @@ const InvestorsPage = () => {
   ]
 
   const useOfFunds = [
-    { category: 'Sellers Acquisition & Growth Marketing', percentage: 40, amount: '$40,000', description: 'Customer acquisition and marketing campaigns' },
-    { category: 'Talent Acquisition & Team Scaling', percentage: 20, amount: '$20,000', description: 'Hiring key talent and expanding team' },
-    { category: 'Product Enhancement & Feature Expansion', percentage: 15, amount: '$15,000', description: 'Platform development and new features' },
-    { category: 'Operations & Infrastructure', percentage: 15, amount: '$15,000', description: 'Operational costs and infrastructure' },
-    { category: 'Strategic Partnerships & Ecosystem Development', percentage: 5, amount: '$5,000', description: 'Partnership development and ecosystem building' },
-    { category: 'Training Programs & Vendor Support', percentage: 5, amount: '$5,000', description: 'Vendor training and support programs' }
+    { category: 'Talent Acquisition & Team Scaling', percentage: 30, amount: '$45,000', description: 'Hiring key talent and expanding team' },
+    { category: 'Product Enhancement & Feature Expansion', percentage: 25, amount: '$37,500', description: 'Platform development and new features' },
+    { category: 'Market Expansion & Growth', percentage: 20, amount: '$30,000', description: 'Market expansion and growth initiatives' },
+    { category: 'Seller & Customer Acquisition', percentage: 15, amount: '$22,500', description: 'Customer acquisition and marketing campaigns' },
+    { category: 'Operations & Infrastructure', percentage: 5, amount: '$7,500', description: 'Operational costs and infrastructure' },
+    { category: 'Strategic Partnerships & Integrations', percentage: 3, amount: '$4,500', description: 'Partnership development and ecosystem building' },
+    { category: 'MSME Training & Support', percentage: 2, amount: '$3,000', description: 'Vendor training and support programs' }
   ]
 
   const financialMetrics = [
@@ -192,7 +195,7 @@ const InvestorsPage = () => {
     { metric: 'Customer Acquisition Cost', value: '$4.00', description: 'Cost to acquire new customer', icon: Target },
     { metric: 'Repeat Purchase Rate', value: '75%', description: 'Customer retention', icon: Repeat },
     { metric: 'Customer Satisfaction Rate', value: '90%', description: 'User satisfaction score', icon: Award },
-    { metric: 'Seller Retention Rate', value: '70%', description: 'Seller retention', icon: TrendingUp }
+    { metric: 'Seller Retention Rate', value: '80%', description: 'Seller retention', icon: TrendingUp }
   ]
 
   const competitiveAdvantages = [
@@ -765,7 +768,7 @@ const InvestorsPage = () => {
               {/* Use of Funds */}
               <div>
                 <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-8">
-                  Use of Funds ($100,000)
+                  Use of Funds ($150,000)
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {useOfFunds.map((item, index) => (
@@ -824,11 +827,38 @@ const InvestorsPage = () => {
                     First Fundraising Round
                   </h4>
                   <p className="text-lg text-gray-600 dark:text-gray-400">
-                    We're raising $100,000 for 25% equity at a $400,000 post-money valuation
+                    We're raising $150,000 for 15% equity at a $1,000,000 post-money valuation
                   </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                {/* CEO Statement */}
+                <div className="bg-white dark:bg-gray-800 rounded-xl p-8 mb-8 shadow-lg border-l-4 border-orange-500">
+                  <div className="flex items-start space-x-4">
+                    <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-red-500 rounded-full flex items-center justify-center flex-shrink-0">
+                      <span className="text-white font-bold text-xl">CO</span>
+                    </div>
+                    <div className="flex-1">
+                      <h5 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">Message from the CEO/Founder</h5>
+                      <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+                        "This fundraising round represents a pivotal moment for Annita. We've achieved remarkable traction in Liberia alone - a market with only 8% internet penetration and limited infrastructure. Despite these challenges, we've built a thriving ecosystem of 3,000+ sellers and 1,500+ buyers, generating $1,800+ monthly revenue.
+                      </p>
+                      <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+                        Our success in Liberia proves our model works in the most challenging conditions. Imagine our potential in markets like Nigeria (50% internet penetration), Ghana (68%), or Kenya (89%). The opportunity is exponential.
+                      </p>
+                      <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+                        We're backed by Mansa's due diligence, AU support, and strong credibility. Our Annita 3.0 platform represents the future - offline-ready, AI-powered, and built for Africa's unique challenges. This complexity and innovation is what sets us apart and drives our $1M valuation.
+                      </p>
+                      <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+                        Join us in transforming Africa's digital economy. The foundation is built, the vision is clear, and the opportunity is massive."
+                      </p>
+                      <div className="mt-4 text-sm text-gray-600 dark:text-gray-400">
+                        <strong>Christopher O. Fallah</strong> - CEO & Founder, Annita LLC
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
                   <div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg">
                     <h5 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">Option 1 – SAFE (Preferred)</h5>
                     <div className="space-y-3">
@@ -838,7 +868,7 @@ const InvestorsPage = () => {
                       </div>
                       <div className="flex justify-between">
                         <span className="text-gray-600 dark:text-gray-400">Valuation Cap:</span>
-                        <span className="font-medium">$400,000</span>
+                        <span className="font-medium">$1,000,000</span>
                       </div>
                       <div className="flex justify-between">
                         <span className="text-gray-600 dark:text-gray-400">Discount:</span>
@@ -852,15 +882,37 @@ const InvestorsPage = () => {
                     <div className="space-y-3">
                       <div className="flex justify-between">
                         <span className="text-gray-600 dark:text-gray-400">Equity:</span>
-                        <span className="font-medium">25%</span>
+                        <span className="font-medium">15%</span>
                       </div>
                       <div className="flex justify-between">
                         <span className="text-gray-600 dark:text-gray-400">Investment:</span>
-                        <span className="font-medium">$100,000</span>
+                        <span className="font-medium">$150,000</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-gray-600 dark:text-gray-400">Pre-money Valuation:</span>
+                        <span className="font-medium">$850,000</span>
                       </div>
                       <div className="flex justify-between">
                         <span className="text-gray-600 dark:text-gray-400">Post-money Valuation:</span>
-                        <span className="font-medium">$400,000</span>
+                        <span className="font-medium">$1,000,000</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg">
+                    <h5 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">Option 3 – Convertible Note</h5>
+                    <div className="space-y-3">
+                      <div className="flex justify-between">
+                        <span className="text-gray-600 dark:text-gray-400">Interest Rate:</span>
+                        <span className="font-medium">3%</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-gray-600 dark:text-gray-400">Conversion Cap:</span>
+                        <span className="font-medium">$1,000,000</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-gray-600 dark:text-gray-400">Maturity:</span>
+                        <span className="font-medium">36 months</span>
                       </div>
                     </div>
                   </div>

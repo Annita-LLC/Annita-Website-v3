@@ -12,7 +12,7 @@ const CTASection = () => {
   const [isWaitlistOpen, setIsWaitlistOpen] = useState(false)
 
   return (
-    <section className="py-16 sm:py-20 bg-gradient-to-br from-gray-50 to-white" ref={ref}>
+    <section className="py-8 sm:py-12 bg-gradient-to-br from-gray-50 to-white" ref={ref}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
           {/* Call to Action */}

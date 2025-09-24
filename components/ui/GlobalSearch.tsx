@@ -172,16 +172,16 @@ export default function GlobalSearch() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm"
+            className="fixed inset-0 z-[60] bg-black/50 backdrop-blur-sm"
             onClick={() => setIsOpen(false)}
           >
-            <div className="fixed inset-0 flex items-center justify-center p-2 sm:p-4 z-50 pointer-events-none">
+            <div className="fixed top-16 left-0 right-0 flex justify-center p-4 z-[60] pointer-events-none">
               <motion.div
                 initial={{ opacity: 0, scale: 0.95, y: -20 }}
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.95, y: -20 }}
                 transition={{ duration: 0.2 }}
-                className="pointer-events-auto w-full max-w-[95vw] sm:max-w-2xl lg:max-w-3xl"
+                className="pointer-events-auto w-full max-w-2xl lg:max-w-3xl"
                 onClick={(e: React.MouseEvent) => e.stopPropagation()}
               >
               <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-2xl border border-gray-200 dark:border-gray-700 overflow-hidden w-full max-h-[85vh] sm:max-h-[90vh]">

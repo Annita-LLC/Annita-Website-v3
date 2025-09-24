@@ -60,7 +60,6 @@ const Footer = () => {
         { name: 'Demo', href: '/demo' },
         { name: 'Investors', href: '/investors' },
         { name: 'The 100', href: '/the100' },
-        { name: 'Pricing', href: '/pricing' },
         { name: 'Business Model', href: '/business-model' },
         { name: 'Awards & Recognition', href: '/awards' },
         { name: 'Careers', href: '/careers' },

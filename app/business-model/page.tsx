@@ -88,18 +88,18 @@ export default function BusinessModelPage() {
       {
         id: 'merchant-service',
         name: 'Merchant Service Fees',
-        description: 'Transaction processing fees for payment handling',
+        description: 'Monthly subscription fees for MSMEs who prefer transparent pricing over markup model',
         icon: CreditCard,
         color: 'from-blue-500 to-cyan-500',
-        rate: '2.5-3.5%',
+        rate: '$9.99-$100/month',
         details: [
-          'Secure payment processing',
-          'Multi-currency support',
-          'Fraud protection included',
-          'Real-time transaction monitoring',
-          'Instant settlement options'
+          'Beta Plan: $9.99/month - Basic features',
+          'Growth Plan: $29.99/month - Advanced tools',
+          'Premium Plan: $100/month - Full suite',
+          'Annual discounts available',
+          'No markup on customer prices'
         ],
-        example: 'Transaction: $100, Fee: 3%, Annita earns: $3, Vendor gets: $97'
+        example: 'Growth Plan: $29.99/month, customers see original prices, no markup added'
       },
       {
         id: 'prioritization',
@@ -148,6 +148,22 @@ export default function BusinessModelPage() {
           'ROI optimization tools'
         ],
         example: 'Campaign: $100 budget, 200 clicks at $0.50 each, 15% conversion rate'
+      },
+      {
+        id: 'fintech-services',
+        name: 'Fintech Services',
+        description: 'Financial services for both Individuals and MSMEs with compliance focus',
+        icon: Wallet,
+        color: 'from-green-500 to-teal-500',
+        rate: '1-3% per transaction',
+        details: [
+          'Digital wallet services',
+          'Cross-border payments',
+          'Currency exchange',
+          'Financial compliance',
+          'Individual & MSME accounts'
+        ],
+        example: 'Transaction: $200, Fee: 2%, Annita earns: $4, User gets: $196'
       }
     ]
   }
@@ -262,7 +278,7 @@ export default function BusinessModelPage() {
                 {/* Quick Stats */}
                 <div className="grid grid-cols-3 gap-3 sm:gap-4 mb-6 sm:mb-8">
                   <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3 sm:p-4">
-                    <div className="text-xl sm:text-2xl font-bold">5</div>
+                    <div className="text-xl sm:text-2xl font-bold">6</div>
                     <div className="text-xs sm:text-sm text-orange-200">Revenue Streams</div>
                   </div>
                   <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3 sm:p-4">
@@ -338,7 +354,7 @@ export default function BusinessModelPage() {
                 Our <span className="text-orange-500">Revenue Streams</span>
               </h2>
               <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                Five comprehensive revenue streams designed for sustainable growth and vendor success.
+                Six comprehensive revenue streams designed for sustainable growth and vendor success.
               </p>
             </motion.div>
 
@@ -357,11 +373,13 @@ export default function BusinessModelPage() {
                       <component.icon className="w-6 h-6 text-white" />
                     </div>
                     <div className="flex-1 min-w-0">
-                      <div className="flex items-center justify-between mb-2">
-                        <h3 className="text-lg font-semibold text-gray-900">{component.name}</h3>
-                        <span className="px-2 py-1 bg-orange-100 text-orange-700 rounded-full text-xs font-medium">
-                          {component.rate}
-                        </span>
+                      <div className="mb-2">
+                        <div className="flex items-center gap-3 mb-1">
+                          <h3 className="text-lg font-semibold text-gray-900">{component.name}</h3>
+                          <span className="px-3 py-1 bg-orange-100 text-orange-700 rounded-full text-xs font-medium whitespace-nowrap">
+                            {component.rate}
+                          </span>
+                        </div>
                       </div>
                       <p className="text-sm text-gray-600 mb-4">{component.description}</p>
                       

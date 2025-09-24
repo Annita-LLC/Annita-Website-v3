@@ -6,6 +6,7 @@ import { Toaster } from 'react-hot-toast'
 import Navigation from '@/components/layout/Navigation'
 import Footer from '@/components/layout/Footer'
 import CookieConsent from '@/components/ui/CookieConsent'
+import FundraisingPopup from '@/components/ui/FundraisingPopup'
 import OfflineBanner from '@/components/ui/OfflineBanner'
 import PerformanceOptimizer from '@/components/ui/PerformanceOptimizer'
 import PerformanceMonitor from '@/components/ui/PerformanceMonitor'
@@ -216,6 +217,7 @@ export default function RootLayout({
             </div>
           </PerformanceOptimizer>
           <Analytics />
+          <FundraisingPopup />
           <CookieConsent />
           <OfflineBanner />
           <PerformanceMonitor />
