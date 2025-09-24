@@ -478,11 +478,11 @@ const InvestorsPage = () => {
                   <div className="space-y-3 sm:space-y-4">
                     <div className="flex items-center justify-between p-3 bg-white/10 rounded-lg">
                       <span className="text-orange-200">Total Valuation</span>
-                      <span className="font-semibold text-white">$400,000</span>
+                      <span className="font-semibold text-white">$1,000,000</span>
                     </div>
                     <div className="flex items-center justify-between p-3 bg-white/10 rounded-lg">
                       <span className="text-orange-200">Equity Available</span>
-                      <span className="font-semibold text-white">25%</span>
+                      <span className="font-semibold text-white">15%</span>
                     </div>
                     <div className="flex items-center justify-between p-3 bg-white/10 rounded-lg">
                       <span className="text-orange-200">Investment Round</span>

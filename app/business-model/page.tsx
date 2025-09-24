@@ -175,6 +175,7 @@ export default function BusinessModelPage() {
       description: 'Dynamic 5-15% markup per product or account level',
       icon: DollarSign,
       color: 'from-green-500 to-emerald-500',
+      rate: '5-15%',
       features: [
         'Vendor sets markup rate (5-15%)',
         'Customer sees final price including markup',
@@ -190,6 +191,7 @@ export default function BusinessModelPage() {
       description: 'Monthly/Annual plans for premium tools and features',
       icon: Users,
       color: 'from-blue-500 to-cyan-500',
+      rate: '$10-50/month',
       features: [
         'Growth ($10/month): Marketing credits, analytics',
         'Pro ($25/month): AI recommendations, API access',
@@ -374,9 +376,9 @@ export default function BusinessModelPage() {
                     </div>
                     <div className="flex-1 min-w-0">
                       <div className="mb-2">
-                        <div className="flex items-center gap-3 mb-1">
-                          <h3 className="text-lg font-semibold text-gray-900">{component.name}</h3>
-                          <span className="px-3 py-1 bg-orange-100 text-orange-700 rounded-full text-xs font-medium whitespace-nowrap">
+                        <div className="flex items-center justify-between mb-1">
+                          <h3 className="text-lg font-semibold text-gray-900 flex-1">{component.name}</h3>
+                          <span className="px-3 py-1 bg-orange-100 text-orange-700 rounded-full text-xs font-medium whitespace-nowrap ml-2 flex-shrink-0">
                             {component.rate}
                           </span>
                         </div>
