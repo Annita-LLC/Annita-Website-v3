@@ -47,10 +47,10 @@ const CookieConsent = ({ onPreferencesChange }: CookieConsentProps) => {
     const consentDate = localStorage.getItem('annita-cookie-consent-date')
     
     if (!existingConsent) {
-      // Show popup after 15 seconds to allow fundraising popup to show first
+      // Show popup after 20 seconds to allow fundraising popup to show first
       const timer = setTimeout(() => {
         setIsVisible(true)
-      }, 15000)
+      }, 20000)
       return () => clearTimeout(timer)
     } else {
       // Load existing preferences

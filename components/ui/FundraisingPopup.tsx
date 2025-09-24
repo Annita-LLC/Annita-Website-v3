@@ -65,7 +65,7 @@ const FundraisingPopup = ({ onClose }: FundraisingPopupProps) => {
       
       {/* Fundraising Popup */}
       <div className="fixed inset-0 flex items-center justify-center p-2 sm:p-4 z-50 pointer-events-none">
-        <div className="pointer-events-auto w-full max-w-[95vw] sm:max-w-md lg:max-w-lg">
+        <div className="pointer-events-auto w-full max-w-[95vw] sm:max-w-lg lg:max-w-xl">
           <div className="bg-gradient-to-br from-orange-50 via-white to-red-50 rounded-2xl sm:rounded-3xl shadow-2xl border border-orange-100 overflow-hidden w-full max-h-[85vh] sm:max-h-[90vh]">
             
             {/* Header */}
