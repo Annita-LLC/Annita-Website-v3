@@ -83,6 +83,15 @@ const Footer = () => {
       ]
     },
     {
+      title: 'Resources',
+      links: [
+        { name: 'Pitch Deck', href: '/documents/Annita-Pitch Deck.pdf', isExternal: true },
+        { name: 'Business Plan', href: '/documents/annita-business-plan.pdf', isExternal: true },
+        { name: 'Financial Model', href: '/documents/annita-financial-model.pdf', isExternal: true },
+        { name: 'Company Factsheet', href: '/documents/annita-factsheet.pdf', isExternal: true }
+      ]
+    },
+    {
       title: 'Legal',
       links: [
         { name: 'Privacy Policy', href: '/privacy' },

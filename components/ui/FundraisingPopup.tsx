@@ -23,32 +23,24 @@ const FundraisingPopup = ({ onClose }: FundraisingPopupProps) => {
   const [isVisible, setIsVisible] = useState(false)
 
   useEffect(() => {
-    // Check if user has already seen the fundraising popup
-    const hasSeenFundraising = localStorage.getItem('annita-fundraising-seen')
-    
-    if (!hasSeenFundraising) {
-      // Show popup immediately
-      setIsVisible(true)
-    }
+    // Show popup immediately on every page refresh
+    setIsVisible(true)
   }, [])
 
   const handleClose = () => {
-    // Mark as seen and close
-    localStorage.setItem('annita-fundraising-seen', 'true')
+    // Just close without marking as permanently seen
     setIsVisible(false)
     onClose()
   }
 
   const handleInvestNow = () => {
-    // Mark as seen and redirect to investors page
-    localStorage.setItem('annita-fundraising-seen', 'true')
+    // Close and redirect to investors page
     setIsVisible(false)
     window.location.href = '/investors'
   }
 
   const handleLearnMore = () => {
-    // Mark as seen and redirect to investors page
-    localStorage.setItem('annita-fundraising-seen', 'true')
+    // Close and redirect to investors page
     setIsVisible(false)
     window.location.href = '/investors'
   }

@@ -67,10 +67,10 @@ const InvestorsPage = () => {
   ]
 
   const capTable = [
-    { stakeholder: 'Founders', ownership: '68%', shares: '68,000' },
+    { stakeholder: 'Founders', ownership: '78%', shares: '78,000' },
     { stakeholder: 'Siah', ownership: '2%', shares: '2,000' },
     { stakeholder: 'Lamber', ownership: '5%', shares: '5,000' },
-    { stakeholder: 'New Investors', ownership: '25%', shares: '20,000-25,000' },
+    { stakeholder: 'New Investors', ownership: '15%', shares: '15,000' },
     { stakeholder: 'Total', ownership: '100%', shares: '100,000' }
   ]
 
@@ -81,7 +81,7 @@ const InvestorsPage = () => {
       icon: FileText,
       size: '15.2 MB',
       format: 'PDF',
-      downloadUrl: '/documents/annita-pitch-deck.pdf',
+      downloadUrl: '/documents/Annita-Pitch Deck.pdf',
       category: 'Investment'
     },
     {
@@ -345,7 +345,7 @@ const InvestorsPage = () => {
     <>
       <SEOHead
         title="Investors - Annita Investment Opportunities"
-        description="Explore investment opportunities in Annita, Africa's first all-in-one digital platform. 3,000+ sellers, 1,500+ buyers, 400% revenue growth. First fundraising round: $100,000 for 25% equity at $400,000 valuation. Download pitch deck, business plan, and financial model."
+        description="Explore investment opportunities in Annita, Africa's first all-in-one digital platform. 3,000+ sellers, 1,500+ buyers, 400% revenue growth. First fundraising round: $150,000 for 15% equity at $1,000,000 valuation. Download pitch deck, business plan, and financial model."
         keywords={[
           'Annita investors',
           'investment opportunities',
@@ -438,11 +438,11 @@ const InvestorsPage = () => {
                 {/* Quick Stats */}
                 <div className="grid grid-cols-3 gap-3 sm:gap-4 mb-6 sm:mb-8">
                   <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3 sm:p-4">
-                    <div className="text-xl sm:text-2xl font-bold">$400K</div>
+                    <div className="text-xl sm:text-2xl font-bold">$1M</div>
                     <div className="text-xs sm:text-sm text-orange-200">Valuation</div>
                   </div>
                   <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3 sm:p-4">
-                    <div className="text-xl sm:text-2xl font-bold">25%</div>
+                    <div className="text-xl sm:text-2xl font-bold">15%</div>
                     <div className="text-xs sm:text-sm text-orange-200">Equity</div>
                   </div>
                   <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3 sm:p-4">
@@ -832,27 +832,36 @@ const InvestorsPage = () => {
                 </div>
 
                 {/* CEO Statement */}
-                <div className="bg-white dark:bg-gray-800 rounded-xl p-8 mb-8 shadow-lg border-l-4 border-orange-500">
-                  <div className="flex items-start space-x-4">
-                    <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-red-500 rounded-full flex items-center justify-center flex-shrink-0">
-                      <span className="text-white font-bold text-xl">CO</span>
+                <div className="bg-white dark:bg-gray-800 rounded-xl p-4 sm:p-6 lg:p-8 mb-6 sm:mb-8 shadow-lg border-l-4 border-orange-500">
+                  <div className="flex flex-col sm:flex-row items-start space-y-4 sm:space-y-0 sm:space-x-4">
+                    <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-orange-500 to-red-500 rounded-full flex items-center justify-center flex-shrink-0 mx-auto sm:mx-0">
+                      <span className="text-white font-bold text-lg sm:text-xl">CO</span>
                     </div>
-                    <div className="flex-1">
-                      <h5 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">Message from the CEO/Founder</h5>
-                      <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
-                        "This fundraising round represents a pivotal moment for Annita. We've achieved remarkable traction in Liberia alone - a market with only 8% internet penetration and limited infrastructure. Despite these challenges, we've built a thriving ecosystem of 3,000+ sellers and 1,500+ buyers, generating $1,800+ monthly revenue.
-                      </p>
-                      <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
-                        Our success in Liberia proves our model works in the most challenging conditions. Imagine our potential in markets like Nigeria (50% internet penetration), Ghana (68%), or Kenya (89%). The opportunity is exponential.
-                      </p>
-                      <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
-                        We're backed by Mansa's due diligence, AU support, and strong credibility. Our Annita 3.0 platform represents the future - offline-ready, AI-powered, and built for Africa's unique challenges. This complexity and innovation is what sets us apart and drives our $1M valuation.
-                      </p>
-                      <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                        Join us in transforming Africa's digital economy. The foundation is built, the vision is clear, and the opportunity is massive."
-                      </p>
-                      <div className="mt-4 text-sm text-gray-600 dark:text-gray-400">
-                        <strong>Christopher O. Fallah</strong> - CEO & Founder, Annita LLC
+                    <div className="flex-1 w-full">
+                      <h5 className="text-base sm:text-lg font-semibold text-gray-900 dark:text-white mb-3 sm:mb-4 text-center sm:text-left">Message from the CEO/Founder</h5>
+                      
+                      <div className="space-y-3 sm:space-y-4">
+                        <p className="text-sm sm:text-base text-gray-700 dark:text-gray-300 leading-relaxed">
+                          "This fundraising round represents a pivotal moment for Annita. We've achieved remarkable traction in Liberia alone - a market with only 8% internet penetration and limited infrastructure. Despite these challenges, we've built a thriving ecosystem of 3,000+ sellers and 1,500+ buyers, generating $1,800+ monthly revenue.
+                        </p>
+                        
+                        <p className="text-sm sm:text-base text-gray-700 dark:text-gray-300 leading-relaxed">
+                          Our success in Liberia proves our model works in the most challenging conditions. Imagine our potential in markets like Nigeria (50% internet penetration), Ghana (68%), or Kenya (89%). The opportunity is exponential.
+                        </p>
+                        
+                        <p className="text-sm sm:text-base text-gray-700 dark:text-gray-300 leading-relaxed">
+                          We're backed by Mansa's due diligence, AU support, and strong credibility. Our Annita 3.0 platform represents the future - offline-ready, AI-powered, and built for Africa's unique challenges. This complexity and innovation is what sets us apart and drives our $1M valuation.
+                        </p>
+                        
+                        <p className="text-sm sm:text-base text-gray-700 dark:text-gray-300 leading-relaxed">
+                          Join us in transforming Africa's digital economy. The foundation is built, the vision is clear, and the opportunity is massive."
+                        </p>
+                      </div>
+                      
+                      <div className="mt-4 sm:mt-6 pt-3 sm:pt-4 border-t border-gray-200 dark:border-gray-600">
+                        <div className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 text-center sm:text-left">
+                          <strong>Christopher O. Fallah</strong> - CEO & Founder, Annita LLC
+                        </div>
                       </div>
                     </div>
                   </div>

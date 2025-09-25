@@ -131,7 +131,7 @@ export default function ApplyPage() {
               <div className="text-center lg:text-left">
                 <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/20 backdrop-blur-sm text-white text-sm font-medium mb-6">
                   <Briefcase className="w-4 h-4 mr-2" />
-                  Submit Your Application
+                Submit Your Application
                 </div>
                 <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 leading-tight">
                   Apply for a <span className="text-orange-200">Position</span>
@@ -174,7 +174,7 @@ export default function ApplyPage() {
                   </Link>
                 </div>
               </div>
-
+              
               {/* Right Column - Interactive Elements */}
               <div className="relative">
                 {/* Application Excellence Visualization */}

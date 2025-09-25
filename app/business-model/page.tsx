@@ -66,8 +66,8 @@ export default function BusinessModelPage() {
   const [isWaitlistOpen, setIsWaitlistOpen] = useState(false)
 
   const revenueModel = {
-    title: "Our Revenue Model (v1.0)",
-    description: "Comprehensive revenue streams designed for sustainable growth and vendor success",
+    title: "Our Revenue Streams",
+    description: "Seven comprehensive revenue streams designed for sustainable growth and vendor success, creating a robust ecosystem that supports MSMEs while generating predictable revenue",
     components: [
       {
         id: 'markup-base',
@@ -77,11 +77,12 @@ export default function BusinessModelPage() {
         color: 'from-green-500 to-emerald-500',
         rate: '5-15%',
         details: [
-          'Vendor sets markup rate (5-15%)',
-          'Customer sees final price including markup',
-          'Vendor receives full original price',
-          'Dynamic adjustments by category',
-          'No transaction fees unless markup selected'
+          'Vendor Control: Vendors set their preferred markup rate within 5-15% range',
+          'Transparent Pricing: Customers see final price including markup upfront',
+          'Vendor Protection: Vendors receive 100% of their original product price',
+          'Account-Level Settings: Bulk markup settings for entire vendor catalogs',
+          'Product-Specific Override: Individual product markup customization',
+          'Real-Time Adjustment: Dynamic markup changes based on market conditions'
         ],
         example: 'Product: $50, Markup: 10%, Customer pays: $55, Vendor gets: $50, Annita earns: $5'
       },
@@ -93,77 +94,93 @@ export default function BusinessModelPage() {
         color: 'from-blue-500 to-cyan-500',
         rate: '$9.99-$100/month',
         details: [
-          'Beta Plan: $9.99/month - Basic features',
-          'Growth Plan: $29.99/month - Advanced tools',
-          'Premium Plan: $100/month - Full suite',
-          'Annual discounts available',
-          'No markup on customer prices'
+          'Beta Plan: $9.99/month - Up to 50 products, basic analytics, standard support',
+          'Growth Plan: $29.99/month - Up to 500 products, advanced analytics, marketing tools',
+          'Premium Plan: $100/month - Unlimited products, AI insights, dedicated manager',
+          'No markup fees - customers see original vendor prices',
+          'Predictable monthly costs for business planning'
         ],
-        example: 'Growth Plan: $29.99/month, customers see original prices, no markup added'
+        example: 'Growth Plan: $29.99/month, processes $10,000 in sales, saves $700 in markup fees vs. 7% markup model'
       },
       {
         id: 'prioritization',
         name: 'Prioritization Fees',
-        description: 'Visibility boosts for sellers to increase product exposure',
+        description: 'Visibility boosts for sellers to increase product exposure and sales conversion',
         icon: Star,
         color: 'from-yellow-500 to-orange-500',
         rate: '$5-50/day',
         details: [
-          'Featured product placement',
-          'Search result prioritization',
-          'Category top listings',
-          'Homepage banner placement',
-          'Email marketing inclusion'
+          'Basic Boost ($5-15/day): Category top 10, search priority, 15-25% visibility increase',
+          'Premium Feature ($20-35/day): Homepage rotation, hero banner, top 5 search, 40-60% increase',
+          'Ultra Premium ($40-50/day): Homepage hero, cross-category, push notifications, 80-120% increase',
+          'Average 30-150% increase in product views',
+          '15-45% improvement in conversion rates'
         ],
-        example: 'Premium listing: $25/day, 30% increase in visibility and sales'
+        example: 'Premium listing: $25/day for electronics, 45% visibility increase, $180 additional daily revenue'
       },
       {
         id: 'installment',
         name: 'Installment Payment Service Fees',
-        description: 'Flexible payment options with service charges',
+        description: 'Flexible payment options with comprehensive credit assessment and risk management',
         icon: Calendar,
         color: 'from-purple-500 to-pink-500',
         rate: '1-2% per installment',
         details: [
-          'Buy now, pay later options',
-          'Flexible payment schedules',
-          'Credit risk assessment',
-          'Automated payment collection',
-          'Customer credit building'
+          'Short-term (2-3 months): 1% per installment',
+          'Medium-term (4-6 months): 1.5% per installment',
+          'Long-term (7-12 months): 2% per installment',
+          'Real-time credit scoring and approval',
+          'AI-powered creditworthiness assessment'
         ],
-        example: '3-month installment: $100 product, $1.50 fee per payment, total: $4.50'
+        example: '3-month installment: $100 product, $1.50 fee per payment, total fees: $4.50'
       },
       {
         id: 'sponsored-ads',
         name: 'Sponsored Ads + Targeted Marketing',
-        description: 'Advanced advertising platform with AI targeting',
+        description: 'AI-powered advertising ecosystem with advanced targeting and cross-platform reach',
         icon: Megaphone,
         color: 'from-red-500 to-pink-500',
         rate: '$0.50-5.00 per click',
         details: [
-          'AI-powered audience targeting',
-          'Cross-platform advertising',
-          'Performance analytics',
-          'A/B testing capabilities',
-          'ROI optimization tools'
+          'Basic Targeting ($0.50-1.50/click): Demographics and location targeting',
+          'Advanced Targeting ($1.50-3.00/click): Behavioral targeting and lookalike audiences',
+          'Premium AI Targeting ($3.00-5.00/click): Machine learning optimization',
+          'Average CTR: 2.5-4.8%, Typical conversion rate: 12-28%',
+          'ROI range: 4:1 to 12:1'
         ],
-        example: 'Campaign: $100 budget, 200 clicks at $0.50 each, 15% conversion rate'
+        example: 'Electronics campaign: $200 budget, 150 clicks at $1.33 each, 22% conversion rate, $1,800 revenue generated'
       },
       {
         id: 'fintech-services',
         name: 'Fintech Services',
-        description: 'Financial services for both Individuals and MSMEs with compliance focus',
+        description: 'Comprehensive financial ecosystem for individuals and MSMEs with regulatory compliance',
         icon: Wallet,
         color: 'from-green-500 to-teal-500',
         rate: '1-3% per transaction',
         details: [
-          'Digital wallet services',
-          'Cross-border payments',
-          'Currency exchange',
-          'Financial compliance',
-          'Individual & MSME accounts'
+          'Digital Wallet Services (1-1.5%): P2P transfers, bill payments, mobile money',
+          'Cross-Border Payments (2-3%): International remittances, multi-currency support',
+          'Currency Exchange (1-2%): Competitive rates, real-time updates, hedging services',
+          'KYC/AML compliance, PCI DSS certification',
+          'Micro-lending, business loans, insurance integration'
         ],
-        example: 'Transaction: $200, Fee: 2%, Annita earns: $4, User gets: $196'
+        example: 'International remittance: $500, Fee: 2.5%, Annita earns: $12.50, User receives: $487.50'
+      },
+      {
+        id: 'logistics-fees',
+        name: 'Logistics Fees',
+        description: 'Comprehensive last-mile delivery solutions with strategic partnerships and proprietary infrastructure',
+        icon: Truck,
+        color: 'from-indigo-500 to-purple-500',
+        rate: 'Variable partnership model',
+        details: [
+          'Standard Partners (40/60 split): Established logistics, 2-5 day delivery',
+          'Preferred Partners (25/75 split): Premium providers, same-day/next-day delivery',
+          'Strategic Partners (30/70 split): Technology-forward, specialized services',
+          'Annita Direct Logistics: 50-70% cost reduction, real-time GPS tracking',
+          'Future Innovation: Drone delivery with 30-minute delivery for small packages'
+        ],
+        example: 'Standard delivery: $12 fee, Annita earns: $4.80, Partner gets: $7.20'
       }
     ]
   }
@@ -229,24 +246,29 @@ export default function BusinessModelPage() {
   return (
     <>
       <SEOHead
-        title="Our Revenue Model - Annita LLC"
-        description="Comprehensive revenue model for v1.0 marketplace and v3.0 app. All transactions are processed through our live platforms with transparent fee structures."
+        title="Our Revenue Streams - Annita LLC"
+        description="Seven comprehensive revenue streams designed for sustainable growth and vendor success. Dynamic markup model, merchant subscriptions, prioritization fees, installment payments, sponsored ads, fintech services, and logistics solutions."
         keywords={[
-          'revenue model',
+          'revenue streams',
           'business model',
           'markup model',
-          'merchant fees',
+          'merchant service fees',
           'prioritization fees',
           'installment payments',
           'sponsored ads',
           'targeted marketing',
+          'fintech services',
+          'logistics fees',
           'transparent pricing',
           'African fintech',
           'digital payments',
-          'revenue streams',
           'business strategy',
           'payment processing',
-          'advertising platform'
+          'advertising platform',
+          'drone delivery',
+          'partnership model',
+          'MSME support',
+          'sustainable growth'
         ]}
         canonical="/business-model"
       />
@@ -280,7 +302,7 @@ export default function BusinessModelPage() {
                 {/* Quick Stats */}
                 <div className="grid grid-cols-3 gap-3 sm:gap-4 mb-6 sm:mb-8">
                   <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3 sm:p-4">
-                    <div className="text-xl sm:text-2xl font-bold">6</div>
+                    <div className="text-xl sm:text-2xl font-bold">7</div>
                     <div className="text-xs sm:text-sm text-orange-200">Revenue Streams</div>
                   </div>
                   <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3 sm:p-4">
@@ -319,7 +341,7 @@ export default function BusinessModelPage() {
                   <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4 text-center">Revenue Strategy</h3>
                   <div className="space-y-3 sm:space-y-4">
                     <div className="flex items-center justify-between p-3 bg-white/10 rounded-lg">
-                      <span className="text-orange-200">5 Revenue Streams</span>
+                      <span className="text-orange-200">7 Revenue Streams</span>
                       <span className="font-semibold text-white">Diversified</span>
                           </div>
                     <div className="flex items-center justify-between p-3 bg-white/10 rounded-lg">
@@ -356,7 +378,7 @@ export default function BusinessModelPage() {
                 Our <span className="text-orange-500">Revenue Streams</span>
               </h2>
               <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                Six comprehensive revenue streams designed for sustainable growth and vendor success.
+                Seven comprehensive revenue streams designed for sustainable growth and vendor success, creating a robust ecosystem that supports MSMEs while generating predictable revenue.
               </p>
             </motion.div>
 
@@ -548,13 +570,24 @@ export default function BusinessModelPage() {
                     </div>
                   </div>
 
-                  <Link
-                    href="/contact-sales"
-                    className="w-full inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-orange-500 text-white font-semibold rounded-lg hover:bg-orange-600 transition-all duration-200 shadow-lg text-sm sm:text-base"
-                  >
-                    Contact Sales Team
-                    <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 ml-2" />
-                  </Link>
+                  <div className="space-y-3">
+                    <Link
+                      href="/contact-sales"
+                      className="w-full inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-orange-500 text-white font-semibold rounded-lg hover:bg-orange-600 transition-all duration-200 shadow-lg text-sm sm:text-base"
+                    >
+                      Contact Sales Team
+                      <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 ml-2" />
+                    </Link>
+                    <a
+                      href="/documents/Annita-Pitch Deck.pdf"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 border-2 border-orange-500 text-orange-500 font-semibold rounded-lg hover:bg-orange-500 hover:text-white transition-all duration-200 text-sm sm:text-base"
+                    >
+                      <Download className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
+                      Download Pitch Deck
+                    </a>
+                  </div>
                 </div>
               </motion.div>
             </div>
