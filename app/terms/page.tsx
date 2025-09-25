@@ -64,7 +64,7 @@ const TermsPage = () => {
                   <FileText className="w-5 h-5 mr-2" />
                   Terms of Service
                 </div>
-
+                
                 {/* Heading */}
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 leading-tight">
                   Terms of <span className="text-orange-200">Service</span>
@@ -74,7 +74,7 @@ const TermsPage = () => {
                 <p className="text-xl sm:text-2xl text-orange-100 mb-8 leading-relaxed max-w-2xl">
                   Your agreement with Annita for using our platform and services
                 </p>
-
+                
                 {/* Quick Stats */}
                 <div className="grid grid-cols-3 gap-6 mb-8">
                   <div className="text-center">

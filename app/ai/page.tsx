@@ -196,7 +196,7 @@ const AILandingPage = () => {
                 <Brain className="w-5 h-5 mr-2" />
                 Annita AI Assistant
               </div>
-
+              
               {/* Heading */}
               <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 leading-tight">
                 Annita <span className="text-orange-200">AI</span>
@@ -234,13 +234,13 @@ const AILandingPage = () => {
                   <Globe className="w-5 h-5 mr-2" />
                   Try Annita AI
                 </a>
-                <a
-                  href="/download"
+                <button
+                  onClick={() => setIsDownloadModalOpen(true)}
                   className="border-2 border-white text-white px-8 py-4 rounded-xl font-bold hover:bg-white hover:text-orange-600 transition-all duration-200 flex items-center justify-center shadow-lg hover:shadow-xl transform hover:scale-105"
                 >
                   <Download className="w-5 h-5 mr-2" />
-                  Download App
-                </a>
+                  Try V1.0 Now
+                </button>
               </div>
             </div>
 

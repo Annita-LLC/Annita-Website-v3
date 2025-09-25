@@ -79,7 +79,7 @@ const PrivacyPage = () => {
                   <FileText className="w-5 h-5 mr-2" />
                   Privacy Policy
                 </div>
-
+                
                 {/* Heading */}
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 leading-tight">
                   Privacy <span className="text-orange-200">Policy</span>
@@ -89,7 +89,7 @@ const PrivacyPage = () => {
                 <p className="text-xl sm:text-2xl text-orange-100 mb-8 leading-relaxed max-w-2xl">
                   How we collect, use, and protect your personal information
                 </p>
-
+                
                 {/* Quick Stats */}
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 mb-8">
                   <div className="text-center">
@@ -163,7 +163,7 @@ const PrivacyPage = () => {
                     <div className="flex items-center justify-between p-4 bg-white/10 rounded-xl">
                       <span className="text-white">GDPR Compliance</span>
                       <span className="font-bold text-green-300">✓</span>
-                    </div>
+              </div>
                   </div>
                 </div>
               </motion.div>

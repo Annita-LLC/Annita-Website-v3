@@ -26,10 +26,12 @@ import {
 import Link from 'next/link'
 import { useFormSubmission, formValidations } from '@/lib/hooks/useFormSubmission'
 import WaitlistForm from '@/components/ui/WaitlistForm'
+import DownloadChoiceModal from '@/components/ui/DownloadChoiceModal'
 
 export default function CareersPage() {
   const [selectedPosition, setSelectedPosition] = useState('')
   const [isWaitlistOpen, setIsWaitlistOpen] = useState(false)
+  const [isDownloadModalOpen, setIsDownloadModalOpen] = useState(false)
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -137,7 +139,7 @@ export default function CareersPage() {
   ]
 
   const teamStats = [
-    { number: '3', label: 'Team Members' },
+    { number: '8+', label: 'Team Members' },
     { number: '1+', label: 'Countries' },
     { number: '100%', label: 'Employee Satisfaction' },
     { number: 'Growing', label: 'Team' }
@@ -251,7 +253,7 @@ export default function CareersPage() {
                 {/* Quick Stats */}
                 <div className="grid grid-cols-3 gap-3 sm:gap-4 mb-6 sm:mb-8">
                   <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3 sm:p-4">
-                    <div className="text-xl sm:text-2xl font-bold">50+</div>
+                    <div className="text-xl sm:text-2xl font-bold">8+</div>
                     <div className="text-xs sm:text-sm text-orange-200">Team Members</div>
                   </div>
                   <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3 sm:p-4">
@@ -290,7 +292,7 @@ export default function CareersPage() {
                   <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4 text-center">Team Excellence</h3>
                   <div className="space-y-3 sm:space-y-4">
                     <div className="flex items-center justify-between p-3 bg-white/10 rounded-lg">
-                      <span className="text-orange-200">50+ Team Members</span>
+                      <span className="text-orange-200">8+ Team Members</span>
                       <span className="font-semibold text-white">Growing</span>
                     </div>
                     <div className="flex items-center justify-between p-3 bg-white/10 rounded-lg">
@@ -666,15 +668,13 @@ export default function CareersPage() {
                 Experience our live marketplace V1.0 today, and join the waitlist for the revolutionary V3.0 - offline-ready, AI-powered, and built for everyone in Africa.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
-                <a 
-                  href="https://annita.company.site/products"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <button 
+                  onClick={() => setIsDownloadModalOpen(true)}
                   className="inline-flex items-center justify-center bg-white text-orange-600 px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold hover:bg-orange-50 transition-colors duration-200 shadow-lg text-sm sm:text-base"
                 >
                   <ExternalLink className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
                   Try Marketplace V1.0
-                </a>
+                </button>
                 <button 
                   onClick={() => setIsWaitlistOpen(true)}
                   className="inline-flex items-center justify-center border-2 border-white text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold hover:bg-white hover:text-orange-600 transition-colors duration-200 text-sm sm:text-base"
@@ -692,6 +692,12 @@ export default function CareersPage() {
       <WaitlistForm
         isOpen={isWaitlistOpen}
         onClose={() => setIsWaitlistOpen(false)}
+      />
+
+      {/* Download Choice Modal */}
+      <DownloadChoiceModal
+        isOpen={isDownloadModalOpen}
+        onClose={() => setIsDownloadModalOpen(false)}
       />
     </>
   )

@@ -57,6 +57,7 @@ import {
 } from 'lucide-react'
 import Link from 'next/link'
 import WaitlistForm from '@/components/ui/WaitlistForm'
+import DownloadChoiceModal from '@/components/ui/DownloadChoiceModal'
 
 export default function BusinessModelPage() {
   const ref = useRef(null)
@@ -64,6 +65,7 @@ export default function BusinessModelPage() {
   const [showRevenueDetails, setShowRevenueDetails] = useState(false)
   const [expandedSection, setExpandedSection] = useState('')
   const [isWaitlistOpen, setIsWaitlistOpen] = useState(false)
+  const [isDownloadModalOpen, setIsDownloadModalOpen] = useState(false)
 
   const revenueModel = {
     title: "Our Revenue Streams",
@@ -613,15 +615,13 @@ export default function BusinessModelPage() {
                 All transactions and revenue generation happen through our live platforms. Try our V1.0 marketplace today or join the waitlist for the revolutionary V3.0 app.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
-                <a 
-                  href="https://annita.company.site/products"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <button 
+                  onClick={() => setIsDownloadModalOpen(true)}
                   className="inline-flex items-center justify-center bg-white text-orange-600 px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold hover:bg-orange-50 transition-colors duration-200 shadow-lg text-sm sm:text-base"
                 >
                   <ExternalLink className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
                   Try Marketplace V1.0
-                </a>
+                </button>
                 <button 
                   onClick={() => setIsWaitlistOpen(true)}
                   className="inline-flex items-center justify-center border-2 border-white text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold hover:bg-white hover:text-orange-600 transition-colors duration-200 text-sm sm:text-base"
@@ -639,6 +639,12 @@ export default function BusinessModelPage() {
       <WaitlistForm
         isOpen={isWaitlistOpen}
         onClose={() => setIsWaitlistOpen(false)}
+      />
+
+      {/* Download Choice Modal */}
+      <DownloadChoiceModal
+        isOpen={isDownloadModalOpen}
+        onClose={() => setIsDownloadModalOpen(false)}
       />
     </>
   )

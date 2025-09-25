@@ -166,7 +166,7 @@ const AIPage = () => {
                 className="text-base sm:text-lg font-bold backdrop-blur-xl shadow-2xl hover:shadow-white/10 transform hover:-translate-y-1 transition-all duration-300"
                 onClick={() => setIsDownloadModalOpen(true)}
               >
-                Download App
+                Try V1.0 Now
               </Button>
             </div>
           </div>

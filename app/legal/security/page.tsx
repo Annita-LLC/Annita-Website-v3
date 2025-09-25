@@ -102,7 +102,7 @@ const SecurityPage = () => {
                 <Shield className="w-5 h-5 mr-2" />
                 Security
               </div>
-
+              
               {/* Heading */}
               <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 leading-tight">
                 <span className="text-orange-200">Security</span>
@@ -112,7 +112,7 @@ const SecurityPage = () => {
               <p className="text-xl sm:text-2xl text-orange-100 mb-8 leading-relaxed max-w-2xl">
                 Your security is our top priority. Learn about our comprehensive protection measures.
               </p>
-
+              
               {/* Quick Stats */}
               <div className="grid grid-cols-3 gap-6 mb-8">
                 <div className="text-center">

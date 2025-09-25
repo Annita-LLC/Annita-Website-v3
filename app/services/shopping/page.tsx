@@ -146,7 +146,7 @@ const ShoppingPage = () => {
                     className="bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-200 flex items-center justify-center"
                   >
                     <Download className="w-5 h-5 mr-2" />
-                    Download App
+                    Try V1.0 Now
                   </button>
                   <button 
                     className="border-2 border-blue-600 text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-blue-50 transition-colors duration-200 flex items-center justify-center"

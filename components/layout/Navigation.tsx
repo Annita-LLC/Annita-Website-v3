@@ -84,12 +84,14 @@ import {
 } from 'lucide-react'
 import { ThemeToggle, SimpleThemeToggle } from '@/components/ui/ThemeToggle'
 import GlobalSearch from '@/components/ui/GlobalSearch'
+import DownloadChoiceModal from '@/components/ui/DownloadChoiceModal'
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
   const [dropdownTimeout, setDropdownTimeout] = useState<NodeJS.Timeout | null>(null)
+  const [isDownloadModalOpen, setIsDownloadModalOpen] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -387,13 +389,13 @@ const Navigation = () => {
 
             {/* CTA Buttons */}
             <div className="hidden lg:flex items-center space-x-3 xl:space-x-4">
-              <Link 
-                href="/download"
+              <button 
+                onClick={() => setIsDownloadModalOpen(true)}
                 className="btn-primary"
               >
                 <Download className="w-4 h-4 mr-2" />
                 Join Waitlist
-              </Link>
+              </button>
             </div>
 
             {/* Mobile Menu Button */}
@@ -563,14 +565,16 @@ const Navigation = () => {
 
                 {/* Footer */}
                 <div className="p-6 border-t border-gray-200 dark:border-gray-700">
-                  <Link
-                    href="/download"
-                    onClick={() => setIsOpen(false)}
+                  <button
+                    onClick={() => {
+                      setIsDownloadModalOpen(true)
+                      setIsOpen(false)
+                    }}
                     className="flex items-center justify-center w-full px-6 py-3 bg-gradient-to-r from-orange-500 to-orange-600 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-300"
                   >
                     <Download className="w-5 h-5 mr-2" />
                     Join Waitlist
-                  </Link>
+                  </button>
                 </div>
               </div>
             </motion.div>
@@ -578,8 +582,11 @@ const Navigation = () => {
         )}
       </AnimatePresence>
 
-
-
+      {/* Download Choice Modal */}
+      <DownloadChoiceModal
+        isOpen={isDownloadModalOpen}
+        onClose={() => setIsDownloadModalOpen(false)}
+      />
     </>
   )
 }

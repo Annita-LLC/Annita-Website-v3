@@ -153,12 +153,12 @@ const BusinessAIPage = () => {
               <div className="inline-flex items-center px-6 py-3 rounded-full bg-white/20 backdrop-blur-sm text-white text-sm font-semibold mb-8 shadow-lg border border-white/30">
                 <Brain className="w-5 h-5 mr-2" />
                 Annita AI Assistant
-              </div>
-
+            </div>
+            
               {/* Heading */}
               <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 leading-tight">
                 Annita <span className="text-orange-200">AI</span>
-              </h1>
+            </h1>
 
               {/* Description */}
               <p className="text-xl sm:text-2xl text-orange-100 mb-8 leading-relaxed max-w-2xl">
@@ -184,18 +184,18 @@ const BusinessAIPage = () => {
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-4">
                 <button 
-                  onClick={() => window.location.href = '/demo'}
+                onClick={() => window.location.href = '/demo'}
                   className="bg-white text-orange-600 px-8 py-4 rounded-xl font-bold hover:bg-orange-50 transition-all duration-200 flex items-center justify-center shadow-lg hover:shadow-xl transform hover:scale-105"
                 >
                   <Play className="w-5 h-5 mr-2" />
                   Try Annita AI
                 </button>
                 <button 
-                  onClick={() => setIsDownloadModalOpen(true)}
+                onClick={() => setIsDownloadModalOpen(true)}
                   className="border-2 border-white text-white px-8 py-4 rounded-xl font-bold hover:bg-white hover:text-orange-600 transition-all duration-200 flex items-center justify-center shadow-lg hover:shadow-xl transform hover:scale-105"
-                >
+              >
                   <Download className="w-5 h-5 mr-2" />
-                  Download App
+                Try V1.0 Now
                 </button>
               </div>
             </div>

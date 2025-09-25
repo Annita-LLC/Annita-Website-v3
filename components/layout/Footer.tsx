@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import { useState } from 'react'
 import { 
   Facebook, 
   MessageCircle, 
@@ -20,9 +21,11 @@ import {
   Award,
   Download,
 } from 'lucide-react'
+import DownloadChoiceModal from '@/components/ui/DownloadChoiceModal'
 
 const Footer = () => {
   const currentYear = new Date().getFullYear()
+  const [isDownloadModalOpen, setIsDownloadModalOpen] = useState(false)
 
   const footerSections = [
     {
@@ -187,15 +190,15 @@ const Footer = () => {
               </div>
             </div>
 
-            {/* Download App Button */}
+            {/* Try V1.0 Button */}
             <div className="mb-4 sm:mb-6">
-              <Link 
-                href="/download"
+              <button 
+                onClick={() => setIsDownloadModalOpen(true)}
                 className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-orange-500 to-orange-600 text-white font-semibold rounded-lg hover:from-orange-600 hover:to-orange-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
               >
                 <Download className="w-4 h-4 mr-2" />
-                Join Waitlist
-              </Link>
+                Try V1.0 Now
+              </button>
             </div>
           </div>
 
@@ -250,7 +253,11 @@ const Footer = () => {
         </div>
       </div>
 
-
+      {/* Download Choice Modal */}
+      <DownloadChoiceModal
+        isOpen={isDownloadModalOpen}
+        onClose={() => setIsDownloadModalOpen(false)}
+      />
     </footer>
   )
 }

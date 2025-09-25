@@ -484,7 +484,7 @@ const DemoPage = () => {
       </section>
 
       {/* Main Slideshow Section */}
-      <section className="py-16 sm:py-20">
+      <section className="py-16 sm:py-20 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
@@ -496,13 +496,13 @@ const DemoPage = () => {
                   transition={{ duration: 0.5 }}
                   className="relative bg-white rounded-2xl shadow-2xl overflow-hidden group"
                 >
-                  <div className="aspect-[16/10] relative">
+                  <div className="aspect-[16/10] relative bg-gray-50">
                     <AnimatePresence mode="wait">
                       <motion.img
                         key={currentSlide}
                         src={demoImages[currentSlide].src}
                         alt={demoImages[currentSlide].title}
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-contain"
                         initial={{ opacity: 0, x: 50 }}
                         animate={{ opacity: 1, x: 0 }}
                         exit={{ opacity: 0, x: -50 }}
@@ -599,11 +599,11 @@ const DemoPage = () => {
                           : 'hover:shadow-md hover:scale-102'
                       }`}
                     >
-                      <div className="aspect-video relative">
+                      <div className="aspect-video relative bg-gray-50">
                         <img
                           src={image.src}
                           alt={image.title}
-                          className="w-full h-full object-cover"
+                          className="w-full h-full object-contain"
                         />
                         <div className="absolute inset-0 bg-black/0 hover:bg-black/20 transition-all duration-200 flex items-center justify-center">
                           <div className={`w-8 h-8 rounded-full flex items-center justify-center transition-all duration-200 ${
@@ -759,7 +759,7 @@ const DemoPage = () => {
               <img
                 src={demoImages[currentSlide].src}
                 alt={demoImages[currentSlide].title}
-                className="w-full h-full object-contain rounded-lg"
+                className="w-full h-full object-contain rounded-lg bg-gray-50"
               />
               <div className="absolute bottom-4 left-4 right-4 bg-black/50 text-white p-4 rounded-lg">
                 <h3 className="text-xl font-bold mb-2">{demoImages[currentSlide].title}</h3>
