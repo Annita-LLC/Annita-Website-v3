@@ -1,5 +1,6 @@
 "use client"
 
+import { useState } from 'react'
 import Link from 'next/link'
 import SEOHead from '@/components/seo/SEOHead'
 import { 
@@ -25,10 +26,13 @@ import {
   ShoppingBag
 } from 'lucide-react'
 import Button from '@/components/ui/Button'
+import DownloadChoiceModal from '@/components/ui/DownloadChoiceModal'
 
 
 
 const AILandingPage = () => {
+  const [isDownloadModalOpen, setIsDownloadModalOpen] = useState(false)
+  
   const personalFeatures = [
     {
       icon: Smartphone,
@@ -544,6 +548,12 @@ const AILandingPage = () => {
           </div>
         </div>
       </section>
+
+      {/* Download Choice Modal */}
+      <DownloadChoiceModal
+        isOpen={isDownloadModalOpen}
+        onClose={() => setIsDownloadModalOpen(false)}
+      />
     </div>
     </>
   )

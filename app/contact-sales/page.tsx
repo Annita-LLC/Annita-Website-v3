@@ -27,8 +27,10 @@ import {
 } from 'lucide-react'
 import Link from 'next/link'
 import { useFormSubmission, formValidations } from '@/lib/hooks/useFormSubmission'
+import DownloadChoiceModal from '@/components/ui/DownloadChoiceModal'
 
 export default function ContactSalesPage() {
+  const [isDownloadModalOpen, setIsDownloadModalOpen] = useState(false)
   const [formData, setFormData] = useState({
     first_name: '',
     last_name: '',
@@ -583,6 +585,12 @@ export default function ContactSalesPage() {
           </div>
         </div>
       </section>
+
+      {/* Download Choice Modal */}
+      <DownloadChoiceModal
+        isOpen={isDownloadModalOpen}
+        onClose={() => setIsDownloadModalOpen(false)}
+      />
     </>
   )
 }
