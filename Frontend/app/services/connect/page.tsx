@@ -299,8 +299,6 @@ const ConnectPage = memo(() => {
       </div>
     </>
   )
-}
-
 })
 
 ConnectPage.displayName = 'ConnectPage'

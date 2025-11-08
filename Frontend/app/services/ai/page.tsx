@@ -334,8 +334,6 @@ const AIPage = memo(() => {
       </div>
     </>
   )
-}
-
 })
 
 AIPage.displayName = 'AIPage'

@@ -357,8 +357,6 @@ const LogisticsPage = memo(() => {
       </div>
     </>
   )
-}
-
 })
 
 LogisticsPage.displayName = 'LogisticsPage'

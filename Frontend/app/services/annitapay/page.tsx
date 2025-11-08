@@ -398,8 +398,6 @@ const AnnitaPayPage = memo(() => {
       </div>
     </>
   )
-}
-
 })
 
 AnnitaPayPage.displayName = 'AnnitaPayPage'
