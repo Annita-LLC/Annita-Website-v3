@@ -1,14 +1,14 @@
 [build]
-  command = "cd Frontend && npm install && npm run build"
-  publish = "Frontend/.next"
+  command = "cd ../Frontend && npm run build"
+  publish = "../Frontend/.next"
 
 [build.environment]
   NODE_VERSION = "18"
 
 # Netlify Functions Configuration
 [functions]
-  # Functions directory (relative to repository root)
-  directory = "backend/netlify/functions"
+  # Functions directory (relative to backend folder)
+  directory = "netlify/functions"
   # Node.js version for functions
   node_bundler = "esbuild"
   # Timeout for functions (max 26 seconds on free tier)
@@ -58,4 +58,3 @@
     Access-Control-Allow-Origin = "*"
     Access-Control-Allow-Methods = "POST, OPTIONS"
     Access-Control-Allow-Headers = "Content-Type"
-

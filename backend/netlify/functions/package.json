@@ -1,0 +1,10 @@
+{
+  "name": "annita-netlify-functions",
+  "version": "1.0.0",
+  "description": "Netlify Functions for Annita Website",
+  "type": "module",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.56.0"
+  }
+}
+
