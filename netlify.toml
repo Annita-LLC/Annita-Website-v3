@@ -5,18 +5,10 @@
 [build.environment]
   NODE_VERSION = "18"
 
-# Netlify Functions Configuration
 [functions]
-  # Functions directory (relative to repository root)
   directory = "backend/netlify/functions"
-  # Node.js version for functions
   node_bundler = "esbuild"
-  # Timeout for functions (max 26 seconds on free tier)
   timeout = 10
-
-# Environment Variables (set in Netlify Dashboard)
-# NEXT_PUBLIC_SUPABASE_URL - Your Supabase project URL
-# SUPABASE_SERVICE_ROLE_KEY - Your Supabase service role key (KEEP SECRET)
 
 [[redirects]]
   from = "/*"
@@ -47,7 +39,6 @@
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
 
-# Security headers for Netlify Functions
 [[headers]]
   for = "/.netlify/functions/*"
   [headers.values]
@@ -58,4 +49,3 @@
     Access-Control-Allow-Origin = "*"
     Access-Control-Allow-Methods = "POST, OPTIONS"
     Access-Control-Allow-Headers = "Content-Type"
-
