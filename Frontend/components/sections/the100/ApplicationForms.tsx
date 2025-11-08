@@ -54,8 +54,8 @@ const ApplicationForms = () => {
 
   const YouthForm = () => {
     const [formData, setFormData] = useState({
-      first_name: '',
-      last_name: '',
+      firstName: '',
+      lastName: '',
       email: '',
       phone: '',
       age: '',
@@ -75,7 +75,23 @@ const ApplicationForms = () => {
 
     const handleSubmitForm = (e: React.FormEvent) => {
       e.preventDefault()
-      handleSubmit(formData, 'the100_youth')
+      // Map form data to API format
+      const apiData = {
+        first_name: formData.firstName,
+        last_name: formData.lastName,
+        email: formData.email,
+        phone: formData.phone || null,
+        age: formData.age ? parseInt(formData.age) : null,
+        education: formData.education || null,
+        institution: formData.institution || null,
+        sector: formData.sector || null,
+        experience: formData.experience || null,
+        goals: formData.goals || null,
+        motivation: formData.motivation || null,
+        availability: formData.availability || null,
+        references_info: formData.references || null
+      }
+      handleSubmit(apiData, 'the100_youth')
     }
 
     return (
@@ -86,7 +102,7 @@ const ApplicationForms = () => {
             <input
               type="text"
               name="firstName"
-              value={formData.first_name}
+              value={formData.firstName}
               onChange={handleChange}
               required
               className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
@@ -97,7 +113,7 @@ const ApplicationForms = () => {
             <input
               type="text"
               name="lastName"
-              value={formData.last_name}
+              value={formData.lastName}
               onChange={handleChange}
               required
               className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
@@ -484,11 +500,11 @@ const ApplicationForms = () => {
         last_name: formData.lastName,
         email: formData.email,
         phone: formData.phone || null,
-        expertise: formData.expertise || null,
-        experience_years: formData.experienceYears || null,
+        expertise_areas: formData.expertise || null,
+        experience_summary: formData.experienceYears ? `${formData.experienceYears} years of experience` : null,
         availability: formData.availability || null,
         motivation: formData.motivation || null,
-        message: formData.message || null
+        additional_info: formData.message || null
       }
       handleSubmit(apiData, 'the100_mentor')
     }
@@ -501,7 +517,7 @@ const ApplicationForms = () => {
             <input
               type="text"
               name="firstName"
-              value={formData.first_name}
+              value={formData.firstName}
               onChange={handleChange}
               required
               className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
@@ -512,7 +528,7 @@ const ApplicationForms = () => {
             <input
               type="text"
               name="lastName"
-              value={formData.last_name}
+              value={formData.lastName}
               onChange={handleChange}
               required
               className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
