@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { validateEmail, validatePhone, sanitizeInput } from '@/lib/supabase'
+import { validateEmail, validatePhone, sanitizeInput } from '@/lib/types'
 
 interface FormSubmissionState {
   isSubmitting: boolean
@@ -59,8 +59,11 @@ export function useFormSubmission(options: UseFormSubmissionOptions = {}) {
         return acc
       }, {} as any)
 
-      // Submit to API
-      const response = await fetch('/api/submit-form', {
+      // Get backend URL from environment
+      const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:3001'
+      
+      // Submit directly to backend API
+      const response = await fetch(`${backendUrl}/api/forms/submit`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

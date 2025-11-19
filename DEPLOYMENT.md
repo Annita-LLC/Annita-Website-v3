@@ -1,229 +1,177 @@
-# 🚀 Deployment Guide - Annita Website
+# Deployment Guide
 
-This guide will help you deploy the Annita website to Netlify for testing and then to Cloudflare for production.
+## Overview
 
-## 📋 Prerequisites
+This project consists of two parts:
+1. **Frontend** - Next.js static site (deploy to Netlify)
+2. **Backend** - Node.js/Express API (deploy separately - see options below)
 
-- GitHub account
-- Netlify account (free)
-- Cloudflare account (free)
-- Node.js 18+ installed locally
+## Frontend Deployment (Netlify)
 
-## 🔧 Local Setup
+### Prerequisites
+- GitHub repository connected
+- Netlify account
 
-1. **Build the project locally**
+### Steps
+
+1. **Connect Repository to Netlify**
+   - Go to [Netlify Dashboard](https://app.netlify.com)
+   - Click "Add new site" → "Import an existing project"
+   - Connect your GitHub repository
+
+2. **Configure Build Settings**
+   - **Build command**: `npm run build`
+   - **Publish directory**: `out`
+   - **Node version**: `18` (set in Netlify UI or netlify.toml)
+
+3. **Set Environment Variables**
+   In Netlify Dashboard → Site settings → Environment variables, add:
+   ```
+   NEXT_PUBLIC_BACKEND_URL=https://your-backend-url.com
+   NEXT_PUBLIC_FRONTEND_URL=https://your-netlify-site.netlify.app
+   ```
+   
+   **Important**: Use `NEXT_PUBLIC_` prefix so the variable is available in the browser (required for static export).
+
+4. **Deploy**
+   - Netlify will automatically deploy on every push to main branch
+   - Or trigger manual deploy from dashboard
+
+### Important Notes
+- The frontend is configured for **static export** (`output: 'export'` in next.config.js)
+- API routes in `app/api/` are **NOT used** - they won't work with static export
+- The frontend makes **direct API calls** to your backend server
+
+## Backend Deployment Options
+
+The backend **MUST be deployed separately** as Netlify only hosts static sites and serverless functions.
+
+### Option 1: Railway (Recommended - Easy)
+
+1. Go to [Railway.app](https://railway.app)
+2. Create new project → Deploy from GitHub
+3. Select your repository
+4. Set root directory to `backend`
+5. Add environment variables:
+   ```
+   DB_HOST=your_db_host
+   DB_PORT=5432
+   DB_NAME=annita_db
+   DB_USER=postgres
+   DB_PASSWORD=your_password
+   PORT=3001
+   NODE_ENV=production
+   FRONTEND_URL=https://your-netlify-site.netlify.app
+   ```
+6. Railway will auto-deploy and provide a URL like `https://your-app.railway.app`
+
+### Option 2: Render
+
+1. Go to [Render.com](https://render.com)
+2. Create new Web Service
+3. Connect GitHub repository
+4. Configure:
+   - **Root Directory**: `backend`
+   - **Build Command**: `npm install`
+   - **Start Command**: `npm start`
+   - **Environment**: Node
+5. Add environment variables (same as Railway)
+6. Render provides URL like `https://your-app.onrender.com`
+
+### Option 3: Heroku
+
+1. Install Heroku CLI
+2. Create `Procfile` in `backend/`:
+   ```
+   web: node server.js
+   ```
+3. Deploy:
    ```bash
-   npm run build:static
+   cd backend
+   heroku create your-app-name
+   heroku config:set DB_HOST=... DB_PASSWORD=... (etc)
+   git subtree push --prefix backend heroku main
    ```
 
-2. **Test the build**
-   ```bash
-   npm run dev
-   ```
+### Option 4: DigitalOcean App Platform / AWS / Google Cloud
 
-## 🌐 Step 1: Netlify Deployment (Testing)
+Similar process - deploy the `backend` folder as a Node.js application.
 
-### Option A: Drag & Drop (Quick Test)
+## Database Setup
 
-1. **Build the project**
-   ```bash
-   npm run build:static
-   ```
+Your PostgreSQL database can be:
+- **Railway** (includes PostgreSQL)
+- **Render** (includes PostgreSQL)
+- **Supabase** (PostgreSQL as a service)
+- **AWS RDS** / **Google Cloud SQL**
+- **Self-hosted PostgreSQL**
 
-2. **Deploy to Netlify**
-   - Go to [netlify.com](https://netlify.com)
-   - Sign up/Login
-   - Drag the `out` folder to the Netlify dashboard
-   - Your site will be live instantly!
+Make sure your database is accessible from your backend hosting provider.
 
-### Option B: Git Integration (Recommended)
+## Post-Deployment Checklist
 
-1. **Push to GitHub**
-   ```bash
-   git add .
-   git commit -m "Ready for Netlify deployment"
-   git push origin main
-   ```
+### Frontend (Netlify)
+- [ ] Site is accessible
+- [ ] Environment variables set
+- [ ] `BACKEND_URL` points to your deployed backend
+- [ ] Forms can submit (check browser console for errors)
 
-2. **Connect to Netlify**
-   - Go to Netlify Dashboard
-   - Click "New site from Git"
-   - Choose GitHub and select your repository
-   - Configure build settings:
-     - **Build command**: `npm run build:static`
-     - **Publish directory**: `out`
-   - Click "Deploy site"
+### Backend
+- [ ] Server is running and accessible
+- [ ] Database connection works
+- [ ] CORS allows requests from frontend domain
+- [ ] Environment variables configured
+- [ ] Health check endpoint works: `GET /health`
 
-3. **Custom Domain (Optional)**
-   - Go to Site Settings → Domain Management
-   - Add your custom domain
-   - Configure DNS settings
+### Testing
+- [ ] Submit a contact form
+- [ ] Add to waitlist
+- [ ] Track a download
+- [ ] Check database for new records
 
-## ☁️ Step 2: Cloudflare Pages Deployment (Production)
+## Troubleshooting
 
-### 1. Prepare GitHub Repository
+### Frontend can't connect to backend
+- Check `BACKEND_URL` environment variable in Netlify
+- Verify backend is running and accessible
+- Check CORS settings in backend (should allow frontend domain)
+- Check browser console for CORS errors
 
-1. **Ensure all files are committed**
-   ```bash
-   git add .
-   git commit -m "Ready for Cloudflare deployment"
-   git push origin main
-   ```
+### Backend connection errors
+- Verify database credentials
+- Check database is accessible from backend hosting
+- Review backend logs for connection errors
+- Test database connection locally first
 
-2. **Verify repository structure**
-   ```
-   annita-website/
-   ├── app/
-   ├── components/
-   ├── public/
-   ├── next.config.js
-   ├── package.json
-   ├── netlify.toml
-   └── README.md
-   ```
+### Forms not submitting
+- Check browser console for errors
+- Verify `BACKEND_URL` is set correctly
+- Check backend logs for incoming requests
+- Ensure backend CORS allows frontend domain
 
-### 2. Deploy to Cloudflare Pages
+## Environment Variables Summary
 
-1. **Go to Cloudflare Dashboard**
-   - Visit [dash.cloudflare.com](https://dash.cloudflare.com)
-   - Sign up/Login
+### Frontend (Netlify)
+```
+NEXT_PUBLIC_BACKEND_URL=https://your-backend-url.com
+NEXT_PUBLIC_FRONTEND_URL=https://your-site.netlify.app
+```
 
-2. **Create New Pages Project**
-   - Click "Pages" in the sidebar
-   - Click "Create a project"
-   - Choose "Connect to Git"
+**Note**: The `NEXT_PUBLIC_` prefix is required for environment variables to be available in the browser with static export.
 
-3. **Connect GitHub Repository**
-   - Select your GitHub account
-   - Choose the annita-website repository
-   - Click "Begin setup"
-
-4. **Configure Build Settings**
-   - **Project name**: `annita-website` (or your preferred name)
-   - **Production branch**: `main`
-   - **Framework preset**: `None`
-   - **Build command**: `npm run build:static`
-   - **Build output directory**: `out`
-   - **Root directory**: `/` (leave empty)
-
-5. **Environment Variables (Optional)**
-   - Add any environment variables if needed
-   - Click "Save and Deploy"
-
-### 3. Custom Domain Setup
-
-1. **Add Custom Domain**
-   - Go to your Pages project
-   - Click "Custom domains"
-   - Add your domain (e.g., `annita.com`)
-
-2. **Configure DNS**
-   - Cloudflare will automatically configure DNS
-   - Or manually add CNAME record pointing to your Pages URL
-
-3. **SSL/TLS Settings**
-   - Go to SSL/TLS settings
-   - Set to "Full" or "Full (strict)"
-   - Enable "Always Use HTTPS"
-
-## 🔄 Continuous Deployment
-
-Both Netlify and Cloudflare will automatically:
-- Deploy when you push to the main branch
-- Provide preview deployments for pull requests
-- Handle SSL certificates automatically
-
-## 📊 Performance Optimization
-
-### Cloudflare Optimizations
-
-1. **Enable Cloudflare Features**
-   - Auto Minify: JavaScript, CSS, HTML
-   - Brotli compression
-   - Rocket Loader
-   - Early Hints
-
-2. **Caching Rules**
-   - Static assets: Cache everything
-   - HTML files: Cache for 1 hour
-   - API routes: No cache
-
-### Netlify Optimizations
-
-1. **Build Optimizations**
-   - Enable build caching
-   - Use build plugins if needed
-
-2. **Performance Headers**
-   - Already configured in `netlify.toml`
-
-## 🔍 Testing Checklist
-
-### Before Deployment
-- [ ] All pages load correctly
-- [ ] Images display properly
-- [ ] Forms work (if functional)
-- [ ] Mobile responsiveness
-- [ ] Performance scores (Lighthouse)
-
-### After Deployment
-- [ ] Site loads on custom domain
-- [ ] HTTPS works correctly
-- [ ] All links work
-- [ ] SEO meta tags are present
-- [ ] Analytics tracking (if configured)
-
-## 🛠️ Troubleshooting
-
-### Common Issues
-
-1. **Build Fails**
-   - Check Node.js version (18+)
-   - Verify all dependencies are installed
-   - Check for syntax errors
-
-2. **Images Not Loading**
-   - Ensure images are in `public/` folder
-   - Check image paths in components
-
-3. **Styling Issues**
-   - Verify Tailwind CSS is building correctly
-   - Check for missing CSS classes
-
-4. **404 Errors**
-   - Ensure `trailingSlash: true` in next.config.js
-   - Check file paths and routing
-
-### Support
-
-- **Netlify**: [docs.netlify.com](https://docs.netlify.com)
-- **Cloudflare**: [developers.cloudflare.com](https://developers.cloudflare.com)
-- **Next.js**: [nextjs.org/docs](https://nextjs.org/docs)
-
-## 🎯 Next Steps
-
-1. **Analytics Setup**
-   - Google Analytics 4
-   - Facebook Pixel
-   - Custom event tracking
-
-2. **SEO Optimization**
-   - Submit sitemap to search engines
-   - Set up Google Search Console
-   - Configure social media meta tags
-
-3. **Monitoring**
-   - Set up uptime monitoring
-   - Performance monitoring
-   - Error tracking
-
-4. **Content Management**
-   - Consider adding a CMS
-   - Set up content workflows
-   - Plan content updates
+### Backend (Railway/Render/etc)
+```
+DB_HOST=your_db_host
+DB_PORT=5432
+DB_NAME=annita_db
+DB_USER=postgres
+DB_PASSWORD=your_password
+PORT=3001
+NODE_ENV=production
+FRONTEND_URL=https://your-site.netlify.app
+```
 
 ---
 
-**Your Annita website is now ready for deployment! 🚀**
+**Note**: The backend and frontend are separate deployments. Make sure both are deployed and configured correctly for the website to function.
 
-Follow these steps and you'll have a professional, high-performance website running on both Netlify (testing) and Cloudflare (production).

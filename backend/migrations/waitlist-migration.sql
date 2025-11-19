@@ -1,5 +1,5 @@
--- Waitlist Table Migration for Supabase
--- Run this in your Supabase SQL Editor
+-- Waitlist Table Migration for PostgreSQL
+-- Run this in your PostgreSQL database
 
 -- 1. Create the waitlist table
 CREATE TABLE IF NOT EXISTS waitlist (

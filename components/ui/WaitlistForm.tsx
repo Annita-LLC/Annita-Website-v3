@@ -27,7 +27,8 @@ const WaitlistForm = ({ isOpen, onClose, onSuccess }: WaitlistFormProps) => {
     setIsSubmitting(true)
     
     try {
-      const response = await fetch('/api/waitlist', {
+      const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:3001'
+      const response = await fetch(`${backendUrl}/api/waitlist`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

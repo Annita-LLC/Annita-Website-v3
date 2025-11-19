@@ -1,5 +1,5 @@
--- Simple script to create waitlist table in Supabase
--- Copy and paste this entire script into Supabase SQL Editor and run it
+-- Simple script to create waitlist table in PostgreSQL
+-- Copy and paste this entire script into your PostgreSQL database and run it
 
 -- Step 1: Create the waitlist table
 CREATE TABLE IF NOT EXISTS waitlist (

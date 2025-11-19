@@ -7,7 +7,7 @@ This directory contains downloadable documents for the Annita investor page.
 1. **Upload your files** to this directory
 2. **Update the documents array** in `app/investors/page.tsx`
 3. **Ensure proper file naming** (use kebab-case)
-4. **Add tracking** - downloads are automatically tracked in Supabase
+4. **Add tracking** - downloads are automatically tracked in the database
 
 ## File Naming Convention
 
@@ -34,7 +34,7 @@ This directory contains downloadable documents for the Annita investor page.
 
 ## Tracking
 
-All downloads are automatically tracked in the `investor_downloads` table in Supabase with:
+All downloads are automatically tracked in the `investor_downloads` table in PostgreSQL with:
 - Document name and type
 - Downloader information (if available)
 - Timestamp and IP address

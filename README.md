@@ -12,6 +12,7 @@ Africa's first all-in-one digital platform, combining e-commerce, fintech, AI, c
 
 ## 🛠️ Tech Stack
 
+### Frontend
 - **Framework**: Next.js 14 with App Router
 - **Language**: TypeScript
 - **Styling**: Tailwind CSS (custom design system)
@@ -19,6 +20,12 @@ Africa's first all-in-one digital platform, combining e-commerce, fintech, AI, c
 - **Icons**: Lucide React
 - **Forms**: React Hook Form with Zod validation
 - **Deployment**: Netlify, Cloudflare Pages
+
+### Backend
+- **Runtime**: Node.js
+- **Framework**: Express.js
+- **Database**: PostgreSQL
+- **API**: RESTful API
 
 ## 📦 Installation
 
@@ -109,24 +116,28 @@ annita-website/
 │   ├── globals.css        # Global styles
 │   ├── layout.tsx         # Root layout
 │   ├── page.tsx           # Homepage
+│   ├── api/               # API routes (proxies to backend)
 │   ├── about/             # About page
-│   ├── blog/              # Blog page
 │   ├── contact/           # Contact page
-│   ├── marketplace/       # Marketplace page
-│   ├── payments/          # Payments page
-│   ├── logistics/         # Logistics page
-│   ├── connect/           # Connect page
-│   └── pricing/           # Pricing page
-├── components/            # React components
-│   ├── layout/           # Layout components
-│   ├── sections/         # Page sections
-│   └── ui/               # UI components
+│   └── ...                # Other pages
+├── backend/              # Backend API server
+│   ├── config/           # Database configuration
+│   ├── models/           # Database models
+│   ├── routes/           # API routes
+│   ├── server.js         # Express server
+│   └── package.json      # Backend dependencies
+├── components/           # React components
+│   ├── layout/          # Layout components
+│   ├── sections/        # Page sections
+│   └── ui/              # UI components
+├── lib/                  # Utilities and types
+│   ├── types.ts         # TypeScript types
+│   └── hooks/           # React hooks
 ├── public/               # Static assets
 ├── next.config.js        # Next.js configuration
 ├── tailwind.config.js    # Tailwind CSS configuration
 ├── tsconfig.json         # TypeScript configuration
-├── netlify.toml          # Netlify configuration
-└── package.json          # Dependencies and scripts
+└── package.json          # Frontend dependencies
 ```
 
 ## 🎨 Design System
@@ -151,12 +162,30 @@ annita-website/
 ## 🔧 Configuration
 
 ### Environment Variables
-Create a `.env.local` file for local development:
+
+**Frontend** - Create a `.env.local` file in the project root:
 
 ```env
-NEXT_PUBLIC_SITE_URL=http://localhost:3000
-NEXT_PUBLIC_ANALYTICS_ID=your-analytics-id
+NEXT_PUBLIC_BACKEND_URL=http://localhost:3001
+NEXT_PUBLIC_FRONTEND_URL=http://localhost:3000
 ```
+
+**Note**: Use `NEXT_PUBLIC_` prefix for environment variables that need to be available in the browser (required for static export).
+
+**Backend** - Create a `.env` file in the `backend` directory:
+
+```env
+DB_HOST=localhost
+DB_PORT=5432
+DB_NAME=annita_db
+DB_USER=postgres
+DB_PASSWORD=your_password
+PORT=3001
+NODE_ENV=development
+FRONTEND_URL=http://localhost:3000
+```
+
+See `backend/README.md` for detailed backend setup instructions.
 
 ### Build Configuration
 The project is configured for static export with:

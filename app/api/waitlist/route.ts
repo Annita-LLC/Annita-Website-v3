@@ -1,67 +1,36 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { addToWaitlist } from '@/lib/supabase'
+
+const BACKEND_URL = process.env.BACKEND_URL || 'http://localhost:3001'
 
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json()
     
-    // Validate required fields
-    if (!body.name || !body.email) {
-      return NextResponse.json(
-        { error: 'Name and email are required' },
-        { status: 400 }
-      )
-    }
-
-    // Validate email format
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-    if (!emailRegex.test(body.email)) {
-      return NextResponse.json(
-        { error: 'Invalid email format' },
-        { status: 400 }
-      )
-    }
-
-    // Get client IP and user agent
-    const ip = request.headers.get('x-forwarded-for') || 
-               request.headers.get('x-real-ip') || 
-               'unknown'
-    const userAgent = request.headers.get('user-agent') || 'unknown'
-
-    // Prepare data for database
-    const waitlistData = {
-      name: body.name.trim(),
-      email: body.email.trim().toLowerCase(),
-      phone: body.phone?.trim() || null,
-      business: body.business?.trim() || null,
-      interest: body.interest || 'general',
-      ip_address: ip,
-      user_agent: userAgent
-    }
-
-    // Add to waitlist
-    const result = await addToWaitlist(waitlistData)
-
-    return NextResponse.json({
-      success: true,
-      message: 'Successfully added to waitlist!',
-      data: {
-        id: result.id,
-        email: result.email
-      }
+    // Forward request to backend API
+    const response = await fetch(`${BACKEND_URL}/api/waitlist`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'x-forwarded-for': request.headers.get('x-forwarded-for') || '',
+        'x-real-ip': request.headers.get('x-real-ip') || '',
+        'user-agent': request.headers.get('user-agent') || ''
+      },
+      body: JSON.stringify(body)
     })
 
-  } catch (error: any) {
-    console.error('Waitlist submission error:', error)
-    
-    // Handle duplicate email error
-    if (error.code === '23505' && error.message.includes('email')) {
+    const data = await response.json()
+
+    if (!response.ok) {
       return NextResponse.json(
-        { error: 'This email is already on the waitlist' },
-        { status: 409 }
+        { error: data.error || 'Failed to add to waitlist' },
+        { status: response.status }
       )
     }
 
+    return NextResponse.json(data)
+
+  } catch (error) {
+    console.error('Waitlist submission error:', error)
     return NextResponse.json(
       { error: 'Failed to add to waitlist. Please try again.' },
       { status: 500 }

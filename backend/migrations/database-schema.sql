@@ -1,8 +1,5 @@
--- Annita Website Database Schema for Supabase
+-- Annita Website Database Schema for PostgreSQL
 -- This schema handles all form submissions and user data collection
-
--- Enable Row Level Security (RLS)
--- Note: app.jwt_secret setting removed as it requires superuser privileges
 -- RLS policies work without this setting for our anonymous form submissions
 
 -- Create custom types (only if they don't exist)
@@ -418,7 +415,7 @@ CREATE INDEX idx_waitlist_email ON waitlist(email);
 CREATE INDEX idx_waitlist_created_at ON waitlist(created_at);
 
 -- These policies are for when you build an admin dashboard
--- For now, data access is through Supabase dashboard or direct SQL queries
+-- For now, data access is through the backend API or direct SQL queries
 
 -- Add RLS policy for the view (optional - for future admin dashboard)
 -- CREATE POLICY "Allow admin read access" ON recent_inquiries FOR SELECT USING (auth.role() = 'service_role');

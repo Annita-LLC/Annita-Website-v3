@@ -1,176 +1,33 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { createClient } from '@supabase/supabase-js'
 
-// Create Supabase client function to avoid build-time issues
-function createSupabaseClient() {
-  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
-  const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY
-  
-  if (!supabaseUrl || !supabaseServiceKey) {
-    throw new Error('Missing Supabase environment variables')
-  }
-  
-  return createClient(supabaseUrl, supabaseServiceKey)
-}
-
-// Get client IP address
-function getClientIP(request: NextRequest): string | null {
-  const forwarded = request.headers.get('x-forwarded-for')
-  const realIP = request.headers.get('x-real-ip')
-  const cfConnectingIP = request.headers.get('cf-connecting-ip')
-  
-  if (forwarded) {
-    return forwarded.split(',')[0].trim()
-  }
-  if (realIP) {
-    return realIP
-  }
-  if (cfConnectingIP) {
-    return cfConnectingIP
-  }
-  
-  return null
-}
-
-// Get user agent
-function getUserAgent(request: NextRequest): string | null {
-  return request.headers.get('user-agent') || null
-}
+const BACKEND_URL = process.env.BACKEND_URL || 'http://localhost:3001'
 
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json()
-    const { formType, formData } = body
     
-    // Get client information
-    const ipAddress = getClientIP(request)
-    const userAgent = getUserAgent(request)
-    
-    // Add client info to form data
-    const enrichedData = {
-      ...formData,
-      ip_address: ipAddress,
-      user_agent: userAgent
-    }
-    
-    const supabase = createSupabaseClient()
-    let result
-    
-    switch (formType) {
-      case 'contact':
-        result = await supabase
-          .from('contact_inquiries')
-          .insert([enrichedData])
-          .select()
-        break
-        
-      case 'career':
-        result = await supabase
-          .from('career_applications')
-          .insert([enrichedData])
-          .select()
-        break
-        
-      case 'support':
-        result = await supabase
-          .from('support_issues')
-          .insert([enrichedData])
-          .select()
-        break
-        
-      case 'business':
-        result = await supabase
-          .from('business_inquiries')
-          .insert([enrichedData])
-          .select()
-        break
-        
-      case 'sales':
-        result = await supabase
-          .from('sales_inquiries')
-          .insert([enrichedData])
-          .select()
-        break
-        
-      case 'pricing':
-        result = await supabase
-          .from('pricing_inquiries')
-          .insert([enrichedData])
-          .select()
-        break
-        
-      case 'the100_youth':
-        result = await supabase
-          .from('the100_youth_applications')
-          .insert([enrichedData])
-          .select()
-        break
-        
-      case 'the100_partner':
-        result = await supabase
-          .from('the100_partner_applications')
-          .insert([enrichedData])
-          .select()
-        break
-        
-      case 'the100_mentor':
-        result = await supabase
-          .from('the100_mentor_applications')
-          .insert([enrichedData])
-          .select()
-        break
-        
-      case 'the100_contact':
-        result = await supabase
-          .from('the100_contact_inquiries')
-          .insert([enrichedData])
-          .select()
-        break
-        
-      case 'download':
-        result = await supabase
-          .from('download_requests')
-          .insert([enrichedData])
-          .select()
-        break
-        
-      case 'newsletter':
-        result = await supabase
-          .from('newsletter_subscriptions')
-          .upsert([enrichedData], {
-            onConflict: 'email',
-            ignoreDuplicates: false
-          })
-          .select()
-        break
-        
-      case 'investor_download':
-        result = await supabase
-          .from('investor_downloads')
-          .insert([enrichedData])
-          .select()
-        break
-        
-      default:
-        return NextResponse.json(
-          { error: 'Invalid form type' },
-          { status: 400 }
-        )
-    }
-    
-    if (result.error) {
-      console.error('Database error:', result.error)
+    // Forward request to backend API
+    const response = await fetch(`${BACKEND_URL}/api/forms/submit`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'x-forwarded-for': request.headers.get('x-forwarded-for') || '',
+        'x-real-ip': request.headers.get('x-real-ip') || '',
+        'user-agent': request.headers.get('user-agent') || ''
+      },
+      body: JSON.stringify(body)
+    })
+
+    const data = await response.json()
+
+    if (!response.ok) {
       return NextResponse.json(
-        { error: 'Failed to submit form' },
-        { status: 500 }
+        { error: data.error || 'Failed to submit form' },
+        { status: response.status }
       )
     }
-    
-    return NextResponse.json({
-      success: true,
-      data: result.data[0],
-      message: 'Form submitted successfully'
-    })
+
+    return NextResponse.json(data)
     
   } catch (error) {
     console.error('API error:', error)

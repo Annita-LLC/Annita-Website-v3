@@ -231,18 +231,21 @@ const InvestorsPage = () => {
 
   const handleDownload = async (url: string, title: string) => {
     try {
-      // Track the download in Supabase
-      const response = await fetch('/api/submit-form', {
+      // Track the download in database
+      const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:3001'
+      const response = await fetch(`${backendUrl}/api/forms/submit`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           formType: 'investor_download',
-          document_name: title,
-          document_type: getDocumentType(title),
-          downloader_email: '', // Will be filled if user is logged in
-          downloader_name: '', // Will be filled if user is logged in
-          downloader_company: '', // Will be filled if user is logged in
-          downloader_role: '' // Will be filled if user is logged in
+          formData: {
+            document_name: title,
+            document_type: getDocumentType(title),
+            downloader_email: '', // Will be filled if user is logged in
+            downloader_name: '', // Will be filled if user is logged in
+            downloader_company: '', // Will be filled if user is logged in
+            downloader_role: '' // Will be filled if user is logged in
+          }
         })
       })
 

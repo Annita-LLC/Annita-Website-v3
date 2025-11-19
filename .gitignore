@@ -4,30 +4,30 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# Next.js
+# Next.js / Frontend
 .next/
 out/
 build/
 dist/
+.vercel
 
 # Production
 /build
 
+# Environment Variables (IMPORTANT: Never commit these!)
+.env
+.env.local
+.env*.local
+.env.production
+.env.development
+backend/.env
+backend/.env.local
+backend/.env*.local
+
 # Misc
 .DS_Store
 *.pem
-
-# Debug
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# Local env files
-.env*.local
-.env
-
-# Vercel
-.vercel
+Thumbs.db
 
 # TypeScript
 *.tsbuildinfo
@@ -39,8 +39,18 @@ next-env.d.ts
 *.swp
 *.swo
 
-# OS
-Thumbs.db
+# Database
+*.db
+*.sqlite
+*.sqlite3
+*.db-journal
+
+# Backend specific
+backend/node_modules/
+backend/.env
+backend/logs/
+backend/tmp/
+backend/temp/
 
 # Logs
 logs
@@ -85,9 +95,6 @@ jspm_packages/
 # parcel-bundler cache (https://parceljs.org/)
 .cache
 .parcel-cache
-
-# next.js build output
-.next
 
 # nuxt.js build output
 .nuxt
