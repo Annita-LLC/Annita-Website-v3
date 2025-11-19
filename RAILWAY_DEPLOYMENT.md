@@ -48,7 +48,13 @@ Make sure `backend/package.json` has:
 
 ## Step 6: Set Environment Variables
 
-Go to your service → "Variables" tab and add:
+### Option A: Using Railway's Service References (Recommended)
+
+1. Go to your backend service → "Variables" tab
+2. Click "New Variable"
+3. For each variable, use Railway's service reference syntax:
+
+**Important**: Replace `Postgres` with your actual PostgreSQL service name (Railway shows this in your project).
 
 ```
 DB_HOST=${{Postgres.PGHOST}}
@@ -56,12 +62,48 @@ DB_PORT=${{Postgres.PGPORT}}
 DB_NAME=${{Postgres.PGDATABASE}}
 DB_USER=${{Postgres.PGUSER}}
 DB_PASSWORD=${{Postgres.PGPASSWORD}}
+```
+
+**Important**: When using service references (`${{Postgres.*}}`), Railway automatically uses the **private network** (no egress fees) since both services are in the same project.
+
+**How to find your service name:**
+- Look at your PostgreSQL service in Railway dashboard
+- The service name appears at the top (usually "Postgres" or "postgres")
+- Use that exact name in the `${{ServiceName.Variable}}` syntax
+
+### Option B: Manual Values (If service reference doesn't work)
+
+**⚠️ Important**: Use **PRIVATE** endpoint to avoid egress fees!
+
+1. Go to your PostgreSQL service → "Variables" tab
+2. Look for **private** connection variables:
+   - `PGHOST` - Use the **private** one (not `DATABASE_PUBLIC_URL`)
+   - `PGPORT`
+   - `PGDATABASE`
+   - `PGUSER`
+   - `PGPASSWORD`
+3. Go to your backend service → "Variables" tab
+4. Add them manually:
+
+```
+DB_HOST=<paste PRIVATE PGHOST value - NOT the public URL>
+DB_PORT=<paste PGPORT value>
+DB_NAME=<paste PGDATABASE value>
+DB_USER=<paste PGUSER value>
+DB_PASSWORD=<paste PGPASSWORD value>
+```
+
+**Note**: If you see `DATABASE_PUBLIC_URL` or `RAILWAY_TCP_PROXY_DOMAIN`, **don't use those** - they incur egress fees. Use the private `PGHOST` instead.
+
+### Required Variables (Add these too):
+
+```
 PORT=3001
 NODE_ENV=production
 FRONTEND_URL=https://your-netlify-site.netlify.app
 ```
 
-**Note**: Railway automatically provides database connection variables. Use the `${{Postgres.VARIABLE}}` syntax to reference them.
+**Note**: Railway automatically provides database connection variables. The `${{ServiceName.Variable}}` syntax references variables from other services in your project.
 
 ## Step 7: Run Migration
 

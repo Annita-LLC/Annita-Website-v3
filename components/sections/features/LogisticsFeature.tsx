@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { 
   Truck, 
@@ -36,25 +36,6 @@ const LogisticsFeature = () => {
     vehicle: 'Toyota Hilux',
     location: 'Lagos Mainland'
   })
-  const [liveStats, setLiveStats] = useState({
-    activeDeliveries: 234,
-    onTimeDelivery: 98.5,
-    drivers: 156,
-    cities: 45
-  })
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setLiveStats(prev => ({
-        activeDeliveries: prev.activeDeliveries + Math.floor(Math.random() * 3),
-        onTimeDelivery: prev.onTimeDelivery + (Math.random() * 0.1 - 0.05),
-        drivers: prev.drivers + Math.floor(Math.random() * 2),
-        cities: prev.cities
-      }))
-    }, 4000)
-
-    return () => clearInterval(interval)
-  }, [])
 
   const features = [
     'Vendor integration',
@@ -119,41 +100,6 @@ const LogisticsFeature = () => {
           and same-day delivery options with <span className="text-orange-600 font-semibold">AI-powered route optimization</span>.
         </motion.p>
 
-        {/* Live Performance Stats */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.6 }}
-          className="grid grid-cols-2 gap-4 mb-6"
-        >
-          <div className="bg-gradient-to-r from-orange-50 to-red-50 rounded-xl p-4 border border-orange-100">
-            <div className="flex items-center justify-between">
-              <div>
-                <div className="text-2xl font-bold text-orange-600">{liveStats.onTimeDelivery.toFixed(1)}%</div>
-                <div className="text-sm text-orange-600">On-Time Delivery</div>
-              </div>
-              <Timer className="w-6 h-6 text-orange-500" />
-            </div>
-            <div className="flex items-center mt-2">
-              <TrendingUp className="w-4 h-4 text-green-500 mr-1" />
-              <span className="text-xs text-green-600">+2.3% this week</span>
-            </div>
-          </div>
-          
-          <div className="bg-gradient-to-r from-blue-50 to-cyan-50 rounded-xl p-4 border border-blue-100">
-            <div className="flex items-center justify-between">
-              <div>
-                <div className="text-2xl font-bold text-blue-600">{liveStats.cities}</div>
-                <div className="text-sm text-blue-600">Cities Covered</div>
-              </div>
-              <Globe className="w-6 h-6 text-blue-500" />
-            </div>
-            <div className="flex items-center mt-2">
-              <Shield className="w-4 h-4 text-green-500 mr-1" />
-              <span className="text-xs text-green-600">Secure delivery</span>
-            </div>
-          </div>
-        </motion.div>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}

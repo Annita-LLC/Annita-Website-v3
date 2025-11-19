@@ -46,13 +46,6 @@ const AIFeature = () => {
     'Automating customer support...'
   ])
   const [currentInsight, setCurrentInsight] = useState(0)
-  const [liveStats, setLiveStats] = useState({
-    activeAI: 156,
-    accuracy: 99.7,
-    processingSpeed: 0.02,
-    energyEfficiency: 95.8
-  })
-
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentInsight(prev => (prev + 1) % aiInsights.length)
@@ -60,19 +53,6 @@ const AIFeature = () => {
 
     return () => clearInterval(interval)
   }, [aiInsights.length])
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setLiveStats(prev => ({
-        activeAI: prev.activeAI + Math.floor(Math.random() * 3),
-        accuracy: prev.accuracy + (Math.random() * 0.1 - 0.05),
-        processingSpeed: prev.processingSpeed + (Math.random() * 0.01 - 0.005),
-        energyEfficiency: prev.energyEfficiency + (Math.random() * 0.2 - 0.1)
-      }))
-    }, 2000)
-
-    return () => clearInterval(interval)
-  }, [])
 
   const startAIProcessing = () => {
     setAiProcessing(true)
@@ -166,41 +146,6 @@ const AIFeature = () => {
           and drive growth for MSMEs with <span className="text-orange-600 font-semibold">real-time learning and adaptation</span>.
         </motion.p>
 
-        {/* Live AI Stats */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.6 }}
-          className="grid grid-cols-2 gap-4 mb-6"
-        >
-          <div className="bg-gradient-to-r from-teal-50 to-cyan-50 rounded-xl p-4 border border-teal-100">
-            <div className="flex items-center justify-between">
-              <div>
-                <div className="text-2xl font-bold text-teal-600">{liveStats.accuracy.toFixed(1)}%</div>
-                <div className="text-sm text-teal-600">AI Accuracy</div>
-              </div>
-              <Target className="w-6 h-6 text-teal-500" />
-            </div>
-            <div className="flex items-center mt-2">
-              <TrendingUp className="w-4 h-4 text-green-500 mr-1" />
-              <span className="text-xs text-green-600">+0.3% today</span>
-            </div>
-          </div>
-          
-          <div className="bg-gradient-to-r from-purple-50 to-pink-50 rounded-xl p-4 border border-purple-100">
-            <div className="flex items-center justify-between">
-              <div>
-                <div className="text-2xl font-bold text-purple-600">{liveStats.processingSpeed.toFixed(3)}s</div>
-                <div className="text-sm text-purple-600">Processing Speed</div>
-              </div>
-              <Zap className="w-6 h-6 text-purple-500" />
-            </div>
-            <div className="flex items-center mt-2">
-              <Activity className="w-4 h-4 text-green-500 mr-1" />
-              <span className="text-xs text-green-600">Ultra-fast</span>
-            </div>
-          </div>
-        </motion.div>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}

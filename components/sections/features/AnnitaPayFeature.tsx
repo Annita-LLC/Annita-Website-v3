@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { 
   CreditCard, 
@@ -20,25 +20,6 @@ import Button from '@/components/ui/Button'
 
 const AnnitaPayFeature = () => {
   const [currentBalance, setCurrentBalance] = useState(1250.00)
-  const [liveStats, setLiveStats] = useState({
-    totalTransactions: 15420,
-    activeUsers: 8923,
-    countries: 23,
-    securityScore: 99.9
-  })
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setLiveStats(prev => ({
-        totalTransactions: prev.totalTransactions + Math.floor(Math.random() * 5),
-        activeUsers: prev.activeUsers + Math.floor(Math.random() * 3),
-        countries: prev.countries,
-        securityScore: prev.securityScore
-      }))
-    }, 2000)
-
-    return () => clearInterval(interval)
-  }, [])
 
   const features = [
     'Multi-currency support for 54+ African currencies',
@@ -95,41 +76,6 @@ const AnnitaPayFeature = () => {
           AnnitaPay enables MSMEs and individuals to move, store, issue, and grow money seamlessly without borders. Trade confidently in 54+ African currencies with real-time settlements and escrow protection.
         </motion.p>
 
-        {/* Live Security Stats */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.6 }}
-          className="grid grid-cols-2 gap-4 mb-6"
-        >
-          <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl p-4 border border-green-100">
-            <div className="flex items-center justify-between">
-              <div>
-                <div className="text-2xl font-bold text-green-600">{liveStats.securityScore}%</div>
-                <div className="text-sm text-green-600">Security Score</div>
-              </div>
-              <Shield className="w-6 h-6 text-green-500" />
-            </div>
-            <div className="flex items-center mt-2">
-              <CheckCircle className="w-4 h-4 text-green-500 mr-1" />
-              <span className="text-xs text-green-600">Bank-level security</span>
-            </div>
-          </div>
-          
-          <div className="bg-gradient-to-r from-blue-50 to-cyan-50 rounded-xl p-4 border border-blue-100">
-            <div className="flex items-center justify-between">
-              <div>
-                <div className="text-2xl font-bold text-blue-600">{liveStats.countries}</div>
-                <div className="text-sm text-blue-600">Countries</div>
-              </div>
-              <Globe className="w-6 h-6 text-blue-500" />
-            </div>
-            <div className="flex items-center mt-2">
-              <TrendingUp className="w-4 h-4 text-green-500 mr-1" />
-              <span className="text-xs text-green-600">Global reach</span>
-            </div>
-          </div>
-        </motion.div>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}

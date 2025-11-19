@@ -148,8 +148,7 @@ const Footer = () => {
                               <span className="text-lg sm:text-xl lg:text-2xl font-bold text-orange-500 dark:text-orange-400">Annita</span>
             </Link>
             <p className="text-gray-400 mb-4 sm:mb-6 leading-relaxed text-sm sm:text-base">
-              Africa's first all-in-one digital platform, empowering MSMEs with integrated 
-              e-commerce, fintech, AI, communication, marketing, and logistics solutions.
+              Annita is Africa's first all-in-one digital platform, combining e-commerce, fintech, artificial intelligence, communication, marketing, logistics, lifestyle services, and more into a single ecosystem. We empower MSMEs and individuals with innovative solutions, connectivity, and convenience.
             </p>
             
             {/* Contact Info */}

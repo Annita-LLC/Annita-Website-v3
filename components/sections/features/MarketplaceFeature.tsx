@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { 
   ShoppingCart, 
@@ -17,25 +17,6 @@ import Button from '@/components/ui/Button'
 
 const MarketplaceFeature = () => {
   const [isHovered, setIsHovered] = useState(false)
-  const [liveStats, setLiveStats] = useState({
-    activeUsers: 1247,
-    productsSold: 8923,
-    vendors: 456,
-    revenue: 125000
-  })
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setLiveStats(prev => ({
-        activeUsers: prev.activeUsers + Math.floor(Math.random() * 3),
-        productsSold: prev.productsSold + Math.floor(Math.random() * 5),
-        vendors: prev.vendors + Math.floor(Math.random() * 2),
-        revenue: prev.revenue + Math.floor(Math.random() * 100)
-      }))
-    }, 3000)
-
-    return () => clearInterval(interval)
-  }, [])
 
 
   const features = [
@@ -98,41 +79,6 @@ const MarketplaceFeature = () => {
           Connect with authentic African suppliers and grow your business across the continent.
         </motion.p>
 
-        {/* Live Stats */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.6 }}
-          className="grid grid-cols-2 gap-4 mb-6"
-        >
-          <div className="bg-gradient-to-r from-blue-50 to-cyan-50 rounded-xl p-4 border border-blue-100">
-            <div className="flex items-center justify-between">
-              <div>
-                <div className="text-2xl font-bold text-blue-600">{liveStats.activeUsers.toLocaleString()}</div>
-                <div className="text-sm text-blue-600">Active Users</div>
-              </div>
-              <Users className="w-6 h-6 text-blue-500" />
-            </div>
-            <div className="flex items-center mt-2">
-              <TrendingUp className="w-4 h-4 text-green-500 mr-1" />
-              <span className="text-xs text-green-600">+12% today</span>
-            </div>
-          </div>
-          
-          <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl p-4 border border-green-100">
-            <div className="flex items-center justify-between">
-              <div>
-                <div className="text-2xl font-bold text-green-600">{liveStats.productsSold.toLocaleString()}</div>
-                <div className="text-sm text-green-600">Products Sold</div>
-              </div>
-              <Package className="w-6 h-6 text-green-500" />
-            </div>
-            <div className="flex items-center mt-2">
-              <TrendingUp className="w-4 h-4 text-green-500 mr-1" />
-              <span className="text-xs text-green-600">+8% today</span>
-            </div>
-          </div>
-        </motion.div>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}

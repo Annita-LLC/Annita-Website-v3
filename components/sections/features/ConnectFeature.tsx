@@ -1,6 +1,5 @@
 'use client'
 
-import { useState, useEffect } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { 
   MessageSquare, 
@@ -14,10 +13,6 @@ import {
 import Button from '@/components/ui/Button'
 
 const ConnectFeature = () => {
-  const [liveMetrics, setLiveMetrics] = useState({
-    activeCampaigns: 23,
-    avgEngagement: 92.5
-  })
 
   const features = [
     'Targeted advertising',
@@ -74,41 +69,6 @@ const ConnectFeature = () => {
           and customer engagement tools with <span className="text-orange-600 font-semibold">AI-powered audience targeting</span>.
         </motion.p>
 
-        {/* Live Performance Stats */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.6 }}
-          className="grid grid-cols-2 gap-4 mb-6"
-        >
-          <div className="bg-gradient-to-r from-purple-50 to-pink-50 rounded-xl p-4 border border-purple-100">
-            <div className="flex items-center justify-between">
-              <div>
-                <div className="text-2xl font-bold text-purple-600">{liveMetrics.avgEngagement.toFixed(1)}%</div>
-                <div className="text-sm text-purple-600">Avg Engagement</div>
-              </div>
-              <Heart className="w-6 h-6 text-purple-500" />
-            </div>
-            <div className="flex items-center mt-2">
-              <TrendingUp className="w-4 h-4 text-green-500 mr-1" />
-              <span className="text-xs text-green-600">+5.2% this month</span>
-            </div>
-          </div>
-          
-          <div className="bg-gradient-to-r from-blue-50 to-cyan-50 rounded-xl p-4 border border-blue-100">
-            <div className="flex items-center justify-between">
-              <div>
-                <div className="text-2xl font-bold text-blue-600">{liveMetrics.activeCampaigns}</div>
-                <div className="text-sm text-blue-600">Active Campaigns</div>
-              </div>
-              <Target className="w-6 h-6 text-blue-500" />
-            </div>
-            <div className="flex items-center mt-2">
-              <Activity className="w-4 h-4 text-green-500 mr-1" />
-              <span className="text-xs text-green-600">Running smoothly</span>
-            </div>
-          </div>
-        </motion.div>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
