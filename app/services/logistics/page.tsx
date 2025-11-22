@@ -1,429 +1,253 @@
-"use client"
+'use client'
 
-import { useState } from 'react'
+import { useState, useRef } from 'react'
+import { motion, useInView } from 'framer-motion'
 import SEOHead from '@/components/seo/SEOHead'
 import CTASection from '@/components/sections/CTASection'
 import { 
   Truck, 
-  Package, 
   MapPin, 
   Clock, 
-  Shield, 
-  Globe, 
-  TrendingUp,
+  Package, 
+  ArrowRight,
   CheckCircle,
-  Download,
-  Play,
-  BarChart3,
-  Bike
+  Route,
+  Navigation,
+  Star,
+  ExternalLink
 } from 'lucide-react'
+import Button from '@/components/ui/Button'
 
 const LogisticsPage = () => {
-  const [activeService, setActiveService] = useState('delivery')
+  const ref = useRef(null)
+  const isInView = useInView(ref, { once: true, margin: "-100px" })
 
   const features = [
-    {
-      icon: Truck,
-      title: "Fast Delivery",
-      description: "Same-day and next-day delivery across Liberia",
-      color: "blue"
-    },
-    {
-      icon: Package,
-      title: "Package Tracking",
-      description: "Real-time tracking and delivery updates",
-      color: "green"
-    },
-    {
-      icon: Globe,
-      title: "Global Network",
-      description: "International shipping and logistics",
-      color: "orange"
-    },
-    {
-      icon: Shield,
-      title: "Secure Handling",
-      description: "Insurance and secure package handling",
-      color: "purple"
-    },
-    {
-      icon: Bike,
-      title: "Bike Delivery",
-      description: "Eco-friendly urban delivery with real-time tracking",
-      color: "green"
-    }
-  ]
-
-  const services = [
-    { 
-      name: "Express Delivery", 
-      icon: "🚚", 
-      description: "Same-day and next-day delivery across all major cities",
-      features: ["Ultra-fast delivery", "Real-time GPS tracking", "Priority handling", "SMS notifications", "Delivery confirmation"],
-      details: "Our express delivery service ensures your packages reach their destination within 24 hours. With dedicated couriers and optimized routes, we guarantee fast and secure delivery."
-    },
-    { 
-      name: "Standard Shipping", 
-      icon: "📦", 
-      description: "Reliable 2-5 day delivery with comprehensive coverage",
-      features: ["Wide network coverage", "Package protection", "Insurance included", "Delivery scheduling", "Proof of delivery"],
-      details: "Perfect for regular shipments with our extensive network covering urban and rural areas. Includes full insurance coverage and flexible delivery options."
-    },
-    { 
-      name: "International Shipping", 
-      icon: "🌍", 
-      description: "Global shipping solutions with customs expertise",
-      features: ["Worldwide delivery", "Customs clearance", "Multi-language support", "Documentation assistance", "Tracking across borders"],
-      details: "Seamless international shipping with our global network. We handle all customs documentation and provide end-to-end tracking for international shipments."
-    },
-    { 
-      name: "Bulk & Business Shipping", 
-      icon: "🏭", 
-      description: "Large volume and enterprise shipping solutions",
-      features: ["Volume optimization", "Dedicated account manager", "Custom logistics solutions", "Scheduled pickups", "Business reporting"],
-      details: "Tailored solutions for businesses with high shipping volumes. Includes dedicated support, custom packaging, and detailed analytics for your logistics operations."
-    },
-    { 
-      name: "Warehouse & Fulfillment", 
-      icon: "🏢", 
-      description: "Complete storage and order fulfillment services",
-      features: ["Secure climate-controlled storage", "Automated order fulfillment", "Real-time inventory management", "Quality control", "Returns processing"],
-      details: "Full-service warehousing with automated fulfillment systems. We store, pack, and ship your products with complete inventory visibility and quality assurance."
-    },
-    { 
-      name: "Returns & Exchanges", 
-      icon: "↩️", 
-      description: "Streamlined returns and exchange processing",
-      features: ["Easy return initiation", "Free return shipping", "Quick processing", "Refund guarantee", "Exchange options"],
-      details: "Customer-friendly returns process with free return shipping and quick processing. We handle the entire returns workflow to ensure customer satisfaction."
-    }
-  ]
-
-  const deliveryStats = [
-    {
-      title: "Delivery Success Rate",
-      value: "Pending",
-      change: "Pending",
-      icon: "📈",
-      color: "green"
-    },
-    {
-      title: "Average Delivery Time",
-      value: "Pending",
-      unit: "",
-      change: "Pending",
-      icon: "⏱️",
-      color: "blue"
-    },
-    {
-      title: "Active Drivers",
-      value: "Pending",
-      change: "Pending",
-      icon: "👨‍💼",
-      color: "orange"
-    },
-    {
-      title: "Cities Covered",
-      value: "Pending",
-      change: "Pending",
-      icon: "🏙️",
-      color: "purple"
-    }
+    'Vendor integration.',
+    'Same-day/next-day delivery.',
+    'Real-time tracking.',
+    'Warehousing & inventory management.'
   ]
 
   const benefits = [
-    "Real-time package tracking and updates",
-    "Flexible delivery options and scheduling",
-    "Comprehensive insurance coverage",
-    "Professional handling and care",
-    "24/7 customer support",
-    "Competitive pricing and transparent fees"
-  ]
-
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "Annita Logistics - Supply Chain & Delivery Solutions",
-    "description": "Comprehensive logistics and delivery services including express delivery, international shipping, warehousing, and real-time tracking. Fast, secure, and reliable supply chain solutions.",
-    "url": "https://annita.com/services/logistics",
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": "https://annita.com/services/logistics/search?q={search_term_string}",
-      "query-input": "required name=search_term_string"
+    {
+      icon: Clock,
+      title: 'Fast Delivery',
+      description: 'Same-day and next-day delivery options available.'
+    },
+    {
+      icon: MapPin,
+      title: 'Real-Time Tracking',
+      description: 'Track your packages from pickup to delivery.'
+    },
+    {
+      icon: Route,
+      title: 'Route Optimization',
+      description: 'AI-powered route optimization for efficiency.'
+    },
+    {
+      icon: Package,
+      title: 'Warehouse Management',
+      description: 'Complete inventory and warehouse solutions.'
     }
-  }
+  ]
 
   return (
     <>
       <SEOHead
-        title="Annita Logistics - Supply Chain & Delivery Solutions | Annita LLC"
-        description="Comprehensive logistics and delivery services including express delivery, international shipping, warehousing, and real-time tracking. Fast, secure, and reliable supply chain solutions."
-        keywords={[
-          'Annita Logistics',
-          'delivery services',
-          'supply chain',
-          'package tracking',
-          'express delivery',
-          'international shipping',
-          'warehouse services',
-          'logistics solutions',
-          'same-day delivery',
-          'package handling',
-          'shipping services',
-          'delivery tracking',
-          'logistics platform',
-          'supply chain management',
-          'delivery network'
-        ]}
+        title="Annita Logistics - On-Demand Delivery Network"
+        description="Complete delivery and logistics management system with real-time tracking, same-day delivery, and AI-powered route optimization."
+        keywords={["logistics", "delivery", "shipping", "tracking", "africa", "transportation"]}
         canonical="/services/logistics"
-        ogImage="/logistics-og-image.jpg"
-        structuredData={structuredData}
       />
 
       <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white">
         {/* Hero Section */}
-        <section className="relative py-16 sm:py-20 lg:py-24 overflow-hidden">
+        <section className="relative py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-orange-600 via-orange-700 to-red-600 text-white overflow-hidden">
           <div className="absolute inset-0">
-            <div className="absolute top-0 left-1/4 w-72 h-72 bg-blue-200 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob"></div>
-            <div className="absolute top-0 right-1/4 w-72 h-72 bg-green-200 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000"></div>
-            <div className="absolute -bottom-8 left-1/3 w-72 h-72 bg-orange-200 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-4000"></div>
+            <div className="absolute top-10 left-10 w-20 h-20 bg-white/10 rounded-full animate-pulse"></div>
+            <div className="absolute top-32 right-20 w-16 h-16 bg-white/5 rounded-full animate-bounce"></div>
+            <div className="absolute bottom-20 left-1/4 w-12 h-12 bg-white/10 rounded-full animate-pulse delay-1000"></div>
           </div>
-
-          <div className="container mx-auto px-3 sm:px-4 lg:px-6 xl:px-8 relative z-10">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <div>
-                <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-100 text-blue-700 text-sm font-medium mb-6">
-                  <Truck className="w-4 h-4 mr-2" />
-                  Supply Chain & Delivery
-                </div>
-                <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-900 mb-6">
-                  Fast & <span className="text-blue-600">Reliable</span> Logistics
-                </h1>
-                <p className="text-lg sm:text-xl text-gray-600 mb-8 leading-relaxed">
-                  Comprehensive logistics and delivery services with real-time tracking, 
-                  express delivery, and global shipping solutions.
-                </p>
-                <div className="flex flex-col sm:flex-row gap-4">
-                  <button 
-                    onClick={() => window.open('https://annita.company.site/products', '_blank')}
-                    className="bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-200 flex items-center justify-center"
-                  >
-                    <Download className="w-5 h-5 mr-2" />
-                    Track Package
-                  </button>
-                  <button 
-                    onClick={() => window.open('https://annita.company.site/products', '_blank')}
-                    className="border-2 border-blue-600 text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-blue-50 transition-colors duration-200 flex items-center justify-center"
-                  >
-                    <Play className="w-5 h-5 mr-2" />
-                    Schedule Pickup
-                  </button>
-                </div>
-              </div>
-
-              <div className="relative">
-                <div className="bg-white p-8 rounded-3xl shadow-2xl border border-gray-100">
-                  <div className="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mb-6">
-                    <Truck className="w-8 h-8 text-blue-600" />
+          
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div className="max-w-6xl mx-auto">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div className="text-center lg:text-left">
+                  <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/20 backdrop-blur-sm text-white text-sm font-medium mb-6">
+                    <Truck className="w-4 h-4 mr-2" />
+                    Annita Logistics
                   </div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4">Track Your Package</h3>
-                  <div className="space-y-4">
-                    <div className="relative">
-                      <input
-                        type="text"
-                        placeholder="Enter tracking number..."
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent pr-12"
-                      />
-                      <Package className="w-5 h-5 text-gray-400 absolute right-3 top-1/2 transform -translate-y-1/2" />
-                    </div>
-                    <div className="bg-gray-50 p-4 rounded-lg">
-                      <div className="flex items-center justify-between mb-2">
-                        <span className="text-sm text-gray-600">Package Status</span>
-                        <span className="text-sm font-semibold text-green-600">In Transit</span>
-                      </div>
-                      <div className="flex items-center justify-between text-sm text-gray-600">
-                        <span>Estimated Delivery</span>
-                        <span>Tomorrow, 2:00 PM</span>
-                      </div>
-                    </div>
-                    <button 
+                  <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 leading-tight">
+                    On-Demand <span className="text-orange-200">Delivery Network</span>
+                  </h1>
+                  <p className="text-lg sm:text-xl text-orange-100 max-w-2xl mx-auto lg:mx-0 leading-relaxed mb-8">
+                    Streamlined logistics for MSMEs without their own fleets. Real-time tracking 
+                    and same-day delivery options with AI-powered route optimization.
+                  </p>
+                  
+                  <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                    <Button
+                      variant="white"
+                      size="lg"
+                      icon={ExternalLink}
                       onClick={() => window.open('https://annita.company.site/products', '_blank')}
-                      className="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-200"
                     >
-                      Track Package
-                    </button>
+                      Track Delivery
+                    </Button>
+                    <Button
+                      variant="outline"
+                      size="lg"
+                      icon={Star}
+                      className="border-white text-white hover:bg-white hover:text-orange-600"
+                    >
+                      Learn More
+                    </Button>
                   </div>
                 </div>
+
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.8, delay: 0.2 }}
+                  className="relative"
+                >
+                  <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
+                    <div className="relative mx-auto group">
+                      <div className="relative overflow-hidden rounded-2xl shadow-2xl border-2 border-white/30 bg-gradient-to-br from-white/20 to-white/10 p-2">
+                        <img 
+                          src="/images/DEMO-Images/Annita Logistics.webp" 
+                          alt="Annita Logistics" 
+                          className="w-full h-auto rounded-xl transition-transform duration-300 group-hover:scale-105"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent rounded-xl pointer-events-none"></div>
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
               </div>
             </div>
           </div>
         </section>
 
         {/* Features Section */}
-        <section className="py-16 sm:py-20">
-          <div className="container mx-auto px-3 sm:px-4 lg:px-6 xl:px-8">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-                Complete <span className="text-blue-600">Logistics</span> Solutions
-              </h2>
-              <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
-                From local delivery to international shipping, we provide comprehensive 
-                logistics services to meet all your supply chain needs.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {features.map((feature, index) => (
-                <div
-                  key={index}
-                  className="bg-white p-6 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300"
-                >
-                  <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-4 ${
-                    feature.color === 'blue' ? 'bg-blue-100' :
-                    feature.color === 'green' ? 'bg-green-100' :
-                    feature.color === 'orange' ? 'bg-orange-100' :
-                    'bg-purple-100'
-                  }`}>
-                    <feature.icon className={`w-6 h-6 ${
-                      feature.color === 'blue' ? 'text-blue-600' :
-                      feature.color === 'green' ? 'text-green-600' :
-                      feature.color === 'orange' ? 'text-orange-600' :
-                      'text-purple-600'
-                    }`} />
-                  </div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-3">{feature.title}</h3>
-                  <p className="text-gray-600 text-sm leading-relaxed">{feature.description}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Services Section */}
-        <section className="py-16 sm:py-20 bg-gradient-to-r from-blue-50 to-blue-100">
-          <div className="container mx-auto px-3 sm:px-4 lg:px-6 xl:px-8">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-                Our <span className="text-blue-600">Services</span>
-              </h2>
-              <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
-                Choose from our range of logistics services designed to meet your specific needs.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {services.map((service, index) => (
-                <div
-                  key={index}
-                  className="bg-white p-6 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300 cursor-pointer group"
-                >
-                  <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">
-                    {service.icon}
-                  </div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">{service.name}</h3>
-                  <p className="text-gray-600 text-sm mb-4">{service.description}</p>
-                  <ul className="space-y-2 mb-4">
-                    {service.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-center space-x-2 text-sm text-gray-600">
-                        <CheckCircle className="w-4 h-4 text-blue-600 flex-shrink-0" />
-                        <span>{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <p className="text-sm text-gray-600 leading-relaxed">{service.details}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Delivery Statistics Section */}
-        <section className="py-16 sm:py-20">
-          <div className="container mx-auto px-3 sm:px-4 lg:px-6 xl:px-8">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-                Delivery <span className="text-blue-600">Performance</span>
-              </h2>
-              <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
-                Real-time statistics showing our commitment to fast and reliable delivery.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {deliveryStats.map((stat, index) => (
-                <div
-                  key={index}
-                  className="bg-white p-6 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300"
-                >
-                  <div className="text-center">
-                    <div className="text-4xl mb-4">{stat.icon}</div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2">{stat.title}</h3>
-                    <div className="text-3xl font-bold text-blue-600 mb-2">
-                      {stat.value}{stat.unit && <span className="text-lg">{stat.unit}</span>}
-                    </div>
-                    <div className="flex items-center justify-center space-x-1">
-                      <TrendingUp className="w-4 h-4 text-green-600" />
-                      <span className="text-green-600 text-sm font-medium">{stat.change}</span>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Benefits Section */}
-        <section className="py-16 sm:py-20 bg-gradient-to-r from-gray-50 to-white">
-          <div className="container mx-auto px-3 sm:px-4 lg:px-6 xl:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <div>
-                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-                  Why Choose <span className="text-blue-600">Annita Logistics</span>
+        <section className="py-16 sm:py-20 bg-white">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-6xl mx-auto">
+              <motion.div
+                ref={ref}
+                initial={{ opacity: 0, y: 30 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.8 }}
+                className="text-center mb-12"
+              >
+                <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+                  Complete <span className="text-orange-600">Logistics Solution</span>
                 </h2>
-                <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                  Annita Logistics is designed to provide you with the most reliable 
-                  and efficient delivery experience with advanced technology and professional service.
+                <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+                  End-to-end logistics management for African businesses.
                 </p>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  {benefits.map((benefit, index) => (
-                    <div key={index} className="flex items-center space-x-3">
-                      <CheckCircle className="w-5 h-5 text-blue-600 flex-shrink-0" />
-                      <span className="text-gray-700">{benefit}</span>
-                    </div>
-                  ))}
+              </motion.div>
+
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+                <div>
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.6, delay: 0.2 }}
+                    className="w-16 h-16 bg-gradient-to-br from-orange-500 to-red-500 rounded-2xl flex items-center justify-center mb-6"
+                  >
+                    <Truck className="w-8 h-8 text-white" />
+                  </motion.div>
+                  
+                  <h3 className="text-2xl lg:text-3xl font-bold text-orange-600 mb-2">
+                    Annita Logistics
+                  </h3>
+                  
+                  <div className="text-lg font-medium text-primary-600 mb-4 flex items-center">
+                    On-Demand Delivery Network
+                    <Route className="w-5 h-5 ml-2 text-orange-500" />
+                  </div>
+                  
+                  <p className="text-gray-600 mb-6 leading-relaxed">
+                    Streamlined logistics for MSMEs without their own fleets. Real-time tracking 
+                    and same-day delivery options with <span className="text-orange-600 font-semibold">AI-powered route optimization</span>.
+                  </p>
+
+                  <div className="space-y-3 mb-8">
+                    {features.map((feature, index) => (
+                      <motion.div
+                        key={index}
+                        initial={{ opacity: 0, x: -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.4, delay: 0.3 + index * 0.1 }}
+                        className="flex items-center space-x-3"
+                      >
+                        <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
+                        <span className="text-gray-700">{feature}</span>
+                      </motion.div>
+                    ))}
+                  </div>
+
+                  <Button className="group">
+                    Track Delivery
+                    <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                  </Button>
                 </div>
+
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.8, delay: 0.4 }}
+                  className="relative"
+                >
+                  <div className="bg-gradient-to-br from-orange-50 to-red-50 rounded-3xl p-6 lg:p-8 relative overflow-hidden">
+                    <div className="absolute top-4 right-4 w-20 h-20 bg-orange-200 rounded-full opacity-20 animate-pulse"></div>
+                    <div className="absolute bottom-8 left-6 w-16 h-16 bg-red-200 rounded-full opacity-30 animate-pulse delay-1000"></div>
+                    
+                    <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-4 sm:p-6 shadow-soft border border-gray-200 relative z-10">
+                      <div className="text-center mb-4 sm:mb-6">
+                        <h3 className="text-base sm:text-lg md:text-xl font-semibold text-gray-900 mb-1 sm:mb-2">Annita Logistics Demo</h3>
+                        <p className="text-xs sm:text-sm text-gray-600">Real-time Tracking</p>
+                      </div>
+
+                      <div className="relative mx-auto group">
+                        <div className="relative overflow-hidden rounded-2xl shadow-2xl border-2 border-gray-100 bg-gradient-to-br from-gray-50 to-white p-2">
+                          <img 
+                            src="/images/DEMO-Images/Annita Logistics.webp" 
+                            alt="Annita Logistics Demo" 
+                            className="w-full h-auto rounded-xl transition-transform duration-300 group-hover:scale-105"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent rounded-xl pointer-events-none"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
               </div>
 
-              <div className="relative">
-                <div className="bg-white p-8 rounded-3xl shadow-2xl">
-                  <div className="text-center mb-6">
-                    <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <BarChart3 className="w-8 h-8 text-blue-600" />
+              {/* Benefits Grid */}
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                {benefits.map((benefit, index) => (
+                  <motion.div
+                    key={benefit.title}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
+                    className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 text-center"
+                  >
+                    <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-red-500 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                      <benefit.icon className="w-8 h-8 text-white" />
                     </div>
-                    <h3 className="text-2xl font-bold text-gray-900 mb-2">Network Coverage</h3>
-                    <p className="text-gray-600">Delivery statistics</p>
-                  </div>
-                  <div className="space-y-4">
-                    <div className="flex justify-between items-center p-4 bg-gray-50 rounded-lg">
-                      <span className="text-gray-600">Daily Deliveries</span>
-                      <span className="font-semibold text-blue-600">Pending</span>
-                    </div>
-                    <div className="flex justify-between items-center p-4 bg-gray-50 rounded-lg">
-                      <span className="text-gray-600">Service Areas</span>
-                      <span className="font-semibold text-blue-600">Pending</span>
-                    </div>
-                    <div className="flex justify-between items-center p-4 bg-gray-50 rounded-lg">
-                      <span className="text-gray-600">Customer Satisfaction</span>
-                      <span className="font-semibold text-green-600">Pending</span>
-                    </div>
-                  </div>
-                </div>
+                    <h4 className="text-lg font-bold text-gray-900 mb-2">{benefit.title}</h4>
+                    <p className="text-gray-600">{benefit.description}</p>
+                  </motion.div>
+                ))}
               </div>
             </div>
           </div>
         </section>
 
-        {/* CTA Section */}
         <CTASection />
       </div>
     </>

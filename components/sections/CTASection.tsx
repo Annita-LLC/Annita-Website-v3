@@ -26,7 +26,7 @@ const CTASection = () => {
               🚨 Something BIG is Coming - Annita 3.0
             </h3>
             <p className="text-orange-100 mb-6 max-w-2xl mx-auto">
-              Experience our live marketplace V1.0 today, and join the waitlist for the revolutionary V3.0 - 
+              Experience our live marketplace V1.0 today, and join the waitlist for the revolutionary V3.0 — 
               offline-ready, AI-powered, and built for everyone in Africa.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

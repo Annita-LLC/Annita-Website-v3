@@ -1,23 +1,18 @@
 "use client"
 
-import { useRef, useState } from 'react'
+import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { 
   Linkedin,
   Twitter,
   Mail,
   MapPin,
-  Calendar,
-  ChevronLeft,
-  ChevronRight,
-  ArrowRight
+  Calendar
 } from 'lucide-react'
-import Button from '@/components/ui/Button'
 
 const TeamSection = () => {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-100px" })
-  const [currentImageIndex, setCurrentImageIndex] = useState(0)
 
   const team = [
     {
@@ -69,14 +64,6 @@ const TeamSection = () => {
       joined: '2025'
     }
   ]
-
-  const nextImage = () => {
-    setCurrentImageIndex((prev) => (prev + 1) % team.length)
-  }
-
-  const prevImage = () => {
-    setCurrentImageIndex((prev) => (prev - 1 + team.length) % team.length)
-  }
 
   return (
     <section className="py-16 sm:py-20 bg-gradient-to-br from-gray-50 to-white">
@@ -175,85 +162,6 @@ const TeamSection = () => {
             </motion.div>
           ))}
         </div>
-
-        {/* Team Image Carousel */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 1.0 }}
-          className="relative bg-white rounded-3xl p-4 sm:p-8 lg:p-12 shadow-soft"
-        >
-          <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-orange-600 mb-6 sm:mb-8 lg:mb-10 text-center">Team Gallery</h3>
-          
-          <div className="relative max-w-6xl mx-auto">
-            <div className="relative h-80 sm:h-96 md:h-[500px] lg:h-[600px] xl:h-[700px] rounded-2xl overflow-hidden bg-gradient-to-br from-orange-100 to-red-100">
-              <img 
-                src={team[currentImageIndex].image} 
-                alt={team[currentImageIndex].name}
-                className="w-full h-full object-cover object-center"
-              />
-              <div className="absolute inset-0 bg-black/10"></div>
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent p-4 sm:p-6 lg:p-8">
-                <h4 className="text-lg sm:text-xl lg:text-2xl font-semibold text-white mb-2 sm:mb-3">{team[currentImageIndex].name}</h4>
-                <p className="text-orange-300 font-medium mb-3 sm:mb-4 lg:mb-6 text-sm sm:text-base lg:text-lg">{team[currentImageIndex].role}</p>
-                <div className="flex flex-wrap gap-2 sm:gap-3">
-                  {team[currentImageIndex].expertise.map((skill, skillIndex) => (
-                    <span 
-                      key={skillIndex}
-                      className="px-3 py-1 sm:px-4 sm:py-2 bg-white/20 text-white text-xs sm:text-sm rounded-full backdrop-blur-sm border border-white/30"
-                    >
-                      {skill}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            {/* Navigation Buttons */}
-            <button
-              onClick={prevImage}
-              className="absolute left-2 sm:left-4 lg:left-6 top-1/2 transform -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center shadow-lg hover:bg-white transition-colors duration-200 z-10"
-            >
-              <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6 lg:w-7 lg:h-7 text-gray-700" />
-            </button>
-            <button
-              onClick={nextImage}
-              className="absolute right-2 sm:right-4 lg:right-6 top-1/2 transform -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center shadow-lg hover:bg-white transition-colors duration-200 z-10"
-            >
-              <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6 lg:w-7 lg:h-7 text-gray-700" />
-            </button>
-
-            {/* Dots Indicator */}
-            <div className="flex justify-center mt-6 sm:mt-8 lg:mt-10 space-x-2 sm:space-x-3">
-              {team.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setCurrentImageIndex(index)}
-                  className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-colors duration-200 ${
-                    index === currentImageIndex ? 'bg-orange-500' : 'bg-gray-300'
-                  }`}
-                />
-              ))}
-            </div>
-          </div>
-        </motion.div>
-
-        {/* CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 1.2 }}
-          className="text-center mt-12 sm:mt-16"
-        >
-          <Button
-            variant="gradient"
-            size="xl"
-            icon={ArrowRight}
-            className="text-lg font-bold shadow-2xl hover:shadow-orange-500/25 transform hover:-translate-y-1 transition-all duration-300"
-          >
-            Join Our Team
-          </Button>
-        </motion.div>
       </div>
     </section>
   )

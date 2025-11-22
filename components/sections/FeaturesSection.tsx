@@ -46,25 +46,25 @@ const FeaturesSection = () => {
     {
       icon: Smartphone,
       title: 'Mobile-First Design',
-      description: 'Optimized for basic smartphones with low-data mode for rural users',
+      description: 'Optimized for basic smartphones with low-data mode for rural users.',
       metric: '99%'
     },
     {
       icon: Wifi,
       title: 'Offline Capabilities',
-      description: 'Works in low-connectivity environments with offline sync',
+      description: 'Works in low-connectivity environments with offline sync.',
       metric: '24/7'
     },
     {
       icon: Lock,
       title: 'Enterprise Security',
-      description: 'Bank-level encryption and fraud protection systems',
+      description: 'Bank-level encryption and fraud protection systems.',
       metric: '99.9%'
     },
     {
       icon: TrendingUp,
       title: 'AI-Powered Analytics',
-      description: 'Intelligent insights for business optimization and growth',
+      description: 'Intelligent insights for business optimization and growth.',
       metric: '75%'
     }
   ]
@@ -73,22 +73,22 @@ const FeaturesSection = () => {
     {
       icon: TrendingUp,
       title: 'Grow Your Business',
-      description: 'African-focused platform for maximum growth'
+      description: 'African-focused platform for maximum growth.'
     },
     {
       icon: Globe,
       title: 'Pan-African Network',
-      description: 'Access suppliers from all 54 African countries'
+      description: 'Access suppliers from all 54 African countries.'
     },
     {
       icon: Shield,
       title: 'Escrow Protection',
-      description: 'Funds held securely until delivery confirmed'
+      description: 'Funds held securely until delivery confirmed.'
     },
     {
       icon: Users,
       title: 'KYC-Verified Suppliers',
-      description: 'All suppliers thoroughly vetted and verified'
+      description: 'All suppliers thoroughly vetted and verified.'
     }
   ]
 
@@ -106,7 +106,7 @@ const FeaturesSection = () => {
             Complete <span className="text-orange-500">African Business Ecosystem</span>
           </h2>
           <p className="text-lg sm:text-xl text-gray-600 max-w-4xl mx-auto">
-            Built for African businesses. Cross-border trade, institutional backing, seamless integration. 
+            Built for African businesses. Cross-border trade, institutional backing, and seamless integration. 
             Connect with authentic African suppliers and grow your business.
           </p>
         </motion.div>

@@ -15,10 +15,10 @@ import Button from '@/components/ui/Button'
 const ConnectFeature = () => {
 
   const features = [
-    'Targeted advertising',
-    'Customer engagement tools',
-    'AI-driven insights',
-    'Analytics and reporting'
+    'Targeted advertising.',
+    'Customer engagement tools.',
+    'AI-driven insights.',
+    'Analytics and reporting.'
   ]
 
   return (

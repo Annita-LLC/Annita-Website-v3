@@ -179,13 +179,52 @@ const IdeasPage = () => {
     setSubmitStatus('idle')
     
     // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 2000))
+    await new Promise(resolve => setTimeout(resolve, 1500))
+    
+    // Create new idea object from form data
+    const newIdea: Idea = {
+      id: Date.now(), // Use timestamp as unique ID
+      title: formData.title,
+      description: formData.description,
+      detailedDescription: formData.description,
+      category: formData.category,
+      impact: formData.impact,
+      votes: 0,
+      comments: 0,
+      status: 'under-review',
+      author: formData.name || 'Anonymous',
+      authorAvatar: '',
+      date: new Date().toISOString(),
+      targetAudience: formData.targetAudience || 'General',
+      tags: formData.tags ? formData.tags.split(',').map(tag => tag.trim()).filter(tag => tag.length > 0) : [],
+      estimatedEffort: formData.estimatedEffort,
+      businessValue: formData.businessValue,
+      technicalFeasibility: formData.technicalFeasibility,
+      priority: formData.priority,
+      progress: 0,
+      budget: '',
+      timeline: '',
+      team: [],
+      attachments: formData.attachments.map(f => f.name),
+      location: '',
+      relatedIdeas: []
+    }
+    
+    // Add the new idea to the ideas array
+    setIdeas(prevIdeas => [newIdea, ...prevIdeas])
     
     // Simulate success
     setSubmitStatus('success')
     setIsSubmitting(false)
     
-    // Reset form after 3 seconds
+    // Switch to browse tab after a short delay so user can see their idea
+    setTimeout(() => {
+      setActiveTab('browse')
+      // Scroll to top of browse section
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+    }, 2000)
+    
+    // Reset form after switching tabs
     setTimeout(() => {
       setSubmitStatus('idle')
       setFormData({
@@ -344,11 +383,11 @@ const IdeasPage = () => {
                   {/* Quick Stats */}
                   <div className="grid grid-cols-2 gap-4 mb-8">
                     <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
-                      <div className="text-2xl font-bold">0</div>
+                      <div className="text-2xl font-bold">{ideas.length}</div>
                       <div className="text-sm text-orange-200">Ideas Submitted</div>
                     </div>
                     <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
-                      <div className="text-2xl font-bold">0</div>
+                      <div className="text-2xl font-bold">{ideas.reduce((sum, idea) => sum + idea.votes, 0)}</div>
                       <div className="text-sm text-orange-200">Total Votes</div>
                     </div>
                   </div>
@@ -383,11 +422,23 @@ const IdeasPage = () => {
                   <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
                     <h3 className="text-xl font-semibold mb-4 text-center">Community Ideas</h3>
                     <div className="text-center py-8">
-                      <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <Lightbulb className="w-8 h-8 text-orange-200" />
-                      </div>
-                      <p className="text-orange-200 text-sm mb-2">No ideas submitted yet</p>
-                      <p className="text-orange-100 text-xs">Be the first to share your idea!</p>
+                      {ideas.length === 0 ? (
+                        <>
+                          <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <Lightbulb className="w-8 h-8 text-orange-200" />
+                          </div>
+                          <p className="text-orange-200 text-sm mb-2">No ideas submitted yet</p>
+                          <p className="text-orange-100 text-xs">Be the first to share your idea!</p>
+                        </>
+                      ) : (
+                        <>
+                          <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <Lightbulb className="w-8 h-8 text-orange-200" />
+                          </div>
+                          <p className="text-orange-200 text-sm mb-2 font-semibold">{ideas.length} {ideas.length === 1 ? 'Idea' : 'Ideas'} Submitted</p>
+                          <p className="text-orange-100 text-xs">Keep the ideas coming!</p>
+                        </>
+                      )}
                     </div>
                   </div>
                 </motion.div>
@@ -1310,7 +1361,7 @@ const IdeasPage = () => {
                         </div>
                         <span className="font-medium">Ideas Submitted</span>
                       </div>
-                      <span className="text-2xl font-bold">0</span>
+                      <span className="text-2xl font-bold">{ideas.length}</span>
                     </div>
                     
                     <div className="flex items-center justify-between">
@@ -1320,7 +1371,7 @@ const IdeasPage = () => {
                         </div>
                         <span className="font-medium">Total Votes</span>
                       </div>
-                      <span className="text-2xl font-bold">0</span>
+                      <span className="text-2xl font-bold">{ideas.reduce((sum, idea) => sum + idea.votes, 0)}</span>
                     </div>
                     
                     <div className="flex items-center justify-between">
@@ -1330,7 +1381,7 @@ const IdeasPage = () => {
                         </div>
                         <span className="font-medium">Implemented</span>
                       </div>
-                      <span className="text-2xl font-bold">0</span>
+                      <span className="text-2xl font-bold">{ideas.filter(idea => idea.status === 'implemented').length}</span>
                     </div>
                   </div>
                   

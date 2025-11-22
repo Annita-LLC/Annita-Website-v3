@@ -38,10 +38,10 @@ const LogisticsFeature = () => {
   })
 
   const features = [
-    'Vendor integration',
-    'Same-day/next-day delivery',
-    'Real-time tracking',
-    'Warehousing & inventory management'
+    'Vendor integration.',
+    'Same-day/next-day delivery.',
+    'Real-time tracking.',
+    'Warehousing & inventory management.'
   ]
 
   const deliverySteps = [

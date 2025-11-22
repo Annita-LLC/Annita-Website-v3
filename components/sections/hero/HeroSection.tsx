@@ -45,8 +45,10 @@ const HeroSection = () => {
   const [isWaitlistOpen, setIsWaitlistOpen] = useState(false)
   const [isDownloadModalOpen, setIsDownloadModalOpen] = useState(false)
   const [isPaused, setIsPaused] = useState(false)
+  const [isVideoPlaying, setIsVideoPlaying] = useState(false)
   const slideIntervalRef = useRef<NodeJS.Timeout | null>(null)
   const videoIntervalRef = useRef<NodeJS.Timeout | null>(null)
+  const videoResumeTimeoutRef = useRef<NodeJS.Timeout | null>(null)
 
   const videos = [
     {
@@ -69,7 +71,7 @@ const HeroSection = () => {
       badge: "🚨 Something BIG is Coming",
       title: "Annita 3.0 - The Future",
       titleHighlight: "of Business in Africa",
-      subtitle: "Built for African businesses. Cross-border trade, institutional backing, seamless integration.",
+      subtitle: "Built for African businesses. Cross-border trade, institutional backing, and seamless integration.",
       cta: "Join Waitlist",
       ctaIcon: Star,
       secondaryCta: "See V1.0 Now",
@@ -117,7 +119,7 @@ const HeroSection = () => {
       badge: "Built in Liberia",
       title: "Rising with the Continent",
       titleHighlight: "the Continent",
-      subtitle: "Built for African businesses. Institutional backing and connected ecosystem.",
+      subtitle: "Built for African businesses. Institutional backing and a connected ecosystem.",
       cta: "Join Movement",
       ctaIcon: Globe,
       secondaryCta: "Partner With Us",
@@ -186,9 +188,10 @@ const HeroSection = () => {
     }
   ]
 
-  // Start/stop slide interval based on pause state - reduced frequency for better performance
+  // Start/stop slide interval based on pause state and video playing state
   useEffect(() => {
-    if (!isPaused) {
+    // Pause slides if manually paused OR if video is playing
+    if (!isPaused && !isVideoPlaying) {
       slideIntervalRef.current = setInterval(() => {
         setCurrentSlide((prev) => (prev + 1) % slides.length)
       }, 5000) // Increased from 3000ms to 5000ms
@@ -204,7 +207,7 @@ const HeroSection = () => {
         clearInterval(slideIntervalRef.current)
       }
     }
-  }, [isPaused, slides.length])
+  }, [isPaused, isVideoPlaying, slides.length])
 
   // Start/stop video interval based on pause state - reduced frequency for better performance
   useEffect(() => {
@@ -235,12 +238,45 @@ const HeroSection = () => {
   }
 
   const handleVideoInteraction = () => {
-    setIsPaused(true)
-    // Resume after 5 seconds of no interaction
-    setTimeout(() => {
-      setIsPaused(false)
-    }, 5000)
+    // When video is interacted with, assume it's playing
+    setIsVideoPlaying(true)
+    // Clear any existing resume timeout
+    if (videoResumeTimeoutRef.current) {
+      clearTimeout(videoResumeTimeoutRef.current)
+    }
   }
+
+  const handleVideoPause = () => {
+    // When mouse leaves video area, wait a bit before assuming video is paused
+    // This prevents false positives from quick mouse movements
+    if (videoResumeTimeoutRef.current) {
+      clearTimeout(videoResumeTimeoutRef.current)
+    }
+    videoResumeTimeoutRef.current = setTimeout(() => {
+      setIsVideoPlaying(false)
+    }, 1000) // Wait 1 second before assuming video is paused
+  }
+
+  // Handle scroll to resume slides
+  useEffect(() => {
+    const handleScroll = () => {
+      // When user scrolls, pause video (resume slides)
+      setIsVideoPlaying(false)
+      if (videoResumeTimeoutRef.current) {
+        clearTimeout(videoResumeTimeoutRef.current)
+        videoResumeTimeoutRef.current = null
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+      if (videoResumeTimeoutRef.current) {
+        clearTimeout(videoResumeTimeoutRef.current)
+      }
+    }
+  }, [])
 
   return (
     <section className="relative min-h-screen bg-white overflow-hidden">
@@ -427,6 +463,9 @@ const HeroSection = () => {
                         exit={{ opacity: 0, scale: 1.05 }}
                         transition={{ duration: 0.5 }}
                         className="absolute top-0 left-0 w-full h-full"
+                        onMouseEnter={handleVideoInteraction}
+                        onMouseLeave={handleVideoPause}
+                        onClick={handleVideoInteraction}
                       >
                         <iframe 
                           src={videos[currentVideo].src}

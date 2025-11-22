@@ -85,10 +85,10 @@ const AIFeature = () => {
   }
 
   const features = [
-    'AI-powered business insights',
-    'Automated customer support',
-    'Predictive analytics',
-    'Smart inventory management'
+    'AI-powered business insights.',
+    'Automated customer support.',
+    'Predictive analytics.',
+    'Smart inventory management.'
   ]
 
   const aiCapabilities = [

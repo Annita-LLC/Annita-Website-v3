@@ -20,12 +20,12 @@ const MarketplaceFeature = () => {
 
 
   const features = [
-    'KYC-verified businesses through Smile ID',
-    'Escrow payment protection for secure transactions',
-    'RFQ-based sourcing with multiple responses',
-    'Multi-currency support for 30+ African currencies',
-    'Pan-African network across all AfCFTA regions',
-    'Quality assurance and comprehensive certifications'
+    'KYC-verified businesses through Smile ID.',
+    'Escrow payment protection for secure transactions.',
+    'RFQ-based sourcing with multiple responses.',
+    'Multi-currency support for 30+ African currencies.',
+    'Pan-African network across all AfCFTA regions.',
+    'Quality assurance and comprehensive certifications.'
   ]
 
   return (
@@ -72,7 +72,7 @@ const MarketplaceFeature = () => {
           transition={{ duration: 0.6, delay: 0.5 }}
           className="text-gray-600 mb-6 leading-relaxed"
         >
-          Unlike generic marketplaces, Annita is built for African businesses featuring 
+          Unlike generic marketplaces, Annita is built for African businesses, featuring 
           <span className="text-orange-600 font-semibold"> KYC-verified suppliers</span>, 
           <span className="text-orange-600 font-semibold"> escrow payment protection</span>, and 
           <span className="text-orange-600 font-semibold"> RFQ-based sourcing</span>. 

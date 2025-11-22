@@ -33,37 +33,37 @@ const V3AnnouncementSection = () => {
     {
       icon: WifiOff,
       title: "Offline Functionality",
-      description: "Access key features without internet - perfect for rural areas",
+      description: "Access key features without internet - perfect for rural areas.",
       color: "from-blue-500 to-cyan-500"
     },
     {
       icon: Shield,
       title: "Escrow Settlements",
-      description: "Making trade safer and more trusted for buyers & sellers",
+      description: "Making trade safer and more trusted for buyers & sellers.",
       color: "from-green-500 to-emerald-500"
     },
     {
       icon: CreditCard,
       title: "Fintech for All",
-      description: "Send, receive, save, and grow money with our smart digital wallet",
+      description: "Send, receive, save, and grow money with our smart digital wallet.",
       color: "from-purple-500 to-pink-500"
     },
     {
       icon: Brain,
       title: "AI Business Assistant",
-      description: "Get automated help, insights, and guidance to run your hustle",
+      description: "Get automated help, insights, and guidance to run your hustle.",
       color: "from-orange-500 to-red-500"
     },
     {
       icon: Truck,
       title: "Built-in Logistics",
-      description: "Deliver faster and reach more customers with integrated tools",
+      description: "Deliver faster and reach more customers with integrated tools.",
       color: "from-indigo-500 to-purple-500"
     },
     {
       icon: Megaphone,
       title: "Marketing Tools",
-      description: "Reach more customers with built-in marketing and promotion tools",
+      description: "Reach more customers with built-in marketing and promotion tools.",
       color: "from-teal-500 to-cyan-500"
     }
   ]
@@ -72,28 +72,28 @@ const V3AnnouncementSection = () => {
     {
       icon: Globe,
       title: "Live Marketplace",
-      description: "Real vendors selling, real customers buying - right now",
+      description: "Real vendors selling, real customers buying - right now.",
       status: "Live",
       link: "https://annita.company.site/products"
     },
     {
       icon: Users,
       title: "Active Community",
-      description: "3,000+ vendors already using our platform",
+      description: "3,000+ vendors already using our platform.",
       status: "Active",
       link: "https://annita.company.site/products"
     },
     {
       icon: DollarSign,
       title: "Revenue Generation",
-      description: "Proven business model with real transactions",
+      description: "Proven business model with real transactions.",
       status: "Proven",
       link: "https://annita.company.site/products"
     },
     {
       icon: CheckCircle,
       title: "Market Validation",
-      description: "Real users, real feedback, real growth",
+      description: "Real users, real feedback, real growth.",
       status: "Validated",
       link: "https://annita.company.site/products"
     }
@@ -241,7 +241,7 @@ const V3AnnouncementSection = () => {
                     Experience Annita V1.0 Right Now
                   </h3>
                   <p className="text-lg text-gray-600 mb-6">
-                    See what we've built. Real vendors. Real customers. Real transactions.
+                    See what we've built. Real vendors, real customers, and real transactions.
                   </p>
                   <div className="flex flex-col sm:flex-row gap-4 justify-center">
                     <Button

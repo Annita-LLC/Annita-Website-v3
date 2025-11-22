@@ -22,10 +22,10 @@ const AnnitaPayFeature = () => {
   const [currentBalance, setCurrentBalance] = useState(1250.00)
 
   const features = [
-    'Multi-currency support for 54+ African currencies',
-    'Escrow payment protection for secure transactions',
-    'Mobile POS solutions for merchants',
-    'Bridge-Powered Stablecoin Infrastructure'
+    'Multi-currency support for 54+ African currencies.',
+    'Escrow payment protection for secure transactions.',
+    'Mobile POS solutions for merchants.',
+    'Bridge-Powered Stablecoin Infrastructure.'
   ]
 
 

@@ -46,13 +46,17 @@ const CookieConsent = ({ onPreferencesChange }: CookieConsentProps) => {
     const existingConsent = localStorage.getItem('annita-cookie-consent')
     const consentDate = localStorage.getItem('annita-cookie-consent-date')
     
-    if (!existingConsent) {
-      // Show popup after 20 seconds to allow fundraising popup to show first
+    // Check if popup has been shown in this session (new website load)
+    const hasShownInSession = sessionStorage.getItem('annita-cookie-shown')
+    
+    if (!existingConsent && !hasShownInSession) {
+      // Show popup after 5 seconds to allow fundraising popup to show first
       const timer = setTimeout(() => {
         setIsVisible(true)
-      }, 20000)
+        sessionStorage.setItem('annita-cookie-shown', 'true')
+      }, 5000)
       return () => clearTimeout(timer)
-    } else {
+    } else if (existingConsent) {
       // Load existing preferences
       try {
         const savedPreferences = JSON.parse(existingConsent)
@@ -184,7 +188,40 @@ const CookieConsent = ({ onPreferencesChange }: CookieConsentProps) => {
       {/* Backdrop */}
       <div 
         className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40"
-        onClick={() => !showSettings && setIsVisible(false)}
+        onClick={() => {
+          if (!showSettings) {
+            // Auto-accept essential cookies if user closes without accepting
+            const essentialOnly = {
+              essential: true,
+              analytics: false,
+              marketing: false,
+              functional: false
+            }
+            savePreferences(essentialOnly)
+            
+            // Show notification that cookies were auto-accepted
+            if (typeof window !== 'undefined') {
+              setTimeout(() => {
+                const notification = document.createElement('div')
+                notification.className = 'fixed bottom-4 right-4 bg-blue-600 text-white px-4 py-3 rounded-lg shadow-lg z-50 max-w-sm'
+                notification.innerHTML = `
+                  <div class="flex items-center space-x-2">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                    <span class="text-sm font-medium">Essential cookies have been automatically enabled for site functionality.</span>
+                  </div>
+                `
+                document.body.appendChild(notification)
+                setTimeout(() => {
+                  notification.style.opacity = '0'
+                  notification.style.transition = 'opacity 0.3s'
+                  setTimeout(() => notification.remove(), 300)
+                }, 5000)
+              }, 300)
+            }
+          }
+        }}
       />
       
       {/* Cookie Popup */}
@@ -214,7 +251,36 @@ const CookieConsent = ({ onPreferencesChange }: CookieConsentProps) => {
                       setShowSettings(false)
                       setIsExpanded(false)
                     } else {
-                      setIsVisible(false)
+                      // Auto-accept essential cookies if user closes without accepting
+                      const essentialOnly = {
+                        essential: true,
+                        analytics: false,
+                        marketing: false,
+                        functional: false
+                      }
+                      savePreferences(essentialOnly)
+                      
+                      // Show notification that cookies were auto-accepted
+                      if (typeof window !== 'undefined') {
+                        setTimeout(() => {
+                          const notification = document.createElement('div')
+                          notification.className = 'fixed bottom-4 right-4 bg-blue-600 text-white px-4 py-3 rounded-lg shadow-lg z-50 max-w-sm'
+                          notification.innerHTML = `
+                            <div class="flex items-center space-x-2">
+                              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                              </svg>
+                              <span class="text-sm font-medium">Essential cookies have been automatically enabled for site functionality.</span>
+                            </div>
+                          `
+                          document.body.appendChild(notification)
+                          setTimeout(() => {
+                            notification.style.opacity = '0'
+                            notification.style.transition = 'opacity 0.3s'
+                            setTimeout(() => notification.remove(), 300)
+                          }, 5000)
+                        }, 300)
+                      }
                     }
                   }}
                   className="w-7 h-7 sm:w-8 sm:h-8 flex items-center justify-center rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-200"

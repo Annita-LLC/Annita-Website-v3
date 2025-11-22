@@ -1,213 +1,115 @@
 'use client'
 
-import { useState } from 'react'
+import { useRef } from 'react'
+import { motion, useInView } from 'framer-motion'
 import SEOHead from '@/components/seo/SEOHead'
 import CTASection from '@/components/sections/CTASection'
-import { 
-  Users, 
-  Phone, 
-  Mail, 
-  Calendar, 
-  CheckCircle,
-  Play,
-  ExternalLink,
-  Star,
-  Globe,
-  Zap,
-  Lock,
-  Clock,
-  DollarSign,
-  MessageSquare,
-  Target,
-  BarChart3
-} from 'lucide-react'
+import { Users, CheckCircle, ArrowRight, ExternalLink, Shield, Zap, CheckCircle as CheckCircleIcon } from 'lucide-react'
+import Button from '@/components/ui/Button'
 
-const CRMPage = () => {
-  const [isWaitlistOpen, setIsWaitlistOpen] = useState(false)
+const CrmPage = () => {
+  const ref = useRef(null)
+  const isInView = useInView(ref, { once: true, margin: "-100px" })
 
   const features = [
-    {
-      icon: Users,
-      title: "Customer Database",
-      description: "Centralized customer information and interaction history",
-      color: "blue"
-    },
-    {
-      icon: Phone,
-      title: "Communication Hub",
-      description: "Track all customer communications in one place",
-      color: "green"
-    },
-    {
-      icon: Target,
-      title: "Lead Management",
-      description: "Convert prospects into customers with sales pipeline",
-      color: "orange"
-    },
-    {
-      icon: BarChart3,
-      title: "Sales Analytics",
-      description: "Track sales performance and customer insights",
-      color: "purple"
-    }
+    'Customer relationship management.',
+    'Contact and lead management.',
+    'Sales pipeline tracking.',
+    'Customer communication history.',
+    'Task and activity management.',
+    'Sales analytics and reporting.'
   ]
 
-  const crmFeatures = [
-    "Customer database management",
-    "Communication tracking",
-    "Sales pipeline management",
-    "Lead generation tools",
-    "Customer analytics",
-    "Automated follow-ups"
+  const benefits = [
+    { icon: Users, title: 'Professional', description: 'Enterprise-grade solutions for your business.' },
+    { icon: Shield, title: 'Secure', description: 'Bank-grade security and protection.' },
+    { icon: Zap, title: 'Efficient', description: 'Streamlined processes and automation.' },
+    { icon: CheckCircleIcon, title: 'Reliable', description: '99.9% uptime and support.' }
   ]
 
   return (
     <>
-      <SEOHead
-        title="Customer Relationship Management (CRM) - Annita"
-        description="Manage customer data and interactions with our CRM system. Centralized customer database, communication tracking, and sales pipeline management for African businesses."
-        keywords={[
-          'CRM', 'customer management', 'sales pipeline', 'lead management',
-          'customer database', 'communication tracking', 'sales analytics'
-        ]}
-        canonical="/services/crm"
-        ogImage="/images/og/crm.jpg"
-      />
-
-      <div className="min-h-screen bg-gradient-to-br from-violet-50 via-white to-purple-50">
-        {/* Hero Section */}
-        <section className="py-16 sm:py-20 bg-gradient-to-br from-violet-50 via-white to-purple-50">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <SEOHead title="Annita CRM - Manage customer relationships" description="Manage customer relationships. Enterprise-grade solutions for businesses." keywords={["crm", "annita", "business", "enterprise"]} canonical="/services/crm" />
+      <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white">
+        <section className="relative py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-pink-600 via-pink-700 to-rose-600 text-white overflow-hidden">
+          <div className="absolute inset-0">
+            <div className="absolute top-10 left-10 w-20 h-20 bg-white/10 rounded-full animate-pulse"></div>
+            <div className="absolute top-32 right-20 w-16 h-16 bg-white/5 rounded-full animate-bounce"></div>
+          </div>
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="max-w-6xl mx-auto">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                {/* Left Column - Content */}
-                <div>
-                  <div className="inline-flex items-center bg-violet-100 text-violet-800 px-4 py-2 rounded-full text-sm font-medium mb-6">
+                <div className="text-center lg:text-left">
+                  <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/20 backdrop-blur-sm text-white text-sm font-medium mb-6">
                     <Users className="w-4 h-4 mr-2" />
-                    Customer Relationship Management
+                    Annita CRM
                   </div>
-                  
-                  <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-                    Manage Customer Data & <span className="text-violet-600">Interactions</span>
-                  </h1>
-                  
-                  <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                    Build stronger customer relationships with our comprehensive CRM system. 
-                    Track interactions, manage sales pipeline, and grow your business.
-                  </p>
-
-                  {/* CTA Buttons */}
-                  <div className="flex flex-col sm:flex-row gap-4">
-                    <button 
-                      onClick={() => setIsWaitlistOpen(true)}
-                      className="bg-gradient-to-r from-violet-600 to-purple-600 text-white px-8 py-4 rounded-xl font-semibold hover:from-violet-700 hover:to-purple-700 transition-all duration-200 flex items-center justify-center shadow-lg hover:shadow-xl transform hover:-translate-y-1"
-                    >
-                      <Users className="w-5 h-5 mr-2" />
-                      Join Waitlist
-                    </button>
-                    <button 
-                      onClick={() => window.open('https://annita.company.site/products', '_blank')}
-                      className="border-2 border-violet-600 text-violet-600 px-8 py-4 rounded-xl font-semibold hover:bg-violet-50 transition-all duration-200 flex items-center justify-center transform hover:-translate-y-1"
-                    >
-                      <Globe className="w-5 h-5 mr-2" />
-                      Try V1.0 Now
-                    </button>
+                  <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 leading-tight">Manage <span className="text-white/80">customer relationships</span></h1>
+                  <p className="text-lg sm:text-xl text-white/90 max-w-2xl mx-auto lg:mx-0 leading-relaxed mb-8">Manage customer relationships.</p>
+                  <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                    <Button variant="white" size="lg" icon={ExternalLink} onClick={() => window.open('https://annita.company.site/products', '_blank')}>Get Started</Button>
                   </div>
                 </div>
-
-                {/* Right Column - Visual */}
-                <div className="relative">
-                  <div className="bg-white rounded-2xl shadow-2xl p-8 border border-gray-100">
-                    <div className="space-y-4">
-                      <div className="flex items-center space-x-3">
-                        <div className="w-3 h-3 bg-red-500 rounded-full"></div>
-                        <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
-                        <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-                      </div>
-                      <div className="space-y-3">
-                        <div className="h-4 bg-gray-200 rounded w-3/4"></div>
-                        <div className="h-4 bg-gray-200 rounded w-1/2"></div>
-                        <div className="h-4 bg-violet-200 rounded w-2/3"></div>
-                      </div>
-                      <div className="space-y-2">
-                        <div className="flex items-center space-x-2">
-                          <Users className="w-4 h-4 text-violet-600" />
-                          <div className="h-3 bg-gray-200 rounded w-1/3"></div>
-                        </div>
-                        <div className="h-3 bg-gray-200 rounded w-1/4"></div>
-                      </div>
-                    </div>
+                <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.8, delay: 0.2 }} className="relative">
+                  <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
+                    <img src="/images/DEMO-Images/Annita Connect.webp" alt="Annita CRM" className="w-full h-auto rounded-xl" />
                   </div>
-                </div>
+                </motion.div>
               </div>
             </div>
           </div>
         </section>
-
-        {/* Key Features Section */}
-        <section className="py-16 sm:py-20 bg-gradient-to-br from-gray-50 to-white">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-6xl mx-auto">
-              <div className="text-center mb-16">
-                <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
-                  Why Choose <span className="text-violet-600">Annita CRM</span>?
-                </h2>
-                <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                  Built specifically for African businesses with local customer insights and sales tools.
-                </p>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                {features.map((feature, index) => (
-                  <div key={index} className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300">
-                    <div className="flex items-start space-x-4">
-                      <div className={`w-16 h-16 bg-${feature.color}-100 rounded-2xl flex items-center justify-center flex-shrink-0`}>
-                        <feature.icon className={`w-8 h-8 text-${feature.color}-600`} />
-                      </div>
-                      <div>
-                        <h3 className="text-xl font-semibold text-gray-900 mb-3">{feature.title}</h3>
-                        <p className="text-gray-600 leading-relaxed">{feature.description}</p>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* CRM Features Section */}
         <section className="py-16 sm:py-20 bg-white">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-6xl mx-auto">
-              <div className="text-center mb-16">
-                <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
-                  CRM <span className="text-green-600">Features</span>
-                </h2>
-                <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                  Everything you need for effective customer relationship management across Africa.
-                </p>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {crmFeatures.map((feature, index) => (
-                  <div key={index} className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl p-6 text-center border border-green-100">
-                    <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mx-auto mb-4">
-                      <CheckCircle className="w-6 h-6 text-green-600" />
-                    </div>
-                    <h3 className="font-semibold text-gray-900 mb-2">{feature}</h3>
+              <motion.div ref={ref} initial={{ opacity: 0, y: 30 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.8 }} className="text-center mb-12">
+                <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Why Choose <span className="text-orange-600">Annita CRM</span></h2>
+                <p className="text-lg text-gray-600 max-w-3xl mx-auto">Manage customer relationships.</p>
+              </motion.div>
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+                <div>
+                  <div className="w-16 h-16 bg-gradient-to-br from-pink-600 to-rose-600 rounded-2xl flex items-center justify-center mb-6">
+                    <Users className="w-8 h-8 text-white" />
                   </div>
+                  <h3 className="text-2xl lg:text-3xl font-bold text-orange-600 mb-2">Annita CRM</h3>
+                  <p className="text-gray-600 mb-6 leading-relaxed">Manage customer relationships.</p>
+                  <div className="space-y-3 mb-8">
+                    {features.map((feature, index) => (
+                      <motion.div key={index} initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.4, delay: 0.3 + index * 0.1 }} className="flex items-center space-x-3">
+                        <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
+                        <span className="text-gray-700">{feature}</span>
+                      </motion.div>
+                    ))}
+                  </div>
+                  <Button className="group" onClick={() => window.open('https://annita.company.site/products', '_blank')}>
+                    Get Started
+                    <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                  </Button>
+                </div>
+                <motion.div initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} transition={{ duration: 0.8, delay: 0.4 }} className="relative">
+                  <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 border border-orange-200 shadow-2xl">
+                    <img src="/images/DEMO-Images/Annita Connect.webp" alt="Annita CRM Demo" className="w-full h-auto rounded-xl" />
+                  </div>
+                </motion.div>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                {benefits.map((benefit, index) => (
+                  <motion.div key={benefit.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }} className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 text-center">
+                    <div className="w-16 h-16 bg-gradient-to-br from-pink-600 to-rose-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                      <benefit.icon className="w-8 h-8 text-white" />
+                    </div>
+                    <h4 className="text-lg font-bold text-gray-900 mb-2">{benefit.title}</h4>
+                    <p className="text-gray-600">{benefit.description}</p>
+                  </motion.div>
                 ))}
               </div>
             </div>
           </div>
         </section>
-
-        {/* CTA Section */}
         <CTASection />
       </div>
     </>
   )
 }
 
-export default CRMPage
+export default CrmPage
