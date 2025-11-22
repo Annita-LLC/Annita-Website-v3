@@ -4,7 +4,7 @@ import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import SEOHead from '@/components/seo/SEOHead'
 import CTASection from '@/components/sections/CTASection'
-import { Code, CheckCircle, ArrowRight, ExternalLink, Shield, Zap } from 'lucide-react'
+import { Code, CheckCircle, ArrowRight, ExternalLink, Shield, Zap, CheckCircle as CheckCircleIcon } from 'lucide-react'
 import Button from '@/components/ui/Button'
 
 const ApiPage = () => {
