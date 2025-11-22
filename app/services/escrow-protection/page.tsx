@@ -4,7 +4,7 @@ import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import SEOHead from '@/components/seo/SEOHead'
 import CTASection from '@/components/sections/CTASection'
-import { Shield, CheckCircle, ArrowRight, ExternalLink, Shield, Zap, CheckCircle as CheckCircleIcon } from 'lucide-react'
+import { Shield, CheckCircle, ArrowRight, ExternalLink, Zap, CheckCircle as CheckCircleIcon } from 'lucide-react'
 import Button from '@/components/ui/Button'
 
 const EscrowProtectionPage = () => {

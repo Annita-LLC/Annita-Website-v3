@@ -4,7 +4,7 @@ import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import SEOHead from '@/components/seo/SEOHead'
 import CTASection from '@/components/sections/CTASection'
-import { BarChart3, CheckCircle, ArrowRight, ExternalLink, Shield, Zap, CheckCircle as CheckCircle } from 'lucide-react'
+import { BarChart3, CheckCircle, ArrowRight, ExternalLink, Shield, Zap } from 'lucide-react'
 import Button from '@/components/ui/Button'
 
 const AnalyticsPage = () => {
