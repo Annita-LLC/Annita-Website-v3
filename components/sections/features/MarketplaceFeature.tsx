@@ -107,7 +107,7 @@ const MarketplaceFeature = () => {
         >
           <Button 
             className="group"
-            onClick={() => window.open('https://annita.company.site/products', '_blank')}
+            onClick={() => window.open('https://annita-v1.netlify.app/', '_blank')}
           >
             Explore Marketplace
             <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />

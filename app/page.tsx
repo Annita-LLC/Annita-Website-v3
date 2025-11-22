@@ -6,6 +6,7 @@ import WelcomeLoader from '@/components/ui/WelcomeLoader'
 import HeroSection from '@/components/sections/hero/HeroSection'
 import FeaturesSection from '@/components/sections/FeaturesSection'
 import V3AnnouncementSection from '@/components/sections/V3AnnouncementSection'
+import V1MarketplaceSection from '@/components/sections/V1MarketplaceSection'
 import TrustedPartnersSection from '@/components/sections/TrustedPartnersSection'
 import CTASection from '@/components/sections/CTASection'
 
@@ -169,6 +170,7 @@ export default function HomePage() {
         <HeroSection />
         <FeaturesSection />
         <V3AnnouncementSection />
+        <V1MarketplaceSection />
         <TrustedPartnersSection />
         <CTASection />
     </>

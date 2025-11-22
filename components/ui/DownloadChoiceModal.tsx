@@ -16,7 +16,7 @@ const DownloadChoiceModal = ({ isOpen, onClose }: DownloadChoiceModalProps) => {
   }
 
   const handleVisitV1 = () => {
-    window.open('https://annita.company.site/products', '_blank')
+    window.open('https://annita-v1.netlify.app/', '_blank')
     onClose()
   }
 
@@ -97,10 +97,10 @@ const DownloadChoiceModal = ({ isOpen, onClose }: DownloadChoiceModalProps) => {
                     <Globe className="w-5 h-5 sm:w-6 sm:h-6 text-gray-600 dark:text-gray-400" />
                   </div>
                   <div className="flex-1 min-w-0">
-                    <h3 className="font-bold text-gray-900 dark:text-white mb-1 text-sm sm:text-base">Visit Live Marketplace V1.0</h3>
+                    <h3 className="font-bold text-gray-900 dark:text-white mb-1 text-sm sm:text-base">Visit Upgraded Marketplace V1.0</h3>
                     <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-300 mb-2 sm:mb-3 leading-relaxed">
-                      Experience our current live marketplace with 3,000+ active vendors. 
-                      Start selling or shopping right now on our proven platform.
+                      This is our <strong>upgraded version</strong> with new features - no longer in beta! 
+                      Create your account today. When Annita 3.0 launches next year, existing users won't need re-onboarding.
                     </p>
                     <div className="flex items-center text-gray-600 dark:text-gray-400 text-xs sm:text-sm font-medium">
                       <span>Try it now</span>

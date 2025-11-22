@@ -74,28 +74,28 @@ const V3AnnouncementSection = () => {
       title: "Live Marketplace",
       description: "Real vendors selling, real customers buying - right now.",
       status: "Live",
-      link: "https://annita.company.site/products"
+      link: "https://annita-v1.netlify.app/"
     },
     {
       icon: Users,
       title: "Active Community",
       description: "3,000+ vendors already using our platform.",
       status: "Active",
-      link: "https://annita.company.site/products"
+      link: "https://annita-v1.netlify.app/"
     },
     {
       icon: DollarSign,
       title: "Revenue Generation",
       description: "Proven business model with real transactions.",
       status: "Proven",
-      link: "https://annita.company.site/products"
+      link: "https://annita-v1.netlify.app/"
     },
     {
       icon: CheckCircle,
       title: "Market Validation",
       description: "Real users, real feedback, real growth.",
       status: "Validated",
-      link: "https://annita.company.site/products"
+      link: "https://annita-v1.netlify.app/"
     }
   ]
 
@@ -249,7 +249,7 @@ const V3AnnouncementSection = () => {
                       size="lg"
                       icon={ExternalLink}
                       className="text-lg font-bold"
-                      onClick={() => window.open('https://annita.company.site/products', '_blank')}
+                      onClick={() => window.open('https://annita-v1.netlify.app/', '_blank')}
                     >
                       Visit Live Marketplace
                     </Button>

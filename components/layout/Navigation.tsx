@@ -107,7 +107,7 @@ const Navigation = () => {
       name: 'Individual', 
       href: '#',
       dropdown: [
-        { name: 'Live Marketplace V1.0', href: 'https://annita.company.site/products', icon: ShoppingCart, description: 'Current working marketplace with 3,000+ vendors', isExternal: true },
+        { name: 'Live Marketplace V1.0 (Upgraded)', href: 'https://annita-v1.netlify.app/', icon: ShoppingCart, description: 'Upgraded version with new features - Create account now!', isExternal: true },
         { name: 'Annita Marketplace', href: '/services/ecommerce', icon: ShoppingCart, description: 'Multivendor Ecommerce Shopping Place with countless MSMEs stores to shop from' },
         { name: 'AnnitaPay', href: '/services/annitapay', icon: CreditCard, description: 'Secure digital payments' },
         { name: 'Annita AI', href: '/services/ai', icon: Zap, description: 'Personal AI assistant' },
@@ -119,7 +119,7 @@ const Navigation = () => {
       name: 'MSMEs', 
       href: '#',
       dropdown: [
-        { name: 'Live Marketplace V1.0', href: 'https://annita.company.site/products', icon: ShoppingCart, description: 'Current working marketplace with 3,000+ vendors', isExternal: true },
+        { name: 'Live Marketplace V1.0 (Upgraded)', href: 'https://annita-v1.netlify.app/', icon: ShoppingCart, description: 'Upgraded version with new features - Create account now!', isExternal: true },
         { name: 'Annita Marketplace', href: '/services/ecommerce', icon: ShoppingCart, description: 'Multivendor Ecommerce Shopping Place with countless MSMEs stores to shop from' },
         { name: 'AnnitaPay', href: '/services/annitapay', icon: CreditCard, description: 'Secure digital payments' },
         { name: 'Annita AI', href: '/services/ai', icon: Zap, description: 'AI-powered business tools' },

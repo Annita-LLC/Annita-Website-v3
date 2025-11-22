@@ -80,7 +80,7 @@ const HeroSection = () => {
     },
     {
       id: 2,
-      badge: "Live Marketplace V1.0",
+      badge: "Upgraded Marketplace V1.0",
       title: "Real Vendors, Real Sales",
       titleHighlight: "Right Now",
       subtitle: "3,000+ KYC-verified vendors across Africa. Secure transactions guaranteed.",
@@ -364,7 +364,7 @@ const HeroSection = () => {
                       size="lg"
                       icon={slides[currentSlide].ctaIcon}
                       className="w-full sm:w-auto text-base font-semibold px-8 py-4 shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
-                      onClick={() => window.open('https://annita.company.site/products', '_blank')}
+                      onClick={() => window.open('https://annita-v1.netlify.app/', '_blank')}
                     >
                       {slides[currentSlide].cta}
                     </Button>
@@ -416,7 +416,7 @@ const HeroSection = () => {
                       size="lg"
                       icon={slides[currentSlide].secondaryIcon}
                       className="w-full sm:w-auto text-base font-semibold px-8 py-4 border-2 border-gray-300 hover:border-orange-500 hover:text-orange-600 transform hover:-translate-y-1 transition-all duration-300"
-                      onClick={() => window.open('https://annita.company.site/products', '_blank')}
+                      onClick={() => window.open('https://annita-v1.netlify.app/', '_blank')}
                     >
                       {slides[currentSlide].secondaryCta}
                   </Button>
