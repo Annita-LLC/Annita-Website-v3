@@ -133,33 +133,24 @@ const Footer = () => {
             {/* Social Links */}
             <div className="mb-4 sm:mb-6">
               <h4 className="text-sm font-semibold text-orange-500 mb-3">Connect</h4>
-              <div className="grid grid-cols-6 sm:grid-cols-6 gap-2 sm:gap-3">
+              <div className="flex flex-wrap gap-2 sm:gap-2.5">
                 {socialLinks.slice(0, 6).map((social) => (
                   <a
                     key={social.name}
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-8 h-8 sm:w-10 sm:h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-orange-600 transition-colors duration-200 group"
+                    className="w-8 h-8 sm:w-9 sm:h-9 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-orange-600 transition-colors duration-200 group"
                     aria-label={social.name}
                     title={social.name}
                   >
-                    <social.icon className="w-3 h-3 sm:w-4 sm:h-4 text-gray-400 group-hover:text-white transition-colors duration-200" />
+                    <social.icon className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-gray-400 group-hover:text-white transition-colors duration-200" />
                   </a>
                 ))}
               </div>
             </div>
 
-            {/* Try V1.0 Button */}
-            <div className="mb-4 sm:mb-6">
-              <button 
-                onClick={() => setIsDownloadModalOpen(true)}
-                className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-orange-500 to-orange-600 text-white font-semibold rounded-lg hover:from-orange-600 hover:to-orange-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
-              >
-                <Download className="w-4 h-4 mr-2" />
-                Try V1.0 Now
-              </button>
-            </div>
+            {/* Try V1.0 Button removed per request */}
           </div>
 
           {/* Footer Links */}

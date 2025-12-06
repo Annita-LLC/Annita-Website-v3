@@ -146,6 +146,8 @@ const Navigation = () => {
         { name: 'Demo', href: '/demo', icon: Play, description: 'Interactive demo of Annita 3.0' },
         { name: 'Ideas & Tips', href: '/ideas', icon: Lightbulb, description: 'Share ideas and feedback' },
         { name: 'Build Your Idea', href: '/build', icon: Code, description: 'AI-powered development for apps, websites & more' },
+        { name: 'Become a Partner', href: '/partners', icon: Users, description: 'Partner with Annita' },
+        { name: 'Partner Application', href: '/partners/apply', icon: UserCheckIcon, description: 'Apply to become a partner' },
         { name: 'CSR', href: '/company/csr', icon: Heart, description: 'Corporate social responsibility and impact' },
         { name: 'The 100', href: '/the100', icon: Target, description: 'Youth empowerment initiative' },
         { name: 'Business Model', href: '/business-model', icon: Building2, description: 'Our revenue model and strategy' },
@@ -163,30 +165,10 @@ const Navigation = () => {
         { name: 'Contact Us', href: '/contact-us', icon: Mail, description: 'Get in touch with our team' },
         { name: 'Report Issues', href: '/support/report-issues', icon: HelpCircle, description: 'Report bugs and issues' },
         { name: 'Contact Sales', href: '/contact-sales', icon: Phone, description: 'Talk to our business development team' },
-      ]
-    },
-    {
-      name: 'Partners',
-      href: '#',
-      dropdown: [
-        { name: 'Become a Partner', href: '/partners', icon: Users, description: 'Partner with Annita' },
-        { name: 'Partner Application', href: '/partners/apply', icon: UserCheckIcon, description: 'Apply to become a partner' },
-      ]
-    },
-    {
-      name: 'Resources',
-      href: '#',
-      dropdown: [
-        { name: 'Pitch Deck', href: '/documents/Annita-Pitch Deck.pdf', icon: FileText, description: 'Company pitch deck', isExternal: true },
-        { name: 'Business Plan', href: '/documents/annita-business-plan.pdf', icon: FileText, description: 'Annita business plan', isExternal: true },
-        { name: 'Financial Model', href: '/documents/annita-financial-model.pdf', icon: FileText, description: 'Financial model', isExternal: true },
-        { name: 'Company Factsheet', href: '/documents/annita-factsheet.pdf', icon: FileText, description: 'Quick company facts', isExternal: true },
-      ]
-    },
-    {
-      name: 'Legal',
-      href: '#',
-      dropdown: [
+        { name: 'Pitch Deck', href: '/documents/Annita-Pitch Deck.pdf', icon: FileTextIcon, description: 'Company pitch deck', isExternal: true },
+        { name: 'Business Plan', href: '/documents/annita-business-plan.pdf', icon: FileTextIcon, description: 'Annita business plan', isExternal: true },
+        { name: 'Financial Model', href: '/documents/annita-financial-model.pdf', icon: FileTextIcon, description: 'Financial model', isExternal: true },
+        { name: 'Company Factsheet', href: '/documents/annita-factsheet.pdf', icon: FileTextIcon, description: 'Quick company facts', isExternal: true },
         { name: 'Privacy Policy', href: '/privacy', icon: Shield, description: 'How we handle your data' },
         { name: 'Terms of Service', href: '/terms', icon: FileCheck, description: 'Our terms and conditions' },
         { name: 'Cookie Policy', href: '/cookies', icon: Cookie, description: 'Learn about cookies' },
