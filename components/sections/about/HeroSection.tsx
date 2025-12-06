@@ -1,6 +1,6 @@
 "use client"
 
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { useRouter } from 'next/navigation'
 import { 
@@ -17,11 +17,13 @@ import {
   TrendingUp
 } from 'lucide-react'
 import Button from '@/components/ui/Button'
+import WaitlistForm from '@/components/ui/WaitlistForm'
 
 const HeroSection = () => {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-100px" })
   const router = useRouter()
+  const [isWaitlistOpen, setIsWaitlistOpen] = useState(false)
 
   const stats = [
     { number: '3,000+', label: 'Active Vendors', icon: Users, color: 'from-blue-500 to-cyan-500' },
@@ -143,6 +145,11 @@ const HeroSection = () => {
         </div>
       </div>
     </section>
+
+    <WaitlistForm 
+      isOpen={isWaitlistOpen} 
+      onClose={() => setIsWaitlistOpen(false)} 
+    />
   )
 }
 
