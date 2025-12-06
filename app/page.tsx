@@ -1,14 +1,17 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import dynamic from 'next/dynamic'
 import SEOHead from '@/components/seo/SEOHead'
 import WelcomeLoader from '@/components/ui/WelcomeLoader'
 import HeroSection from '@/components/sections/hero/HeroSection'
-import FeaturesSection from '@/components/sections/FeaturesSection'
-import V3AnnouncementSection from '@/components/sections/V3AnnouncementSection'
-import V1MarketplaceSection from '@/components/sections/V1MarketplaceSection'
-import TrustedPartnersSection from '@/components/sections/TrustedPartnersSection'
-import CTASection from '@/components/sections/CTASection'
+
+// Lazy-load below-the-fold sections to reduce initial payload
+const FeaturesSection = dynamic(() => import('@/components/sections/FeaturesSection'), { ssr: false })
+const V3AnnouncementSection = dynamic(() => import('@/components/sections/V3AnnouncementSection'), { ssr: false })
+const V1MarketplaceSection = dynamic(() => import('@/components/sections/V1MarketplaceSection'), { ssr: false })
+const TrustedPartnersSection = dynamic(() => import('@/components/sections/TrustedPartnersSection'), { ssr: false })
+const CTASection = dynamic(() => import('@/components/sections/CTASection'), { ssr: false })
 
 export default function HomePage() {
   const [showWelcome, setShowWelcome] = useState(false)

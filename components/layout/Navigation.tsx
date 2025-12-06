@@ -84,7 +84,11 @@ import {
 } from 'lucide-react'
 import { ThemeToggle, SimpleThemeToggle } from '@/components/ui/ThemeToggle'
 import GlobalSearch from '@/components/ui/GlobalSearch'
-import DownloadChoiceModal from '@/components/ui/DownloadChoiceModal'
+import dynamic from 'next/dynamic'
+const DownloadChoiceModal = dynamic(() => import('@/components/ui/DownloadChoiceModal'), {
+  ssr: false,
+  loading: () => null,
+})
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -311,11 +315,11 @@ const Navigation = () => {
             {/* CTA Buttons */}
             <div className="hidden lg:flex items-center space-x-3 xl:space-x-4">
               <button 
-                onClick={() => setIsDownloadModalOpen(true)}
+                onClick={() => window.open('https://shop.an-nita.com/', '_blank')}
                 className="btn-primary"
               >
                 <Download className="w-4 h-4 mr-2" />
-                Join Waitlist
+                Try Annita-v1.0
               </button>
             </div>
 
@@ -488,13 +492,13 @@ const Navigation = () => {
                 <div className="p-6 border-t border-gray-200 dark:border-gray-700">
                   <button
                     onClick={() => {
-                      setIsDownloadModalOpen(true)
+                      window.open('https://shop.an-nita.com/', '_blank')
                       setIsOpen(false)
                     }}
                     className="flex items-center justify-center w-full px-6 py-3 bg-gradient-to-r from-orange-500 to-orange-600 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-300"
                   >
                     <Download className="w-5 h-5 mr-2" />
-                    Join Waitlist
+                    Try Annita-v1.0
                   </button>
                 </div>
               </div>
