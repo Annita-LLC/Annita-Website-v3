@@ -33,6 +33,7 @@ const HeroSection = () => {
   ]
 
   return (
+    <>
     <section className="relative py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-orange-600 via-orange-700 to-red-600 text-white overflow-hidden">
       {/* Animated Background Elements */}
       <div className="absolute inset-0">
@@ -150,6 +151,7 @@ const HeroSection = () => {
       isOpen={isWaitlistOpen} 
       onClose={() => setIsWaitlistOpen(false)} 
     />
+    </>
   )
 }
 
