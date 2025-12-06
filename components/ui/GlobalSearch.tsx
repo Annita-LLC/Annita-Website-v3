@@ -17,7 +17,7 @@ interface SearchResult {
 
 const searchData: SearchResult[] = [
   // Personal Services
-  { id: 'marketplace-v1', title: 'Live Marketplace V1.0 (Upgraded)', description: 'Upgraded version with new features - Create account now!', href: 'https://annita-v1.netlify.app/', category: 'Personal', icon: ShoppingCart, isExternal: true },
+  { id: 'marketplace-v1', title: 'Live Marketplace V1.0 (Upgraded)', description: 'Upgraded version with new features - Create account now!', href: 'https://shop.an-nita.com/', category: 'Personal', icon: ShoppingCart, isExternal: true },
   { id: 'annitapay', title: 'AnnitaPay', description: 'Secure digital payments for personal use', href: '/services/annitapay', category: 'Personal', icon: CreditCard },
   { id: 'ai-personal', title: 'Annita AI Personal', description: 'Personal AI assistant for daily tasks', href: '/ai/personal', category: 'Personal', icon: Zap },
   { id: 'shopping', title: 'Annita Marketplace', description: 'Multivendor Ecommerce Shopping Place', href: '/services/shopping', category: 'Personal', icon: ShoppingCart },

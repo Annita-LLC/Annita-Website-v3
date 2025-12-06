@@ -72,7 +72,7 @@ const HeroSection = () => {
       title: "Annita 3.0 - The Future",
       titleHighlight: "of Business in Africa",
       subtitle: "Built for African businesses. Cross-border trade, institutional backing, and seamless integration.",
-      cta: "Join Waitlist",
+      cta: "Try Annita-v1.0",
       ctaIcon: Star,
       secondaryCta: "See V1.0 Now",
       secondaryIcon: ExternalLink,
@@ -358,13 +358,13 @@ const HeroSection = () => {
                   transition={{ duration: 0.6, delay: 0.2 }}
                 className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
               >
-                  {slides[currentSlide].cta === "Visit Marketplace" || slides[currentSlide].cta === "See V1.0 Now" ? (
+                  {slides[currentSlide].cta === "Visit Marketplace" || slides[currentSlide].cta === "See V1.0 Now" || slides[currentSlide].cta === "Try Annita-v1.0" ? (
                     <Button
                       variant="gradient"
                       size="lg"
                       icon={slides[currentSlide].ctaIcon}
                       className="w-full sm:w-auto text-base font-semibold px-8 py-4 shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
-                      onClick={() => window.open('https://annita-v1.netlify.app/', '_blank')}
+                      onClick={() => window.open('https://shop.an-nita.com/', '_blank')}
                     >
                       {slides[currentSlide].cta}
                     </Button>
@@ -416,7 +416,7 @@ const HeroSection = () => {
                       size="lg"
                       icon={slides[currentSlide].secondaryIcon}
                       className="w-full sm:w-auto text-base font-semibold px-8 py-4 border-2 border-gray-300 hover:border-orange-500 hover:text-orange-600 transform hover:-translate-y-1 transition-all duration-300"
-                      onClick={() => window.open('https://annita-v1.netlify.app/', '_blank')}
+                      onClick={() => window.open('https://shop.an-nita.com/', '_blank')}
                     >
                       {slides[currentSlide].secondaryCta}
                   </Button>

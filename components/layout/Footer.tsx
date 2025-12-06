@@ -31,7 +31,7 @@ const Footer = () => {
     {
       title: 'Personal',
       links: [
-        { name: 'Live Marketplace V1.0 (Upgraded)', href: 'https://annita-v1.netlify.app/', isExternal: true },
+        { name: 'Live Marketplace V1.0 (Upgraded)', href: 'https://shop.an-nita.com/', isExternal: true },
         { name: 'AnnitaPay', href: '/services/annitapay' },
         { name: 'Annita AI', href: '/ai/personal' },
         { name: 'Annita Marketplace', href: '/services/shopping' },
@@ -44,7 +44,7 @@ const Footer = () => {
     {
       title: 'Business',
       links: [
-        { name: 'Live Marketplace V1.0 (Upgraded)', href: 'https://annita-v1.netlify.app/', isExternal: true },
+        { name: 'Live Marketplace V1.0 (Upgraded)', href: 'https://shop.an-nita.com/', isExternal: true },
         { name: 'Annita Global Market', href: '/services/global-market' },
         { name: 'AnnitaPay Business', href: '/services/annitapay-business' },
         { name: 'Annita AI', href: '/services/ai' },

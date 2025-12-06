@@ -104,7 +104,7 @@ const AnnitaPayFeature = () => {
         >
           <Button 
             className="group"
-            onClick={() => window.open('https://annita-v1.netlify.app/', '_blank')}
+            onClick={() => window.open('https://shop.an-nita.com/', '_blank')}
           >
             Get Started
             <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />

@@ -16,7 +16,7 @@ const DownloadChoiceModal = ({ isOpen, onClose }: DownloadChoiceModalProps) => {
   }
 
   const handleVisitV1 = () => {
-    window.open('https://annita-v1.netlify.app/', '_blank')
+    window.open('https://shop.an-nita.com/', '_blank')
     onClose()
   }
 

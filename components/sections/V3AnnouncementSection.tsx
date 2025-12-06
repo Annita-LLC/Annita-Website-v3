@@ -74,28 +74,28 @@ const V3AnnouncementSection = () => {
       title: "Live Marketplace",
       description: "Real vendors selling, real customers buying - right now.",
       status: "Live",
-      link: "https://annita-v1.netlify.app/"
+      link: "https://shop.an-nita.com/"
     },
     {
       icon: Users,
       title: "Active Community",
       description: "3,000+ vendors already using our platform.",
       status: "Active",
-      link: "https://annita-v1.netlify.app/"
+      link: "https://shop.an-nita.com/"
     },
     {
       icon: DollarSign,
       title: "Revenue Generation",
       description: "Proven business model with real transactions.",
       status: "Proven",
-      link: "https://annita-v1.netlify.app/"
+      link: "https://shop.an-nita.com/"
     },
     {
       icon: CheckCircle,
       title: "Market Validation",
       description: "Real users, real feedback, real growth.",
       status: "Validated",
-      link: "https://annita-v1.netlify.app/"
+      link: "https://shop.an-nita.com/"
     }
   ]
 
@@ -185,17 +185,6 @@ const V3AnnouncementSection = () => {
                 ))}
               </div>
 
-              {/* V3.0 Text Content */}
-              <div className="text-center">
-                <div className="bg-gradient-to-r from-orange-50 to-orange-100 rounded-2xl p-8 border border-orange-200">
-                  <h3 className="text-2xl sm:text-3xl font-bold mb-4 text-gray-900">
-                    One Platform. All Your Business Needs — Online or Offline.
-                  </h3>
-                  <p className="text-lg text-gray-600 mb-6">
-                    For MSMEs, vendors, freelancers, market women, students, and individuals.
-                  </p>
-                </div>
-              </div>
             </motion.div>
           ) : (
             <motion.div
@@ -249,7 +238,7 @@ const V3AnnouncementSection = () => {
                       size="lg"
                       icon={ExternalLink}
                       className="text-lg font-bold"
-                      onClick={() => window.open('https://annita-v1.netlify.app/', '_blank')}
+                      onClick={() => window.open('https://shop.an-nita.com/', '_blank')}
                     >
                       Visit Live Marketplace
                     </Button>
@@ -269,28 +258,6 @@ const V3AnnouncementSection = () => {
           )}
         </AnimatePresence>
 
-          {/* Bottom Message */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="text-center mt-16"
-          >
-            <div className="bg-gradient-to-r from-orange-50 to-orange-100 rounded-2xl p-8 border border-orange-200">
-              <h3 className="text-2xl sm:text-3xl font-bold mb-4 text-gray-900">
-                📣 This is Africa's all-in-one digital home.
-              </h3>
-              <p className="text-lg text-gray-600 mb-6">
-                Built in Liberia. Rising with the continent.
-              </p>
-              <p className="text-xl font-semibold text-orange-600">
-                It's time for true digital freedom — without limits, without barriers.
-              </p>
-              <div className="mt-6 text-2xl font-bold text-gray-900">
-                Simplify. Scale. Succeed.
-              </div>
-            </div>
-          </motion.div>
         </div>
       </div>
 
