@@ -76,11 +76,12 @@ import {
   Signal,
   Radio,
   Palette,
-  Headphones as HeadphonesIcon,
   Landmark,
   Link as LinkIcon,
   UserCheck as UserCheckIcon,
-  BookOpen
+  BookOpen,
+  FileText,
+  Cookie
 } from 'lucide-react'
 import { ThemeToggle, SimpleThemeToggle } from '@/components/ui/ThemeToggle'
 import GlobalSearch from '@/components/ui/GlobalSearch'
@@ -128,6 +129,10 @@ const Navigation = () => {
         { name: 'AnnitaPay', href: '/services/annitapay', icon: CreditCard, description: 'Secure digital payments' },
         { name: 'Annita AI', href: '/services/ai', icon: Zap, description: 'AI-powered business tools' },
         { name: 'Annita Logistics', href: '/services/logistics', icon: Truck, description: 'On-demand delivery network with real-time tracking' },
+        { name: 'Annita Global Market', href: '/services/global-market', icon: Globe, description: 'Access suppliers across Africa' },
+        { name: 'Annita Ads', href: '/services/ads', icon: Megaphone, description: 'Marketing and advertising solutions' },
+        { name: 'Annita ERP System', href: '/services/erp', icon: FileText, description: 'Integrated ERP for your business' },
+        { name: 'Annita Email Service', href: '/services/email', icon: Mail, description: 'Business-grade email service' },
         { name: 'Annita Connect', href: '/services/connect', icon: MessageSquare, description: 'Communication & Marketing Suite' },
         { name: 'Build Your Solution', href: '/build', icon: Code, description: 'AI-powered development for apps, websites & business solutions' },
       ]
@@ -159,6 +164,35 @@ const Navigation = () => {
         { name: 'Contact Us', href: '/contact-us', icon: Mail, description: 'Get in touch with our team' },
         { name: 'Report Issues', href: '/support/report-issues', icon: HelpCircle, description: 'Report bugs and issues' },
         { name: 'Contact Sales', href: '/contact-sales', icon: Phone, description: 'Talk to our business development team' },
+        { name: 'Join Waitlist', href: '/download', icon: Download, description: 'Join the Annita waitlist' },
+      ]
+    },
+    {
+      name: 'Partners',
+      href: '#',
+      dropdown: [
+        { name: 'Become a Partner', href: '/partners', icon: Users, description: 'Partner with Annita' },
+        { name: 'Partner Application', href: '/partners/apply', icon: UserCheckIcon, description: 'Apply to become a partner' },
+      ]
+    },
+    {
+      name: 'Resources',
+      href: '#',
+      dropdown: [
+        { name: 'Pitch Deck', href: '/documents/Annita-Pitch Deck.pdf', icon: FileText, description: 'Company pitch deck', isExternal: true },
+        { name: 'Business Plan', href: '/documents/annita-business-plan.pdf', icon: FileText, description: 'Annita business plan', isExternal: true },
+        { name: 'Financial Model', href: '/documents/annita-financial-model.pdf', icon: FileText, description: 'Financial model', isExternal: true },
+        { name: 'Company Factsheet', href: '/documents/annita-factsheet.pdf', icon: FileText, description: 'Quick company facts', isExternal: true },
+      ]
+    },
+    {
+      name: 'Legal',
+      href: '#',
+      dropdown: [
+        { name: 'Privacy Policy', href: '/privacy', icon: Shield, description: 'How we handle your data' },
+        { name: 'Terms of Service', href: '/terms', icon: FileCheck, description: 'Our terms and conditions' },
+        { name: 'Cookie Policy', href: '/cookies', icon: Cookie, description: 'Learn about cookies' },
+        { name: 'Security', href: '/legal/security', icon: Lock, description: 'Security practices' },
       ]
     },
   ]

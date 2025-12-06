@@ -29,45 +29,13 @@ const Footer = () => {
 
   const footerSections = [
     {
-      title: 'Personal',
-      links: [
-        { name: 'Live Marketplace V1.0 (Upgraded)', href: 'https://shop.an-nita.com/', isExternal: true },
-        { name: 'AnnitaPay', href: '/services/annitapay' },
-        { name: 'Annita AI', href: '/ai/personal' },
-        { name: 'Annita Marketplace', href: '/services/shopping' },
-        { name: 'Annita Messaging', href: '/services/messaging' },
-        { name: 'Annita Streaming', href: '/services/streaming' },
-        { name: 'Annita Creator Studio', href: '/services/creator-studio' },
-        { name: 'Annita Voice & Video', href: '/services/voice-video' }
-      ]
-    },
-    {
-      title: 'Business',
-      links: [
-        { name: 'Live Marketplace V1.0 (Upgraded)', href: 'https://shop.an-nita.com/', isExternal: true },
-        { name: 'Annita Global Market', href: '/services/global-market' },
-        { name: 'AnnitaPay Business', href: '/services/annitapay-business' },
-        { name: 'Annita AI', href: '/services/ai' },
-        { name: 'Annita Logistics Network', href: '/services/logistics' },
-        { name: 'Annita Ads', href: '/services/ads' },
-        { name: 'Annita ERP System', href: '/services/erp' },
-        { name: 'Annita Email Service', href: '/services/email' },
-      ]
-    },
-    {
       title: 'Company',
       links: [
-        { name: 'Ideas & Tips', href: '/ideas' },
-        { name: 'Build Your Idea', href: '/build' },
         { name: 'About Us', href: '/about' },
-        { name: 'CSR', href: '/company/csr' },
-        { name: 'Demo', href: '/demo' },
         { name: 'Investors', href: '/investors' },
-        { name: 'The 100', href: '/the100' },
-        { name: 'Business Model', href: '/business-model' },
-        { name: 'Awards & Recognition', href: '/awards' },
         { name: 'Careers', href: '/careers' },
-        { name: 'Apply Now', href: '/careers/apply' }
+        { name: 'Demo', href: '/demo' },
+        { name: 'Build Your Idea', href: '/build' },
       ]
     },
     {
@@ -77,13 +45,6 @@ const Footer = () => {
         { name: 'Contact Sales', href: '/contact-sales' },
         { name: 'Report Issues', href: '/support/report-issues' },
         { name: 'Join Waitlist', href: '/download' }
-      ]
-    },
-    {
-      title: 'Partners',
-      links: [
-        { name: 'Become a Partner', href: '/partners' },
-        { name: 'Partner Application', href: '/partners/apply' }
       ]
     },
     {
@@ -149,7 +110,7 @@ const Footer = () => {
                               <span className="text-lg sm:text-xl lg:text-2xl font-bold text-orange-500 dark:text-orange-400">Annita</span>
             </Link>
             <p className="text-gray-400 mb-4 sm:mb-6 leading-relaxed text-sm sm:text-base">
-              Annita is Africa's first all-in-one digital platform, combining e-commerce, fintech, artificial intelligence, communication, marketing, logistics, lifestyle services, and more into a single ecosystem. We empower MSMEs and individuals with innovative solutions, connectivity, and convenience.
+              Africa's all-in-one platform for commerce, payments, AI, and logistics—built to help MSMEs and individuals grow.
             </p>
             
             {/* Contact Info */}
@@ -172,9 +133,9 @@ const Footer = () => {
 
             {/* Social Links */}
             <div className="mb-4 sm:mb-6">
-              <h4 className="text-sm font-semibold text-orange-500 mb-3">Connect With Us</h4>
-              <div className="grid grid-cols-4 sm:grid-cols-6 gap-2 sm:gap-3">
-                {socialLinks.map((social) => (
+              <h4 className="text-sm font-semibold text-orange-500 mb-3">Connect</h4>
+              <div className="grid grid-cols-6 sm:grid-cols-6 gap-2 sm:gap-3">
+                {socialLinks.slice(0, 6).map((social) => (
                   <a
                     key={social.name}
                     href={social.href}
