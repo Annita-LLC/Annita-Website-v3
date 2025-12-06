@@ -80,7 +80,6 @@ import {
   Link as LinkIcon,
   UserCheck as UserCheckIcon,
   BookOpen,
-  FileText,
   Cookie
 } from 'lucide-react'
 import { ThemeToggle, SimpleThemeToggle } from '@/components/ui/ThemeToggle'
@@ -164,7 +163,6 @@ const Navigation = () => {
         { name: 'Contact Us', href: '/contact-us', icon: Mail, description: 'Get in touch with our team' },
         { name: 'Report Issues', href: '/support/report-issues', icon: HelpCircle, description: 'Report bugs and issues' },
         { name: 'Contact Sales', href: '/contact-sales', icon: Phone, description: 'Talk to our business development team' },
-        { name: 'Join Waitlist', href: '/download', icon: Download, description: 'Join the Annita waitlist' },
       ]
     },
     {

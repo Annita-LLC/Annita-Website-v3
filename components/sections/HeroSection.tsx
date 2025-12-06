@@ -237,7 +237,7 @@ const HeroSection = () => {
                     if (slides[currentSlide].secondaryCta === "Watch Demo") {
                       window.location.href = '/demo'
                     } else if (slides[currentSlide].secondaryCta === "Join Waitlist") {
-                      window.location.href = '/download'
+                      setIsDownloadModalOpen(true)
                     } else if (slides[currentSlide].secondaryCta === "Learn More") {
                       // Handle learn more action
                     }

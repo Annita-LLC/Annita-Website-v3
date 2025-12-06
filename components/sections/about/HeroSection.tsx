@@ -96,7 +96,7 @@ const HeroSection = () => {
                 variant="glass"
                 size="xl"
                 icon={Download}
-                onClick={() => router.push('/download')}
+              onClick={() => setIsWaitlistOpen(true)}
                 className="border-2 border-white text-white px-8 py-4 rounded-xl font-bold hover:bg-white hover:text-orange-600 transition-all duration-200 flex items-center justify-center shadow-lg hover:shadow-xl transform hover:scale-105"
               >
                 Join Waitlist

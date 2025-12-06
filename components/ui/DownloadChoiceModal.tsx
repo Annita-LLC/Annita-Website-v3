@@ -10,11 +10,6 @@ interface DownloadChoiceModalProps {
 }
 
 const DownloadChoiceModal = ({ isOpen, onClose }: DownloadChoiceModalProps) => {
-  const handleDownloadApp = () => {
-    window.open('/download', '_blank')
-    onClose()
-  }
-
   const handleVisitV1 = () => {
     window.open('https://shop.an-nita.com/', '_blank')
     onClose()
@@ -58,32 +53,6 @@ const DownloadChoiceModal = ({ isOpen, onClose }: DownloadChoiceModalProps) => {
 
             {/* Content */}
             <div className="px-4 sm:px-6 py-4 sm:py-5 space-y-3 sm:space-y-4 overflow-y-auto max-h-[calc(85vh-120px)] sm:max-h-[calc(90vh-140px)]">
-              {/* V3.0 App Option */}
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.1 }}
-                className="border-2 border-orange-200 dark:border-orange-700 rounded-xl p-3 sm:p-4 hover:border-orange-300 dark:hover:border-orange-600 transition-colors cursor-pointer"
-                onClick={handleDownloadApp}
-              >
-                <div className="flex items-start space-x-3 sm:space-x-4">
-                  <div className="p-2 sm:p-3 bg-orange-100 dark:bg-orange-900/30 rounded-xl flex-shrink-0">
-                    <Smartphone className="w-5 h-5 sm:w-6 sm:h-6 text-orange-600 dark:text-orange-400" />
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <h3 className="font-bold text-gray-900 dark:text-white mb-1 text-sm sm:text-base">Download Annita 3.0 App</h3>
-                    <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-300 mb-2 sm:mb-3 leading-relaxed">
-                      Get early access to our revolutionary offline-capable platform with AI features, 
-                      fintech tools, and comprehensive business solutions.
-                    </p>
-                    <div className="flex items-center text-orange-600 dark:text-orange-400 text-xs sm:text-sm font-medium">
-                      <span>Join the waitlist</span>
-                      <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 ml-1" />
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-
               {/* V1.0 Marketplace Option */}
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
