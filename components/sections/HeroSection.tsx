@@ -49,11 +49,13 @@ import {
   ChevronRight
 } from 'lucide-react'
 import Button from '@/components/ui/Button'
+import WaitlistForm from '@/components/ui/WaitlistForm'
 
 const HeroSection = () => {
   const [currentSlide, setCurrentSlide] = useState(0)
   const [currentFeature, setCurrentFeature] = useState(0)
   const [showNotification, setShowNotification] = useState(false)
+  const [isWaitlistOpen, setIsWaitlistOpen] = useState(false)
 
   const features = [
     { icon: Globe, text: 'Pan-African Reach' },
@@ -237,7 +239,7 @@ const HeroSection = () => {
                     if (slides[currentSlide].secondaryCta === "Watch Demo") {
                       window.location.href = '/demo'
                     } else if (slides[currentSlide].secondaryCta === "Join Waitlist") {
-                      setIsDownloadModalOpen(true)
+                      setIsWaitlistOpen(true)
                     } else if (slides[currentSlide].secondaryCta === "Learn More") {
                       // Handle learn more action
                     }
@@ -342,6 +344,11 @@ const HeroSection = () => {
           />
         </motion.div>
       </motion.div>
+
+      <WaitlistForm
+        isOpen={isWaitlistOpen}
+        onClose={() => setIsWaitlistOpen(false)}
+      />
 
     </div>
   )
