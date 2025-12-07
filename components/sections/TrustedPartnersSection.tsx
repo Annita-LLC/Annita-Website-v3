@@ -76,34 +76,34 @@ const TrustedPartnersSection = () => {
           <div className="flex animate-scroll space-x-4 sm:space-x-6 md:space-x-8 lg:space-x-12 xl:space-x-16">
             {/* First set of logos */}
             {partners.map((partner, index) => (
-              <div key={`first-${index}`} className="flex-shrink-0 flex flex-col items-center text-center group min-w-[120px] xs:min-w-[140px] sm:min-w-[160px] md:min-w-[180px] lg:min-w-[200px]">
-                <div className="w-20 h-20 xs:w-24 xs:h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 lg:w-36 lg:h-36 xl:w-40 xl:h-40 bg-white rounded-lg sm:rounded-xl md:rounded-2xl shadow-soft p-2 sm:p-3 md:p-4 mb-2 sm:mb-3 md:mb-4 flex items-center justify-center group-hover:shadow-medium transition-all duration-300">
+              <div key={`first-${index}`} className="flex-shrink-0 flex flex-col items-center text-center group min-w-[140px] xs:min-w-[160px] sm:min-w-[180px] md:min-w-[200px] lg:min-w-[220px]">
+                <div className="w-32 h-32 xs:w-40 xs:h-40 sm:w-44 sm:h-44 md:w-48 md:h-48 lg:w-52 lg:h-52 xl:w-56 xl:h-56 bg-white rounded-lg sm:rounded-xl md:rounded-2xl shadow-soft p-3 sm:p-4 md:p-5 mb-2 sm:mb-3 md:mb-4 flex items-center justify-center group-hover:shadow-medium transition-all duration-300">
                   <Image
                     src={partner.image}
                     alt={partner.name}
-                    width={160}
-                    height={160}
+                    width={224}
+                    height={224}
                     className="w-full h-full object-contain"
                   />
                 </div>
-                <h3 className="text-xs font-semibold text-orange-600 mb-1">{partner.name}</h3>
+                <h3 className="text-xs sm:text-sm font-semibold text-orange-600 mb-1">{partner.name}</h3>
                 <p className="text-xs text-neutral-600 hidden md:block">{partner.description}</p>
               </div>
             ))}
             
             {/* Duplicate set for seamless loop */}
             {partners.map((partner, index) => (
-              <div key={`second-${index}`} className="flex-shrink-0 flex flex-col items-center text-center group min-w-[120px] xs:min-w-[140px] sm:min-w-[160px] md:min-w-[180px] lg:min-w-[200px]">
-                <div className="w-20 h-20 xs:w-24 xs:h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 lg:w-36 lg:h-36 xl:w-40 xl:h-40 bg-white rounded-lg sm:rounded-xl md:rounded-2xl shadow-soft p-2 sm:p-3 md:p-4 mb-2 sm:mb-3 md:mb-4 flex items-center justify-center group-hover:shadow-medium transition-all duration-300">
+              <div key={`second-${index}`} className="flex-shrink-0 flex flex-col items-center text-center group min-w-[140px] xs:min-w-[160px] sm:min-w-[180px] md:min-w-[200px] lg:min-w-[220px]">
+                <div className="w-32 h-32 xs:w-40 xs:h-40 sm:w-44 sm:h-44 md:w-48 md:h-48 lg:w-52 lg:h-52 xl:w-56 xl:h-56 bg-white rounded-lg sm:rounded-xl md:rounded-2xl shadow-soft p-3 sm:p-4 md:p-5 mb-2 sm:mb-3 md:mb-4 flex items-center justify-center group-hover:shadow-medium transition-all duration-300">
                   <Image
                     src={partner.image}
                     alt={partner.name}
-                    width={160}
-                    height={160}
+                    width={224}
+                    height={224}
                     className="w-full h-full object-contain"
                   />
                 </div>
-                <h3 className="text-xs font-semibold text-orange-600 mb-1">{partner.name}</h3>
+                <h3 className="text-xs sm:text-sm font-semibold text-orange-600 mb-1">{partner.name}</h3>
                 <p className="text-xs text-neutral-600 hidden md:block">{partner.description}</p>
               </div>
             ))}
