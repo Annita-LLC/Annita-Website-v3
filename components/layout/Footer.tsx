@@ -95,16 +95,15 @@ const Footer = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-6 sm:gap-8">
           {/* Company Info */}
           <div className="xl:col-span-2">
-            <Link href="/" className="flex items-center space-x-2 sm:space-x-3 mb-4 sm:mb-6">
+            <Link href="/" className="flex items-center space-x-2 sm:space-x-3 mb-4 sm:mb-6 group">
               <div className="relative">
-                <div className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+                <div className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 flex items-center justify-center transition-all duration-300 transform hover:scale-105">
                   <img 
-                    src="/images/blog/Annita's Logo.png" 
+                    src="/images/logo/annita-logo-new.svg" 
                     alt="Annita Logo" 
-                    className="w-5 h-5 sm:w-6 sm:h-6 lg:w-8 lg:h-8 rounded-full object-cover"
+                    className="w-full h-full"
                   />
                 </div>
-                <div className="absolute -inset-1 bg-gradient-to-r from-orange-400 to-orange-500 rounded-full blur opacity-20 group-hover:opacity-30 transition-opacity duration-300"></div>
               </div>
                               <span className="text-lg sm:text-xl lg:text-2xl font-bold text-orange-500 dark:text-orange-400">Annita</span>
             </Link>

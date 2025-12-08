@@ -181,11 +181,11 @@ const DiscoverPage = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex items-center justify-between">
             <Link href="/" className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full flex items-center justify-center">
+              <div className="w-8 h-8 flex items-center justify-center">
                 <img 
-                  src="/images/blog/Annita's Logo.png" 
+                  src="/images/logo/annita-logo-new.svg" 
                   alt="Annita Logo" 
-                  className="w-5 h-5 rounded-full object-cover"
+                  className="w-full h-full"
                 />
               </div>
               <span className="text-lg font-bold text-orange-500">Annita</span>

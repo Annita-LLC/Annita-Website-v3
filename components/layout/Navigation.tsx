@@ -208,19 +208,30 @@ const Navigation = () => {
         <div className="container mx-auto px-3 sm:px-4 lg:px-6 xl:px-8">
           <div className="flex justify-between items-center h-14 sm:h-16 lg:h-20">
             {/* Logo */}
-                          <Link href="/" className="flex items-center space-x-2 sm:space-x-3">
-                <div className="relative">
-                  <div className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-                    <img 
-                      src="/images/blog/Annita's Logo.png" 
-                      alt="Annita Logo" 
-                      className="w-5 h-5 sm:w-6 sm:h-6 lg:w-8 lg:h-8 rounded-full object-cover"
-                    />
-                  </div>
-                  <div className="absolute -inset-1 bg-gradient-to-r from-orange-400 to-orange-500 rounded-full blur opacity-20 group-hover:opacity-30 transition-opacity duration-300"></div>
+            <Link href="/" className="flex items-center gap-2.5 text-gray-900 dark:text-white hover:opacity-90 transition">
+              {/* Gradient border container */}
+              <div className="relative w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-gradient-to-br from-primary-500 to-primary-600 p-[2px] flex-shrink-0">
+                {/* White inner container */}
+                <div className="w-full h-full rounded-[10px] bg-white dark:bg-gray-800 flex items-center justify-center">
+                  {/* Logo image */}
+                  <img 
+                    src="/images/logo/annita-logo-new.svg" 
+                    alt="Annita Logo" 
+                    width={28}
+                    height={28}
+                    className="w-5 h-5 sm:w-6 sm:h-6 object-contain rounded-lg transition-all duration-300 select-none"
+                    style={{ width: '100%', height: '100%', objectFit: 'contain' }}
+                    draggable="false"
+                  />
                 </div>
-                <span className="text-lg sm:text-xl lg:text-2xl font-bold text-orange-500 dark:text-orange-400">Annita</span>
-              </Link>
+              </div>
+              {/* Brand text */}
+              <div className="flex flex-col">
+                <span className="text-xs sm:text-sm md:text-base font-semibold leading-tight text-orange-500 dark:text-orange-400">
+                  Annita
+                </span>
+              </div>
+            </Link>
 
             {/* Desktop Navigation */}
             <div className="hidden lg:flex items-center space-x-6 xl:space-x-8">
@@ -378,18 +389,29 @@ const Navigation = () => {
               <div className="flex flex-col h-full">
                 {/* Header */}
                 <div className="flex items-center justify-between p-6 border-b border-gray-200 dark:border-gray-700">
-                  <Link href="/" className="flex items-center space-x-2" onClick={() => setIsOpen(false)}>
-                    <div className="relative">
-                      <div className="w-8 h-8 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full flex items-center justify-center shadow-lg">
+                  <Link href="/" className="flex items-center gap-2.5 text-gray-900 dark:text-white hover:opacity-90 transition" onClick={() => setIsOpen(false)}>
+                    {/* Gradient border container */}
+                    <div className="relative w-8 h-8 rounded-xl bg-gradient-to-br from-primary-500 to-primary-600 p-[2px] flex-shrink-0">
+                      {/* White inner container */}
+                      <div className="w-full h-full rounded-[10px] bg-white dark:bg-gray-800 flex items-center justify-center">
+                        {/* Logo image */}
                         <img 
-                          src="/images/blog/Annita's Logo.png" 
+                          src="/images/logo/annita-logo-new.svg" 
                           alt="Annita Logo" 
-                          className="w-5 h-5 rounded-full object-cover"
+                          width={28}
+                          height={28}
+                          className="w-5 h-5 object-contain rounded-lg transition-all duration-300 select-none"
+                          style={{ width: '100%', height: '100%', objectFit: 'contain' }}
+                          draggable="false"
                         />
                       </div>
-                      <div className="absolute -inset-1 bg-gradient-to-r from-orange-400 to-orange-500 rounded-full blur opacity-20"></div>
                     </div>
-                    <span className="text-lg font-bold text-orange-500 dark:text-orange-400">Annita</span>
+                    {/* Brand text */}
+                    <div className="flex flex-col">
+                      <span className="text-xs sm:text-sm font-semibold leading-tight text-orange-500 dark:text-orange-400">
+                        Annita
+                      </span>
+                    </div>
                   </Link>
                   
                   <div className="flex items-center space-x-2">

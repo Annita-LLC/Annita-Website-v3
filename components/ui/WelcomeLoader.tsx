@@ -209,9 +209,9 @@ const WelcomeLoader = ({ onComplete }: WelcomeLoaderProps) => {
                     }}
                   >
                     <img 
-                      src="/images/blog/Annita's Logo.png" 
+                      src="/images/logo/annita-logo-new.svg" 
                       alt="Annita Logo"
-                      className="w-16 h-16 sm:w-20 sm:h-20 rounded-full object-cover"
+                      className="w-16 h-16 sm:w-20 sm:h-20"
                     />
                   </motion.div>
                   
