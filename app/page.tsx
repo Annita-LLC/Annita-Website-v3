@@ -82,7 +82,7 @@ export default function HomePage() {
 
   if (showWelcome) {
     return (
-      <div className="fixed inset-0 z-[60] bg-slate-900">
+      <div className="fixed inset-0 z-[60]">
         <WelcomeLoader onComplete={handleWelcomeComplete} />
       </div>
     )

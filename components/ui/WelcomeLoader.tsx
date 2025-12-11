@@ -1,8 +1,8 @@
 'use client'
 
-import { useState, useEffect, useCallback } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
-import { Sparkles, Zap, Shield, Globe, Rocket } from 'lucide-react'
+import Image from 'next/image'
+import { useState, useEffect, useCallback, useMemo } from 'react'
+import { AnimatePresence, motion } from 'framer-motion'
 
 interface WelcomeLoaderProps {
   onComplete: () => void
@@ -12,19 +12,20 @@ const WelcomeLoader = ({ onComplete }: WelcomeLoaderProps) => {
   const [isLoading, setIsLoading] = useState(true)
   const [progress, setProgress] = useState(0)
   const [isClient, setIsClient] = useState(false)
-  const [currentStep, setCurrentStep] = useState(0)
 
-  const steps = [
-    { icon: Shield, text: 'Securing your experience...', color: 'from-blue-500 to-cyan-500' },
-    { icon: Zap, text: 'Loading powerful features...', color: 'from-purple-500 to-pink-500' },
-    { icon: Globe, text: 'Connecting to Africa...', color: 'from-green-500 to-emerald-500' },
-    { icon: Rocket, text: 'Almost ready to launch...', color: 'from-orange-500 to-red-500' }
-  ]
+  const phases = useMemo(
+    () => [
+      { title: 'Setting the stage', detail: 'Warming up your Annita experience', accent: 'from-[#003366] to-[#4B0082]' },
+      { title: 'Syncing systems', detail: 'Connecting services and data layers', accent: 'from-[#4B0082] to-[#FF6600]' },
+      { title: 'Tuning performance', detail: 'Optimizing for speed and clarity', accent: 'from-[#FF6600] to-[#00AF54]' },
+      { title: 'Ready to go', detail: 'Finishing touches before launch', accent: 'from-[#00AF54] to-[#003366]' }
+    ],
+    []
+  )
 
-  // Memoized completion handler
   const handleComplete = useCallback(() => {
     setIsLoading(false)
-    setTimeout(onComplete, 500) // Small delay for smooth exit
+    setTimeout(onComplete, 450)
   }, [onComplete])
 
   useEffect(() => {
@@ -34,52 +35,35 @@ const WelcomeLoader = ({ onComplete }: WelcomeLoaderProps) => {
   useEffect(() => {
     if (!isClient) return
 
-    // Smooth progress animation over 3 seconds
     const startTime = Date.now()
-    const duration = 3000 // 3 seconds
-    
-    const updateProgress = () => {
+    const duration = 2800
+
+    const tick = () => {
       const elapsed = Date.now() - startTime
-      const newProgress = Math.min((elapsed / duration) * 100, 100)
-      
-      setProgress(newProgress)
-      
-      // Update step based on progress
-      if (newProgress < 25) {
-        setCurrentStep(0)
-      } else if (newProgress < 50) {
-        setCurrentStep(1)
-      } else if (newProgress < 75) {
-        setCurrentStep(2)
-      } else {
-        setCurrentStep(3)
-      }
-      
-      if (newProgress >= 100) {
+      const next = Math.min((elapsed / duration) * 100, 100)
+      setProgress(next)
+
+      if (next >= 100) {
         handleComplete()
       } else {
-        requestAnimationFrame(updateProgress)
+        requestAnimationFrame(tick)
       }
     }
-    
-    const progressTimer = setTimeout(() => {
-      requestAnimationFrame(updateProgress)
-    }, 500)
 
-    return () => {
-      clearTimeout(progressTimer)
-    }
+    const timer = setTimeout(() => requestAnimationFrame(tick), 200)
+    return () => clearTimeout(timer)
   }, [isClient, handleComplete])
 
   if (!isClient) {
     return (
-      <div className="fixed inset-0 z-[70] bg-gradient-to-br from-orange-50 via-white to-orange-100 flex items-center justify-center">
-        <div className="w-8 h-8 border-2 border-orange-300 border-t-orange-600 rounded-full animate-spin" />
+      <div className="fixed inset-0 z-[70] flex items-center justify-center bg-slate-900">
+        <div className="h-10 w-10 animate-spin rounded-full border-2 border-white/30 border-t-white" />
       </div>
     )
   }
 
-  const CurrentIcon = steps[currentStep].icon
+  const phaseIndex = Math.min(phases.length - 1, Math.floor((progress / 100) * phases.length))
+  const phase = phases[phaseIndex]
 
   return (
     <AnimatePresence>
@@ -87,235 +71,147 @@ const WelcomeLoader = ({ onComplete }: WelcomeLoaderProps) => {
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          exit={{ opacity: 0, scale: 1.05 }}
-          transition={{ duration: 0.5 }}
-          className="fixed inset-0 z-[70] bg-gradient-to-br from-orange-50 via-white to-orange-100 overflow-hidden"
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.45 }}
+          className="fixed inset-0 z-[70] overflow-hidden bg-gradient-to-br from-[#0b1b3a] via-[#0f2c54] to-[#150c2f] text-white"
         >
-          {/* Animated Background Elements */}
-          <div className="absolute inset-0 overflow-hidden">
-            {[...Array(6)].map((_, i) => (
-              <motion.div
-                key={i}
-                className="absolute rounded-full bg-gradient-to-br from-orange-200/20 to-orange-300/20"
-                style={{
-                  width: `${100 + i * 50}px`,
-                  height: `${100 + i * 50}px`,
-                  left: `${10 + i * 15}%`,
-                  top: `${10 + i * 10}%`,
-                }}
-                animate={{
-                  scale: [1, 1.2, 1],
-                  opacity: [0.2, 0.4, 0.2],
-                  rotate: [0, 180, 360],
-                }}
-                transition={{
-                  duration: 3 + i,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                  delay: i * 0.3,
-                }}
-              />
-            ))}
+          {/* subtle grid */}
+          <div
+            className="pointer-events-none absolute inset-0 opacity-20"
+            style={{
+              backgroundImage:
+                'radial-gradient(circle at 1px 1px, rgba(255,255,255,0.12) 1px, transparent 0)',
+              backgroundSize: '40px 40px'
+            }}
+          />
+
+          {/* glow orbs */}
+          <div className="pointer-events-none absolute inset-0 blur-3xl">
+            <div className="absolute -left-10 top-0 h-80 w-80 rounded-full bg-[#FF6600]/20" />
+            <div className="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-[#4B0082]/25" />
+            <div className="absolute left-1/2 top-1/3 h-64 w-64 -translate-x-1/2 rounded-full bg-[#00AF54]/15" />
           </div>
 
-          {/* Main Content Container */}
-          <div className="relative z-10 flex items-center justify-center min-h-screen px-4 sm:px-6 lg:px-8">
-            <div className="text-center max-w-md mx-auto">
-              
-              {/* Modern Logo with Advanced Animation */}
+          <div className="relative z-10 flex min-h-screen items-center justify-center px-4">
+            <div className="max-w-xl text-center space-y-8">
               <motion.div
-                initial={{ scale: 0, opacity: 0, rotate: -180 }}
-                animate={{ scale: 1, opacity: 1, rotate: 0 }}
-                transition={{ 
-                  duration: 1, 
-                  ease: "easeOut",
-                  type: "spring",
-                  stiffness: 100
-                }}
-                className="mb-8"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-4 py-2 backdrop-blur"
               >
-                <div className="relative mx-auto w-40 h-40 sm:w-48 sm:h-48">
-                  
-                  {/* Outer Glow Ring */}
+                <span className="mr-2 h-2 w-2 rounded-full bg-emerald-400" />
+                <span className="text-sm font-semibold tracking-wide uppercase text-white/80">
+                  Annita is getting ready
+                </span>
+              </motion.div>
+
+              <div className="mx-auto h-64 w-64 sm:h-72 sm:w-72">
+                <div className="relative h-full w-full">
                   <motion.div
-                    className={`absolute inset-0 rounded-full bg-gradient-to-br ${steps[currentStep].color} opacity-20 blur-xl`}
-                    animate={{
-                      scale: [1, 1.3, 1],
-                      opacity: [0.2, 0.4, 0.2],
-                    }}
-                    transition={{
-                      duration: 2,
-                      repeat: Infinity,
-                      ease: "easeInOut",
-                    }}
+                    className={`absolute inset-0 rounded-full bg-gradient-to-br ${phase.accent} opacity-30 blur-2xl`}
+                    animate={{ scale: [1, 1.08, 1] }}
+                    transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
                   />
-                  
-                  {/* Rotating Outer Ring */}
+
                   <motion.div
-                    className="absolute inset-0 border-4 border-orange-200 rounded-full"
+                    className="absolute inset-1 rounded-full border border-white/10 bg-white/5 backdrop-blur"
                     animate={{ rotate: 360 }}
-                    transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
-                  />
-                  
-                  {/* Progress Ring with Gradient */}
-                  <motion.div
-                    className={`absolute inset-0 rounded-full border-4 border-transparent bg-gradient-to-br ${steps[currentStep].color}`}
+                    transition={{ duration: 14, repeat: Infinity, ease: 'linear' }}
                     style={{
-                      background: `conic-gradient(from 0deg, ${progress >= 25 ? '#10b981' : '#f97316'} ${progress * 3.6}deg, transparent ${progress * 3.6}deg)`,
-                      mask: 'radial-gradient(farthest-side, transparent calc(100% - 4px), black calc(100% - 4px))',
-                      WebkitMask: 'radial-gradient(farthest-side, transparent calc(100% - 4px), black calc(100% - 4px))',
+                      mask: 'radial-gradient(circle at center, transparent 58%, black 59%)',
+                      WebkitMask: 'radial-gradient(circle at center, transparent 58%, black 59%)'
+                    }}
+                  />
+
+                  <motion.div
+                    className="absolute inset-3 rounded-full border border-white/15 bg-gradient-to-br from-white/10 to-white/5 shadow-[0_0_50px_rgba(0,0,0,0.35)]"
+                    animate={{ rotate: -360 }}
+                    transition={{ duration: 10, repeat: Infinity, ease: 'linear' }}
+                    style={{
+                      mask: 'radial-gradient(circle at center, transparent 63%, black 64%)',
+                      WebkitMask: 'radial-gradient(circle at center, transparent 63%, black 64%)'
+                    }}
+                  />
+
+                  <motion.div
+                    className={`absolute inset-6 rounded-full border-2 border-transparent bg-[conic-gradient(var(--tw-gradient-from),var(--tw-gradient-to))] ${phase.accent}`}
+                    style={{
+                      mask: 'radial-gradient(circle at center, transparent 68%, black 69%)',
+                      WebkitMask: 'radial-gradient(circle at center, transparent 68%, black 69%)'
                     }}
                     animate={{ rotate: 360 }}
-                    transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
+                    transition={{ duration: 6, repeat: Infinity, ease: 'linear' }}
                   />
-                  
-                  {/* Middle Ring with Icon */}
+
                   <motion.div
-                    className={`absolute inset-4 bg-gradient-to-br ${steps[currentStep].color} rounded-full flex items-center justify-center shadow-2xl`}
-                    animate={{
-                      scale: [1, 1.1, 1],
-                    }}
-                    transition={{
-                      duration: 2,
-                      repeat: Infinity,
-                      ease: "easeInOut",
-                    }}
+                    className="absolute inset-12 flex items-center justify-center rounded-full bg-white text-slate-900 shadow-2xl"
+                    animate={{ scale: [1, 1.02, 1] }}
+                    transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
                   >
-                    <motion.div
-                      animate={{
-                        rotate: [0, 360],
-                        scale: [1, 1.2, 1],
-                      }}
-                      transition={{
-                        duration: 2,
-                        repeat: Infinity,
-                        ease: "easeInOut",
-                      }}
-                    >
-                      <CurrentIcon className="w-12 h-12 sm:w-16 sm:h-16 text-white" />
-                    </motion.div>
+                    <div className="relative h-24 w-24 sm:h-28 sm:w-28 overflow-hidden rounded-full bg-white ring-1 ring-slate-100 shadow-lg">
+                      <Image
+                        src="/images/logo/annita-logo.svg"
+                        alt="Annita logo"
+                        fill
+                        className="object-contain"
+                        sizes="112px"
+                        priority
+                      />
+                    </div>
                   </motion.div>
-                  
-                  {/* Inner Circle with Logo */}
-                  <motion.div
-                    className="absolute inset-8 bg-white rounded-full flex items-center justify-center shadow-xl"
-                    animate={{
-                      scale: [1, 1.05, 1],
-                    }}
-                    transition={{
-                      duration: 2,
-                      repeat: Infinity,
-                      ease: "easeInOut",
-                    }}
-                  >
-                    <img 
-                      src="/images/logo/annita-logo-new.svg" 
-                      alt="Annita Logo"
-                      className="w-16 h-16 sm:w-20 sm:h-20"
-                    />
-                  </motion.div>
-                  
-                  {/* Floating Particles */}
-                  {[...Array(8)].map((_, i) => (
-                    <motion.div
+
+                  {[...Array(6)].map((_, i) => (
+                    <motion.span
                       key={i}
-                      className={`absolute w-2 h-2 rounded-full bg-gradient-to-br ${steps[currentStep].color}`}
-                      style={{
-                        left: '50%',
-                        top: '50%',
-                        x: 0,
-                        y: 0,
-                      }}
+                      className="absolute left-1/2 top-1/2 h-1.5 w-1.5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/70 shadow-[0_0_12px_rgba(255,255,255,0.35)]"
                       animate={{
-                        x: [0, Math.cos((i * Math.PI) / 4) * 60],
-                        y: [0, Math.sin((i * Math.PI) / 4) * 60],
-                        opacity: [0, 1, 0],
-                        scale: [0, 1, 0],
+                        x: [0, Math.cos((i * Math.PI) / 3) * 110],
+                        y: [0, Math.sin((i * Math.PI) / 3) * 110],
+                        opacity: [0.2, 1, 0.2],
+                        scale: [0.8, 1.15, 0.8]
                       }}
                       transition={{
-                        duration: 2,
+                        duration: 3 + i * 0.2,
                         repeat: Infinity,
-                        ease: "easeInOut",
-                        delay: i * 0.2,
+                        ease: 'easeInOut'
                       }}
                     />
                   ))}
                 </div>
+              </div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.15 }}
+                className="space-y-3"
+              >
+                <h1 className="text-3xl sm:text-4xl font-semibold tracking-tight text-white">
+                  A modern workspace for African innovation
+                </h1>
+                <p className="text-base sm:text-lg text-white/80">
+                  {phase.title} • {phase.detail}
+                </p>
               </motion.div>
 
-              {/* Welcome Text with Animation */}
               <motion.div
-                initial={{ y: 20, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-                className="mb-6"
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.25 }}
+                className="mx-auto w-full max-w-md"
               >
-                <motion.h1
-                  className="text-4xl sm:text-5xl font-bold mb-4 bg-gradient-to-r from-orange-600 via-red-600 to-orange-600 bg-clip-text text-transparent"
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.5 }}
-                >
-                  Welcome to Annita
-                </motion.h1>
-
-                <motion.p
-                  className="text-lg sm:text-xl text-gray-700 max-w-sm mx-auto leading-relaxed font-medium"
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.7 }}
-                >
-                  Africa's first all-in-one digital platform
-                </motion.p>
-              </motion.div>
-
-              {/* Progress Text with Step Indicator */}
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 1 }}
-                className="h-8 sm:h-10"
-              >
-                <AnimatePresence mode="wait">
+                <div className="relative h-2 overflow-hidden rounded-full bg-white/10 backdrop-blur">
                   <motion.div
-                    key={currentStep}
-                    initial={{ opacity: 0, y: 8, scale: 0.9 }}
-                    animate={{ opacity: 1, y: 0, scale: 1 }}
-                    exit={{ opacity: 0, y: -8, scale: 0.9 }}
-                    transition={{ duration: 0.3 }}
-                    className="flex items-center justify-center space-x-2"
-                  >
-                    <CurrentIcon className={`w-5 h-5 text-transparent bg-gradient-to-br ${steps[currentStep].color} bg-clip-text`} />
-                    <p className="text-gray-600 text-sm sm:text-base font-medium">
-                      {steps[currentStep].text}
-                    </p>
-                  </motion.div>
-                </AnimatePresence>
-              </motion.div>
-
-              {/* Progress Bar */}
-              <motion.div
-                initial={{ opacity: 0, scaleX: 0 }}
-                animate={{ opacity: 1, scaleX: 1 }}
-                transition={{ duration: 0.5, delay: 1.2 }}
-                className="mt-6 w-64 mx-auto"
-              >
-                <div className="h-1.5 bg-gray-200 rounded-full overflow-hidden">
-                  <motion.div
-                    className={`h-full bg-gradient-to-r ${steps[currentStep].color} rounded-full`}
-                    initial={{ width: 0 }}
-                    animate={{ width: `${progress}%` }}
-                    transition={{ duration: 0.3 }}
+                    className={`absolute inset-y-0 left-0 rounded-full bg-gradient-to-r ${phase.accent}`}
+                    style={{ width: `${progress}%` }}
+                    transition={{ ease: 'easeOut', duration: 0.25 }}
                   />
                 </div>
-                <motion.p
-                  className="text-xs text-gray-500 mt-2"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: 1.5 }}
-                >
-                  {Math.round(progress)}%
-                </motion.p>
+                <div className="mt-3 flex items-center justify-between text-xs font-medium text-white/70">
+                  <span>{Math.round(progress)}%</span>
+                  <span>Launching Annita</span>
+                </div>
               </motion.div>
             </div>
           </div>
