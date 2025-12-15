@@ -56,3 +56,4 @@ const HeroSection = ({ onWaitlistOpen }: HeroSectionProps) => {
 }
 
 export default HeroSection
+

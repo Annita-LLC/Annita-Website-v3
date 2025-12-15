@@ -98,9 +98,9 @@ const Footer = () => {
                 {/* White inner container */}
                 <div className="w-full h-full rounded-[10px] bg-white dark:bg-gray-800 flex items-center justify-center transition-all duration-300 transform hover:scale-105">
                   {/* Logo image */}
-                  <img
+                  <img 
                     src="/images/logo/annita-real-logo.png"
-                    alt="Annita Logo"
+                    alt="Annita Logo" 
                     width={28}
                     height={28}
                     className="w-5 h-5 sm:w-6 sm:h-6 object-contain rounded-lg transition-all duration-300 select-none"

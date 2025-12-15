@@ -11,7 +11,7 @@ interface DownloadChoiceModalProps {
 
 const DownloadChoiceModal = ({ isOpen, onClose }: DownloadChoiceModalProps) => {
   const handleVisitV1 = () => {
-    window.open('https://shop.an-nita.com/', '_blank')
+    window.location.href = '/maintenance'
     onClose()
   }
 

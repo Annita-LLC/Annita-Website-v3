@@ -302,7 +302,7 @@ const HeroSection = () => {
                       size="lg"
                       icon={slides[currentSlide].ctaIcon}
                       className="w-full sm:w-auto text-base font-semibold px-8 py-4 shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
-                      onClick={() => window.open('https://shop.an-nita.com/', '_blank')}
+                      onClick={() => window.location.href = '/maintenance'}
                     >
                       {slides[currentSlide].cta}
                     </Button>
@@ -354,7 +354,7 @@ const HeroSection = () => {
                       size="lg"
                       icon={slides[currentSlide].secondaryIcon}
                       className="w-full sm:w-auto text-base font-semibold px-8 py-4 border-2 border-gray-300 hover:border-orange-500 hover:text-orange-600 transform hover:-translate-y-1 transition-all duration-300"
-                      onClick={() => window.open('https://shop.an-nita.com/', '_blank')}
+                      onClick={() => window.location.href = '/maintenance'}
                     >
                       {slides[currentSlide].secondaryCta}
                   </Button>

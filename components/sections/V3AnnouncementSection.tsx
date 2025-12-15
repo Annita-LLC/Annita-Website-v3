@@ -72,28 +72,28 @@ const V3AnnouncementSection = () => {
       title: "Live Marketplace",
       description: "Real vendors selling, real customers buying - right now.",
       status: "Live",
-      link: "https://shop.an-nita.com/"
+      link: "/maintenance"
     },
     {
       icon: Users,
       title: "Active Community",
       description: "3,000+ vendors already using our platform.",
       status: "Active",
-      link: "https://shop.an-nita.com/"
+      link: "/maintenance"
     },
     {
       icon: DollarSign,
       title: "Revenue Generation",
       description: "Proven business model with real transactions.",
       status: "Proven",
-      link: "https://shop.an-nita.com/"
+      link: "/maintenance"
     },
     {
       icon: CheckCircle,
       title: "Market Validation",
       description: "Real users, real feedback, real growth.",
       status: "Validated",
-      link: "https://shop.an-nita.com/"
+      link: "/maintenance"
     }
   ]
 
@@ -251,7 +251,7 @@ const V3AnnouncementSection = () => {
                       size="lg"
                       icon={ExternalLink}
                       className="text-lg font-bold"
-                      onClick={() => window.open('https://shop.an-nita.com/', '_blank')}
+                      onClick={() => window.location.href = '/maintenance'}
                     >
                       Visit Live Marketplace
                     </Button>

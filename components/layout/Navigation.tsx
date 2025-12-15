@@ -303,7 +303,7 @@ const Navigation = () => {
             {/* CTA Buttons */}
             <div className="hidden lg:flex items-center space-x-3 xl:space-x-4">
               <button 
-                onClick={() => window.open('https://shop.an-nita.com/', '_blank')}
+                onClick={() => window.location.href = '/maintenance'}
                 className="btn-primary"
               >
                 <Download className="w-4 h-4 mr-2" />
@@ -491,7 +491,7 @@ const Navigation = () => {
                 <div className="p-6 border-t border-gray-200 dark:border-gray-700">
                   <button
                     onClick={() => {
-                      window.open('https://shop.an-nita.com/', '_blank')
+                      window.location.href = '/maintenance'
                       setIsOpen(false)
                     }}
                     className="flex items-center justify-center w-full px-6 py-3 bg-gradient-to-r from-orange-500 to-orange-600 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-300"

@@ -108,7 +108,7 @@ const MarketplaceFeature = () => {
         >
           <Button 
             className="group"
-            onClick={() => window.open('https://shop.an-nita.com/', '_blank')}
+            onClick={() => window.location.href = '/maintenance'}
           >
             Explore Marketplace
             <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
