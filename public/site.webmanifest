@@ -68,37 +68,37 @@
   ],
   "shortcuts": [
     {
-      "name": "AnnitaPay",
-      "short_name": "Pay",
-      "description": "Access AnnitaPay for digital payments",
-      "url": "/services/annitapay",
+      "name": "About Us",
+      "short_name": "About",
+      "description": "Learn about Annita's mission",
+      "url": "/about",
       "icons": [
         {
-          "src": "/icons/payment.png",
+          "src": "/images/logo/favicon.png",
           "sizes": "96x96"
         }
       ]
     },
     {
-      "name": "Marketplace",
-      "short_name": "Shop",
-      "description": "Browse the Annita marketplace",
-      "url": "/marketplace",
+      "name": "Investors",
+      "short_name": "Invest",
+      "description": "Investment opportunities",
+      "url": "/investors",
       "icons": [
         {
-          "src": "/icons/shop.png",
+          "src": "/images/logo/favicon.png",
           "sizes": "96x96"
         }
       ]
     },
     {
-      "name": "AI Assistant",
-      "short_name": "AI",
-      "description": "Access your personal AI assistant",
-      "url": "/ai",
+      "name": "Careers",
+      "short_name": "Careers",
+      "description": "Join our team",
+      "url": "/careers",
       "icons": [
         {
-          "src": "/icons/ai.png",
+          "src": "/images/logo/favicon.png",
           "sizes": "96x96"
         }
       ]
@@ -110,7 +110,7 @@
       "url": "/contact-sales",
       "icons": [
         {
-          "src": "/icons/sales.png",
+          "src": "/images/logo/favicon.png",
           "sizes": "96x96"
         }
       ]

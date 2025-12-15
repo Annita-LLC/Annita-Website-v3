@@ -23,11 +23,9 @@ import {
   Laptop
 } from 'lucide-react'
 import Button from '@/components/ui/Button'
-import WaitlistForm from '@/components/ui/WaitlistForm'
 
 const V3AnnouncementSection = () => {
   const [activeTab, setActiveTab] = useState('coming')
-  const [isWaitlistOpen, setIsWaitlistOpen] = useState(false)
 
   const v3Features = [
     {
@@ -110,12 +108,7 @@ const V3AnnouncementSection = () => {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <div className="inline-flex items-center px-4 py-2 rounded-full bg-orange-100 text-orange-700 text-sm font-medium mb-6">
-              <Zap className="w-4 h-4 mr-2" />
-              🚨 Something BIG is coming to Africa
-            </div>
-            
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 mb-6">
+            <h2 className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-bold text-gray-900 mb-6">
               Annita <span className="text-orange-600">3.0</span>
             </h2>
             
@@ -132,27 +125,47 @@ const V3AnnouncementSection = () => {
 
           {/* Tab Navigation */}
           <div className="flex justify-center mb-12">
-            <div className="bg-white rounded-full p-2 shadow-lg border border-gray-200">
-              <button
-                onClick={() => setActiveTab('coming')}
-                className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
-                  activeTab === 'coming'
-                    ? 'bg-orange-600 text-white shadow-lg'
-                    : 'text-gray-600 hover:text-gray-900'
-                }`}
-              >
-                What's Coming (V3.0)
-              </button>
-              <button
-                onClick={() => setActiveTab('current')}
-                className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
-                  activeTab === 'current'
-                    ? 'bg-green-600 text-white shadow-lg'
-                    : 'text-gray-600 hover:text-gray-900'
-                }`}
-              >
-                What We Have Now (V1.0)
-              </button>
+            <div className="relative bg-white/80 backdrop-blur-sm rounded-2xl p-2 shadow-xl border border-gray-200/50 overflow-hidden">
+              {/* Background gradient effect */}
+              <div className="absolute inset-0 bg-gradient-to-r from-orange-50/50 to-green-50/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+
+              <div className="relative flex">
+                <button
+                  onClick={() => setActiveTab('coming')}
+                  className={`relative px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold transition-all duration-300 overflow-hidden ${
+                    activeTab === 'coming'
+                      ? 'bg-gradient-to-r from-orange-500 to-orange-600 text-white shadow-lg transform scale-105'
+                      : 'text-gray-600 hover:text-orange-600 hover:bg-orange-50/50'
+                  }`}
+                >
+                  <span className="relative z-10 flex items-center gap-2">
+                    <Zap className="w-4 h-4" />
+                    <span className="hidden sm:inline">Annita 3.0</span>
+                    <span className="sm:hidden">V3.0</span>
+                  </span>
+                  {activeTab === 'coming' && (
+                    <div className="absolute inset-0 bg-gradient-to-r from-orange-400 to-red-500 opacity-20 animate-pulse" />
+                  )}
+                </button>
+
+                <button
+                  onClick={() => setActiveTab('current')}
+                  className={`relative px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold transition-all duration-300 overflow-hidden ${
+                    activeTab === 'current'
+                      ? 'bg-gradient-to-r from-green-500 to-emerald-600 text-white shadow-lg transform scale-105'
+                      : 'text-gray-600 hover:text-green-600 hover:bg-green-50/50'
+                  }`}
+                >
+                  <span className="relative z-10 flex items-center gap-2">
+                    <CheckCircle className="w-4 h-4" />
+                    <span className="hidden sm:inline">Annita V1.0</span>
+                    <span className="sm:hidden">V1.0</span>
+                  </span>
+                  {activeTab === 'current' && (
+                    <div className="absolute inset-0 bg-gradient-to-r from-green-400 to-emerald-500 opacity-20 animate-pulse" />
+                  )}
+                </button>
+              </div>
             </div>
           </div>
 
@@ -242,15 +255,6 @@ const V3AnnouncementSection = () => {
                     >
                       Visit Live Marketplace
                     </Button>
-                    <Button
-                      variant="outline"
-                      size="lg"
-                      icon={Star}
-                      className="text-lg font-bold border-orange-300 text-orange-700 hover:bg-orange-50"
-                      onClick={() => setIsWaitlistOpen(true)}
-                    >
-                      Join Waitlist
-                    </Button>
                   </div>
                 </div>
               </div>
@@ -261,11 +265,6 @@ const V3AnnouncementSection = () => {
         </div>
       </div>
 
-      {/* Waitlist Form Modal */}
-      <WaitlistForm 
-        isOpen={isWaitlistOpen} 
-        onClose={() => setIsWaitlistOpen(false)} 
-      />
     </section>
   )
 }

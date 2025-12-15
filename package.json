@@ -17,8 +17,6 @@
     "@headlessui/react": "^1.7.17",
     "@hookform/resolvers": "^3.3.2",
     "@types/node": "^20",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
     "@vercel/analytics": "^1.1.1",
     "autoprefixer": "^10.0.1",
     "clsx": "^2.0.0",
@@ -38,7 +36,9 @@
     "zod": "^3.22.4"
   },
   "devDependencies": {
-    "eslint": "^8",
-    "eslint-config-next": "14.2.31"
+    "@types/react": "^18.3.0",
+    "@types/react-dom": "^18.3.0",
+    "eslint": "^9.0.0",
+    "eslint-config-next": "^16.0.10"
   }
 }

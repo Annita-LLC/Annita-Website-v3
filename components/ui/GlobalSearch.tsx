@@ -16,35 +16,26 @@ interface SearchResult {
 }
 
 const searchData: SearchResult[] = [
-  // Personal Services
-  { id: 'marketplace-v1', title: 'Live Marketplace V1.0 (Upgraded)', description: 'Upgraded version with new features - Create account now!', href: 'https://shop.an-nita.com/', category: 'Personal', icon: ShoppingCart, isExternal: true },
-  { id: 'annitapay', title: 'AnnitaPay', description: 'Secure digital payments for personal use', href: '/services/annitapay', category: 'Personal', icon: CreditCard },
-  { id: 'ai-personal', title: 'Annita AI Personal', description: 'Personal AI assistant for daily tasks', href: '/ai/personal', category: 'Personal', icon: Zap },
-  { id: 'shopping', title: 'Annita Marketplace', description: 'Multivendor Ecommerce Shopping Place', href: '/services/shopping', category: 'Personal', icon: ShoppingCart },
-  
-  // Business Services
-  { id: 'global-market', title: 'Annita Global Market', description: 'International marketplace for businesses', href: '/services/global-market', category: 'Business', icon: ShoppingCart },
-  { id: 'annitapay-business', title: 'AnnitaPay Business', description: 'Business payment solutions', href: '/services/annitapay-business', category: 'Business', icon: CreditCard },
-  { id: 'ai-business', title: 'Annita AI Business', description: 'AI-powered business tools', href: '/services/ai', category: 'Business', icon: Zap },
-  { id: 'logistics', title: 'Annita Logistics Network', description: 'Supply chain & delivery management', href: '/services/logistics', category: 'Business', icon: Truck },
-  { id: 'ads', title: 'Annita Ads', description: 'Advertising platform for businesses', href: '/services/ads', category: 'Business', icon: FileText },
-  { id: 'erp', title: 'Annita ERP System', description: 'Enterprise resource planning', href: '/services/erp', category: 'Business', icon: FileText },
-  
   // Company
   { id: 'about', title: 'About Us', description: 'Our story and mission', href: '/about', category: 'Company', icon: Users },
-  { id: 'demo', title: 'Demo', description: 'Interactive demo of Annita 3.0', href: '/demo', category: 'Company', icon: FileText },
-  { id: 'the100', title: 'The 100', description: 'Youth empowerment initiative', href: '/the100', category: 'Company', icon: Users },
   { id: 'investors', title: 'Investors', description: 'Investment opportunities and company info', href: '/investors', category: 'Company', icon: FileText },
-  { id: 'pricing', title: 'Pricing', description: 'Transparent pricing plans', href: '/pricing', category: 'Company', icon: FileText },
-  { id: 'business-model', title: 'Business Model', description: 'Our revenue model and strategy', href: '/business-model', category: 'Company', icon: FileText },
+  { id: 'team', title: 'Team', description: 'Meet our talented team', href: '/team', category: 'Company', icon: Users },
   { id: 'awards', title: 'Awards & Recognition', description: 'Our achievements and recognition', href: '/awards', category: 'Company', icon: FileText },
   { id: 'careers', title: 'Careers', description: 'Join our team', href: '/careers', category: 'Company', icon: Users },
   { id: 'apply', title: 'Apply Now', description: 'Submit your application', href: '/careers/apply', category: 'Company', icon: Users },
-  
+  { id: 'partners', title: 'Partners', description: 'Partner with Annita', href: '/partners', category: 'Company', icon: Users },
+  { id: 'partner-apply', title: 'Partner Application', description: 'Apply to become a partner', href: '/partners/apply', category: 'Company', icon: Users },
+  { id: 'ideas', title: 'Ideas & Tips', description: 'Share ideas and feedback', href: '/ideas', category: 'Company', icon: FileText },
+
   // Support
-  { id: 'contact-us', title: 'Contact Us', description: 'Get in touch with our team', href: '/contact-us', category: 'Support', icon: Users },
-  { id: 'report-issues', title: 'Report Issues', description: 'Report bugs and issues', href: '/support/report-issues', category: 'Support', icon: FileText },
+  { id: 'contact', title: 'Contact', description: 'Get in touch with our team', href: '/contact', category: 'Support', icon: Users },
   { id: 'contact-sales', title: 'Contact Sales', description: 'Talk to our business development team', href: '/contact-sales', category: 'Support', icon: Users },
+
+  // Legal
+  { id: 'privacy', title: 'Privacy Policy', description: 'How we handle your data', href: '/privacy', category: 'Legal', icon: FileText },
+  { id: 'terms', title: 'Terms of Service', description: 'Our terms and conditions', href: '/terms', category: 'Legal', icon: FileText },
+  { id: 'cookies', title: 'Cookie Policy', description: 'Learn about cookies', href: '/cookies', category: 'Legal', icon: FileText },
+  { id: 'security', title: 'Security', description: 'Security practices', href: '/legal/security', category: 'Legal', icon: FileText },
 ]
 
 export default function GlobalSearch() {

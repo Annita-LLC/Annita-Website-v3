@@ -50,7 +50,7 @@ const CookieConsent = ({ onPreferencesChange }: CookieConsentProps) => {
     const hasShownInSession = sessionStorage.getItem('annita-cookie-shown')
     
     if (!existingConsent && !hasShownInSession) {
-      // Show popup after 5 seconds to allow fundraising popup to show first
+      // Show popup after 5 seconds
       const timer = setTimeout(() => {
         setIsVisible(true)
         sessionStorage.setItem('annita-cookie-shown', 'true')

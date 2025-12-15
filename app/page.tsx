@@ -1,9 +1,7 @@
 'use client'
 
-import { useState, useEffect } from 'react'
 import dynamic from 'next/dynamic'
 import SEOHead from '@/components/seo/SEOHead'
-import WelcomeLoader from '@/components/ui/WelcomeLoader'
 import HeroSection from '@/components/sections/hero/HeroSection'
 
 // Lazy-load below-the-fold sections to reduce initial payload
@@ -14,20 +12,6 @@ const TrustedPartnersSection = dynamic(() => import('@/components/sections/Trust
 const CTASection = dynamic(() => import('@/components/sections/CTASection'), { ssr: false })
 
 export default function HomePage() {
-  const [showWelcome, setShowWelcome] = useState(false)
-
-  useEffect(() => {
-    // Check if welcome loader has been shown in this session
-    const hasShownWelcome = sessionStorage.getItem('annita-welcome-shown')
-    if (!hasShownWelcome) {
-      setShowWelcome(true)
-    }
-  }, [])
-
-  const handleWelcomeComplete = () => {
-    sessionStorage.setItem('annita-welcome-shown', 'true')
-    setShowWelcome(false)
-  }
 
   const homeStructuredData = {
     "@context": "https://schema.org",
@@ -78,14 +62,6 @@ export default function HomePage() {
         "priceCurrency": "USD"
       }
     }
-  }
-
-  if (showWelcome) {
-    return (
-      <div className="fixed inset-0 z-[60]">
-        <WelcomeLoader onComplete={handleWelcomeComplete} />
-      </div>
-    )
   }
 
   return (

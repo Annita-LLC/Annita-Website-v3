@@ -24,13 +24,11 @@ import {
   Rocket
 } from 'lucide-react'
 import Button from '@/components/ui/Button'
-import WaitlistForm from '@/components/ui/WaitlistForm'
 
 
 const PartnersPage = () => {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-100px" })
-  const [isWaitlistOpen, setIsWaitlistOpen] = useState(false)
 
   const partnerTypes = [
     {
@@ -374,11 +372,6 @@ const PartnersPage = () => {
           </div>
         </div>
 
-        {/* Waitlist Form Modal */}
-        <WaitlistForm 
-          isOpen={isWaitlistOpen} 
-          onClose={() => setIsWaitlistOpen(false)} 
-        />
       </section>
     </div>
   )

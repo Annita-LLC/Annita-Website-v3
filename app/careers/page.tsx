@@ -25,12 +25,10 @@ import {
 } from 'lucide-react'
 import Link from 'next/link'
 import { useFormSubmission, formValidations } from '@/lib/hooks/useFormSubmission'
-import WaitlistForm from '@/components/ui/WaitlistForm'
 import DownloadChoiceModal from '@/components/ui/DownloadChoiceModal'
 
 export default function CareersPage() {
   const [selectedPosition, setSelectedPosition] = useState('')
-  const [isWaitlistOpen, setIsWaitlistOpen] = useState(false)
   const [isDownloadModalOpen, setIsDownloadModalOpen] = useState(false)
   const [formData, setFormData] = useState({
     name: '',
@@ -675,13 +673,6 @@ export default function CareersPage() {
                   <ExternalLink className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
                   Try Marketplace V1.0
                 </button>
-                <button 
-                  onClick={() => setIsWaitlistOpen(true)}
-                  className="inline-flex items-center justify-center border-2 border-white text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold hover:bg-white hover:text-orange-600 transition-colors duration-200 text-sm sm:text-base"
-                >
-                  <Star className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
-                  Join V3.0 Waitlist
-                </button>
               </div>
             </motion.div>
           </div>
@@ -689,10 +680,6 @@ export default function CareersPage() {
       </section>
 
       {/* Waitlist Modal */}
-      <WaitlistForm
-        isOpen={isWaitlistOpen}
-        onClose={() => setIsWaitlistOpen(false)}
-      />
 
       {/* Download Choice Modal */}
       <DownloadChoiceModal

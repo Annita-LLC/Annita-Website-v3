@@ -107,35 +107,6 @@ const Navigation = () => {
 
   const navItems = [
     { name: 'Home', href: '/' },
-    { 
-      name: 'Individual', 
-      href: '#',
-      dropdown: [
-        { name: 'Live Marketplace V1.0 (Upgraded)', href: 'https://shop.an-nita.com/', icon: ShoppingCart, description: 'Upgraded version with new features - Create account now!', isExternal: true },
-        { name: 'Annita Marketplace', href: '/services/ecommerce', icon: ShoppingCart, description: 'Multivendor Ecommerce Shopping Place with countless MSMEs stores to shop from' },
-        { name: 'AnnitaPay', href: '/services/annitapay', icon: CreditCard, description: 'Secure digital payments' },
-        { name: 'Annita AI', href: '/services/ai', icon: Zap, description: 'Personal AI assistant' },
-        { name: 'Annita Messaging', href: '/services/connect', icon: MessageSquare, description: 'Encrypted messaging with file sharing and video calls' },
-        { name: 'Build Your Idea', href: '/build', icon: Code, description: 'AI-powered development for apps, websites & more' },
-      ]
-    },
-    { 
-      name: 'MSMEs', 
-      href: '#',
-      dropdown: [
-        { name: 'Live Marketplace V1.0 (Upgraded)', href: 'https://shop.an-nita.com/', icon: ShoppingCart, description: 'Upgraded version with new features - Create account now!', isExternal: true },
-        { name: 'Annita Marketplace', href: '/services/ecommerce', icon: ShoppingCart, description: 'Multivendor Ecommerce Shopping Place with countless MSMEs stores to shop from' },
-        { name: 'AnnitaPay', href: '/services/annitapay', icon: CreditCard, description: 'Secure digital payments' },
-        { name: 'Annita AI', href: '/services/ai', icon: Zap, description: 'AI-powered business tools' },
-        { name: 'Annita Logistics', href: '/services/logistics', icon: Truck, description: 'On-demand delivery network with real-time tracking' },
-        { name: 'Annita Global Market', href: '/services/global-market', icon: Globe, description: 'Access suppliers across Africa' },
-        { name: 'Annita Ads', href: '/services/ads', icon: Megaphone, description: 'Marketing and advertising solutions' },
-        { name: 'Annita ERP System', href: '/services/erp', icon: FileText, description: 'Integrated ERP for your business' },
-        { name: 'Annita Email Service', href: '/services/email', icon: Mail, description: 'Business-grade email service' },
-        { name: 'Annita Connect', href: '/services/connect', icon: MessageSquare, description: 'Communication & Marketing Suite' },
-        { name: 'Build Your Solution', href: '/build', icon: Code, description: 'AI-powered development for apps, websites & business solutions' },
-      ]
-    },
 
     { 
       name: 'Company', 
@@ -143,14 +114,9 @@ const Navigation = () => {
       dropdown: [
         { name: 'About Us', href: '/about', icon: Users, description: 'Our story and mission' },
         { name: 'Investors', href: '/investors', icon: DollarSign, description: 'Investment opportunities and company info' },
-        { name: 'Demo', href: '/demo', icon: Play, description: 'Interactive demo of Annita 3.0' },
         { name: 'Ideas & Tips', href: '/ideas', icon: Lightbulb, description: 'Share ideas and feedback' },
-        { name: 'Build Your Idea', href: '/build', icon: Code, description: 'AI-powered development for apps, websites & more' },
         { name: 'Become a Partner', href: '/partners', icon: Users, description: 'Partner with Annita' },
         { name: 'Partner Application', href: '/partners/apply', icon: UserCheckIcon, description: 'Apply to become a partner' },
-        { name: 'CSR', href: '/company/csr', icon: Heart, description: 'Corporate social responsibility and impact' },
-        { name: 'The 100', href: '/the100', icon: Target, description: 'Youth empowerment initiative' },
-        { name: 'Business Model', href: '/business-model', icon: Building2, description: 'Our revenue model and strategy' },
         { name: 'Awards & Recognition', href: '/awards', icon: Award, description: 'Our achievements and recognition' },
         { name: 'Careers', href: '/careers', icon: Briefcase, description: 'Join our team' },
         { name: 'Apply Now', href: '/careers/apply', icon: UserPlus, description: 'Submit your application' },
@@ -166,9 +132,6 @@ const Navigation = () => {
         { name: 'Report Issues', href: '/support/report-issues', icon: HelpCircle, description: 'Report bugs and issues' },
         { name: 'Contact Sales', href: '/contact-sales', icon: Phone, description: 'Talk to our business development team' },
         { name: 'Pitch Deck', href: '/documents/Annita-Pitch Deck.pdf', icon: FileTextIcon, description: 'Company pitch deck', isExternal: true },
-        { name: 'Business Plan', href: '/documents/annita-business-plan.pdf', icon: FileTextIcon, description: 'Annita business plan', isExternal: true },
-        { name: 'Financial Model', href: '/documents/annita-financial-model.pdf', icon: FileTextIcon, description: 'Financial model', isExternal: true },
-        { name: 'Company Factsheet', href: '/documents/annita-factsheet.pdf', icon: FileTextIcon, description: 'Quick company facts', isExternal: true },
         { name: 'Privacy Policy', href: '/privacy', icon: Shield, description: 'How we handle your data' },
         { name: 'Terms of Service', href: '/terms', icon: FileCheck, description: 'Our terms and conditions' },
         { name: 'Cookie Policy', href: '/cookies', icon: Cookie, description: 'Learn about cookies' },
@@ -214,9 +177,9 @@ const Navigation = () => {
                 {/* White inner container */}
                 <div className="w-full h-full rounded-[10px] bg-white dark:bg-gray-800 flex items-center justify-center">
                   {/* Logo image */}
-                  <img 
-                    src="/images/logo/annita-logo-new.svg" 
-                    alt="Annita Logo" 
+                  <img
+                    src="/images/logo/annita-real-logo.png"
+                    alt="Annita Logo"
                     width={28}
                     height={28}
                     className="w-5 h-5 sm:w-6 sm:h-6 object-contain rounded-lg transition-all duration-300 select-none"
@@ -227,7 +190,7 @@ const Navigation = () => {
               </div>
               {/* Brand text */}
               <div className="flex flex-col">
-                <span className="text-xs sm:text-sm md:text-base font-semibold leading-tight text-orange-500 dark:text-orange-400">
+                <span className="text-lg sm:text-xl lg:text-2xl font-bold text-orange-500 dark:text-orange-400">
                   Annita
                 </span>
               </div>
@@ -395,9 +358,9 @@ const Navigation = () => {
                       {/* White inner container */}
                       <div className="w-full h-full rounded-[10px] bg-white dark:bg-gray-800 flex items-center justify-center">
                         {/* Logo image */}
-                        <img 
-                          src="/images/logo/annita-logo-new.svg" 
-                          alt="Annita Logo" 
+                        <img
+                          src="/images/logo/annita-real-logo.png"
+                          alt="Annita Logo"
                           width={28}
                           height={28}
                           className="w-5 h-5 object-contain rounded-lg transition-all duration-300 select-none"

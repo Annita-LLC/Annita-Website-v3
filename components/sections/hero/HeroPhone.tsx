@@ -125,7 +125,7 @@ const HeroPhone = () => {
                   {/* Floating Content */}
                   <div 
                     className="absolute inset-0 flex items-center justify-center p-2 sm:p-3 md:p-4 cursor-pointer"
-                    onClick={() => window.location.href = '/demo'}
+                    onClick={() => window.location.href = '/discover'}
                   >
                     <motion.div
                       initial={{ opacity: 0, y: 20 }}

@@ -17,13 +17,11 @@ import {
   TrendingUp
 } from 'lucide-react'
 import Button from '@/components/ui/Button'
-import WaitlistForm from '@/components/ui/WaitlistForm'
 
 const HeroSection = () => {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-100px" })
   const router = useRouter()
-  const [isWaitlistOpen, setIsWaitlistOpen] = useState(false)
 
   const stats = [
     { number: '3,000+', label: 'Active Vendors', icon: Users, color: 'from-blue-500 to-cyan-500' },
@@ -59,7 +57,7 @@ const HeroSection = () => {
               </div>
               
             {/* Heading */}
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 leading-tight">
+            <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold mb-6 leading-tight">
               Empowering <span className="text-orange-200">Africa's Future</span> Through Innovation
               </h1>
               
@@ -90,19 +88,10 @@ const HeroSection = () => {
                 variant="gradient"
                 size="xl"
                 icon={Play}
-                onClick={() => router.push('/demo')}
+                onClick={() => router.push('/discover')}
                 className="bg-white text-orange-600 px-8 py-4 rounded-xl font-bold hover:bg-orange-50 transition-all duration-200 flex items-center justify-center shadow-lg hover:shadow-xl transform hover:scale-105"
               >
                 Demo
-              </Button>
-              <Button
-                variant="glass"
-                size="xl"
-                icon={Download}
-              onClick={() => setIsWaitlistOpen(true)}
-                className="border-2 border-white text-white px-8 py-4 rounded-xl font-bold hover:bg-white hover:text-orange-600 transition-all duration-200 flex items-center justify-center shadow-lg hover:shadow-xl transform hover:scale-105"
-              >
-                Join Waitlist
               </Button>
               </div>
             </motion.div>
@@ -147,10 +136,6 @@ const HeroSection = () => {
       </div>
     </section>
 
-    <WaitlistForm 
-      isOpen={isWaitlistOpen} 
-      onClose={() => setIsWaitlistOpen(false)} 
-    />
     </>
   )
 }

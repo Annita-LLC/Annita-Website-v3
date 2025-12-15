@@ -49,13 +49,11 @@ import {
   ChevronRight
 } from 'lucide-react'
 import Button from '@/components/ui/Button'
-import WaitlistForm from '@/components/ui/WaitlistForm'
 
 const HeroSection = () => {
   const [currentSlide, setCurrentSlide] = useState(0)
   const [currentFeature, setCurrentFeature] = useState(0)
   const [showNotification, setShowNotification] = useState(false)
-  const [isWaitlistOpen, setIsWaitlistOpen] = useState(false)
 
   const features = [
     { icon: Globe, text: 'Pan-African Reach' },
@@ -71,7 +69,7 @@ const HeroSection = () => {
       subtitle: "Empowering MSMEs across the continent with comprehensive digital solutions",
       cta: "Get Started Free",
       ctaIcon: Play,
-      secondaryCta: "Join Waitlist",
+      secondaryCta: "Contact Us",
       secondaryIcon: Download,
       background: "from-primary-900 via-primary-800 to-secondary-800"
     },
@@ -237,9 +235,9 @@ const HeroSection = () => {
                   className="text-base sm:text-lg font-bold backdrop-blur-xl shadow-2xl hover:shadow-white/10 transform hover:-translate-y-1 transition-all duration-300"
                   onClick={() => {
                     if (slides[currentSlide].secondaryCta === "Watch Demo") {
-                      window.location.href = '/demo'
-                    } else if (slides[currentSlide].secondaryCta === "Join Waitlist") {
-                      setIsWaitlistOpen(true)
+                      window.location.href = '/discover'
+                    } else if (slides[currentSlide].secondaryCta === "Contact Us") {
+                      window.location.href = '/contact'
                     } else if (slides[currentSlide].secondaryCta === "Learn More") {
                       // Handle learn more action
                     }
@@ -310,20 +308,6 @@ const HeroSection = () => {
         <ChevronRight className="w-6 h-6" />
       </button>
 
-      {/* Slide Indicators */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 flex space-x-2">
-        {slides.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => goToSlide(index)}
-            className={`w-3 h-3 rounded-full transition-all duration-300 ${
-              index === currentSlide 
-                ? 'bg-white scale-125' 
-                : 'bg-white/40 hover:bg-white/60'
-            }`}
-          />
-        ))}
-      </div>
 
       {/* Scroll Indicator */}
       <motion.div
@@ -345,10 +329,6 @@ const HeroSection = () => {
         </motion.div>
       </motion.div>
 
-      <WaitlistForm
-        isOpen={isWaitlistOpen}
-        onClose={() => setIsWaitlistOpen(false)}
-      />
 
     </div>
   )

@@ -219,7 +219,7 @@ export function FinancialCounter({
       viewport={{ once: true, margin: "-100px" }}
       className={`text-center p-6 ${className}`}
     >
-      <div className="text-3xl sm:text-4xl font-bold text-green-600 dark:text-green-400 mb-2">
+      <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-green-600 dark:text-green-400 mb-2">
         <AnimatedCounter 
           end={value} 
           prefix={currency}

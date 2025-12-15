@@ -34,7 +34,6 @@ import {
 } from 'lucide-react'
 import Button from '@/components/ui/Button'
 import Link from 'next/link'
-import WaitlistForm from '@/components/ui/WaitlistForm'
 import DownloadChoiceModal from '@/components/ui/DownloadChoiceModal'
 
 const HeroSection = () => {
@@ -42,7 +41,6 @@ const HeroSection = () => {
   const isInView = useInView(ref, { once: true, margin: "0px" })
   const [currentSlide, setCurrentSlide] = useState(0)
   const [currentVideo, setCurrentVideo] = useState(0)
-  const [isWaitlistOpen, setIsWaitlistOpen] = useState(false)
   const [isDownloadModalOpen, setIsDownloadModalOpen] = useState(false)
   const [isPaused, setIsPaused] = useState(false)
   const [isVideoPlaying, setIsVideoPlaying] = useState(false)
@@ -68,8 +66,8 @@ const HeroSection = () => {
   const slides = [
     {
       id: 1,
-      badge: "🚨 Something BIG is Coming",
-      title: "Annita 3.0 - The Future",
+      badge: "Annita 3.0 Coming Soon",
+      title: "The Future",
       titleHighlight: "of Business in Africa",
       subtitle: "Built for African businesses. Cross-border trade, institutional backing, and seamless integration.",
       cta: "Try Annita-v1.0",
@@ -80,7 +78,7 @@ const HeroSection = () => {
     },
     {
       id: 2,
-      badge: "Upgraded Marketplace V1.0",
+      badge: "Live Marketplace",
       title: "Real Vendors, Real Sales",
       titleHighlight: "Right Now",
       subtitle: "3,000+ KYC-verified vendors across Africa. Secure transactions guaranteed.",
@@ -104,9 +102,9 @@ const HeroSection = () => {
     },
     {
       id: 4,
-      badge: "Escrow Protection",
-      title: "Secure Transactions",
-      titleHighlight: "Built for Trust",
+      badge: "Secure Transactions",
+      title: "Built for",
+      titleHighlight: "Trust",
       subtitle: "Funds held securely until delivery confirmed. Integrated financing solutions.",
       cta: "Discover AI",
       ctaIcon: Brain,
@@ -116,18 +114,6 @@ const HeroSection = () => {
     },
     {
       id: 5,
-      badge: "Built in Liberia",
-      title: "Rising with the Continent",
-      titleHighlight: "the Continent",
-      subtitle: "Built for African businesses. Institutional backing and a connected ecosystem.",
-      cta: "Join Movement",
-      ctaIcon: Globe,
-      secondaryCta: "Partner With Us",
-      secondaryIcon: Heart,
-      background: "from-yellow-50 via-white to-orange-50/30"
-    },
-    {
-      id: 6,
       badge: "AI-Powered",
       title: "Smart Business",
       titleHighlight: "Intelligence",
@@ -137,54 +123,6 @@ const HeroSection = () => {
       secondaryCta: "Try AI Now",
       secondaryIcon: Zap,
       background: "from-teal-50 via-white to-cyan-50/30"
-    },
-    {
-      id: 7,
-      badge: "Offline Ready",
-      title: "Works Without",
-      titleHighlight: "Internet",
-      subtitle: "Continue trading and managing your business even with limited connectivity.",
-      cta: "Learn More",
-      ctaIcon: WifiOff,
-      secondaryCta: "See Features",
-      secondaryIcon: Smartphone,
-      background: "from-indigo-50 via-white to-purple-50/30"
-    },
-    {
-      id: 8,
-      badge: "Multi-Currency",
-      title: "54+ African",
-      titleHighlight: "Currencies",
-      subtitle: "Trade confidently in local currencies with real-time conversion and settlements.",
-      cta: "Start Trading",
-      ctaIcon: DollarSign,
-      secondaryCta: "View Rates",
-      secondaryIcon: CreditCard,
-      background: "from-emerald-50 via-white to-green-50/30"
-    },
-    {
-      id: 9,
-      badge: "Logistics Network",
-      title: "Same-Day",
-      titleHighlight: "Delivery",
-      subtitle: "Comprehensive logistics network across Africa with real-time tracking.",
-      cta: "Track Delivery",
-      ctaIcon: Truck,
-      secondaryCta: "Find Drivers",
-      secondaryIcon: MapPin,
-      background: "from-orange-50 via-white to-red-50/30"
-    },
-    {
-      id: 10,
-      badge: "Marketing Suite",
-      title: "Grow Your",
-      titleHighlight: "Business",
-      subtitle: "AI-powered marketing tools and analytics to reach more customers effectively.",
-      cta: "Start Marketing",
-      ctaIcon: BarChart3,
-      secondaryCta: "View Analytics",
-      secondaryIcon: TrendingUp,
-      background: "from-pink-50 via-white to-rose-50/30"
     }
   ]
 
@@ -384,7 +322,7 @@ const HeroSection = () => {
                       size="lg"
                       icon={slides[currentSlide].ctaIcon}
                       className="w-full sm:w-auto text-base font-semibold px-8 py-4 shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
-                      onClick={() => window.open('/learn-more-v3', '_blank')}
+                      onClick={() => window.open('/about', '_blank')}
                     >
                       {slides[currentSlide].cta}
                     </Button>
@@ -486,46 +424,13 @@ const HeroSection = () => {
 
               </div>
 
-              {/* Video Indicators */}
-              <div className="flex justify-center mt-4 space-x-2">
-                {videos.map((_, index) => (
-                  <button
-                    key={index}
-                    onClick={() => goToVideo(index)}
-                    className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                      index === currentVideo 
-                        ? 'bg-orange-500 scale-125' 
-                        : 'bg-gray-400 hover:bg-gray-600'
-                    }`}
-                  />
-                ))}
-              </div>
             </div>
           </motion.div>
         </div>
       </div>
 
 
-      {/* Slide Indicators */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 flex space-x-2">
-        {slides.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => goToSlide(index)}
-            className={`w-3 h-3 rounded-full transition-all duration-300 ${
-              index === currentSlide 
-                ? 'bg-orange-500 scale-125' 
-                : 'bg-gray-400 hover:bg-gray-600'
-            }`}
-          />
-        ))}
-      </div>
 
-      {/* Waitlist Form Modal */}
-      <WaitlistForm 
-        isOpen={isWaitlistOpen} 
-        onClose={() => setIsWaitlistOpen(false)} 
-      />
 
       {/* Download Choice Modal */}
       <DownloadChoiceModal

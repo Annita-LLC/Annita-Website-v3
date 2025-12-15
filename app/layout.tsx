@@ -6,24 +6,27 @@ import { Toaster } from 'react-hot-toast'
 import Navigation from '@/components/layout/Navigation'
 import Footer from '@/components/layout/Footer'
 import CookieConsent from '@/components/ui/CookieConsent'
-import FundraisingPopupWrapper from '@/components/ui/FundraisingPopupWrapper'
 import OfflineBanner from '@/components/ui/OfflineBanner'
 import PerformanceOptimizer from '@/components/ui/PerformanceOptimizer'
 import PerformanceMonitor from '@/components/ui/PerformanceMonitor'
 import { ThemeProvider } from '@/lib/theme'
 
-const zenDots = Zen_Dots({ 
+const zenDots = Zen_Dots({
   subsets: ['latin'],
   weight: ['400'],
   variable: '--font-zen-dots',
   display: 'swap',
+  preload: true,
+  fallback: ['system-ui', 'sans-serif']
 })
 
-const lora = Lora({ 
+const lora = Lora({
   subsets: ['latin'],
   weight: ['400', '500', '600', '700'],
   variable: '--font-lora',
   display: 'swap',
+  preload: false, // Only preload critical fonts
+  fallback: ['Georgia', 'serif']
 })
 
 export const metadata: Metadata = {
@@ -86,6 +89,13 @@ export const metadata: Metadata = {
       'fr-FR': '/fr',
       'pt-PT': '/pt',
     },
+  },
+  viewport: {
+    width: 'device-width',
+    initialScale: 1,
+    maximumScale: 5,
+    userScalable: true,
+    viewportFit: 'cover',
   },
   openGraph: {
     type: 'website',
@@ -217,7 +227,6 @@ export default function RootLayout({
             </div>
           </PerformanceOptimizer>
           <Analytics />
-          <FundraisingPopupWrapper />
           <CookieConsent />
           <OfflineBanner />
           <PerformanceMonitor />

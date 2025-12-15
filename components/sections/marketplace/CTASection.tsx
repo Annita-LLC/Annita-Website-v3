@@ -31,11 +31,11 @@ const CTASection = () => {
             <ShoppingCart className="w-10 h-10" />
           </div>
           
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
+          <h2 className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-bold mb-6">
             Ready to Start <span className="text-blue-200">Shopping</span>?
           </h2>
           
-          <p className="text-xl sm:text-2xl text-white/90 mb-8 max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl lg:text-2xl text-white/90 mb-8 max-w-3xl mx-auto">
             Join millions of customers who trust Annita Marketplace for secure, fast, and reliable shopping across Africa.
           </p>
 
@@ -66,7 +66,7 @@ const CTASection = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-center"
             >
-              <div className="text-3xl sm:text-4xl font-bold text-blue-200 mb-2">3,000+</div>
+              <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-blue-200 mb-2">3,000+</div>
               <div className="text-white/80">Active Vendors</div>
             </motion.div>
             
@@ -76,7 +76,7 @@ const CTASection = () => {
               transition={{ duration: 0.6, delay: 0.3 }}
               className="text-center"
             >
-              <div className="text-3xl sm:text-4xl font-bold text-blue-200 mb-2">50,000+</div>
+              <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-blue-200 mb-2">50,000+</div>
               <div className="text-white/80">Products Listed</div>
             </motion.div>
             
@@ -86,7 +86,7 @@ const CTASection = () => {
               transition={{ duration: 0.6, delay: 0.4 }}
               className="text-center"
             >
-              <div className="text-3xl sm:text-4xl font-bold text-blue-200 mb-2">99.9%</div>
+              <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-blue-200 mb-2">99.9%</div>
               <div className="text-white/80">Secure Transactions</div>
             </motion.div>
           </div>
@@ -114,7 +114,7 @@ const CTASection = () => {
                 size="lg"
                 icon={Play}
                 className="backdrop-blur-xl shadow-2xl hover:shadow-white/10"
-                onClick={() => window.location.href = '/demo'}
+                onClick={() => window.location.href = '/discover'}
               >
                 Watch Demo
               </Button>

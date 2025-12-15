@@ -34,25 +34,22 @@ const Footer = () => {
         { name: 'About Us', href: '/about' },
         { name: 'Investors', href: '/investors' },
         { name: 'Careers', href: '/careers' },
-        { name: 'Demo', href: '/demo' },
-        { name: 'Build Your Idea', href: '/build' },
+        { name: 'Partners', href: '/partners' },
+        { name: 'Team', href: '/team' },
       ]
     },
     {
       title: 'Support',
       links: [
-        { name: 'Contact Us', href: '/contact-us' },
+        { name: 'Contact', href: '/contact' },
         { name: 'Contact Sales', href: '/contact-sales' },
-        { name: 'Report Issues', href: '/support/report-issues' }
       ]
     },
     {
       title: 'Resources',
       links: [
-        { name: 'Pitch Deck', href: '/documents/Annita-Pitch Deck.pdf', isExternal: true },
-        { name: 'Business Plan', href: '/documents/annita-business-plan.pdf', isExternal: true },
-        { name: 'Financial Model', href: '/documents/annita-financial-model.pdf', isExternal: true },
-        { name: 'Company Factsheet', href: '/documents/annita-factsheet.pdf', isExternal: true }
+        { name: 'Awards', href: '/awards' },
+        { name: 'Ideas & Tips', href: '/ideas' },
       ]
     },
     {
@@ -96,19 +93,32 @@ const Footer = () => {
           {/* Company Info */}
           <div className="xl:col-span-2">
             <Link href="/" className="flex items-center space-x-2 sm:space-x-3 mb-4 sm:mb-6 group">
-              <div className="relative">
-                <div className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 flex items-center justify-center transition-all duration-300 transform hover:scale-105">
-                  <img 
-                    src="/images/logo/annita-logo-new.svg" 
-                    alt="Annita Logo" 
-                    className="w-full h-full"
+              {/* Gradient border container */}
+              <div className="relative w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-gradient-to-br from-primary-500 to-primary-600 p-[2px] flex-shrink-0">
+                {/* White inner container */}
+                <div className="w-full h-full rounded-[10px] bg-white dark:bg-gray-800 flex items-center justify-center transition-all duration-300 transform hover:scale-105">
+                  {/* Logo image */}
+                  <img
+                    src="/images/logo/annita-real-logo.png"
+                    alt="Annita Logo"
+                    width={28}
+                    height={28}
+                    className="w-5 h-5 sm:w-6 sm:h-6 object-contain rounded-lg transition-all duration-300 select-none"
+                    style={{ width: '100%', height: '100%', objectFit: 'contain' }}
+                    draggable="false"
                   />
                 </div>
               </div>
-                              <span className="text-lg sm:text-xl lg:text-2xl font-bold text-orange-500 dark:text-orange-400">Annita</span>
+              {/* Brand text */}
+              <div className="flex flex-col">
+                <span className="text-lg sm:text-xl lg:text-2xl font-bold text-orange-500 dark:text-orange-400">
+                  Annita
+                </span>
+              </div>
             </Link>
-            <p className="text-gray-400 mb-4 sm:mb-6 leading-relaxed text-sm sm:text-base">
-              Africa's all-in-one platform for commerce, payments, AI, and logistics—built to help MSMEs and individuals grow.
+            <p className="text-gray-400 mb-4 sm:mb-6 leading-relaxed text-xs sm:text-sm">
+              Annita is Africa's first all-in-one digital platform, combining e-commerce, fintech, AI, communication, marketing, logistics, and more into a single ecosystem.
+              We empower MSMEs and individuals with innovative solutions, connectivity, and convenience.
             </p>
             
             {/* Contact Info */}

@@ -202,7 +202,7 @@ export default function InteractiveHotspot({
                           <div className="aspect-video bg-gray-100 dark:bg-gray-700 rounded-lg flex items-center justify-center">
                             <button 
                               className="flex items-center space-x-2 px-6 py-3 bg-orange-500 hover:bg-orange-600 text-white rounded-lg transition-colors"
-                              onClick={() => window.location.href = '/demo'}
+                              onClick={() => window.location.href = '/discover'}
                             >
                               <Play className="w-5 h-5" />
                               <span>Watch Demo Video</span>

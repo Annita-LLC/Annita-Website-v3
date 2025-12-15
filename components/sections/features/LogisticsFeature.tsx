@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { motion, useInView } from 'framer-motion'
+import Image from 'next/image'
 import { 
   Truck, 
   MapPin, 
@@ -155,10 +156,15 @@ const LogisticsFeature = () => {
             {/* Large Demo Image */}
             <div className="relative mx-auto group">
               <div className="relative overflow-hidden rounded-2xl shadow-2xl border-2 border-gray-100 bg-gradient-to-br from-gray-50 to-white p-2">
-                <img 
-                  src="/images/DEMO-Images/Annita Logistics.webp" 
-                  alt="Annita Logistics Demo" 
+                <Image
+                  src="/images/DEMO-Images/Annita Logistics.webp"
+                  alt="Annita Logistics Demo"
+                  width={800}
+                  height={600}
                   className="w-full h-auto rounded-xl transition-transform duration-300 group-hover:scale-105"
+                  loading="lazy"
+                  placeholder="blur"
+                  blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAwIiBoZWlnaHQ9IjYwMCIgdmlld0JveD0iMCAwIDgwMCA2MDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI4MDAiIGhlaWdodD0iNjAwIiBmaWxsPSIjRjNGNEY2Ii8+Cjwvc3ZnPg=="
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent rounded-xl pointer-events-none"></div>
               </div>

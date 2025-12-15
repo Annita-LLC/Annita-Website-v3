@@ -1,9 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',
+  // Remove static export to enable SSR and optimizations
+  // output: 'export',
   trailingSlash: true,
   images: {
-    unoptimized: true,
+    // Enable Next.js image optimization
+    // unoptimized: false, // default is false, so remove this
     domains: [
       'images.unsplash.com',
       'via.placeholder.com',
@@ -13,6 +15,9 @@ const nextConfig = {
     ],
     formats: ['image/webp', 'image/avif'],
     minimumCacheTTL: 31536000, // 1 year
+    // Optimize image sizes
+    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
+    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
   },
   compress: true,
   poweredByHeader: false,
@@ -23,6 +28,15 @@ const nextConfig = {
   },
   experimental: {
     optimizePackageImports: ['lucide-react', 'framer-motion'],
+    // Enable faster builds
+    turbo: {
+      rules: {
+        '*.svg': {
+          loaders: ['@svgr/webpack'],
+          as: '*.js',
+        },
+      },
+    },
   },
   webpack: (config, { dev, isServer }) => {
     // Optimize bundle size
@@ -34,20 +48,37 @@ const nextConfig = {
             test: /[\\/]node_modules[\\/]/,
             name: 'vendors',
             chunks: 'all',
+            priority: 10,
           },
           framerMotion: {
             test: /[\\/]node_modules[\\/]framer-motion[\\/]/,
             name: 'framer-motion',
             chunks: 'all',
+            priority: 20,
           },
           lucide: {
             test: /[\\/]node_modules[\\/]lucide-react[\\/]/,
             name: 'lucide-react',
             chunks: 'all',
+            priority: 20,
+          },
+          // Separate heavy libraries
+          react: {
+            test: /[\\/]node_modules[\\/]react[\\/]/,
+            name: 'react',
+            chunks: 'all',
+            priority: 30,
           },
         },
       }
     }
+
+    // Add compression and optimization
+    if (!dev) {
+      config.optimization.minimize = true
+      config.optimization.usedExports = true
+    }
+
     return config
   },
 }

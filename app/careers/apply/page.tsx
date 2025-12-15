@@ -27,10 +27,8 @@ import {
 } from 'lucide-react'
 import Link from 'next/link'
 import { useFormSubmission, formValidations } from '@/lib/hooks/useFormSubmission'
-import WaitlistForm from '@/components/ui/WaitlistForm'
 
 export default function ApplyPage() {
-  const [isWaitlistOpen, setIsWaitlistOpen] = useState(false)
   const [formData, setFormData] = useState({
     first_name: '',
     last_name: '',
@@ -713,13 +711,6 @@ export default function ApplyPage() {
                   <ExternalLink className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
                   Try Marketplace V1.0
                 </a>
-                <button 
-                  onClick={() => setIsWaitlistOpen(true)}
-                  className="inline-flex items-center justify-center border-2 border-white text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold hover:bg-white hover:text-orange-600 transition-colors duration-200 text-sm sm:text-base"
-                >
-                  <Star className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
-                  Join V3.0 Waitlist
-                </button>
               </div>
             </motion.div>
           </div>
@@ -727,10 +718,6 @@ export default function ApplyPage() {
       </section>
 
       {/* Waitlist Modal */}
-      <WaitlistForm
-        isOpen={isWaitlistOpen}
-        onClose={() => setIsWaitlistOpen(false)}
-      />
     </>
   )
 }

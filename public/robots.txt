@@ -60,41 +60,12 @@ Disallow: /package-lock.json
 Allow: /about
 Allow: /contact
 Allow: /contact-sales
-Allow: /ai
-Allow: /ai/personal
-Allow: /ai/business
-Allow: /services
-Allow: /services/annitapay
-Allow: /services/shopping
-Allow: /services/entertainment
-Allow: /services/health
-Allow: /services/education
-Allow: /services/social
-Allow: /services/global-market
-Allow: /services/annitapay-business
-Allow: /services/ai
-Allow: /services/logistics
-Allow: /services/ads
-Allow: /services/erp
-Allow: /services/connect
-Allow: /marketplace
-Allow: /payments
-Allow: /enterprise
-Allow: /pricing
-Allow: /download
-Allow: /support
-
+Allow: /investors
 Allow: /team
 Allow: /careers
-Allow: /investors
 Allow: /partners
-Allow: /blog
-Allow: /gallery
 Allow: /awards
-Allow: /the100
-Allow: /logistics
-Allow: /connect
-Allow: /status
+Allow: /ideas
 
 # Block image and media crawlers from non-media content
 User-agent: Googlebot-Image

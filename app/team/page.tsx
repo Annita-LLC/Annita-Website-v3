@@ -200,7 +200,7 @@ const TeamPage = () => {
       role: "Head of Community Development",
       department: "community",
       image: "/images/team/michael-chen-community.jpg",
-      bio: "Overseeing The 100 Initiative and other youth empowerment programs.",
+      bio: "Leading youth empowerment and community development initiatives.",
       email: "michael.chen@annita.com",
       linkedin: "https://linkedin.com/in/michaelchen",
       twitter: "https://twitter.com/michaelchen",

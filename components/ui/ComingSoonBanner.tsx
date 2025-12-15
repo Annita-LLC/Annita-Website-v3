@@ -37,7 +37,7 @@ const ComingSoonBanner = () => {
                 <div className="flex items-center space-x-2">
                   <span className="font-semibold text-lg">Coming Soon 2026</span>
                   <span className="text-blue-100">|</span>
-                  <span className="text-blue-100">The 100 Initiative Launch</span>
+                  <span className="text-blue-100">Youth Empowerment Programs</span>
                 </div>
               </div>
               

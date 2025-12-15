@@ -22,11 +22,9 @@ import {
   ExternalLink
 } from 'lucide-react'
 import Button from '@/components/ui/Button'
-import WaitlistForm from '@/components/ui/WaitlistForm'
 import SEOHead from '@/components/seo/SEOHead'
 
 const PartnerApplyPage = () => {
-  const [isWaitlistOpen, setIsWaitlistOpen] = useState(false)
   const benefits = [
     {
       icon: TrendingUp,
@@ -505,13 +503,6 @@ const PartnerApplyPage = () => {
                   <ExternalLink className="w-5 h-5 mr-2" />
                   Try Marketplace V1.0
                 </a>
-                <button 
-                  onClick={() => setIsWaitlistOpen(true)}
-                  className="inline-flex items-center justify-center border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-orange-600 transition-colors duration-200"
-                >
-                  <Star className="w-5 h-5 mr-2" />
-                  Join V3.0 Waitlist
-                </button>
               </div>
             </div>
           </div>
@@ -519,10 +510,6 @@ const PartnerApplyPage = () => {
       </section>
 
       {/* Waitlist Form Modal */}
-      <WaitlistForm 
-        isOpen={isWaitlistOpen} 
-        onClose={() => setIsWaitlistOpen(false)} 
-      />
     </div>
     </>
   )
