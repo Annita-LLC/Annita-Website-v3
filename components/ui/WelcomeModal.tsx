@@ -32,27 +32,42 @@ export default function WelcomeModal({ isOpen, onClose }: WelcomeModalProps) {
             Welcome to Annita!
           </h2>
 
-          <p className="text-gray-600 dark:text-gray-300 mb-6 text-sm leading-relaxed">
+          <p className="text-gray-600 dark:text-gray-300 mb-4 text-sm leading-relaxed">
             Africa's first all-in-one digital platform. Explore our comprehensive features and see how we're transforming business across the continent.
           </p>
 
-          <div className="flex flex-col gap-3">
+          <div className="bg-purple-50 dark:bg-purple-900/20 rounded-lg p-3 mb-6 border border-purple-200 dark:border-purple-800">
+            <p className="text-purple-800 dark:text-purple-200 text-xs leading-relaxed">
+              <strong>Need something custom?</strong> We build tailored tech solutions including web apps, mobile apps, system integrations, and cloud solutions specifically designed for your unique business needs.
+            </p>
+          </div>
+
+          <div className="flex flex-col gap-2">
             <Link
               href="/features"
               onClick={onClose}
-              className="w-full bg-gradient-to-r from-orange-500 to-orange-600 text-white px-6 py-3 rounded-lg font-semibold hover:from-orange-600 hover:to-orange-700 transition-all duration-200 shadow-lg flex items-center justify-center"
+              className="w-full bg-gradient-to-r from-orange-500 to-orange-600 text-white px-4 py-2.5 rounded-lg font-semibold hover:from-orange-600 hover:to-orange-700 transition-all duration-200 shadow-lg flex items-center justify-center text-sm"
             >
               Explore Features
-              <ArrowRight className="w-4 h-4 ml-2" />
+              <ArrowRight className="w-3.5 h-3.5 ml-2" />
+            </Link>
+
+            <Link
+              href="/solutions"
+              onClick={onClose}
+              className="w-full bg-gradient-to-r from-purple-500 to-purple-600 text-white px-4 py-2.5 rounded-lg font-semibold hover:from-purple-600 hover:to-purple-700 transition-all duration-200 shadow-lg flex items-center justify-center text-sm"
+            >
+              Custom Solutions
+              <ArrowRight className="w-3.5 h-3.5 ml-2" />
             </Link>
 
             <Link
               href="/maintenance"
               onClick={onClose}
-              className="w-full border-2 border-orange-500 text-orange-600 px-6 py-3 rounded-lg font-semibold hover:bg-orange-500 hover:text-white transition-all duration-200 flex items-center justify-center"
+              className="w-full border-2 border-orange-500 text-orange-600 px-4 py-2.5 rounded-lg font-semibold hover:bg-orange-500 hover:text-white transition-all duration-200 flex items-center justify-center text-sm"
             >
               Try V1.0 Now
-              <ExternalLink className="w-4 h-4 ml-2" />
+              <ExternalLink className="w-3.5 h-3.5 ml-2" />
             </Link>
           </div>
 
