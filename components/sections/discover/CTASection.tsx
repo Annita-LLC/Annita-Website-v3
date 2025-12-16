@@ -59,3 +59,6 @@ const CTASection = ({ onWaitlistOpen }: CTASectionProps) => {
 
 export default CTASection
 
+
+
+

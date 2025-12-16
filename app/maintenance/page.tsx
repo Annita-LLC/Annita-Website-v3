@@ -55,6 +55,16 @@ export default function MaintenancePage() {
 
           <Link href="/contact">
             <Button
+              variant="primary"
+              size="lg"
+              className="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white"
+            >
+              Contact Us
+            </Button>
+          </Link>
+
+          <Link href="/contact">
+            <Button
               variant="outline"
               size="lg"
               className="w-full sm:w-auto border-slate-600 text-slate-300 hover:bg-slate-700"

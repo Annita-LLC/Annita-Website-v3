@@ -229,34 +229,11 @@ const V3AnnouncementSection = () => {
                     <h3 className="text-xl font-bold mb-2 text-gray-900">{feature.title}</h3>
                     <p className="text-gray-600 mb-4">{feature.description}</p>
                     <div className="flex items-center text-green-600 text-sm font-medium group-hover:text-green-700">
-                      <span>Try it now</span>
+                      <span>Live</span>
                       <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
                     </div>
                   </motion.div>
                 ))}
-              </div>
-
-              {/* Current Platform CTA */}
-              <div className="text-center">
-                <div className="bg-gradient-to-r from-green-50 to-green-100 rounded-2xl p-8 border border-green-200">
-                  <h3 className="text-2xl sm:text-3xl font-bold mb-4 text-gray-900">
-                    Experience Annita V1.0 Right Now
-                  </h3>
-                  <p className="text-lg text-gray-600 mb-6">
-                    See what we've built. Real vendors, real customers, and real transactions.
-                  </p>
-                  <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                    <Button
-                      variant="gradient"
-                      size="lg"
-                      icon={ExternalLink}
-                      className="text-lg font-bold"
-                      onClick={() => window.location.href = '/maintenance'}
-                    >
-                      Visit Live Marketplace
-                    </Button>
-                  </div>
-                </div>
               </div>
             </motion.div>
           )}
