@@ -847,41 +847,6 @@ export default function SolutionsPage() {
       </section>
 
       {/* Contact Info */}
-      <section className="py-16 sm:py-20 bg-gray-50">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="bg-white rounded-2xl p-8 shadow-lg"
-            >
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">Ready to Discuss Your Project?</h3>
-              <p className="text-gray-600 mb-8">
-                Get in touch with our technical experts to discuss your custom solution requirements.
-              </p>
-              <div className="grid md:grid-cols-3 gap-6">
-                <div className="flex flex-col items-center">
-                  <Mail className="w-8 h-8 text-orange-500 mb-2" />
-                  <div className="font-semibold text-gray-900">Email</div>
-                  <div className="text-gray-600">solutions@annita.com</div>
-                </div>
-                <div className="flex flex-col items-center">
-                  <Phone className="w-8 h-8 text-orange-500 mb-2" />
-                  <div className="font-semibold text-gray-900">Phone</div>
-                  <div className="text-gray-600">+231 77 505 7227</div>
-                </div>
-                <div className="flex flex-col items-center">
-                  <MessageSquare className="w-8 h-8 text-orange-500 mb-2" />
-                  <div className="font-semibold text-gray-900">Live Chat</div>
-                  <div className="text-gray-600">Available 24/7</div>
-                </div>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
     </>
   )
 }

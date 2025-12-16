@@ -26,7 +26,7 @@ const HeroSection = () => {
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Content */}
             <motion.div
               ref={ref}
@@ -35,24 +35,74 @@ const HeroSection = () => {
               transition={{ duration: 0.8 }}
             >
             {/* Badge */}
-            <div className="inline-flex items-center px-3 sm:px-6 py-2 sm:py-3 rounded-full bg-white/20 backdrop-blur-sm text-white text-xs sm:text-sm font-semibold mb-4 sm:mb-6 lg:mb-8 shadow-lg border border-white/30">
-              <Building2 className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
+            <div className="inline-flex items-center px-6 py-3 rounded-full bg-white/20 backdrop-blur-sm text-white text-sm font-semibold mb-8 shadow-lg border border-white/30">
+              <Building2 className="w-5 h-5 mr-2" />
                 About Annita
               </div>
-              
+
             {/* Heading */}
-            <h1 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold mb-4 sm:mb-6 leading-tight">
+            <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold mb-6 leading-tight">
               Empowering <span className="text-orange-200">Africa's Future</span> Through Innovation
               </h1>
 
             {/* Description */}
-            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-orange-100 mb-6 sm:mb-8 leading-relaxed max-w-2xl">
+            <p className="text-xl sm:text-2xl text-orange-100 mb-8 leading-relaxed max-w-2xl">
               Africa's first all-in-one digital platform combining e-commerce, fintech, AI, and more. Empowering MSMEs with innovative solutions and connectivity.
             </p>
+
+            {/* Quick About Options */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+              <div className="flex items-center space-x-3 bg-white/10 backdrop-blur-sm rounded-lg p-4">
+                <Globe className="w-6 h-6 text-orange-200" />
+                <div>
+                  <div className="font-semibold text-white">Our Mission</div>
+                  <div className="text-sm text-orange-200">Transforming African Business</div>
+                </div>
+              </div>
+              <div className="flex items-center space-x-3 bg-white/10 backdrop-blur-sm rounded-lg p-4">
+                <Heart className="w-6 h-6 text-orange-200" />
+                <div>
+                  <div className="font-semibold text-white">Our Values</div>
+                  <div className="text-sm text-orange-200">Innovation & Impact</div>
+                </div>
+              </div>
+            </div>
 
 
             </motion.div>
 
+          {/* Visualization Card */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              animate={isInView ? { opacity: 1, x: 0 } : {}}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="relative"
+            >
+            <div className="bg-white/10 backdrop-blur-sm p-8 rounded-3xl shadow-2xl border border-white/20">
+              <div className="text-center mb-6">
+                <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                  <Building2 className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-2xl font-bold text-white mb-2">Annita</h3>
+                <p className="text-orange-200">Africa's Leading Digital Platform</p>
+                </div>
+
+              <div className="space-y-4">
+                <div className="flex items-center justify-between p-4 bg-white/10 rounded-xl">
+                  <span className="text-white">Founded</span>
+                  <span className="font-bold text-orange-200">2021</span>
+                  </div>
+                <div className="flex items-center justify-between p-4 bg-white/10 rounded-xl">
+                  <span className="text-white">Mission</span>
+                  <span className="font-bold text-orange-200">5M MSMEs</span>
+                    </div>
+                <div className="flex items-center justify-between p-4 bg-white/10 rounded-xl">
+                  <span className="text-white">Coverage</span>
+                  <span className="font-bold text-orange-200">54 Countries</span>
+                    </div>
+                </div>
+              </div>
+            </motion.div>
         </div>
       </div>
     </section>

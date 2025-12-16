@@ -41,12 +41,79 @@ import {
   Monitor,
   Layers,
   Sparkles,
-  MessageSquare
+  MessageSquare,
+  Clock,
+  ChevronDown,
+  ChevronUp
 } from 'lucide-react'
 import Link from 'next/link'
 
 export default function FeaturesPage() {
   const [activeCategory, setActiveCategory] = useState('all')
+  const [openFaq, setOpenFaq] = useState<number | null>(null)
+
+  const faqs = [
+    {
+      id: 1,
+      icon: Sparkles,
+      question: "How do I get started with Annita?",
+      answer: "Simply sign up for a free account. Our onboarding process takes less than 5 minutes, and you can start using features immediately."
+    },
+    {
+      id: 2,
+      icon: Award,
+      question: "Are all features included in one plan?",
+      answer: "Yes! Unlike other platforms, Annita includes all features in our comprehensive package. No hidden fees or premium add-ons."
+    },
+    {
+      id: 3,
+      icon: Shield,
+      question: "Is Annita secure for financial transactions?",
+      answer: "Absolutely. We use bank-grade encryption and comply with international security standards. All transactions are protected by our escrow system."
+    },
+    {
+      id: 4,
+      icon: Settings,
+      question: "Can I integrate Annita with my existing systems?",
+      answer: "Yes! Our API and custom solutions team can help integrate Annita with your existing tools, CRM, or ERP systems."
+    },
+    {
+      id: 5,
+      icon: Users,
+      question: "What types of businesses can use Annita?",
+      answer: "Annita is designed for Micro, Small, and Medium Enterprises (MSMEs) across Africa. From e-commerce stores to service providers, logistics companies to fintech startups - our platform adapts to various business models."
+    },
+    {
+      id: 6,
+      icon: Globe,
+      question: "Which African countries does Annita serve?",
+      answer: "Annita operates across all 54 African countries, providing localized payment methods, language support, and compliance with regional regulations. We're expanding our reach continent-wide."
+    },
+    {
+      id: 7,
+      icon: Smartphone,
+      question: "Is Annita available on mobile devices?",
+      answer: "Yes! Annita offers a fully responsive web platform and native mobile apps for iOS and Android. You can manage your business from any device, anywhere."
+    },
+    {
+      id: 8,
+      icon: TrendingUp,
+      question: "How does AI help my business on Annita?",
+      answer: "Our AI features include automated customer support, predictive analytics for inventory, smart recommendations, fraud detection, and business intelligence insights to help you make data-driven decisions."
+    },
+    {
+      id: 9,
+      icon: Clock,
+      question: "What kind of support does Annita provide?",
+      answer: "We offer 24/7 customer support through multiple channels including live chat, email, and phone. Our technical team is available to help with setup, troubleshooting, and optimization."
+    },
+    {
+      id: 10,
+      icon: CreditCard,
+      question: "What payment methods does Annita support?",
+      answer: "Annita supports mobile money (M-Pesa, Airtel Money, MTN), bank transfers, credit/debit cards, and digital wallets. We integrate with local payment processors across Africa for seamless transactions."
+    }
+  ]
 
   const categories = [
     { id: 'all', name: 'All Features', icon: Sparkles },
@@ -746,26 +813,55 @@ export default function FeaturesPage() {
               </p>
             </div>
 
-            <div className="space-y-6">
-              <div className="bg-gray-50 rounded-lg p-6">
-                <h3 className="text-lg font-semibold text-gray-900 mb-3">How do I get started with Annita?</h3>
-                <p className="text-gray-600">Simply sign up for a free account. Our onboarding process takes less than 5 minutes, and you can start using features immediately.</p>
-              </div>
+            <div className="space-y-4">
+              {faqs.map((faq, index) => {
+                const isOpen = openFaq === index
+                return (
+                  <motion.div
+                    key={faq.id}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                    viewport={{ once: true }}
+                    className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-300"
+                  >
+                    <button
+                      onClick={() => setOpenFaq(isOpen ? null : index)}
+                      className="w-full flex items-center justify-between p-6 text-left hover:bg-gray-50 transition-colors duration-200"
+                    >
+                      <div className="flex items-center">
+                        <div className="w-10 h-10 bg-gradient-to-br from-orange-500 to-red-500 rounded-xl flex items-center justify-center mr-4">
+                          <faq.icon className="w-5 h-5 text-white" />
+                        </div>
+                        <h3 className="text-lg font-semibold text-gray-900">{faq.question}</h3>
+                      </div>
+                      <div className="flex-shrink-0 ml-4">
+                        {isOpen ? (
+                          <ChevronDown className="w-5 h-5 text-orange-600" />
+                        ) : (
+                          <ChevronUp className="w-5 h-5 text-orange-600" />
+                        )}
+                      </div>
+                    </button>
 
-              <div className="bg-gray-50 rounded-lg p-6">
-                <h3 className="text-lg font-semibold text-gray-900 mb-3">Are all features included in one plan?</h3>
-                <p className="text-gray-600">Yes! Unlike other platforms, Annita includes all features in our comprehensive package. No hidden fees or premium add-ons.</p>
-              </div>
-
-              <div className="bg-gray-50 rounded-lg p-6">
-                <h3 className="text-lg font-semibold text-gray-900 mb-3">Is Annita secure for financial transactions?</h3>
-                <p className="text-gray-600">Absolutely. We use bank-grade encryption and comply with international security standards. All transactions are protected by our escrow system.</p>
-              </div>
-
-              <div className="bg-gray-50 rounded-lg p-6">
-                <h3 className="text-lg font-semibold text-gray-900 mb-3">Can I integrate Annita with my existing systems?</h3>
-                <p className="text-gray-600">Yes! Our API and custom solutions team can help integrate Annita with your existing tools, CRM, or ERP systems.</p>
-              </div>
+                    <motion.div
+                      initial={false}
+                      animate={{
+                        height: isOpen ? 'auto' : 0,
+                        opacity: isOpen ? 1 : 0
+                      }}
+                      transition={{ duration: 0.3 }}
+                      className="overflow-hidden"
+                    >
+                      <div className="px-6 pb-6">
+                        <div className="border-t border-gray-100 pt-4">
+                          <p className="text-gray-600 leading-relaxed">{faq.answer}</p>
+                        </div>
+                      </div>
+                    </motion.div>
+                  </motion.div>
+                )
+              })}
             </div>
           </div>
         </div>

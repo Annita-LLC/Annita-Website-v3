@@ -7,6 +7,7 @@ import AnnitaPayFeature from './features/AnnitaPayFeature'
 import LogisticsFeature from './features/LogisticsFeature'
 import ConnectFeature from './features/ConnectFeature'
 import AIFeature from './features/AIFeature'
+import CustomSolutionsFeature from './features/CustomSolutionsFeature'
 
 const FeaturesSection = () => {
   const ref = useRef(null)
@@ -43,6 +44,7 @@ const FeaturesSection = () => {
           <LogisticsFeature />
           <ConnectFeature />
           <AIFeature />
+          <CustomSolutionsFeature />
         </div>
       </div>
     </section>
