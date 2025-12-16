@@ -75,6 +75,7 @@ import {
   List,
   Grid3X3
 } from 'lucide-react'
+import CTASection from '@/components/sections/CTASection'
 
 interface Idea {
   id: number
@@ -1401,6 +1402,12 @@ const IdeasPage = () => {
             </div>
           </div>
         </section>
+
+        {/* CTA Section */}
+        <CTASection
+          title="Ready to Share Your Ideas?"
+          subtitle="Join thousands of innovators contributing to Africa's digital transformation. Your ideas help shape the future of business across the continent."
+        />
       </div>
     </>
   )

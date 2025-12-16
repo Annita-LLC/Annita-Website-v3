@@ -11,6 +11,12 @@ const V1MarketplaceSection = dynamic(() => import('@/components/sections/V1Marke
 const TrustedPartnersSection = dynamic(() => import('@/components/sections/TrustedPartnersSection'), { ssr: false })
 const CTASection = dynamic(() => import('@/components/sections/CTASection'), { ssr: false })
 
+// Home page specific CTA content
+const homeCTAProps = {
+  title: "Ready to Transform Your Business?",
+  subtitle: "Join thousands of MSMEs already using Annita to grow their revenue, reach new customers, and streamline their operations across Africa."
+}
+
 export default function HomePage() {
 
   const homeStructuredData = {
@@ -151,7 +157,7 @@ export default function HomePage() {
         <V3AnnouncementSection />
         <V1MarketplaceSection />
         <TrustedPartnersSection />
-        <CTASection />
+        <CTASection {...homeCTAProps} />
     </>
   )
 }

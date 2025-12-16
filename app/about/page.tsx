@@ -6,7 +6,13 @@ import MissionVisionSection from '@/components/sections/about/MissionVisionSecti
 import ValuesSection from '@/components/sections/about/ValuesSection'
 import JourneySection from '@/components/sections/about/JourneySection'
 import TeamSection from '@/components/sections/about/TeamSection'
-import CTASection from '@/components/sections/about/CTASection'
+import CTASection from '@/components/sections/CTASection'
+
+// About page specific CTA content
+const aboutCTAProps = {
+  title: "Ready to Join Our Mission?",
+  subtitle: "Be part of Africa's largest digital transformation. Connect with our team to learn how we're empowering MSMEs across the continent."
+}
 
 const AboutPage = () => {
 
@@ -111,7 +117,7 @@ const AboutPage = () => {
         <ValuesSection />
         <JourneySection />
         <TeamSection />
-        <CTASection />
+        <CTASection {...aboutCTAProps} />
       </div>
     </>
   )

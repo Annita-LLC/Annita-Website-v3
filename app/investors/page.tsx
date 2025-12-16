@@ -39,6 +39,7 @@ import {
   Code
 } from 'lucide-react'
 import Button from '@/components/ui/Button'
+import CTASection from '@/components/sections/CTASection'
 
 const InvestorsPage = () => {
   const [activeTab, setActiveTab] = useState('overview')
@@ -1400,51 +1401,12 @@ const InvestorsPage = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="bg-gradient-to-r from-orange-500 via-red-500 to-purple-600 text-white py-16 sm:py-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-3xl sm:text-4xl font-bold mb-6"
-          >
-            Ready to Invest in Africa's Future?
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-xl text-orange-100 mb-8 max-w-2xl mx-auto"
-          >
-            Join us in building the digital infrastructure that will power Africa's economic growth
-          </motion.p>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center"
-          >
-            <Button
-              variant="gradient"
-              size="lg"
-              className="flex items-center space-x-2 bg-white text-orange-600 hover:bg-gray-100"
-              onClick={() => openContactForm('call')}
-            >
-              <span>Schedule Investor Call</span>
-              <ExternalLink className="w-5 h-5" />
-            </Button>
-            <Button
-              variant="outline"
-              size="lg"
-              className="flex items-center space-x-2 border-white text-white hover:bg-white hover:text-orange-600"
-              onClick={() => openContactForm('message')}
-            >
-              <Mail className="w-5 h-5" />
-              <span>Contact Investment Team</span>
-            </Button>
-          </motion.div>
-        </div>
-      </section>
+      <CTASection
+        title="Ready to Invest in Africa's Future?"
+        subtitle="Join us in building the digital infrastructure that will power Africa's economic growth. Partner with us to transform the continent's business landscape."
+        primaryButtonText="Schedule Investor Call"
+        secondaryButtonText="Contact Investment Team"
+      />
       </div>
 
       {/* Contact Form Modal */}

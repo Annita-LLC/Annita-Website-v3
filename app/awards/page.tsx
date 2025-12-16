@@ -14,6 +14,7 @@ import {
   Globe,
   Star
 } from 'lucide-react'
+import CTASection from '@/components/sections/CTASection'
 import Link from 'next/link'
 
 export default function AwardsPage() {
@@ -306,39 +307,10 @@ export default function AwardsPage() {
       </div>
 
       {/* CTA Section */}
-      <section className="py-16 sm:py-20 bg-gradient-to-br from-gray-50 to-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center p-8 sm:p-12 bg-gradient-to-r from-orange-500 to-orange-600 rounded-3xl text-white shadow-2xl">
-              <h3 className="text-3xl sm:text-4xl font-bold mb-6">
-                Ready to Transform Your Business?
-              </h3>
-              <p className="text-lg text-orange-100 mb-8 max-w-4xl mx-auto">
-                Join thousands of MSMEs already using Annita to grow their revenue, reach new customers, 
-                and streamline their operations across Africa.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a 
-                  href="https://annita.company.site/products"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center bg-white text-orange-600 px-8 py-4 rounded-xl font-semibold hover:bg-orange-50 transition-colors duration-200 shadow-lg"
-                >
-                  <Globe className="w-5 h-5 mr-2" />
-                  Try V1.0 Now
-                </a>
-                <a 
-                  href="/download"
-                  className="inline-flex items-center justify-center border-2 border-white text-white px-8 py-4 rounded-xl font-semibold hover:bg-white hover:text-orange-600 transition-colors duration-200"
-                >
-                  <Download className="w-5 h-5 mr-2" />
-                  Join V3.0 Waitlist
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <CTASection
+        title="Ready to Transform Your Business?"
+        subtitle="Celebrate your achievements and join thousands of MSMEs using Annita to grow their revenue, reach new customers, and streamline operations across Africa."
+      />
     </>
   )
 }

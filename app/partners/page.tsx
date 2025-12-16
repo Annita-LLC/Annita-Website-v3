@@ -24,6 +24,7 @@ import {
   Rocket
 } from 'lucide-react'
 import Button from '@/components/ui/Button'
+import CTASection from '@/components/sections/CTASection'
 
 
 const PartnersPage = () => {
@@ -332,44 +333,12 @@ const PartnersPage = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 sm:py-20 bg-gradient-to-br from-gray-50 to-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8 }}
-              className="text-center p-8 bg-gradient-to-r from-orange-500 to-orange-600 rounded-2xl text-white"
-            >
-              <h3 className="text-3xl sm:text-4xl font-bold mb-6">
-                Ready to Partner with Annita?
-              </h3>
-              <p className="text-lg text-orange-100 mb-8 max-w-4xl mx-auto">
-                Join our ecosystem of innovators, entrepreneurs, and visionaries building the future of digital commerce across Africa.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a 
-                  href="/partners/apply"
-                  className="inline-flex items-center justify-center bg-white text-orange-600 px-8 py-4 rounded-xl font-semibold hover:bg-orange-50 transition-colors duration-200 shadow-lg"
-                >
-                  <UserPlus className="w-5 h-5 mr-2" />
-                  Become a Partner
-                </a>
-                <a 
-                  href="https://annita.company.site/products"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center border-2 border-white text-white px-8 py-4 rounded-xl font-semibold hover:bg-white hover:text-orange-600 transition-colors duration-200"
-                >
-                  <ExternalLink className="w-5 h-5 mr-2" />
-                  Try V1.0 Now
-                </a>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-
-      </section>
+      <CTASection
+        title="Ready to Partner with Annita?"
+        subtitle="Join our ecosystem of innovators and entrepreneurs building the future of digital commerce across Africa. Start your partnership journey today."
+        primaryButtonText="Become a Partner"
+        primaryButtonLink="/partners/apply"
+      />
     </div>
   )
 }

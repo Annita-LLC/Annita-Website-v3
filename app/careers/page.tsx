@@ -1,6 +1,7 @@
 'use client'
 
 import SEOHead from '@/components/seo/SEOHead'
+import CTASection from '@/components/sections/CTASection'
 
 export default function CareersPage() {
   return (
@@ -187,25 +188,10 @@ export default function CareersPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 sm:py-20 bg-gradient-to-br from-gray-50 to-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center p-6 sm:p-8 lg:p-12 bg-gradient-to-r from-orange-500 to-orange-600 rounded-2xl text-white shadow-2xl">
-              <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 sm:mb-6">
-                🚨 Something BIG is Coming - Annita 3.0
-              </h3>
-              <p className="text-orange-100 mb-6 sm:mb-8 max-w-2xl mx-auto text-sm sm:text-base lg:text-lg leading-relaxed">
-                Experience our live marketplace V1.0 today, and join the waitlist for the revolutionary V3.0 - offline-ready, AI-powered, and built for everyone in Africa.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
-                <button className="inline-flex items-center justify-center bg-white text-orange-600 px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold hover:bg-orange-50 transition-colors duration-200 shadow-lg text-sm sm:text-base">
-                  Try Marketplace V1.0
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <CTASection
+        title="Ready to Join Our Growing Team?"
+        subtitle="Be part of a passionate team transforming African businesses. Apply now and help us build the future of digital commerce across the continent."
+      />
     </>
   )
 }
