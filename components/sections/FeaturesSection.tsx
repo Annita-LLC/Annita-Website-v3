@@ -14,7 +14,7 @@ const FeaturesSection = () => {
   const isInView = useInView(ref, { once: true, margin: "0px" })
 
   return (
-    <section className="py-16 sm:py-20 bg-gradient-to-br from-gray-50 to-white">
+    <section className="py-8 sm:py-12 bg-gradient-to-br from-gray-50 to-white">
       <div className="container mx-auto px-3 sm:px-4 lg:px-6 xl:px-8">
         <motion.div
           ref={ref}

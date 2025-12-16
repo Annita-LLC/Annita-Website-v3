@@ -4,13 +4,11 @@ import { motion, useInView } from 'framer-motion'
 import Image from 'next/image'
 import {
   Code,
-  Settings,
   Zap,
-  CheckCircle,
-  ArrowRight,
   Smartphone,
   Monitor,
-  Cloud
+  Cloud,
+  Settings
 } from 'lucide-react'
 
 const CustomSolutionsFeature = () => {
@@ -63,46 +61,6 @@ const CustomSolutionsFeature = () => {
           system integrations, and enterprise applications tailored to your specific business needs.
         </motion.p>
 
-        {/* Key Features */}
-        <motion.div
-          initial={{ opacity: 0, x: -20 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.6, delay: 0.6 }}
-          className="space-y-3 mb-8"
-        >
-          <div className="flex items-center space-x-3">
-            <CheckCircle className="w-5 h-5 text-emerald-500 flex-shrink-0" />
-            <span className="text-gray-700">Web Applications & Mobile Apps</span>
-          </div>
-          <div className="flex items-center space-x-3">
-            <CheckCircle className="w-5 h-5 text-emerald-500 flex-shrink-0" />
-            <span className="text-gray-700">API Integrations & System Automation</span>
-          </div>
-          <div className="flex items-center space-x-3">
-            <CheckCircle className="w-5 h-5 text-emerald-500 flex-shrink-0" />
-            <span className="text-gray-700">Cloud Solutions & Database Design</span>
-          </div>
-          <div className="flex items-center space-x-3">
-            <CheckCircle className="w-5 h-5 text-emerald-500 flex-shrink-0" />
-            <span className="text-gray-700">Custom Dashboards & Analytics</span>
-          </div>
-        </motion.div>
-
-        {/* CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.7 }}
-        >
-          <a
-            href="/solutions"
-            className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-emerald-500 to-teal-500 text-white font-semibold rounded-lg hover:from-emerald-600 hover:to-teal-600 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-105"
-          >
-            <Settings className="w-5 h-5 mr-2" />
-            Explore Solutions
-            <ArrowRight className="w-4 h-4 ml-2" />
-          </a>
-        </motion.div>
 
       </div>
 
