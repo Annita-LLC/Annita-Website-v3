@@ -70,19 +70,6 @@ export default function WelcomeModal({ isOpen, onClose }: WelcomeModalProps) {
               <ExternalLink className="w-3.5 h-3.5 ml-2" />
             </Link>
           </div>
-
-          {/* Footer */}
-          <div className="mt-6 pt-4 border-t border-gray-200 dark:border-gray-700">
-            <button
-              onClick={() => {
-                localStorage.setItem('annita-welcome-seen', 'true')
-                onClose()
-              }}
-              className="text-sm text-gray-600 dark:text-gray-400 hover:text-orange-600 transition-colors"
-            >
-              Don't show again
-            </button>
-          </div>
         </div>
       </div>
     </div>

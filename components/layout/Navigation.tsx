@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { motion, AnimatePresence } from 'framer-motion'
+import WelcomeModal from '@/components/ui/WelcomeModal'
 import {
   Menu,
   X,
@@ -96,6 +97,7 @@ const Navigation = () => {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
   const [dropdownTimeout, setDropdownTimeout] = useState<NodeJS.Timeout | null>(null)
   const [isDownloadModalOpen, setIsDownloadModalOpen] = useState(false)
+  const [isWelcomeModalOpen, setIsWelcomeModalOpen] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -303,7 +305,7 @@ const Navigation = () => {
             {/* CTA Buttons */}
             <div className="hidden lg:flex items-center">
               <button
-                onClick={() => window.location.href = '/maintenance'}
+                onClick={() => setIsWelcomeModalOpen(true)}
                 className="btn-primary"
               >
                 <Download className="w-4 h-4 mr-2" />
@@ -491,7 +493,7 @@ const Navigation = () => {
                 <div className="p-6 border-t border-gray-200 dark:border-gray-700">
                   <button
                     onClick={() => {
-                      window.location.href = '/maintenance'
+                      setIsWelcomeModalOpen(true)
                       setIsOpen(false)
                     }}
                     className="flex items-center justify-center w-full px-6 py-3 bg-gradient-to-r from-orange-500 to-orange-600 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-300"
@@ -510,6 +512,12 @@ const Navigation = () => {
       <DownloadChoiceModal
         isOpen={isDownloadModalOpen}
         onClose={() => setIsDownloadModalOpen(false)}
+      />
+
+      {/* Welcome Modal */}
+      <WelcomeModal
+        isOpen={isWelcomeModalOpen}
+        onClose={() => setIsWelcomeModalOpen(false)}
       />
     </>
   )
