@@ -1,38 +1,22 @@
 "use client"
 
-import { useRef, useState } from 'react'
+import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
-import { useRouter } from 'next/navigation'
-import { 
-  Heart, 
-  Globe, 
-  Users, 
-  Award, 
-  Target,
-  ArrowRight,
-  Play,
-  Download,
+import {
+  Heart,
+  Globe,
   Building2,
-  Rocket,
-  TrendingUp
+  Rocket
 } from 'lucide-react'
-import Button from '@/components/ui/Button'
 
 const HeroSection = () => {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-100px" })
-  const router = useRouter()
 
-  const stats = [
-    { number: '3,000+', label: 'Active Vendors', icon: Users, color: 'from-blue-500 to-cyan-500' },
-    { number: '1,500+', label: 'Active Buyers', icon: Users, color: 'from-green-500 to-emerald-500' },
-    { number: '400%', label: 'Growth Rate', icon: TrendingUp, color: 'from-purple-500 to-pink-500' },
-    { number: '1st', label: 'Orange Prize', icon: Award, color: 'from-orange-500 to-red-500' }
-  ]
 
   return (
     <>
-    <section className="relative py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-orange-600 via-orange-700 to-red-600 text-white overflow-hidden">
+    <section className="relative py-8 sm:py-12 md:py-16 lg:py-20 bg-gradient-to-br from-orange-600 via-orange-700 to-red-600 text-white overflow-hidden">
       {/* Animated Background Elements */}
       <div className="absolute inset-0">
         <div className="absolute top-10 left-10 w-20 h-20 bg-white/10 rounded-full animate-pulse"></div>
@@ -42,7 +26,7 @@ const HeroSection = () => {
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
             {/* Content */}
             <motion.div
               ref={ref}
@@ -51,49 +35,22 @@ const HeroSection = () => {
               transition={{ duration: 0.8 }}
             >
             {/* Badge */}
-            <div className="inline-flex items-center px-6 py-3 rounded-full bg-white/20 backdrop-blur-sm text-white text-sm font-semibold mb-8 shadow-lg border border-white/30">
-              <Building2 className="w-5 h-5 mr-2" />
+            <div className="inline-flex items-center px-3 sm:px-6 py-2 sm:py-3 rounded-full bg-white/20 backdrop-blur-sm text-white text-xs sm:text-sm font-semibold mb-4 sm:mb-6 lg:mb-8 shadow-lg border border-white/30">
+              <Building2 className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
                 About Annita
               </div>
               
             {/* Heading */}
-            <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold mb-6 leading-tight">
+            <h1 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold mb-4 sm:mb-6 leading-tight">
               Empowering <span className="text-orange-200">Africa's Future</span> Through Innovation
               </h1>
-              
+
             {/* Description */}
-            <p className="text-xl sm:text-2xl text-orange-100 mb-8 leading-relaxed max-w-2xl">
-              Annita is Africa's first all-in-one digital platform, combining e-commerce, fintech, AI, communication, marketing, logistics, and more into a single ecosystem. We empower MSMEs and individuals with innovative solutions, connectivity, and convenience.
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-orange-100 mb-6 sm:mb-8 leading-relaxed max-w-2xl">
+              Africa's first all-in-one digital platform combining e-commerce, fintech, AI, and more. Empowering MSMEs with innovative solutions and connectivity.
             </p>
 
-              {/* Quick Stats */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 mb-8">
-                {stats.map((stat, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={isInView ? { opacity: 1, y: 0 } : {}}
-                    transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
-                    className="text-center"
-                  >
-                  <div className="text-2xl sm:text-3xl font-bold text-white">{stat.number}</div>
-                  <div className="text-sm text-orange-200">{stat.label}</div>
-                  </motion.div>
-                ))}
-              </div>
 
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button
-                variant="gradient"
-                size="xl"
-                icon={Play}
-                onClick={() => router.push('/discover')}
-                className="bg-white text-orange-600 px-8 py-4 rounded-xl font-bold hover:bg-orange-50 transition-all duration-200 flex items-center justify-center shadow-lg hover:shadow-xl transform hover:scale-105"
-              >
-                Demo
-              </Button>
-              </div>
             </motion.div>
 
           {/* Visualization Card */}
@@ -125,10 +82,6 @@ const HeroSection = () => {
                   <span className="text-white">Vision</span>
                   <span className="font-bold text-orange-200">2035</span>
                     </div>
-                <div className="flex items-center justify-between p-4 bg-white/10 rounded-xl">
-                  <span className="text-white">Orange Prize</span>
-                  <span className="font-bold text-green-300">1st</span>
-                  </div>
                 </div>
               </div>
             </motion.div>

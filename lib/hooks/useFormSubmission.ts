@@ -134,9 +134,9 @@ export function useFormSubmission(options: UseFormSubmissionOptions = {}) {
 // Predefined validation functions for common forms
 export const formValidations = {
   contact: (formData: any) => {
-    if (!formData.first_name?.trim()) return 'First name is required'
-    if (!formData.last_name?.trim()) return 'Last name is required'
+    if (!formData.name?.trim()) return 'Full name is required'
     if (!formData.email?.trim()) return 'Email is required'
+    if (!formData.service?.trim()) return 'Service inquiry is required'
     if (!formData.message?.trim()) return 'Message is required'
     if (formData.message?.length < 10) return 'Message must be at least 10 characters'
     return null

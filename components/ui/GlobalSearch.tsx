@@ -27,7 +27,7 @@ const searchData: SearchResult[] = [
   { id: 'ideas', title: 'Ideas & Tips', description: 'Share ideas and feedback', href: '/ideas', category: 'Company', icon: FileText },
 
   // Support
-  { id: 'contact', title: 'Contact', description: 'Get in touch with our team', href: '/contact', category: 'Support', icon: Users },
+  { id: 'contact', title: 'Contact Us', description: 'Get in touch with our team', href: '/contact', category: 'Support', icon: Users },
   { id: 'contact-sales', title: 'Contact Sales', description: 'Talk to our business development team', href: '/contact-sales', category: 'Support', icon: Users },
 
   // Legal

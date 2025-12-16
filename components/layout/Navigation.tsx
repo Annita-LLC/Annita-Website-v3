@@ -128,8 +128,7 @@ const Navigation = () => {
       dropdown: [
         { name: 'Search', href: '#', icon: Search, description: 'Search for features, pages, or services', isSearchToggle: true },
         { name: 'Theme Settings', href: '#', icon: Settings, description: 'Light, dark, or system theme', isThemeToggle: true },
-        { name: 'Contact Us', href: '/contact-us', icon: Mail, description: 'Get in touch with our team' },
-        { name: 'Report Issues', href: '/support/report-issues', icon: HelpCircle, description: 'Report bugs and issues' },
+        { name: 'Contact Us', href: '/contact', icon: Mail, description: 'Get in touch with our team' },
         { name: 'Contact Sales', href: '/contact-sales', icon: Phone, description: 'Talk to our business development team' },
         { name: 'Pitch Deck', href: '/documents/Annita-Pitch Deck.pdf', icon: FileTextIcon, description: 'Company pitch deck', isExternal: true },
         { name: 'Privacy Policy', href: '/privacy', icon: Shield, description: 'How we handle your data' },

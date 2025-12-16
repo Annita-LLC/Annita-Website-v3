@@ -40,7 +40,7 @@ const Footer = () => {
     {
       title: 'Support',
       links: [
-        { name: 'Contact', href: '/contact' },
+        { name: 'Contact Us', href: '/contact' },
         { name: 'Contact Sales', href: '/contact-sales' },
       ]
     },

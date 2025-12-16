@@ -248,25 +248,25 @@ const HeroSection = () => {
                   transition={{ duration: 0.6, delay: 0.2 }}
                 className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
               >
-                <Button
-                  variant="gradient"
-                  size="lg"
+                    <Button
+                      variant="gradient"
+                      size="lg"
                   icon={ExternalLink}
-                  className="w-full sm:w-auto text-base font-semibold px-8 py-4 shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
+                      className="w-full sm:w-auto text-base font-semibold px-8 py-4 shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
                   onClick={() => window.open('/maintenance', '_blank')}
-                >
+                    >
                   Try V1.0 Now
-                </Button>
-
-                <Button
-                  variant="outline"
-                  size="lg"
+                  </Button>
+                  
+                    <Button
+                      variant="outline"
+                      size="lg"
                   icon={Phone}
-                  className="w-full sm:w-auto text-base font-semibold px-8 py-4 border-2 border-gray-300 hover:border-orange-500 hover:text-orange-600 transform hover:-translate-y-1 transition-all duration-300"
+                      className="w-full sm:w-auto text-base font-semibold px-8 py-4 border-2 border-gray-300 hover:border-orange-500 hover:text-orange-600 transform hover:-translate-y-1 transition-all duration-300"
                   onClick={() => window.location.href = '/contact-sales'}
                 >
                   Contact Sales
-                </Button>
+                  </Button>
               </motion.div>
               </AnimatePresence>
 

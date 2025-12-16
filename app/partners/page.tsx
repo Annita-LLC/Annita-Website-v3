@@ -239,9 +239,6 @@ const PartnersPage = () => {
                     </li>
                   ))}
                 </ul>
-                <button className="w-full bg-gradient-to-r from-blue-600 to-cyan-600 text-white py-3 rounded-lg font-semibold hover:from-blue-700 hover:to-cyan-700 transition-all duration-200 transform hover:scale-105">
-                  Learn More
-                </button>
               </motion.div>
             ))}
           </div>

@@ -313,269 +313,299 @@ export default function CareersPage() {
         </div>
       </section>
 
+      {/* Benefits Section */}
+      <section className="py-16 sm:py-20 bg-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+              Why Join <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-red-600">Annita</span>?
+            </h2>
+            <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
+              Discover the advantages of joining Africa's most innovative digital ecosystem.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {benefits.slice(0, 4).map((benefit, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="group text-center bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
+              >
+                <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <benefit.icon className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-3">{benefit.title}</h3>
+                <p className="text-gray-600 leading-relaxed">{benefit.description}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {!isSubmitted ? (
         <div className="py-16 sm:py-20 lg:py-24">
           <div className="container mx-auto px-3 sm:px-4 lg:px-6 xl:px-8">
             <div className="max-w-7xl mx-auto">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 sm:gap-16">
-                {/* Enhanced Careers Information */}
-                                 <div>
+                {/* Department Opportunities */}
+                <div>
                   <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6 sm:mb-8">
-                    Future <span className="text-orange-500 dark:text-orange-400">Opportunities</span>
-                   </h2>
+                    Future <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-600">Opportunities</span>
+                  </h2>
                   <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-300 mb-8 sm:mb-12 leading-relaxed">
-                     While we don't have any open positions at the moment, we're always looking for 
-                     passionate individuals who share our vision. Submit your application and we'll 
-                     contact you when opportunities arise.
-                   </p>
+                    Choose the department that best fits your expertise and passion. Submit your application and we'll contact you when opportunities arise.
+                  </p>
 
-                  {/* Enhanced Team Stats */}
-                  <div className="grid grid-cols-2 gap-4 sm:gap-6 mb-12 sm:mb-16">
-                     {teamStats.map((stat, index) => (
-                      <div key={index} className="bg-white dark:bg-gray-800 rounded-xl sm:rounded-2xl p-4 sm:p-6 shadow-lg border border-gray-200 dark:border-gray-700 text-center hover:shadow-xl transition-shadow duration-300">
-                        <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-orange-600 dark:text-orange-400 mb-2">{stat.number}</div>
-                        <div className="text-sm sm:text-base text-gray-600 dark:text-gray-400">{stat.label}</div>
-                       </div>
-                     ))}
-                   </div>
-
-                  {/* Enhanced Departments */}
-                  <div className="space-y-6 sm:space-y-8">
+                  {/* Department Types */}
+                  <div className="grid grid-cols-1 gap-6 sm:gap-8">
                     {departments.map((department) => (
-                                             <button
-                         key={department.id}
-                         onClick={() => handleDepartmentSelect(department.id)}
-                        className={`w-full p-6 sm:p-8 lg:p-10 rounded-2xl sm:rounded-3xl border-2 transition-all duration-300 text-left hover:shadow-lg ${
-                           selectedPosition === department.id
-                            ? 'border-orange-500 dark:border-orange-400 bg-orange-50 dark:bg-orange-900/20 shadow-lg'
-                             : 'border-gray-200 dark:border-gray-700 hover:border-gray-300 dark:hover:border-gray-600 bg-white dark:bg-gray-800'
-                         }`}
-                       >
-                        <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-6 sm:mb-8">
-                          <div className="flex items-center space-x-4 sm:space-x-6 mb-4 sm:mb-0">
-                            <div className={`w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br ${department.color} rounded-xl sm:rounded-2xl flex items-center justify-center shadow-lg`}>
-                              <department.icon className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
-                             </div>
-                             <div>
-                              <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-2">{department.title}</h3>
-                              <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400">Department</p>
-                             </div>
-                           </div>
-                           <div className="text-right">
-                            <div className="text-lg sm:text-xl font-bold text-orange-600 dark:text-orange-400 mb-1">Future Role</div>
-                            <div className="text-xs sm:text-sm text-gray-500 dark:text-gray-400">Remote / Liberia</div>
-                           </div>
-                         </div>
-                         
-                        <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 mb-4 sm:mb-6 leading-relaxed">{department.description}</p>
-                        
-                        <div className="flex flex-col sm:flex-row sm:items-center space-y-2 sm:space-y-0 sm:space-x-6 text-xs sm:text-sm text-gray-500 dark:text-gray-400">
-                          <div className="flex items-center space-x-2">
+                      <motion.div
+                        key={department.id}
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: department.id === 'engineering' ? 0.1 : department.id === 'product' ? 0.2 : department.id === 'marketing' ? 0.3 : 0.4 }}
+                        viewport={{ once: true }}
+                        className="group bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg border border-gray-100 dark:border-gray-700 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 cursor-pointer"
+                        onClick={() => handleDepartmentSelect(department.id)}
+                      >
+                        <div className={`w-16 h-16 bg-gradient-to-br ${department.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                          <department.icon className="w-8 h-8 text-white" />
+                        </div>
+                        <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-3">{department.title}</h3>
+                        <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">{department.description}</p>
+                        <div className="flex flex-wrap gap-3 mb-6">
+                          <div className="flex items-center space-x-2 text-sm text-gray-500 dark:text-gray-400">
                             <Clock className="w-4 h-4" />
-                             <span>Various levels</span>
-                           </div>
-                          <div className="flex items-center space-x-2">
+                            <span>Various levels</span>
+                          </div>
+                          <div className="flex items-center space-x-2 text-sm text-gray-500 dark:text-gray-400">
                             <MapPin className="w-4 h-4" />
-                             <span>Remote / Liberia</span>
-                           </div>
-                         </div>
-                       </button>
+                            <span>Remote / Liberia</span>
+                          </div>
+                        </div>
+                        <div className={`inline-flex items-center px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+                          selectedPosition === department.id
+                            ? 'bg-orange-500 text-white'
+                            : 'bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600'
+                        }`}>
+                          {selectedPosition === department.id ? 'Selected' : 'Select Department'}
+                        </div>
+                      </motion.div>
                     ))}
                   </div>
 
-                  {/* Enhanced Values */}
-                  <div className="mt-12 sm:mt-16 bg-white dark:bg-gray-800 rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-10 shadow-lg border border-gray-200 dark:border-gray-700">
-                    <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-6 sm:mb-8">
-                       Our Values
-                     </h3>
+                  {/* Our Values */}
+                  <div className="mt-12 sm:mt-16">
+                    <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-6 sm:mb-8 text-center">
+                      Our Values
+                    </h3>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
-                       {values.map((value, index) => (
-                        <div key={index} className="flex items-start space-x-3 sm:space-x-4">
-                          <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-orange-500 to-red-500 rounded-lg sm:rounded-xl flex items-center justify-center flex-shrink-0">
-                            <value.icon className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
-                           </div>
-                           <div>
-                            <h4 className="text-base sm:text-lg font-semibold text-gray-900 dark:text-white mb-1">{value.title}</h4>
-                            <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400 leading-relaxed">{value.description}</p>
-                           </div>
-                         </div>
-                       ))}
-                     </div>
-                   </div>
+                      {values.map((value, index) => (
+                        <motion.div
+                          key={index}
+                          initial={{ opacity: 0, y: 30 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 0.6, delay: index * 0.1 }}
+                          viewport={{ once: true }}
+                          className="flex items-start space-x-4 bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg border border-gray-100 dark:border-gray-700 hover:shadow-xl transition-all duration-300"
+                        >
+                          <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-500 rounded-xl flex items-center justify-center flex-shrink-0">
+                            <value.icon className="w-6 h-6 text-white" />
+                          </div>
+                          <div>
+                            <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">{value.title}</h4>
+                            <p className="text-gray-600 dark:text-gray-400 leading-relaxed">{value.description}</p>
+                          </div>
+                        </motion.div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Team Stats */}
+                  <div className="mt-12 sm:mt-16 bg-gradient-to-br from-gray-50 to-white dark:from-gray-800 dark:to-gray-900 rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-10 shadow-lg border border-gray-200 dark:border-gray-700">
+                    <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-6 sm:mb-8 text-center">
+                      Our Growing Team
+                    </h3>
+                    <div className="grid grid-cols-2 gap-6 sm:gap-8">
+                      {teamStats.map((stat, index) => (
+                        <div key={index} className="text-center">
+                          <div className="text-3xl sm:text-4xl lg:text-5xl font-bold text-orange-600 dark:text-orange-400 mb-2">{stat.number}</div>
+                          <div className="text-sm sm:text-base text-gray-600 dark:text-gray-400">{stat.label}</div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
                 </div>
 
-                {/* Enhanced Contact Form */}
-                <div className="bg-white dark:bg-gray-800 rounded-2xl sm:rounded-3xl shadow-lg p-6 sm:p-8 lg:p-10 border border-gray-200 dark:border-gray-700">
+                {/* Application Form */}
+                <div className="bg-white dark:bg-gray-800 rounded-2xl sm:rounded-3xl shadow-lg p-6 sm:p-8 lg:p-10 border border-gray-200 dark:border-gray-700 sticky top-8">
                   <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-6 sm:mb-8">
-                     {selectedPosition ? `Apply for ${departments.find(d => d.id === selectedPosition)?.title} Role` : 'Submit Your Application'}
-                   </h3>
-                  
+                    {selectedPosition ? `Apply for ${departments.find(d => d.id === selectedPosition)?.title} Role` : 'Submit Your Application'}
+                  </h3>
+
                   <form onSubmit={handleSubmit} className="space-y-6">
-                                         {!selectedPosition && (
-                       <div className="bg-orange-50 dark:bg-orange-900/30 rounded-lg p-4 mb-6">
-                         <p className="text-sm text-orange-700 dark:text-orange-300">
-                           Please select a department above to apply, or submit a general application for future opportunities.
-                         </p>
-                       </div>
-                     )}
+                    {!selectedPosition && (
+                      <div className="bg-orange-50 dark:bg-orange-900/30 rounded-lg p-4 mb-6 border border-orange-200 dark:border-orange-800">
+                        <p className="text-sm text-orange-700 dark:text-orange-300">
+                          Please select a department above to apply, or submit a general application for future opportunities.
+                        </p>
+                      </div>
+                    )}
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
-                                             <div>
-                        <label className="block text-sm sm:text-base font-medium text-gray-700 dark:text-gray-300 mb-2 sm:mb-3">
-                           Full Name *
-                         </label>
-                         <input
-                           type="text"
-                           required
-                           value={formData.name}
-                           onChange={(e) => handleInputChange('name', e.target.value)}
-                          className="w-full px-4 sm:px-6 py-3 sm:py-4 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white rounded-lg sm:rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200 text-sm sm:text-base"
-                           placeholder="Your full name"
-                         />
-                       </div>
-                      
-                                             <div>
-                        <label className="block text-sm sm:text-base font-medium text-gray-700 dark:text-gray-300 mb-2 sm:mb-3">
-                           Email Address *
-                         </label>
-                         <input
-                           type="email"
-                           required
-                           value={formData.email}
-                           onChange={(e) => handleInputChange('email', e.target.value)}
-                          className="w-full px-4 sm:px-6 py-3 sm:py-4 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white rounded-lg sm:rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200 text-sm sm:text-base"
-                           placeholder="your.email@company.com"
-                         />
-                       </div>
+                    <div className="grid grid-cols-1 gap-6">
+                      <div>
+                        <label className="block text-sm sm:text-base font-medium text-gray-700 dark:text-gray-300 mb-2">
+                          Full Name *
+                        </label>
+                        <input
+                          type="text"
+                          required
+                          value={formData.name}
+                          onChange={(e) => handleInputChange('name', e.target.value)}
+                          className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200"
+                          placeholder="Your full name"
+                        />
+                      </div>
+
+                      <div>
+                        <label className="block text-sm sm:text-base font-medium text-gray-700 dark:text-gray-300 mb-2">
+                          Email Address *
+                        </label>
+                        <input
+                          type="email"
+                          required
+                          value={formData.email}
+                          onChange={(e) => handleInputChange('email', e.target.value)}
+                          className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200"
+                          placeholder="your.email@company.com"
+                        />
+                      </div>
+
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                            Phone Number
+                          </label>
+                          <input
+                            type="tel"
+                            value={formData.phone}
+                            onChange={(e) => handleInputChange('phone', e.target.value)}
+                            className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200"
+                            placeholder="+231 77 505 7227"
+                          />
+                        </div>
+
+                        <div>
+                          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                            Current Company
+                          </label>
+                          <input
+                            type="text"
+                            value={formData.company}
+                            onChange={(e) => handleInputChange('company', e.target.value)}
+                            className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200"
+                            placeholder="Your current company"
+                          />
+                        </div>
+                      </div>
+
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                            Years of Experience
+                          </label>
+                          <select
+                            value={formData.experience}
+                            onChange={(e) => handleInputChange('experience', e.target.value)}
+                            className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200"
+                          >
+                            <option value="">Select experience level</option>
+                            <option value="0-1">0-1 years</option>
+                            <option value="2-3">2-3 years</option>
+                            <option value="4-5">4-5 years</option>
+                            <option value="6-8">6-8 years</option>
+                            <option value="8+">8+ years</option>
+                          </select>
+                        </div>
+
+                        <div>
+                          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                            Preferred Department
+                          </label>
+                          <select
+                            value={formData.position}
+                            onChange={(e) => handleInputChange('position', e.target.value)}
+                            className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200"
+                          >
+                            <option value="">Select department</option>
+                            {departments.map((dept) => (
+                              <option key={dept.id} value={dept.id}>{dept.title}</option>
+                            ))}
+                          </select>
+                        </div>
+                      </div>
+
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                          Cover Letter
+                        </label>
+                        <textarea
+                          rows={4}
+                          value={formData.message}
+                          onChange={(e) => handleInputChange('message', e.target.value)}
+                          className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200"
+                          placeholder="Tell us about your skills, experience, and why you'd be a great fit for our team. We'll contact you when relevant opportunities arise..."
+                        />
+                      </div>
+
+                      <button
+                        type="submit"
+                        disabled={isSubmitting}
+                        className="w-full inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-orange-500 to-red-500 text-white font-semibold rounded-lg hover:from-orange-600 hover:to-red-600 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 shadow-lg transform hover:scale-105"
+                      >
+                        {isSubmitting ? (
+                          <>
+                            <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div>
+                            Processing...
+                          </>
+                        ) : (
+                          <>
+                            Submit Application
+                            <ArrowRight className="w-5 h-5 ml-2" />
+                          </>
+                        )}
+                      </button>
+                    </form>
+
+                    {/* Contact Information */}
+                    <div className="mt-8 pt-8 border-t border-gray-200 dark:border-gray-700">
+                      <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">Need Help?</h4>
+                      <div className="space-y-3">
+                        <div className="flex items-center space-x-3">
+                          <Mail className="w-5 h-5 text-orange-500" />
+                          <span className="text-gray-600 dark:text-gray-400">annitallc@gmail.com</span>
+                        </div>
+                        <div className="flex items-center space-x-3">
+                          <Phone className="w-5 h-5 text-orange-500" />
+                          <span className="text-gray-600 dark:text-gray-400">+231 77 505 7227</span>
+                        </div>
+                        <div className="flex items-center space-x-3">
+                          <MessageSquare className="w-5 h-5 text-orange-500" />
+                          <span className="text-gray-600 dark:text-gray-400">Live chat available</span>
+                        </div>
+                      </div>
                     </div>
-
-                                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                       <div>
-                         <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                           Phone Number
-                         </label>
-                         <input
-                           type="tel"
-                           value={formData.phone}
-                           onChange={(e) => handleInputChange('phone', e.target.value)}
-                           className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200"
-                           placeholder="+1234567890"
-                         />
-                       </div>
-
-                       <div>
-                         <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                           Current Company
-                         </label>
-                         <input
-                           type="text"
-                           value={formData.company}
-                           onChange={(e) => handleInputChange('company', e.target.value)}
-                           className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200"
-                           placeholder="Your current company"
-                         />
-                       </div>
-                     </div>
-
-                                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                       <div>
-                         <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                           Years of Experience
-                         </label>
-                         <select
-                           value={formData.experience}
-                           onChange={(e) => handleInputChange('experience', e.target.value)}
-                           className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200"
-                         >
-                           <option value="">Select experience level</option>
-                           <option value="0-1">0-1 years</option>
-                           <option value="2-3">2-3 years</option>
-                           <option value="4-5">4-5 years</option>
-                           <option value="6-8">6-8 years</option>
-                           <option value="8+">8+ years</option>
-                         </select>
-                       </div>
-                       
-                       <div>
-                         <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                           Preferred Department
-                         </label>
-                         <select
-                           value={formData.position}
-                           onChange={(e) => handleInputChange('position', e.target.value)}
-                           className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200"
-                         >
-                           <option value="">Select department</option>
-                           {departments.map((dept) => (
-                             <option key={dept.id} value={dept.id}>{dept.title}</option>
-                           ))}
-                         </select>
-                       </div>
-                     </div>
-
-                                         <div>
-                       <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                         Cover Letter
-                       </label>
-                       <textarea
-                         rows={4}
-                         value={formData.message}
-                         onChange={(e) => handleInputChange('message', e.target.value)}
-                         className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200"
-                         placeholder="Tell us about your skills, experience, and why you'd be a great fit for our team. We'll contact you when relevant opportunities arise..."
-                       />
-                     </div>
-
-                    <button
-                      type="submit"
-                      disabled={isSubmitting}
-                      className="w-full inline-flex items-center justify-center px-8 sm:px-10 py-4 sm:py-5 bg-orange-500 text-white font-semibold rounded-lg sm:rounded-xl hover:bg-orange-600 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 text-base sm:text-lg shadow-lg"
-                    >
-                      {isSubmitting ? (
-                        <>
-                          <div className="animate-spin rounded-full h-5 w-5 sm:h-6 sm:w-6 border-b-2 border-white mr-2"></div>
-                          Processing...
-                        </>
-                      ) : (
-                        <>
-                          Submit Application
-                          <ArrowRight className="w-5 h-5 sm:w-6 sm:h-6 ml-2" />
-                        </>
-                      )}
-                    </button>
-                  </form>
-
-                                     {/* Benefits */}
-                   <div className="mt-8 pt-8 border-t border-gray-200 dark:border-gray-700">
-                     <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">Why Work at Annita?</h4>
-                     <div className="space-y-3">
-                       {benefits.slice(0, 3).map((benefit, index) => (
-                         <div key={index} className="flex items-center space-x-3">
-                           <benefit.icon className="w-5 h-5 text-orange-500" />
-                           <span className="text-sm text-gray-600 dark:text-gray-400">{benefit.title}</span>
-                         </div>
-                       ))}
-                     </div>
-                   </div>
-
-                   {/* Contact Information */}
-                   <div className="mt-8 pt-8 border-t border-gray-200 dark:border-gray-700">
-                     <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">Need Help?</h4>
-                     <div className="space-y-3">
-                       <div className="flex items-center space-x-3">
-                         <Mail className="w-5 h-5 text-orange-500" />
-                         <span className="text-gray-600 dark:text-gray-400">annitallc@gmail.com</span>
-                       </div>
-                       <div className="flex items-center space-x-3">
-                         <Phone className="w-5 h-5 text-orange-500" />
-                         <span className="text-gray-600 dark:text-gray-400">+231 77 505 7227</span>
-                       </div>
-                       <div className="flex items-center space-x-3">
-                         <MessageSquare className="w-5 h-5 text-orange-500" />
-                         <span className="text-gray-600 dark:text-gray-400">Live chat available</span>
-                       </div>
-                     </div>
-                   </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -618,7 +648,7 @@ export default function CareersPage() {
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link
-                  href="/contact-us"
+                  href="/contact"
                   className="inline-flex items-center px-6 py-3 bg-orange-500 text-white font-semibold rounded-lg hover:bg-orange-600 transition-colors duration-200"
                 >
                   <MessageSquare className="w-4 h-4 mr-2" />
