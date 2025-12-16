@@ -58,7 +58,9 @@ const HeroSection = () => {
       title: "Connect Across All",
       titleHighlight: "54 African Countries",
       subtitle: "Access suppliers from all AfCFTA regions. Trade in 30+ African currencies.",
-      background: "from-green-50 via-white to-teal-50/30"
+      background: "from-green-50 via-white to-teal-50/30",
+      hasVideo: true,
+      videoSrc: "https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fweb.facebook.com%2Freel%2F1141319817913700%2F&show_text=false&width=560&t=0"
     },
     {
       id: 4,
@@ -237,6 +239,37 @@ const HeroSection = () => {
                   {slides[currentSlide].subtitle}
               </motion.p>
               </AnimatePresence>
+
+              {/* Video Content (if slide has video) */}
+              {slides[currentSlide].hasVideo && (
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={`video-slide-${currentSlide}`}
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.95 }}
+                    transition={{ duration: 0.6, delay: 0.2 }}
+                    className="mb-8"
+                    onMouseEnter={() => setIsPaused(true)}
+                    onMouseLeave={() => setIsPaused(false)}
+                  >
+                    <div className="relative w-full max-w-md mx-auto lg:mx-0" style={{ paddingBottom: '56.25%' }}>
+                      <iframe
+                        src={slides[currentSlide].videoSrc}
+                        className="absolute top-0 left-0 w-full h-full rounded-xl shadow-lg"
+                        style={{border:'none',overflow:'hidden'}}
+                        scrolling="no"
+                        frameBorder="0"
+                        allowFullScreen={true}
+                        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                        onMouseEnter={handleVideoInteraction}
+                        onMouseLeave={handleVideoPause}
+                        onFocus={handleVideoInteraction}
+                      />
+                    </div>
+                  </motion.div>
+                </AnimatePresence>
+              )}
 
               {/* CTA Buttons */}
               <AnimatePresence mode="wait">

@@ -13,12 +13,6 @@ import {
 
 const ConnectFeature = () => {
 
-  const features = [
-    'Targeted advertising.',
-    'Customer engagement tools.',
-    'AI-driven insights.',
-    'Analytics and reporting.'
-  ]
 
   return (
     <motion.div
@@ -69,25 +63,6 @@ const ConnectFeature = () => {
         </motion.p>
 
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.7 }}
-          className="space-y-3 mb-8"
-        >
-          {features.map((feature, index) => (
-            <motion.div
-              key={feature}
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.4, delay: 0.8 + index * 0.1 }}
-              className="flex items-center space-x-3"
-            >
-              <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
-              <span className="text-gray-700">{feature}</span>
-            </motion.div>
-          ))}
-        </motion.div>
 
       </div>
 

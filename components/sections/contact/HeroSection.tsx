@@ -18,7 +18,7 @@ const HeroSection = () => {
 
 
   return (
-    <section className="relative py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-600 text-white overflow-hidden">
+    <section className="relative py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-orange-600 via-orange-700 to-red-600 text-white overflow-hidden">
       {/* Animated Background Elements */}
       <div className="absolute inset-0">
         <div className="absolute top-10 left-10 w-20 h-20 bg-white/10 rounded-full animate-pulse"></div>
@@ -44,11 +44,11 @@ const HeroSection = () => {
 
             {/* Heading */}
             <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold mb-6 leading-tight">
-              We're Here to <span className="text-blue-200">Help</span>
+              We're Here to <span className="text-orange-200">Help</span>
               </h1>
 
             {/* Description */}
-            <p className="text-xl sm:text-2xl text-blue-100 mb-8 leading-relaxed max-w-2xl">
+            <p className="text-xl sm:text-2xl text-orange-100 mb-8 leading-relaxed max-w-2xl">
               Contact our team for support, partnerships, or any questions about Annita.
               We're committed to providing exceptional service and quick responses.
             </p>
@@ -56,17 +56,17 @@ const HeroSection = () => {
             {/* Quick Contact Options */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
               <div className="flex items-center space-x-3 bg-white/10 backdrop-blur-sm rounded-lg p-4">
-                <Mail className="w-6 h-6 text-blue-200" />
+                <Mail className="w-6 h-6 text-orange-200" />
                 <div>
                   <div className="font-semibold text-white">Email Support</div>
-                  <div className="text-sm text-blue-200">support@annita.com</div>
+                  <div className="text-sm text-orange-200">support@annita.com</div>
                 </div>
               </div>
               <div className="flex items-center space-x-3 bg-white/10 backdrop-blur-sm rounded-lg p-4">
-                <Phone className="w-6 h-6 text-blue-200" />
+                <Phone className="w-6 h-6 text-orange-200" />
                 <div>
                   <div className="font-semibold text-white">Phone Support</div>
-                  <div className="text-sm text-blue-200">+231 77 505 7227</div>
+                  <div className="text-sm text-orange-200">+231 77 505 7227</div>
                 </div>
               </div>
             </div>
@@ -87,21 +87,21 @@ const HeroSection = () => {
                   <Building2 className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-2xl font-bold text-white mb-2">Annita Support</h3>
-                <p className="text-blue-200">24/7 assistance available</p>
+                <p className="text-orange-200">24/7 assistance available</p>
                 </div>
 
               <div className="space-y-4">
                 <div className="flex items-center justify-between p-4 bg-white/10 rounded-xl">
                   <span className="text-white">Response Time</span>
-                  <span className="font-bold text-blue-200">Within 24 hours</span>
+                  <span className="font-bold text-orange-200">Within 24 hours</span>
                   </div>
                 <div className="flex items-center justify-between p-4 bg-white/10 rounded-xl">
                   <span className="text-white">Support Hours</span>
-                  <span className="font-bold text-blue-200">8AM - 6PM GMT</span>
+                  <span className="font-bold text-orange-200">8AM - 6PM GMT</span>
                     </div>
                 <div className="flex items-center justify-between p-4 bg-white/10 rounded-xl">
                   <span className="text-white">Languages</span>
-                  <span className="font-bold text-blue-200">English, French</span>
+                  <span className="font-bold text-orange-200">English, French</span>
                     </div>
                 </div>
               </div>
