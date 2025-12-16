@@ -3,8 +3,7 @@ import { Zen_Dots, Lora } from 'next/font/google'
 import './globals.css'
 import { Analytics } from '@vercel/analytics/react'
 import { Toaster } from 'react-hot-toast'
-import Navigation from '@/components/layout/Navigation'
-import Footer from '@/components/layout/Footer'
+import SiteChrome from '@/components/layout/SiteChrome'
 import CookieConsent from '@/components/ui/CookieConsent'
 import OfflineBanner from '@/components/ui/OfflineBanner'
 import PerformanceOptimizer from '@/components/ui/PerformanceOptimizer'
@@ -148,6 +147,14 @@ export const metadata: Metadata = {
     'application-name': 'Annita',
     'mobile-web-app-capable': 'yes',
   },
+  icons: {
+    icon: [
+      { url: '/favicon.png', type: 'image/png' },
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+    ],
+    apple: [{ url: '/apple-icon.png', type: 'image/png' }],
+    shortcut: ['/favicon.png'],
+  },
 }
 
 export default function RootLayout({
@@ -158,6 +165,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${zenDots.variable} ${lora.variable}`}>
       <head>
+        <link rel="icon" type="image/png" href="/favicon.png" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <link rel="icon" type="image/png" sizes="32x32" href="/images/logo/favicon.png" />
         <link rel="apple-touch-icon" sizes="180x180" href="/images/logo/favicon.png" />
@@ -218,13 +226,7 @@ export default function RootLayout({
       <body className={`${zenDots.variable} ${lora.variable} antialiased`}>
         <ThemeProvider>
           <PerformanceOptimizer>
-            <div className="min-h-screen flex flex-col">
-              <Navigation />
-              <main className="flex-1">
-                {children}
-              </main>
-              <Footer />
-            </div>
+            <SiteChrome>{children}</SiteChrome>
           </PerformanceOptimizer>
           <Analytics />
           <CookieConsent />
