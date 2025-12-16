@@ -2,25 +2,32 @@
 
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { 
-  Zap, 
-  Wifi, 
-  WifiOff, 
-  Shield, 
-  CreditCard, 
-  Brain, 
-  Truck, 
-  Megaphone, 
-  DollarSign, 
-  Users, 
-  Globe, 
-  ArrowRight, 
+import {
+  Zap,
+  Wifi,
+  WifiOff,
+  Shield,
+  CreditCard,
+  Brain,
+  Truck,
+  Megaphone,
+  DollarSign,
+  Users,
+  Globe,
+  ArrowRight,
   ExternalLink,
   CheckCircle,
   Star,
   TrendingUp,
   Smartphone,
-  Laptop
+  Laptop,
+  FileText,
+  Store,
+  Link,
+  Send,
+  Calendar,
+  Palette,
+  GraduationCap
 } from 'lucide-react'
 import Button from '@/components/ui/Button'
 
@@ -63,6 +70,54 @@ const V3AnnouncementSection = () => {
       title: "Marketing Tools",
       description: "Reach more customers with built-in marketing and promotion tools.",
       color: "from-teal-500 to-cyan-500"
+    },
+    {
+      icon: Smartphone,
+      title: "Advanced Payment Methods",
+      description: "15+ payment options including M-Pesa, USSD, VISA QR for higher conversion rates.",
+      color: "from-rose-500 to-pink-500"
+    },
+    {
+      icon: FileText,
+      title: "Invoice Generation",
+      description: "Create and issue professional invoices for global payments with payment tracking.",
+      color: "from-violet-500 to-purple-500"
+    },
+    {
+      icon: Store,
+      title: "One-Click Online Store Creation",
+      description: "Create a free online store that helps you find customers and accept payments globally.",
+      color: "from-emerald-500 to-teal-500"
+    },
+    {
+      icon: Link,
+      title: "Enhanced Payment Links",
+      description: "Accept payments without writing code - advanced links with QR codes, expiration, and analytics.",
+      color: "from-cyan-500 to-blue-500"
+    },
+    {
+      icon: Send,
+      title: "Personal Money Transfer App",
+      description: "P2P money transfers, bill payments, airtime top-ups - expand beyond business users.",
+      color: "from-amber-500 to-orange-500"
+    },
+    {
+      icon: Calendar,
+      title: "Event & Lifestyle Services",
+      description: "Event ticketing, travel bookings, lifestyle management - comprehensive digital lifestyle platform.",
+      color: "from-lime-500 to-green-500"
+    },
+    {
+      icon: Palette,
+      title: "Creator Tools",
+      description: "Single-page websites, subscription tools, creator analytics - support digital content economy.",
+      color: "from-fuchsia-500 to-pink-500"
+    },
+    {
+      icon: GraduationCap,
+      title: "Tuition Payment System",
+      description: "School fee payments, scholarship management, education marketplace - tap into high-volume education sector.",
+      color: "from-indigo-500 to-blue-500"
     }
   ]
 
@@ -180,7 +235,7 @@ const V3AnnouncementSection = () => {
               transition={{ duration: 0.5 }}
             >
               {/* V3.0 Features Grid */}
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 sm:gap-8 mb-12">
                 {v3Features.map((feature, index) => (
                   <motion.div
                     key={index}

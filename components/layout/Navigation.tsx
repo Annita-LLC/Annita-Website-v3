@@ -113,6 +113,8 @@ const Navigation = () => {
       href: '#',
       dropdown: [
         { name: 'About Us', href: '/about', icon: Users, description: 'Our story and mission' },
+        { name: 'Features & Solutions', href: '/features', icon: Zap, description: 'Everything Annita offers' },
+        { name: 'Custom Solutions', href: '/solutions', icon: Code, description: 'Bespoke tech development' },
         { name: 'Investors', href: '/investors', icon: DollarSign, description: 'Investment opportunities and company info' },
         { name: 'Ideas & Tips', href: '/ideas', icon: Lightbulb, description: 'Share ideas and feedback' },
         { name: 'Become a Partner', href: '/partners', icon: Users, description: 'Partner with Annita' },

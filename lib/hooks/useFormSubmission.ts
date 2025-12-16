@@ -176,6 +176,15 @@ export const formValidations = {
     return null
   },
 
+  solution: (formData: any) => {
+    if (!formData.name?.trim()) return 'Full name is required'
+    if (!formData.email?.trim()) return 'Email is required'
+    if (!formData.projectType?.trim()) return 'Project type is required'
+    if (!formData.requirements?.trim()) return 'Project requirements are required'
+    if (formData.requirements?.length < 50) return 'Project requirements must be at least 50 characters'
+    return null
+  },
+
   pricing: (formData: any) => {
     if (!formData.name?.trim()) return 'Name is required'
     if (!formData.email?.trim()) return 'Email is required'
