@@ -13,9 +13,9 @@ const AboutPage = () => {
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "name": "Annita LLC",
-    "url": "https://annita.com",
-    "logo": "https://annita.com/images/blog/Annita's%20Logo.png",
+    "name": "Annita",
+    "url": "https://www.an-nita.com",
+    "logo": "https://www.an-nita.com/favicon.png",
     "description": "Africa's first all-in-one digital platform integrating e-commerce, fintech, AI-driven tools, and lifestyle services",
     "foundingDate": "2021",
     "address": {
@@ -29,8 +29,8 @@ const AboutPage = () => {
       "email": "contact@annita.com"
     },
     "sameAs": [
-      "https://linkedin.com/company/annita-llc",
-      "https://twitter.com/annita_llc"
+      "https://linkedin.com/company/annita-africa",
+      "https://twitter.com/annita_africa"
     ],
     "employee": [
       {
@@ -54,10 +54,10 @@ const AboutPage = () => {
   return (
     <>
       <SEOHead
-        title="About Us - Annita LLC | Empowering Africa's Digital Future"
-        description="Learn about Annita LLC, Africa's leading all-in-one digital platform. Discover our mission to empower 5 million MSMEs across Africa by 2029 through innovative e-commerce, fintech, and AI solutions."
+        title="About Us - Annita | Empowering Africa's Digital Future"
+        description="Learn about Annita, Africa's leading all-in-one digital platform. Discover our mission to empower 5 million MSMEs across Africa by 2029 through innovative e-commerce, fintech, and AI solutions."
         keywords={[
-          'Annita LLC',
+          'Annita',
           'about Annita',
           'African digital platform',
           'e-commerce Africa',

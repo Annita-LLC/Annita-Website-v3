@@ -341,7 +341,7 @@ const IdeasPage = () => {
   return (
     <>
       <SEOHead
-        title="Ideas & Tips - Annita LLC"
+        title="Ideas & Tips - Annita"
         description="Share your ideas, suggestions, and feedback to help shape the future of Annita. Submit feature requests, business ideas, and community initiatives."
         keywords={["ideas", "tips", "feedback", "feature requests", "suggestions", "community", "innovation", "Annita"]}
         canonical="/ideas"

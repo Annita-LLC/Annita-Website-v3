@@ -15,7 +15,7 @@ const ContactPage = () => {
     "url": "https://annita.com/contact",
     "mainEntity": {
       "@type": "Organization",
-      "name": "Annita LLC",
+      "name": "Annita",
       "contactPoint": [
         {
           "@type": "ContactPoint",
@@ -31,7 +31,7 @@ const ContactPage = () => {
   return (
     <>
       <SEOHead
-        title="Contact Us - Get Support and Assistance | Annita LLC"
+        title="Contact Us - Get Support and Assistance | Annita"
         description="Contact Annita for support, partnerships, or any questions about our all-in-one digital platform. Multiple contact methods available including email, phone, and live chat."
         keywords={[
           'contact Annita',

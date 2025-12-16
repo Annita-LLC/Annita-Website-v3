@@ -221,7 +221,7 @@ const TeamPage = () => {
   return (
     <>
       <SEOHead
-        title="Our Team - Annita LLC"
+        title="Our Team - Annita"
         description="Meet the talented team behind Annita - passionate individuals working to transform Africa's digital landscape."
         keywords={[
           'team',

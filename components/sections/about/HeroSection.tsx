@@ -53,7 +53,7 @@ const HeroSection = () => {
             {/* Badge */}
             <div className="inline-flex items-center px-6 py-3 rounded-full bg-white/20 backdrop-blur-sm text-white text-sm font-semibold mb-8 shadow-lg border border-white/30">
               <Building2 className="w-5 h-5 mr-2" />
-                About Annita LLC
+                About Annita
               </div>
               
             {/* Heading */}
@@ -108,7 +108,7 @@ const HeroSection = () => {
                 <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
                   <Building2 className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-2">Annita LLC</h3>
+                <h3 className="text-2xl font-bold text-white mb-2">Annita</h3>
                 <p className="text-orange-200">Africa's leading all-in-one digital platform</p>
                 </div>
                 

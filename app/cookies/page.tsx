@@ -120,7 +120,7 @@ const CookiesPage = () => {
   return (
     <>
       <SEOHead
-        title="Cookie Policy - Annita LLC"
+        title="Cookie Policy - Annita"
         description="Learn about how Annita uses cookies and similar technologies to enhance your browsing experience."
         keywords={[
           'cookie policy',
@@ -278,7 +278,7 @@ const CookiesPage = () => {
                     Cookies are small text files that are stored on your device (computer, tablet, or mobile) when you visit our website. They help us provide you with a better experience by remembering your preferences, analyzing how you use our site, and personalizing content.
                   </p>
                   <p className="text-gray-600 leading-relaxed">
-                    This Cookie Policy explains how Annita LLC ("we," "our," or "us") uses cookies and similar technologies on our website and mobile applications.
+                    This Cookie Policy explains how Annita ("we," "our," or "us") uses cookies and similar technologies on our website and mobile applications.
                   </p>
                 </div>
 

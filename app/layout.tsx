@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { Zen_Dots, Lora } from 'next/font/google'
 import './globals.css'
 import { Analytics } from '@vercel/analytics/react'
@@ -83,18 +83,6 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://www.an-nita.com'),
   alternates: {
     canonical: '/',
-    languages: {
-      'en-US': '/en',
-      'fr-FR': '/fr',
-      'pt-PT': '/pt',
-    },
-  },
-  viewport: {
-    width: 'device-width',
-    initialScale: 1,
-    maximumScale: 5,
-    userScalable: true,
-    viewportFit: 'cover',
   },
   openGraph: {
     type: 'website',
@@ -155,6 +143,14 @@ export const metadata: Metadata = {
     apple: [{ url: '/apple-icon.png', type: 'image/png' }],
     shortcut: ['/favicon.png'],
   },
+}
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
+  userScalable: true,
+  viewportFit: 'cover',
 }
 
 export default function RootLayout({

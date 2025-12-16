@@ -16,7 +16,7 @@ const TermsPage = () => {
   return (
     <>
       <SEOHead
-        title="Terms of Service - Annita LLC"
+        title="Terms of Service - Annita"
         description="Read Annita's terms of service to understand your rights and obligations when using our platform and services."
         keywords={[
           'terms of service',
@@ -161,7 +161,7 @@ const TermsPage = () => {
                 <div className="mb-12">
                   <h2 className="text-3xl font-bold text-gray-900 mb-6">Agreement to Terms</h2>
                   <p className="text-gray-600 leading-relaxed mb-4">
-                    These Terms of Service ("Terms") govern your use of Annita LLC's website, mobile applications, and services (collectively, the "Services"). By accessing or using our Services, you agree to be bound by these Terms.
+                    These Terms of Service ("Terms") govern your use of Annita's website, mobile applications, and services (collectively, the "Services"). By accessing or using our Services, you agree to be bound by these Terms.
                   </p>
                   <p className="text-gray-600 leading-relaxed">
                     If you do not agree to these Terms, please do not use our Services. We reserve the right to modify these Terms at any time, and such modifications will be effective immediately upon posting.
@@ -174,7 +174,7 @@ const TermsPage = () => {
                   <div className="space-y-4">
                     <div>
                       <h3 className="text-lg font-semibold text-gray-900 mb-2">"Annita," "we," "us," or "our"</h3>
-                      <p className="text-gray-600">Refers to Annita LLC, a company registered in Liberia.</p>
+                      <p className="text-gray-600">Refers to Annita.</p>
                     </div>
                     <div>
                       <h3 className="text-lg font-semibold text-gray-900 mb-2">"Services"</h3>
@@ -262,7 +262,7 @@ const TermsPage = () => {
                     <div>
                       <h3 className="text-xl font-semibold text-gray-900 mb-3">Our Rights</h3>
                       <p className="text-gray-600 leading-relaxed mb-3">
-                        Our Services and all content, features, and functionality are owned by Annita LLC and are protected by copyright, trademark, and other intellectual property laws.
+                        Our Services and all content, features, and functionality are owned by Annita and are protected by copyright, trademark, and other intellectual property laws.
                       </p>
                     </div>
                     <div>
@@ -307,13 +307,13 @@ const TermsPage = () => {
                     <div>
                       <h3 className="text-xl font-semibold text-gray-900 mb-3">Limitation of Liability</h3>
                       <p className="text-gray-600 leading-relaxed">
-                        To the maximum extent permitted by law, Annita LLC shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of our Services.
+                        To the maximum extent permitted by law, Annita shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of our Services.
                       </p>
                     </div>
                     <div>
                       <h3 className="text-xl font-semibold text-gray-900 mb-3">Indemnification</h3>
                       <p className="text-gray-600 leading-relaxed">
-                        You agree to indemnify and hold harmless Annita LLC from any claims, damages, or expenses arising from your use of our Services or violation of these Terms.
+                        You agree to indemnify and hold harmless Annita from any claims, damages, or expenses arising from your use of our Services or violation of these Terms.
                       </p>
                     </div>
                   </div>
@@ -391,7 +391,7 @@ const TermsPage = () => {
                 <div className="mb-12">
                   <h2 className="text-3xl font-bold text-gray-900 mb-6">Entire Agreement</h2>
                   <p className="text-gray-600 leading-relaxed">
-                    These Terms, together with our Privacy Policy and any other agreements referenced herein, constitute the entire agreement between you and Annita LLC regarding your use of our Services.
+                    These Terms, together with our Privacy Policy and any other agreements referenced herein, constitute the entire agreement between you and Annita regarding your use of our Services.
                   </p>
                 </div>
 

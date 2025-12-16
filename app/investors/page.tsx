@@ -863,7 +863,7 @@ const InvestorsPage = () => {
                       
                       <div className="mt-4 sm:mt-6 pt-3 sm:pt-4 border-t border-gray-200 dark:border-gray-600">
                         <div className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 text-center sm:text-left">
-                          <strong>Christopher O. Fallah</strong> - CEO & Founder, Annita LLC
+                          <strong>Christopher O. Fallah</strong> - CEO & Founder, Annita
                         </div>
                       </div>
                     </div>

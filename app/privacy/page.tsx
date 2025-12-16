@@ -16,7 +16,7 @@ const PrivacyPage = () => {
   return (
     <>
       <SEOHead
-        title="Privacy Policy - Annita LLC"
+        title="Privacy Policy - Annita"
         description="Learn how Annita collects, uses, and protects your personal information. Read our comprehensive privacy policy."
         keywords={[
           'privacy policy',
@@ -185,7 +185,7 @@ const PrivacyPage = () => {
                 <div className="mb-12">
                   <h2 className="text-3xl font-bold text-gray-900 mb-6">Introduction</h2>
                   <p className="text-gray-600 leading-relaxed mb-4">
-                    Annita LLC ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our website, mobile applications, and services (collectively, the "Services").
+                    Annita ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our website, mobile applications, and services (collectively, the "Services").
                   </p>
                   <p className="text-gray-600 leading-relaxed">
                     By using our Services, you agree to the collection and use of information in accordance with this policy. If you do not agree with our policies and practices, please do not use our Services.
