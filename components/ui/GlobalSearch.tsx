@@ -19,7 +19,6 @@ const searchData: SearchResult[] = [
   // Company
   { id: 'about', title: 'About Us', description: 'Our story and mission', href: '/about', category: 'Company', icon: Users },
   { id: 'investors', title: 'Investors', description: 'Investment opportunities and company info', href: '/investors', category: 'Company', icon: FileText },
-  { id: 'team', title: 'Team', description: 'Meet our talented team', href: '/team', category: 'Company', icon: Users },
   { id: 'awards', title: 'Awards & Recognition', description: 'Our achievements and recognition', href: '/awards', category: 'Company', icon: FileText },
   { id: 'careers', title: 'Careers', description: 'Join our team', href: '/careers', category: 'Company', icon: Users },
   { id: 'apply', title: 'Apply Now', description: 'Submit your application', href: '/careers/apply', category: 'Company', icon: Users },

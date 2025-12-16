@@ -8,8 +8,6 @@ import {
   MapPin, 
   Clock, 
   Package, 
-  ArrowRight,
-  CheckCircle,
   Sparkles,
   Zap,
   Target,
@@ -25,7 +23,6 @@ import {
   Globe,
   Shield
 } from 'lucide-react'
-import Button from '@/components/ui/Button'
 
 const LogisticsFeature = () => {
   const [currentDelivery, setCurrentDelivery] = useState({
@@ -37,13 +34,6 @@ const LogisticsFeature = () => {
     vehicle: 'Toyota Hilux',
     location: 'Lagos Mainland'
   })
-
-  const features = [
-    'Vendor integration.',
-    'Same-day/next-day delivery.',
-    'Real-time tracking.',
-    'Warehousing & inventory management.'
-  ]
 
   const deliverySteps = [
     { step: 'Order Placed', status: 'completed', time: '09:00 AM' },
@@ -100,38 +90,6 @@ const LogisticsFeature = () => {
           Streamlined logistics for MSMEs without their own fleets. Real-time tracking 
           and same-day delivery options with <span className="text-orange-600 font-semibold">AI-powered route optimization</span>.
         </motion.p>
-
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.7 }}
-          className="space-y-3 mb-8"
-        >
-          {features.map((feature, index) => (
-            <motion.div
-              key={feature}
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.4, delay: 0.8 + index * 0.1 }}
-              className="flex items-center space-x-3"
-            >
-              <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
-              <span className="text-gray-700">{feature}</span>
-            </motion.div>
-          ))}
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.9 }}
-        >
-          <Button className="group">
-            Track Delivery
-            <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-          </Button>
-        </motion.div>
       </div>
 
       {/* Interactive Visual */}

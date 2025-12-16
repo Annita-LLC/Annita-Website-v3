@@ -3,45 +3,17 @@
 import { useState, useEffect, useRef, memo } from 'react'
 import { motion, useInView, AnimatePresence } from 'framer-motion'
 import { 
-  ArrowRight, 
-  Play, 
-  Download, 
-  Star, 
-  Users, 
-  TrendingUp,
   Sparkles,
-  Zap,
-  Award,
-  Globe,
-  Shield,
-  CheckCircle,
-  Heart,
-  Eye,
-  Activity,
-  Target,
-  Crown,
-  Rocket,
-  Video,
-  Brain,
   ExternalLink,
-  WifiOff,
-  Smartphone,
-  CreditCard,
-  DollarSign,
-  Truck,
-  MapPin,
-  BarChart3
+  Phone
 } from 'lucide-react'
 import Button from '@/components/ui/Button'
-import Link from 'next/link'
-import DownloadChoiceModal from '@/components/ui/DownloadChoiceModal'
 
 const HeroSection = () => {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "0px" })
   const [currentSlide, setCurrentSlide] = useState(0)
   const [currentVideo, setCurrentVideo] = useState(0)
-  const [isDownloadModalOpen, setIsDownloadModalOpen] = useState(false)
   const [isPaused, setIsPaused] = useState(false)
   const [isVideoPlaying, setIsVideoPlaying] = useState(false)
   const slideIntervalRef = useRef<NodeJS.Timeout | null>(null)
@@ -70,10 +42,6 @@ const HeroSection = () => {
       title: "The Future",
       titleHighlight: "of Business in Africa",
       subtitle: "Built for African businesses. Cross-border trade, institutional backing, and seamless integration.",
-      cta: "Try Annita-v1.0",
-      ctaIcon: Star,
-      secondaryCta: "See V1.0 Now",
-      secondaryIcon: ExternalLink,
       background: "from-gray-50 via-white to-orange-50/30"
     },
     {
@@ -82,10 +50,6 @@ const HeroSection = () => {
       title: "Real Vendors, Real Sales",
       titleHighlight: "Right Now",
       subtitle: "3,000+ KYC-verified vendors across Africa. Secure transactions guaranteed.",
-      cta: "Visit Marketplace",
-      ctaIcon: Globe,
-      secondaryCta: "Start Selling",
-      secondaryIcon: ArrowRight,
       background: "from-blue-50 via-white to-purple-50/30"
     },
     {
@@ -94,10 +58,6 @@ const HeroSection = () => {
       title: "Connect Across All",
       titleHighlight: "54 African Countries",
       subtitle: "Access suppliers from all AfCFTA regions. Trade in 30+ African currencies.",
-      cta: "Learn More",
-      ctaIcon: WifiOff,
-      secondaryCta: "See Features",
-      secondaryIcon: Eye,
       background: "from-green-50 via-white to-teal-50/30"
     },
     {
@@ -106,10 +66,6 @@ const HeroSection = () => {
       title: "Built for",
       titleHighlight: "Trust",
       subtitle: "Funds held securely until delivery confirmed. Integrated financing solutions.",
-      cta: "Discover AI",
-      ctaIcon: Brain,
-      secondaryCta: "Try V1.0",
-      secondaryIcon: ExternalLink,
       background: "from-purple-50 via-white to-pink-50/30"
     },
     {
@@ -118,10 +74,6 @@ const HeroSection = () => {
       title: "Smart Business",
       titleHighlight: "Intelligence",
       subtitle: "AI-driven insights and automation to optimize your business operations and growth.",
-      cta: "Discover AI",
-      ctaIcon: Brain,
-      secondaryCta: "Try AI Now",
-      secondaryIcon: Zap,
       background: "from-teal-50 via-white to-cyan-50/30"
     }
   ]
@@ -296,79 +248,25 @@ const HeroSection = () => {
                   transition={{ duration: 0.6, delay: 0.2 }}
                 className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
               >
-                  {slides[currentSlide].cta === "Visit Marketplace" || slides[currentSlide].cta === "See V1.0 Now" || slides[currentSlide].cta === "Try Annita-v1.0" ? (
-                    <Button
-                      variant="gradient"
-                      size="lg"
-                      icon={slides[currentSlide].ctaIcon}
-                      className="w-full sm:w-auto text-base font-semibold px-8 py-4 shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
-                      onClick={() => window.location.href = '/maintenance'}
-                    >
-                      {slides[currentSlide].cta}
-                    </Button>
-                  ) : slides[currentSlide].cta === "Join Waitlist" ? (
-                    <Button
-                      variant="gradient"
-                      size="lg"
-                      icon={slides[currentSlide].ctaIcon}
-                      className="w-full sm:w-auto text-base font-semibold px-8 py-4 shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
-                      onClick={() => setIsDownloadModalOpen(true)}
-                    >
-                      {slides[currentSlide].cta}
-                    </Button>
-                  ) : slides[currentSlide].cta === "Learn More" ? (
-                    <Button
-                      variant="gradient"
-                      size="lg"
-                      icon={slides[currentSlide].ctaIcon}
-                      className="w-full sm:w-auto text-base font-semibold px-8 py-4 shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
-                      onClick={() => window.open('/about', '_blank')}
-                    >
-                      {slides[currentSlide].cta}
-                    </Button>
-                  ) : slides[currentSlide].cta === "Discover AI" ? (
-                    <Button
-                      variant="gradient"
-                      size="lg"
-                      icon={slides[currentSlide].ctaIcon}
-                      className="w-full sm:w-auto text-base font-semibold px-8 py-4 shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
-                      onClick={() => window.open('/discover', '_blank')}
-                    >
-                      {slides[currentSlide].cta}
-                    </Button>
-                  ) : (
-                  <Button
-                    variant="gradient"
-                    size="lg"
-                    icon={slides[currentSlide].ctaIcon}
-                    className="w-full sm:w-auto text-base font-semibold px-8 py-4 shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
-                    onClick={() => setIsDownloadModalOpen(true)}
-                  >
-                    {slides[currentSlide].cta}
-                  </Button>
-                  )}
-                  
-                  {slides[currentSlide].secondaryCta === "Start Selling" || slides[currentSlide].secondaryCta === "Try V1.0" ? (
-                    <Button
-                      variant="outline"
-                      size="lg"
-                      icon={slides[currentSlide].secondaryIcon}
-                      className="w-full sm:w-auto text-base font-semibold px-8 py-4 border-2 border-gray-300 hover:border-orange-500 hover:text-orange-600 transform hover:-translate-y-1 transition-all duration-300"
-                      onClick={() => window.location.href = '/maintenance'}
-                    >
-                      {slides[currentSlide].secondaryCta}
-                  </Button>
-                  ) : (
-                  <Button
-                    variant="outline"
-                    size="lg"
-                    icon={slides[currentSlide].secondaryIcon}
-                    className="w-full sm:w-auto text-base font-semibold px-8 py-4 border-2 border-gray-300 hover:border-orange-500 hover:text-orange-600 transform hover:-translate-y-1 transition-all duration-300"
-                    onClick={() => setIsDownloadModalOpen(true)}
-                  >
-                    {slides[currentSlide].secondaryCta}
-                  </Button>
-                  )}
+                <Button
+                  variant="gradient"
+                  size="lg"
+                  icon={ExternalLink}
+                  className="w-full sm:w-auto text-base font-semibold px-8 py-4 shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
+                  onClick={() => window.open('/maintenance', '_blank')}
+                >
+                  Try V1.0 Now
+                </Button>
+
+                <Button
+                  variant="outline"
+                  size="lg"
+                  icon={Phone}
+                  className="w-full sm:w-auto text-base font-semibold px-8 py-4 border-2 border-gray-300 hover:border-orange-500 hover:text-orange-600 transform hover:-translate-y-1 transition-all duration-300"
+                  onClick={() => window.location.href = '/contact-sales'}
+                >
+                  Contact Sales
+                </Button>
               </motion.div>
               </AnimatePresence>
 
@@ -429,14 +327,6 @@ const HeroSection = () => {
         </div>
       </div>
 
-
-
-
-      {/* Download Choice Modal */}
-      <DownloadChoiceModal
-        isOpen={isDownloadModalOpen}
-        onClose={() => setIsDownloadModalOpen(false)}
-      />
     </section>
   )
 }

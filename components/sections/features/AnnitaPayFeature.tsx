@@ -8,8 +8,6 @@ import {
   Shield,
   Lock,
   TrendingUp,
-  ArrowRight,
-  CheckCircle,
   Sparkles,
   Zap,
   Activity,
@@ -17,18 +15,9 @@ import {
   Send,
   Download
 } from 'lucide-react'
-import Button from '@/components/ui/Button'
 
 const AnnitaPayFeature = () => {
   const [currentBalance, setCurrentBalance] = useState(1250.00)
-
-  const features = [
-    'Multi-currency support for 54+ African currencies.',
-    'Escrow payment protection for secure transactions.',
-    'Mobile POS solutions for merchants.',
-    'Bridge-Powered Stablecoin Infrastructure.'
-  ]
-
 
   return (
     <motion.div
@@ -74,43 +63,8 @@ const AnnitaPayFeature = () => {
           transition={{ duration: 0.6, delay: 0.5 }}
           className="text-gray-600 mb-6 leading-relaxed"
         >
-          AnnitaPay enables MSMEs and individuals to move, store, issue, and grow money seamlessly without borders. Trade confidently in 54+ African currencies with real-time settlements and escrow protection.
+          AnnitaPay enables MSMEs and individuals to move, store, issue, and grow money seamlessly without borders.
         </motion.p>
-
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.7 }}
-          className="space-y-3 mb-8"
-        >
-          {features.map((feature, index) => (
-            <motion.div
-              key={feature}
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.4, delay: 0.8 + index * 0.1 }}
-              className="flex items-center space-x-3"
-            >
-              <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
-              <span className="text-gray-700">{feature}</span>
-            </motion.div>
-          ))}
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.9 }}
-        >
-          <Button 
-            className="group"
-            onClick={() => window.location.href = '/maintenance'}
-          >
-            Get Started
-            <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-          </Button>
-        </motion.div>
       </div>
 
       {/* Demo Image Visual */}

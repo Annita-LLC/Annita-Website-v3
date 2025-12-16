@@ -61,7 +61,6 @@ Allow: /about
 Allow: /contact
 Allow: /contact-sales
 Allow: /investors
-Allow: /team
 Allow: /careers
 Allow: /partners
 Allow: /awards

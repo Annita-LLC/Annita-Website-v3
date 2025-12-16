@@ -8,7 +8,6 @@ import {
   Sparkles, 
   Zap, 
   Target, 
-  ArrowRight,
   CheckCircle,
   Activity,
   TrendingUp,
@@ -32,7 +31,6 @@ import {
   Pause,
   RotateCcw
 } from 'lucide-react'
-import Button from '@/components/ui/Button'
 
 const AIFeature = () => {
   const [aiProcessing, setAiProcessing] = useState(false)
@@ -168,20 +166,6 @@ const AIFeature = () => {
           ))}
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.9 }}
-        >
-          <Button 
-            className="group"
-            onClick={startAIProcessing}
-            disabled={aiProcessing}
-          >
-            {aiProcessing ? 'AI Processing...' : 'Try AI Now'}
-            <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-          </Button>
-        </motion.div>
       </div>
 
       {/* Interactive AI Visual */}

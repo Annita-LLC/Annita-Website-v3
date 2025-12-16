@@ -5,29 +5,12 @@ import { motion, useInView } from 'framer-motion'
 import Image from 'next/image'
 import {
   ShoppingCart,
-  Search,
-  TrendingUp,
-  Users,
-  Package,
-  ArrowRight,
-  CheckCircle,
   Sparkles,
-  Zap
 } from 'lucide-react'
-import Button from '@/components/ui/Button'
 
 const MarketplaceFeature = () => {
   const [isHovered, setIsHovered] = useState(false)
 
-
-  const features = [
-    'KYC-verified businesses through Smile ID.',
-    'Escrow payment protection for secure transactions.',
-    'RFQ-based sourcing with multiple responses.',
-    'Multi-currency support for 30+ African currencies.',
-    'Pan-African network across all AfCFTA regions.',
-    'Quality assurance and comprehensive certifications.'
-  ]
 
   return (
     <motion.div
@@ -79,41 +62,6 @@ const MarketplaceFeature = () => {
           <span className="text-orange-600 font-semibold"> RFQ-based sourcing</span>. 
           Connect with authentic African suppliers and grow your business across the continent.
         </motion.p>
-
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.7 }}
-          className="space-y-3 mb-8"
-        >
-          {features.map((feature, index) => (
-            <motion.div
-              key={feature}
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.4, delay: 0.8 + index * 0.1 }}
-              className="flex items-center space-x-3"
-            >
-              <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
-              <span className="text-gray-700">{feature}</span>
-            </motion.div>
-          ))}
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.9 }}
-        >
-          <Button 
-            className="group"
-            onClick={() => window.location.href = '/maintenance'}
-          >
-            Explore Marketplace
-            <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-          </Button>
-        </motion.div>
       </div>
 
       {/* Demo Image Visual */}
