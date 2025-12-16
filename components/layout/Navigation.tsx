@@ -300,12 +300,19 @@ const Navigation = () => {
 
             {/* CTA Buttons */}
             <div className="hidden lg:flex items-center space-x-3 xl:space-x-4">
-              <button 
+              <button
                 onClick={() => window.location.href = '/maintenance'}
                 className="btn-primary"
               >
                 <Download className="w-4 h-4 mr-2" />
-                Try Annita-v1.0
+                Try Now
+              </button>
+              <button
+                onClick={() => window.location.href = '/contact-sales'}
+                className="border-2 border-white text-white px-4 sm:px-6 py-2.5 sm:py-3 rounded-lg font-semibold hover:bg-white hover:text-gray-900 transition-all duration-200 flex items-center justify-center text-sm sm:text-base"
+              >
+                <Phone className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
+                Contact Sales
               </button>
             </div>
 
@@ -486,7 +493,7 @@ const Navigation = () => {
                 </div>
 
                 {/* Footer */}
-                <div className="p-6 border-t border-gray-200 dark:border-gray-700">
+                <div className="p-6 border-t border-gray-200 dark:border-gray-700 space-y-3">
                   <button
                     onClick={() => {
                       window.location.href = '/maintenance'
@@ -495,7 +502,17 @@ const Navigation = () => {
                     className="flex items-center justify-center w-full px-6 py-3 bg-gradient-to-r from-orange-500 to-orange-600 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-300"
                   >
                     <Download className="w-5 h-5 mr-2" />
-                    Try Annita-v1.0
+                    Try Now
+                  </button>
+                  <button
+                    onClick={() => {
+                      window.location.href = '/contact-sales'
+                      setIsOpen(false)
+                    }}
+                    className="flex items-center justify-center w-full px-6 py-3 border-2 border-orange-500 text-orange-500 font-semibold rounded-xl hover:bg-orange-500 hover:text-white transition-all duration-300"
+                  >
+                    <Phone className="w-5 h-5 mr-2" />
+                    Contact Sales
                   </button>
                 </div>
               </div>
