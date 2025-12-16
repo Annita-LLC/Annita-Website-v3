@@ -38,119 +38,259 @@ const V3AnnouncementSection = () => {
 
   const v3Features = [
     {
+      id: 'offline-functionality',
       icon: WifiOff,
       title: "Offline Functionality",
       description: "Access key features without internet - perfect for rural areas.",
-      color: "from-blue-500 to-cyan-500"
+      color: "from-blue-500 to-cyan-500",
+      status: "Coming in V3.0",
+      details: [
+        "Work offline in low-connectivity areas",
+        "Automatic data sync when online",
+        "Reduced dependency on internet",
+        "Perfect for rural entrepreneurs"
+      ]
     },
     {
+      id: 'escrow-settlements',
       icon: Shield,
       title: "Escrow Settlements",
       description: "Making trade safer and more trusted for buyers & sellers.",
-      color: "from-green-500 to-emerald-500"
+      color: "from-green-500 to-emerald-500",
+      status: "Coming in V3.0",
+      details: [
+        "Funds held securely until delivery",
+        "Automated dispute resolution",
+        "Building trust in African trade",
+        "Protected transactions"
+      ]
     },
     {
+      id: 'fintech-wallet',
       icon: CreditCard,
       title: "Fintech for All",
       description: "Send, receive, save, and grow money with our smart digital wallet.",
-      color: "from-purple-500 to-pink-500"
+      color: "from-purple-500 to-pink-500",
+      status: "Coming in V3.0",
+      details: [
+        "Comprehensive digital wallet",
+        "Money transfer capabilities",
+        "Savings and investment tools",
+        "Financial management insights"
+      ]
     },
     {
+      id: 'ai-assistant',
       icon: Brain,
       title: "AI Business Assistant",
       description: "Get automated help, insights, and guidance to run your hustle.",
-      color: "from-orange-500 to-red-500"
+      color: "from-orange-500 to-red-500",
+      status: "Coming in V3.0",
+      details: [
+        "24/7 AI-powered support",
+        "Business insights and analytics",
+        "Automated customer responses",
+        "Smart decision recommendations"
+      ]
     },
     {
+      id: 'logistics-tools',
       icon: Truck,
       title: "Built-in Logistics",
       description: "Deliver faster and reach more customers with integrated tools.",
-      color: "from-indigo-500 to-purple-500"
+      color: "from-indigo-500 to-purple-500",
+      status: "Coming in V3.0",
+      details: [
+        "Integrated delivery tracking",
+        "Route optimization",
+        "Real-time shipment updates",
+        "Expanded customer reach"
+      ]
     },
     {
+      id: 'marketing-tools',
       icon: Megaphone,
       title: "Marketing Tools",
       description: "Reach more customers with built-in marketing and promotion tools.",
-      color: "from-teal-500 to-cyan-500"
+      color: "from-teal-500 to-cyan-500",
+      status: "Coming in V3.0",
+      details: [
+        "Targeted marketing campaigns",
+        "Customer engagement tools",
+        "Promotional content creation",
+        "Analytics and performance tracking"
+      ]
     },
     {
+      id: 'advanced-payments',
       icon: Smartphone,
       title: "Advanced Payment Methods",
       description: "15+ payment options including M-Pesa, USSD, VISA QR for higher conversion rates.",
-      color: "from-rose-500 to-pink-500"
+      color: "from-rose-500 to-pink-500",
+      status: "Coming in V3.0",
+      details: [
+        "M-Pesa, Airtel Money, MTN integration",
+        "USSD payment support",
+        "VISA QR codes",
+        "Local payment preferences"
+      ]
     },
     {
+      id: 'invoice-generation',
       icon: FileText,
       title: "Invoice Generation",
       description: "Create and issue professional invoices for global payments with payment tracking.",
-      color: "from-violet-500 to-purple-500"
+      color: "from-violet-500 to-purple-500",
+      status: "Coming in V3.0",
+      details: [
+        "Professional invoice templates",
+        "Automated payment tracking",
+        "Customizable branding",
+        "Tax compliance features"
+      ]
     },
     {
+      id: 'online-store',
       icon: Store,
       title: "One-Click Online Store Creation",
       description: "Create a free online store that helps you find customers and accept payments globally.",
-      color: "from-emerald-500 to-teal-500"
+      color: "from-emerald-500 to-teal-500",
+      status: "Coming in V3.0",
+      details: [
+        "Drag-and-drop store builder",
+        "AI-powered product recommendations",
+        "Mobile-responsive templates",
+        "Global payment integration"
+      ]
     },
     {
+      id: 'payment-links',
       icon: Link,
       title: "Enhanced Payment Links",
       description: "Accept payments without writing code - advanced links with QR codes, expiration, and analytics.",
-      color: "from-cyan-500 to-blue-500"
+      color: "from-cyan-500 to-blue-500",
+      status: "Coming in V3.0",
+      details: [
+        "Customizable payment links",
+        "QR code generation",
+        "Expiration date control",
+        "Detailed analytics dashboard"
+      ]
     },
     {
+      id: 'money-transfer',
       icon: Send,
       title: "Personal Money Transfer App",
       description: "P2P money transfers, bill payments, airtime top-ups - expand beyond business users.",
-      color: "from-amber-500 to-orange-500"
+      color: "from-amber-500 to-orange-500",
+      status: "Coming in V3.0",
+      details: [
+        "P2P money transfers",
+        "Bill payment integration",
+        "Airtime top-up services",
+        "Seamless ecosystem transactions"
+      ]
     },
     {
+      id: 'event-services',
       icon: Calendar,
       title: "Event & Lifestyle Services",
       description: "Event ticketing, travel bookings, lifestyle management - comprehensive digital lifestyle platform.",
-      color: "from-lime-500 to-green-500"
+      color: "from-lime-500 to-green-500",
+      status: "Coming in V3.0",
+      details: [
+        "Event ticketing system",
+        "Travel booking integration",
+        "Lifestyle service management",
+        "Comprehensive digital lifestyle platform"
+      ]
     },
     {
+      id: 'creator-tools',
       icon: Palette,
       title: "Creator Tools",
       description: "Single-page websites, subscription tools, creator analytics - support digital content economy.",
-      color: "from-fuchsia-500 to-pink-500"
+      color: "from-fuchsia-500 to-pink-500",
+      status: "Coming in V3.0",
+      details: [
+        "Single-page website builder",
+        "Subscription management tools",
+        "Creator analytics dashboard",
+        "Content monetization features"
+      ]
     },
     {
+      id: 'tuition-payments',
       icon: GraduationCap,
       title: "Tuition Payment System",
       description: "School fee payments, scholarship management, education marketplace - tap into high-volume education sector.",
-      color: "from-indigo-500 to-blue-500"
+      color: "from-indigo-500 to-blue-500",
+      status: "Coming in V3.0",
+      details: [
+        "School fee payment integration",
+        "African and international schools",
+        "Scholarship management",
+        "Education marketplace"
+      ]
     }
   ]
 
   const currentFeatures = [
     {
+      id: 'live-marketplace',
       icon: Globe,
       title: "Live Marketplace",
       description: "Real vendors selling, real customers buying - right now.",
       status: "Live",
-      link: "/maintenance"
+      link: "/maintenance",
+      details: [
+        "Active marketplace with real transactions",
+        "Verified vendors and customers",
+        "Secure payment processing",
+        "Live support and assistance"
+      ]
     },
     {
+      id: 'active-community',
       icon: Users,
       title: "Active Community",
       description: "3,000+ vendors already using our platform.",
       status: "Active",
-      link: "/maintenance"
+      link: "/maintenance",
+      details: [
+        "Growing vendor community",
+        "Active user engagement",
+        "Community-driven features",
+        "Regular platform updates"
+      ]
     },
     {
+      id: 'revenue-generation',
       icon: DollarSign,
       title: "Revenue Generation",
       description: "Proven business model with real transactions.",
       status: "Proven",
-      link: "/maintenance"
+      link: "/maintenance",
+      details: [
+        "Successful revenue model",
+        "Real transaction processing",
+        "Sustainable business growth",
+        "Measurable financial results"
+      ]
     },
     {
+      id: 'market-validation',
       icon: CheckCircle,
       title: "Market Validation",
       description: "Real users, real feedback, real growth.",
       status: "Validated",
-      link: "/maintenance"
+      link: "/maintenance",
+      details: [
+        "User feedback integration",
+        "Market demand validation",
+        "Continuous improvement",
+        "Data-driven development"
+      ]
     }
   ]
 
@@ -387,23 +527,37 @@ const V3AnnouncementSection = () => {
                 >
                   {v3Features.map((feature, index) => (
                     <motion.div
-                      key={index}
+                      key={feature.id}
                       initial={{ opacity: 0, y: 30 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.5, delay: index * 0.1 }}
                       viewport={{ once: true }}
                       className="bg-white rounded-2xl p-6 shadow-lg border border-gray-200 hover:shadow-xl transition-all duration-300 group"
                     >
-                      <div className={`w-12 h-12 bg-gradient-to-r ${feature.color} rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
-                        <feature.icon className="w-6 h-6 text-white" />
-                      </div>
-                      <h3 className="text-xl font-bold mb-3 text-gray-900">{feature.title}</h3>
-                      <p className="text-gray-600 text-sm leading-relaxed">{feature.description}</p>
-                      <div className="mt-4">
-                        <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-orange-100 text-orange-700 border border-orange-200">
-                          Coming in V3.0
+                      <div className="flex items-center justify-between mb-4">
+                        <div className={`w-12 h-12 bg-gradient-to-r ${feature.color} rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
+                          <feature.icon className="w-6 h-6 text-white" />
+                        </div>
+                        <span className={`px-3 py-1 rounded-full text-xs font-medium ${
+                          feature.status === 'Live'
+                            ? 'bg-green-100 text-green-700 border border-green-200'
+                            : 'bg-orange-100 text-orange-700 border border-orange-200'
+                        }`}>
+                          {feature.status}
                         </span>
                       </div>
+
+                      <h3 className="text-xl font-bold mb-3 text-gray-900">{feature.title}</h3>
+                      <p className="text-gray-600 mb-4 leading-relaxed">{feature.description}</p>
+
+                      <ul className="space-y-2">
+                        {feature.details.map((detail, detailIndex) => (
+                          <li key={detailIndex} className="flex items-center text-sm text-gray-600">
+                            <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
+                            {detail}
+                          </li>
+                        ))}
+                      </ul>
                     </motion.div>
                   ))}
                 </motion.div>
@@ -418,8 +572,8 @@ const V3AnnouncementSection = () => {
                 >
                   {currentFeatures.map((feature, index) => (
                     <motion.div
-                      key={index}
-                      initial={{ opacity: 0, y: 20 }}
+                      key={feature.id}
+                      initial={{ opacity: 0, y: 30 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.5, delay: index * 0.1 }}
                       viewport={{ once: true }}
@@ -427,15 +581,30 @@ const V3AnnouncementSection = () => {
                       onClick={() => window.open(feature.link, '_blank')}
                     >
                       <div className="flex items-center justify-between mb-4">
-                        <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-emerald-500 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                        <div className={`w-12 h-12 bg-gradient-to-r ${feature.status === 'Live' ? 'from-green-500 to-emerald-500' : 'from-blue-500 to-cyan-500'} rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
                           <feature.icon className="w-6 h-6 text-white" />
                         </div>
-                        <span className="px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-medium border border-green-200">
+                        <span className={`px-3 py-1 rounded-full text-xs font-medium ${
+                          feature.status === 'Live'
+                            ? 'bg-green-100 text-green-700 border border-green-200'
+                            : 'bg-blue-100 text-blue-700 border border-blue-200'
+                        }`}>
                           {feature.status}
                         </span>
                       </div>
+
                       <h3 className="text-xl font-bold mb-3 text-gray-900">{feature.title}</h3>
-                      <p className="text-gray-600 mb-4 text-sm leading-relaxed">{feature.description}</p>
+                      <p className="text-gray-600 mb-4 leading-relaxed">{feature.description}</p>
+
+                      <ul className="space-y-2 mb-4">
+                        {feature.details.map((detail, detailIndex) => (
+                          <li key={detailIndex} className="flex items-center text-sm text-gray-600">
+                            <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
+                            {detail}
+                          </li>
+                        ))}
+                      </ul>
+
                       <div className="flex items-center text-green-600 text-sm font-medium group-hover:text-green-700">
                         <span>Try it now</span>
                         <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
