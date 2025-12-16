@@ -35,7 +35,6 @@ const searchData: SearchResult[] = [
   { id: 'privacy', title: 'Privacy Policy', description: 'How we handle your data', href: '/privacy', category: 'Legal', icon: FileText },
   { id: 'terms', title: 'Terms of Service', description: 'Our terms and conditions', href: '/terms', category: 'Legal', icon: FileText },
   { id: 'cookies', title: 'Cookie Policy', description: 'Learn about cookies', href: '/cookies', category: 'Legal', icon: FileText },
-  { id: 'security', title: 'Security', description: 'Security practices', href: '/legal/security', category: 'Legal', icon: FileText },
 ]
 
 export default function GlobalSearch() {

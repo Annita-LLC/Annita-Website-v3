@@ -97,12 +97,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.5,
     },
     {
-      url: `${baseUrl}/legal/security`,
-      lastModified: currentDate,
-      changeFrequency: 'monthly' as const,
-      priority: 0.5,
-    },
-    {
       url: `${baseUrl}/maintenance`,
       lastModified: currentDate,
       changeFrequency: 'monthly' as const,

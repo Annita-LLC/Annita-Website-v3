@@ -135,7 +135,6 @@ const Navigation = () => {
         { name: 'Privacy Policy', href: '/privacy', icon: Shield, description: 'How we handle your data' },
         { name: 'Terms of Service', href: '/terms', icon: FileCheck, description: 'Our terms and conditions' },
         { name: 'Cookie Policy', href: '/cookies', icon: Cookie, description: 'Learn about cookies' },
-        { name: 'Security', href: '/legal/security', icon: Lock, description: 'Security practices' },
       ]
     },
   ]
