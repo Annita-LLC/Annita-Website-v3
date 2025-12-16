@@ -455,6 +455,213 @@ export default function FeaturesPage() {
         </div>
       </section>
 
+      {/* AI-Powered Features Section */}
+      <section className="py-16 sm:py-20 bg-gradient-to-br from-purple-50 via-white to-pink-50">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
+                AI-Powered <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600">Intelligence</span>
+              </h2>
+              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+                Harness the power of artificial intelligence to automate tasks, gain insights, and make smarter business decisions.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {/* AI Business Assistant */}
+              <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300">
+                <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center mb-4">
+                  <Brain className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">AI Business Assistant</h3>
+                <p className="text-gray-600 mb-4">24/7 intelligent support for business operations, customer service, and decision-making.</p>
+                <ul className="space-y-2">
+                  <li className="flex items-center text-sm text-gray-600">
+                    <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
+                    Automated customer responses
+                  </li>
+                  <li className="flex items-center text-sm text-gray-600">
+                    <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
+                    Business insights & analytics
+                  </li>
+                  <li className="flex items-center text-sm text-gray-600">
+                    <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
+                    Smart decision recommendations
+                  </li>
+                </ul>
+              </div>
+
+              {/* Predictive Analytics */}
+              <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300">
+                <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center mb-4">
+                  <TrendingUp className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">Predictive Analytics</h3>
+                <p className="text-gray-600 mb-4">Forecast trends, optimize inventory, and predict customer behavior with advanced AI models.</p>
+                <ul className="space-y-2">
+                  <li className="flex items-center text-sm text-gray-600">
+                    <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
+                    Demand forecasting
+                  </li>
+                  <li className="flex items-center text-sm text-gray-600">
+                    <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
+                    Customer churn prediction
+                  </li>
+                  <li className="flex items-center text-sm text-gray-600">
+                    <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
+                    Inventory optimization
+                  </li>
+                </ul>
+              </div>
+
+              {/* Smart Recommendations */}
+              <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300">
+                <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-500 rounded-xl flex items-center justify-center mb-4">
+                  <Target className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">Smart Recommendations</h3>
+                <p className="text-gray-600 mb-4">Personalized product suggestions and marketing content powered by machine learning.</p>
+                <ul className="space-y-2">
+                  <li className="flex items-center text-sm text-gray-600">
+                    <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
+                    Product recommendations
+                  </li>
+                  <li className="flex items-center text-sm text-gray-600">
+                    <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
+                    Content personalization
+                  </li>
+                  <li className="flex items-center text-sm text-gray-600">
+                    <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
+                    Dynamic pricing
+                  </li>
+                </ul>
+              </div>
+
+              {/* AI Chat Support */}
+              <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300">
+                <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-500 rounded-xl flex items-center justify-center mb-4">
+                  <MessageSquare className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">AI Chat Support</h3>
+                <p className="text-gray-600 mb-4">Intelligent chatbot that handles customer inquiries, processes orders, and provides instant support.</p>
+                <ul className="space-y-2">
+                  <li className="flex items-center text-sm text-gray-600">
+                    <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
+                    24/7 customer support
+                  </li>
+                  <li className="flex items-center text-sm text-gray-600">
+                    <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
+                    Multi-language support
+                  </li>
+                  <li className="flex items-center text-sm text-gray-600">
+                    <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
+                    Order processing automation
+                  </li>
+                </ul>
+              </div>
+
+              {/* Fraud Detection */}
+              <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300">
+                <div className="w-12 h-12 bg-gradient-to-br from-red-500 to-pink-500 rounded-xl flex items-center justify-center mb-4">
+                  <Shield className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">AI Fraud Detection</h3>
+                <p className="text-gray-600 mb-4">Advanced machine learning algorithms that detect and prevent fraudulent transactions in real-time.</p>
+                <ul className="space-y-2">
+                  <li className="flex items-center text-sm text-gray-600">
+                    <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
+                    Real-time fraud prevention
+                  </li>
+                  <li className="flex items-center text-sm text-gray-600">
+                    <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
+                    Risk assessment scoring
+                  </li>
+                  <li className="flex items-center text-sm text-gray-600">
+                    <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
+                    Pattern recognition
+                  </li>
+                </ul>
+              </div>
+
+              {/* Image Recognition */}
+              <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300">
+                <div className="w-12 h-12 bg-gradient-to-br from-teal-500 to-cyan-500 rounded-xl flex items-center justify-center mb-4">
+                  <Zap className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">Visual AI</h3>
+                <p className="text-gray-600 mb-4">Computer vision technology for product categorization, quality control, and visual search capabilities.</p>
+                <ul className="space-y-2">
+                  <li className="flex items-center text-sm text-gray-600">
+                    <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
+                    Automatic product tagging
+                  </li>
+                  <li className="flex items-center text-sm text-gray-600">
+                    <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
+                    Visual search
+                  </li>
+                  <li className="flex items-center text-sm text-gray-600">
+                    <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
+                    Quality inspection
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* How It Works Section */}
+      <section className="py-16 sm:py-20 bg-gradient-to-br from-blue-50 via-white to-cyan-50">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
+                How Annita <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-600">Works</span>
+              </h2>
+              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+                Simple, powerful, and designed for African businesses. Get started in minutes and scale effortlessly.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {/* Step 1 */}
+              <div className="text-center">
+                <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-3xl flex items-center justify-center mx-auto mb-6 shadow-lg">
+                  <span className="text-2xl font-bold text-white">1</span>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-4">Sign Up & Setup</h3>
+                <p className="text-gray-600 leading-relaxed">
+                  Create your account in under 2 minutes. Connect your business information and payment methods securely.
+                </p>
+              </div>
+
+              {/* Step 2 */}
+              <div className="text-center">
+                <div className="w-20 h-20 bg-gradient-to-br from-green-500 to-emerald-500 rounded-3xl flex items-center justify-center mx-auto mb-6 shadow-lg">
+                  <span className="text-2xl font-bold text-white">2</span>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-4">Choose Your Tools</h3>
+                <p className="text-gray-600 leading-relaxed">
+                  Select from our comprehensive suite of features. Start with what you need, add more as you grow.
+                </p>
+              </div>
+
+              {/* Step 3 */}
+              <div className="text-center">
+                <div className="w-20 h-20 bg-gradient-to-br from-orange-500 to-red-500 rounded-3xl flex items-center justify-center mx-auto mb-6 shadow-lg">
+                  <span className="text-2xl font-bold text-white">3</span>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-4">Grow & Scale</h3>
+                <p className="text-gray-600 leading-relaxed">
+                  Access insights, automate processes, and expand your reach. Your business growth is our success.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Features Grid */}
       <section id="features" className="py-16 sm:py-20 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -520,6 +727,134 @@ export default function FeaturesPage() {
                   )}
                 </motion.div>
               ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Success Stories Section */}
+      <section className="py-16 sm:py-20 bg-gradient-to-br from-green-50 to-emerald-50">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
+                Real Success <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-emerald-600">Stories</span>
+              </h2>
+              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+                See how African businesses are transforming with Annita's comprehensive feature suite.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {/* Success Story 1 */}
+              <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center mr-4">
+                    <Building2 className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-gray-900">Nairobi Fashion Hub</h3>
+                    <p className="text-sm text-gray-600">E-commerce Store</p>
+                  </div>
+                </div>
+                <blockquote className="text-gray-700 mb-4 italic">
+                  "Annita's payment integration and logistics tools helped us expand from local to pan-African sales. Our revenue increased by 250% in just 6 months."
+                </blockquote>
+                <div className="flex items-center">
+                  <div className="flex text-yellow-400">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="w-4 h-4 fill-current" />
+                    ))}
+                  </div>
+                  <span className="text-sm text-gray-600 ml-2">Sarah W., Owner</span>
+                </div>
+              </div>
+
+              {/* Success Story 2 */}
+              <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-500 rounded-xl flex items-center justify-center mr-4">
+                    <Truck className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-gray-900">Lagos Logistics Co.</h3>
+                    <p className="text-sm text-gray-600">Delivery Service</p>
+                  </div>
+                </div>
+                <blockquote className="text-gray-700 mb-4 italic">
+                  "The AI business assistant and marketing tools revolutionized our operations. We now serve 3x more customers with better efficiency."
+                </blockquote>
+                <div className="flex items-center">
+                  <div className="flex text-yellow-400">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="w-4 h-4 fill-current" />
+                    ))}
+                  </div>
+                  <span className="text-sm text-gray-600 ml-2">Michael O., CEO</span>
+                </div>
+              </div>
+
+              {/* Success Story 3 */}
+              <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center mr-4">
+                    <GraduationCap className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-gray-900">Accra Education Services</h3>
+                    <p className="text-sm text-gray-600">Educational Platform</p>
+                  </div>
+                </div>
+                <blockquote className="text-gray-700 mb-4 italic">
+                  "Tuition payment system and creator tools made our platform complete. Student enrollment increased by 180% this year."
+                </blockquote>
+                <div className="flex items-center">
+                  <div className="flex text-yellow-400">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="w-4 h-4 fill-current" />
+                    ))}
+                  </div>
+                  <span className="text-sm text-gray-600 ml-2">Grace A., Founder</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-16 sm:py-20 bg-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
+                Frequently Asked <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-red-600">Questions</span>
+              </h2>
+              <p className="text-lg text-gray-600">
+                Everything you need to know about Annita's comprehensive feature suite.
+              </p>
+            </div>
+
+            <div className="space-y-6">
+              <div className="bg-gray-50 rounded-lg p-6">
+                <h3 className="text-lg font-semibold text-gray-900 mb-3">How do I get started with Annita?</h3>
+                <p className="text-gray-600">Simply sign up for a free account. Our onboarding process takes less than 5 minutes, and you can start using features immediately.</p>
+              </div>
+
+              <div className="bg-gray-50 rounded-lg p-6">
+                <h3 className="text-lg font-semibold text-gray-900 mb-3">Are all features included in one plan?</h3>
+                <p className="text-gray-600">Yes! Unlike other platforms, Annita includes all features in our comprehensive package. No hidden fees or premium add-ons.</p>
+              </div>
+
+              <div className="bg-gray-50 rounded-lg p-6">
+                <h3 className="text-lg font-semibold text-gray-900 mb-3">Is Annita secure for financial transactions?</h3>
+                <p className="text-gray-600">Absolutely. We use bank-grade encryption and comply with international security standards. All transactions are protected by our escrow system.</p>
+              </div>
+
+              <div className="bg-gray-50 rounded-lg p-6">
+                <h3 className="text-lg font-semibold text-gray-900 mb-3">Can I integrate Annita with my existing systems?</h3>
+                <p className="text-gray-600">Yes! Our API and custom solutions team can help integrate Annita with your existing tools, CRM, or ERP systems.</p>
+              </div>
             </div>
           </div>
         </div>

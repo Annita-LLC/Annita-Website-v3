@@ -18,6 +18,12 @@ import {
   ArrowRight,
   Mail,
   Phone,
+  Building,
+  Truck,
+  GraduationCap,
+  Store,
+  Brain,
+  FileText,
   MessageSquare,
   ExternalLink,
   Star,
@@ -290,6 +296,162 @@ export default function SolutionsPage() {
         </div>
       </section>
 
+      {/* AI Solutions Section */}
+      <section className="py-16 sm:py-20 bg-gradient-to-br from-purple-50 via-white to-pink-50">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
+                AI-Powered <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600">Solutions</span>
+              </h2>
+              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+                Leverage artificial intelligence to transform your business operations, automate processes, and gain competitive advantages.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {/* AI Business Intelligence */}
+              <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300">
+                <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center mb-4">
+                  <Brain className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">AI Business Intelligence</h3>
+                <p className="text-gray-600 mb-4">Custom AI dashboards and analytics platforms that provide deep insights into your business data.</p>
+                <ul className="space-y-2">
+                  <li className="flex items-center text-sm text-gray-600">
+                    <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
+                    Predictive analytics
+                  </li>
+                  <li className="flex items-center text-sm text-gray-600">
+                    <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
+                    Automated reporting
+                  </li>
+                  <li className="flex items-center text-sm text-gray-600">
+                    <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
+                    Real-time insights
+                  </li>
+                </ul>
+              </div>
+
+              {/* Machine Learning Models */}
+              <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300">
+                <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center mb-4">
+                  <Zap className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">Custom ML Models</h3>
+                <p className="text-gray-600 mb-4">Tailored machine learning models trained on your specific data to solve unique business challenges.</p>
+                <ul className="space-y-2">
+                  <li className="flex items-center text-sm text-gray-600">
+                    <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
+                    Demand forecasting
+                  </li>
+                  <li className="flex items-center text-sm text-gray-600">
+                    <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
+                    Customer segmentation
+                  </li>
+                  <li className="flex items-center text-sm text-gray-600">
+                    <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
+                    Recommendation systems
+                  </li>
+                </ul>
+              </div>
+
+              {/* AI Chatbots & Automation */}
+              <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300">
+                <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-500 rounded-xl flex items-center justify-center mb-4">
+                  <MessageSquare className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">AI Automation</h3>
+                <p className="text-gray-600 mb-4">Intelligent chatbots, workflow automation, and process optimization using advanced AI technologies.</p>
+                <ul className="space-y-2">
+                  <li className="flex items-center text-sm text-gray-600">
+                    <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
+                    Customer service bots
+                  </li>
+                  <li className="flex items-center text-sm text-gray-600">
+                    <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
+                    Process automation
+                  </li>
+                  <li className="flex items-center text-sm text-gray-600">
+                    <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
+                    Workflow optimization
+                  </li>
+                </ul>
+              </div>
+
+              {/* Computer Vision Solutions */}
+              <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300">
+                <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-500 rounded-xl flex items-center justify-center mb-4">
+                  <Target className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">Computer Vision</h3>
+                <p className="text-gray-600 mb-4">Image recognition, object detection, and visual analysis solutions for quality control and automation.</p>
+                <ul className="space-y-2">
+                  <li className="flex items-center text-sm text-gray-600">
+                    <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
+                    Quality inspection
+                  </li>
+                  <li className="flex items-center text-sm text-gray-600">
+                    <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
+                    Visual search
+                  </li>
+                  <li className="flex items-center text-sm text-gray-600">
+                    <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
+                    Document processing
+                  </li>
+                </ul>
+              </div>
+
+              {/* NLP & Text Analytics */}
+              <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300">
+                <div className="w-12 h-12 bg-gradient-to-br from-red-500 to-pink-500 rounded-xl flex items-center justify-center mb-4">
+                  <FileText className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">NLP Solutions</h3>
+                <p className="text-gray-600 mb-4">Natural language processing for sentiment analysis, content generation, and intelligent text processing.</p>
+                <ul className="space-y-2">
+                  <li className="flex items-center text-sm text-gray-600">
+                    <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
+                    Sentiment analysis
+                  </li>
+                  <li className="flex items-center text-sm text-gray-600">
+                    <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
+                    Chatbot development
+                  </li>
+                  <li className="flex items-center text-sm text-gray-600">
+                    <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
+                    Content automation
+                  </li>
+                </ul>
+              </div>
+
+              {/* AI Integration Services */}
+              <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300">
+                <div className="w-12 h-12 bg-gradient-to-br from-teal-500 to-cyan-500 rounded-xl flex items-center justify-center mb-4">
+                  <Settings className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">AI Integration</h3>
+                <p className="text-gray-600 mb-4">Seamlessly integrate AI capabilities into your existing systems and workflows.</p>
+                <ul className="space-y-2">
+                  <li className="flex items-center text-sm text-gray-600">
+                    <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
+                    API development
+                  </li>
+                  <li className="flex items-center text-sm text-gray-600">
+                    <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
+                    System integration
+                  </li>
+                  <li className="flex items-center text-sm text-gray-600">
+                    <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
+                    Custom AI APIs
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Solutions Grid */}
       <section id="solutions" className="py-16 sm:py-20 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -382,6 +544,232 @@ export default function SolutionsPage() {
                   <p className="text-gray-600 leading-relaxed">{step.description}</p>
                 </motion.div>
               ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Technologies Section */}
+      <section className="py-16 sm:py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
+                Technology <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-600">Stack</span>
+              </h2>
+              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+                We leverage cutting-edge technologies to build scalable, secure, and innovative solutions.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8">
+              {/* Frontend */}
+              <div className="text-center">
+                <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+                  <Code className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="font-semibold text-gray-900 mb-2">React/Next.js</h3>
+                <p className="text-sm text-gray-600">Modern Frontend</p>
+              </div>
+
+              {/* Backend */}
+              <div className="text-center">
+                <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-500 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+                  <Database className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="font-semibold text-gray-900 mb-2">Node.js</h3>
+                <p className="text-sm text-gray-600">Scalable Backend</p>
+              </div>
+
+              {/* Mobile */}
+              <div className="text-center">
+                <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+                  <Smartphone className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="font-semibold text-gray-900 mb-2">React Native</h3>
+                <p className="text-sm text-gray-600">Cross-Platform Apps</p>
+              </div>
+
+              {/* Cloud */}
+              <div className="text-center">
+                <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-red-500 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+                  <Cloud className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="font-semibold text-gray-900 mb-2">AWS/GCP</h3>
+                <p className="text-sm text-gray-600">Cloud Infrastructure</p>
+              </div>
+
+              {/* AI/ML */}
+              <div className="text-center">
+                <div className="w-16 h-16 bg-gradient-to-br from-teal-500 to-cyan-500 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+                  <Brain className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="font-semibold text-gray-900 mb-2">TensorFlow</h3>
+                <p className="text-sm text-gray-600">AI/ML Solutions</p>
+              </div>
+
+              {/* Security */}
+              <div className="text-center">
+                <div className="w-16 h-16 bg-gradient-to-br from-gray-700 to-gray-900 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+                  <Shield className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="font-semibold text-gray-900 mb-2">Security</h3>
+                <p className="text-sm text-gray-600">Bank-Grade Security</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Case Studies Section */}
+      <section className="py-16 sm:py-20 bg-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
+                Success <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-emerald-600">Stories</span>
+              </h2>
+              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+                See how we've transformed businesses with custom technology solutions across Africa.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {/* Case Study 1 */}
+              <div className="bg-gray-50 rounded-2xl p-8 border border-gray-100">
+                <div className="flex items-center mb-6">
+                  <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center mr-4">
+                    <Building className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-gray-900">FinTech Payment Platform</h3>
+                    <p className="text-gray-600">Nairobi, Kenya</p>
+                  </div>
+                </div>
+
+                <p className="text-gray-700 mb-6">
+                  Built a comprehensive payment platform integrating M-Pesa, card payments, and bank transfers for a growing fintech startup.
+                </p>
+
+                <div className="grid grid-cols-2 gap-4 mb-6">
+                  <div className="text-center">
+                    <div className="text-2xl font-bold text-blue-600">500K+</div>
+                    <div className="text-sm text-gray-600">Transactions/month</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-2xl font-bold text-green-600">99.9%</div>
+                    <div className="text-sm text-gray-600">Uptime</div>
+                  </div>
+                </div>
+
+                <div className="flex flex-wrap gap-2">
+                  <span className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-medium">React</span>
+                  <span className="px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-medium">Node.js</span>
+                  <span className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-xs font-medium">PostgreSQL</span>
+                </div>
+              </div>
+
+              {/* Case Study 2 */}
+              <div className="bg-gray-50 rounded-2xl p-8 border border-gray-100">
+                <div className="flex items-center mb-6">
+                  <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-500 rounded-xl flex items-center justify-center mr-4">
+                    <Truck className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-gray-900">Logistics Management System</h3>
+                    <p className="text-gray-600">Lagos, Nigeria</p>
+                  </div>
+                </div>
+
+                <p className="text-gray-700 mb-6">
+                  Developed an AI-powered logistics platform with real-time tracking, route optimization, and predictive analytics.
+                </p>
+
+                <div className="grid grid-cols-2 gap-4 mb-6">
+                  <div className="text-center">
+                    <div className="text-2xl font-bold text-blue-600">10K+</div>
+                    <div className="text-sm text-gray-600">Deliveries/month</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-2xl font-bold text-green-600">35%</div>
+                    <div className="text-sm text-gray-600">Cost reduction</div>
+                  </div>
+                </div>
+
+                <div className="flex flex-wrap gap-2">
+                  <span className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-medium">Python</span>
+                  <span className="px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-medium">TensorFlow</span>
+                  <span className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-xs font-medium">React</span>
+                </div>
+              </div>
+
+              {/* Case Study 3 */}
+              <div className="bg-gray-50 rounded-2xl p-8 border border-gray-100">
+                <div className="flex items-center mb-6">
+                  <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center mr-4">
+                    <GraduationCap className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-gray-900">Education Management Platform</h3>
+                    <p className="text-gray-600">Accra, Ghana</p>
+                  </div>
+                </div>
+
+                <p className="text-gray-700 mb-6">
+                  Created a comprehensive education platform with tuition payments, student management, and virtual learning tools.
+                </p>
+
+                <div className="grid grid-cols-2 gap-4 mb-6">
+                  <div className="text-center">
+                    <div className="text-2xl font-bold text-blue-600">50K+</div>
+                    <div className="text-sm text-gray-600">Students</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-2xl font-bold text-green-600">$2M+</div>
+                    <div className="text-sm text-gray-600">Tuition processed</div>
+                  </div>
+                </div>
+
+                <div className="flex flex-wrap gap-2">
+                  <span className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-medium">Next.js</span>
+                  <span className="px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-medium">Stripe</span>
+                  <span className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-xs font-medium">MongoDB</span>
+                </div>
+              </div>
+
+              {/* Case Study 4 */}
+              <div className="bg-gray-50 rounded-2xl p-8 border border-gray-100">
+                <div className="flex items-center mb-6">
+                  <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-500 rounded-xl flex items-center justify-center mr-4">
+                    <Store className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-gray-900">E-commerce Marketplace</h3>
+                    <p className="text-gray-600">Johannesburg, South Africa</p>
+                  </div>
+                </div>
+
+                <p className="text-gray-700 mb-6">
+                  Built a scalable marketplace platform with advanced search, AI recommendations, and multi-vendor support.
+                </p>
+
+                <div className="grid grid-cols-2 gap-4 mb-6">
+                  <div className="text-center">
+                    <div className="text-2xl font-bold text-blue-600">1K+</div>
+                    <div className="text-sm text-gray-600">Active sellers</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-2xl font-bold text-green-600">200%</div>
+                    <div className="text-sm text-gray-600">Revenue growth</div>
+                  </div>
+                </div>
+
+                <div className="flex flex-wrap gap-2">
+                  <span className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-medium">React</span>
+                  <span className="px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-medium">AWS</span>
+                  <span className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-xs font-medium">Elasticsearch</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
