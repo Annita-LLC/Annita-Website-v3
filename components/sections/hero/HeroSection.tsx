@@ -38,18 +38,18 @@ const HeroSection = () => {
   const slides = [
     {
       id: 1,
-      badge: "Annita 3.0 Coming Soon",
-      title: "The Future",
-      titleHighlight: "of Business in Africa",
-      subtitle: "Built for African businesses. Cross-border trade, institutional backing, and seamless integration.",
+      badge: "All-in-One Platform",
+      title: "Sell, Pay, Trade,",
+      titleHighlight: "Deliver",
+      subtitle: "Africa's first all-in-one digital platform combining e-commerce, fintech, AI, communication, marketing, logistics, and more into a single ecosystem.",
       background: "from-gray-50 via-white to-orange-50/30"
     },
     {
       id: 2,
       badge: "Live Marketplace",
-      title: "Real Vendors, Real Sales",
-      titleHighlight: "Right Now",
-      subtitle: "3,000+ KYC-verified vendors across Africa. Secure transactions guaranteed.",
+      title: "Real Vendors, Real",
+      titleHighlight: "Sales Right Now",
+      subtitle: "3,000+ KYC-verified vendors across Africa. Secure transactions guaranteed with institutional backing.",
       background: "from-blue-50 via-white to-purple-50/30"
     },
     {
@@ -57,17 +57,15 @@ const HeroSection = () => {
       badge: "Pan-African Network",
       title: "Connect Across All",
       titleHighlight: "54 African Countries",
-      subtitle: "Access suppliers from all AfCFTA regions. Trade in 30+ African currencies.",
-      background: "from-green-50 via-white to-teal-50/30",
-      hasVideo: true,
-      videoSrc: "https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fweb.facebook.com%2Freel%2F1141319817913700%2F&show_text=false&width=560&t=0"
+      subtitle: "Access suppliers from all AfCFTA regions. Trade in 30+ African currencies with seamless cross-border integration.",
+      background: "from-green-50 via-white to-teal-50/30"
     },
     {
       id: 4,
-      badge: "Secure Transactions",
-      title: "Built for",
-      titleHighlight: "Trust",
-      subtitle: "Funds held securely until delivery confirmed. Integrated financing solutions.",
+      badge: "Endless Solutions",
+      title: "Innovative Solutions for",
+      titleHighlight: "All MSMEs",
+      subtitle: "Endless innovative solutions combining e-commerce, fintech, AI, communication, marketing, logistics, and more.",
       background: "from-purple-50 via-white to-pink-50/30"
     },
     {
@@ -75,7 +73,7 @@ const HeroSection = () => {
       badge: "AI-Powered",
       title: "Smart Business",
       titleHighlight: "Intelligence",
-      subtitle: "AI-driven insights and automation to optimize your business operations and growth.",
+      subtitle: "AI-driven insights and automation to optimize your business operations and growth across the entire ecosystem.",
       background: "from-teal-50 via-white to-cyan-50/30"
     }
   ]
@@ -240,36 +238,6 @@ const HeroSection = () => {
               </motion.p>
               </AnimatePresence>
 
-              {/* Video Content (if slide has video) */}
-              {slides[currentSlide].hasVideo && (
-                <AnimatePresence mode="wait">
-                  <motion.div
-                    key={`video-slide-${currentSlide}`}
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0, scale: 0.95 }}
-                    transition={{ duration: 0.6, delay: 0.2 }}
-                    className="mb-8"
-                    onMouseEnter={() => setIsPaused(true)}
-                    onMouseLeave={() => setIsPaused(false)}
-                  >
-                    <div className="relative w-full max-w-md mx-auto lg:mx-0" style={{ paddingBottom: '56.25%' }}>
-                      <iframe
-                        src={slides[currentSlide].videoSrc}
-                        className="absolute top-0 left-0 w-full h-full rounded-xl shadow-lg"
-                        style={{border:'none',overflow:'hidden'}}
-                        scrolling="no"
-                        frameBorder="0"
-                        allowFullScreen={true}
-                        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-                        onMouseEnter={handleVideoInteraction}
-                        onMouseLeave={handleVideoPause}
-                        onFocus={handleVideoInteraction}
-                      />
-                    </div>
-                  </motion.div>
-                </AnimatePresence>
-              )}
 
               {/* CTA Buttons */}
               <AnimatePresence mode="wait">

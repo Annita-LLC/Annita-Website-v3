@@ -158,34 +158,6 @@ export default function CareersPage() {
         </div>
       </section>
 
-      {/* Team Stats */}
-      <section className="py-16 sm:py-20 bg-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 text-center mb-12">
-              Our Growing Team
-            </h2>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-              <div className="text-center">
-                <div className="text-4xl font-bold text-orange-600 mb-2">8+</div>
-                <div className="text-gray-600">Team Members</div>
-              </div>
-              <div className="text-center">
-                <div className="text-4xl font-bold text-orange-600 mb-2">1+</div>
-                <div className="text-gray-600">Countries</div>
-              </div>
-              <div className="text-center">
-                <div className="text-4xl font-bold text-orange-600 mb-2">100%</div>
-                <div className="text-gray-600">Employee Satisfaction</div>
-              </div>
-              <div className="text-center">
-                <div className="text-4xl font-bold text-orange-600 mb-2">Growing</div>
-                <div className="text-gray-600">Team</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* CTA Section */}
       <CTASection
