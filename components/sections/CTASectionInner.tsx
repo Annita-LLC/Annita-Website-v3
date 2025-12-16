@@ -1,10 +1,9 @@
 "use client"
 
-import dynamic from 'next/dynamic'
 import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
-import { useRef, useState } from 'react'
-import { ExternalLink, Star } from 'lucide-react'
+import { useRef } from 'react'
+import { ExternalLink, Phone } from 'lucide-react'
 
 
 const CTASectionInner = () => {
@@ -38,6 +37,13 @@ const CTASectionInner = () => {
               >
                 <ExternalLink className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
                 <span className="whitespace-nowrap">Try V1.0 Now</span>
+              </a>
+              <a
+                href="/contact-sales"
+                className="w-full sm:w-auto inline-flex items-center justify-center bg-white/10 text-white px-4 sm:px-6 lg:px-8 py-2.5 sm:py-3 rounded-lg font-semibold border border-white/40 hover:bg-white/15 transition-colors duration-200 text-sm sm:text-base"
+              >
+                <Phone className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
+                <span className="whitespace-nowrap">Contact Sales</span>
               </a>
             </div>
           </motion.div>

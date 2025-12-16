@@ -1,7 +1,5 @@
 import { Metadata } from 'next'
-import { Construction, Clock, ArrowLeft } from 'lucide-react'
-import Link from 'next/link'
-import Button from '@/components/ui/Button'
+import { Construction, Clock } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'Under Maintenance | Annita',
@@ -38,40 +36,6 @@ export default function MaintenancePage() {
           <p className="text-slate-400">
             We're working hard to improve our services. The platform should be back online soon.
           </p>
-        </div>
-
-        {/* Actions */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Link href="/">
-            <Button
-              variant="gradient"
-              size="lg"
-              icon={ArrowLeft}
-              className="w-full sm:w-auto"
-            >
-              Back to Homepage
-            </Button>
-          </Link>
-
-          <Link href="/contact">
-            <Button
-              variant="primary"
-              size="lg"
-              className="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white"
-            >
-              Contact Us
-            </Button>
-          </Link>
-
-          <Link href="/contact">
-            <Button
-              variant="outline"
-              size="lg"
-              className="w-full sm:w-auto border-slate-600 text-slate-300 hover:bg-slate-700"
-            >
-              Contact Support
-            </Button>
-          </Link>
         </div>
 
         {/* Footer */}

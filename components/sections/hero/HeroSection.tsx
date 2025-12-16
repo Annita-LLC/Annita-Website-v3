@@ -264,7 +264,7 @@ const HeroSection = () => {
                 animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -20 }}
                   transition={{ duration: 0.6 }}
-                className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-900 leading-tight mb-6"
+                className="text-3xl sm:text-4xl lg:text-6xl xl:text-7xl font-bold text-gray-900 leading-tight mb-6"
               >
                   {slides[currentSlide].title.split(slides[currentSlide].titleHighlight)[0]}
                 <br />
@@ -280,7 +280,7 @@ const HeroSection = () => {
                 animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -20 }}
                   transition={{ duration: 0.6, delay: 0.1 }}
-                className="text-lg sm:text-xl lg:text-2xl text-gray-600 leading-relaxed mb-8 max-w-xl lg:max-w-none"
+                className="text-sm sm:text-base lg:text-xl text-gray-600 leading-relaxed mb-8 max-w-xl lg:max-w-none"
               >
                   {slides[currentSlide].subtitle}
               </motion.p>

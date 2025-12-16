@@ -25,7 +25,7 @@ const FeaturesSection = () => {
           <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-orange-600 mb-4 sm:mb-6">
             Complete <span className="text-orange-500">African Business Ecosystem</span>
           </h2>
-          <p className="text-lg sm:text-xl text-gray-600 max-w-4xl mx-auto">
+          <p className="text-sm sm:text-base lg:text-lg text-gray-600 max-w-4xl mx-auto">
             Built for African businesses. Cross-border trade, institutional backing, and seamless integration. 
             Connect with authentic African suppliers and grow your business.
           </p>

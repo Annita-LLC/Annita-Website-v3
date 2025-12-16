@@ -112,11 +112,11 @@ const V3AnnouncementSection = () => {
               Annita <span className="text-orange-600">3.0</span>
             </h2>
             
-            <h3 className="text-xl sm:text-2xl lg:text-3xl text-gray-700 mb-6">
+            <h3 className="text-lg sm:text-xl lg:text-3xl text-gray-700 mb-6">
               The Future of Business in Africa
             </h3>
             
-            <p className="text-lg text-gray-600 max-w-4xl mx-auto mb-8">
+            <p className="text-sm sm:text-base lg:text-lg text-gray-600 max-w-4xl mx-auto mb-8">
               Smarter. Faster. Offline-ready. Inclusive.
               <br />
               <span className="text-orange-600 font-semibold">Built for everyone, everywhere.</span>

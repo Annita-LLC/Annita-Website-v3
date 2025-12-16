@@ -67,7 +67,7 @@ const TrustedPartnersSection = () => {
           <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-orange-600 mb-4 sm:mb-6">
             Trusted & Backed By
           </h2>
-          <p className="text-lg sm:text-xl text-neutral-600 max-w-3xl mx-auto">
+          <p className="text-sm sm:text-base lg:text-lg text-neutral-600 max-w-3xl mx-auto">
             Annita is supported by leading organizations and institutions across Africa and Europe.
           </p>
         </div>
