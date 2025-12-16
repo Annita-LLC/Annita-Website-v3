@@ -1,8 +1,10 @@
 'use client'
 
+import { useState, useEffect } from 'react'
 import dynamic from 'next/dynamic'
 import SEOHead from '@/components/seo/SEOHead'
 import HeroSection from '@/components/sections/hero/HeroSection'
+import WelcomeModal from '@/components/ui/WelcomeModal'
 
 // Lazy-load below-the-fold sections to reduce initial payload
 const FeaturesSection = dynamic(() => import('@/components/sections/FeaturesSection'), { ssr: false })
@@ -18,6 +20,21 @@ const homeCTAProps = {
 }
 
 export default function HomePage() {
+  const [isWelcomeModalOpen, setIsWelcomeModalOpen] = useState(false)
+
+  useEffect(() => {
+    // Check if user has seen the welcome modal before
+    const hasSeenWelcome = localStorage.getItem('annita-welcome-seen')
+
+    if (!hasSeenWelcome) {
+      // Show modal after a short delay for better UX
+      const timer = setTimeout(() => {
+        setIsWelcomeModalOpen(true)
+      }, 2000) // Show after 2 seconds
+
+      return () => clearTimeout(timer)
+    }
+  }, [])
 
   const homeStructuredData = {
     "@context": "https://schema.org",
@@ -158,6 +175,12 @@ export default function HomePage() {
         <V1MarketplaceSection />
         <TrustedPartnersSection />
         <CTASection {...homeCTAProps} />
+
+        {/* Welcome Modal */}
+        <WelcomeModal
+          isOpen={isWelcomeModalOpen}
+          onClose={() => setIsWelcomeModalOpen(false)}
+        />
     </>
   )
 }
