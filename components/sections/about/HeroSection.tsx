@@ -53,38 +53,6 @@ const HeroSection = () => {
 
             </motion.div>
 
-          {/* Visualization Card */}
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              animate={isInView ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="relative"
-            >
-            <div className="bg-white/10 backdrop-blur-sm p-8 rounded-3xl shadow-2xl border border-white/20">
-              <div className="text-center mb-6">
-                <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                  <Building2 className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-2xl font-bold text-white mb-2">Annita</h3>
-                <p className="text-orange-200">Africa's leading all-in-one digital platform</p>
-                </div>
-                
-              <div className="space-y-4">
-                <div className="flex items-center justify-between p-4 bg-white/10 rounded-xl">
-                  <span className="text-white">Founded</span>
-                  <span className="font-bold text-orange-200">2021</span>
-                  </div>
-                <div className="flex items-center justify-between p-4 bg-white/10 rounded-xl">
-                  <span className="text-white">Target MSMEs</span>
-                  <span className="font-bold text-orange-200">5M</span>
-                    </div>
-                <div className="flex items-center justify-between p-4 bg-white/10 rounded-xl">
-                  <span className="text-white">Vision</span>
-                  <span className="font-bold text-orange-200">2035</span>
-                    </div>
-                </div>
-              </div>
-            </motion.div>
         </div>
       </div>
     </section>

@@ -13,7 +13,7 @@ const ContactMethodsSection = () => {
       icon: Mail,
       title: 'Email Support',
       description: 'Get help with your account or technical issues',
-      contact: 'support@annita.com',
+      contact: 'annitallc@gmail.com',
       responseTime: 'Response within 24 hours',
       color: 'from-blue-500 to-cyan-500'
     },

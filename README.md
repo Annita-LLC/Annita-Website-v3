@@ -241,7 +241,7 @@ This project is proprietary software owned by Annita. All rights reserved.
 ## 🆘 Support
 
 For support and questions:
-- **Email**: support@annita.com
+- **Email**: annitallc@gmail.com
 - **Phone**: +231 123 456 789
 - **Website**: https://annita.com
 

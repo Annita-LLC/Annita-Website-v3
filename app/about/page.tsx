@@ -4,8 +4,6 @@ import SEOHead from '@/components/seo/SEOHead'
 import HeroSection from '@/components/sections/about/HeroSection'
 import MissionVisionSection from '@/components/sections/about/MissionVisionSection'
 import ValuesSection from '@/components/sections/about/ValuesSection'
-import ImpactSection from '@/components/sections/about/ImpactSection'
-import FutureVisionSection from '@/components/sections/about/FutureVisionSection'
 import JourneySection from '@/components/sections/about/JourneySection'
 import TeamSection from '@/components/sections/about/TeamSection'
 import CTASection from '@/components/sections/CTASection'
@@ -127,20 +125,12 @@ const AboutPage = () => {
           <ValuesSection />
         </section>
 
-        {/* Our Impact */}
-        <section className="py-16 sm:py-20 bg-gradient-to-br from-green-50 to-emerald-50">
-          <ImpactSection />
-        </section>
 
         {/* Our Journey */}
         <section className="py-16 sm:py-20 bg-gradient-to-br from-gray-50 to-orange-50">
           <JourneySection />
         </section>
 
-        {/* Future Vision */}
-        <section className="py-16 sm:py-20">
-          <FutureVisionSection />
-        </section>
 
         {/* Leadership Team */}
         <section className="py-16 sm:py-20 bg-gradient-to-br from-purple-50 to-pink-50">

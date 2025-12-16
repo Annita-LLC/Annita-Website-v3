@@ -20,7 +20,7 @@ const ContactPage = () => {
         {
           "@type": "ContactPoint",
           "contactType": "customer service",
-          "email": "support@annita.com",
+          "email": "annitallc@gmail.com",
           "telephone": "+231 123 456 789",
           "availableLanguage": ["English", "French", "Portuguese"]
         }

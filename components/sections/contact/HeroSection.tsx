@@ -59,7 +59,7 @@ const HeroSection = () => {
                 <Mail className="w-6 h-6 text-orange-200" />
                 <div>
                   <div className="font-semibold text-white">Email Support</div>
-                  <div className="text-sm text-orange-200">support@annita.com</div>
+                  <div className="text-sm text-orange-200">annitallc@gmail.com</div>
                 </div>
               </div>
               <div className="flex items-center space-x-3 bg-white/10 backdrop-blur-sm rounded-lg p-4">
