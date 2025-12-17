@@ -32,6 +32,8 @@ const Footer = () => {
       title: 'Company',
       links: [
         { name: 'About Us', href: '/about' },
+        { name: 'Features & Solutions', href: '/features', subtitle: 'Everything Annita offers' },
+        { name: 'Custom Solutions', href: '/solutions', subtitle: 'Bespoke tech development' },
         { name: 'Careers', href: '/careers' },
         { name: 'Partners', href: '/partners' },
       ]
@@ -167,20 +169,30 @@ const Footer = () => {
                 {section.links.map((link) => (
                   <li key={link.name}>
                     {'isExternal' in link && link.isExternal ? (
-                      <a 
+                      <a
                         href={link.href}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="footer-link text-gray-400 hover:text-white transition-colors duration-200 text-sm sm:text-base"
                       >
-                        {link.name}
+                        <div>
+                          <div className="font-medium">{link.name}</div>
+                          {'subtitle' in link && link.subtitle && (
+                            <div className="text-xs text-gray-500 mt-0.5">{link.subtitle}</div>
+                          )}
+                        </div>
                       </a>
                     ) : (
-                      <Link 
+                      <Link
                         href={link.href}
                         className="footer-link text-gray-400 hover:text-white transition-colors duration-200 text-sm sm:text-base"
                       >
-                        {link.name}
+                        <div>
+                          <div className="font-medium">{link.name}</div>
+                          {'subtitle' in link && link.subtitle && (
+                            <div className="text-xs text-gray-500 mt-0.5">{link.subtitle}</div>
+                          )}
+                        </div>
                       </Link>
                     )}
                   </li>
