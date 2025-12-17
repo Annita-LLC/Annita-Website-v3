@@ -59,14 +59,55 @@
   }
 
   /* Remove default focus outline for better UX */
-  button, a, input, textarea, select {
-    outline: none;
+  button, a, input, textarea, select, [role="button"], [tabindex]:not([tabindex="-1"]) {
+    outline: none !important;
   }
 
-  /* Custom focus styles for accessibility */
+  /* Remove focus outlines from all interactive elements */
+  *:focus {
+    outline: none !important;
+    box-shadow: none !important;
+  }
+
+  /* Ensure all banners and announcements are visible on all devices */
+  .banner, .announcement, [class*="banner"], [class*="announcement"] {
+    display: block !important;
+  }
+
+  /* Remove any responsive hiding for banners */
+  .banner.hidden, .announcement.hidden,
+  .banner.lg\\:hidden, .announcement.lg\\:hidden,
+  .banner.md\\:hidden, .announcement.md\\:hidden,
+  .banner.xl\\:hidden, .announcement.xl\\:hidden {
+    display: block !important;
+  }
+
+  /* Alternative: Hide all banners if user wants them removed */
+  /* To hide ALL banners, badges, and indicators, uncomment the lines below: */
+  /*
+  .banner, .announcement, [class*="banner"], [class*="announcement"],
+  [class*="notification"], [class*="alert"], [class*="badge"],
+  [class*="indicator"], [class*="ribbon"], [class*="sticker"],
+  [class*="new"], [class*="New"], [class*="NEW"] {
+    display: none !important;
+  }
+  */
+
+  /* Specific: Hide only elements that might be "new pages" indicators */
+  /* Uncomment to hide potential new content indicators: */
+  /*
+  .new-badge, .new-indicator, .new-label,
+  .pages-new, .new-pages, .latest,
+  .recent, .updated, .fresh {
+    display: none !important;
+  }
+  */
+
+  /* Custom focus styles for accessibility - only on keyboard navigation */
   button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible {
-    outline: 2px solid #3b82f6;
-    outline-offset: 2px;
+    outline: 2px solid #3b82f6 !important;
+    outline-offset: 2px !important;
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5) !important;
   }
 
 html {
