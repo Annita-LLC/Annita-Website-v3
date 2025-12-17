@@ -1,17 +1,13 @@
-"use client"
+﻿"use client"
 
-import { motion } from 'framer-motion'
-import { useInView } from 'framer-motion'
-import { useRef, useState } from 'react'
 import SEOHead from '@/components/seo/SEOHead'
-import { Cookie, Shield, Settings, Eye, Clock, Globe, Mail, Phone, Download, ExternalLink } from 'lucide-react'
-import CookieSettingsManager from '@/components/ui/CookieSettingsManager'
+import HeroSection from '@/components/sections/cookies/HeroSection'
+import NavigationSection from '@/components/sections/cookies/NavigationSection'
+import ContentSections from '@/components/sections/cookies/ContentSections'
+import FAQSection from '@/components/sections/cookies/FAQSection'
+import ContactSection from '@/components/sections/cookies/ContactSection'
 
 const CookiesPage = () => {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true })
-  const [isCookieSettingsOpen, setIsCookieSettingsOpen] = useState(false)
-
   const lastUpdated = "March 15, 2024"
   const effectiveDate = "March 15, 2024"
 
@@ -117,30 +113,47 @@ const CookiesPage = () => {
     }
   ]
 
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Cookie Policy - Annita",
+    "description": "Comprehensive cookie policy explaining how Annita uses cookies and tracking technologies with user control and privacy protection measures.",
+    "url": "https://www.an-nita.com/cookies",
+    "mainEntity": {
+      "@type": "Organization",
+      "name": "Annita",
+      "privacyPolicy": {
+        "@type": "WebPage",
+        "url": "https://www.an-nita.com/privacy"
+      }
+    }
+  }
+
   return (
     <>
       <SEOHead
-        title="Cookie Policy - Annita"
-        description="Learn about how Annita uses cookies and similar technologies to enhance your browsing experience."
+        title="Cookie Policy - Annita | Transparent Cookie Management & Privacy Control"
+        description="Understand how Annita uses cookies with full transparency and user control. Manage your cookie preferences, learn about tracking technologies, and protect your privacy."
         keywords={[
           'cookie policy',
-          'cookies',
-          'tracking',
-          'privacy',
-          'Annita',
-          'data collection',
           'cookie management',
+          'cookie settings',
+          'privacy control',
+          'tracking technologies',
+          'cookie preferences',
+          'data privacy',
+          'cookie consent',
+          'annita cookies',
+          'privacy protection',
+          'cookie control',
+          'user privacy',
           'tracking cookies',
           'analytics cookies',
           'functional cookies',
           'essential cookies',
-          'cookie consent',
-          'cookie preferences',
-          'cookie settings',
-          'cookie control',
           'cookie opt-out',
-          'cookie opt-in',
-          'cookie banner',
+          'privacy settings',
+          'data control',
           'cookie notice',
           'cookie information',
           'cookie usage',
@@ -156,342 +169,25 @@ const CookiesPage = () => {
         ]}
         canonical="/cookies"
         ogImage="/images/cookie-policy.jpg"
+        structuredData={structuredData}
       />
 
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white">
-      {/* Hero Section */}
-        <section className="relative py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-orange-600 via-orange-700 to-red-600 text-white overflow-hidden">
-          {/* Animated Background Elements */}
-          <div className="absolute inset-0">
-            <div className="absolute top-10 left-10 w-20 h-20 bg-white/10 rounded-full animate-pulse"></div>
-            <div className="absolute top-20 right-20 w-16 h-16 bg-white/10 rounded-full animate-bounce"></div>
-            <div className="absolute bottom-20 left-1/4 w-24 h-24 bg-white/10 rounded-full animate-pulse"></div>
-            <div className="absolute bottom-10 right-1/3 w-12 h-12 bg-white/10 rounded-full animate-bounce"></div>
-          </div>
+      <div className="min-h-screen">
+        {/* Hero Section - Cookie Transparency & Control */}
+        <HeroSection />
 
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              {/* Content */}
-              <div>
-                {/* Badge */}
-                <div className="inline-flex items-center px-6 py-3 rounded-full bg-white/20 backdrop-blur-sm text-white text-sm font-semibold mb-8 shadow-lg border border-white/30">
-                  <Cookie className="w-5 h-5 mr-2" />
-                  Cookie Policy
-                </div>
+        {/* Navigation Section - Easy Access to Cookie Information */}
+        <NavigationSection />
 
-                {/* Heading */}
-                <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 leading-tight">
-                  Cookie <span className="text-orange-200">Policy</span>
-                </h1>
+        {/* Content Sections - Detailed Cookie Information */}
+        <ContentSections />
 
-                {/* Description */}
-                <p className="text-xl sm:text-2xl text-orange-100 mb-8 leading-relaxed max-w-2xl">
-                  How we use cookies and similar technologies to enhance your experience
-                </p>
+        {/* FAQ Section - Common Cookie Questions */}
+        <FAQSection />
 
-                {/* Quick Stats */}
-                <div className="grid grid-cols-3 gap-6 mb-8">
-                  <div className="text-center">
-                    <div className="text-2xl sm:text-3xl font-bold text-white">4</div>
-                    <div className="text-sm text-orange-200">Types</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-2xl sm:text-3xl font-bold text-white">Safe</div>
-                    <div className="text-sm text-orange-200">Privacy</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-2xl sm:text-3xl font-bold text-white">Control</div>
-                    <div className="text-sm text-orange-200">Your Choice</div>
-                  </div>
-                </div>
-
-                {/* CTA Buttons */}
-                <div className="flex flex-col sm:flex-row gap-4">
-                  <a
-                    href="https://annita.company.site/products"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="bg-white text-orange-600 px-8 py-4 rounded-xl font-bold hover:bg-orange-50 transition-all duration-200 flex items-center justify-center shadow-lg hover:shadow-xl transform hover:scale-105"
-                  >
-                    <ExternalLink className="w-5 h-5 mr-2" />
-                    Try V1.0 Now
-                  </a>
-                  <a
-                    href="/download"
-                    className="border-2 border-white text-white px-8 py-4 rounded-xl font-bold hover:bg-white hover:text-orange-600 transition-all duration-200 flex items-center justify-center shadow-lg hover:shadow-xl transform hover:scale-105"
-                  >
-                    <Download className="w-5 h-5 mr-2" />
-                    Join V3.0 Waitlist
-                  </a>
-                </div>
-              </div>
-
-              {/* Visualization Card */}
-              <div className="relative">
-                <div className="bg-white/10 backdrop-blur-sm p-8 rounded-3xl shadow-2xl border border-white/20">
-                  <div className="text-center mb-6">
-                    <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                      <Cookie className="w-8 h-8 text-white" />
-                    </div>
-                    <h3 className="text-2xl font-bold text-white mb-2">Cookie Management</h3>
-                    <p className="text-orange-200">Transparent cookie usage and control</p>
-                  </div>
-                  
-                  <div className="space-y-4">
-                    <div className="flex items-center justify-between p-4 bg-white/10 rounded-xl">
-                      <span className="text-white">Essential Cookies</span>
-                      <span className="font-bold text-green-300">✓</span>
-                    </div>
-                    <div className="flex items-center justify-between p-4 bg-white/10 rounded-xl">
-                      <span className="text-white">Functional Cookies</span>
-                      <span className="font-bold text-green-300">✓</span>
-                    </div>
-                    <div className="flex items-center justify-between p-4 bg-white/10 rounded-xl">
-                      <span className="text-white">Analytics Cookies</span>
-                      <span className="font-bold text-green-300">✓</span>
-                    </div>
-                    <div className="flex items-center justify-between p-4 bg-white/10 rounded-xl">
-                      <span className="text-white">Marketing Cookies</span>
-                      <span className="font-bold text-green-300">✓</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Content Section */}
-        <section className="py-16 sm:py-20" ref={ref}>
-          <div className="container mx-auto px-3 sm:px-4 lg:px-6 xl:px-8">
-          <div className="max-w-4xl mx-auto">
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.8 }}
-                className="bg-white rounded-2xl shadow-lg p-8 sm:p-12"
-              >
-                {/* Introduction */}
-                <div className="mb-12">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">What Are Cookies?</h2>
-                  <p className="text-gray-600 leading-relaxed mb-4">
-                    Cookies are small text files that are stored on your device (computer, tablet, or mobile) when you visit our website. They help us provide you with a better experience by remembering your preferences, analyzing how you use our site, and personalizing content.
-                  </p>
-                  <p className="text-gray-600 leading-relaxed">
-                    This Cookie Policy explains how Annita ("we," "our," or "us") uses cookies and similar technologies on our website and mobile applications.
-                  </p>
-                </div>
-
-                {/* Types of Cookies */}
-                <div className="mb-12">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Types of Cookies We Use</h2>
-                  <div className="space-y-8">
-                    {cookieCategories.map((category, index) => (
-                      <div key={index} className="border border-gray-200 rounded-lg p-6">
-                        <div className="flex items-start justify-between mb-4">
-                          <h3 className="text-xl font-semibold text-gray-900">{category.category}</h3>
-                          <span className={`text-sm font-medium px-3 py-1 rounded-full ${
-                            category.canDisable 
-                              ? 'text-green-600 bg-green-100' 
-                              : 'text-red-600 bg-red-100'
-                          }`}>
-                            {category.canDisable ? 'Can Disable' : 'Required'}
-                          </span>
-                        </div>
-                        <p className="text-gray-600 mb-4">{category.description}</p>
-                        <div className="mb-4">
-                          <h4 className="font-semibold text-gray-900 mb-2">Examples:</h4>
-                          <ul className="list-disc list-inside text-gray-600 space-y-1 ml-4">
-                            {category.examples.map((example, exampleIndex) => (
-                              <li key={exampleIndex}>{example}</li>
-                            ))}
-                          </ul>
-                        </div>
-                        <div className="text-sm text-gray-500">
-                          <strong>Duration:</strong> {category.duration}
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Specific Cookies */}
-                <div className="mb-12">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Specific Cookies We Use</h2>
-                  <div className="overflow-x-auto">
-                    <table className="w-full border-collapse border border-gray-200">
-                      <thead>
-                        <tr className="bg-gray-50">
-                          <th className="border border-gray-200 px-4 py-3 text-left font-semibold text-gray-900">Cookie Name</th>
-                          <th className="border border-gray-200 px-4 py-3 text-left font-semibold text-gray-900">Purpose</th>
-                          <th className="border border-gray-200 px-4 py-3 text-left font-semibold text-gray-900">Duration</th>
-                          <th className="border border-gray-200 px-4 py-3 text-left font-semibold text-gray-900">Type</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        {specificCookies.map((cookie, index) => (
-                          <tr key={index} className="hover:bg-gray-50">
-                            <td className="border border-gray-200 px-4 py-3 text-sm font-mono text-gray-900">{cookie.name}</td>
-                            <td className="border border-gray-200 px-4 py-3 text-sm text-gray-600">{cookie.purpose}</td>
-                            <td className="border border-gray-200 px-4 py-3 text-sm text-gray-600">{cookie.duration}</td>
-                            <td className="border border-gray-200 px-4 py-3 text-sm text-gray-600">{cookie.type}</td>
-                          </tr>
-                        ))}
-                      </tbody>
-                    </table>
-          </div>
-        </div>
-
-                {/* Third-Party Cookies */}
-                <div className="mb-12">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Third-Party Cookies</h2>
-                  <p className="text-gray-600 leading-relaxed mb-4">
-                    We may use third-party services that set their own cookies. These services include:
-                  </p>
-                  <ul className="list-disc list-inside text-gray-600 space-y-2 ml-4 mb-4">
-                    <li><strong>Google Analytics:</strong> For website analytics and performance monitoring</li>
-                    <li><strong>Payment Processors:</strong> For secure payment processing</li>
-                    <li><strong>Social Media Platforms:</strong> For social media integration and sharing</li>
-                    <li><strong>Advertising Networks:</strong> For relevant advertising (with your consent)</li>
-                  </ul>
-                  <p className="text-gray-600 leading-relaxed">
-                    These third-party services have their own privacy policies and cookie practices. We encourage you to review their policies for more information.
-            </p>
-          </div>
-
-                {/* Managing Cookies */}
-                <div className="mb-12">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6 flex items-center gap-2">
-                    <Settings className="w-8 h-8 text-orange-500" />
-                    Managing Your Cookie Preferences
-                  </h2>
-                  
-                  {/* Cookie Settings Button */}
-                  <div className="mb-6">
-                    <button
-                      onClick={() => setIsCookieSettingsOpen(true)}
-                      className="bg-orange-600 hover:bg-orange-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors duration-200 flex items-center gap-2"
-                    >
-                      <Settings className="w-5 h-5" />
-                      Open Cookie Settings
-                    </button>
-                    <p className="text-sm text-gray-600 mt-2">
-                      Click the button above to customize your cookie preferences and manage which types of cookies you want to allow.
-                    </p>
-                  </div>
-                  <div className="space-y-6">
-                    <div>
-                      <h3 className="text-xl font-semibold text-gray-900 mb-3">Browser Settings</h3>
-                      <p className="text-gray-600 leading-relaxed mb-3">
-                        You can control cookies through your browser settings. Most browsers allow you to:
-                      </p>
-                      <ul className="list-disc list-inside text-gray-600 space-y-2 ml-4">
-                        <li>Block all cookies</li>
-                        <li>Block third-party cookies only</li>
-                        <li>Delete existing cookies</li>
-                        <li>Set preferences for specific websites</li>
-              </ul>
-            </div>
-                    <div>
-                      <h3 className="text-xl font-semibold text-gray-900 mb-3">Cookie Consent</h3>
-                      <p className="text-gray-600 leading-relaxed mb-3">
-                        When you first visit our website, you'll see a cookie consent banner. You can:
-                      </p>
-                      <ul className="list-disc list-inside text-gray-600 space-y-2 ml-4">
-                        <li>Accept all cookies</li>
-                        <li>Reject non-essential cookies</li>
-                        <li>Customize your preferences</li>
-                        <li>Change your settings later through our cookie preferences page</li>
-              </ul>
-            </div>
-                    <div>
-                      <h3 className="text-xl font-semibold text-gray-900 mb-3">Mobile Apps</h3>
-                      <p className="text-gray-600 leading-relaxed">
-                        For our mobile applications, you can manage cookie preferences through your device settings or within the app settings.
-                      </p>
-                    </div>
-              </div>
-            </div>
-
-                {/* Impact of Disabling Cookies */}
-                <div className="mb-12">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Impact of Disabling Cookies</h2>
-                  <div className="bg-orange-50 border border-orange-200 rounded-lg p-6">
-                    <div className="flex items-start gap-3">
-                      <Eye className="w-6 h-6 text-orange-600 mt-1 flex-shrink-0" />
-                      <div>
-                        <h3 className="text-lg font-semibold text-orange-900 mb-2">Important Notice</h3>
-                        <p className="text-orange-800 mb-3">
-                          Disabling certain cookies may affect the functionality of our website:
-                        </p>
-                        <ul className="list-disc list-inside text-orange-800 space-y-1 ml-4">
-                          <li>Essential cookies cannot be disabled as they are required for basic functionality</li>
-                          <li>Disabling functional cookies may limit personalization features</li>
-                          <li>Disabling analytics cookies may affect our ability to improve our services</li>
-                          <li>Some features may not work properly without cookies</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-          </div>
-
-                {/* Updates to Policy */}
-                <div className="mb-12">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Updates to This Policy</h2>
-                  <p className="text-gray-600 leading-relaxed mb-4">
-                    We may update this Cookie Policy from time to time to reflect changes in our practices or for other operational, legal, or regulatory reasons. We will notify you of any material changes by:
-                  </p>
-                  <ul className="list-disc list-inside text-gray-600 space-y-2 ml-4">
-                    <li>Posting the updated policy on our website</li>
-                    <li>Updating the "Last Updated" date at the top of this policy</li>
-                    <li>Sending you an email notification for significant changes</li>
-                  </ul>
-            </div>
-
-                {/* Contact Information */}
-                <div className="mb-8">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Contact Us</h2>
-                  <p className="text-gray-600 leading-relaxed mb-4">
-                    If you have any questions about our use of cookies or this Cookie Policy, please contact us:
-                  </p>
-                  <div className="bg-gray-50 rounded-lg p-6">
-                    <div className="space-y-3">
-                      <div className="flex items-center gap-3">
-                        <Mail className="w-5 h-5 text-orange-500" />
-                        <span className="text-gray-700">Email: privacy@annita.com</span>
-              </div>
-                      <div className="flex items-center gap-3">
-                        <Phone className="w-5 h-5 text-orange-500" />
-                        <span className="text-gray-700">Phone: +231 775 057 227</span>
-            </div>
-                      <div className="flex items-center gap-3">
-                        <Globe className="w-5 h-5 text-orange-500" />
-                        <span className="text-gray-700">Address: Monrovia, Liberia</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-                {/* Effective Date */}
-                <div className="border-t border-gray-200 pt-6">
-                  <p className="text-sm text-gray-500">
-                    <strong>Effective Date:</strong> {effectiveDate}
-                  </p>
-                  <p className="text-sm text-gray-500">
-                    <strong>Last Updated:</strong> {lastUpdated}
-                  </p>
-                </div>
-              </motion.div>
-          </div>
-        </div>
-      </section>
-    </div>
-
-    {/* Cookie Settings Manager */}
-    <CookieSettingsManager
-      isOpen={isCookieSettingsOpen}
-      onClose={() => setIsCookieSettingsOpen(false)}
-    />
+        {/* Contact Section - Cookie Support & Privacy Help */}
+        <ContactSection />
+      </div>
     </>
   )
 }

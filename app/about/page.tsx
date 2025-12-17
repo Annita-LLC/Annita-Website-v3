@@ -2,10 +2,9 @@
 
 import SEOHead from '@/components/seo/SEOHead'
 import HeroSection from '@/components/sections/about/HeroSection'
-import MissionVisionSection from '@/components/sections/about/MissionVisionSection'
-import ValuesSection from '@/components/sections/about/ValuesSection'
-import JourneySection from '@/components/sections/about/JourneySection'
-import TeamSection from '@/components/sections/about/TeamSection'
+import StorySection from '@/components/sections/about/StorySection'
+import ImpactSection from '@/components/sections/about/ImpactSection'
+import LeadershipSection from '@/components/sections/about/LeadershipSection'
 import CTASection from '@/components/sections/CTASection'
 
 // About page specific CTA content
@@ -22,7 +21,7 @@ const AboutPage = () => {
     "name": "Annita",
     "url": "https://www.an-nita.com",
     "logo": "https://www.an-nita.com/favicon.png",
-    "description": "Africa's first all-in-one digital platform integrating e-commerce, fintech, AI-driven tools, and lifestyle services",
+    "description": "Africa's leading all-in-one digital platform integrating e-commerce, fintech, AI-driven tools, and lifestyle services",
     "foundingDate": "2021",
     "address": {
       "@type": "PostalAddress",
@@ -32,7 +31,7 @@ const AboutPage = () => {
     "contactPoint": {
       "@type": "ContactPoint",
       "contactType": "customer service",
-      "email": "contact@annita.com"
+      "email": "annitallc@gmail.com"
     },
     "sameAs": [
       "https://linkedin.com/company/annita-africa",
@@ -53,8 +52,27 @@ const AboutPage = () => {
         "@type": "Person",
         "name": "Siah Fallah",
         "jobTitle": "CMO"
+      },
+      {
+        "@type": "Person",
+        "name": "Lamber Kpukuyou",
+        "jobTitle": "CTO"
       }
-    ]
+    ],
+    "award": [
+      "Orange Social Venture Prize Winner 2024",
+      "African Union EAN Fellowship 2024",
+      "SMART Liberia Winner 2024",
+      "Mansa Platform Partner 2025"
+    ],
+    "areaServed": [
+      {
+        "@type": "Country",
+        "name": "All African Countries"
+      }
+    ],
+    "numberOfEmployees": "10-50",
+    "slogan": "Africa's Leading All-in-One Digital Platform"
   }
 
   return (
@@ -76,10 +94,6 @@ const AboutPage = () => {
           'African innovation',
           'digital platform Africa',
           'business solutions Africa',
-          'African entrepreneurship',
-          'tech company Africa',
-          'digital services Africa',
-          'African business platform',
           'innovation Africa',
           'digital economy Africa',
           'African technology',
@@ -104,41 +118,34 @@ const AboutPage = () => {
           'African digital platform',
           'technology solutions Africa',
           'African business platform',
-          'digital innovation Africa'
+          'digital innovation Africa',
+          'Orange Social Venture Prize',
+          'African Union Fellowship',
+          'Mansa Platform',
+          'SMART Liberia',
+          'Christopher O Fallah',
+          'Annita leadership'
         ]}
         canonical="/about"
         ogImage="/about-og-image.jpg"
         structuredData={structuredData}
       />
-      
+
       <div className="min-h-screen">
-        {/* Hero Section */}
+        {/* Hero Section - Professional positioning as Africa's leading platform */}
         <HeroSection />
 
-        {/* Mission & Vision */}
-        <section className="py-10 sm:py-14 bg-gradient-to-br from-blue-50 via-white to-cyan-50">
-          <MissionVisionSection />
-        </section>
+        {/* Story Section - Our unique position and market leadership */}
+        <StorySection />
 
-        {/* Our Values */}
-        <section className="py-10 sm:py-14">
-          <ValuesSection />
-        </section>
+        {/* Impact Section - Real achievements and market position */}
+        <ImpactSection />
 
-
-        {/* Our Journey */}
-        <section className="py-10 sm:py-14 bg-gradient-to-br from-gray-50 to-orange-50">
-          <JourneySection />
-        </section>
-
-
-        {/* Leadership Team */}
-        <section className="py-10 sm:py-14 bg-gradient-to-br from-purple-50 to-pink-50">
-          <TeamSection />
-        </section>
+        {/* Leadership Section - Professional team presentation */}
+        <LeadershipSection />
 
         {/* Call to Action */}
-        <section className="py-10 sm:py-14 bg-gradient-to-br from-orange-50 to-red-50">
+        <section className="py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-orange-50 to-red-50">
           <CTASection {...aboutCTAProps} />
         </section>
       </div>
