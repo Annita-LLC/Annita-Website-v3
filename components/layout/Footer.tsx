@@ -32,8 +32,8 @@ const Footer = () => {
       title: 'Company',
       links: [
         { name: 'About Us', href: '/about' },
-        { name: 'Features & Solutions', href: '/features', subtitle: 'Everything Annita offers' },
-        { name: 'Custom Solutions', href: '/solutions', subtitle: 'Bespoke tech development' },
+        { name: 'Features & Solutions', href: '/features' },
+        { name: 'Custom Solutions', href: '/solutions' },
         { name: 'Careers', href: '/careers' },
         { name: 'Partners', href: '/partners' },
       ]
@@ -175,24 +175,14 @@ const Footer = () => {
                         rel="noopener noreferrer"
                         className="footer-link text-gray-400 hover:text-white transition-colors duration-200 text-sm sm:text-base"
                       >
-                        <div>
-                          <div className="font-medium">{link.name}</div>
-                          {'subtitle' in link && link.subtitle && (
-                            <div className="text-xs text-gray-500 mt-0.5">{link.subtitle}</div>
-                          )}
-                        </div>
+                        {link.name}
                       </a>
                     ) : (
                       <Link
                         href={link.href}
                         className="footer-link text-gray-400 hover:text-white transition-colors duration-200 text-sm sm:text-base"
                       >
-                        <div>
-                          <div className="font-medium">{link.name}</div>
-                          {'subtitle' in link && link.subtitle && (
-                            <div className="text-xs text-gray-500 mt-0.5">{link.subtitle}</div>
-                          )}
-                        </div>
+                        {link.name}
                       </Link>
                     )}
                   </li>
