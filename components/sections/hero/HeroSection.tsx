@@ -39,7 +39,7 @@ const HeroSection = () => {
     {
       id: 1,
       badge: "All-in-One Platform",
-      title: "Sell, Pay, Trade,",
+      title: "Sell, Pay, Trade",
       titleHighlight: "Deliver",
       subtitle: "Africa's first all-in-one digital platform combining e-commerce, fintech, AI, communication, marketing, logistics, and more into a single ecosystem.",
       background: "from-gray-50 via-white to-orange-50/30"

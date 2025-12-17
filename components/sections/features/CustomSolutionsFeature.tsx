@@ -57,8 +57,7 @@ const CustomSolutionsFeature = () => {
           transition={{ duration: 0.6, delay: 0.5 }}
           className="text-gray-600 mb-6 leading-relaxed"
         >
-          Need something unique? Our expert developers build <span className="text-orange-600 font-semibold">custom software solutions</span> from web apps to mobile platforms,
-          system integrations, and enterprise applications tailored to your specific business needs.
+          Need something unique? Our expert developers build <span className="text-orange-600 font-semibold">custom software solutions</span> from web apps to mobile platforms, system integrations, and enterprise applications tailored to your specific business needs.
         </motion.p>
 
 

@@ -60,7 +60,6 @@ Disallow: /package-lock.json
 Allow: /about
 Allow: /contact
 Allow: /contact-sales
-Allow: /investors
 Allow: /careers
 Allow: /partners
 Allow: /awards

@@ -80,18 +80,6 @@
       ]
     },
     {
-      "name": "Investors",
-      "short_name": "Invest",
-      "description": "Investment opportunities",
-      "url": "/investors",
-      "icons": [
-        {
-          "src": "/images/logo/favicon.png",
-          "sizes": "96x96"
-        }
-      ]
-    },
-    {
       "name": "Careers",
       "short_name": "Careers",
       "description": "Join our team",

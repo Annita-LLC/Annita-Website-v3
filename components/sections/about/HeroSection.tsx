@@ -6,7 +6,8 @@ import {
   Heart,
   Globe,
   Building2,
-  Rocket
+  Rocket,
+  MessageSquare
 } from 'lucide-react'
 
 const HeroSection = () => {
@@ -36,7 +37,7 @@ const HeroSection = () => {
             >
             {/* Badge */}
             <div className="inline-flex items-center px-6 py-3 rounded-full bg-white/20 backdrop-blur-sm text-white text-sm font-semibold mb-8 shadow-lg border border-white/30">
-              <Building2 className="w-5 h-5 mr-2" />
+              <MessageSquare className="w-5 h-5 mr-2" />
                 About Annita
               </div>
 
