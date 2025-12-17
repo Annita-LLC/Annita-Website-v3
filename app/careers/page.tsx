@@ -16,59 +16,59 @@ export default function CareersPage() {
       {/* Hero Section */}
       <section className="relative py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-orange-600 via-orange-700 to-red-600 text-white overflow-hidden">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="text-center lg:text-left">
-              <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/20 backdrop-blur-sm text-white text-sm font-medium mb-6">
-                Join Our Team
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div className="text-center lg:text-left">
+                <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/20 backdrop-blur-sm text-white text-sm font-medium mb-6">
+                  Join Our Team
+                </div>
+                <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 leading-tight">
+                  Join Our <span className="text-orange-200">Mission</span>
+                </h1>
+                <p className="text-lg sm:text-xl text-orange-100 max-w-2xl mx-auto lg:mx-0 leading-relaxed mb-8">
+                  Help us empower millions of African MSMEs through innovative technology. Be part of something bigger than yourself.
+                </p>
+                
+                {/* Quick Stats */}
+                <div className="grid grid-cols-3 gap-3 sm:gap-4 mb-6 sm:mb-8">
+                  <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3 sm:p-4">
+                    <div className="text-xl sm:text-2xl font-bold">8+</div>
+                    <div className="text-xs sm:text-sm text-orange-200">Team Members</div>
+                  </div>
+                  <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3 sm:p-4">
+                    <div className="text-xl sm:text-2xl font-bold">Remote</div>
+                    <div className="text-xs sm:text-sm text-orange-200">Work Style</div>
+                  </div>
+                  <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3 sm:p-4">
+                    <div className="text-xl sm:text-2xl font-bold">Impact</div>
+                    <div className="text-xs sm:text-sm text-orange-200">Driven</div>
+                  </div>
+                </div>
               </div>
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 leading-tight">
-                Join Our <span className="text-orange-200">Mission</span>
-              </h1>
-              <p className="text-lg sm:text-xl text-orange-100 max-w-2xl mx-auto lg:mx-0 leading-relaxed mb-8">
-                Help us empower millions of African MSMEs through innovative technology. Be part of something bigger than yourself.
-              </p>
 
-              {/* Quick Stats */}
-              <div className="grid grid-cols-3 gap-3 sm:gap-4 mb-6 sm:mb-8">
-                <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3 sm:p-4">
-                  <div className="text-xl sm:text-2xl font-bold">8+</div>
-                  <div className="text-xs sm:text-sm text-orange-200">Team Members</div>
-                </div>
-                <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3 sm:p-4">
-                  <div className="text-xl sm:text-2xl font-bold">Remote</div>
-                  <div className="text-xs sm:text-sm text-orange-200">Work Style</div>
-                </div>
-                <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3 sm:p-4">
-                  <div className="text-xl sm:text-2xl font-bold">Impact</div>
-                  <div className="text-xs sm:text-sm text-orange-200">Driven</div>
-                </div>
-              </div>
-            </div>
-
-            {/* Right Column - Interactive Elements */}
-            <div className="relative">
-              {/* Team Excellence Visualization */}
-              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 sm:p-6 border border-white/20">
-                <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4 text-center">Team Excellence</h3>
-                <div className="space-y-3 sm:space-y-4">
-                  <div className="flex items-center justify-between p-3 bg-white/10 rounded-lg">
-                    <span className="text-orange-200">8+ Team Members</span>
-                    <span className="font-semibold text-white">Growing</span>
-                  </div>
-                  <div className="flex items-center justify-between p-3 bg-white/10 rounded-lg">
-                    <span className="text-orange-200">Remote Work</span>
-                    <span className="font-semibold text-white">Flexible</span>
-                  </div>
-                  <div className="flex items-center justify-between p-3 bg-white/10 rounded-lg">
-                    <span className="text-orange-200">Impact Driven</span>
-                    <span className="font-semibold text-white">Passionate</span>
-                  </div>
-                  <div className="flex items-center justify-between p-3 bg-white/10 rounded-lg">
-                    <span className="text-orange-200">Success Rate</span>
-                    <span className="font-semibold text-white">98%</span>
+              {/* Right Column - Interactive Elements */}
+              <div className="relative">
+                {/* Team Excellence Visualization */}
+                <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 sm:p-6 border border-white/20">
+                  <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4 text-center">Team Excellence</h3>
+                  <div className="space-y-3 sm:space-y-4">
+                    <div className="flex items-center justify-between p-3 bg-white/10 rounded-lg">
+                      <span className="text-orange-200">8+ Team Members</span>
+                      <span className="font-semibold text-white">Growing</span>
+                    </div>
+                    <div className="flex items-center justify-between p-3 bg-white/10 rounded-lg">
+                      <span className="text-orange-200">Remote Work</span>
+                      <span className="font-semibold text-white">Flexible</span>
+                    </div>
+                    <div className="flex items-center justify-between p-3 bg-white/10 rounded-lg">
+                      <span className="text-orange-200">Impact Driven</span>
+                      <span className="font-semibold text-white">Passionate</span>
+                    </div>
+                    <div className="flex items-center justify-between p-3 bg-white/10 rounded-lg">
+                      <span className="text-orange-200">Success Rate</span>
+                      <span className="font-semibold text-white">98%</span>
+                    </div>
                   </div>
                 </div>
-              </div>
             </div>
           </div>
         </div>
@@ -199,7 +199,7 @@ export default function CareersPage() {
             <div className="text-center mb-16">
               <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
                 Benefits & <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-red-600">Perks</span>
-              </h2>
+                   </h2>
               <p className="text-lg text-gray-600 max-w-3xl mx-auto">
                 We offer competitive compensation and benefits designed to support your work-life balance and professional growth.
               </p>
@@ -332,7 +332,7 @@ export default function CareersPage() {
                   <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                   </svg>
-                </div>
+                       </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-4">Team Building</h3>
                 <ul className="space-y-3">
                   <li className="flex items-start">
@@ -354,7 +354,7 @@ export default function CareersPage() {
                     <span className="text-gray-600">Recognition programs</span>
                   </li>
                 </ul>
-              </div>
+                   </div>
 
               {/* Latest Technology */}
               <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
@@ -362,7 +362,7 @@ export default function CareersPage() {
                   <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
-                </div>
+                             </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-4">Latest Technology</h3>
                 <ul className="space-y-3">
                   <li className="flex items-start">
@@ -384,10 +384,10 @@ export default function CareersPage() {
                     <span className="text-gray-600">Premium software licenses</span>
                   </li>
                 </ul>
-              </div>
-            </div>
-          </div>
-        </div>
+                             </div>
+                           </div>
+                           </div>
+                         </div>
       </section>
 
       {/* Our Values Section */}
@@ -410,12 +410,12 @@ export default function CareersPage() {
                   <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                   </svg>
-                </div>
+                           </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">Innovation</h3>
                 <p className="text-gray-600 text-sm leading-relaxed">
                   We constantly push boundaries to solve complex challenges and create groundbreaking solutions for African businesses.
                 </p>
-              </div>
+                           </div>
 
               {/* Impact */}
               <div className="text-center">
@@ -423,12 +423,12 @@ export default function CareersPage() {
                   <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064" />
                   </svg>
-                </div>
+                         </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">Impact</h3>
                 <p className="text-gray-600 text-sm leading-relaxed">
                   We measure our success by the positive change we create in the lives of African entrepreneurs and communities.
                 </p>
-              </div>
+                  </div>
 
               {/* Collaboration */}
               <div className="text-center">
@@ -436,12 +436,12 @@ export default function CareersPage() {
                   <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                   </svg>
-                </div>
+                           </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">Collaboration</h3>
                 <p className="text-gray-600 text-sm leading-relaxed">
                   We believe in the power of diverse teams working together to achieve extraordinary results.
                 </p>
-              </div>
+                           </div>
 
               {/* Integrity */}
               <div className="text-center">
@@ -449,14 +449,14 @@ export default function CareersPage() {
                   <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                   </svg>
-                </div>
+                         </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">Integrity</h3>
                 <p className="text-gray-600 text-sm leading-relaxed">
                   We operate with honesty, transparency, and ethical principles in everything we do.
                 </p>
-              </div>
-            </div>
-          </div>
+                     </div>
+                   </div>
+                </div>
         </div>
       </section>
 
@@ -598,8 +598,8 @@ export default function CareersPage() {
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">Get notified about future opportunities</h3>
                 <p className="text-gray-600">
                   Leave your contact information and we'll reach out when positions become available.
-                </p>
-              </div>
+                         </p>
+                       </div>
 
               <form className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -612,69 +612,69 @@ export default function CareersPage() {
                       placeholder="Your first name"
                     />
                   </div>
-                  <div>
+                                             <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">Last Name *</label>
-                    <input
-                      type="text"
-                      required
+                         <input
+                           type="text"
+                           required
                       className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors"
                       placeholder="Your last name"
                     />
                   </div>
-                </div>
-
-                <div>
+                       </div>
+                      
+                                             <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">Email Address *</label>
-                  <input
-                    type="email"
-                    required
+                         <input
+                           type="email"
+                           required
                     className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors"
-                    placeholder="your.email@company.com"
-                  />
-                </div>
+                           placeholder="your.email@company.com"
+                         />
+                    </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
+                                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                       <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">Phone Number</label>
-                    <input
-                      type="tel"
+                         <input
+                           type="tel"
                       className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors"
                       placeholder="+231 77 505 7227"
-                    />
-                  </div>
-                  <div>
+                         />
+                       </div>
+                       <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">Department of Interest</label>
                     <select className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors">
-                      <option value="">Select department</option>
+                           <option value="">Select department</option>
                       <option value="engineering">Engineering</option>
                       <option value="product">Product</option>
                       <option value="marketing">Marketing</option>
                       <option value="sales">Sales</option>
                       <option value="other">Other</option>
-                    </select>
-                  </div>
-                </div>
+                         </select>
+                       </div>
+                     </div>
 
-                <div>
+                                         <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">Tell us about yourself</label>
-                  <textarea
-                    rows={4}
+                       <textarea
+                         rows={4}
                     className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors"
                     placeholder="Briefly tell us about your background, skills, and why you're interested in joining Annita..."
-                  />
-                </div>
+                       />
+                     </div>
 
                 <div className="text-center">
-                  <button
-                    type="submit"
+                    <button
+                      type="submit"
                     className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
                   >
-                    Submit Application
-                  </button>
+                          Submit Application
+                    </button>
                   <p className="text-sm text-gray-500 mt-4">
                     We'll review your application and get back to you within 7-10 business days.
                   </p>
-                </div>
+                   </div>
               </form>
             </div>
           </div>

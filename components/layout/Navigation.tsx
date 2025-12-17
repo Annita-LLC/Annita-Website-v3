@@ -302,7 +302,7 @@ const Navigation = () => {
 
             {/* CTA Buttons */}
             <div className="hidden lg:flex items-center">
-              <button
+              <button 
                 onClick={() => setIsWelcomeModalOpen(true)}
                 className="btn-primary"
               >

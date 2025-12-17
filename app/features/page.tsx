@@ -186,7 +186,7 @@ export default function FeaturesPage() {
       description: "Funds held securely until delivery is confirmed. Building trust in African trade.",
       category: 'payments',
       color: "from-green-500 to-emerald-500",
-      status: "Live",
+      status: "Coming in V3.0",
       details: [
         "Secure fund holding",
         "Automated release on delivery",
@@ -202,7 +202,7 @@ export default function FeaturesPage() {
       description: "Send, receive, save, and grow money with our comprehensive fintech solutions.",
       category: 'payments',
       color: "from-orange-500 to-red-500",
-      status: "Live",
+      status: "Coming in V3.0",
       details: [
         "Multi-currency support",
         "Instant transfers",
@@ -391,8 +391,8 @@ export default function FeaturesPage() {
 
   const stats = [
     { number: "3,000+", label: "Active Vendors", icon: Users },
-    { number: "15+", label: "Payment Methods", icon: CreditCard },
-    { number: "54", label: "African Countries", icon: Globe },
+    { number: "15+", label: "Payment Methods (Coming Soon)", icon: CreditCard },
+    { number: "54", label: "African Countries (Coming Soon)", icon: Globe },
     { number: "14", label: "Platform Features", icon: Star }
   ]
 

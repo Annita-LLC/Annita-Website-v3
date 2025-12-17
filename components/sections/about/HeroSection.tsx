@@ -17,7 +17,7 @@ const HeroSection = () => {
 
   return (
     <>
-    <section className="relative py-8 sm:py-12 md:py-16 lg:py-20 bg-gradient-to-br from-orange-600 via-orange-700 to-red-600 text-white overflow-hidden">
+    <section className="relative py-6 sm:py-8 md:py-10 lg:py-12 bg-gradient-to-br from-orange-600 via-orange-700 to-red-600 text-white overflow-hidden">
       {/* Animated Background Elements */}
       <div className="absolute inset-0">
         <div className="absolute top-10 left-10 w-20 h-20 bg-white/10 rounded-full animate-pulse"></div>

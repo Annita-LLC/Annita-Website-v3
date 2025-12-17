@@ -18,13 +18,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly' as const,
       priority: 0.9,
     },
-      {
-        url: `${baseUrl}/contact`,
-        lastModified: currentDate,
-      },
-      {
-        url: `${baseUrl}/contact-sales`,
-        lastModified: currentDate,
+    {
+      url: `${baseUrl}/contact`,
+      lastModified: currentDate,
+    },
+    {
+      url: `${baseUrl}/contact-sales`,
+      lastModified: currentDate,
       changeFrequency: 'weekly' as const,
       priority: 0.8,
     },

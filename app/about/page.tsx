@@ -116,29 +116,29 @@ const AboutPage = () => {
         <HeroSection />
 
         {/* Mission & Vision */}
-        <section className="py-16 sm:py-20 bg-gradient-to-br from-blue-50 via-white to-cyan-50">
+        <section className="py-10 sm:py-14 bg-gradient-to-br from-blue-50 via-white to-cyan-50">
           <MissionVisionSection />
         </section>
 
         {/* Our Values */}
-        <section className="py-16 sm:py-20">
+        <section className="py-10 sm:py-14">
           <ValuesSection />
         </section>
 
 
         {/* Our Journey */}
-        <section className="py-16 sm:py-20 bg-gradient-to-br from-gray-50 to-orange-50">
+        <section className="py-10 sm:py-14 bg-gradient-to-br from-gray-50 to-orange-50">
           <JourneySection />
         </section>
 
 
         {/* Leadership Team */}
-        <section className="py-16 sm:py-20 bg-gradient-to-br from-purple-50 to-pink-50">
+        <section className="py-10 sm:py-14 bg-gradient-to-br from-purple-50 to-pink-50">
           <TeamSection />
         </section>
 
         {/* Call to Action */}
-        <section className="py-16 sm:py-20 bg-gradient-to-br from-orange-50 to-red-50">
+        <section className="py-10 sm:py-14 bg-gradient-to-br from-orange-50 to-red-50">
           <CTASection {...aboutCTAProps} />
         </section>
       </div>
