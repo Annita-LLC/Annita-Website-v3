@@ -33,7 +33,7 @@ const ContactSection = () => {
               </div>
               <h3 className="text-xl font-semibold text-white mb-2">Email Support</h3>
               <p className="text-gray-400 mb-3 leading-relaxed">Send detailed inquiries and legal questions</p>
-              <div className="text-white font-medium mb-1">legal@annita.com</div>
+              <div className="text-white font-medium mb-1">annitallc@gmail.com</div>
               <div className="text-sm text-blue-300">Response within 24 hours</div>
             </div>
 
@@ -147,7 +147,7 @@ const ContactSection = () => {
                   <input
                     type="email"
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                    placeholder="your@email.com"
+                    placeholder="your.email@example.com"
                   />
                 </div>
               </div>

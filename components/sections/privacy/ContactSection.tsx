@@ -24,7 +24,7 @@ const ContactSection = () => {
       icon: Mail,
       title: "Email Us",
       description: "Send us a detailed message about your privacy concern",
-      contact: "privacy@annita.com",
+      contact: "annitallc@gmail.com",
       response: "Response within 24 hours",
       color: "from-blue-500 to-cyan-500"
     },
@@ -198,7 +198,7 @@ const ContactSection = () => {
                     <input
                       type="email"
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                      placeholder="your@email.com"
+                      placeholder="your.email@example.com"
                     />
                   </div>
                 </div>

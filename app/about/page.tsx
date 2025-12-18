@@ -19,7 +19,7 @@ const AboutPage = () => {
     "contactPoint": {
       "@type": "ContactPoint",
       "contactType": "customer service",
-      "email": "contact@annita.com"
+      "email": "annitallc@gmail.com"
     },
     "sameAs": [
       "https://linkedin.com/company/annita-africa",

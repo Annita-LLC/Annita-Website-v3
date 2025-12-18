@@ -70,7 +70,7 @@ export default function HomePage() {
       "contactPoint": {
         "@type": "ContactPoint",
         "contactType": "customer service",
-        "email": "contact@annita.com"
+        "email": "annitallc@gmail.com"
       },
       "sameAs": [
         "https://twitter.com/annita_africa",
