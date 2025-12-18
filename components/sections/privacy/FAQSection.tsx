@@ -111,7 +111,7 @@ const FAQSection = () => {
                 Privacy Questions
               </span>
             </h2>
-            <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-lg sm:text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
               Find answers to the most common questions about how we handle your privacy and personal data.
             </p>
           </motion.div>
@@ -179,7 +179,7 @@ const FAQSection = () => {
                     className="px-6 pb-5"
                   >
                     <div className="pt-4 border-t border-gray-100">
-                      <p className="text-gray-700 leading-relaxed">{faq.answer}</p>
+                      <p className="text-gray-400 leading-relaxed">{faq.answer}</p>
                     </div>
                   </motion.div>
                 )}

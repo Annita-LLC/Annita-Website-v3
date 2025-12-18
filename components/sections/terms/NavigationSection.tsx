@@ -111,7 +111,7 @@ const NavigationSection = () => {
                 Overview
               </span>
             </h2>
-            <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-lg sm:text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
               Navigate through our comprehensive terms of service. Click any section below to jump directly to the information you need.
             </p>
           </div>
@@ -132,7 +132,7 @@ const NavigationSection = () => {
                     <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors leading-tight">
                       {section.title}
                     </h3>
-                    <p className="text-sm text-gray-600 leading-relaxed mb-3">
+                    <p className="text-sm text-gray-400 leading-relaxed mb-3">
                       {section.description}
                     </p>
                     <div className="flex items-center text-sm font-medium text-blue-600 group-hover:text-blue-700 transition-colors">

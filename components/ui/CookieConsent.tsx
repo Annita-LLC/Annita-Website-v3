@@ -180,10 +180,10 @@ const CookieConsent = ({ onPreferencesChange }: CookieConsentProps) => {
                     <Cookie className="w-5 h-5 text-orange-200" />
                   </div>
                   <div className="min-w-0">
-                    <div className="text-xs sm:text-sm font-medium">
+                    <div className="text-xs sm:text-sm text-gray-400 leading-relaxed">
                       We use cookies to improve your experience.
                     </div>
-                    <div className="text-xs sm:text-sm text-slate-200">
+                    <div className="text-xs sm:text-sm text-gray-400 leading-relaxed">
                       You can accept all cookies or customize your choices.{' '}
                       <Link href="/cookies" className="underline underline-offset-2 hover:text-white">
                         Cookie Policy

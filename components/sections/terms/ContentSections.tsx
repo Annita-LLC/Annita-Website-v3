@@ -28,7 +28,7 @@ const ContentSections = () => {
       content: (
         <div className="space-y-6">
           <div className="bg-blue-50 border border-blue-200 rounded-xl p-6">
-            <p className="text-gray-700 leading-relaxed">
+            <p className="text-gray-400 leading-relaxed">
               By accessing and using Annita's services, you accept and agree to be bound by the terms and provision of this agreement. If you do not agree to abide by the above, please do not use this service.
             </p>
           </div>
@@ -39,7 +39,7 @@ const ContentSections = () => {
                 <CheckCircle className="w-6 h-6 text-green-500" />
                 <h4 className="font-semibold text-gray-900">Electronic Agreement</h4>
               </div>
-              <p className="text-sm text-gray-600">
+              <p className="text-sm text-gray-400 leading-relaxed">
                 Your use of our services constitutes electronic acceptance of these terms.
               </p>
             </div>
@@ -48,7 +48,7 @@ const ContentSections = () => {
                 <CheckCircle className="w-6 h-6 text-green-500" />
                 <h4 className="font-semibold text-gray-900">Continuous Agreement</h4>
               </div>
-              <p className="text-sm text-gray-600">
+              <p className="text-sm text-gray-400 leading-relaxed">
                 Terms remain in effect as long as you use our services.
               </p>
             </div>
@@ -65,7 +65,7 @@ const ContentSections = () => {
         <div className="space-y-6">
           <div className="bg-purple-50 border border-purple-200 rounded-xl p-6">
             <h4 className="font-semibold text-gray-900 mb-3">What We Provide</h4>
-            <p className="text-gray-700 leading-relaxed">
+            <p className="text-gray-400 leading-relaxed">
               Annita provides a comprehensive all-in-one digital platform that includes e-commerce, fintech services, AI-powered business tools, payment processing, logistics management, and various business solutions.
             </p>
           </div>
@@ -86,7 +86,7 @@ const ContentSections = () => {
                   </div>
                   <h5 className="font-semibold text-gray-900 text-sm">{service.title}</h5>
                 </div>
-                <p className="text-xs text-gray-600">{service.desc}</p>
+                <p className="text-xs text-gray-400 leading-relaxed">{service.desc}</p>
               </div>
             ))}
           </div>
@@ -102,7 +102,7 @@ const ContentSections = () => {
         <div className="space-y-6">
           <div className="bg-green-50 border border-green-200 rounded-xl p-6">
             <h4 className="font-semibold text-gray-900 mb-3">Your Responsibilities</h4>
-            <p className="text-gray-700 leading-relaxed">
+            <p className="text-gray-400 leading-relaxed">
               As a user of our platform, you agree to maintain accurate account information, use the services lawfully, and respect the rights of other users and third parties.
             </p>
           </div>
@@ -119,7 +119,7 @@ const ContentSections = () => {
                 ].map((item, index) => (
                   <div key={index} className="flex items-center space-x-3">
                     <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
-                    <span className="text-gray-700 text-sm">{item}</span>
+                    <span className="text-gray-400 text-sm leading-relaxed">{item}</span>
                   </div>
                 ))}
               </div>
@@ -135,7 +135,7 @@ const ContentSections = () => {
                 ].map((item, index) => (
                   <div key={index} className="flex items-center space-x-3">
                     <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
-                    <span className="text-gray-700 text-sm">{item}</span>
+                    <span className="text-gray-400 text-sm leading-relaxed">{item}</span>
                   </div>
                 ))}
               </div>
@@ -153,7 +153,7 @@ const ContentSections = () => {
         <div className="space-y-6">
           <div className="bg-orange-50 border border-orange-200 rounded-xl p-6">
             <h4 className="font-semibold text-gray-900 mb-3">Payment Terms</h4>
-            <p className="text-gray-700 leading-relaxed">
+            <p className="text-gray-400 leading-relaxed">
               Payment terms vary by service. All fees are clearly disclosed before purchase. You agree to pay all charges associated with your account.
             </p>
           </div>
@@ -164,7 +164,7 @@ const ContentSections = () => {
                 <DollarSign className="w-6 h-6 text-orange-500" />
                 <h4 className="font-semibold text-gray-900">Fee Structure</h4>
               </div>
-              <div className="space-y-2 text-sm text-gray-600">
+              <div className="space-y-2 text-sm text-gray-400 leading-relaxed">
                 <p>• Transaction fees for marketplace sales</p>
                 <p>• Subscription fees for premium features</p>
                 <p>• Payment processing fees</p>
@@ -176,7 +176,7 @@ const ContentSections = () => {
                 <Clock className="w-6 h-6 text-orange-500" />
                 <h4 className="font-semibold text-gray-900">Billing Cycle</h4>
               </div>
-              <div className="space-y-2 text-sm text-gray-600">
+              <div className="space-y-2 text-sm text-gray-400 leading-relaxed">
                 <p>• Monthly billing for subscription services</p>
                 <p>• Immediate charges for one-time purchases</p>
                 <p>• Automatic renewal unless cancelled</p>
@@ -208,7 +208,7 @@ const ContentSections = () => {
         <div className="space-y-6">
           <div className="bg-red-50 border border-red-200 rounded-xl p-6">
             <h4 className="font-semibold text-red-900 mb-3">Strictly Prohibited</h4>
-            <p className="text-red-800 leading-relaxed">
+            <p className="text-gray-400 leading-relaxed">
               You may not use our services for any unlawful or prohibited activities. Violation of these terms may result in immediate account suspension or termination.
             </p>
           </div>
@@ -246,7 +246,7 @@ const ContentSections = () => {
         <div className="space-y-6">
           <div className="bg-indigo-50 border border-indigo-200 rounded-xl p-6">
             <h4 className="font-semibold text-gray-900 mb-3">Our Intellectual Property</h4>
-            <p className="text-gray-700 leading-relaxed">
+            <p className="text-gray-400 leading-relaxed">
               All content, features, and functionality of our services are owned by Annita and are protected by copyright, trademark, and other intellectual property laws.
             </p>
           </div>
@@ -254,7 +254,7 @@ const ContentSections = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="bg-white border border-gray-200 rounded-lg p-6">
               <h4 className="font-semibold text-gray-900 mb-3">What Belongs to Us</h4>
-              <div className="space-y-2 text-sm text-gray-600">
+              <div className="space-y-2 text-sm text-gray-400 leading-relaxed">
                 <p>• Platform software and algorithms</p>
                 <p>• User interface designs</p>
                 <p>• Brand names and logos</p>
@@ -264,7 +264,7 @@ const ContentSections = () => {
             </div>
             <div className="bg-white border border-gray-200 rounded-lg p-6">
               <h4 className="font-semibold text-gray-900 mb-3">Your Content Rights</h4>
-              <div className="space-y-2 text-sm text-gray-600">
+              <div className="space-y-2 text-sm text-gray-400 leading-relaxed">
                 <p>• You retain ownership of your content</p>
                 <p>• You grant us license to use your content</p>
                 <p>• We may use content for service improvement</p>
@@ -284,7 +284,7 @@ const ContentSections = () => {
         <div className="space-y-6">
           <div className="bg-gray-50 border border-gray-200 rounded-xl p-6">
             <h4 className="font-semibold text-gray-900 mb-3">Service "As Is"</h4>
-            <p className="text-gray-700 leading-relaxed">
+            <p className="text-gray-400 leading-relaxed">
               Our services are provided "as is" and "as available" without warranties of any kind. We do not guarantee uninterrupted or error-free service.
             </p>
           </div>
@@ -292,7 +292,7 @@ const ContentSections = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="bg-white border border-gray-200 rounded-lg p-6">
               <h4 className="font-semibold text-gray-900 mb-3 text-red-600">Liability Limitations</h4>
-              <div className="space-y-2 text-sm text-gray-600">
+              <div className="space-y-2 text-sm text-gray-400 leading-relaxed">
                 <p>• Maximum liability limited to fees paid</p>
                 <p>• No liability for indirect damages</p>
                 <p>• No liability for data loss</p>
@@ -301,7 +301,7 @@ const ContentSections = () => {
             </div>
             <div className="bg-white border border-gray-200 rounded-lg p-6">
               <h4 className="font-semibold text-gray-900 mb-3 text-blue-600">What We Warrant</h4>
-              <div className="space-y-2 text-sm text-gray-600">
+              <div className="space-y-2 text-sm text-gray-400 leading-relaxed">
                 <p>• Services will be provided with reasonable skill</p>
                 <p>• Reasonable security measures in place</p>
                 <p>• Compliance with applicable laws</p>
@@ -321,7 +321,7 @@ const ContentSections = () => {
         <div className="space-y-6">
           <div className="bg-yellow-50 border border-yellow-200 rounded-xl p-6">
             <h4 className="font-semibold text-gray-900 mb-3">Account Termination</h4>
-            <p className="text-gray-700 leading-relaxed">
+            <p className="text-gray-400 leading-relaxed">
               Either party may terminate this agreement at any time. We reserve the right to suspend or terminate accounts that violate our terms.
             </p>
           </div>
@@ -338,7 +338,7 @@ const ContentSections = () => {
                 ].map((item, index) => (
                   <div key={index} className="flex items-center space-x-3">
                     <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
-                    <span className="text-gray-700 text-sm">{item}</span>
+                    <span className="text-gray-400 text-sm leading-relaxed">{item}</span>
                   </div>
                 ))}
               </div>
@@ -354,7 +354,7 @@ const ContentSections = () => {
                 ].map((item, index) => (
                   <div key={index} className="flex items-center space-x-3">
                     <AlertTriangle className="w-4 h-4 text-yellow-500 flex-shrink-0" />
-                    <span className="text-gray-700 text-sm">{item}</span>
+                    <span className="text-gray-400 text-sm leading-relaxed">{item}</span>
                   </div>
                 ))}
               </div>

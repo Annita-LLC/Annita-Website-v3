@@ -44,7 +44,7 @@ const HeroSection = () => {
             </h1>
 
             {/* Description */}
-            <p className="text-xl sm:text-2xl text-orange-100 mb-8 leading-relaxed max-w-2xl">
+            <p className="text-xl sm:text-2xl text-gray-400 mb-8 leading-relaxed max-w-2xl">
               Read Annita's comprehensive terms of service to understand your rights, responsibilities, and the legal framework governing your use of our platform and services.
             </p>
 
@@ -54,14 +54,14 @@ const HeroSection = () => {
                 <Mail className="w-6 h-6 text-orange-200" />
                 <div>
                   <div className="font-semibold text-white">Legal Support</div>
-                  <div className="text-sm text-orange-200">legal@annita.com</div>
+                  <div className="text-sm text-gray-400 leading-relaxed">legal@annita.com</div>
                 </div>
               </div>
               <div className="flex items-center space-x-3 bg-white/10 backdrop-blur-sm rounded-lg p-4">
                 <Phone className="w-6 h-6 text-orange-200" />
                 <div>
                   <div className="font-semibold text-white">Phone Support</div>
-                  <div className="text-sm text-orange-200">+231 77 505 7227</div>
+                  <div className="text-sm text-gray-400 leading-relaxed">+231 77 505 7227</div>
                 </div>
               </div>
             </div>
@@ -85,19 +85,19 @@ const HeroSection = () => {
 
               <div className="space-y-4">
                 <div className="flex items-center justify-between p-4 bg-white/10 rounded-xl">
-                  <span className="text-white">Legal Protection</span>
+                  <span className="text-gray-400 leading-relaxed">Legal Protection</span>
                   <span className="font-bold text-green-300">✓</span>
                 </div>
                 <div className="flex items-center justify-between p-4 bg-white/10 rounded-xl">
-                  <span className="text-white">Clear Terms</span>
+                  <span className="text-gray-400 leading-relaxed">Clear Terms</span>
                   <span className="font-bold text-green-300">✓</span>
                 </div>
                 <div className="flex items-center justify-between p-4 bg-white/10 rounded-xl">
-                  <span className="text-white">Fair Agreement</span>
+                  <span className="text-gray-400 leading-relaxed">Fair Agreement</span>
                   <span className="font-bold text-green-300">✓</span>
                 </div>
                 <div className="flex items-center justify-between p-4 bg-white/10 rounded-xl">
-                  <span className="text-white">User Rights</span>
+                  <span className="text-gray-400 leading-relaxed">User Rights</span>
                   <span className="font-bold text-green-300">✓</span>
                 </div>
               </div>

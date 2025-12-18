@@ -34,10 +34,10 @@ const ContentSections = () => {
       content: (
         <div className="space-y-6">
           <div className="bg-blue-50 border border-blue-200 rounded-xl p-6">
-            <p className="text-gray-700 leading-relaxed">
+            <p className="text-gray-400 leading-relaxed">
               Annita ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our website, mobile applications, and services (collectively, the "Services").
             </p>
-            <p className="text-gray-700 leading-relaxed mt-4">
+            <p className="text-gray-400 leading-relaxed mt-4">
               By using our Services, you agree to the collection and use of information in accordance with this policy. If you do not agree with our policies and practices, please do not use our Services.
             </p>
           </div>
@@ -45,15 +45,15 @@ const ContentSections = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div className="bg-white border border-gray-200 rounded-lg p-4 text-center">
               <div className="text-2xl font-bold text-blue-600 mb-1">100%</div>
-              <div className="text-sm text-gray-600">GDPR Compliant</div>
+              <div className="text-sm text-gray-400 leading-relaxed">GDPR Compliant</div>
             </div>
             <div className="bg-white border border-gray-200 rounded-lg p-4 text-center">
               <div className="text-2xl font-bold text-green-600 mb-1">24/7</div>
-              <div className="text-sm text-gray-600">Security Monitoring</div>
+              <div className="text-sm text-gray-400 leading-relaxed">Security Monitoring</div>
             </div>
             <div className="bg-white border border-gray-200 rounded-lg p-4 text-center">
               <div className="text-2xl font-bold text-purple-600 mb-1">256-bit</div>
-              <div className="text-sm text-gray-600">Encryption</div>
+              <div className="text-sm text-gray-400 leading-relaxed">Encryption</div>
             </div>
           </div>
         </div>
@@ -74,7 +74,7 @@ const ContentSections = () => {
               </div>
               <h3 className="text-xl font-semibold text-gray-900">Personal Information</h3>
             </div>
-            <p className="text-gray-600 mb-4">We may collect personal information that you provide directly to us, including:</p>
+            <p className="text-gray-400 leading-relaxed mb-4">We may collect personal information that you provide directly to us, including:</p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
               {[
                 "Name, email address, phone number",
@@ -85,7 +85,7 @@ const ContentSections = () => {
               ].map((item, index) => (
                 <div key={index} className="flex items-center space-x-3">
                   <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
-                  <span className="text-gray-700 text-sm">{item}</span>
+                  <span className="text-gray-400 text-sm">{item}</span>
                 </div>
               ))}
             </div>
@@ -99,7 +99,7 @@ const ContentSections = () => {
               </div>
               <h3 className="text-xl font-semibold text-gray-900">Automatically Collected Information</h3>
             </div>
-            <p className="text-gray-600 mb-4">When you use our Services, we automatically collect certain information:</p>
+            <p className="text-gray-400 leading-relaxed mb-4">When you use our Services, we automatically collect certain information:</p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
               {[
                 "Device information (IP address, browser)",
@@ -110,7 +110,7 @@ const ContentSections = () => {
               ].map((item, index) => (
                 <div key={index} className="flex items-center space-x-3">
                   <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
-                  <span className="text-gray-700 text-sm">{item}</span>
+                  <span className="text-gray-400 text-sm">{item}</span>
                 </div>
               ))}
             </div>
@@ -126,7 +126,7 @@ const ContentSections = () => {
       content: (
         <div className="space-y-6">
           <div className="bg-green-50 border border-green-200 rounded-xl p-6">
-            <p className="text-gray-700 leading-relaxed mb-4">
+            <p className="text-gray-400 leading-relaxed mb-4">
               We use the information we collect for various purposes designed to improve your experience and maintain our Services:
             </p>
           </div>
@@ -147,7 +147,7 @@ const ContentSections = () => {
                   </div>
                   <h4 className="font-semibold text-gray-900">{item.title}</h4>
                 </div>
-                <p className="text-sm text-gray-600">{item.desc}</p>
+                <p className="text-sm text-gray-400 leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -166,7 +166,7 @@ const ContentSections = () => {
               <XCircle className="w-6 h-6 text-red-500 flex-shrink-0 mt-1" />
               <div>
                 <h3 className="font-semibold text-gray-900 mb-2">We Do Not Sell Your Data</h3>
-                <p className="text-gray-700 text-sm">
+                <p className="text-gray-400 text-sm">
                   We do not sell, trade, or otherwise transfer your personal information to third parties without your consent.
                 </p>
               </div>
@@ -190,7 +190,7 @@ const ContentSections = () => {
                     </div>
                     <h5 className="font-semibold text-gray-900">{item.title}</h5>
                   </div>
-                  <p className="text-sm text-gray-600">{item.desc}</p>
+                  <p className="text-sm text-gray-400 leading-relaxed">{item.desc}</p>
                 </div>
               ))}
             </div>
@@ -210,7 +210,7 @@ const ContentSections = () => {
               <Shield className="w-8 h-8 text-cyan-600" />
               <h3 className="text-xl font-semibold text-gray-900">Security First Approach</h3>
             </div>
-            <p className="text-gray-700">
+            <p className="text-gray-400">
               We implement comprehensive technical and organizational security measures to protect your personal information.
             </p>
           </div>
@@ -231,7 +231,7 @@ const ContentSections = () => {
                   </div>
                   <h5 className="font-semibold text-gray-900">{item.title}</h5>
                 </div>
-                <p className="text-sm text-gray-600">{item.desc}</p>
+                <p className="text-sm text-gray-400 leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -247,7 +247,7 @@ const ContentSections = () => {
         <div className="space-y-6">
           <div className="bg-indigo-50 border border-indigo-200 rounded-xl p-6">
             <h3 className="text-lg font-semibold text-gray-900 mb-3">Your Privacy Rights</h3>
-            <p className="text-gray-700 text-sm">
+            <p className="text-gray-400 text-sm">
               Depending on your location, you may have certain rights regarding your personal information. We respect and uphold these rights.
             </p>
           </div>
@@ -268,7 +268,7 @@ const ContentSections = () => {
                   </div>
                   <h5 className="font-semibold text-gray-900">{item.title}</h5>
                 </div>
-                <p className="text-sm text-gray-600">{item.desc}</p>
+                <p className="text-sm text-gray-400 leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -278,7 +278,7 @@ const ContentSections = () => {
               <AlertTriangle className="w-6 h-6 text-yellow-600 flex-shrink-0 mt-1" />
               <div>
                 <h4 className="font-semibold text-gray-900 mb-2">How to Exercise Your Rights</h4>
-                <p className="text-gray-700 text-sm">
+                <p className="text-gray-400 text-sm">
                   Contact our privacy team using the information in the Contact section below.
                   We'll respond to your request within 30 days as required by applicable laws.
                 </p>
@@ -300,7 +300,7 @@ const ContentSections = () => {
               <Cookie className="w-8 h-8 text-pink-600" />
               <h3 className="text-xl font-semibold text-gray-900">Cookie Management</h3>
             </div>
-            <p className="text-gray-700">
+            <p className="text-gray-400">
               We use cookies and similar tracking technologies to enhance your experience on our Services.
               You have full control over cookie preferences through your browser settings.
             </p>
@@ -309,19 +309,19 @@ const ContentSections = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="bg-white border border-gray-200 rounded-lg p-6">
               <h4 className="font-semibold text-gray-900 mb-3">Essential Cookies</h4>
-              <p className="text-sm text-gray-600 mb-3">Required for basic website functionality</p>
+              <p className="text-sm text-gray-400 leading-relaxed mb-3">Required for basic website functionality</p>
               <div className="flex items-center space-x-2">
                 <CheckCircle className="w-4 h-4 text-green-500" />
-                <span className="text-sm text-gray-700">Always active</span>
+                <span className="text-sm text-gray-400">Always active</span>
               </div>
             </div>
 
             <div className="bg-white border border-gray-200 rounded-lg p-6">
               <h4 className="font-semibold text-gray-900 mb-3">Analytics Cookies</h4>
-              <p className="text-sm text-gray-600 mb-3">Help us improve our services</p>
+              <p className="text-sm text-gray-400 leading-relaxed mb-3">Help us improve our services</p>
               <div className="flex items-center space-x-2">
                 <Settings className="w-4 h-4 text-blue-500" />
-                <span className="text-sm text-gray-700">Optional</span>
+                <span className="text-sm text-gray-400">Optional</span>
               </div>
             </div>
           </div>

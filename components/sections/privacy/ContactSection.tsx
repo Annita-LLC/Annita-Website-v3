@@ -75,7 +75,7 @@ const ContactSection = () => {
                 Your Privacy?
               </span>
             </h2>
-            <p className="text-lg sm:text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-lg sm:text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
               Our dedicated privacy team is here to help you understand your rights and address any concerns about your personal data.
             </p>
           </motion.div>
@@ -94,9 +94,9 @@ const ContactSection = () => {
                   <method.icon className="w-6 h-6 text-white" />
                 </div>
                 <h3 className="text-xl font-semibold text-white mb-2">{method.title}</h3>
-                <p className="text-blue-200 mb-3">{method.description}</p>
+                <p className="text-gray-400 mb-3 leading-relaxed">{method.description}</p>
                 <div className="text-white font-medium mb-1">{method.contact}</div>
-                <div className="text-sm text-blue-300">{method.response}</div>
+                <div className="text-sm text-gray-400 leading-relaxed">{method.response}</div>
               </motion.div>
             ))}
           </div>
@@ -110,7 +110,7 @@ const ContactSection = () => {
           >
             <div className="text-center mb-8">
               <h3 className="text-2xl sm:text-3xl font-bold text-white mb-4">Exercise Your Data Rights</h3>
-              <p className="text-blue-100 max-w-2xl mx-auto">
+              <p className="text-gray-400 max-w-2xl mx-auto leading-relaxed">
                 You have several rights regarding your personal data. Click on any right below to learn more and submit a request.
               </p>
             </div>
@@ -147,7 +147,7 @@ const ContactSection = () => {
               <div className="text-center">
                 <Clock className="w-12 h-12 text-blue-300 mx-auto mb-4" />
                 <h3 className="text-xl font-semibold text-white mb-2">Our Response Commitment</h3>
-                <p className="text-blue-100 mb-6">
+                <p className="text-gray-400 mb-6 leading-relaxed">
                   We take privacy inquiries seriously and commit to responding promptly:
                 </p>
 
@@ -178,9 +178,9 @@ const ContactSection = () => {
             <div className="bg-white rounded-3xl p-8 sm:p-12 shadow-2xl">
               <div className="text-center mb-8">
                 <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">Send Us a Message</h3>
-                <p className="text-gray-600 max-w-2xl mx-auto">
-                  Have a privacy question or need to exercise your data rights? Fill out the form below and we'll get back to you promptly.
-                </p>
+              <p className="text-gray-400 max-w-2xl mx-auto leading-relaxed">
+                Have a privacy question or need to exercise your data rights? Fill out the form below and we'll get back to you promptly.
+              </p>
               </div>
 
               <form className="max-w-2xl mx-auto space-y-6">

@@ -90,7 +90,7 @@ const FAQSection = () => {
                 Questions
               </span>
             </h2>
-            <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-lg sm:text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
               Get answers to common questions about cookies, privacy, and how we use tracking technologies on our platform.
             </p>
           </div>
@@ -153,7 +153,7 @@ const FAQSection = () => {
                 {openItems.has(index) && (
                   <div className="px-6 pb-5">
                     <div className="pt-4 border-t border-gray-100">
-                      <p className="text-gray-700 leading-relaxed">{faq.answer}</p>
+                      <p className="text-gray-400 leading-relaxed">{faq.answer}</p>
                     </div>
                   </div>
                 )}
@@ -165,7 +165,7 @@ const FAQSection = () => {
           <div className="mt-16 bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 rounded-2xl p-8 text-white text-center">
             <Cookie className="w-12 h-12 text-yellow-300 mx-auto mb-4" />
             <h3 className="text-xl font-bold mb-4">Need More Help with Cookies?</h3>
-            <p className="text-blue-100 mb-6 max-w-2xl mx-auto">
+            <p className="text-gray-400 mb-6 max-w-2xl mx-auto leading-relaxed">
               Still have questions about cookies or need help managing your preferences? Our privacy team is here to help you understand and control your cookie settings.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

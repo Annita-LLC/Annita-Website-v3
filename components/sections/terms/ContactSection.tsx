@@ -20,7 +20,7 @@ const ContactSection = () => {
                 Terms & Legal?
               </span>
             </h2>
-            <p className="text-lg sm:text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-lg sm:text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
               Our legal team is here to help you understand our terms, resolve disputes, or address any legal concerns you may have.
             </p>
           </div>
@@ -32,7 +32,7 @@ const ContactSection = () => {
                 <Mail className="w-6 h-6 text-blue-300" />
               </div>
               <h3 className="text-xl font-semibold text-white mb-2">Email Support</h3>
-              <p className="text-blue-200 mb-3">Send detailed inquiries and legal questions</p>
+              <p className="text-gray-400 mb-3 leading-relaxed">Send detailed inquiries and legal questions</p>
               <div className="text-white font-medium mb-1">legal@annita.com</div>
               <div className="text-sm text-blue-300">Response within 24 hours</div>
             </div>
@@ -42,7 +42,7 @@ const ContactSection = () => {
                 <Phone className="w-6 h-6 text-green-300" />
               </div>
               <h3 className="text-xl font-semibold text-white mb-2">Phone Support</h3>
-              <p className="text-blue-200 mb-3">Speak directly with our legal team</p>
+              <p className="text-gray-400 mb-3 leading-relaxed">Speak directly with our legal team</p>
               <div className="text-white font-medium mb-1">+231 77 505 7227</div>
               <div className="text-sm text-blue-300">Mon-Fri, 9 AM - 5 PM GMT</div>
             </div>
@@ -52,7 +52,7 @@ const ContactSection = () => {
                 <MapPin className="w-6 h-6 text-purple-300" />
               </div>
               <h3 className="text-xl font-semibold text-white mb-2">Office Visit</h3>
-              <p className="text-blue-200 mb-3">Meet our legal team in person</p>
+              <p className="text-gray-400 mb-3 leading-relaxed">Meet our legal team in person</p>
               <div className="text-white font-medium mb-1">Monrovia, Liberia</div>
               <div className="text-sm text-blue-300">By appointment only</div>
             </div>
@@ -62,7 +62,7 @@ const ContactSection = () => {
           <div className="mb-16">
             <div className="text-center mb-8">
               <h3 className="text-2xl sm:text-3xl font-bold text-white mb-4">Dispute Resolution Process</h3>
-              <p className="text-blue-100 max-w-2xl mx-auto">
+              <p className="text-gray-400 max-w-2xl mx-auto leading-relaxed">
                 If you have a dispute regarding our terms or services, we follow a structured resolution process to ensure fair outcomes.
               </p>
             </div>
@@ -105,7 +105,7 @@ const ContactSection = () => {
               <div className="text-center">
                 <Clock className="w-12 h-12 text-blue-300 mx-auto mb-4" />
                 <h3 className="text-xl font-semibold text-white mb-2">Our Response Commitment</h3>
-                <p className="text-blue-100 mb-6">
+                <p className="text-gray-400 mb-6 leading-relaxed">
                   We take legal inquiries seriously and are committed to timely responses:
                 </p>
 
@@ -127,7 +127,7 @@ const ContactSection = () => {
           <div className="bg-white rounded-3xl p-8 sm:p-12 shadow-2xl">
             <div className="text-center mb-8">
               <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">Submit a Legal Inquiry</h3>
-              <p className="text-gray-600 max-w-2xl mx-auto">
+              <p className="text-gray-400 max-w-2xl mx-auto leading-relaxed">
                 Have questions about our terms, need clarification on your rights, or want to report a concern? Fill out the form below.
               </p>
             </div>

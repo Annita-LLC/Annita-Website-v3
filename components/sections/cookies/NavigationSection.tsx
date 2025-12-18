@@ -105,7 +105,7 @@ const NavigationSection = () => {
                 Overview
               </span>
             </h2>
-            <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-lg sm:text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
               Navigate through our comprehensive cookie policy. Click any section below to jump directly to the information you need, or manage your cookie preferences.
             </p>
           </div>
@@ -126,7 +126,7 @@ const NavigationSection = () => {
                     <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors leading-tight">
                       {section.title}
                     </h3>
-                    <p className="text-sm text-gray-600 leading-relaxed mb-3">
+                    <p className="text-sm text-gray-400 leading-relaxed mb-3">
                       {section.description}
                     </p>
                     <div className="flex items-center text-sm font-medium text-blue-600 group-hover:text-blue-700 transition-colors">
@@ -143,7 +143,7 @@ const NavigationSection = () => {
           <div className="mt-16 bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 rounded-2xl p-8 text-white text-center">
             <Cookie className="w-12 h-12 text-yellow-300 mx-auto mb-4" />
             <h3 className="text-xl font-bold mb-4">Take Control of Your Cookies</h3>
-            <p className="text-blue-100 mb-6 max-w-2xl mx-auto">
+            <p className="text-gray-400 mb-6 max-w-2xl mx-auto leading-relaxed">
               You have full control over your cookie preferences. Customize your settings or learn more about how we use cookies to improve your experience.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

@@ -20,7 +20,7 @@ const ContactSection = () => {
                 Cookies & Privacy?
               </span>
             </h2>
-            <p className="text-lg sm:text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-lg sm:text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
               Our privacy team specializes in cookies and data protection. Get expert help understanding your options and managing your privacy preferences.
             </p>
           </div>
@@ -32,7 +32,7 @@ const ContactSection = () => {
                 <Mail className="w-6 h-6 text-blue-300" />
               </div>
               <h3 className="text-xl font-semibold text-white mb-2">Cookie Inquiries</h3>
-              <p className="text-blue-200 mb-3">Questions about cookie usage and preferences</p>
+              <p className="text-gray-400 mb-3 leading-relaxed">Questions about cookie usage and preferences</p>
               <div className="text-white font-medium mb-1">privacy@annita.com</div>
               <div className="text-sm text-blue-300">Response within 24 hours</div>
             </div>
@@ -42,7 +42,7 @@ const ContactSection = () => {
                 <Phone className="w-6 h-6 text-green-300" />
               </div>
               <h3 className="text-xl font-semibold text-white mb-2">Privacy Support</h3>
-              <p className="text-blue-200 mb-3">Direct support for privacy and cookie concerns</p>
+              <p className="text-gray-400 mb-3 leading-relaxed">Direct support for privacy and cookie concerns</p>
               <div className="text-white font-medium mb-1">+231 77 505 7227</div>
               <div className="text-sm text-blue-300">Mon-Fri, 9 AM - 5 PM GMT</div>
             </div>
@@ -52,7 +52,7 @@ const ContactSection = () => {
                 <MapPin className="w-6 h-6 text-purple-300" />
               </div>
               <h3 className="text-xl font-semibold text-white mb-2">Data Protection Office</h3>
-              <p className="text-blue-200 mb-3">Visit our data protection team in person</p>
+              <p className="text-gray-400 mb-3 leading-relaxed">Visit our data protection team in person</p>
               <div className="text-white font-medium mb-1">Monrovia, Liberia</div>
               <div className="text-sm text-blue-300">By appointment only</div>
             </div>
@@ -62,7 +62,7 @@ const ContactSection = () => {
           <div className="mb-16">
             <div className="text-center mb-8">
               <h3 className="text-2xl sm:text-3xl font-bold text-white mb-4">Cookie-Specific Support</h3>
-              <p className="text-blue-100 max-w-2xl mx-auto">
+              <p className="text-gray-400 max-w-2xl mx-auto leading-relaxed">
                 Specialized assistance for cookie-related privacy concerns and technical issues.
               </p>
             </div>
@@ -71,17 +71,17 @@ const ContactSection = () => {
               <div className="bg-white/10 backdrop-blur-lg rounded-xl p-6 border border-white/20 text-center">
                 <Cookie className="w-10 h-10 text-yellow-300 mx-auto mb-4" />
                 <h4 className="font-semibold text-white mb-2">Cookie Management</h4>
-                <p className="text-sm text-blue-200">Help configuring your cookie preferences</p>
+                <p className="text-sm text-gray-400 leading-relaxed">Help configuring your cookie preferences</p>
               </div>
               <div className="bg-white/10 backdrop-blur-lg rounded-xl p-6 border border-white/20 text-center">
                 <Shield className="w-10 h-10 text-green-300 mx-auto mb-4" />
                 <h4 className="font-semibold text-white mb-2">Privacy Rights</h4>
-                <p className="text-sm text-blue-200">Assistance with data protection rights</p>
+                <p className="text-sm text-gray-400 leading-relaxed">Assistance with data protection rights</p>
               </div>
               <div className="bg-white/10 backdrop-blur-lg rounded-xl p-6 border border-white/20 text-center">
                 <AlertTriangle className="w-10 h-10 text-orange-300 mx-auto mb-4" />
                 <h4 className="font-semibold text-white mb-2">Technical Issues</h4>
-                <p className="text-sm text-blue-200">Problems with cookie settings or functionality</p>
+                <p className="text-sm text-gray-400 leading-relaxed">Problems with cookie settings or functionality</p>
               </div>
             </div>
           </div>
@@ -92,7 +92,7 @@ const ContactSection = () => {
               <div className="text-center">
                 <Clock className="w-12 h-12 text-blue-300 mx-auto mb-4" />
                 <h3 className="text-xl font-semibold text-white mb-2">Our Response Commitment</h3>
-                <p className="text-blue-100 mb-6">
+                <p className="text-gray-400 mb-6 leading-relaxed">
                   We prioritize privacy and cookie-related inquiries with dedicated response times:
                 </p>
 
@@ -114,7 +114,7 @@ const ContactSection = () => {
           <div className="bg-white rounded-3xl p-8 sm:p-12 shadow-2xl">
             <div className="text-center mb-8">
               <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">Submit a Cookie Inquiry</h3>
-              <p className="text-gray-600 max-w-2xl mx-auto">
+              <p className="text-gray-400 max-w-2xl mx-auto leading-relaxed">
                 Have questions about cookies, need help managing your preferences, or want to exercise your privacy rights? Fill out the form below.
               </p>
             </div>
@@ -195,7 +195,7 @@ const ContactSection = () => {
                   <span><strong>GDPR Compliant</strong></span>
                 </div>
               </div>
-              <p className="text-blue-200 text-xs mt-3">
+              <p className="text-gray-400 text-xs mt-3 leading-relaxed">
                 Cookie preferences are stored locally on your device. You can change them at any time through our cookie settings or browser preferences.
               </p>
             </div>

@@ -44,7 +44,7 @@ const HeroSection = () => {
             </h1>
 
             {/* Description */}
-            <p className="text-xl sm:text-2xl text-orange-100 mb-8 leading-relaxed max-w-2xl">
+            <p className="text-xl sm:text-2xl text-gray-400 mb-8 leading-relaxed max-w-2xl">
               Learn about how Annita uses cookies and similar technologies to enhance your browsing experience and manage your cookie preferences with ease.
             </p>
 
@@ -54,14 +54,14 @@ const HeroSection = () => {
                 <Mail className="w-6 h-6 text-orange-200" />
                 <div>
                   <div className="font-semibold text-white">Cookie Support</div>
-                  <div className="text-sm text-orange-200">privacy@annita.com</div>
+                  <div className="text-sm text-gray-400 leading-relaxed">privacy@annita.com</div>
                 </div>
               </div>
               <div className="flex items-center space-x-3 bg-white/10 backdrop-blur-sm rounded-lg p-4">
                 <Phone className="w-6 h-6 text-orange-200" />
                 <div>
                   <div className="font-semibold text-white">Phone Support</div>
-                  <div className="text-sm text-orange-200">+231 77 505 7227</div>
+                  <div className="text-sm text-gray-400 leading-relaxed">+231 77 505 7227</div>
                 </div>
               </div>
             </div>
@@ -85,19 +85,19 @@ const HeroSection = () => {
 
               <div className="space-y-4">
                 <div className="flex items-center justify-between p-4 bg-white/10 rounded-xl">
-                  <span className="text-white">Full Control</span>
+                  <span className="text-gray-400 leading-relaxed">Full Control</span>
                   <span className="font-bold text-green-300">✓</span>
                 </div>
                 <div className="flex items-center justify-between p-4 bg-white/10 rounded-xl">
-                  <span className="text-white">Transparent Usage</span>
+                  <span className="text-gray-400 leading-relaxed">Transparent Usage</span>
                   <span className="font-bold text-green-300">✓</span>
                 </div>
                 <div className="flex items-center justify-between p-4 bg-white/10 rounded-xl">
-                  <span className="text-white">GDPR Compliant</span>
+                  <span className="text-gray-400 leading-relaxed">GDPR Compliant</span>
                   <span className="font-bold text-green-300">✓</span>
                 </div>
                 <div className="flex items-center justify-between p-4 bg-white/10 rounded-xl">
-                  <span className="text-white">Easy Management</span>
+                  <span className="text-gray-400 leading-relaxed">Easy Management</span>
                   <span className="font-bold text-green-300">✓</span>
                 </div>
               </div>

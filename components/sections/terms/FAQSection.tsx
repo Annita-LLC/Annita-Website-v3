@@ -90,7 +90,7 @@ const FAQSection = () => {
                 Questions
               </span>
             </h2>
-            <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-lg sm:text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
               Get answers to common questions about our terms of service, user obligations, and platform usage.
             </p>
           </div>
@@ -153,7 +153,7 @@ const FAQSection = () => {
                 {openItems.has(index) && (
                   <div className="px-6 pb-5">
                     <div className="pt-4 border-t border-gray-100">
-                      <p className="text-gray-700 leading-relaxed">{faq.answer}</p>
+                      <p className="text-gray-400 leading-relaxed">{faq.answer}</p>
                     </div>
                   </div>
                 )}
