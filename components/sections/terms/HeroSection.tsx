@@ -32,12 +32,6 @@ const HeroSection = () => {
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8 }}
           >
-            {/* Badge */}
-            <div className="inline-flex items-center px-6 py-3 rounded-full bg-white/20 backdrop-blur-sm text-white text-sm font-semibold mb-8 shadow-lg border border-white/30">
-              <FileText className="w-5 h-5 mr-2" />
-              Terms of Service
-            </div>
-
             {/* Heading */}
             <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold mb-6 leading-tight">
               Your Agreement with <span className="text-orange-200">Us</span>
