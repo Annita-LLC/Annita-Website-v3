@@ -1,8 +1,52 @@
 'use client'
 
+import { useState } from 'react'
+import { motion } from 'framer-motion'
 import SEOHead from '@/components/seo/SEOHead'
+import {
+  Building2,
+  Users,
+  Target,
+  Award,
+  TrendingUp,
+  Globe,
+  Heart,
+  Sparkles,
+  CheckCircle,
+  ArrowRight,
+  Star,
+  Clock,
+  Zap,
+  Shield,
+  Rocket
+} from 'lucide-react'
+import Link from 'next/link'
 
 const AboutPage = () => {
+  const [activeSection, setActiveSection] = useState('overview')
+
+  const stats = [
+    {
+      icon: Building2,
+      number: "2021",
+      label: "Founded"
+    },
+    {
+      icon: Users,
+      number: "5M+",
+      label: "MSMEs Target"
+    },
+    {
+      icon: Globe,
+      number: "54",
+      label: "Countries"
+    },
+    {
+      icon: Award,
+      number: "10+",
+      label: "Awards"
+    }
+  ]
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "Organization",
@@ -121,599 +165,577 @@ const AboutPage = () => {
       <div className="min-h-screen">
         {/* Hero Section */}
         <section className="relative py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-orange-600 via-orange-700 to-red-600 text-white overflow-hidden">
-          {/* Animated Background Elements */}
+          {/* Background Elements */}
           <div className="absolute inset-0">
-            <div className="absolute top-10 left-10 w-20 h-20 bg-white/10 rounded-full animate-pulse"></div>
-            <div className="absolute top-20 right-20 w-16 h-16 bg-white/10 rounded-full animate-bounce"></div>
-            <div className="absolute bottom-20 left-1/4 w-24 h-24 bg-white/10 rounded-full animate-pulse"></div>
-            <div className="absolute bottom-10 right-1/3 w-12 h-12 bg-white/10 rounded-full animate-bounce"></div>
+            <div className="absolute top-10 left-10 w-32 h-32 bg-white/5 rounded-full animate-pulse"></div>
+            <div className="absolute bottom-10 right-10 w-24 h-24 bg-white/5 rounded-full animate-bounce"></div>
+            <div className="absolute top-1/2 left-1/4 w-16 h-16 bg-white/5 rounded-full animate-pulse delay-1000"></div>
           </div>
 
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              {/* Content */}
-              <div>
-                {/* Badge */}
-                <div className="inline-flex items-center px-6 py-3 rounded-full bg-white/20 backdrop-blur-sm text-white text-sm font-semibold mb-8 shadow-lg border border-white/30">
-                  <span className="w-5 h-5 mr-2">🏢</span>
+            <div className="max-w-4xl mx-auto text-center">
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+              >
+                <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/20 backdrop-blur-sm text-white text-sm font-medium mb-6">
+                  <Building2 className="w-4 h-4 mr-2" />
                   About Annita
                 </div>
 
-                {/* Heading */}
-                <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold mb-6 leading-tight">
+                <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 leading-tight">
                   Empowering Africa's <span className="text-orange-200">Digital Future</span>
                 </h1>
 
-                {/* Description */}
-                <p className="text-xl sm:text-2xl text-orange-100 mb-8 leading-relaxed max-w-2xl">
+                <p className="text-lg sm:text-xl text-orange-100 max-w-3xl mx-auto leading-relaxed mb-8">
                   Africa's first all-in-one digital platform combining e-commerce, fintech, AI, communication, marketing, logistics, and more into a single ecosystem.
                 </p>
 
                 {/* Stats */}
-                <div className="grid grid-cols-3 gap-6 mb-8">
-                  <div className="text-center">
-                    <div className="text-2xl sm:text-3xl font-bold text-white">2021</div>
-                    <div className="text-sm text-orange-200">Founded</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-2xl sm:text-3xl font-bold text-white">5M</div>
-                    <div className="text-sm text-orange-200">MSMEs Target</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-2xl sm:text-3xl font-bold text-white">54</div>
-                    <div className="text-sm text-orange-200">African Countries</div>
-                  </div>
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8">
+                  {stats.map((stat, index) => (
+                    <div key={index} className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
+                      <stat.icon className="w-8 h-8 text-orange-200 mx-auto mb-2" />
+                      <div className="text-2xl sm:text-3xl font-bold">{stat.number}</div>
+                      <div className="text-xs sm:text-sm text-orange-200">{stat.label}</div>
+                    </div>
+                  ))}
                 </div>
-              </div>
 
-              {/* Visualization Card */}
-              <div className="relative">
-                <div className="bg-white/10 backdrop-blur-sm p-8 rounded-3xl shadow-2xl border border-white/20">
-                  <div className="text-center mb-6">
-                    <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                      <span className="text-2xl">🚀</span>
-                    </div>
-                    <h3 className="text-2xl font-bold text-white mb-2">Our Mission</h3>
-                    <p className="text-orange-200">Transforming African business through innovation</p>
-                  </div>
-
-                  <div className="space-y-4">
-                    <div className="flex items-center justify-between p-4 bg-white/10 rounded-xl">
-                      <span className="text-white">E-commerce</span>
-                      <span className="font-bold text-green-300">✓</span>
-                    </div>
-                    <div className="flex items-center justify-between p-4 bg-white/10 rounded-xl">
-                      <span className="text-white">Fintech</span>
-                      <span className="font-bold text-green-300">✓</span>
-                    </div>
-                    <div className="flex items-center justify-between p-4 bg-white/10 rounded-xl">
-                      <span className="text-white">AI Solutions</span>
-                      <span className="font-bold text-green-300">✓</span>
-                    </div>
-                    <div className="flex items-center justify-between p-4 bg-white/10 rounded-xl">
-                      <span className="text-white">Logistics</span>
-                      <span className="font-bold text-green-300">✓</span>
-                    </div>
-                  </div>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <Link
+                    href="#journey"
+                    className="bg-white text-orange-600 px-8 py-4 rounded-lg font-semibold hover:bg-orange-50 transition-all duration-200 shadow-lg text-sm sm:text-base"
+                  >
+                    Our Journey
+                  </Link>
+                  <Link
+                    href="#team"
+                    className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-orange-600 transition-all duration-200 text-sm sm:text-base"
+                  >
+                    Meet Our Team
+                  </Link>
                 </div>
-              </div>
+              </motion.div>
             </div>
           </div>
         </section>
 
-        {/* Empowering Africa's Future Section */}
-        <section className="py-16 sm:py-20 lg:py-24 bg-gray-50">
+        {/* Navigation Section */}
+        <section className="py-8 bg-gray-50 border-b border-gray-200">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex flex-wrap justify-center gap-3">
+              {[
+                { id: 'overview', name: 'Overview', icon: Building2 },
+                { id: 'mission', name: 'Mission & Vision', icon: Target },
+                { id: 'values', name: 'Core Values', icon: Heart },
+                { id: 'journey', name: 'Our Journey', icon: TrendingUp },
+                { id: 'team', name: 'Our Team', icon: Users },
+                { id: 'goals', name: 'Our Goals', icon: Rocket }
+              ].map((section) => (
+                <button
+                  key={section.id}
+                  onClick={() => setActiveSection(section.id)}
+                  className={`flex items-center px-4 py-2 rounded-full font-medium transition-all duration-200 ${
+                    activeSection === section.id
+                      ? 'bg-orange-500 text-white shadow-lg'
+                      : 'bg-white text-gray-600 hover:bg-orange-50 hover:text-orange-600 border border-gray-200'
+                  }`}
+                >
+                  <section.icon className="w-4 h-4 mr-2" />
+                  {section.name}
+                </button>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Overview Section */}
+        <section id="overview" className="py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-purple-50 via-white to-pink-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-6xl mx-auto">
-              <div className="text-center mb-16">
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                viewport={{ once: true }}
+                className="text-center mb-16"
+              >
                 <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
                   Empowering Africa's Future Through <span className="text-orange-500">Innovation</span>
                 </h2>
-                <p className="text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
-                  Africa's first all-in-one digital platform combining e-commerce, fintech, AI, and more. Empowering MSMEs with innovative solutions and connectivity.
+                <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                  Africa's first all-in-one digital platform combining e-commerce, fintech, AI, communication, marketing, logistics, and more. Empowering MSMEs with innovative solutions and connectivity.
                 </p>
-              </div>
+              </motion.div>
 
               {/* Stats Grid */}
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-                <div className="bg-white p-8 rounded-2xl shadow-lg text-center">
-                  <div className="w-16 h-16 bg-orange-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                    <span className="text-3xl">🎯</span>
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                viewport={{ once: true }}
+                className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16"
+              >
+                {[
+                  {
+                    icon: Target,
+                    number: "5M+",
+                    label: "MSMEs Target",
+                    desc: "by 2029",
+                    color: "from-orange-400 to-red-400"
+                  },
+                  {
+                    icon: Globe,
+                    number: "54",
+                    label: "African Countries",
+                    desc: "Pan-African reach",
+                    color: "from-blue-400 to-purple-400"
+                  },
+                  {
+                    icon: Rocket,
+                    number: "2021",
+                    label: "Founded",
+                    desc: "Innovation since day one",
+                    color: "from-green-400 to-teal-400"
+                  },
+                  {
+                    icon: Users,
+                    number: "50+",
+                    label: "Team Members",
+                    desc: "Expert professionals",
+                    color: "from-purple-400 to-pink-400"
+                  }
+                ].map((stat, index) => (
+                  <div key={index} className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow text-center">
+                    <div className={`w-16 h-16 bg-gradient-to-r ${stat.color} rounded-2xl flex items-center justify-center mx-auto mb-6`}>
+                      <stat.icon className="w-8 h-8 text-white" />
+                    </div>
+                    <div className="text-3xl font-bold text-gray-900 mb-2">{stat.number}</div>
+                    <div className="text-gray-600 font-medium mb-1">{stat.label}</div>
+                    <div className="text-sm text-gray-500">{stat.desc}</div>
                   </div>
-                  <div className="text-3xl font-bold text-orange-500 mb-2">5M</div>
-                  <div className="text-gray-600 font-medium">MSMEs Coverage</div>
-                  <div className="text-sm text-gray-500 mt-2">Target by 2029</div>
-                </div>
-
-                <div className="bg-white p-8 rounded-2xl shadow-lg text-center">
-                  <div className="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                    <span className="text-3xl">🌍</span>
-                  </div>
-                  <div className="text-3xl font-bold text-blue-500 mb-2">54</div>
-                  <div className="text-gray-600 font-medium">African Countries</div>
-                  <div className="text-sm text-gray-500 mt-2">Pan-African reach</div>
-                </div>
-
-                <div className="bg-white p-8 rounded-2xl shadow-lg text-center">
-                  <div className="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                    <span className="text-3xl">🚀</span>
-                  </div>
-                  <div className="text-3xl font-bold text-green-500 mb-2">2021</div>
-                  <div className="text-gray-600 font-medium">Founded</div>
-                  <div className="text-sm text-gray-500 mt-2">Innovation since day one</div>
-                </div>
-
-                <div className="bg-white p-8 rounded-2xl shadow-lg text-center">
-                  <div className="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                    <span className="text-3xl">💼</span>
-                  </div>
-                  <div className="text-3xl font-bold text-purple-500 mb-2">50+</div>
-                  <div className="text-gray-600 font-medium">Team Members</div>
-                  <div className="text-sm text-gray-500 mt-2">Expert professionals</div>
-                </div>
-              </div>
+                ))}
+              </motion.div>
 
               {/* Mission & Vision Side by Side */}
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                {/* Our Mission */}
-                <div className="bg-white p-8 rounded-3xl shadow-xl">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <motion.div
+                  initial={{ opacity: 0, x: -30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.8 }}
+                  viewport={{ once: true }}
+                  className="bg-white p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-shadow"
+                >
                   <div className="flex items-center mb-6">
-                    <div className="w-12 h-12 bg-orange-500 rounded-2xl flex items-center justify-center mr-4">
-                      <span className="text-white text-xl">🎯</span>
+                    <div className="w-12 h-12 bg-gradient-to-r from-orange-500 to-red-500 rounded-2xl flex items-center justify-center mr-4">
+                      <Target className="w-6 h-6 text-white" />
                     </div>
-                    <h3 className="text-2xl font-bold">Our Mission</h3>
+                    <h3 className="text-2xl font-bold text-gray-900">Our Mission</h3>
                   </div>
                   <p className="text-gray-600 leading-relaxed mb-6">
                     To deliver Africa's first all-in-one platform, seamlessly integrating e-commerce, fintech, AI-driven tools, communication, marketing, logistics, and lifestyle services. We empower businesses and individuals with accessible, affordable, and innovative solutions, providing connectivity and convenience to drive growth and success.
                   </p>
-                  <div className="bg-orange-50 p-4 rounded-xl">
-                    <p className="text-orange-700 font-medium">Learn More</p>
+                  <div className="flex items-center text-orange-600 font-medium">
+                    <ArrowRight className="w-4 h-4 mr-2" />
+                    Learn More
                   </div>
-                </div>
+                </motion.div>
 
-                {/* Our Vision */}
-                <div className="bg-white p-8 rounded-3xl shadow-xl">
+                <motion.div
+                  initial={{ opacity: 0, x: 30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.8, delay: 0.2 }}
+                  viewport={{ once: true }}
+                  className="bg-white p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-shadow"
+                >
                   <div className="flex items-center mb-6">
-                    <div className="w-12 h-12 bg-blue-500 rounded-2xl flex items-center justify-center mr-4">
-                      <span className="text-white text-xl">🔮</span>
+                    <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-2xl flex items-center justify-center mr-4">
+                      <Sparkles className="w-6 h-6 text-white" />
                     </div>
-                    <h3 className="text-2xl font-bold">Our Vision</h3>
+                    <h3 className="text-2xl font-bold text-gray-900">Our Vision</h3>
                   </div>
                   <p className="text-gray-600 leading-relaxed mb-6">
                     To empower 5 million Micro, Small, and Medium Enterprises (MSMEs) across Africa and beyond by 2029, catalyzing global economic growth and job creation. With a special focus on underserved communities, including rural and women-led businesses, we aim to transform Africa's economic landscape through digital innovation.
                   </p>
-                  <div className="bg-blue-50 p-4 rounded-xl">
-                    <p className="text-blue-700 font-medium">Discover More</p>
+                  <div className="flex items-center text-blue-600 font-medium">
+                    <ArrowRight className="w-4 h-4 mr-2" />
+                    Discover More
                   </div>
-                </div>
+                </motion.div>
               </div>
             </div>
           </div>
         </section>
 
         {/* Our Goals Section */}
-        <section className="py-16 sm:py-20 lg:py-24">
+        <section id="goals" className="py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-blue-50 via-white to-cyan-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-6xl mx-auto">
-              <div className="text-center mb-16">
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                viewport={{ once: true }}
+                className="text-center mb-16"
+              >
                 <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
                   Our <span className="text-orange-500">Goals</span>
                 </h2>
-                <p className="text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
+                <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
                   Transforming African Business through comprehensive digital solutions and unwavering commitment to excellence.
                 </p>
-              </div>
+              </motion.div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
-                  <div className="w-16 h-16 bg-gradient-to-r from-orange-400 to-red-400 rounded-2xl flex items-center justify-center mb-6">
-                    <span className="text-white text-2xl">💡</span>
-                  </div>
-                  <h3 className="text-xl font-bold mb-4">Innovation First</h3>
-                  <p className="text-gray-600 leading-relaxed">
-                    Continuously developing cutting-edge solutions that address Africa's unique business challenges and opportunities.
-                  </p>
-                </div>
-
-                <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
-                  <div className="w-16 h-16 bg-gradient-to-r from-blue-400 to-purple-400 rounded-2xl flex items-center justify-center mb-6">
-                    <span className="text-white text-2xl">🤝</span>
-                  </div>
-                  <h3 className="text-xl font-bold mb-4">Inclusive Growth</h3>
-                  <p className="text-gray-600 leading-relaxed">
-                    Making digital tools accessible to underserved communities, including rural areas and women-led businesses across Africa.
-                  </p>
-                </div>
-
-                <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
-                  <div className="w-16 h-16 bg-gradient-to-r from-green-400 to-teal-400 rounded-2xl flex items-center justify-center mb-6">
-                    <span className="text-white text-2xl">🔒</span>
-                  </div>
-                  <h3 className="text-xl font-bold mb-4">Trust & Security</h3>
-                  <p className="text-gray-600 leading-relaxed">
-                    Building secure, reliable platforms that businesses can depend on, with bank-grade security and escrow protection.
-                  </p>
-                </div>
+                {[
+                  {
+                    icon: Zap,
+                    title: "Innovation First",
+                    desc: "Continuously developing cutting-edge solutions that address Africa's unique business challenges and opportunities.",
+                    color: "from-orange-400 to-red-400"
+                  },
+                  {
+                    icon: Heart,
+                    title: "Inclusive Growth",
+                    desc: "Making digital tools accessible to underserved communities, including rural areas and women-led businesses across Africa.",
+                    color: "from-blue-400 to-purple-400"
+                  },
+                  {
+                    icon: Shield,
+                    title: "Trust & Security",
+                    desc: "Building secure, reliable platforms that businesses can depend on, with bank-grade security and escrow protection.",
+                    color: "from-green-400 to-teal-400"
+                  }
+                ].map((goal, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: index * 0.2 }}
+                    viewport={{ once: true }}
+                    className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300"
+                  >
+                    <div className={`w-16 h-16 bg-gradient-to-r ${goal.color} rounded-2xl flex items-center justify-center mb-6`}>
+                      <goal.icon className="w-8 h-8 text-white" />
+                    </div>
+                    <h3 className="text-xl font-bold mb-4 text-gray-900">{goal.title}</h3>
+                    <p className="text-gray-600 leading-relaxed">{goal.desc}</p>
+                  </motion.div>
+                ))}
               </div>
             </div>
           </div>
         </section>
 
         {/* Core Values Section */}
-        <section className="py-16 sm:py-20 lg:py-24 bg-gray-50">
+        <section id="values" className="py-16 sm:py-20 lg:py-24 bg-white">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-6xl mx-auto">
-              <div className="text-center mb-16">
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                viewport={{ once: true }}
+                className="text-center mb-16"
+              >
                 <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
                   Our Core <span className="text-orange-500">Values</span>
                 </h2>
-                <p className="text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
+                <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
                   These values guide everything we do, from product development to customer service, ensuring we stay true to our mission of empowering Africa's MSMEs.
                 </p>
-              </div>
+              </motion.div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div className="bg-white p-8 rounded-3xl shadow-xl">
-                  <div className="flex items-center mb-6">
-                    <div className="w-12 h-12 bg-orange-500 rounded-2xl flex items-center justify-center mr-4">
-                      <span className="text-white text-xl">💡</span>
+                {[
+                  {
+                    icon: Zap,
+                    title: "Innovation & Impact",
+                    desc: "Annita is committed to continuous innovation and creating meaningful impact. We push boundaries to solve Africa's unique challenges, developing solutions that drive real economic growth and social progress.",
+                    points: ["Cutting-edge technology solutions", "Sustainable business practices", "Community-driven development"],
+                    color: "from-orange-500 to-red-500"
+                  },
+                  {
+                    icon: Heart,
+                    title: "Empowerment",
+                    desc: "We believe in empowering every African business to reach their full potential. Our platform provides the tools, resources, and support needed to thrive in today's digital economy.",
+                    points: ["Comprehensive business tools", "24/7 expert support", "Educational resources"],
+                    color: "from-blue-500 to-purple-500"
+                  },
+                  {
+                    icon: Globe,
+                    title: "Inclusion",
+                    desc: "Making digital tools accessible to underserved communities across Africa. We ensure our platform serves all African businesses, regardless of location or size.",
+                    points: ["Rural area accessibility", "Multi-language support", "Affordable pricing"],
+                    color: "from-green-500 to-teal-500"
+                  },
+                  {
+                    icon: Shield,
+                    title: "Trust",
+                    desc: "Building secure, reliable platforms that businesses can depend on. Trust is the foundation of our relationship with every African business we serve.",
+                    points: ["Bank-grade security", "Escrow protection", "Transparent policies"],
+                    color: "from-purple-500 to-pink-500"
+                  }
+                ].map((value, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: index * 0.1 }}
+                    viewport={{ once: true }}
+                    className="bg-white p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-shadow"
+                  >
+                    <div className="flex items-center mb-6">
+                      <div className={`w-12 h-12 bg-gradient-to-r ${value.color} rounded-2xl flex items-center justify-center mr-4`}>
+                        <value.icon className="w-6 h-6 text-white" />
+                      </div>
+                      <h3 className="text-2xl font-bold text-gray-900">{value.title}</h3>
                     </div>
-                    <h3 className="text-2xl font-bold">Innovation & Impact</h3>
-                  </div>
-                  <p className="text-gray-600 leading-relaxed mb-6">
-                    Annita is committed to continuous innovation and creating meaningful impact. We push boundaries to solve Africa's unique challenges, developing solutions that drive real economic growth and social progress.
-                  </p>
-                  <div className="space-y-3">
-                    <div className="flex items-center">
-                      <span className="w-2 h-2 bg-orange-500 rounded-full mr-3"></span>
-                      <span className="text-sm text-gray-600">Cutting-edge technology solutions</span>
+                    <p className="text-gray-600 leading-relaxed mb-6">{value.desc}</p>
+                    <div className="space-y-3">
+                      {value.points.map((point, idx) => (
+                        <div key={idx} className="flex items-center">
+                          <CheckCircle className={`w-4 h-4 mr-3 text-${value.color.split('-')[1]}-500`} />
+                          <span className="text-sm text-gray-600">{point}</span>
+                        </div>
+                      ))}
                     </div>
-                    <div className="flex items-center">
-                      <span className="w-2 h-2 bg-orange-500 rounded-full mr-3"></span>
-                      <span className="text-sm text-gray-600">Sustainable business practices</span>
-                    </div>
-                    <div className="flex items-center">
-                      <span className="w-2 h-2 bg-orange-500 rounded-full mr-3"></span>
-                      <span className="text-sm text-gray-600">Community-driven development</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="bg-white p-8 rounded-3xl shadow-xl">
-                  <div className="flex items-center mb-6">
-                    <div className="w-12 h-12 bg-blue-500 rounded-2xl flex items-center justify-center mr-4">
-                      <span className="text-white text-xl">🤝</span>
-                    </div>
-                    <h3 className="text-2xl font-bold">Empowerment</h3>
-                  </div>
-                  <p className="text-gray-600 leading-relaxed mb-6">
-                    We believe in empowering every African business to reach their full potential. Our platform provides the tools, resources, and support needed to thrive in today's digital economy.
-                  </p>
-                  <div className="space-y-3">
-                    <div className="flex items-center">
-                      <span className="w-2 h-2 bg-blue-500 rounded-full mr-3"></span>
-                      <span className="text-sm text-gray-600">Comprehensive business tools</span>
-                    </div>
-                    <div className="flex items-center">
-                      <span className="w-2 h-2 bg-blue-500 rounded-full mr-3"></span>
-                      <span className="text-sm text-gray-600">24/7 expert support</span>
-                    </div>
-                    <div className="flex items-center">
-                      <span className="w-2 h-2 bg-blue-500 rounded-full mr-3"></span>
-                      <span className="text-sm text-gray-600">Educational resources</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="bg-white p-8 rounded-3xl shadow-xl">
-                  <div className="flex items-center mb-6">
-                    <div className="w-12 h-12 bg-green-500 rounded-2xl flex items-center justify-center mr-4">
-                      <span className="text-white text-xl">🌍</span>
-                    </div>
-                    <h3 className="text-2xl font-bold">Inclusion</h3>
-                  </div>
-                  <p className="text-gray-600 leading-relaxed mb-6">
-                    Making digital tools accessible to underserved communities across Africa. We ensure our platform serves all African businesses, regardless of location or size.
-                  </p>
-                  <div className="space-y-3">
-                    <div className="flex items-center">
-                      <span className="w-2 h-2 bg-green-500 rounded-full mr-3"></span>
-                      <span className="text-sm text-gray-600">Rural area accessibility</span>
-                    </div>
-                    <div className="flex items-center">
-                      <span className="w-2 h-2 bg-green-500 rounded-full mr-3"></span>
-                      <span className="text-sm text-gray-600">Multi-language support</span>
-                    </div>
-                    <div className="flex items-center">
-                      <span className="w-2 h-2 bg-green-500 rounded-full mr-3"></span>
-                      <span className="text-sm text-gray-600">Affordable pricing</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="bg-white p-8 rounded-3xl shadow-xl">
-                  <div className="flex items-center mb-6">
-                    <div className="w-12 h-12 bg-purple-500 rounded-2xl flex items-center justify-center mr-4">
-                      <span className="text-white text-xl">🔒</span>
-                    </div>
-                    <h3 className="text-2xl font-bold">Trust</h3>
-                  </div>
-                  <p className="text-gray-600 leading-relaxed mb-6">
-                    Building secure, reliable platforms that businesses can depend on. Trust is the foundation of our relationship with every African business we serve.
-                  </p>
-                  <div className="space-y-3">
-                    <div className="flex items-center">
-                      <span className="w-2 h-2 bg-purple-500 rounded-full mr-3"></span>
-                      <span className="text-sm text-gray-600">Bank-grade security</span>
-                    </div>
-                    <div className="flex items-center">
-                      <span className="w-2 h-2 bg-purple-500 rounded-full mr-3"></span>
-                      <span className="text-sm text-gray-600">Escrow protection</span>
-                    </div>
-                    <div className="flex items-center">
-                      <span className="w-2 h-2 bg-purple-500 rounded-full mr-3"></span>
-                      <span className="text-sm text-gray-600">Transparent policies</span>
-                    </div>
-                  </div>
-                </div>
+                  </motion.div>
+                ))}
               </div>
             </div>
           </div>
         </section>
 
         {/* Our Journey Section */}
-        <section className="py-16 sm:py-20 lg:py-24">
+        <section id="journey" className="py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-gray-50 to-white">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-6xl mx-auto">
-              <div className="text-center mb-16">
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                viewport={{ once: true }}
+                className="text-center mb-16"
+              >
                 <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
                   Our <span className="text-orange-500">Journey</span>
                 </h2>
-                <p className="text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
+                <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
                   From a simple e-commerce idea to expanding into Africa's first all-in-one digital platform, here's our gradual evolution and growth story.
                 </p>
-              </div>
+              </motion.div>
 
-              <div className="relative">
-                {/* Timeline line */}
-                <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-orange-300 hidden md:block"></div>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {[
+                  {
+                    phase: "Phase 1",
+                    date: "August 2021",
+                    title: "MVP Launch",
+                    desc: "Launched MVP with multi-vendor marketplace and ads. Our first step into Africa's digital commerce space.",
+                    achievement: "First paying customers secured",
+                    icon: Rocket,
+                    color: "from-orange-500 to-red-500"
+                  },
+                  {
+                    phase: "Phase 2",
+                    date: "June 2022",
+                    title: "Product Validation",
+                    desc: "Achieved product-market fit with our first paying customers and validated our business model.",
+                    achievement: "Product-market fit achieved",
+                    icon: Target,
+                    color: "from-blue-500 to-purple-500"
+                  },
+                  {
+                    phase: "Phase 3",
+                    date: "May 2023",
+                    title: "Cross-Border Expansion",
+                    desc: "Expanded beyond local markets to serve MSMEs across multiple African countries.",
+                    achievement: "Cross-border expansion completed",
+                    icon: Globe,
+                    color: "from-green-500 to-teal-500"
+                  },
+                  {
+                    phase: "Phase 4",
+                    date: "March 2024",
+                    title: "Major Recognition",
+                    desc: "Won Orange Social Venture Prize and became part of African Union EAN Fellowship.",
+                    achievement: "International recognition received",
+                    icon: Award,
+                    color: "from-purple-500 to-pink-500"
+                  },
+                  {
+                    phase: "Phase 5",
+                    date: "Q1 2025",
+                    title: "MANSA Partnership",
+                    desc: "Validated by Afreximbank's MANSA as a trusted cross-border trade partner.",
+                    achievement: "Institutional validation achieved",
+                    icon: Shield,
+                    color: "from-red-500 to-orange-500"
+                  },
+                  {
+                    phase: "Phase 6",
+                    date: "Q2 2025",
+                    title: "AnnitaPay Launch",
+                    desc: "Development and testing of our proprietary payment solution for African businesses.",
+                    achievement: "Proprietary payment solution launched",
+                    icon: TrendingUp,
+                    color: "from-indigo-500 to-purple-500"
+                  }
+                ].map((milestone, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: index * 0.1 }}
+                    viewport={{ once: true }}
+                    className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-shadow"
+                  >
+                    <div className="flex items-center justify-between mb-4">
+                      <div className={`w-12 h-12 bg-gradient-to-r ${milestone.color} rounded-xl flex items-center justify-center`}>
+                        <milestone.icon className="w-6 h-6 text-white" />
+                      </div>
+                      <span className="text-xs font-medium text-gray-500 bg-gray-100 px-2 py-1 rounded-full">
+                        {milestone.phase}
+                      </span>
+                    </div>
 
-                <div className="space-y-12">
-                  {/* Timeline Item 1 */}
-                  <div className="flex items-start">
-                    <div className="flex-shrink-0 w-16 h-16 bg-orange-500 rounded-2xl flex items-center justify-center mr-6 shadow-lg">
-                      <span className="text-white text-xl font-bold">1</span>
+                    <div className="mb-3">
+                      <div className="text-sm text-gray-500 mb-1">{milestone.date}</div>
+                      <h3 className="text-lg font-bold text-gray-900">{milestone.title}</h3>
                     </div>
-                    <div className="flex-1 bg-white p-8 rounded-3xl shadow-xl">
-                      <div className="flex items-center justify-between mb-4">
-                        <h3 className="text-xl font-bold">August 2021 - MVP Launch</h3>
-                        <span className="text-sm text-gray-500 bg-gray-100 px-3 py-1 rounded-full">Phase 1</span>
-                      </div>
-                      <p className="text-gray-600 leading-relaxed mb-4">
-                        Launched MVP with multi-vendor marketplace and ads. Our first step into Africa's digital commerce space, focusing on connecting local businesses with customers.
-                      </p>
-                      <div className="flex items-center text-sm text-orange-600">
-                        <span className="font-medium">Key Achievement:</span>
-                        <span className="ml-2">First paying customers secured</span>
-                      </div>
-                    </div>
-                  </div>
 
-                  {/* Timeline Item 2 */}
-                  <div className="flex items-start">
-                    <div className="flex-shrink-0 w-16 h-16 bg-blue-500 rounded-2xl flex items-center justify-center mr-6 shadow-lg">
-                      <span className="text-white text-xl font-bold">2</span>
-                    </div>
-                    <div className="flex-1 bg-white p-8 rounded-3xl shadow-xl">
-                      <div className="flex items-center justify-between mb-4">
-                        <h3 className="text-xl font-bold">June 2022 - Product Validation & First Paying Users</h3>
-                        <span className="text-sm text-gray-500 bg-gray-100 px-3 py-1 rounded-full">Phase 2</span>
-                      </div>
-                      <p className="text-gray-600 leading-relaxed mb-4">
-                        Achieved product-market fit with our first paying customers and validated our business model. Expanded from basic marketplace to include payment processing.
-                      </p>
-                      <div className="flex items-center text-sm text-blue-600">
-                        <span className="font-medium">Key Achievement:</span>
-                        <span className="ml-2">Product-market fit achieved</span>
-                      </div>
-                    </div>
-                  </div>
+                    <p className="text-gray-600 text-sm leading-relaxed mb-4">{milestone.desc}</p>
 
-                  {/* Timeline Item 3 */}
-                  <div className="flex items-start">
-                    <div className="flex-shrink-0 w-16 h-16 bg-green-500 rounded-2xl flex items-center justify-center mr-6 shadow-lg">
-                      <span className="text-white text-xl font-bold">3</span>
+                    <div className="flex items-center text-xs">
+                      <Star className="w-3 h-3 text-yellow-500 mr-1" />
+                      <span className="text-gray-600 font-medium">{milestone.achievement}</span>
                     </div>
-                    <div className="flex-1 bg-white p-8 rounded-3xl shadow-xl">
-                      <div className="flex items-center justify-between mb-4">
-                        <h3 className="text-xl font-bold">May 2023 - Cross-Border MSME Onboarding Begins</h3>
-                        <span className="text-sm text-gray-500 bg-gray-100 px-3 py-1 rounded-full">Phase 3</span>
-                      </div>
-                      <p className="text-gray-600 leading-relaxed mb-4">
-                        Expanded beyond local markets to serve Micro, Small, and Medium Enterprises across borders. Integrated cross-border payment solutions and expanded to multiple African countries.
-                      </p>
-                      <div className="flex items-center text-sm text-green-600">
-                        <span className="font-medium">Key Achievement:</span>
-                        <span className="ml-2">Cross-border expansion completed</span>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Timeline Item 4 */}
-                  <div className="flex items-start">
-                    <div className="flex-shrink-0 w-16 h-16 bg-purple-500 rounded-2xl flex items-center justify-center mr-6 shadow-lg">
-                      <span className="text-white text-xl font-bold">4</span>
-                    </div>
-                    <div className="flex-1 bg-white p-8 rounded-3xl shadow-xl">
-                      <div className="flex items-center justify-between mb-4">
-                        <h3 className="text-xl font-bold">March 2024 - Major Awards & Recognitions</h3>
-                        <span className="text-sm text-gray-500 bg-gray-100 px-3 py-1 rounded-full">Phase 4</span>
-                      </div>
-                      <p className="text-gray-600 leading-relaxed mb-4">
-                        Won Orange Social Venture Prize (1st Place) and Named Top 50 Businesses in Africa by the African Union. Became a trusted partner in the African digital ecosystem.
-                      </p>
-                      <div className="flex items-center text-sm text-purple-600">
-                        <span className="font-medium">Key Achievement:</span>
-                        <span className="ml-2">International recognition received</span>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Timeline Item 5 */}
-                  <div className="flex items-start">
-                    <div className="flex-shrink-0 w-16 h-16 bg-red-500 rounded-2xl flex items-center justify-center mr-6 shadow-lg">
-                      <span className="text-white text-xl font-bold">5</span>
-                    </div>
-                    <div className="flex-1 bg-white p-8 rounded-3xl shadow-xl">
-                      <div className="flex items-center justify-between mb-4">
-                        <h3 className="text-xl font-bold">Q1 2025 - Onboarded to MANSA Platform</h3>
-                        <span className="text-sm text-gray-500 bg-gray-100 px-3 py-1 rounded-full">Phase 5</span>
-                      </div>
-                      <p className="text-gray-600 leading-relaxed mb-4">
-                        Validated by Afreximbank's MANSA as a trusted and credible cross-border trade partner. This milestone opens doors to institutional financing and expanded market access.
-                      </p>
-                      <div className="flex items-center text-sm text-red-600">
-                        <span className="font-medium">Key Achievement:</span>
-                        <span className="ml-2">Institutional validation achieved</span>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Timeline Item 6 */}
-                  <div className="flex items-start">
-                    <div className="flex-shrink-0 w-16 h-16 bg-indigo-500 rounded-2xl flex items-center justify-center mr-6 shadow-lg">
-                      <span className="text-white text-xl font-bold">6</span>
-                    </div>
-                    <div className="flex-1 bg-white p-8 rounded-3xl shadow-xl">
-                      <div className="flex items-center justify-between mb-4">
-                        <h3 className="text-xl font-bold">Q2 2025 - AnnitaPay Testing Phase</h3>
-                        <span className="text-sm text-gray-500 bg-gray-100 px-3 py-1 rounded-full">Phase 6</span>
-                      </div>
-                      <p className="text-gray-600 leading-relaxed mb-4">
-                        Development and testing of our proprietary payment solution, enhancing our platform capabilities and providing seamless financial services to African businesses.
-                      </p>
-                      <div className="flex items-center text-sm text-indigo-600">
-                        <span className="font-medium">Key Achievement:</span>
-                        <span className="ml-2">Proprietary payment solution launched</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                  </motion.div>
+                ))}
               </div>
             </div>
           </div>
         </section>
 
         {/* Meet Our Team Section */}
-        <section className="py-16 sm:py-20 lg:py-24 bg-gray-50">
+        <section id="team" className="py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-blue-50 via-white to-purple-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-6xl mx-auto">
-              <div className="text-center mb-16">
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                viewport={{ once: true }}
+                className="text-center mb-16"
+              >
                 <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
                   Meet Our <span className="text-orange-500">Team</span>
                 </h2>
-                <p className="text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
+                <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
                   Our diverse team combines tech expertise, market knowledge, and entrepreneurial spirit to build Africa's leading digital platform.
                 </p>
-              </div>
+              </motion.div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                {/* Christopher O. Fallah */}
-                <div className="bg-white p-8 rounded-3xl shadow-xl text-center hover:shadow-2xl transition-shadow">
-                  <div className="w-24 h-24 bg-gradient-to-r from-orange-500 to-red-500 rounded-2xl flex items-center justify-center mx-auto mb-6 text-white text-2xl font-bold shadow-lg">
-                    CF
-                  </div>
-                  <h3 className="text-xl font-bold mb-2">Christopher O. Fallah</h3>
-                  <p className="text-orange-500 font-semibold mb-4">CEO & Founder</p>
-                  <p className="text-gray-600 text-sm leading-relaxed mb-4">
-                    Visionary leader with experience in African startups and strategic business development. Founded Annita to transform Africa's digital landscape.
-                  </p>
-                  <div className="flex justify-center space-x-2">
-                    <div className="w-2 h-2 bg-orange-400 rounded-full"></div>
-                    <div className="w-2 h-2 bg-orange-300 rounded-full"></div>
-                    <div className="w-2 h-2 bg-orange-200 rounded-full"></div>
-                  </div>
-                </div>
-
-                {/* Siah Fallah */}
-                <div className="bg-white p-8 rounded-3xl shadow-xl text-center hover:shadow-2xl transition-shadow">
-                  <div className="w-24 h-24 bg-gradient-to-r from-blue-500 to-purple-500 rounded-2xl flex items-center justify-center mx-auto mb-6 text-white text-2xl font-bold shadow-lg">
-                    SF
-                  </div>
-                  <h3 className="text-xl font-bold mb-2">Siah Fallah</h3>
-                  <p className="text-orange-500 font-semibold mb-4">Chief Marketing Officer (CMO)</p>
-                  <p className="text-gray-600 text-sm leading-relaxed mb-4">
-                    Focused on MSME engagement and growth strategies. Expert in digital marketing and community building across African markets.
-                  </p>
-                  <div className="flex justify-center space-x-2">
-                    <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
-                    <div className="w-2 h-2 bg-blue-300 rounded-full"></div>
-                    <div className="w-2 h-2 bg-blue-200 rounded-full"></div>
-                  </div>
-                </div>
-
-                {/* Lamber Kpukuyou */}
-                <div className="bg-white p-8 rounded-3xl shadow-xl text-center hover:shadow-2xl transition-shadow">
-                  <div className="w-24 h-24 bg-gradient-to-r from-green-500 to-teal-500 rounded-2xl flex items-center justify-center mx-auto mb-6 text-white text-2xl font-bold shadow-lg">
-                    LK
-                  </div>
-                  <h3 className="text-xl font-bold mb-2">Lamber Kpukuyou</h3>
-                  <p className="text-orange-500 font-semibold mb-4">Chief Technology Officer (CTO)</p>
-                  <p className="text-gray-600 text-sm leading-relaxed mb-4">
-                    Manages payments and logistics systems with expertise in backend development, security, and scalable platform architecture.
-                  </p>
-                  <div className="flex justify-center space-x-2">
-                    <div className="w-2 h-2 bg-green-400 rounded-full"></div>
-                    <div className="w-2 h-2 bg-green-300 rounded-full"></div>
-                    <div className="w-2 h-2 bg-green-200 rounded-full"></div>
-                  </div>
-                </div>
-
-                {/* Emmanuel Z. Weh */}
-                <div className="bg-white p-8 rounded-3xl shadow-xl text-center hover:shadow-2xl transition-shadow">
-                  <div className="w-24 h-24 bg-gradient-to-r from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center mx-auto mb-6 text-white text-2xl font-bold shadow-lg">
-                    EW
-                  </div>
-                  <h3 className="text-xl font-bold mb-2">Emmanuel Z. Weh</h3>
-                  <p className="text-orange-500 font-semibold mb-4">Chief Operating Officer (COO)</p>
-                  <p className="text-gray-600 text-sm leading-relaxed mb-4">
-                    Oversees daily operations and business development. Expert in African market dynamics and operational excellence.
-                  </p>
-                  <div className="flex justify-center space-x-2">
-                    <div className="w-2 h-2 bg-purple-400 rounded-full"></div>
-                    <div className="w-2 h-2 bg-purple-300 rounded-full"></div>
-                    <div className="w-2 h-2 bg-purple-200 rounded-full"></div>
-                  </div>
-                </div>
+                {[
+                  {
+                    initials: "CF",
+                    name: "Christopher O. Fallah",
+                    role: "CEO & Founder",
+                    desc: "Visionary leader with experience in African startups and strategic business development. Founded Annita to transform Africa's digital landscape.",
+                    color: "from-orange-500 to-red-500"
+                  },
+                  {
+                    initials: "SF",
+                    name: "Siah Fallah",
+                    role: "Chief Marketing Officer",
+                    desc: "Focused on MSME engagement and growth strategies. Expert in digital marketing and community building across African markets.",
+                    color: "from-blue-500 to-purple-500"
+                  },
+                  {
+                    initials: "LK",
+                    name: "Lamber Kpukuyou",
+                    role: "Chief Technology Officer",
+                    desc: "Manages payments and logistics systems with expertise in backend development, security, and scalable platform architecture.",
+                    color: "from-green-500 to-teal-500"
+                  },
+                  {
+                    initials: "EW",
+                    name: "Emmanuel Z. Weh",
+                    role: "Chief Operating Officer",
+                    desc: "Oversees daily operations and business development. Expert in African market dynamics and operational excellence.",
+                    color: "from-purple-500 to-pink-500"
+                  }
+                ].map((member, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: index * 0.1 }}
+                    viewport={{ once: true }}
+                    className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 text-center"
+                  >
+                    <div className={`w-20 h-20 bg-gradient-to-r ${member.color} rounded-2xl flex items-center justify-center mx-auto mb-6 text-white text-xl font-bold shadow-lg`}>
+                      {member.initials}
+                    </div>
+                    <h3 className="text-lg font-bold mb-1 text-gray-900">{member.name}</h3>
+                    <p className="text-orange-600 font-semibold mb-4 text-sm">{member.role}</p>
+                    <p className="text-gray-600 text-sm leading-relaxed">{member.desc}</p>
+                  </motion.div>
+                ))}
               </div>
             </div>
           </div>
         </section>
 
         {/* Ready to Join Our Mission CTA */}
-        <section className="py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-orange-50 to-red-50">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-orange-600 via-orange-700 to-red-600 text-white overflow-hidden">
+          {/* Background Elements */}
+          <div className="absolute inset-0">
+            <div className="absolute top-10 left-10 w-32 h-32 bg-white/5 rounded-full animate-pulse"></div>
+            <div className="absolute bottom-10 right-10 w-24 h-24 bg-white/5 rounded-full animate-bounce"></div>
+            <div className="absolute top-1/2 left-1/4 w-16 h-16 bg-white/5 rounded-full animate-pulse delay-1000"></div>
+          </div>
+
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="max-w-4xl mx-auto text-center">
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
-                Ready to Join Our <span className="text-orange-500">Mission?</span>
-              </h2>
-              <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                Be part of Africa's largest digital transformation. Connect with our team to learn how we're empowering MSMEs across the continent.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a
-                  href="/contact"
-                  className="px-8 py-4 bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 rounded-xl font-semibold text-white shadow-xl transition-all duration-300 inline-block text-center"
-                >
-                  Try V1.0 Now
-                </a>
-                <a
-                  href="/careers"
-                  className="px-8 py-4 bg-white hover:bg-gray-50 border-2 border-orange-500 text-orange-500 hover:text-orange-600 rounded-xl font-semibold shadow-xl transition-all duration-300 inline-block text-center"
-                >
-                  Join Our Team
-                </a>
-              </div>
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                viewport={{ once: true }}
+              >
+                <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/20 backdrop-blur-sm text-white text-sm font-medium mb-6">
+                  <Heart className="w-4 h-4 mr-2" />
+                  Join Our Mission
+                </div>
+
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
+                  Ready to Join Our <span className="text-orange-200">Mission?</span>
+                </h2>
+
+                <p className="text-lg sm:text-xl text-orange-100 max-w-3xl mx-auto leading-relaxed mb-8">
+                  Be part of Africa's largest digital transformation. Connect with our team to learn how we're empowering MSMEs across the continent.
+                </p>
+
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <Link
+                    href="/contact"
+                    className="bg-white text-orange-600 px-8 py-4 rounded-lg font-semibold hover:bg-orange-50 transition-all duration-200 shadow-lg text-sm sm:text-base"
+                  >
+                    Try V1.0 Now
+                  </Link>
+                  <Link
+                    href="/careers"
+                    className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-orange-600 transition-all duration-200 text-sm sm:text-base"
+                  >
+                    Join Our Team
+                  </Link>
+                </div>
+              </motion.div>
             </div>
           </div>
         </section>
