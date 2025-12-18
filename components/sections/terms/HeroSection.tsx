@@ -1,35 +1,108 @@
 "use client"
 
-import React from 'react'
+import { useRef } from 'react'
+import { motion, useInView } from 'framer-motion'
+import {
+  FileText,
+  Scale,
+  Mail,
+  Phone
+} from 'lucide-react'
 
 const HeroSection = () => {
+  const ref = useRef(null)
+  const isInView = useInView(ref, { once: true, margin: "-100px" })
+
   return (
-    <section className="relative py-16 bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 text-white">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto text-center">
-          <div className="inline-flex items-center px-6 py-3 rounded-full bg-blue-500/20 backdrop-blur-sm text-blue-200 text-sm font-semibold mb-8">
-            Terms of Service
-          </div>
+    <section className="relative py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-orange-600 via-orange-700 to-red-600 text-white overflow-hidden">
+      {/* Animated Background Elements */}
+      <div className="absolute inset-0">
+        <div className="absolute top-10 left-10 w-20 h-20 bg-white/10 rounded-full animate-pulse"></div>
+        <div className="absolute top-20 right-20 w-16 h-16 bg-white/10 rounded-full animate-bounce"></div>
+        <div className="absolute bottom-20 left-1/4 w-24 h-24 bg-white/10 rounded-full animate-pulse"></div>
+        <div className="absolute bottom-10 right-1/3 w-12 h-12 bg-white/10 rounded-full animate-bounce"></div>
+      </div>
 
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
-            Clear Terms for{' '}
-            <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-              Better Service
-            </span>
-          </h1>
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          {/* Content */}
+          <motion.div
+            ref={ref}
+            initial={{ opacity: 0, x: -30 }}
+            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.8 }}
+          >
+            {/* Badge */}
+            <div className="inline-flex items-center px-6 py-3 rounded-full bg-white/20 backdrop-blur-sm text-white text-sm font-semibold mb-8 shadow-lg border border-white/30">
+              <FileText className="w-5 h-5 mr-2" />
+              Terms of Service
+            </div>
 
-          <p className="text-xl text-blue-100 leading-relaxed mb-8 max-w-2xl mx-auto">
-            Transparent terms that protect both you and us. Understanding your rights and obligations when using Annita's platform.
-          </p>
+            {/* Heading */}
+            <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold mb-6 leading-tight">
+              Your Agreement with <span className="text-orange-200">Us</span>
+            </h1>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 rounded-xl font-semibold text-white shadow-xl transition-all duration-300">
-              Read Our Terms
-            </button>
-            <button className="px-8 py-4 bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/30 rounded-xl font-semibold text-white shadow-xl transition-all duration-300">
-              Contact Legal Team
-            </button>
-          </div>
+            {/* Description */}
+            <p className="text-xl sm:text-2xl text-orange-100 mb-8 leading-relaxed max-w-2xl">
+              Read Annita's comprehensive terms of service to understand your rights, responsibilities, and the legal framework governing your use of our platform and services.
+            </p>
+
+            {/* Quick Contact Options */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+              <div className="flex items-center space-x-3 bg-white/10 backdrop-blur-sm rounded-lg p-4">
+                <Mail className="w-6 h-6 text-orange-200" />
+                <div>
+                  <div className="font-semibold text-white">Legal Support</div>
+                  <div className="text-sm text-orange-200">legal@annita.com</div>
+                </div>
+              </div>
+              <div className="flex items-center space-x-3 bg-white/10 backdrop-blur-sm rounded-lg p-4">
+                <Phone className="w-6 h-6 text-orange-200" />
+                <div>
+                  <div className="font-semibold text-white">Phone Support</div>
+                  <div className="text-sm text-orange-200">+231 77 505 7227</div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Visualization Card */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="relative"
+          >
+            <div className="bg-white/10 backdrop-blur-sm p-8 rounded-3xl shadow-2xl border border-white/20">
+              <div className="text-center mb-6">
+                <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                  <Scale className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-2xl font-bold text-white mb-2">Legal Protection</h3>
+                <p className="text-orange-200">Clear terms & fair agreement</p>
+              </div>
+
+              <div className="space-y-4">
+                <div className="flex items-center justify-between p-4 bg-white/10 rounded-xl">
+                  <span className="text-white">Legal Protection</span>
+                  <span className="font-bold text-green-300">✓</span>
+                </div>
+                <div className="flex items-center justify-between p-4 bg-white/10 rounded-xl">
+                  <span className="text-white">Clear Terms</span>
+                  <span className="font-bold text-green-300">✓</span>
+                </div>
+                <div className="flex items-center justify-between p-4 bg-white/10 rounded-xl">
+                  <span className="text-white">Fair Agreement</span>
+                  <span className="font-bold text-green-300">✓</span>
+                </div>
+                <div className="flex items-center justify-between p-4 bg-white/10 rounded-xl">
+                  <span className="text-white">User Rights</span>
+                  <span className="font-bold text-green-300">✓</span>
+                </div>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </div>
     </section>
