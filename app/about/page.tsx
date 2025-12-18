@@ -179,10 +179,6 @@ const AboutPage = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
               >
-                <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/20 backdrop-blur-sm text-white text-sm font-medium mb-6">
-                  <Building2 className="w-4 h-4 mr-2" />
-                  About Annita
-                </div>
 
                 <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 leading-tight">
                   Empowering Africa's <span className="text-orange-200">Digital Future</span>
@@ -231,7 +227,6 @@ const AboutPage = () => {
                 { id: 'mission', name: 'Mission & Vision', icon: Target },
                 { id: 'values', name: 'Core Values', icon: Heart },
                 { id: 'journey', name: 'Our Journey', icon: TrendingUp },
-                { id: 'team', name: 'Our Team', icon: Users },
                 { id: 'goals', name: 'Our Goals', icon: Rocket }
               ].map((section) => (
                 <button
@@ -620,73 +615,39 @@ const AboutPage = () => {
           </div>
         </section>
 
-        {/* Meet Our Team Section */}
-        <section id="team" className="py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-blue-50 via-white to-purple-50">
+        {/* CTA Section */}
+        <section className="py-8 bg-gray-50 border-t border-gray-200">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-6xl mx-auto">
+            <div className="max-w-4xl mx-auto">
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
                 viewport={{ once: true }}
-                className="text-center mb-16"
+                className="text-center p-6 sm:p-8 lg:p-12 bg-gradient-to-r from-orange-500 to-orange-600 rounded-2xl text-white shadow-2xl"
               >
-                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
-                  Meet Our <span className="text-orange-500">Team</span>
-                </h2>
-                <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                  Our diverse team combines tech expertise, market knowledge, and entrepreneurial spirit to build Africa's leading digital platform.
+                <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 sm:mb-6">
+                  Ready to Join Our Mission?
+                </h3>
+                <p className="text-orange-100 mb-6 sm:mb-8 max-w-2xl mx-auto text-sm sm:text-base lg:text-lg leading-relaxed">
+                  Be part of Africa's largest digital transformation. Connect with our team to learn how we're empowering MSMEs across the continent.
                 </p>
-              </motion.div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                {[
-                  {
-                    initials: "CF",
-                    name: "Christopher O. Fallah",
-                    role: "CEO & Founder",
-                    desc: "Visionary leader with experience in African startups and strategic business development. Founded Annita to transform Africa's digital landscape.",
-                    color: "from-orange-500 to-red-500"
-                  },
-                  {
-                    initials: "SF",
-                    name: "Siah Fallah",
-                    role: "Chief Marketing Officer",
-                    desc: "Focused on MSME engagement and growth strategies. Expert in digital marketing and community building across African markets.",
-                    color: "from-blue-500 to-purple-500"
-                  },
-                  {
-                    initials: "LK",
-                    name: "Lamber Kpukuyou",
-                    role: "Chief Technology Officer",
-                    desc: "Manages payments and logistics systems with expertise in backend development, security, and scalable platform architecture.",
-                    color: "from-green-500 to-teal-500"
-                  },
-                  {
-                    initials: "EW",
-                    name: "Emmanuel Z. Weh",
-                    role: "Chief Operating Officer",
-                    desc: "Oversees daily operations and business development. Expert in African market dynamics and operational excellence.",
-                    color: "from-purple-500 to-pink-500"
-                  }
-                ].map((member, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: index * 0.1 }}
-                    viewport={{ once: true }}
-                    className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 text-center"
+                <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
+                  <Link
+                    href="/contact"
+                    className="inline-flex items-center justify-center bg-white text-orange-600 px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold hover:bg-orange-50 transition-colors duration-200 shadow-lg text-sm sm:text-base"
                   >
-                    <div className={`w-20 h-20 bg-gradient-to-r ${member.color} rounded-2xl flex items-center justify-center mx-auto mb-6 text-white text-xl font-bold shadow-lg`}>
-                      {member.initials}
-                    </div>
-                    <h3 className="text-lg font-bold mb-1 text-gray-900">{member.name}</h3>
-                    <p className="text-orange-600 font-semibold mb-4 text-sm">{member.role}</p>
-                    <p className="text-gray-600 text-sm leading-relaxed">{member.desc}</p>
-                  </motion.div>
-                ))}
-              </div>
+                    <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
+                    Try V1.0 Now
+                  </Link>
+                  <Link
+                    href="/careers"
+                    className="inline-flex items-center justify-center border-2 border-white text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold hover:bg-white hover:text-gray-900 transition-colors duration-200 text-sm sm:text-base"
+                  >
+                    Join Our Team
+                  </Link>
+                </div>
+              </motion.div>
             </div>
           </div>
         </section>

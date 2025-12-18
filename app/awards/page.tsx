@@ -81,10 +81,6 @@ export default function AwardsPage() {
       <section className="relative py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-orange-600 via-orange-700 to-red-600 text-white overflow-hidden">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-6xl mx-auto text-center">
-            <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/20 backdrop-blur-sm text-white text-sm font-medium mb-6">
-              <Award className="w-4 h-4 mr-2" />
-              Awards & Recognition
-            </div>
             <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 leading-tight">
               Our <span className="text-orange-200">Achievements</span>
             </h1>

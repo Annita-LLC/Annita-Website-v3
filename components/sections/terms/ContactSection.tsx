@@ -1,9 +1,39 @@
 "use client"
 
-import React from 'react'
-import { MessageSquare, Mail, Phone, MapPin, Clock, FileText, Send, Scale, AlertTriangle } from 'lucide-react'
+import React, { useState } from 'react'
+import { MessageSquare, Mail, Phone, MapPin, Clock, FileText, Send, Scale, AlertTriangle, CheckCircle } from 'lucide-react'
+import { useFormSubmission, formValidations } from '@/lib/hooks/useFormSubmission'
 
 const ContactSection = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    inquiryType: '',
+    details: ''
+  })
+
+  const { submitForm, isSubmitting, isSubmitted, error, success } = useFormSubmission({
+    validateForm: formValidations.business,
+    onSuccess: (data) => {
+      console.log('Terms inquiry submitted successfully:', data)
+    },
+    onError: (error) => {
+      console.error('Terms inquiry submission failed:', error)
+    }
+  })
+
+  const handleInputChange = (field: string, value: string) => {
+    setFormData(prev => ({
+      ...prev,
+      [field]: value
+    }))
+  }
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    await submitForm('legal', formData)
+  }
   return (
     <section id="contact" className="py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-slate-900 via-blue-900 to-purple-900 text-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -132,35 +162,46 @@ const ContactSection = () => {
               </p>
             </div>
 
-            <form className="max-w-2xl mx-auto space-y-6">
+            <form onSubmit={handleSubmit} className="max-w-2xl mx-auto space-y-6">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">Full Name</label>
                   <input
                     type="text"
+                    value={formData.name}
+                    onChange={(e) => handleInputChange('name', e.target.value)}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                     placeholder="Your full name"
+                    required
                   />
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
                   <input
                     type="email"
+                    value={formData.email}
+                    onChange={(e) => handleInputChange('email', e.target.value)}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                     placeholder="your.email@example.com"
+                    required
                   />
                 </div>
               </div>
 
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">Inquiry Type</label>
-                <select className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
-                  <option>Select inquiry type</option>
-                  <option>Terms clarification</option>
-                  <option>Account dispute</option>
-                  <option>Privacy concern</option>
-                  <option>Legal complaint</option>
-                  <option>General question</option>
+                <select
+                  value={formData.inquiryType}
+                  onChange={(e) => handleInputChange('inquiryType', e.target.value)}
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  required
+                >
+                  <option value="">Select inquiry type</option>
+                  <option value="terms-clarification">Terms clarification</option>
+                  <option value="account-dispute">Account dispute</option>
+                  <option value="privacy-concern">Privacy concern</option>
+                  <option value="legal-complaint">Legal complaint</option>
+                  <option value="general-question">General question</option>
                 </select>
               </div>
 
@@ -168,8 +209,11 @@ const ContactSection = () => {
                 <label className="block text-sm font-medium text-gray-700 mb-2">Subject</label>
                 <input
                   type="text"
+                  value={formData.subject}
+                  onChange={(e) => handleInputChange('subject', e.target.value)}
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   placeholder="Brief description of your inquiry"
+                  required
                 />
               </div>
 
@@ -177,18 +221,47 @@ const ContactSection = () => {
                 <label className="block text-sm font-medium text-gray-700 mb-2">Details</label>
                 <textarea
                   rows={5}
+                  value={formData.details}
+                  onChange={(e) => handleInputChange('details', e.target.value)}
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   placeholder="Please provide detailed information about your legal inquiry..."
+                  required
                 ></textarea>
               </div>
+
+              {/* Success/Error Messages */}
+              {success && (
+                <div className="p-4 bg-green-50 border border-green-200 rounded-lg">
+                  <div className="flex items-center">
+                    <CheckCircle className="w-5 h-5 text-green-600 mr-2" />
+                    <span className="text-green-800">Your legal inquiry has been submitted successfully! We'll get back to you within 24-48 hours.</span>
+                  </div>
+                </div>
+              )}
+
+              {error && (
+                <div className="p-4 bg-red-50 border border-red-200 rounded-lg">
+                  <span className="text-red-800">{error}</span>
+                </div>
+              )}
 
               <div className="text-center">
                 <button
                   type="submit"
-                  className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white font-semibold rounded-xl shadow-lg transition-all duration-300"
+                  disabled={isSubmitting}
+                  className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 disabled:from-gray-400 disabled:to-gray-500 text-white font-semibold rounded-xl shadow-lg transition-all duration-300 disabled:cursor-not-allowed"
                 >
-                  <Send className="w-5 h-5 mr-2" />
-                  Submit Legal Inquiry
+                  {isSubmitting ? (
+                    <>
+                      <div className="w-5 h-5 mr-2 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                      Submitting...
+                    </>
+                  ) : (
+                    <>
+                      <Send className="w-5 h-5 mr-2" />
+                      Submit Legal Inquiry
+                    </>
+                  )}
                 </button>
               </div>
             </form>
@@ -197,18 +270,11 @@ const ContactSection = () => {
           {/* Footer Info */}
           <div className="mt-16 text-center">
             <div className="bg-white/10 backdrop-blur-lg rounded-xl p-6 border border-white/20">
-              <div className="flex items-center justify-center space-x-6 text-sm text-blue-200">
-                <div className="flex items-center space-x-2">
-                  <FileText className="w-4 h-4" />
-                  <span><strong>Last Updated:</strong> March 15, 2024</span>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <Scale className="w-4 h-4" />
-                  <span><strong>Effective Date:</strong> March 15, 2024</span>
-                </div>
-              </div>
-              <p className="text-blue-200 text-xs mt-3">
-                These terms are governed by Liberian law. Any disputes will be resolved through binding arbitration in Monrovia, Liberia.
+              <p className="text-blue-200 text-sm">
+                <strong>Last Updated:</strong> March 15, 2024 • <strong>Effective Date:</strong> March 15, 2024
+              </p>
+              <p className="text-blue-200 text-xs mt-2">
+                These terms of service are reviewed regularly to ensure compliance with evolving legal standards and requirements.
               </p>
             </div>
           </div>

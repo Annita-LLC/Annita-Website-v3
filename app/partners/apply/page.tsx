@@ -110,10 +110,6 @@ const PartnerApplyPage = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               {/* Left Column - Main Content */}
               <div className="text-center lg:text-left">
-                <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/20 backdrop-blur-sm text-white text-sm font-medium mb-6">
-                <UserPlus className="w-4 h-4 mr-2" />
-                Partner Program
-              </div>
                 <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 leading-tight">
                   Join Our <span className="text-orange-200">Partner Network</span>
               </h1>

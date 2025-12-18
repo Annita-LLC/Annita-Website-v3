@@ -1,6 +1,6 @@
 "use client"
 
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 import { motion, useInView } from 'framer-motion'
 import {
   MessageSquare,
@@ -14,10 +14,40 @@ import {
   CheckCircle,
   AlertTriangle
 } from 'lucide-react'
+import { useFormSubmission, formValidations } from '@/lib/hooks/useFormSubmission'
 
 const ContactSection = () => {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-100px" })
+
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
+  })
+
+  const { submitForm, isSubmitting, isSubmitted, error, success } = useFormSubmission({
+    validateForm: formValidations.business,
+    onSuccess: (data) => {
+      console.log('Privacy inquiry submitted successfully:', data)
+    },
+    onError: (error) => {
+      console.error('Privacy inquiry submission failed:', error)
+    }
+  })
+
+  const handleInputChange = (field: string, value: string) => {
+    setFormData(prev => ({
+      ...prev,
+      [field]: value
+    }))
+  }
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    await submitForm('privacy', formData)
+  }
 
   const contactMethods = [
     {
@@ -183,35 +213,46 @@ const ContactSection = () => {
               </p>
               </div>
 
-              <form className="max-w-2xl mx-auto space-y-6">
+              <form onSubmit={handleSubmit} className="max-w-2xl mx-auto space-y-6">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">Full Name</label>
                     <input
                       type="text"
+                      value={formData.name}
+                      onChange={(e) => handleInputChange('name', e.target.value)}
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                       placeholder="Your full name"
+                      required
                     />
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
                     <input
                       type="email"
+                      value={formData.email}
+                      onChange={(e) => handleInputChange('email', e.target.value)}
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                       placeholder="your.email@example.com"
+                      required
                     />
                   </div>
                 </div>
 
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">Subject</label>
-                  <select className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
-                    <option>Select a topic</option>
-                    <option>Data Access Request</option>
-                    <option>Data Deletion Request</option>
-                    <option>Privacy Question</option>
-                    <option>Security Concern</option>
-                    <option>General Inquiry</option>
+                  <select
+                    value={formData.subject}
+                    onChange={(e) => handleInputChange('subject', e.target.value)}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    required
+                  >
+                    <option value="">Select a topic</option>
+                    <option value="data-access">Data Access Request</option>
+                    <option value="data-deletion">Data Deletion Request</option>
+                    <option value="privacy-question">Privacy Question</option>
+                    <option value="security-concern">Security Concern</option>
+                    <option value="general-inquiry">General Inquiry</option>
                   </select>
                 </div>
 
@@ -219,18 +260,47 @@ const ContactSection = () => {
                   <label className="block text-sm font-medium text-gray-700 mb-2">Message</label>
                   <textarea
                     rows={5}
+                    value={formData.message}
+                    onChange={(e) => handleInputChange('message', e.target.value)}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                     placeholder="Please describe your privacy concern or request..."
+                    required
                   ></textarea>
                 </div>
+
+                {/* Success/Error Messages */}
+                {success && (
+                  <div className="p-4 bg-green-50 border border-green-200 rounded-lg">
+                    <div className="flex items-center">
+                      <CheckCircle className="w-5 h-5 text-green-600 mr-2" />
+                      <span className="text-green-800">Your privacy inquiry has been submitted successfully! We'll get back to you within 24-48 hours.</span>
+                    </div>
+                  </div>
+                )}
+
+                {error && (
+                  <div className="p-4 bg-red-50 border border-red-200 rounded-lg">
+                    <span className="text-red-800">{error}</span>
+                  </div>
+                )}
 
                 <div className="text-center">
                   <button
                     type="submit"
-                    className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white font-semibold rounded-xl shadow-lg transition-all duration-300"
+                    disabled={isSubmitting}
+                    className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 disabled:from-gray-400 disabled:to-gray-500 text-white font-semibold rounded-xl shadow-lg transition-all duration-300 disabled:cursor-not-allowed"
                   >
-                    <Send className="w-5 h-5 mr-2" />
-                    Send Message
+                    {isSubmitting ? (
+                      <>
+                        <div className="w-5 h-5 mr-2 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                        Submitting...
+                      </>
+                    ) : (
+                      <>
+                        <Send className="w-5 h-5 mr-2" />
+                        Send Message
+                      </>
+                    )}
                   </button>
                 </div>
               </form>

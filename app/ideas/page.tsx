@@ -369,10 +369,6 @@ const IdeasPage = () => {
                 transition={{ duration: 0.8 }}
                   className="text-center lg:text-left"
               >
-                  <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/20 backdrop-blur-sm text-white text-sm font-medium mb-6">
-                  <Lightbulb className="w-4 h-4 mr-2" />
-                  Your Voice Matters
-                </div>
                   <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 leading-tight">
                   Ideas & <span className="text-orange-200">Tips</span>
                 </h1>
