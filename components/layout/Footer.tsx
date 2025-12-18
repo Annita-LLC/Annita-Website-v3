@@ -169,7 +169,7 @@ const Footer = () => {
                 {section.links.map((link) => (
                   <li key={link.name}>
                     {'isExternal' in link && link.isExternal ? (
-                      <a
+                      <a 
                         href={link.href}
                         target="_blank"
                         rel="noopener noreferrer"
@@ -178,7 +178,7 @@ const Footer = () => {
                         {link.name}
                       </a>
                     ) : (
-                      <Link
+                      <Link 
                         href={link.href}
                         className="footer-link text-gray-400 hover:text-white transition-colors duration-200 text-sm sm:text-base"
                       >
