@@ -197,8 +197,6 @@ const HeroSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
             className="flex-1 text-center lg:text-left lg:pr-16"
-            onMouseEnter={() => setIsPaused(true)}
-            onMouseLeave={() => setIsPaused(false)}
           >
             <div className="max-w-2xl mx-auto lg:mx-0">
               {/* Badge */}
@@ -279,6 +277,22 @@ const HeroSection = () => {
               </motion.div>
               </AnimatePresence>
 
+              {/* Slide Navigation Dots */}
+              <div className="flex justify-center lg:justify-start space-x-2 mt-8">
+                {slides.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentSlide(index)}
+                    className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                      index === currentSlide
+                        ? 'bg-orange-500 w-8'
+                        : 'bg-orange-300 hover:bg-orange-400'
+                    }`}
+                    aria-label={`Go to slide ${index + 1}`}
+                  />
+                ))}
+              </div>
+
         </div>
           </motion.div>
 
@@ -288,8 +302,6 @@ const HeroSection = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
             className="flex-1 flex justify-center lg:justify-end mt-8 sm:mt-12 lg:mt-0 w-full"
-            onMouseEnter={() => setIsPaused(true)}
-            onMouseLeave={() => setIsPaused(false)}
           >
             <div className="relative w-full max-w-[320px] sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl">
               {/* Video Container */}
