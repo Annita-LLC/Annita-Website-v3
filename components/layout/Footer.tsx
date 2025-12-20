@@ -64,11 +64,11 @@ const Footer = () => {
 
   const socialLinks = [
     { name: 'Linktree', icon: LinkIcon, href: 'https://linktr.ee/annitallc?utm_source=linktree_profile_share&ltsid=8fd79e3c-4d54-433d-a569-ba89a939e506' },
-    { name: 'LinkedIn', icon: Linkedin, href: 'https://www.linkedin.com/company/annita-africa' },
-    { name: 'Facebook', icon: Facebook, href: 'https://www.facebook.com/annita.africa' },
-    { name: 'Instagram', icon: Instagram, href: 'https://www.instagram.com/annita_africa' },
-    { name: 'TikTok', icon: ExternalLink, href: 'https://www.tiktok.com/@annita_africa' },
-    { name: 'YouTube', icon: Youtube, href: 'https://www.youtube.com/@annita-africa' }
+    { name: 'LinkedIn', icon: Linkedin, href: 'https://www.linkedin.com/company/annitallc' },
+    { name: 'Facebook', icon: Facebook, href: 'https://www.facebook.com/annitallc' },
+    { name: 'Instagram', icon: Instagram, href: 'https://www.instagram.com/annitallc' },
+    { name: 'TikTok', icon: ExternalLink, href: 'https://www.tiktok.com/@annitallc' },
+    { name: 'YouTube', icon: Youtube, href: 'https://www.youtube.com/@annitallc' }
   ]
 
   const contactInfo = [
