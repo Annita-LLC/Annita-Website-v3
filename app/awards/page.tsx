@@ -122,9 +122,7 @@ export default function AwardsPage() {
 
   const stats = [
     { icon: Award, value: "9", label: "Awards Won" },
-    { icon: Users, value: "50", label: "Selected" },
-    { icon: Target, value: "4", label: "Funding Grants" },
-    { icon: TrendingUp, value: "100%", label: "Success Rate" }
+    { icon: Target, value: "4", label: "Funding Grants" }
   ]
 
   return (
@@ -234,7 +232,7 @@ export default function AwardsPage() {
             </div>
 
             {/* Stats */}
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-16 max-w-md mx-auto lg:max-w-none">
               {stats.map((stat, index) => (
                 <div key={index} className="bg-white rounded-2xl p-6 shadow-lg border border-gray-200 text-center hover:shadow-xl transition-shadow duration-300">
                   <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-red-500 rounded-xl flex items-center justify-center mx-auto mb-4">

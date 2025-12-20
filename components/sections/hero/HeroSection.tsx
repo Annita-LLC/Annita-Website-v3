@@ -92,7 +92,7 @@ const HeroSection = () => {
     if (!isPaused && !isVideoPlaying) {
       slideIntervalRef.current = setInterval(() => {
         setCurrentSlide((prev) => (prev + 1) % slides.length)
-      }, 5000) // Increased from 3000ms to 5000ms
+      }, 3000) // 3 seconds per slide
     } else {
       if (slideIntervalRef.current) {
         clearInterval(slideIntervalRef.current)
