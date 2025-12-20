@@ -66,9 +66,9 @@ export default function StaffLoginPage() {
       <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 flex items-center justify-center px-4 py-12">
         <div className="w-full max-w-md">
           {/* Logo and Header */}
-          <div className="text-center mb-8">
+          <div className="text-center mb-8 lg:mb-12">
             <h1 className="text-3xl font-bold text-white mb-2">Staff Portal</h1>
-            <p className="text-gray-400">Enter your Employee ID and Secret PIN to access</p>
+            <p className="text-gray-400">Enter your Employee ID and Secret PIN to access.</p>
           </div>
 
           {/* Login Form */}
