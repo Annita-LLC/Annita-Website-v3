@@ -1,6 +1,6 @@
 'use client'
 
-import { X, Sparkles, ArrowRight, ExternalLink, Award } from 'lucide-react'
+import { X, ArrowRight, ExternalLink, Award } from 'lucide-react'
 import Link from 'next/link'
 
 interface WelcomeModalProps {
@@ -23,11 +23,6 @@ export default function WelcomeModal({ isOpen, onClose }: WelcomeModalProps) {
         </button>
 
         <div className="p-6 text-center">
-          {/* Icon */}
-          <div className="w-16 h-16 bg-gradient-to-r from-orange-500 to-red-500 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
-            <Sparkles className="w-8 h-8 text-white" />
-          </div>
-
           <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
             Welcome to Annita!
           </h2>
@@ -37,14 +32,8 @@ export default function WelcomeModal({ isOpen, onClose }: WelcomeModalProps) {
           </p>
 
           <div className="bg-gradient-to-r from-orange-50 to-yellow-50 dark:from-orange-900/20 dark:to-yellow-900/20 rounded-lg p-3 mb-4 border border-orange-200 dark:border-orange-800">
-            <div className="flex items-center justify-center gap-2 mb-1">
-              <Award className="w-4 h-4 text-orange-600 dark:text-orange-400" />
-              <p className="text-orange-800 dark:text-orange-200 text-xs font-semibold">
-                Award-Winning Platform
-              </p>
-            </div>
             <p className="text-orange-700 dark:text-orange-300 text-xs leading-relaxed">
-              9 prestigious awards including African Startup Conference, Moonshot Borderless Awards, and $12,375 in non-dilutive funding from global competitions.
+              9 prestigious awards and $12,375 in non-dilutive funding from global competitions.
             </p>
           </div>
 
