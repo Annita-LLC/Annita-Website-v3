@@ -288,6 +288,11 @@ const HeroSection = () => {
                         ? 'bg-orange-500 w-8'
                         : 'bg-orange-300 hover:bg-orange-400'
                     }`}
+                    style={{
+                      minWidth: index === currentSlide ? '32px' : '12px',
+                      width: index === currentSlide ? '32px' : '12px',
+                      height: '12px'
+                    }}
                     aria-label={`Go to slide ${index + 1}`}
                   />
                 ))}
