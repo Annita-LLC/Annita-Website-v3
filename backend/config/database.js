@@ -1,7 +1,9 @@
 const { Pool } = require('pg');
 require('dotenv').config();
 
-const pool = new Pool({
+// DigitalOcean PostgreSQL requires SSL in production
+const isProduction = process.env.NODE_ENV === 'production';
+const dbConfig = {
   host: process.env.DB_HOST || 'localhost',
   port: process.env.DB_PORT || 5432,
   database: process.env.DB_NAME || 'annita_db',
@@ -10,7 +12,16 @@ const pool = new Pool({
   max: 20,
   idleTimeoutMillis: 30000,
   connectionTimeoutMillis: 2000,
-});
+};
+
+// Add SSL configuration for production (DigitalOcean PostgreSQL requires this)
+if (isProduction) {
+  dbConfig.ssl = process.env.DB_SSL === 'false' ? false : {
+    rejectUnauthorized: false // DigitalOcean uses self-signed certificates
+  };
+}
+
+const pool = new Pool(dbConfig);
 
 // Test connection
 pool.on('connect', () => {

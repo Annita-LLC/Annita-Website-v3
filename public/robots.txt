@@ -47,6 +47,7 @@ Crawl-delay: 1
 # Disallow admin and private areas
 Disallow: /admin/
 Disallow: /private/
+Disallow: /staff/
 Disallow: /api/
 Disallow: /_next/
 Disallow: /static/

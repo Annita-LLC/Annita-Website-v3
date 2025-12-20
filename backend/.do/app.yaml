@@ -1,0 +1,63 @@
+name: annita-backend
+region: nyc
+services:
+  - name: api
+    github:
+      repo: your-username/your-repo-name
+      branch: main
+      deploy_on_push: true
+    source_dir: backend
+    build_command: npm install
+    run_command: npm start
+    environment_slug: node-js
+    instance_count: 1
+    instance_size_slug: basic-xxs
+    http_port: 3001
+    health_check:
+      http_path: /health
+    envs:
+      - key: NODE_ENV
+        value: production
+        scope: RUN_TIME
+      - key: PORT
+        value: "3001"
+        scope: RUN_TIME
+      - key: DB_HOST
+        value: ${db.HOSTNAME}
+        scope: RUN_TIME
+        type: SECRET
+      - key: DB_PORT
+        value: ${db.PORT}
+        scope: RUN_TIME
+        type: SECRET
+      - key: DB_NAME
+        value: ${db.DATABASE}
+        scope: RUN_TIME
+        type: SECRET
+      - key: DB_USER
+        value: ${db.USERNAME}
+        scope: RUN_TIME
+        type: SECRET
+      - key: DB_PASSWORD
+        value: ${db.PASSWORD}
+        scope: RUN_TIME
+        type: SECRET
+      - key: DB_SSL
+        value: "true"
+        scope: RUN_TIME
+      - key: FRONTEND_URL
+        value: https://your-frontend-url.com
+        scope: RUN_TIME
+      - key: RUN_MIGRATIONS
+        value: "false"
+        scope: RUN_TIME
+
+databases:
+  - name: db
+    engine: PG
+    version: "15"
+    production: false
+    cluster_name: annita-db-cluster
+    db_name: annita_db
+    db_user: annita_user
+

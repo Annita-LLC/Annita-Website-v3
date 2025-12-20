@@ -1,7 +1,8 @@
 'use client'
 
 import Link from 'next/link'
-import { useState } from 'react'
+import { useState, useRef, useEffect } from 'react'
+import { useRouter } from 'next/navigation'
 import { 
   Facebook, 
   MessageCircle, 
@@ -26,6 +27,9 @@ import DownloadChoiceModal from '@/components/ui/DownloadChoiceModal'
 const Footer = () => {
   const currentYear = new Date().getFullYear()
   const [isDownloadModalOpen, setIsDownloadModalOpen] = useState(false)
+  const [tapCount, setTapCount] = useState(0)
+  const tapTimeoutRef = useRef<NodeJS.Timeout | null>(null)
+  const router = useRouter()
 
   const footerSections = [
     {
@@ -76,6 +80,36 @@ const Footer = () => {
     { icon: Phone, label: 'Phone', value: '+231 77 505 7227', href: 'tel:+231 77 505 7227' },
     { icon: MapPin, label: 'Address', value: 'Monrovia, Liberia', href: '#' }
   ]
+
+  const handleSecretTap = () => {
+    // Clear existing timeout
+    if (tapTimeoutRef.current) {
+      clearTimeout(tapTimeoutRef.current)
+    }
+
+    const newTapCount = tapCount + 1
+    setTapCount(newTapCount)
+
+    // If 3 taps, navigate to staff login
+    if (newTapCount >= 3) {
+      router.push('/staff/login')
+      setTapCount(0)
+    } else {
+      // Reset tap count after 2 seconds of inactivity
+      tapTimeoutRef.current = setTimeout(() => {
+        setTapCount(0)
+      }, 2000)
+    }
+  }
+
+  // Cleanup timeout on unmount
+  useEffect(() => {
+    return () => {
+      if (tapTimeoutRef.current) {
+        clearTimeout(tapTimeoutRef.current)
+      }
+    }
+  }, [])
 
   return (
     <footer className="bg-gray-900 text-white">
@@ -196,7 +230,11 @@ const Footer = () => {
             <span>&copy; {currentYear} Annita. All rights reserved.</span>
           </div>
             
-            <div className="flex items-center space-x-2 text-sm text-gray-400">
+            <div 
+              className="flex items-center space-x-2 text-sm text-gray-400 cursor-pointer select-none"
+              onClick={handleSecretTap}
+              title="Tap 3 times for staff access"
+            >
               <span>Made with</span>
               <Heart className="w-4 h-4 text-red-500" />
               <span>in Liberia</span>
