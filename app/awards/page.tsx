@@ -1,6 +1,7 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useRef, useEffect } from 'react'
+import { motion, useInView } from 'framer-motion'
 import SEOHead from '@/components/seo/SEOHead'
 import {
   Award,
@@ -12,21 +13,118 @@ import {
   ArrowRight,
   Download,
   Globe,
-  Star
+  Star,
+  Trophy,
+  Medal,
+  Crown,
+  Sparkles,
+  Code
 } from 'lucide-react'
 import CTASection from '@/components/sections/CTASection'
 import Link from 'next/link'
 
 export default function AwardsPage() {
+  const ref = useRef(null)
+  const isInView = useInView(ref, { once: true, margin: "-100px" })
+  const [currentSlide, setCurrentSlide] = useState(0)
+
+  const carouselSlides = [
+    {
+      id: 'awards',
+      title: 'Prestigious Awards & Recognition',
+      content: '9 awards won across Africa and globally, including the African Startup Conference, Moonshot Borderless Awards, and Presidential AI Competition.',
+      icon: Trophy,
+      stats: '9 Awards • 139 Countries'
+    },
+    {
+      id: 'funding',
+      title: '$12,375 in Non-Dilutive Funding',
+      content: 'Secured grants from prestigious organizations including $7,000 from ASC, $3,000 from OSVP, $2,000 from Presidential AI, and more.',
+      icon: Award,
+      stats: '$12,375 USD • Grants Only'
+    },
+    {
+      id: 'custom-solutions',
+      title: 'Custom Tech Solutions',
+      content: 'We build tailored web apps, mobile apps, system integrations, and cloud solutions designed specifically for your unique business needs.',
+      icon: Code,
+      stats: 'Web • Mobile • Cloud • Integration'
+    },
+    {
+      id: 'global-impact',
+      title: 'Pan-African Impact',
+      content: 'First Liberian startup at IATF2025, recognized by AU and governments across Africa for innovation and digital transformation.',
+      icon: Globe,
+      stats: '54 African Countries • AU Recognized'
+    }
+  ]
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % carouselSlides.length)
+    }, 4000)
+    return () => clearInterval(timer)
+  }, [carouselSlides.length])
+
   const awards = [
     {
+      id: 'asc-2025',
+      title: "$7,000 Grant - African Startup Conference (ASC 2025)",
+      organization: "African Union & Government of Algeria",
+      year: "2025",
+      description: "Annita was awarded a $7,000 grant at the African Startup Conference (ASC 2025) in Algiers, Algeria. Part of a total USD 100,000 distributed among 10 innovative startups at the African Youth Startup Programme during the Intra African Trade Fair.",
+      impact: "Received $7,000 USD grant for innovation and entrepreneurship",
+      featured: true,
+      linkedinUrl: "https://www.linkedin.com/posts/christopher-o-fallah-15058ab4_africanstartupconference-asc2025-africanunion-activity-7404505251682283520-KZ-a"
+    },
+    {
+      id: 'presidential-ai-grant',
+      title: "$2,000 Grant - Presidential African Youth AI Recognition",
+      organization: "Ele-Vate AI Innovation Hub & African Union",
+      year: "2025",
+      description: "Annita received a $2,000 grant through the Presidential African Youth in Artificial Intelligence and Robotics Competition 2025, recognizing our outstanding innovation in AI and technology.",
+      impact: "Received $2,000 USD grant for AI innovation excellence",
+      featured: true,
+      linkedinUrl: "https://www.linkedin.com/posts/christopher-o-fallah-15058ab4_moonshot-certificate-of-appreciation-activity-7394244971559616513-PzRc"
+    },
+    {
+      id: 'moonshot-awards',
+      title: "Top 15 Shortlisted - Moonshot Borderless Awards",
+      organization: "Moonshot Platform",
+      year: "2025",
+      description: "Annita has been recognized among the Top 15 Shortlisted applicants for the prestigious Moonshot Borderless Awards, reaching this milestone from a competitive pool of Top 100 applicants representing 139 countries worldwide.",
+      impact: "Selected among Top 15 from 139 countries worldwide",
+      featured: true,
+      linkedinUrl: "https://www.linkedin.com/posts/christopher-o-fallah-15058ab4_moonshotawards2025-activity-7394246779233542145-9zy-"
+    },
+    {
+      id: 'presidential-ai-competition',
+      title: "Certificate of Excellence in Innovation and Technology",
+      organization: "Ele-Vate AI Innovation Hub & African Union",
+      year: "2025",
+      description: "Recognized for the most outstanding innovation in the Presidential African Youth in Artificial Intelligence and Robotics Competition 2025, receiving the Certificate of Excellence in Innovation and Technology.",
+      impact: "Most outstanding innovation award in AI & Robotics",
+      featured: true,
+      linkedinUrl: "https://www.linkedin.com/posts/christopher-o-fallah-15058ab4_certificate-presidential-african-youth-competition-activity-7389229957429809152-YKKD"
+    },
+    {
+      id: 'iatf2025',
+      title: "First Liberian Startup at Intra-African Trade Fair 2025",
+      organization: "African Union Youth Start-Up Program",
+      year: "2025",
+      description: "Annita became the first and only Liberian startup represented at the Intra-African Trade Fair 2025 (IATF2025), under the prestigious African Union Youth Start-Up Program (AU YSP).",
+      impact: "First and only Liberian startup at IATF2025",
+      featured: true,
+      linkedinUrl: "https://www.linkedin.com/posts/christopher-o-fallah-15058ab4_annita-at-iatf2025-representing-liberia-activity-7380915546302672898-tkdm"
+    },
+    {
       id: 'orange-prize',
-      title: "1st Place - Orange Social Venture Prize 2024",
+      title: "$3,000 Grant - Orange Social Venture Prize 2024",
       organization: "Orange Social Venture Prize",
       year: "2024",
       description: "Annita was awarded 1st Place in the Orange Social Venture Prize 2024 – Liberia National Grand Prize, receiving a $3,000 USD grant for our innovative digital platform.",
       impact: "Received $3,000 USD grant for platform development",
-      featured: true,
+      featured: false,
       linkedinUrl: "https://www.linkedin.com/posts/christopher-o-fallah-15058ab4_i-give-all-the-glory-to-my-lord-and-savior-activity-7235399030187397120-Otrb"
     },
     {
@@ -36,17 +134,17 @@ export default function AwardsPage() {
       year: "2024",
       description: "Annita has been selected as one of the 50 innovative small businesses for the inaugural Enterprise African Network (EAN) Fellowship Programme, participating in the prestigious third AU Micro, Small, and Medium Enterprise (MSME) Forum.",
       impact: "Selected among 50 innovative businesses across Africa",
-      featured: true,
+      featured: false,
       linkedinUrl: "https://www.linkedin.com/posts/christopher-o-fallah-15058ab4_annita-has-been-selected-as-one-of-the-50-activity-7231565059083104256-NRVM"
     },
     {
       id: 'smart-liberia',
-      title: "9th Place Winner - SMART Liberia ESP",
+      title: "$375 Grant - SMART Liberia ESP",
       organization: "SMART Liberia",
       year: "2024",
-      description: "Back-to-back wins as the 9th place winner at SMART Liberia's ESP, receiving the L$75,000 prize for our innovative business model and social impact.",
-      impact: "Received L$75,000 prize for business innovation",
-      featured: true,
+      description: "Back-to-back wins as the 9th place winner at SMART Liberia's ESP, receiving the L$75,000 ($375 USD) prize for our innovative business model and social impact.",
+      impact: "Received $375 USD grant for business innovation",
+      featured: false,
       linkedinUrl: "https://www.linkedin.com/posts/christopher-o-fallah-15058ab4_back-to-back-wins-not-luck-grace-humbled-activity-7235717012008697857-B4fQ"
     },
     {
@@ -62,9 +160,9 @@ export default function AwardsPage() {
   ]
 
   const stats = [
-    { icon: Award, value: "4", label: "Awards Won" },
+    { icon: Award, value: "9", label: "Awards Won" },
     { icon: Users, value: "50", label: "Selected" },
-    { icon: Target, value: "3", label: "Major Prizes" },
+    { icon: Target, value: "4", label: "Funding Grants" },
     { icon: TrendingUp, value: "100%", label: "Success Rate" }
   ]
 
@@ -79,32 +177,164 @@ export default function AwardsPage() {
 
       {/* Hero Section */}
       <section className="relative py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-orange-600 via-orange-700 to-red-600 text-white overflow-hidden">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="max-w-6xl mx-auto text-center">
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 leading-tight">
-              Our <span className="text-orange-200">Achievements</span>
-            </h1>
-            <p className="text-lg sm:text-xl text-orange-100 max-w-4xl mx-auto leading-relaxed mb-12">
-              Celebrating our achievements and the impact we've made across Africa through innovative technology and digital transformation.
-            </p>
+        {/* Animated Background Elements */}
+        <div className="absolute inset-0">
+          <div className="absolute top-10 left-10 w-20 h-20 bg-white/10 rounded-full animate-pulse"></div>
+          <div className="absolute top-20 right-20 w-16 h-16 bg-white/10 rounded-full animate-bounce"></div>
+          <div className="absolute bottom-20 left-1/4 w-24 h-24 bg-white/10 rounded-full animate-pulse"></div>
+          <div className="absolute bottom-10 right-1/3 w-12 h-12 bg-white/10 rounded-full animate-bounce"></div>
+        </div>
 
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="https://annita.company.site/products"
-                className="bg-white text-orange-600 px-6 py-3 rounded-lg font-semibold hover:bg-orange-50 transition-all duration-200 flex items-center justify-center"
-              >
-                <Download className="w-5 h-5 mr-2" />
-                Try V1.0 Now
-              </a>
-              <a
-                href="/contact-sales"
-                className="border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-orange-600 transition-all duration-200 flex items-center justify-center"
-              >
-                <Users className="w-5 h-5 mr-2" />
-                Contact Sales
-              </a>
-            </div>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Content */}
+            <motion.div
+              ref={ref}
+              initial={{ opacity: 0, x: -30 }}
+              animate={isInView ? { opacity: 1, x: 0 } : {}}
+              transition={{ duration: 0.8 }}
+            >
+              {/* Badge */}
+              <div className="inline-flex items-center px-6 py-3 rounded-full bg-white/20 backdrop-blur-sm text-white text-sm font-semibold mb-8 shadow-lg border border-white/30">
+                <Award className="w-5 h-5 mr-2" />
+                Awards & Recognition
+              </div>
+
+              {/* Heading */}
+              <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold mb-6 leading-tight">
+                Welcome to <span className="text-orange-200">Annita</span>!
+              </h1>
+
+              {/* Description */}
+              <p className="text-xl sm:text-2xl text-orange-100 mb-6 leading-relaxed max-w-2xl">
+                Africa's first all-in-one digital platform. Explore our comprehensive features and see how we're transforming business across the continent.
+              </p>
+
+              {/* Custom Solutions Description */}
+              <p className="text-lg text-orange-200 mb-8 leading-relaxed max-w-2xl">
+                Need something custom? We build tailored tech solutions including web apps, mobile apps, system integrations, and cloud solutions specifically designed for your unique business needs.
+              </p>
+
+              {/* Achievement Carousel */}
+              <div className="mb-8">
+                <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
+                  <div className="relative overflow-hidden">
+                    <motion.div
+                      className="flex"
+                      animate={{ x: `-${currentSlide * 100}%` }}
+                      transition={{ duration: 0.5, ease: "easeInOut" }}
+                    >
+                      {carouselSlides.map((slide, index) => (
+                        <div key={slide.id} className="w-full flex-shrink-0">
+                          <div className="flex items-center space-x-4 mb-4">
+                            <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center">
+                              <slide.icon className="w-6 h-6 text-orange-200" />
+                            </div>
+                            <div>
+                              <h3 className="text-lg font-bold text-white">{slide.title}</h3>
+                              <p className="text-sm text-orange-200">{slide.stats}</p>
+                            </div>
+                          </div>
+                          <p className="text-white leading-relaxed">{slide.content}</p>
+                        </div>
+                      ))}
+                    </motion.div>
+                  </div>
+
+                  {/* Carousel Indicators */}
+                  <div className="flex justify-center space-x-2 mt-6">
+                    {carouselSlides.map((_, index) => (
+                      <button
+                        key={index}
+                        onClick={() => setCurrentSlide(index)}
+                        className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                          index === currentSlide
+                            ? 'bg-orange-400 w-8'
+                            : 'bg-white/40 hover:bg-white/60'
+                        }`}
+                        aria-label={`Go to slide ${index + 1}`}
+                      />
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              {/* Quick Stats */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+                <div className="flex items-center space-x-3 bg-white/10 backdrop-blur-sm rounded-lg p-4">
+                  <Trophy className="w-6 h-6 text-orange-200" />
+                  <div>
+                    <div className="font-semibold text-white">Awards Won</div>
+                    <div className="text-sm text-orange-200">9 Prestigious Awards</div>
+                  </div>
+                </div>
+                <div className="flex items-center space-x-3 bg-white/10 backdrop-blur-sm rounded-lg p-4">
+                  <Medal className="w-6 h-6 text-orange-200" />
+                  <div>
+                    <div className="font-semibold text-white">Global Recognition</div>
+                    <div className="text-sm text-orange-200">139 Countries</div>
+                  </div>
+                </div>
+              </div>
+
+              {/* CTA Buttons */}
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link
+                  href="/features"
+                  className="bg-white text-orange-600 px-6 py-3 rounded-lg font-semibold hover:bg-orange-50 transition-all duration-200 flex items-center justify-center"
+                >
+                  <Sparkles className="w-5 h-5 mr-2" />
+                  Explore Features
+                </Link>
+                <Link
+                  href="/contact-sales"
+                  className="border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-orange-600 transition-all duration-200 flex items-center justify-center"
+                >
+                  <Code className="w-5 h-5 mr-2" />
+                  Custom Solutions
+                </Link>
+                <a
+                  href="https://annita.company.site/products"
+                  className="bg-orange-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-orange-600 transition-all duration-200 flex items-center justify-center"
+                >
+                  <Download className="w-5 h-5 mr-2" />
+                  Try V1.0 Now
+                </a>
+              </div>
+            </motion.div>
+
+            {/* Visualization Card */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              animate={isInView ? { opacity: 1, x: 0 } : {}}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="relative"
+            >
+              <div className="bg-white/10 backdrop-blur-sm p-8 rounded-3xl shadow-2xl border border-white/20">
+                <div className="text-center mb-6">
+                  <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                    <Crown className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-white mb-2">Annita Achievements</h3>
+                  <p className="text-orange-200">Recognized across Africa</p>
+                </div>
+
+                <div className="space-y-4">
+                  <div className="flex items-center justify-between p-4 bg-white/10 rounded-xl">
+                    <span className="text-white">Awards Won</span>
+                    <span className="font-bold text-orange-200">9 Awards</span>
+                  </div>
+                  <div className="flex items-center justify-between p-4 bg-white/10 rounded-xl">
+                    <span className="text-white">Global Recognition</span>
+                    <span className="font-bold text-orange-200">Top 15 Worldwide</span>
+                  </div>
+                  <div className="flex items-center justify-between p-4 bg-white/10 rounded-xl">
+                    <span className="text-white">Grants Received</span>
+                    <span className="font-bold text-orange-200">$12,375 USD</span>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>
