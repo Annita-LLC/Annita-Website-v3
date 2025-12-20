@@ -2,12 +2,13 @@
 
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
-import { Lock, User, Eye, EyeOff, AlertCircle, Hash } from 'lucide-react'
+import { Lock, User, Eye, EyeOff, AlertCircle, Hash, Shield } from 'lucide-react'
 import SEOHead from '@/components/seo/SEOHead'
 
 export default function StaffLoginPage() {
   const [employeeId, setEmployeeId] = useState('')
   const [secretPin, setSecretPin] = useState('')
+  const [role, setRole] = useState('employee')
   const [showPassword, setShowPassword] = useState(false)
   const [error, setError] = useState('')
   const [isLoading, setIsLoading] = useState(false)
@@ -25,26 +26,15 @@ export default function StaffLoginPage() {
       await new Promise(resolve => setTimeout(resolve, 1000))
       
       // Placeholder validation - replace with actual authentication
-      if (employeeId && secretPin) {
+      if (employeeId && secretPin && role) {
         // Store authentication token/session
         localStorage.setItem('staff-authenticated', 'true')
         localStorage.setItem('staff-employee-id', employeeId)
-        
-        // For demo: Set role based on Employee ID (in production, this would come from auth API)
-        let role = 'employee'
-        const idUpper = employeeId.toUpperCase()
-        if (idUpper.includes('CEO') || idUpper.includes('EMP001') || idUpper.includes('ADMIN')) {
-          role = 'ceo'
-        } else if (idUpper.includes('HR') || idUpper.includes('MGR')) {
-          role = 'hr'
-        } else if (idUpper.includes('DIR') || idUpper.includes('CTO')) {
-          role = 'manager'
-        }
         localStorage.setItem('staff-role', role)
         
         router.push('/staff/dashboard')
       } else {
-        setError('Please enter both Employee ID and Secret PIN')
+        setError('Please enter Employee ID, Secret PIN, and select your role')
       }
     } catch (err) {
       setError('Invalid credentials. Please try again.')
@@ -138,6 +128,36 @@ export default function StaffLoginPage() {
                       <Eye className="h-5 w-5 text-gray-400 hover:text-white transition-colors" />
                     )}
                   </button>
+                </div>
+              </div>
+
+              {/* Role Selector */}
+              <div>
+                <label htmlFor="role" className="block text-sm font-medium text-gray-300 mb-2">
+                  Role
+                </label>
+                <div className="relative">
+                  <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                    <Shield className="h-5 w-5 text-gray-400" />
+                  </div>
+                  <select
+                    id="role"
+                    value={role}
+                    onChange={(e) => setRole(e.target.value)}
+                    required
+                    className="block w-full pl-10 pr-3 py-3 bg-white/5 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all appearance-none cursor-pointer"
+                    disabled={isLoading}
+                  >
+                    <option value="employee" className="bg-gray-800 text-white">Employee</option>
+                    <option value="manager" className="bg-gray-800 text-white">Manager</option>
+                    <option value="hr" className="bg-gray-800 text-white">HR</option>
+                    <option value="ceo" className="bg-gray-800 text-white">CEO</option>
+                  </select>
+                  <div className="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+                    <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </div>
                 </div>
               </div>
 
