@@ -63,19 +63,12 @@ const Footer = () => {
   ]
 
   const socialLinks = [
-    { name: 'Website', icon: Globe, href: 'https://annita.com' },
-    { name: 'LinkedIn', icon: Linkedin, href: 'https://linkedin.com/company/annita-africa' },
-    { name: 'Facebook', icon: Facebook, href: 'https://facebook.com/annita.africa' },
-    { name: 'Instagram', icon: Instagram, href: 'https://instagram.com/annita_africa' },
-    { name: 'TikTok', icon: ExternalLink, href: 'https://tiktok.com/@annita_africa' },
-    { name: 'YouTube', icon: Youtube, href: 'https://youtube.com/@annita-africa' },
-    { name: 'WhatsApp', icon: MessageCircle, href: 'https://wa.me/231775057227' },
-    { name: 'GitHub', icon: ExternalLink, href: 'https://github.com/annita-africa' },
-    { name: 'VC4A', icon: Building, href: 'https://vc4a.com/annita' },
-    { name: 'F6S', icon: Users, href: 'https://f6s.com/annita' },
-    { name: 'Crunchbase', icon: Briefcase, href: 'https://crunchbase.com/organization/annita' },
-    { name: 'IATF 2025', icon: Award, href: 'https://iatf2025.com/annita' },
-    { name: 'Linktree', icon: LinkIcon, href: 'https://linktr.ee/annitallc' }
+    { name: 'Linktree', icon: LinkIcon, href: 'https://linktr.ee/annitallc?utm_source=linktree_profile_share&ltsid=8fd79e3c-4d54-433d-a569-ba89a939e506' },
+    { name: 'LinkedIn', icon: Linkedin, href: 'https://www.linkedin.com/company/annita-africa' },
+    { name: 'Facebook', icon: Facebook, href: 'https://www.facebook.com/annita.africa' },
+    { name: 'Instagram', icon: Instagram, href: 'https://www.instagram.com/annita_africa' },
+    { name: 'TikTok', icon: ExternalLink, href: 'https://www.tiktok.com/@annita_africa' },
+    { name: 'YouTube', icon: Youtube, href: 'https://www.youtube.com/@annita-africa' }
   ]
 
   const contactInfo = [
