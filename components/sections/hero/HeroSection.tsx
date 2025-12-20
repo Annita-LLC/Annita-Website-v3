@@ -75,6 +75,14 @@ const HeroSection = () => {
       titleHighlight: "Intelligence",
       subtitle: "AI-driven insights and automation to optimize your business operations and growth across the entire ecosystem.",
       background: "from-teal-50 via-white to-cyan-50/30"
+    },
+    {
+      id: 6,
+      badge: "Award-Winning",
+      title: "Recognized Across",
+      titleHighlight: "Africa & Globally",
+      subtitle: "9 prestigious awards including African Startup Conference, Moonshot Borderless Awards, and $12,375 in non-dilutive funding from global competitions.",
+      background: "from-yellow-50 via-white to-orange-50/30"
     }
   ]
 

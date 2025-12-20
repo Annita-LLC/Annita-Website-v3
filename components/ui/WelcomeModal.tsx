@@ -1,6 +1,6 @@
 'use client'
 
-import { X, Sparkles, ArrowRight, ExternalLink } from 'lucide-react'
+import { X, Sparkles, ArrowRight, ExternalLink, Award } from 'lucide-react'
 import Link from 'next/link'
 
 interface WelcomeModalProps {
@@ -59,6 +59,15 @@ export default function WelcomeModal({ isOpen, onClose }: WelcomeModalProps) {
             >
               Custom Solutions
               <ArrowRight className="w-3.5 h-3.5 ml-2" />
+            </Link>
+
+            <Link
+              href="/awards"
+              onClick={onClose}
+              className="w-full bg-gradient-to-r from-green-500 to-green-600 text-white px-4 py-2.5 rounded-lg font-semibold hover:from-green-600 hover:to-green-700 transition-all duration-200 shadow-lg flex items-center justify-center text-sm"
+            >
+              Awards & Recognition
+              <Award className="w-3.5 h-3.5 ml-2" />
             </Link>
 
             <Link

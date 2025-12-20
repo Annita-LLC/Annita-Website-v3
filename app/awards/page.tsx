@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useRef, useEffect } from 'react'
+import { useState, useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import SEOHead from '@/components/seo/SEOHead'
 import {
@@ -26,45 +26,6 @@ import Link from 'next/link'
 export default function AwardsPage() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-100px" })
-  const [currentSlide, setCurrentSlide] = useState(0)
-
-  const carouselSlides = [
-    {
-      id: 'awards',
-      title: 'Prestigious Awards & Recognition',
-      content: '9 awards won across Africa and globally, including the African Startup Conference, Moonshot Borderless Awards, and Presidential AI Competition.',
-      icon: Trophy,
-      stats: '9 Awards • 139 Countries'
-    },
-    {
-      id: 'funding',
-      title: '$12,375 in Non-Dilutive Funding',
-      content: 'Secured grants from prestigious organizations including $7,000 from ASC, $3,000 from OSVP, $2,000 from Presidential AI, and more.',
-      icon: Award,
-      stats: '$12,375 USD • Grants Only'
-    },
-    {
-      id: 'custom-solutions',
-      title: 'Custom Tech Solutions',
-      content: 'We build tailored web apps, mobile apps, system integrations, and cloud solutions designed specifically for your unique business needs.',
-      icon: Code,
-      stats: 'Web • Mobile • Cloud • Integration'
-    },
-    {
-      id: 'global-impact',
-      title: 'Pan-African Impact',
-      content: 'First Liberian startup at IATF2025, recognized by AU and governments across Africa for innovation and digital transformation.',
-      icon: Globe,
-      stats: '54 African Countries • AU Recognized'
-    }
-  ]
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % carouselSlides.length)
-    }, 4000)
-    return () => clearInterval(timer)
-  }, [carouselSlides.length])
 
   const awards = [
     {
@@ -194,72 +155,18 @@ export default function AwardsPage() {
               animate={isInView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.8 }}
             >
-              {/* Badge */}
-              <div className="inline-flex items-center px-6 py-3 rounded-full bg-white/20 backdrop-blur-sm text-white text-sm font-semibold mb-8 shadow-lg border border-white/30">
-                <Award className="w-5 h-5 mr-2" />
-                Awards & Recognition
-              </div>
 
               {/* Heading */}
               <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold mb-6 leading-tight">
-                Welcome to <span className="text-orange-200">Annita</span>!
+                Celebrating Our <span className="text-orange-200">Achievements</span>
               </h1>
 
               {/* Description */}
-              <p className="text-xl sm:text-2xl text-orange-100 mb-6 leading-relaxed max-w-2xl">
-                Africa's first all-in-one digital platform. Explore our comprehensive features and see how we're transforming business across the continent.
+              <p className="text-xl sm:text-2xl text-orange-100 mb-8 leading-relaxed max-w-2xl">
+                Discover our prestigious awards and recognitions that showcase our commitment to innovation and impact across Africa.
               </p>
 
-              {/* Custom Solutions Description */}
-              <p className="text-lg text-orange-200 mb-8 leading-relaxed max-w-2xl">
-                Need something custom? We build tailored tech solutions including web apps, mobile apps, system integrations, and cloud solutions specifically designed for your unique business needs.
-              </p>
-
-              {/* Achievement Carousel */}
-              <div className="mb-8">
-                <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
-                  <div className="relative overflow-hidden">
-                    <motion.div
-                      className="flex"
-                      animate={{ x: `-${currentSlide * 100}%` }}
-                      transition={{ duration: 0.5, ease: "easeInOut" }}
-                    >
-                      {carouselSlides.map((slide, index) => (
-                        <div key={slide.id} className="w-full flex-shrink-0">
-                          <div className="flex items-center space-x-4 mb-4">
-                            <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center">
-                              <slide.icon className="w-6 h-6 text-orange-200" />
-                            </div>
-                            <div>
-                              <h3 className="text-lg font-bold text-white">{slide.title}</h3>
-                              <p className="text-sm text-orange-200">{slide.stats}</p>
-                            </div>
-                          </div>
-                          <p className="text-white leading-relaxed">{slide.content}</p>
-                        </div>
-                      ))}
-                    </motion.div>
-                  </div>
-
-                  {/* Carousel Indicators */}
-                  <div className="flex justify-center space-x-2 mt-6">
-                    {carouselSlides.map((_, index) => (
-                      <button
-                        key={index}
-                        onClick={() => setCurrentSlide(index)}
-                        className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                          index === currentSlide
-                            ? 'bg-orange-400 w-8'
-                            : 'bg-white/40 hover:bg-white/60'
-                        }`}
-                        aria-label={`Go to slide ${index + 1}`}
-                      />
-                    ))}
-                  </div>
-                </div>
-              </div>
-
-              {/* Quick Stats */}
+              {/* Quick Award Options */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
                 <div className="flex items-center space-x-3 bg-white/10 backdrop-blur-sm rounded-lg p-4">
                   <Trophy className="w-6 h-6 text-orange-200" />
@@ -269,37 +176,12 @@ export default function AwardsPage() {
                   </div>
                 </div>
                 <div className="flex items-center space-x-3 bg-white/10 backdrop-blur-sm rounded-lg p-4">
-                  <Medal className="w-6 h-6 text-orange-200" />
+                  <Award className="w-6 h-6 text-orange-200" />
                   <div>
-                    <div className="font-semibold text-white">Global Recognition</div>
-                    <div className="text-sm text-orange-200">139 Countries</div>
+                    <div className="font-semibold text-white">Funding Secured</div>
+                    <div className="text-sm text-orange-200">$12,375 USD Grants</div>
                   </div>
                 </div>
-              </div>
-
-              {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Link
-                  href="/features"
-                  className="bg-white text-orange-600 px-6 py-3 rounded-lg font-semibold hover:bg-orange-50 transition-all duration-200 flex items-center justify-center"
-                >
-                  <Sparkles className="w-5 h-5 mr-2" />
-                  Explore Features
-                </Link>
-                <Link
-                  href="/contact-sales"
-                  className="border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-orange-600 transition-all duration-200 flex items-center justify-center"
-                >
-                  <Code className="w-5 h-5 mr-2" />
-                  Custom Solutions
-                </Link>
-                <a
-                  href="https://annita.company.site/products"
-                  className="bg-orange-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-orange-600 transition-all duration-200 flex items-center justify-center"
-                >
-                  <Download className="w-5 h-5 mr-2" />
-                  Try V1.0 Now
-                </a>
               </div>
             </motion.div>
 
@@ -313,24 +195,24 @@ export default function AwardsPage() {
               <div className="bg-white/10 backdrop-blur-sm p-8 rounded-3xl shadow-2xl border border-white/20">
                 <div className="text-center mb-6">
                   <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                    <Crown className="w-8 h-8 text-white" />
+                    <Award className="w-8 h-8 text-white" />
                   </div>
-                  <h3 className="text-2xl font-bold text-white mb-2">Annita Achievements</h3>
-                  <p className="text-orange-200">Recognized across Africa</p>
+                  <h3 className="text-2xl font-bold text-white mb-2">Annita Recognition</h3>
+                  <p className="text-orange-200">Awarded across Africa & globally</p>
                 </div>
 
                 <div className="space-y-4">
                   <div className="flex items-center justify-between p-4 bg-white/10 rounded-xl">
-                    <span className="text-white">Awards Won</span>
-                    <span className="font-bold text-orange-200">9 Awards</span>
+                    <span className="text-white">Total Awards</span>
+                    <span className="font-bold text-orange-200">9 Recognitions</span>
                   </div>
                   <div className="flex items-center justify-between p-4 bg-white/10 rounded-xl">
-                    <span className="text-white">Global Recognition</span>
-                    <span className="font-bold text-orange-200">Top 15 Worldwide</span>
-                  </div>
-                  <div className="flex items-center justify-between p-4 bg-white/10 rounded-xl">
-                    <span className="text-white">Grants Received</span>
+                    <span className="text-white">Grant Funding</span>
                     <span className="font-bold text-orange-200">$12,375 USD</span>
+                  </div>
+                  <div className="flex items-center justify-between p-4 bg-white/10 rounded-xl">
+                    <span className="text-white">Global Reach</span>
+                    <span className="font-bold text-orange-200">139 Countries</span>
                   </div>
                 </div>
               </div>
