@@ -36,6 +36,18 @@ export default function WelcomeModal({ isOpen, onClose }: WelcomeModalProps) {
             Africa's first all-in-one digital platform. Explore our comprehensive features and see how we're transforming business across the continent.
           </p>
 
+          <div className="bg-gradient-to-r from-orange-50 to-yellow-50 dark:from-orange-900/20 dark:to-yellow-900/20 rounded-lg p-3 mb-4 border border-orange-200 dark:border-orange-800">
+            <div className="flex items-center justify-center gap-2 mb-1">
+              <Award className="w-4 h-4 text-orange-600 dark:text-orange-400" />
+              <p className="text-orange-800 dark:text-orange-200 text-xs font-semibold">
+                Award-Winning Platform
+              </p>
+            </div>
+            <p className="text-orange-700 dark:text-orange-300 text-xs leading-relaxed">
+              9 prestigious awards including African Startup Conference, Moonshot Borderless Awards, and $12,375 in non-dilutive funding from global competitions.
+            </p>
+          </div>
+
           <div className="bg-purple-50 dark:bg-purple-900/20 rounded-lg p-3 mb-6 border border-purple-200 dark:border-purple-800">
             <p className="text-purple-800 dark:text-purple-200 text-xs leading-relaxed">
               <strong>Need something custom?</strong> We build tailored tech solutions including web apps, mobile apps, system integrations, and cloud solutions specifically designed for your unique business needs.
