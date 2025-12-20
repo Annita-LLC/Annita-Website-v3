@@ -2,12 +2,12 @@
 
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
-import { Lock, Mail, Eye, EyeOff, AlertCircle } from 'lucide-react'
+import { Lock, User, Eye, EyeOff, AlertCircle, Hash } from 'lucide-react'
 import SEOHead from '@/components/seo/SEOHead'
 
 export default function StaffLoginPage() {
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
+  const [employeeId, setEmployeeId] = useState('')
+  const [secretPin, setSecretPin] = useState('')
   const [showPassword, setShowPassword] = useState(false)
   const [error, setError] = useState('')
   const [isLoading, setIsLoading] = useState(false)
@@ -25,24 +25,26 @@ export default function StaffLoginPage() {
       await new Promise(resolve => setTimeout(resolve, 1000))
       
       // Placeholder validation - replace with actual authentication
-      if (email && password) {
+      if (employeeId && secretPin) {
         // Store authentication token/session
         localStorage.setItem('staff-authenticated', 'true')
+        localStorage.setItem('staff-employee-id', employeeId)
         
-        // For demo: Set role based on email (in production, this would come from auth)
+        // For demo: Set role based on Employee ID (in production, this would come from auth API)
         let role = 'employee'
-        if (email.includes('ceo') || email.includes('christopher')) {
+        const idUpper = employeeId.toUpperCase()
+        if (idUpper.includes('CEO') || idUpper.includes('EMP001') || idUpper.includes('ADMIN')) {
           role = 'ceo'
-        } else if (email.includes('hr') || email.includes('manager')) {
+        } else if (idUpper.includes('HR') || idUpper.includes('MGR')) {
           role = 'hr'
-        } else if (email.includes('cto') || email.includes('director')) {
+        } else if (idUpper.includes('DIR') || idUpper.includes('CTO')) {
           role = 'manager'
         }
         localStorage.setItem('staff-role', role)
         
         router.push('/staff/dashboard')
       } else {
-        setError('Please enter both email and password')
+        setError('Please enter both Employee ID and Secret PIN')
       }
     } catch (err) {
       setError('Invalid credentials. Please try again.')
@@ -65,11 +67,8 @@ export default function StaffLoginPage() {
         <div className="w-full max-w-md">
           {/* Logo and Header */}
           <div className="text-center mb-8">
-            <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-orange-500 to-red-500 rounded-2xl mb-4 shadow-lg">
-              <Lock className="w-8 h-8 text-white" />
-            </div>
             <h1 className="text-3xl font-bold text-white mb-2">Staff Portal</h1>
-            <p className="text-gray-400">Enter your credentials to access</p>
+            <p className="text-gray-400">Enter your Employee ID and Secret PIN to access</p>
           </div>
 
           {/* Login Form */}
@@ -83,46 +82,49 @@ export default function StaffLoginPage() {
                 </div>
               )}
 
-              {/* Email Field */}
+              {/* Employee ID Field */}
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
-                  Email Address
+                <label htmlFor="employeeId" className="block text-sm font-medium text-gray-300 mb-2">
+                  Employee ID
                 </label>
                 <div className="relative">
                   <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                    <Mail className="h-5 w-5 text-gray-400" />
+                    <Hash className="h-5 w-5 text-gray-400" />
                   </div>
                   <input
-                    id="email"
-                    type="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
+                    id="employeeId"
+                    type="text"
+                    value={employeeId}
+                    onChange={(e) => setEmployeeId(e.target.value.toUpperCase())}
                     required
-                    className="block w-full pl-10 pr-3 py-3 bg-white/5 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all"
-                    placeholder="staff@annita.com"
+                    className="block w-full pl-10 pr-3 py-3 bg-white/5 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all uppercase"
+                    placeholder="EMP001"
                     disabled={isLoading}
+                    autoComplete="username"
                   />
                 </div>
               </div>
 
-              {/* Password Field */}
+              {/* Secret PIN Field */}
               <div>
-                <label htmlFor="password" className="block text-sm font-medium text-gray-300 mb-2">
-                  Password
+                <label htmlFor="secretPin" className="block text-sm font-medium text-gray-300 mb-2">
+                  Secret PIN
                 </label>
                 <div className="relative">
                   <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                     <Lock className="h-5 w-5 text-gray-400" />
                   </div>
                   <input
-                    id="password"
+                    id="secretPin"
                     type={showPassword ? 'text' : 'password'}
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
+                    value={secretPin}
+                    onChange={(e) => setSecretPin(e.target.value)}
                     required
-                    className="block w-full pl-10 pr-12 py-3 bg-white/5 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all"
-                    placeholder="Enter your password"
+                    maxLength={6}
+                    className="block w-full pl-10 pr-12 py-3 bg-white/5 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all text-center tracking-widest"
+                    placeholder="••••••"
                     disabled={isLoading}
+                    autoComplete="current-password"
                   />
                   <button
                     type="button"
