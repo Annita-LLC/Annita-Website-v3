@@ -278,7 +278,7 @@ const HeroSection = () => {
               </AnimatePresence>
 
               {/* Slide Navigation Dots */}
-              <div className="flex justify-center lg:justify-start space-x-3 mt-8">
+              <div className="hidden lg:flex justify-center lg:justify-start space-x-3 mt-8">
                 {slides.map((_, index) => (
                   <button
                     key={index}
