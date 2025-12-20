@@ -196,19 +196,19 @@ const CookieConsent = ({ onPreferencesChange }: CookieConsentProps) => {
                   <div className="flex gap-2">
                     <button
                       onClick={acceptEssential}
-                      className="px-3 py-2 rounded-lg bg-white/10 hover:bg-white/15 transition-colors text-sm font-medium"
+                      className="px-3 py-2 rounded-lg bg-white/10 hover:bg-white/15 transition-colors text-xs sm:text-sm font-medium"
                     >
                       Essential Only
                     </button>
                     <button
                       onClick={() => setIsSettingsOpen(true)}
-                      className="px-3 py-2 rounded-lg bg-white/10 hover:bg-white/15 transition-colors text-sm font-medium"
+                      className="px-3 py-2 rounded-lg bg-white/10 hover:bg-white/15 transition-colors text-xs sm:text-sm font-medium"
                     >
                       Customize
                     </button>
                     <button
                       onClick={acceptAll}
-                      className="px-3 py-2 rounded-lg bg-orange-500 hover:bg-orange-600 transition-colors text-sm font-semibold"
+                      className="px-3 py-2 rounded-lg bg-orange-500 hover:bg-orange-600 transition-colors text-xs sm:text-sm font-semibold"
                     >
                       Accept All
                     </button>
