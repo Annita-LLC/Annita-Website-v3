@@ -16,12 +16,12 @@ export default function ProfileSettings() {
     location: 'Monrovia, Liberia'
   })
 
-  const [password, setPassword] = useState({
+  const [secretCode, setSecretCode] = useState({
     current: '',
     new: '',
     confirm: ''
   })
-  const [showPasswords, setShowPasswords] = useState({
+  const [showSecretCodes, setShowSecretCodes] = useState({
     current: false,
     new: false,
     confirm: false
@@ -39,13 +39,17 @@ export default function ProfileSettings() {
     alert('Profile updated successfully!')
   }
 
-  const handlePasswordChange = () => {
-    if (password.new !== password.confirm) {
-      alert('New passwords do not match!')
+  const handleSecretCodeChange = () => {
+    if (secretCode.new !== secretCode.confirm) {
+      alert('New secret codes do not match!')
       return
     }
-    alert('Password changed successfully!')
-    setPassword({ current: '', new: '', confirm: '' })
+    if (secretCode.new.length < 4) {
+      alert('Secret code must be at least 4 characters long!')
+      return
+    }
+    alert('Secret code changed successfully!')
+    setSecretCode({ current: '', new: '', confirm: '' })
   }
 
   return (
@@ -141,35 +145,36 @@ export default function ProfileSettings() {
         </button>
       </div>
 
-      {/* Change Password */}
+      {/* Change Secret Code */}
       <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-4 sm:p-6">
         <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-3 sm:mb-4 flex items-center">
           <Lock className="w-5 h-5 mr-2" />
-          Change Password
+          Change Secret Code
         </h3>
         <div className="space-y-4 sm:space-y-6">
           <div>
-            <label htmlFor="currentPassword" className="block text-xs sm:text-sm font-medium text-gray-700 mb-2">
-              Current Password
+            <label htmlFor="currentSecretCode" className="block text-xs sm:text-sm font-medium text-gray-700 mb-2">
+              Current Secret Code
             </label>
             <div className="relative">
               <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                 <Lock className="h-4 w-4 sm:h-5 sm:w-5 text-gray-400" />
               </div>
               <input
-                id="currentPassword"
-                type={showPasswords.current ? 'text' : 'password'}
-                value={password.current}
-                onChange={(e) => setPassword({ ...password, current: e.target.value })}
+                id="currentSecretCode"
+                type={showSecretCodes.current ? 'text' : 'password'}
+                value={secretCode.current}
+                onChange={(e) => setSecretCode({ ...secretCode, current: e.target.value })}
                 className="block w-full pl-9 sm:pl-10 pr-10 sm:pr-12 py-2.5 sm:py-3 text-sm sm:text-base border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all touch-manipulation"
-                placeholder="Enter current password"
+                placeholder="Enter current secret code"
+                maxLength={20}
               />
               <button
                 type="button"
-                onClick={() => setShowPasswords({ ...showPasswords, current: !showPasswords.current })}
+                onClick={() => setShowSecretCodes({ ...showSecretCodes, current: !showSecretCodes.current })}
                 className="absolute inset-y-0 right-0 pr-3 flex items-center touch-manipulation"
               >
-                {showPasswords.current ? (
+                {showSecretCodes.current ? (
                   <EyeOff className="h-4 w-4 sm:h-5 sm:w-5 text-gray-400 hover:text-gray-600 active:text-gray-700 transition-colors" />
                 ) : (
                   <Eye className="h-4 w-4 sm:h-5 sm:w-5 text-gray-400 hover:text-gray-600 active:text-gray-700 transition-colors" />
@@ -178,27 +183,28 @@ export default function ProfileSettings() {
             </div>
           </div>
           <div>
-            <label htmlFor="newPassword" className="block text-xs sm:text-sm font-medium text-gray-700 mb-2">
-              New Password
+            <label htmlFor="newSecretCode" className="block text-xs sm:text-sm font-medium text-gray-700 mb-2">
+              New Secret Code
             </label>
             <div className="relative">
               <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                 <Lock className="h-4 w-4 sm:h-5 sm:w-5 text-gray-400" />
               </div>
               <input
-                id="newPassword"
-                type={showPasswords.new ? 'text' : 'password'}
-                value={password.new}
-                onChange={(e) => setPassword({ ...password, new: e.target.value })}
+                id="newSecretCode"
+                type={showSecretCodes.new ? 'text' : 'password'}
+                value={secretCode.new}
+                onChange={(e) => setSecretCode({ ...secretCode, new: e.target.value })}
                 className="block w-full pl-9 sm:pl-10 pr-10 sm:pr-12 py-2.5 sm:py-3 text-sm sm:text-base border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all touch-manipulation"
-                placeholder="Enter new password"
+                placeholder="Enter new secret code"
+                maxLength={20}
               />
               <button
                 type="button"
-                onClick={() => setShowPasswords({ ...showPasswords, new: !showPasswords.new })}
+                onClick={() => setShowSecretCodes({ ...showSecretCodes, new: !showSecretCodes.new })}
                 className="absolute inset-y-0 right-0 pr-3 flex items-center touch-manipulation"
               >
-                {showPasswords.new ? (
+                {showSecretCodes.new ? (
                   <EyeOff className="h-4 w-4 sm:h-5 sm:w-5 text-gray-400 hover:text-gray-600 active:text-gray-700 transition-colors" />
                 ) : (
                   <Eye className="h-4 w-4 sm:h-5 sm:w-5 text-gray-400 hover:text-gray-600 active:text-gray-700 transition-colors" />
@@ -207,27 +213,28 @@ export default function ProfileSettings() {
             </div>
           </div>
           <div>
-            <label htmlFor="confirmPassword" className="block text-xs sm:text-sm font-medium text-gray-700 mb-2">
-              Confirm New Password
+            <label htmlFor="confirmSecretCode" className="block text-xs sm:text-sm font-medium text-gray-700 mb-2">
+              Confirm New Secret Code
             </label>
             <div className="relative">
               <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                 <Lock className="h-4 w-4 sm:h-5 sm:w-5 text-gray-400" />
               </div>
               <input
-                id="confirmPassword"
-                type={showPasswords.confirm ? 'text' : 'password'}
-                value={password.confirm}
-                onChange={(e) => setPassword({ ...password, confirm: e.target.value })}
+                id="confirmSecretCode"
+                type={showSecretCodes.confirm ? 'text' : 'password'}
+                value={secretCode.confirm}
+                onChange={(e) => setSecretCode({ ...secretCode, confirm: e.target.value })}
                 className="block w-full pl-9 sm:pl-10 pr-10 sm:pr-12 py-2.5 sm:py-3 text-sm sm:text-base border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all touch-manipulation"
-                placeholder="Confirm new password"
+                placeholder="Confirm new secret code"
+                maxLength={20}
               />
               <button
                 type="button"
-                onClick={() => setShowPasswords({ ...showPasswords, confirm: !showPasswords.confirm })}
+                onClick={() => setShowSecretCodes({ ...showSecretCodes, confirm: !showSecretCodes.confirm })}
                 className="absolute inset-y-0 right-0 pr-3 flex items-center touch-manipulation"
               >
-                {showPasswords.confirm ? (
+                {showSecretCodes.confirm ? (
                   <EyeOff className="h-4 w-4 sm:h-5 sm:w-5 text-gray-400 hover:text-gray-600 active:text-gray-700 transition-colors" />
                 ) : (
                   <Eye className="h-4 w-4 sm:h-5 sm:w-5 text-gray-400 hover:text-gray-600 active:text-gray-700 transition-colors" />
@@ -236,10 +243,10 @@ export default function ProfileSettings() {
             </div>
           </div>
           <button
-            onClick={handlePasswordChange}
-            className="w-full sm:w-auto px-4 sm:px-6 py-2.5 sm:py-3 bg-orange-600 text-white rounded-lg hover:bg-orange-700 active:bg-orange-800 font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 shadow-lg touch-manipulation"
+            onClick={handleSecretCodeChange}
+            className="w-full bg-gradient-to-r from-orange-500 to-red-500 text-white py-3 px-4 rounded-lg font-semibold hover:from-orange-600 hover:to-red-600 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 focus:ring-offset-gray-800 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed shadow-lg touch-manipulation"
           >
-            Update Password
+            Update Secret Code
           </button>
         </div>
       </div>

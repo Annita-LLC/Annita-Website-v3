@@ -125,21 +125,21 @@ export default function DocumentLibrary() {
       </div>
 
       {/* Category Tabs */}
-      <div className="flex space-x-2 overflow-x-auto scrollbar-hide pb-1 -mb-1">
+      <div className="flex space-x-1.5 sm:space-x-2 overflow-x-auto scrollbar-hide pb-1 -mb-1 -mx-1 px-1">
         {categories.map(category => {
           const Icon = category.icon
           return (
             <button
               key={category.id}
               onClick={() => setSelectedCategory(category.id)}
-              className={`flex items-center space-x-1 sm:space-x-2 px-3 sm:px-4 py-2 rounded-lg whitespace-nowrap transition-colors touch-manipulation ${
+              className={`flex items-center space-x-1 sm:space-x-2 px-2 sm:px-4 py-1.5 sm:py-2 rounded-md sm:rounded-lg whitespace-nowrap transition-colors touch-manipulation flex-shrink-0 ${
                 selectedCategory === category.id
                   ? 'bg-orange-600 text-white'
                   : 'bg-white text-gray-700 border border-gray-200 hover:bg-gray-50 active:bg-gray-100'
               }`}
             >
-              <Icon className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
-              <span className="text-xs sm:text-sm">{category.label}</span>
+              <Icon className="w-3 h-3 sm:w-4 sm:h-4 flex-shrink-0" />
+              <span className="text-[10px] sm:text-sm font-medium">{category.label}</span>
             </button>
           )
         })}

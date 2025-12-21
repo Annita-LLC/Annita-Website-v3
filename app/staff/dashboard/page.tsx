@@ -133,7 +133,7 @@ export default function StaffDashboard() {
       />
       
       <div className="min-h-screen bg-gray-50">
-        {/* Header */}
+        {/* Staff Portal Header */}
         <header className="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
           <div className="container mx-auto px-3 sm:px-4 lg:px-8 py-3 sm:py-4">
             <div className="flex items-center justify-between">
