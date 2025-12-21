@@ -7,7 +7,6 @@ require('dotenv').config();
 
 const formsRouter = require('./routes/forms');
 const waitlistRouter = require('./routes/waitlist');
-const downloadsRouter = require('./routes/downloads');
 const db = require('./config/database');
 
 const app = express();
@@ -88,7 +87,6 @@ app.get('/health', async (req, res) => {
 // API routes
 app.use('/api/forms', formsRouter);
 app.use('/api/waitlist', waitlistRouter);
-app.use('/api/downloads', downloadsRouter);
 
 // Error handling middleware
 app.use((err, req, res, next) => {

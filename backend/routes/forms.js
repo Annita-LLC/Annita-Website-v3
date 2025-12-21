@@ -34,43 +34,49 @@ router.post('/submit', async (req, res) => {
       case 'career':
         result = await models.createCareerApplication(enrichedData);
         break;
-      case 'support':
-        result = await models.createSupportIssue(enrichedData);
-        break;
-      case 'business':
-        result = await models.createBusinessInquiry(enrichedData);
-        break;
       case 'sales':
         result = await models.createSalesInquiry(enrichedData);
         break;
-      case 'pricing':
-        result = await models.createPricingInquiry(enrichedData);
+      case 'solution':
+        // Map solution form to business_inquiries table
+        const solutionData = {
+          name: enrichedData.name,
+          email: enrichedData.email,
+          company: enrichedData.company || null,
+          phone: enrichedData.phone || null,
+          business_type: enrichedData.projectType || null,
+          revenue_range: enrichedData.budget || null,
+          message: enrichedData.requirements || enrichedData.message || null,
+          selected_model: enrichedData.currentTech || null,
+          ip_address: enrichedData.ip_address,
+          user_agent: enrichedData.user_agent
+        };
+        result = await models.createBusinessInquiry(solutionData);
         break;
-      case 'the100_youth':
-        result = await models.createThe100YouthApplication(enrichedData);
-        break;
-      case 'the100_partner':
-        result = await models.createThe100PartnerApplication(enrichedData);
-        break;
-      case 'the100_mentor':
-        result = await models.createThe100MentorApplication(enrichedData);
-        break;
-      case 'the100_contact':
-        result = await models.createThe100ContactInquiry(enrichedData);
-        break;
-      case 'newsletter':
-        result = await models.subscribeToNewsletter(
-          enrichedData.email,
-          enrichedData.platform,
-          ip_address,
-          user_agent
-        );
-        break;
-      case 'investor_download':
-        result = await models.trackInvestorDownload(enrichedData);
+      case 'cookie':
+      case 'privacy':
+      case 'legal':
+        // Map cookie, privacy, and legal forms to contact_inquiries table
+        const contactData = {
+          first_name: enrichedData.name?.split(' ')[0] || enrichedData.name || '',
+          last_name: enrichedData.name?.split(' ').slice(1).join(' ') || '',
+          email: enrichedData.email,
+          phone: enrichedData.phone || null,
+          company: enrichedData.company || null,
+          country: enrichedData.country || null,
+          subject: enrichedData.subject || enrichedData.inquiryType || `${formType} inquiry`,
+          message: enrichedData.message || enrichedData.details || '',
+          inquiry_category: 'general',
+          urgency: 'normal',
+          preferred_contact: 'email',
+          newsletter_opt_in: false,
+          ip_address: enrichedData.ip_address,
+          user_agent: enrichedData.user_agent
+        };
+        result = await models.createContactInquiry(contactData);
         break;
       default:
-        return res.status(400).json({ error: 'Invalid form type' });
+        return res.status(400).json({ error: `Invalid form type: ${formType}` });
     }
 
     // Send email notification (non-blocking)
@@ -83,7 +89,7 @@ router.post('/submit', async (req, res) => {
     });
 
     // Send confirmation email to user if they provided an email (non-blocking)
-    if (enrichedData.email && formType !== 'newsletter') {
+    if (enrichedData.email) {
       emailService.sendConfirmationEmail({
         to: enrichedData.email,
         type: formType,

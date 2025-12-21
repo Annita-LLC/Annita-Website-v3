@@ -17,7 +17,7 @@ async function runMigration() {
   
   try {
     console.log('📦 Reading migration file...');
-    const migrationFile = path.join(__dirname, 'migrations', '001_create_form_tables.sql');
+    const migrationFile = path.join(__dirname, 'migrations', '001_create_tables.sql');
     const sql = fs.readFileSync(migrationFile, 'utf8');
     
     console.log('🚀 Running migration...');

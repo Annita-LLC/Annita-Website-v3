@@ -84,27 +84,19 @@ The server will run on `http://localhost:3001`
 ### Waitlist
 - `POST /api/waitlist` - Add email to waitlist
 
-### Downloads
-- `POST /api/downloads/track` - Track investor document downloads
-
 ### Health Check
 - `GET /health` - Server health status
 
 ## Form Types
 
-Supported form types:
+Supported form types (as used by the frontend):
 - `contact` - Contact inquiries
 - `career` - Career applications
-- `support` - Support issues
-- `business` - Business inquiries
 - `sales` - Sales inquiries
-- `pricing` - Pricing inquiries
-- `the100_youth` - The 100 Youth applications
-- `the100_partner` - The 100 Partner applications
-- `the100_mentor` - The 100 Mentor applications
-- `the100_contact` - The 100 Contact inquiries
-- `newsletter` - Newsletter subscriptions
-- `investor_download` - Investor document downloads
+- `solution` - Solution/custom project inquiries (mapped to business_inquiries table)
+- `cookie` - Cookie/privacy inquiries (mapped to contact_inquiries table)
+- `privacy` - Privacy policy inquiries (mapped to contact_inquiries table)
+- `legal` - Legal/terms inquiries (mapped to contact_inquiries table)
 
 ## Database Connection
 
