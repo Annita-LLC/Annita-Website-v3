@@ -105,27 +105,27 @@ export default function StaffDashboard() {
       <div className="min-h-screen bg-gray-50">
         {/* Header */}
         <header className="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-4">
+          <div className="container mx-auto px-3 sm:px-4 lg:px-8 py-3 sm:py-4">
             <div className="flex items-center justify-between">
-              <div className="flex items-center space-x-3">
-                <div className="w-10 h-10 bg-gradient-to-br from-orange-500 to-red-500 rounded-lg flex items-center justify-center">
-                  <Briefcase className="w-6 h-6 text-white" />
+              <div className="flex items-center space-x-2 sm:space-x-3 min-w-0 flex-1">
+                <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-orange-500 to-red-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <Briefcase className="w-4 h-4 sm:w-6 sm:h-6 text-white" />
                 </div>
-                <div>
-                  <h1 className="text-xl font-bold text-gray-900">Staff Portal</h1>
-                  <p className="text-sm text-gray-500">Annita LLC</p>
+                <div className="min-w-0">
+                  <h1 className="text-base sm:text-lg lg:text-xl font-bold text-gray-900 truncate">Staff Portal</h1>
+                  <p className="text-xs sm:text-sm text-gray-500 hidden sm:block">Annita LLC</p>
                 </div>
               </div>
-              <div className="flex items-center space-x-4">
-                <div className="hidden sm:block text-sm text-gray-600">
+              <div className="flex items-center space-x-2 sm:space-x-4 flex-shrink-0">
+                <div className="hidden sm:block text-xs sm:text-sm text-gray-600">
                   <span className="font-medium capitalize">{userRole}</span>
                 </div>
                 <button
                   onClick={handleLogout}
-                  className="flex items-center space-x-2 px-4 py-2 text-gray-700 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors"
+                  className="flex items-center space-x-1 sm:space-x-2 px-2 sm:px-4 py-2 text-gray-700 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors"
                 >
                   <LogOut className="w-4 h-4" />
-                  <span className="text-sm font-medium">Logout</span>
+                  <span className="text-xs sm:text-sm font-medium hidden sm:inline">Logout</span>
                 </button>
               </div>
             </div>
@@ -133,23 +133,23 @@ export default function StaffDashboard() {
         </header>
 
         {/* Navigation */}
-        <nav className="bg-white border-b border-gray-200 sticky top-[73px] z-40">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex space-x-1 overflow-x-auto scrollbar-hide">
+        <nav className="bg-white border-b border-gray-200 sticky top-[57px] sm:top-[73px] z-40">
+          <div className="container mx-auto px-3 sm:px-4 lg:px-8">
+            <div className="flex space-x-0.5 sm:space-x-1 overflow-x-auto scrollbar-hide pb-1 -mb-1">
               {tabs.map((tab) => {
                 const Icon = tab.icon
                 return (
                   <button
                     key={tab.id}
                     onClick={() => setActiveTab(tab.id)}
-                    className={`flex items-center space-x-2 px-4 py-3 text-sm font-medium whitespace-nowrap border-b-2 transition-colors ${
+                    className={`flex items-center space-x-1 sm:space-x-2 px-2 sm:px-4 py-2.5 sm:py-3 text-xs sm:text-sm font-medium whitespace-nowrap border-b-2 transition-colors touch-manipulation ${
                       activeTab === tab.id
                         ? 'text-orange-600 border-orange-600'
-                        : 'text-gray-600 border-transparent hover:text-orange-500 hover:border-orange-300'
+                        : 'text-gray-600 border-transparent hover:text-orange-500 hover:border-orange-300 active:text-orange-600'
                     }`}
                   >
-                    <Icon className="w-4 h-4" />
-                    <span>{tab.label}</span>
+                    <Icon className="w-3.5 h-3.5 sm:w-4 sm:h-4 flex-shrink-0" />
+                    <span className="hidden sm:inline">{tab.label}</span>
                   </button>
                 )
               })}
@@ -158,7 +158,7 @@ export default function StaffDashboard() {
         </nav>
 
         {/* Main Content */}
-        <main className="container mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <main className="container mx-auto px-3 sm:px-4 lg:px-8 py-4 sm:py-6">
           {renderContent()}
         </main>
       </div>

@@ -101,13 +101,13 @@ export default function LeaveRequests({ userRole }: LeaveRequestsProps) {
   }
 
   return (
-    <div className="space-y-6">
-      <div className="flex items-center justify-between">
-        <h2 className="text-2xl font-bold text-gray-900">Leave Requests</h2>
+    <div className="space-y-4 sm:space-y-6">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-0">
+        <h2 className="text-xl sm:text-2xl font-bold text-gray-900">Leave Requests</h2>
         {!canApprove && (
           <button
             onClick={() => setShowRequestForm(!showRequestForm)}
-            className="px-4 py-2 bg-orange-600 text-white rounded-lg hover:bg-orange-700 font-medium flex items-center space-x-2"
+            className="w-full sm:w-auto px-3 sm:px-4 py-2 bg-orange-600 text-white rounded-lg hover:bg-orange-700 active:bg-orange-800 font-medium flex items-center justify-center space-x-2 touch-manipulation"
           >
             <Plus className="w-4 h-4" />
             <span>Request Leave</span>
@@ -117,15 +117,15 @@ export default function LeaveRequests({ userRole }: LeaveRequestsProps) {
 
       {/* Request Form */}
       {showRequestForm && (
-        <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
-          <h3 className="text-lg font-semibold text-gray-900 mb-4">New Leave Request</h3>
-          <div className="space-y-4">
+        <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-4 sm:p-6">
+          <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-3 sm:mb-4">New Leave Request</h3>
+          <div className="space-y-3 sm:space-y-4">
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">Leave Type *</label>
               <select
                 value={leaveRequest.type}
                 onChange={(e) => setLeaveRequest({ ...leaveRequest, type: e.target.value })}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                className="w-full px-3 sm:px-4 py-2.5 sm:py-2 text-sm sm:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
               >
                 <option value="vacation">Vacation</option>
                 <option value="sick">Sick Leave</option>
@@ -133,14 +133,14 @@ export default function LeaveRequests({ userRole }: LeaveRequestsProps) {
                 <option value="emergency">Emergency</option>
               </select>
             </div>
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">Start Date *</label>
                 <input
                   type="date"
                   value={leaveRequest.startDate}
                   onChange={(e) => handleDateChange('startDate', e.target.value)}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                  className="w-full px-3 sm:px-4 py-2.5 sm:py-2 text-sm sm:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
                 />
               </div>
               <div>
@@ -149,13 +149,13 @@ export default function LeaveRequests({ userRole }: LeaveRequestsProps) {
                   type="date"
                   value={leaveRequest.endDate}
                   onChange={(e) => handleDateChange('endDate', e.target.value)}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                  className="w-full px-3 sm:px-4 py-2.5 sm:py-2 text-sm sm:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
                 />
               </div>
             </div>
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">Total Days</label>
-              <div className="px-4 py-2 bg-gray-50 border border-gray-300 rounded-lg">
+              <div className="px-3 sm:px-4 py-2.5 sm:py-2 bg-gray-50 border border-gray-300 rounded-lg text-sm sm:text-base">
                 {leaveRequest.days} day{leaveRequest.days !== 1 ? 's' : ''}
               </div>
             </div>
@@ -165,20 +165,20 @@ export default function LeaveRequests({ userRole }: LeaveRequestsProps) {
                 value={leaveRequest.reason}
                 onChange={(e) => setLeaveRequest({ ...leaveRequest, reason: e.target.value })}
                 rows={3}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                className="w-full px-3 sm:px-4 py-2.5 sm:py-2 text-sm sm:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent resize-none"
                 placeholder="Please provide a reason for your leave request"
               />
             </div>
-            <div className="flex space-x-3">
+            <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 sm:space-x-3">
               <button
                 onClick={submitRequest}
-                className="flex-1 px-6 py-2 bg-orange-600 text-white rounded-lg hover:bg-orange-700 font-medium"
+                className="flex-1 px-4 sm:px-6 py-2.5 sm:py-2 bg-orange-600 text-white rounded-lg hover:bg-orange-700 active:bg-orange-800 font-medium touch-manipulation"
               >
                 Submit Request
               </button>
               <button
                 onClick={() => setShowRequestForm(false)}
-                className="px-6 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 font-medium"
+                className="w-full sm:w-auto px-4 sm:px-6 py-2.5 sm:py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 active:bg-gray-400 font-medium touch-manipulation"
               >
                 Cancel
               </button>
@@ -188,20 +188,20 @@ export default function LeaveRequests({ userRole }: LeaveRequestsProps) {
       )}
 
       {/* Requests List */}
-      <div className="space-y-4">
+      <div className="space-y-3 sm:space-y-4">
         {requests.map((request) => (
-          <div key={request.id} className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
-            <div className="flex items-start justify-between mb-4">
-              <div className="flex-1">
-                <div className="flex items-center space-x-3 mb-2">
-                  <h3 className="font-semibold text-gray-900">{request.employee}</h3>
-                  <span className={`px-2 py-1 text-xs font-semibold rounded-full border ${getStatusColor(request.status)}`}>
+          <div key={request.id} className="bg-white rounded-lg shadow-sm border border-gray-200 p-4 sm:p-6">
+            <div className="flex items-start justify-between mb-3 sm:mb-4 gap-2">
+              <div className="flex-1 min-w-0">
+                <div className="flex flex-wrap items-center gap-2 mb-2">
+                  <h3 className="text-sm sm:text-base font-semibold text-gray-900">{request.employee}</h3>
+                  <span className={`px-2 py-1 text-xs font-semibold rounded-full border flex-shrink-0 ${getStatusColor(request.status)}`}>
                     {request.status}
                   </span>
                 </div>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm text-gray-600">
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-4 text-xs sm:text-sm text-gray-600">
                   <div>
-                    <span className="text-gray-500">Type:</span> {request.type}
+                    <span className="text-gray-500">Type:</span> <span className="break-words">{request.type}</span>
                   </div>
                   <div>
                     <span className="text-gray-500">Start:</span> {request.startDate}
@@ -213,24 +213,24 @@ export default function LeaveRequests({ userRole }: LeaveRequestsProps) {
                     <span className="text-gray-500">Days:</span> {request.days}
                   </div>
                 </div>
-                <p className="text-sm text-gray-700 mt-2">{request.reason}</p>
+                <p className="text-xs sm:text-sm text-gray-700 mt-2 break-words">{request.reason}</p>
                 <p className="text-xs text-gray-500 mt-2">Submitted: {request.submittedDate}</p>
               </div>
               {canApprove && request.status === 'pending' && (
-                <div className="flex space-x-2 ml-4">
+                <div className="flex flex-col sm:flex-row gap-2 sm:space-x-2 ml-2 sm:ml-4 flex-shrink-0">
                   <button
                     onClick={() => handleApproval(request.id, 'approved')}
-                    className="p-2 bg-green-100 text-green-700 rounded-lg hover:bg-green-200"
+                    className="p-2 bg-green-100 text-green-700 rounded-lg hover:bg-green-200 active:bg-green-300 touch-manipulation"
                     title="Approve"
                   >
-                    <CheckCircle2 className="w-5 h-5" />
+                    <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5" />
                   </button>
                   <button
                     onClick={() => handleApproval(request.id, 'rejected')}
-                    className="p-2 bg-red-100 text-red-700 rounded-lg hover:bg-red-200"
+                    className="p-2 bg-red-100 text-red-700 rounded-lg hover:bg-red-200 active:bg-red-300 touch-manipulation"
                     title="Reject"
                   >
-                    <XCircle className="w-5 h-5" />
+                    <XCircle className="w-4 h-4 sm:w-5 sm:h-5" />
                   </button>
                 </div>
               )}
