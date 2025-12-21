@@ -179,11 +179,26 @@ export default function StaffLoginPage() {
             </div>
           </div>
 
-          {/* Back to Home Link */}
-          <div className="mt-6 text-center">
+          {/* Additional Links */}
+          <div className="mt-6 space-y-3 text-center">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
+              <button
+                onClick={() => router.push('/staff/forgot-credentials')}
+                className="text-xs sm:text-sm text-gray-400 hover:text-orange-400 transition-colors touch-manipulation"
+              >
+                Forgot Credentials?
+              </button>
+              <span className="hidden sm:inline text-gray-600">|</span>
+              <button
+                onClick={() => router.push('/staff/register')}
+                className="text-xs sm:text-sm text-gray-400 hover:text-orange-400 transition-colors touch-manipulation"
+              >
+                Create Account
+              </button>
+            </div>
             <button
               onClick={() => router.push('/')}
-              className="text-sm text-gray-400 hover:text-white transition-colors"
+              className="text-xs sm:text-sm text-gray-500 hover:text-white transition-colors touch-manipulation"
             >
               ← Back to Home
             </button>

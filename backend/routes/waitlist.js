@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const models = require('../models');
+const emailService = require('../services/email');
 
 // Helper to get client info from request
 const getClientInfo = (req) => {
@@ -45,6 +46,24 @@ router.post('/', async (req, res) => {
     };
 
     const result = await models.addToWaitlist(waitlistData);
+
+    // Send email notification (non-blocking)
+    emailService.sendFormNotification({
+      type: 'waitlist',
+      data: waitlistData,
+      subject: 'New waitlist signup - Annita'
+    }).catch(err => {
+      console.error('Failed to send email notification:', err);
+    });
+
+    // Send confirmation email to user (non-blocking)
+    emailService.sendConfirmationEmail({
+      to: waitlistData.email,
+      type: 'waitlist',
+      data: waitlistData
+    }).catch(err => {
+      console.error('Failed to send confirmation email:', err);
+    });
 
     res.json({
       success: true,

@@ -51,6 +51,19 @@ services:
       - key: RUN_MIGRATIONS
         value: "false"
         scope: RUN_TIME
+      - key: RESEND_API_KEY
+        value: your-resend-api-key-here
+        scope: RUN_TIME
+        type: SECRET
+      - key: RESEND_FROM_EMAIL
+        value: noreply@yourdomain.com
+        scope: RUN_TIME
+      - key: RESEND_TO_EMAIL
+        value: admin@yourdomain.com
+        scope: RUN_TIME
+      - key: APP_NAME
+        value: Annita
+        scope: RUN_TIME
 
 databases:
   - name: db

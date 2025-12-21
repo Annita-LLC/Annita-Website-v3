@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const models = require('../models');
+const emailService = require('../services/email');
 
 // Helper to get client info from request
 const getClientInfo = (req) => {
@@ -70,6 +71,26 @@ router.post('/submit', async (req, res) => {
         break;
       default:
         return res.status(400).json({ error: 'Invalid form type' });
+    }
+
+    // Send email notification (non-blocking)
+    emailService.sendFormNotification({
+      type: formType,
+      data: enrichedData,
+      subject: `New ${formType} form submission - Annita`
+    }).catch(err => {
+      console.error('Failed to send email notification:', err);
+    });
+
+    // Send confirmation email to user if they provided an email (non-blocking)
+    if (enrichedData.email && formType !== 'newsletter') {
+      emailService.sendConfirmationEmail({
+        to: enrichedData.email,
+        type: formType,
+        data: enrichedData
+      }).catch(err => {
+        console.error('Failed to send confirmation email:', err);
+      });
     }
 
     res.json({

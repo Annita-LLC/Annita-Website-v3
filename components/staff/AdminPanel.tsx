@@ -8,7 +8,7 @@ interface AdminPanelProps {
 }
 
 export default function AdminPanel({ userRole }: AdminPanelProps) {
-  const [activeTab, setActiveTab] = useState<'employees' | 'reports' | 'settings'>('employees')
+  const [activeTab, setActiveTab] = useState<'employees' | 'reports' | 'settings' | 'system'>('employees')
 
   const employees = [
     { id: 1, name: 'John Doe', email: 'john.doe@annita.com', department: 'IT & Technology', role: 'Software Engineer', status: 'active' },
@@ -52,6 +52,7 @@ export default function AdminPanel({ userRole }: AdminPanelProps) {
             { id: 'employees' as const, label: 'Employees', icon: Users },
             { id: 'reports' as const, label: 'Weekly Reports', icon: FileText },
             { id: 'settings' as const, label: 'Settings', icon: Settings },
+            ...(userRole === 'ceo' ? [{ id: 'system' as const, label: 'System Control', icon: Shield }] : []),
           ].map((tab) => {
             const Icon = tab.icon
             return (

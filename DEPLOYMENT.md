@@ -42,71 +42,51 @@ This project consists of two parts:
 - API routes in `app/api/` are **NOT used** - they won't work with static export
 - The frontend makes **direct API calls** to your backend server
 
-## Backend Deployment Options
+## Backend Deployment (DigitalOcean)
 
 The backend **MUST be deployed separately** as Netlify only hosts static sites and serverless functions.
 
-### Option 1: Railway (Recommended - Easy)
+### DigitalOcean App Platform (Recommended)
 
-1. Go to [Railway.app](https://railway.app)
-2. Create new project → Deploy from GitHub
-3. Select your repository
-4. Set root directory to `backend`
-5. Add environment variables:
-   ```
-   DB_HOST=your_db_host
-   DB_PORT=5432
-   DB_NAME=annita_db
-   DB_USER=postgres
-   DB_PASSWORD=your_password
-   PORT=3001
-   NODE_ENV=production
-   FRONTEND_URL=https://your-netlify-site.netlify.app
-   ```
-6. Railway will auto-deploy and provide a URL like `https://your-app.railway.app`
+We use DigitalOcean App Platform for both the backend API and PostgreSQL database.
 
-### Option 2: Render
+See detailed deployment instructions in: [`backend/DIGITALOCEAN_DEPLOYMENT.md`](./backend/DIGITALOCEAN_DEPLOYMENT.md)
 
-1. Go to [Render.com](https://render.com)
-2. Create new Web Service
-3. Connect GitHub repository
-4. Configure:
-   - **Root Directory**: `backend`
-   - **Build Command**: `npm install`
-   - **Start Command**: `npm start`
-   - **Environment**: Node
-5. Add environment variables (same as Railway)
-6. Render provides URL like `https://your-app.onrender.com`
+**Quick Setup:**
 
-### Option 3: Heroku
+1. Go to [DigitalOcean Dashboard](https://cloud.digitalocean.com)
+2. Create a PostgreSQL database cluster
+3. Create an App Platform app
+4. Connect your GitHub repository
+5. Set root directory to `backend`
+6. Configure environment variables (see DigitalOcean deployment guide)
 
-1. Install Heroku CLI
-2. Create `Procfile` in `backend/`:
-   ```
-   web: node server.js
-   ```
-3. Deploy:
-   ```bash
-   cd backend
-   heroku create your-app-name
-   heroku config:set DB_HOST=... DB_PASSWORD=... (etc)
-   git subtree push --prefix backend heroku main
-   ```
-
-### Option 4: DigitalOcean App Platform / AWS / Google Cloud
-
-Similar process - deploy the `backend` folder as a Node.js application.
+**Required Environment Variables:**
+```
+NODE_ENV=production
+PORT=3001
+DB_HOST=<your-do-db-host>
+DB_PORT=25060
+DB_NAME=defaultdb
+DB_USER=doadmin
+DB_PASSWORD=<your-db-password>
+DB_SSL=true
+FRONTEND_URL=https://your-frontend-url.com
+RESEND_API_KEY=<your-resend-api-key>
+RESEND_FROM_EMAIL=noreply@yourdomain.com
+RESEND_TO_EMAIL=admin@yourdomain.com
+```
 
 ## Database Setup
 
-Your PostgreSQL database can be:
-- **Railway** (includes PostgreSQL)
-- **Render** (includes PostgreSQL)
-- **Supabase** (PostgreSQL as a service)
-- **AWS RDS** / **Google Cloud SQL**
-- **Self-hosted PostgreSQL**
+The PostgreSQL database is hosted on **DigitalOcean Managed Databases**.
 
-Make sure your database is accessible from your backend hosting provider.
+- Managed PostgreSQL 15+ cluster
+- SSL connections required
+- Automatic backups
+- High availability options
+
+See [`backend/DIGITALOCEAN_DEPLOYMENT.md`](./backend/DIGITALOCEAN_DEPLOYMENT.md) for complete setup instructions.
 
 ## Post-Deployment Checklist
 
@@ -159,16 +139,21 @@ NEXT_PUBLIC_FRONTEND_URL=https://your-site.netlify.app
 
 **Note**: The `NEXT_PUBLIC_` prefix is required for environment variables to be available in the browser with static export.
 
-### Backend (Railway/Render/etc)
+### Backend (DigitalOcean)
 ```
-DB_HOST=your_db_host
-DB_PORT=5432
-DB_NAME=annita_db
-DB_USER=postgres
-DB_PASSWORD=your_password
-PORT=3001
 NODE_ENV=production
+PORT=3001
+DB_HOST=your-do-db-host.db.ondigitalocean.com
+DB_PORT=25060
+DB_NAME=defaultdb
+DB_USER=doadmin
+DB_PASSWORD=your_password
+DB_SSL=true
 FRONTEND_URL=https://your-site.netlify.app
+RESEND_API_KEY=re_your_api_key_here
+RESEND_FROM_EMAIL=noreply@yourdomain.com
+RESEND_TO_EMAIL=admin@yourdomain.com
+APP_NAME=Annita
 ```
 
 ---

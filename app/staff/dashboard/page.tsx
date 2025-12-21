@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
-import { LogOut, Clock, Calendar, User, Briefcase, Home, Bell, FileText, Users, Settings, BarChart3, Shield, Megaphone, Menu, X } from 'lucide-react'
+import { LogOut, Clock, Calendar, User, Briefcase, Home, Bell, FileText, Users, Settings, BarChart3, Shield, Megaphone, Menu, X, Crown, Target, BookOpen, DollarSign, Heart, TrendingUp, UserPlus, UserCheck, Receipt, Package, MessageSquare, BarChart3 as BarChartIcon } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import WorkTracker from '@/components/staff/WorkTracker'
 import DashboardOverview from '@/components/staff/DashboardOverview'
@@ -15,9 +15,32 @@ import CompanyCalendar from '@/components/staff/CompanyCalendar'
 import DocumentLibrary from '@/components/staff/DocumentLibrary'
 import NotificationsCenter from '@/components/staff/NotificationsCenter'
 import ReportsAnalytics from '@/components/staff/ReportsAnalytics'
+import CEODashboard from '@/components/staff/CEODashboard'
+import PerformanceReviews from '@/components/staff/PerformanceReviews'
+import TrainingDevelopment from '@/components/staff/TrainingDevelopment'
+import BenefitsCompensation from '@/components/staff/BenefitsCompensation'
+import GoalsObjectives from '@/components/staff/GoalsObjectives'
+import TeamPerformanceDashboard from '@/components/staff/TeamPerformanceDashboard'
+import OneOnOneMeetings from '@/components/staff/OneOnOneMeetings'
+import BudgetManagement from '@/components/staff/BudgetManagement'
+import ProjectManagement from '@/components/staff/ProjectManagement'
+import RecruitmentHiring from '@/components/staff/RecruitmentHiring'
+import OnboardingManagement from '@/components/staff/OnboardingManagement'
+import PerformanceReviewSystem from '@/components/staff/PerformanceReviewSystem'
+import BenefitsAdministration from '@/components/staff/BenefitsAdministration'
+import PayrollManagement from '@/components/staff/PayrollManagement'
+import CompliancePolicies from '@/components/staff/CompliancePolicies'
+import StrategicPlanning from '@/components/staff/StrategicPlanning'
+import BoardMeetings from '@/components/staff/BoardMeetings'
+import InvestorRelations from '@/components/staff/InvestorRelations'
+import MarketAnalysis from '@/components/staff/MarketAnalysis'
+import MessagingChat from '@/components/staff/MessagingChat'
+import KnowledgeBase from '@/components/staff/KnowledgeBase'
+import ExpenseManagement from '@/components/staff/ExpenseManagement'
+import AssetManagement from '@/components/staff/AssetManagement'
 import SEOHead from '@/components/seo/SEOHead'
 
-type TabType = 'overview' | 'work-tracker' | 'profile' | 'announcements' | 'team' | 'leave' | 'calendar' | 'documents' | 'notifications' | 'reports' | 'admin'
+type TabType = 'overview' | 'ceo-dashboard' | 'work-tracker' | 'profile' | 'announcements' | 'team' | 'leave' | 'calendar' | 'documents' | 'notifications' | 'performance-reviews' | 'training' | 'benefits' | 'goals' | 'team-performance' | 'one-on-one' | 'budget' | 'projects' | 'recruitment' | 'onboarding' | 'review-system' | 'benefits-admin' | 'payroll' | 'compliance' | 'strategic-planning' | 'board-meetings' | 'investor-relations' | 'market-analysis' | 'messaging' | 'knowledge-base' | 'expenses' | 'assets' | 'reports' | 'admin'
 
 export default function StaffDashboard() {
   const router = useRouter()
@@ -74,9 +97,13 @@ export default function StaffDashboard() {
   }
 
   const isAdmin = userRole === 'ceo' || userRole === 'hr' || userRole === 'manager'
+  const isCEO = userRole === 'ceo'
+  const isManager = userRole === 'manager' || userRole === 'ceo'
+  const isHR = userRole === 'hr' || userRole === 'ceo'
 
   const tabs = [
     { id: 'overview' as TabType, label: 'Overview', icon: Home },
+    ...(isCEO ? [{ id: 'ceo-dashboard' as TabType, label: 'CEO Dashboard', icon: Crown }] : []),
     { id: 'work-tracker' as TabType, label: 'Work Tracker', icon: Clock },
     { id: 'announcements' as TabType, label: 'Announcements', icon: Megaphone },
     { id: 'team' as TabType, label: 'Team Directory', icon: Users },
@@ -84,6 +111,28 @@ export default function StaffDashboard() {
     { id: 'calendar' as TabType, label: 'Calendar', icon: Calendar },
     { id: 'documents' as TabType, label: 'Documents', icon: FileText },
     { id: 'notifications' as TabType, label: 'Notifications', icon: Bell },
+    { id: 'performance-reviews' as TabType, label: 'Performance', icon: FileText },
+    { id: 'training' as TabType, label: 'Training', icon: BookOpen },
+    { id: 'benefits' as TabType, label: 'Benefits', icon: Heart },
+    { id: 'goals' as TabType, label: 'Goals', icon: Target },
+    { id: 'messaging' as TabType, label: 'Messages', icon: MessageSquare },
+    { id: 'knowledge-base' as TabType, label: 'Knowledge Base', icon: BookOpen },
+    { id: 'expenses' as TabType, label: 'Expenses', icon: Receipt },
+    { id: 'assets' as TabType, label: 'Assets', icon: Package },
+    ...(isManager ? [{ id: 'team-performance' as TabType, label: 'Team Performance', icon: BarChart3 }] : []),
+    ...(isManager ? [{ id: 'one-on-one' as TabType, label: '1-on-1 Meetings', icon: Users }] : []),
+    ...(isManager ? [{ id: 'budget' as TabType, label: 'Budget', icon: DollarSign }] : []),
+    ...(isManager ? [{ id: 'projects' as TabType, label: 'Projects', icon: Briefcase }] : []),
+    ...(isHR ? [{ id: 'recruitment' as TabType, label: 'Recruitment', icon: UserPlus }] : []),
+    ...(isHR ? [{ id: 'onboarding' as TabType, label: 'Onboarding', icon: UserCheck }] : []),
+    ...(isHR ? [{ id: 'review-system' as TabType, label: 'Review System', icon: FileText }] : []),
+    ...(isHR ? [{ id: 'benefits-admin' as TabType, label: 'Benefits Admin', icon: Heart }] : []),
+    ...(isHR ? [{ id: 'payroll' as TabType, label: 'Payroll', icon: DollarSign }] : []),
+    ...(isHR ? [{ id: 'compliance' as TabType, label: 'Compliance', icon: Shield }] : []),
+    ...(isCEO ? [{ id: 'strategic-planning' as TabType, label: 'Strategic Planning', icon: Target }] : []),
+    ...(isCEO ? [{ id: 'board-meetings' as TabType, label: 'Board Meetings', icon: Users }] : []),
+    ...(isCEO ? [{ id: 'investor-relations' as TabType, label: 'Investor Relations', icon: TrendingUp }] : []),
+    ...(isCEO ? [{ id: 'market-analysis' as TabType, label: 'Market Analysis', icon: BarChartIcon }] : []),
     { id: 'profile' as TabType, label: 'Profile', icon: User },
     ...(isAdmin ? [{ id: 'reports' as TabType, label: 'Reports', icon: BarChart3 }] : []),
     ...(isAdmin ? [{ id: 'admin' as TabType, label: 'Admin Panel', icon: Shield }] : []),
@@ -97,6 +146,8 @@ export default function StaffDashboard() {
     switch (activeTab) {
       case 'overview':
         return <DashboardOverview userRole={userRole} onNavigate={handleTabChange} />
+      case 'ceo-dashboard':
+        return <CEODashboard />
       case 'work-tracker':
         return <WorkTracker />
       case 'profile':
@@ -113,6 +164,50 @@ export default function StaffDashboard() {
         return <DocumentLibrary />
       case 'notifications':
         return <NotificationsCenter />
+      case 'performance-reviews':
+        return <PerformanceReviews />
+      case 'training':
+        return <TrainingDevelopment />
+      case 'benefits':
+        return <BenefitsCompensation />
+      case 'goals':
+        return <GoalsObjectives />
+      case 'team-performance':
+        return <TeamPerformanceDashboard userRole={userRole} />
+      case 'one-on-one':
+        return <OneOnOneMeetings userRole={userRole} />
+      case 'budget':
+        return <BudgetManagement userRole={userRole} />
+      case 'projects':
+        return <ProjectManagement userRole={userRole} />
+      case 'recruitment':
+        return <RecruitmentHiring userRole={userRole} />
+      case 'onboarding':
+        return <OnboardingManagement userRole={userRole} />
+      case 'review-system':
+        return <PerformanceReviewSystem userRole={userRole} />
+      case 'benefits-admin':
+        return <BenefitsAdministration userRole={userRole} />
+      case 'payroll':
+        return <PayrollManagement userRole={userRole} />
+      case 'compliance':
+        return <CompliancePolicies userRole={userRole} />
+      case 'strategic-planning':
+        return <StrategicPlanning userRole={userRole} />
+      case 'board-meetings':
+        return <BoardMeetings userRole={userRole} />
+      case 'investor-relations':
+        return <InvestorRelations userRole={userRole} />
+      case 'market-analysis':
+        return <MarketAnalysis userRole={userRole} />
+      case 'messaging':
+        return <MessagingChat />
+      case 'knowledge-base':
+        return <KnowledgeBase />
+      case 'expenses':
+        return <ExpenseManagement />
+      case 'assets':
+        return <AssetManagement />
       case 'reports':
         return <ReportsAnalytics userRole={userRole} />
       case 'admin':

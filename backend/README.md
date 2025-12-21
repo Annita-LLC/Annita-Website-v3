@@ -32,19 +32,35 @@ CREATE DATABASE annita_db;
 
 ### 3. Environment Variables
 
-Copy `.env.example` to `.env` and fill in your database credentials:
+Copy `.env.example` to `.env` and fill in your credentials:
 
 ```env
+# Database Configuration
 DB_HOST=localhost
 DB_PORT=5432
 DB_NAME=annita_db
 DB_USER=postgres
 DB_PASSWORD=your_password
+DB_SSL=false
 
+# Server Configuration
 PORT=3001
 NODE_ENV=development
 FRONTEND_URL=http://localhost:3000
+
+# Email Configuration (Resend)
+# Get your API key from https://resend.com/api-keys
+RESEND_API_KEY=re_your_api_key_here
+RESEND_FROM_EMAIL=noreply@yourdomain.com
+RESEND_TO_EMAIL=admin@yourdomain.com
+APP_NAME=Annita
 ```
+
+**Email Setup (Resend):**
+1. Sign up at [resend.com](https://resend.com)
+2. Verify your domain or use Resend's test domain
+3. Create an API key in the dashboard
+4. Add the API key to your `.env` file
 
 ### 4. Run the Server
 
@@ -93,4 +109,20 @@ Supported form types:
 ## Database Connection
 
 The backend uses connection pooling for efficient database access. Make sure your PostgreSQL server is running and accessible with the credentials in your `.env` file.
+
+For DigitalOcean deployments, SSL connections are automatically enabled. See [`DIGITALOCEAN_DEPLOYMENT.md`](./DIGITALOCEAN_DEPLOYMENT.md) for detailed deployment instructions.
+
+## Email Notifications
+
+The backend uses [Resend](https://resend.com) for sending email notifications:
+
+- **Form Submissions**: Admin notifications are sent when forms are submitted
+- **Confirmation Emails**: Users receive confirmation emails after submitting forms
+- **Waitlist**: Both admin notifications and user confirmations for waitlist signups
+
+Email sending is non-blocking - if email fails, form submissions still succeed and are saved to the database.
+
+## Deployment
+
+This backend is configured for deployment on **DigitalOcean App Platform**. See [`DIGITALOCEAN_DEPLOYMENT.md`](./DIGITALOCEAN_DEPLOYMENT.md) for complete deployment instructions.
 
