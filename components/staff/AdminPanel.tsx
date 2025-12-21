@@ -77,7 +77,12 @@ export default function AdminPanel({ userRole }: AdminPanelProps) {
             <div className="space-y-3 sm:space-y-4">
               <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-0 mb-3 sm:mb-4">
                 <h3 className="text-base sm:text-lg font-semibold text-gray-900">Employee Management</h3>
-                <button className="w-full sm:w-auto px-3 sm:px-4 py-2 bg-orange-600 text-white rounded-lg hover:bg-orange-700 active:bg-orange-800 text-xs sm:text-sm font-medium touch-manipulation">
+                <button 
+                  onClick={() => {
+                    alert('Add Employee functionality\n\nIn production, this would open a form to add a new employee.')
+                  }}
+                  className="w-full sm:w-auto px-3 sm:px-4 py-2 bg-orange-600 text-white rounded-lg hover:bg-orange-700 active:bg-orange-800 text-xs sm:text-sm font-medium touch-manipulation"
+                >
                   Add Employee
                 </button>
               </div>
@@ -116,15 +121,31 @@ export default function AdminPanel({ userRole }: AdminPanelProps) {
                             </td>
                             <td className="px-3 sm:px-4 py-2 sm:py-3">
                               <div className="flex items-center space-x-1 sm:space-x-2">
-                                <button className="p-1.5 sm:p-1 text-blue-600 hover:text-blue-700 active:text-blue-800 touch-manipulation" title="View">
-                                  <Eye className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
-                                </button>
-                                <button className="p-1.5 sm:p-1 text-orange-600 hover:text-orange-700 active:text-orange-800 touch-manipulation" title="Edit">
-                                  <Edit className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
-                                </button>
-                                <button className="p-1.5 sm:p-1 text-red-600 hover:text-red-700 active:text-red-800 touch-manipulation" title="Delete">
-                                  <Trash2 className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
-                                </button>
+                            <button 
+                              onClick={() => alert(`Viewing details for ${employee.name}\n\nIn production, this would show employee details.`)}
+                              className="p-1.5 sm:p-1 text-blue-600 hover:text-blue-700 active:text-blue-800 touch-manipulation" 
+                              title="View"
+                            >
+                              <Eye className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                            </button>
+                            <button 
+                              onClick={() => alert(`Editing ${employee.name}\n\nIn production, this would open the edit form.`)}
+                              className="p-1.5 sm:p-1 text-orange-600 hover:text-orange-700 active:text-orange-800 touch-manipulation" 
+                              title="Edit"
+                            >
+                              <Edit className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                            </button>
+                            <button 
+                              onClick={() => {
+                                if (confirm(`Are you sure you want to delete ${employee.name}?`)) {
+                                  alert(`${employee.name} deleted.\n\nIn production, this would remove the employee from the system.`)
+                                }
+                              }}
+                              className="p-1.5 sm:p-1 text-red-600 hover:text-red-700 active:text-red-800 touch-manipulation" 
+                              title="Delete"
+                            >
+                              <Trash2 className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                            </button>
                               </div>
                             </td>
                           </tr>
@@ -142,7 +163,12 @@ export default function AdminPanel({ userRole }: AdminPanelProps) {
             <div className="space-y-3 sm:space-y-4">
               <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-0 mb-3 sm:mb-4">
                 <h3 className="text-base sm:text-lg font-semibold text-gray-900">Weekly Reports</h3>
-                <button className="w-full sm:w-auto px-3 sm:px-4 py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700 active:bg-gray-800 text-xs sm:text-sm font-medium flex items-center justify-center space-x-2 touch-manipulation">
+                <button 
+                  onClick={() => {
+                    alert('Exporting all weekly reports...\n\nIn production, this would generate and download a CSV/PDF file with all reports.')
+                  }}
+                  className="w-full sm:w-auto px-3 sm:px-4 py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700 active:bg-gray-800 text-xs sm:text-sm font-medium flex items-center justify-center space-x-2 touch-manipulation"
+                >
                   <Download className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                   <span>Export All</span>
                 </button>
@@ -180,7 +206,10 @@ export default function AdminPanel({ userRole }: AdminPanelProps) {
                               </span>
                             </td>
                             <td className="px-3 sm:px-4 py-2 sm:py-3">
-                              <button className="text-xs sm:text-sm text-orange-600 hover:text-orange-700 active:text-orange-800 font-medium touch-manipulation">
+                              <button 
+                                onClick={() => alert(`Viewing report details for ${report.employee}\n\nWeek Ending: ${report.weekEnding}\nHours: ${report.hours}\nStatus: ${report.status}\n\nIn production, this would show the full report.`)}
+                                className="text-xs sm:text-sm text-orange-600 hover:text-orange-700 active:text-orange-800 font-medium touch-manipulation"
+                              >
                                 View Details
                               </button>
                             </td>
@@ -211,7 +240,10 @@ export default function AdminPanel({ userRole }: AdminPanelProps) {
                 <div className="p-3 sm:p-4 border border-gray-200 rounded-lg">
                   <h4 className="text-sm sm:text-base font-medium text-gray-900 mb-1 sm:mb-2">Company Information</h4>
                   <p className="text-xs sm:text-sm text-gray-600 mb-2 sm:mb-3">Update company details and policies</p>
-                  <button className="w-full sm:w-auto px-3 sm:px-4 py-2 bg-orange-600 text-white rounded-lg hover:bg-orange-700 active:bg-orange-800 text-xs sm:text-sm font-medium touch-manipulation">
+                  <button 
+                    onClick={() => alert('Edit Company Information\n\nIn production, this would open a form to edit company details.')}
+                    className="w-full sm:w-auto px-3 sm:px-4 py-2 bg-orange-600 text-white rounded-lg hover:bg-orange-700 active:bg-orange-800 text-xs sm:text-sm font-medium touch-manipulation"
+                  >
                     Edit Company Info
                   </button>
                 </div>

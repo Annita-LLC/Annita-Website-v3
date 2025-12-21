@@ -96,7 +96,7 @@ export default function StaffDashboard() {
   const renderContent = () => {
     switch (activeTab) {
       case 'overview':
-        return <DashboardOverview userRole={userRole} />
+        return <DashboardOverview userRole={userRole} onNavigate={handleTabChange} />
       case 'work-tracker':
         return <WorkTracker />
       case 'profile':
@@ -118,7 +118,7 @@ export default function StaffDashboard() {
       case 'admin':
         return <AdminPanel userRole={userRole} />
       default:
-        return <DashboardOverview userRole={userRole} />
+        return <DashboardOverview userRole={userRole} onNavigate={handleTabChange} />
     }
   }
 

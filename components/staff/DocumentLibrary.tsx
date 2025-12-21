@@ -161,7 +161,13 @@ export default function DocumentLibrary() {
               <span>{doc.size}</span>
               <span>{doc.uploadDate}</span>
             </div>
-            <button className="w-full flex items-center justify-center space-x-2 px-3 sm:px-4 py-2 bg-orange-600 text-white rounded-lg hover:bg-orange-700 active:bg-orange-800 text-xs sm:text-sm font-medium touch-manipulation">
+            <button 
+              onClick={() => {
+                // In production, this would download the actual file
+                alert(`Downloading ${doc.name}...\n\nIn production, this would download the file from the server.`)
+              }}
+              className="w-full flex items-center justify-center space-x-2 px-3 sm:px-4 py-2 bg-orange-600 text-white rounded-lg hover:bg-orange-700 active:bg-orange-800 text-xs sm:text-sm font-medium touch-manipulation"
+            >
               <Download className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
               <span>Download</span>
             </button>

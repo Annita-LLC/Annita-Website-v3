@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { User, Mail, Phone, Building2, Save, Lock, Bell, Globe, Camera } from 'lucide-react'
+import { User, Mail, Phone, Building2, Save, Lock, Bell, Globe, Camera, Eye, EyeOff } from 'lucide-react'
 
 export default function ProfileSettings() {
   const [profile, setProfile] = useState({
@@ -20,6 +20,11 @@ export default function ProfileSettings() {
     current: '',
     new: '',
     confirm: ''
+  })
+  const [showPasswords, setShowPasswords] = useState({
+    current: false,
+    new: false,
+    confirm: false
   })
 
   const [notifications, setNotifications] = useState({
@@ -142,37 +147,97 @@ export default function ProfileSettings() {
           <Lock className="w-5 h-5 mr-2" />
           Change Password
         </h3>
-        <div className="space-y-3 sm:space-y-4">
+        <div className="space-y-4 sm:space-y-6">
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">Current Password</label>
-            <input
-              type="password"
-              value={password.current}
-              onChange={(e) => setPassword({ ...password, current: e.target.value })}
-              className="w-full px-3 sm:px-4 py-2.5 sm:py-2 text-sm sm:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
-            />
+            <label htmlFor="currentPassword" className="block text-xs sm:text-sm font-medium text-gray-700 mb-2">
+              Current Password
+            </label>
+            <div className="relative">
+              <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                <Lock className="h-4 w-4 sm:h-5 sm:w-5 text-gray-400" />
+              </div>
+              <input
+                id="currentPassword"
+                type={showPasswords.current ? 'text' : 'password'}
+                value={password.current}
+                onChange={(e) => setPassword({ ...password, current: e.target.value })}
+                className="block w-full pl-9 sm:pl-10 pr-10 sm:pr-12 py-2.5 sm:py-3 text-sm sm:text-base border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all touch-manipulation"
+                placeholder="Enter current password"
+              />
+              <button
+                type="button"
+                onClick={() => setShowPasswords({ ...showPasswords, current: !showPasswords.current })}
+                className="absolute inset-y-0 right-0 pr-3 flex items-center touch-manipulation"
+              >
+                {showPasswords.current ? (
+                  <EyeOff className="h-4 w-4 sm:h-5 sm:w-5 text-gray-400 hover:text-gray-600 active:text-gray-700 transition-colors" />
+                ) : (
+                  <Eye className="h-4 w-4 sm:h-5 sm:w-5 text-gray-400 hover:text-gray-600 active:text-gray-700 transition-colors" />
+                )}
+              </button>
+            </div>
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">New Password</label>
-            <input
-              type="password"
-              value={password.new}
-              onChange={(e) => setPassword({ ...password, new: e.target.value })}
-              className="w-full px-3 sm:px-4 py-2.5 sm:py-2 text-sm sm:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
-            />
+            <label htmlFor="newPassword" className="block text-xs sm:text-sm font-medium text-gray-700 mb-2">
+              New Password
+            </label>
+            <div className="relative">
+              <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                <Lock className="h-4 w-4 sm:h-5 sm:w-5 text-gray-400" />
+              </div>
+              <input
+                id="newPassword"
+                type={showPasswords.new ? 'text' : 'password'}
+                value={password.new}
+                onChange={(e) => setPassword({ ...password, new: e.target.value })}
+                className="block w-full pl-9 sm:pl-10 pr-10 sm:pr-12 py-2.5 sm:py-3 text-sm sm:text-base border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all touch-manipulation"
+                placeholder="Enter new password"
+              />
+              <button
+                type="button"
+                onClick={() => setShowPasswords({ ...showPasswords, new: !showPasswords.new })}
+                className="absolute inset-y-0 right-0 pr-3 flex items-center touch-manipulation"
+              >
+                {showPasswords.new ? (
+                  <EyeOff className="h-4 w-4 sm:h-5 sm:w-5 text-gray-400 hover:text-gray-600 active:text-gray-700 transition-colors" />
+                ) : (
+                  <Eye className="h-4 w-4 sm:h-5 sm:w-5 text-gray-400 hover:text-gray-600 active:text-gray-700 transition-colors" />
+                )}
+              </button>
+            </div>
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">Confirm New Password</label>
-            <input
-              type="password"
-              value={password.confirm}
-              onChange={(e) => setPassword({ ...password, confirm: e.target.value })}
-              className="w-full px-3 sm:px-4 py-2.5 sm:py-2 text-sm sm:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
-            />
+            <label htmlFor="confirmPassword" className="block text-xs sm:text-sm font-medium text-gray-700 mb-2">
+              Confirm New Password
+            </label>
+            <div className="relative">
+              <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                <Lock className="h-4 w-4 sm:h-5 sm:w-5 text-gray-400" />
+              </div>
+              <input
+                id="confirmPassword"
+                type={showPasswords.confirm ? 'text' : 'password'}
+                value={password.confirm}
+                onChange={(e) => setPassword({ ...password, confirm: e.target.value })}
+                className="block w-full pl-9 sm:pl-10 pr-10 sm:pr-12 py-2.5 sm:py-3 text-sm sm:text-base border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all touch-manipulation"
+                placeholder="Confirm new password"
+              />
+              <button
+                type="button"
+                onClick={() => setShowPasswords({ ...showPasswords, confirm: !showPasswords.confirm })}
+                className="absolute inset-y-0 right-0 pr-3 flex items-center touch-manipulation"
+              >
+                {showPasswords.confirm ? (
+                  <EyeOff className="h-4 w-4 sm:h-5 sm:w-5 text-gray-400 hover:text-gray-600 active:text-gray-700 transition-colors" />
+                ) : (
+                  <Eye className="h-4 w-4 sm:h-5 sm:w-5 text-gray-400 hover:text-gray-600 active:text-gray-700 transition-colors" />
+                )}
+              </button>
+            </div>
           </div>
           <button
             onClick={handlePasswordChange}
-            className="w-full sm:w-auto px-4 sm:px-6 py-2.5 sm:py-2 bg-orange-600 text-white rounded-lg hover:bg-orange-700 active:bg-orange-800 font-medium touch-manipulation"
+            className="w-full sm:w-auto px-4 sm:px-6 py-2.5 sm:py-3 bg-orange-600 text-white rounded-lg hover:bg-orange-700 active:bg-orange-800 font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 shadow-lg touch-manipulation"
           >
             Update Password
           </button>

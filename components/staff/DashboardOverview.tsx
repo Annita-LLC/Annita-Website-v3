@@ -6,9 +6,10 @@ import Link from 'next/link'
 
 interface DashboardOverviewProps {
   userRole: string
+  onNavigate?: (tab: 'overview' | 'work-tracker' | 'profile' | 'announcements' | 'team' | 'leave' | 'calendar' | 'documents' | 'notifications' | 'reports' | 'admin') => void
 }
 
-export default function DashboardOverview({ userRole }: DashboardOverviewProps) {
+export default function DashboardOverview({ userRole, onNavigate }: DashboardOverviewProps) {
   const [stats, setStats] = useState({
     pendingReports: 0,
     completedTasks: 12,
@@ -30,12 +31,23 @@ export default function DashboardOverview({ userRole }: DashboardOverviewProps) 
     { id: 3, title: 'Performance Review', date: '2024-12-25', type: 'review' },
   ]
 
-  const quickActions = [
-    { label: 'Submit Weekly Report', icon: FileText, href: '#work-tracker', color: 'bg-blue-500' },
-    { label: 'Request Time Off', icon: Calendar, href: '#leave', color: 'bg-green-500' },
-    { label: 'View Team Directory', icon: Users, href: '#team', color: 'bg-purple-500' },
-    { label: 'Check Documents', icon: FileText, href: '#documents', color: 'bg-orange-500' },
+  const quickActions: Array<{
+    label: string
+    icon: any
+    tab: 'work-tracker' | 'leave' | 'team' | 'documents' | 'announcements' | 'calendar'
+    color: string
+  }> = [
+    { label: 'Submit Weekly Report', icon: FileText, tab: 'work-tracker', color: 'bg-blue-500' },
+    { label: 'Request Time Off', icon: Calendar, tab: 'leave', color: 'bg-green-500' },
+    { label: 'View Team Directory', icon: Users, tab: 'team', color: 'bg-purple-500' },
+    { label: 'Check Documents', icon: FileText, tab: 'documents', color: 'bg-orange-500' },
   ]
+
+  const handleQuickAction = (tab: 'work-tracker' | 'leave' | 'team' | 'documents' | 'announcements' | 'calendar') => {
+    if (onNavigate) {
+      onNavigate(tab)
+    }
+  }
 
   return (
     <div className="space-y-4 sm:space-y-6">
@@ -101,7 +113,10 @@ export default function DashboardOverview({ userRole }: DashboardOverviewProps) 
         <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-4 sm:p-6">
           <div className="flex items-center justify-between mb-3 sm:mb-4">
             <h3 className="text-base sm:text-lg font-semibold text-gray-900">Recent Announcements</h3>
-            <button className="text-xs sm:text-sm text-orange-600 hover:text-orange-700 font-medium touch-manipulation">
+            <button 
+              onClick={() => handleQuickAction('announcements')}
+              className="text-xs sm:text-sm text-orange-600 hover:text-orange-700 active:text-orange-800 font-medium touch-manipulation"
+            >
               View All
             </button>
           </div>
@@ -131,7 +146,10 @@ export default function DashboardOverview({ userRole }: DashboardOverviewProps) 
         <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-4 sm:p-6">
           <div className="flex items-center justify-between mb-3 sm:mb-4">
             <h3 className="text-base sm:text-lg font-semibold text-gray-900">Upcoming Deadlines</h3>
-            <button className="text-xs sm:text-sm text-orange-600 hover:text-orange-700 font-medium touch-manipulation">
+            <button 
+              onClick={() => handleQuickAction('calendar')}
+              className="text-xs sm:text-sm text-orange-600 hover:text-orange-700 active:text-orange-800 font-medium touch-manipulation"
+            >
               View Calendar
             </button>
           </div>
@@ -162,6 +180,7 @@ export default function DashboardOverview({ userRole }: DashboardOverviewProps) 
             return (
               <button
                 key={index}
+                onClick={() => handleQuickAction(action.tab)}
                 className="flex items-center space-x-2 sm:space-x-3 p-3 sm:p-4 rounded-lg border border-gray-200 hover:border-orange-300 hover:bg-orange-50 active:bg-orange-100 transition-all group touch-manipulation"
               >
                 <div className={`w-9 h-9 sm:w-10 sm:h-10 ${action.color} rounded-lg flex items-center justify-center text-white flex-shrink-0`}>

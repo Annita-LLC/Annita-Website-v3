@@ -61,7 +61,12 @@ export default function ReportsAnalytics({ userRole }: ReportsAnalyticsProps) {
             <option value="month">This Month</option>
             <option value="quarter">This Quarter</option>
           </select>
-          <button className="w-full sm:w-auto px-3 sm:px-4 py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700 active:bg-gray-800 text-xs sm:text-sm font-medium flex items-center justify-center space-x-2 touch-manipulation">
+          <button 
+            onClick={() => {
+              alert(`Exporting reports for ${selectedPeriod}...\n\nIn production, this would generate and download a CSV/PDF file with analytics data.`)
+            }}
+            className="w-full sm:w-auto px-3 sm:px-4 py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700 active:bg-gray-800 text-xs sm:text-sm font-medium flex items-center justify-center space-x-2 touch-manipulation"
+          >
             <Download className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
             <span>Export</span>
           </button>
@@ -189,7 +194,10 @@ export default function ReportsAnalytics({ userRole }: ReportsAnalyticsProps) {
                         </span>
                       </td>
                       <td className="px-3 sm:px-4 py-2 sm:py-3">
-                        <button className="text-xs sm:text-sm text-orange-600 hover:text-orange-700 active:text-orange-800 font-medium touch-manipulation">
+                        <button 
+                          onClick={() => alert(`Viewing report details for ${report.employee}\n\nDepartment: ${report.department}\nWeek Ending: ${report.weekEnding}\nHours: ${report.hours}\nStatus: ${report.status}\n\nIn production, this would show the full report.`)}
+                          className="text-xs sm:text-sm text-orange-600 hover:text-orange-700 active:text-orange-800 font-medium touch-manipulation"
+                        >
                           View Details
                         </button>
                       </td>
